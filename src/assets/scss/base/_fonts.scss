@@ -1,0 +1,20 @@
+@use './colors' as *;
+@use './mixins' as *;
+
+// Font properties
+$base-font-size: 16px;
+$base-line-height: 19px;
+$roboto: Roboto, sans-serif;
+$fontawesome: "Font Awesome 6 Free";
+
+h1, h2, h3, h4, h5 {
+  font-family: $roboto;
+  color: $black;
+  letter-spacing: 0px;
+}
+
+body {
+  @include font-size($base-font-size);
+  @include line-height($base-line-height);
+  font-weight: 400;
+}

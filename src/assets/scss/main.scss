@@ -1,0 +1,36 @@
+// all base styles
+@use "./base/colors" as *;
+@use "./base/screenres" as *;
+@use "./base/mixins" as *;
+@use "./base/fonts" as *;
+
+@use './base/bootstrap' as *;
+
+// all component styles
+@use "./component/accordions" as *;
+@use "./component/buttons" as *;
+@use "./component/calenders" as *;
+@use "./component/cards" as *;
+@use "./component/carousels" as *;
+@use "./component/forms" as *;
+@use "./component/heros" as *;
+@use "./component/icon-and-text" as *;
+@use "./component/image-and-text" as *;
+@use "./component/stats" as *;
+@use "./component/tables" as *;
+@use "./component/text-only" as *;
+
+// // all page styles
+@use './page/home' as *;
+
+// body {
+//   @include mobile-only {
+//     background-color: red;
+//   }
+//   @include tablet-only {
+//     background-color: green;
+//   }
+//   @include desktop {
+//     background-color: blue;
+//   }
+// }
