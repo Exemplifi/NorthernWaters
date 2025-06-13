@@ -76,17 +76,17 @@
 
 //Padding mixin
 @mixin padding($top, $right, $bottom, $left) {
-  padding-top: $top;
-  padding-right: $right;
-  padding-bottom: $bottom;
-  padding-left: $left;
+  padding-top: calculateRem($top);
+  padding-right: calculateRem($right);
+  padding-bottom: calculateRem($bottom);
+  padding-left: calculateRem($left);
 }
 //Margin mixin
 @mixin margin($top, $right, $bottom, $left) {
-  margin-top: $top;
-  margin-right: $right;
-  margin-bottom: $bottom;
-  margin-left: $left;
+  margin-top: calculateRem($top);
+  margin-right: calculateRem($right);
+  margin-bottom: calculateRem($bottom);
+  margin-left: calculateRem($left);
 }
 
 // opacity
