@@ -8,9 +8,12 @@
     "build": "vite build",
     "preview": "vite preview",
     "sass": "sass --watch --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/css/styles.css",
-    "base:sass": "sass --watch --style=compressed src/assets/scss/base.scss src/assets/css/base.css"
+    "base:sass": "sass --watch --style=compressed src/assets/scss/base.scss src/assets/css/base.css",
+    "minify:js": "vite build --emptyOutDir false",
+    "build:all": "npm run sass && npm run base:sass && npm run minify:js"
   },
   "devDependencies": {
+    "terser": "^5.42.0",
     "vite": "^6.3.5"
   },
   "dependencies": {
