@@ -13,37 +13,21 @@ export default defineConfig({
     hot: true
   },
   build: {
-    outDir: 'src/assets',
-    assetsDir: '',
+    outDir: 'src/assets/dist',
+    emptyOutDir: false,
     rollupOptions: {
       input: {
-        main: path.resolve(__dirname, 'src/js/main.js')
+        main: path.resolve(__dirname, 'src/assets/js/main.js')
       },
       output: {
-        entryFileNames: 'js/[name].min.js',
-        chunkFileNames: 'js/[name].min.js',
-        assetFileNames: (assetInfo) => {
-          // Skip favicon, apple-touch-icon and webmanifest files
-          if (assetInfo.name.match(/favicon|apple-touch-icon|site\.webmanifest/)) {
-            return false; // This will prevent the file from being copied
-          }
-
-          if (assetInfo.name.endsWith('.css')) {
-            return 'css/[name][extname]';
-          }
-          return '[name][extname]';
-        },
-        manualChunks: {
-          vendor: ['jquery', 'bootstrap', '@popperjs/core']
-        }
-      }
+        entryFileNames: '[name].min.js',
+        chunkFileNames: '[name].min.js'
+      },
     },
-    minify: 'terser',
-    terserOptions: {
-      compress: {
-        drop_console: true,
-        drop_debugger: true
-      }
-    }
-  }
+    minify: true,
+    sourcemap: true,
+    // Disable CSS handling since we only want to process JS
+    cssCodeSplit: false,
+    cssMinify: true
+  },
 });

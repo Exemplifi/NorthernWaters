@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "vite:build": "vite build",
     "preview": "vite preview",
-    "sass": "sass --watch --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/css/styles.css",
-    "minify:js": "vite build --emptyOutDir false",
-    "build:all": "npm run sass && npm run base:sass && npm run minify:js"
+    "sass:watch": "sass --watch --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/dist/main.css",
+    "build:js": "vite build --config vite.config.js --mode production",
+    "build:all": "sass --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/dist/main.css && vite build --config vite.config.js --mode production"
   },
   "devDependencies": {
     "figma-developer-mcp": "^0.4.3",
