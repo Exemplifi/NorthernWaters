@@ -1,4 +1,118 @@
 // Stats - v1
 
+.stats--v1 {
+  background: $primary-dark;
+  border-radius: rem-convert(32px);
+  padding: rem-convert(104px) 0;
+}
+
+.stats__title {
+  color: $white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  font-size: rem-convert(48px);
+  line-height: 1.21;
+  margin-bottom: rem-convert(12px);
+}
+
+.stats__subtitle {
+  color: $card-light-blue;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: rem-convert(16px);
+  line-height: 1.21;
+  margin-bottom: rem-convert(40px);
+}
+
+.stats__row {
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.stats__block {
+  background: transparent;
+  border-radius: rem-convert(24px);
+  padding: rem-convert(32px 16px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: rem-convert(180px);
+  position: relative;
+}
+
+.stats__number {
+  color: $white;
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: rem-convert(32px);
+  line-height: 1.21;
+  margin-bottom: rem-convert(8px);
+}
+
+.stats__unit {
+  font-size: rem-convert(20px);
+  font-weight: 400;
+  margin-left: rem-convert(4px);
+}
+
+.stats__desc {
+  color: $card-light-blue;
+  font-family: 'Inter', sans-serif;
+  font-weight: 400;
+  font-size: rem-convert(18px);
+  line-height: 1.21;
+}
+
+// Divider SVGs are styled inline in HTML for color/height
+
+@media (max-width: 991px) {
+  .stats--v1 {
+    padding: rem-convert(56px) 0;
+    border-radius: rem-convert(24px);
+  }
+  .stats__title {
+    font-size: rem-convert(32px);
+  }
+  .stats__block {
+    padding: rem-convert(24px 8px);
+    min-height: rem-convert(120px);
+  }
+}
+
+@media (max-width: 600px) {
+  .stats--v1 {
+    padding: rem-convert(32px) 0;
+    border-radius: rem-convert(16px);
+  }
+  .stats__title {
+    font-size: rem-convert(24px);
+  }
+  .stats__block {
+    padding: rem-convert(16px 4px);
+    min-height: rem-convert(80px);
+  }
+  .stats__number {
+    font-size: rem-convert(20px);
+  }
+  .stats__desc {
+    font-size: rem-convert(14px);
+  }
+}
+
+@media (min-width: 992px) {
+  .stats__block:not(:last-child)::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    width: rem-convert(1px);
+    height: rem-convert(80px);
+    background: $border-blue;
+    z-index: 2;
+  }
+}
+
 
 
