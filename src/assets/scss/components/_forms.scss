@@ -3,83 +3,83 @@
 // Contact Form - v1
 
 .form-section {
-  background: #F4F9FF;
-  border-radius: 24px;
-  box-shadow: 0 4px 32px rgba(49,68,89,0.06);
-  padding: 48px 0;
-  margin: 40px 0;
+  background: $light-bg-blue;
+  border-radius: rem-convert(24px);
+  box-shadow: 0 rem-convert(4px) rem-convert(32px) rgba(49,68,89,0.06);
+  padding: rem-convert(48px) 0;
+  margin: rem-convert(40px) 0;
 }
 .form-section__title {
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
-  color: #184479;
-  margin-bottom: 32px;
+  color: $dark-blue-text;
+  margin-bottom: rem-convert(32px);
 }
 .form {
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 2px 16px rgba(49,68,89,0.04);
-  padding: 32px 24px;
+  background: $white;
+  border-radius: rem-convert(16px);
+  box-shadow: 0 rem-convert(2px) rem-convert(16px) rgba(49,68,89,0.04);
+  padding: rem-convert(32px) rem-convert(24px);
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: rem-convert(24px);
 }
 .form__label {
   font-size: 1rem;
   font-weight: 600;
-  color: #314459;
-  margin-bottom: 8px;
+  color: $primary-dark;
+  margin-bottom: rem-convert(8px);
   display: block;
 }
 .form__input {
-  border-radius: 8px;
-  border: 1px solid #A9CEF9;
-  background: #F4F9FF;
+  border-radius: rem-convert(8px);
+  border: rem-convert(1px) solid $avatar-border;
+  background: $light-bg-blue;
   font-size: 1rem;
-  padding: 12px 16px;
-  color: #314459;
+  padding: rem-convert(12px) rem-convert(16px);
+  color: $primary-dark;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: none;
 }
 .form__input:focus {
-  border-color: #459DFF;
+  border-color: $button-blue;
   outline: none;
-  background: #fff;
-  box-shadow: 0 0 0 2px #A9CEF9;
+  background: $white;
+  box-shadow: 0 0 0 rem-convert(2px) $avatar-border;
 }
 .form__input::placeholder {
-  color: #A9CEF9;
+  color: $avatar-border;
   opacity: 1;
 }
 .form__btn {
-  background: #184479;
-  color: #fff;
+  background: $dark-blue-text;
+  color: $white;
   font-weight: 700;
   font-size: 1.125rem;
-  border-radius: 12px;
-  padding: 14px 0;
-  box-shadow: 0 2px 8px rgba(49,68,89,0.08);
+  border-radius: rem-convert(12px);
+  padding: rem-convert(14px) 0;
+  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49,68,89,0.08);
   transition: background 0.2s, box-shadow 0.2s;
 }
 .form__btn:hover, .form__btn:focus {
-  background: #459DFF;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(49,68,89,0.12);
+  background: $button-blue;
+  color: $white;
+  box-shadow: 0 rem-convert(4px) rem-convert(16px) rgba(49,68,89,0.12);
 }
 // Error state
 .form__input:invalid:focus {
-  border-color: #FF5A5F;
-  box-shadow: 0 0 0 2px #FF5A5F33;
+  border-color: $error;
+  box-shadow: 0 0 0 rem-convert(2px) rgba($error, 0.2);
 }
 // Responsive
 @media (max-width: 991px) {
   .form-section {
-    padding: 32px 0;
-    border-radius: 16px;
+    padding: rem-convert(32px) 0;
+    border-radius: rem-convert(16px);
   }
   .form {
-    padding: 24px 8px;
+    padding: rem-convert(24px) rem-convert(8px);
   }
   .form-section__title {
     font-size: 2rem;
@@ -87,47 +87,47 @@
 }
 @media (max-width: 600px) {
   .form-section {
-    padding: 16px 0;
-    border-radius: 8px;
+    padding: rem-convert(16px) 0;
+    border-radius: rem-convert(8px);
   }
   .form {
-    padding: 12px 0;
-    border-radius: 8px;
+    padding: rem-convert(12px) 0;
+    border-radius: rem-convert(8px);
   }
   .form-section__title {
     font-size: 1.5rem;
-    margin-bottom: 16px;
+    margin-bottom: rem-convert(16px);
   }
 }
 
 // Two-column card layout
 .form-section__card {
   display: flex;
-  border-radius: 20px;
+  border-radius: rem-convert(20px);
   overflow: hidden;
   background: none;
-  min-height: 420px;
+  min-height: rem-convert(420px);
 }
 .form-section__info {
-  background: #184479;
-  color: #fff;
+  background: $dark-blue-text;
+  color: $white;
   min-height: 100%;
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
+  border-top-left-radius: rem-convert(20px);
+  border-bottom-left-radius: rem-convert(20px);
 }
 .form-section__title {
-  color: #fff;
+  color: $white;
   font-size: 2rem;
   font-weight: 700;
   letter-spacing: -0.01em;
 }
 .form-section__desc {
-  color: #A9CEF9;
+  color: $avatar-border;
   font-size: 1.125rem;
   font-weight: 400;
 }
 .form-section__contact-list {
-  color: #fff;
+  color: $white;
   font-size: 1rem;
   font-weight: 500;
   margin-bottom: 1.5rem;
@@ -136,8 +136,8 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 28px;
-  height: 28px;
+  width: rem-convert(28px);
+  height: rem-convert(28px);
 }
 .form-section__social {
   margin-top: auto;
@@ -146,22 +146,22 @@
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 36px;
-  height: 36px;
+  width: rem-convert(36px);
+  height: rem-convert(36px);
   border-radius: 50%;
-  background: #fff;
+  background: $white;
   transition: background 0.2s;
 }
 .form-section__social-link:hover, .form-section__social-link:focus {
-  background: #A9CEF9;
+  background: $avatar-border;
 }
 // Form panel
 .form-section__card .bg-white {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-top-right-radius: rem-convert(20px);
+  border-bottom-right-radius: rem-convert(20px);
 }
 .form__privacy {
-  color: #6E7A89;
+  color: $secondary-text;
   font-size: 0.95rem;
   margin-top: 1rem;
 }
@@ -169,7 +169,7 @@
 @media (max-width: 991px) {
   .form-section__card {
     flex-direction: column;
-    border-radius: 16px;
+    border-radius: rem-convert(16px);
   }
   .form-section__info, .form-section__card .bg-white {
     border-radius: 0 !important;
@@ -177,10 +177,10 @@
 }
 @media (max-width: 600px) {
   .form-section__card {
-    border-radius: 8px;
+    border-radius: rem-convert(8px);
   }
   .form-section__info {
-    padding: 24px 12px !important;
+    padding: rem-convert(24px) rem-convert(12px) !important;
   }
   .form-section__title {
     font-size: 1.25rem;
@@ -197,68 +197,68 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: #F4F9FF;
-  border: 1px solid #A9CEF9;
-  border-radius: 8px;
-  padding-right: 40px;
+  background: $light-bg-blue;
+  border: rem-convert(1px) solid $avatar-border;
+  border-radius: rem-convert(8px);
+  padding-right: rem-convert(40px);
 }
 .form__select-icon {
   pointer-events: none;
   top: 50%;
-  right: 16px;
+  right: rem-convert(16px);
   transform: translateY(-50%);
 }
 .form__file-upload {
-  background: #F4F9FF;
-  border: 1px solid #A9CEF9;
-  border-radius: 8px;
-  padding: 8px 16px;
+  background: $light-bg-blue;
+  border: rem-convert(1px) solid $avatar-border;
+  border-radius: rem-convert(8px);
+  padding: rem-convert(8px) rem-convert(16px);
 }
 .form__file-label {
   cursor: pointer;
-  color: #314459;
+  color: $primary-dark;
   font-weight: 600;
 }
 .form__file-icon {
-  width: 24px;
-  height: 24px;
+  width: rem-convert(24px);
+  height: rem-convert(24px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 .form__file-input.visually-hidden {
   position: absolute !important;
-  width: 1px;
-  height: 1px;
+  width: rem-convert(1px);
+  height: rem-convert(1px);
   padding: 0;
-  margin: -1px;
+  margin: rem-convert(-1px);
   overflow: hidden;
   clip: rect(0,0,0,0);
   border: 0;
 }
 .form__file-helper {
-  color: #6E7A89;
+  color: $secondary-text;
   font-size: 0.95rem;
 }
 .form__recaptcha {
-  background: #F4F9FF;
-  border: 1px solid #A9CEF9;
-  border-radius: 8px;
-  padding: 8px 16px;
+  background: $light-bg-blue;
+  border: rem-convert(1px) solid $avatar-border;
+  border-radius: rem-convert(8px);
+  padding: rem-convert(8px) rem-convert(16px);
 }
 .form__recaptcha-checkbox {
-  width: 20px;
-  height: 20px;
-  accent-color: #459DFF;
+  width: rem-convert(20px);
+  height: rem-convert(20px);
+  accent-color: $button-blue;
 }
 .form__recaptcha-label {
   font-size: 1rem;
-  color: #314459;
+  color: $primary-dark;
   font-weight: 500;
 }
 .form__recaptcha-icon {
-  width: 42px;
-  height: 40px;
+  width: rem-convert(42px);
+  height: rem-convert(40px);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -268,9 +268,9 @@
   align-items: center;
 }
 .form__btn-circle {
-  width: 32px;
-  height: 32px;
-  background: #459DFF;
+  width: rem-convert(32px);
+  height: rem-convert(32px);
+  background: $button-blue;
   border-radius: 50%;
   display: flex;
   align-items: center;

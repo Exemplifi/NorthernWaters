@@ -3,14 +3,14 @@
 // Clarity Table Cards - Figma v1
 
 .clarity-table-section {
-  background: #fff;
-  padding: 40px 0;
+  background: $white;
+  @include rem-convert(padding, 40px 0);
 }
 .clarity-table-card {
-  border-radius: 12px;
+  @include rem-convert(border-radius, 12px);
   overflow: hidden;
-  margin-bottom: 24px;
-  box-shadow: 0 2px 8px rgba(49,68,89,0.06);
+  @include rem-convert(margin-bottom, 24px);
+  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49,68,89,0.06);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -19,46 +19,46 @@
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   font-size: 1rem;
-  padding: 20px;
-  background: #6381A4;
-  color: #fff;
-  border-radius: 12px 12px 0 0;
+  @include rem-convert(padding, 20px);
+  background: $table-header-blue;
+  color: $white;
+  @include rem-convert(border-radius, 12px 12px 0 0);
 }
 .clarity-table-card--avg .clarity-table-card__header {
-  background: #F4F9FF;
-  color: #000;
+  background: $light-bg-blue;
+  color: $black;
 }
 .clarity-table-card--min .clarity-table-card__header {
-  background: #D8E9FF;
-  color: #000;
+  background: $table-light-blue;
+  color: $black;
 }
 .clarity-table-card__row {
   font-family: 'Inter', sans-serif;
   font-size: 1rem;
-  color: #000;
-  padding: 20px 54px;
-  border-top: 1px solid #fff;
-  background: #fff;
+  color: $black;
+  @include rem-convert(padding, 20px 54px);
+  border-top: rem-convert(1px) solid $white;
+  background: $white;
 }
 .clarity-table-card--avg .clarity-table-card__row {
-  border-top: 1px solid #6381A4;
-  background: #F4F9FF;
+  border-top: rem-convert(1px) solid $table-header-blue;
+  background: $light-bg-blue;
 }
 .clarity-table-card--min .clarity-table-card__row {
-  border-top: 1px solid #6381A4;
-  background: #D8E9FF;
+  border-top: rem-convert(1px) solid $table-header-blue;
+  background: $table-light-blue;
 }
 @media (max-width: 991px) {
   .clarity-table-card {
-    margin-bottom: 16px;
+    @include rem-convert(margin-bottom, 16px);
   }
 }
 @media (max-width: 600px) {
   .clarity-table-section {
-    padding: 16px 0;
+    @include rem-convert(padding, 16px 0);
   }
   .clarity-table-card__header, .clarity-table-card__row {
-    padding: 12px 16px;
+    @include rem-convert(padding, 12px 16px);
     font-size: 0.95rem;
   }
 }

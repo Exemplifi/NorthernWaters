@@ -8,6 +8,25 @@ $site-colors: (
   "blue": #0079fe,
   "light-blue": #0084FF,
   "primary-dark": #314459,
+  "light-bg-blue": #F4F9FF,
+  "text-blue": #3F5773,
+  "card-light-blue": #DCECFF,
+  "card-lighter-blue": #D7E6F5,
+  "card-dark-blue": #5A85B8,
+  "button-blue": #459DFF,
+  "text-gray": #6D758F,
+  "icon-bg": #E7F0FA,
+  "avatar-border": #A9CEF9,
+  "secondary-text": #6E7A89,
+  "dark-blue-text": #184479,
+  "card-img-bg": #DEEFFF,
+  "success": #28a745,
+  "danger": #dc3545,
+  "error": #FF5A5F,
+  "border-blue": #90B0D7,
+  "divider-gray": #596f8b,
+  "table-header-blue": #6381A4,
+  "table-light-blue": #D8E9FF
 );
 
 // Rebranding
@@ -17,3 +36,22 @@ $gray: map.get($site-colors, "gray");
 $blue: map.get($site-colors, "blue");
 $light-blue: map.get($site-colors, "light-blue");
 $primary-dark: map.get($site-colors, "primary-dark");
+$light-bg-blue: map.get($site-colors, "light-bg-blue");
+$text-blue: map.get($site-colors, "text-blue");
+$card-light-blue: map.get($site-colors, "card-light-blue");
+$card-lighter-blue: map.get($site-colors, "card-lighter-blue");
+$card-dark-blue: map.get($site-colors, "card-dark-blue");
+$button-blue: map.get($site-colors, "button-blue");
+$text-gray: map.get($site-colors, "text-gray");
+$icon-bg: map.get($site-colors, "icon-bg");
+$avatar-border: map.get($site-colors, "avatar-border");
+$secondary-text: map.get($site-colors, "secondary-text");
+$dark-blue-text: map.get($site-colors, "dark-blue-text");
+$card-img-bg: map.get($site-colors, "card-img-bg");
+$success: map.get($site-colors, "success");
+$danger: map.get($site-colors, "danger");
+$error: map.get($site-colors, "error");
+$border-blue: map.get($site-colors, "border-blue");
+$divider-gray: map.get($site-colors, "divider-gray");
+$table-header-blue: map.get($site-colors, "table-header-blue");
+$table-light-blue: map.get($site-colors, "table-light-blue");

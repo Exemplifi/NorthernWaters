@@ -95,7 +95,7 @@
 
   // Submenu
   &__submenu {
-    background-color: #314459;
+    background-color: $primary-dark;
     border: none;
     @include rem-convert(border-radius, 8px);
     @include rem-convert(padding, 8px 0);
@@ -173,7 +173,7 @@
     font-weight: 600;
     @include rem-convert(font-size, 16px);
     line-height: 1.2;
-    color: #314459;
+    color: $primary-dark;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
@@ -217,7 +217,7 @@
     left: 0;
     width: 100%;
     @include rem-convert(height, 1px);
-    background-color: #90B0D7;
+    background-color: $border-blue;
   }
 
   // Responsive Styles
@@ -228,7 +228,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba(#314459, 0.95);
+      background-color: rgba($primary-dark, 0.95);
       @include rem-convert(padding, 24px 16px);
       overflow-y: auto;
     }

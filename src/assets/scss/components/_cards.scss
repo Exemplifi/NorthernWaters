@@ -11,9 +11,9 @@
 
 // Variant 1: Image Card
 .card-v1 {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(49,68,89,0.08);
+  background: $white;
+  border-radius: rem-convert(24px);
+  box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(49,68,89,0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -21,51 +21,51 @@
   text-align: left;
 }
 .card-v1__img-bg {
-  background: #DEEFFF;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  background: $card-img-bg;
+  border-top-left-radius: rem-convert(24px);
+  border-top-right-radius: rem-convert(24px);
   overflow: hidden;
 }
 .card-v1__img {
   width: 100%;
-  height: 200px;
+  height: rem-convert(200px);
   object-fit: cover;
-  border-top-left-radius: 24px;
-  border-top-right-radius: 24px;
+  border-top-left-radius: rem-convert(24px);
+  border-top-right-radius: rem-convert(24px);
 }
 .card-v1__body {
-  padding: 24px;
+  padding: rem-convert(24px);
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: rem-convert(16px);
 }
 .card-v1__title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 24px;
-  color: #314459;
+  font-size: rem-convert(24px);
+  color: $primary-dark;
   margin-bottom: 0;
 }
 .card-v1__desc {
-  font-size: 16px;
-  color: #6D758F;
+  font-size: rem-convert(16px);
+  color: $text-gray;
   font-weight: 400;
   margin-bottom: 0;
 }
 .card-v1__btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: rem-convert(8px);
   background: none;
   border: none;
-  color: #459DFF;
+  color: $button-blue;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: rem-convert(16px);
   cursor: pointer;
   padding: 0;
-  margin-top: 8px;
+  margin-top: rem-convert(8px);
   text-align: left;
 }
 .card-v1__btn-icon {
@@ -75,10 +75,10 @@
 
 // Variant 2: Icon Card
 .card-v2 {
-  background: #fff;
-  border-radius: 24px;
-  box-shadow: 0 4px 24px rgba(49,68,89,0.08);
-  padding: 24px;
+  background: $white;
+  border-radius: rem-convert(24px);
+  box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(49,68,89,0.08);
+  padding: rem-convert(24px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -86,51 +86,51 @@
   text-align: left;
 }
 .card-v2__img-bg {
-  background: #E7F0FA;
-  border-radius: 24px;
-  width: 48px;
-  height: 48px;
+  background: $icon-bg;
+  border-radius: rem-convert(24px);
+  width: rem-convert(48px);
+  height: rem-convert(48px);
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 16px;
+  margin-bottom: rem-convert(16px);
 }
 .card-v2__icon {
-  width: 32px;
-  height: 32px;
+  width: rem-convert(32px);
+  height: rem-convert(32px);
 }
 .card-v2__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 16px;
+  gap: rem-convert(16px);
 }
 .card-v2__title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 24px;
-  color: #314459;
+  font-size: rem-convert(24px);
+  color: $primary-dark;
   margin-bottom: 0;
 }
 .card-v2__desc {
-  font-size: 16px;
-  color: #6D758F;
+  font-size: rem-convert(16px);
+  color: $text-gray;
   font-weight: 400;
   margin-bottom: 0;
 }
 .card-v2__btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: rem-convert(8px);
   background: none;
   border: none;
-  color: #459DFF;
+  color: $button-blue;
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 16px;
+  font-size: rem-convert(16px);
   cursor: pointer;
   padding: 0;
-  margin-top: 8px;
+  margin-top: rem-convert(8px);
   text-align: left;
 }
 .card-v2__btn-icon {
@@ -140,52 +140,52 @@
 
 // Variant 3: Testimonial Card
 .card-v3 {
-  background: #D7E6F5;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(49,68,89,0.04);
-  padding: 24px;
+  background: $card-lighter-blue;
+  border-radius: rem-convert(12px);
+  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49,68,89,0.04);
+  padding: rem-convert(24px);
   height: 100%;
   display: flex;
   flex-direction: column;
   text-align: left;
 }
 .card-v3__header {
-  margin-bottom: 16px;
+  margin-bottom: rem-convert(16px);
 }
 .card-v3__avatar {
-  width: 56px;
-  height: 56px;
+  width: rem-convert(56px);
+  height: rem-convert(56px);
   border-radius: 50%;
   object-fit: cover;
-  border: 2px solid #A9CEF9;
+  border: rem-convert(2px) solid $avatar-border;
 }
 .card-v3__name {
   font-weight: 700;
-  color: #3F5773;
-  font-size: 18px;
+  color: $text-blue;
+  font-size: rem-convert(18px);
 }
 .card-v3__role {
-  font-size: 14px;
-  color: #6E7A89;
+  font-size: rem-convert(14px);
+  color: $secondary-text;
 }
 .card-v3__desc {
-  font-size: 16px;
-  color: #6E7A89;
+  font-size: rem-convert(16px);
+  color: $secondary-text;
   font-style: italic;
 }
 .card-v3__btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: rem-convert(8px);
   background: none;
   border: none;
-  color: #459DFF;
+  color: $button-blue;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: rem-convert(16px);
   cursor: pointer;
   padding: 0;
-  margin-top: 8px;
+  margin-top: rem-convert(8px);
   text-align: right;
 }
 .card-v3__btn-icon {
@@ -195,10 +195,10 @@
 
 // Variant 4: Numbered Step Card
 .card-v4 {
-  background: #D7E6F5;
-  border-radius: 12px;
-  box-shadow: 0 4px 24px rgba(49,68,89,0.08);
-  padding: 24px;
+  background: $card-lighter-blue;
+  border-radius: rem-convert(12px);
+  box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(49,68,89,0.08);
+  padding: rem-convert(24px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -206,50 +206,50 @@
   text-align: left;
 }
 .card-v4__circle {
-  width: 48px;
-  height: 48px;
-  background: #A9CEF9;
-  color: #184479;
+  width: rem-convert(48px);
+  height: rem-convert(48px);
+  background: $avatar-border;
+  color: $dark-blue-text;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: rem-convert(24px);
   font-weight: 700;
-  margin-bottom: 12px;
+  margin-bottom: rem-convert(12px);
 }
 .card-v4__body {
   flex: 1;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: rem-convert(10px);
 }
 .card-v4__title {
   font-family: 'Inter', sans-serif;
   font-weight: 600;
-  font-size: 24px;
-  color: #3F5773;
+  font-size: rem-convert(24px);
+  color: $text-blue;
   margin-bottom: 0;
 }
 .card-v4__desc {
-  font-size: 16px;
-  color: #6E7A89;
+  font-size: rem-convert(16px);
+  color: $secondary-text;
   font-weight: 400;
   margin-bottom: 0;
 }
 .card-v4__btn {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: rem-convert(8px);
   background: none;
   border: none;
-  color: #459DFF;
+  color: $button-blue;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
-  font-size: 16px;
+  font-size: rem-convert(16px);
   cursor: pointer;
   padding: 0;
-  margin-top: 8px;
+  margin-top: rem-convert(8px);
   text-align: right;
 }
 .card-v4__btn-icon {
@@ -259,15 +259,15 @@
 
 // Responsive tweaks
 @media (max-width: 991px) {
-  .card-v1__img { height: 160px; }
-  .card-v1__body, .card-v2, .card-v4, .card-v3 { padding: 16px 12px; }
+  .card-v1__img { height: rem-convert(160px); }
+  .card-v1__body, .card-v2, .card-v4, .card-v3 { padding: rem-convert(16px) rem-convert(12px); }
 }
 @media (max-width: 600px) {
-  .card-v1__img { height: 100px; }
-  .card-v1__title, .card-v2__title, .card-v4__title { font-size: 16px; }
-  .card-v1__desc, .card-v2__desc, .card-v3__desc, .card-v4__desc { font-size: 14px; }
-  .card-v3__avatar { width: 40px; height: 40px; }
-  .card-v4__circle { width: 36px; height: 36px; font-size: 18px; }
+  .card-v1__img { height: rem-convert(100px); }
+  .card-v1__title, .card-v2__title, .card-v4__title { font-size: rem-convert(16px); }
+  .card-v1__desc, .card-v2__desc, .card-v3__desc, .card-v4__desc { font-size: rem-convert(14px); }
+  .card-v3__avatar { width: rem-convert(40px); height: rem-convert(40px); }
+  .card-v4__circle { width: rem-convert(36px); height: rem-convert(36px); font-size: rem-convert(18px); }
 }
 
 

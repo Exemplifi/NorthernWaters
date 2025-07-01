@@ -5,30 +5,30 @@
 
 .footer {
   background-color: $white;
-  border-radius: 32px 32px 0 0;
+  border-radius: rem-convert(32px 32px 0 0);
 
   &__container {
     max-width: 100%;
     margin: 0 auto;
-    padding: 64px 0px;
+    padding: rem-convert(64px 0px);
     display: grid;
     grid-template-columns: auto 1fr 1fr auto;
-    gap: 40px;
+    gap: rem-convert(40px);
 
     @include media-breakpoint-down(xl) {
       grid-template-columns: 1fr 1fr;
-      gap: 32px;
+      gap: rem-convert(32px);
     }
 
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
-      padding: 40px 20px;
+      padding: rem-convert(40px 20px);
     }
   }
 
   &__logo {
     &-img {
-      max-width: 170px;
+      max-width: rem-convert(170px);
       height: auto;
     }
 
@@ -41,10 +41,10 @@
   &__section-title {
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: rem-convert(20px);
     line-height: 1.21;
     color: $primary-dark;
-    margin-bottom: 12px;
+    margin-bottom: rem-convert(12px);
     border-color: $border-color;
   }
 
@@ -54,7 +54,7 @@
 
       @include media-breakpoint-down(sm) {
         .footer__links-column:not(:last-child) {
-          margin-bottom: 20px;
+          margin-bottom: rem-convert(20px);
         }
       }
     }
@@ -63,13 +63,13 @@
   &__links-column {
     display: flex;
     flex-direction: column;
-    gap: 14px;
+    gap: rem-convert(14px);
   }
 
   &__link {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: rem-convert(16px);
     line-height: 1.21;
     color: $gray;
     text-decoration: none;
@@ -80,8 +80,8 @@
     }
 
     &-arrow {
-      width: 13.5px;
-      height: 13.5px;
+      width: rem-convert(13.5px);
+      height: rem-convert(13.5px);
     }
   }
 
@@ -89,16 +89,16 @@
     &-info {
       display: flex;
       flex-direction: column;
-      gap: 12px;
+      gap: rem-convert(12px);
     }
 
     &-item {
-      gap: 20px;
+      gap: rem-convert(20px);
     }
 
     &-icon {
-      width: 24px;
-      height: 24px;
+      width: rem-convert(24px);
+      height: rem-convert(24px);
     }
   }
 
@@ -106,7 +106,7 @@
     font-family: 'Inter', sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: 16px;
+    font-size: rem-convert(16px);
     line-height: 1.21;
     color: $text-muted;
   }
@@ -114,7 +114,7 @@
   &__phone {
     font-family: 'Inter', sans-serif;
     font-weight: 500;
-    font-size: 16px;
+    font-size: rem-convert(16px);
     line-height: 1.21;
     color: $text-muted;
     text-decoration: none;
@@ -126,46 +126,45 @@
   }
 
   &__newsletter {
-
     &-title {
       font-family: 'Inter', sans-serif;
       font-weight: 700;
-      font-size: 32px;
+      font-size: rem-convert(32px);
       line-height: 1.3;
       color: $primary-dark;
-      margin-bottom: 13px;
+      margin-bottom: rem-convert(13px);
     }
 
     &-text {
       font-family: 'Inter', sans-serif;
       font-weight: 400;
-      font-size: 14px;
+      font-size: rem-convert(14px);
       line-height: 1.21;
       color: $gray;
-      margin-bottom: 20px;
+      margin-bottom: rem-convert(20px);
     }
   }
 
   &__form {
     &-group {
-      gap: 40px;
+      gap: rem-convert(40px);
 
       @include media-breakpoint-down(sm) {
         flex-direction: column !important;
-        gap: 20px;
+        gap: rem-convert(20px);
       }
     }
   }
 
   &__input {
-    min-width: 348px;
-    padding: 12px;
+    min-width: rem-convert(348px);
+    padding: rem-convert(12px);
     font-family: 'Inter', sans-serif;
-    font-size: 14px;
+    font-size: rem-convert(14px);
     line-height: 1.43;
     color: $text-muted;
     border: none;
-    border-bottom: 1px solid $primary-dark;
+    border-bottom: rem-convert(1px) solid $primary-dark;
     background: transparent;
     border-radius: 0;
 
@@ -186,13 +185,13 @@
   }
 
   &__submit {
-    padding: 18px 40px;
+    padding: rem-convert(18px 40px);
     background-color: $primary-dark;
     border: none;
-    border-radius: 12px;
+    border-radius: rem-convert(12px);
     font-family: 'Inter', sans-serif;
     font-weight: 600;
-    font-size: 20px;
+    font-size: rem-convert(20px);
     line-height: 1.3;
     color: $white;
     transition: background-color 0.3s ease;
@@ -203,8 +202,8 @@
     }
 
     &-arrow {
-      width: 16px;
-      height: 16px;
+      width: rem-convert(16px);
+      height: rem-convert(16px);
     }
 
     @include media-breakpoint-down(sm) {
@@ -220,7 +219,7 @@
     }
 
     &-links {
-      gap: 16px;
+      gap: rem-convert(16px);
 
       @include media-breakpoint-down(xl) {
         justify-content: center;
@@ -228,10 +227,10 @@
     }
 
     &-link {
-      width: 24px;
-      height: 24px;
+      width: rem-convert(24px);
+      height: rem-convert(24px);
       background-color: $primary-dark;
-      border-radius: 4px;
+      border-radius: rem-convert(4px);
       transition: background-color 0.3s ease;
 
       &:hover {
@@ -239,20 +238,20 @@
       }
 
       img {
-        width: 16px;
-        height: 16px;
+        width: rem-convert(16px);
+        height: rem-convert(16px);
       }
     }
   }
 
   &__bottom {
     background-color: $primary-dark;
-    padding: 14px 0;
+    padding: rem-convert(14px 0);
 
     &-container {
       @include media-breakpoint-down(md) {
         flex-direction: column;
-        gap: 10px;
+        gap: rem-convert(10px);
         text-align: center;
       }
     }
@@ -261,7 +260,7 @@
   &__copyright {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: rem-convert(16px);
     line-height: 1.75;
     color: $white;
   }
@@ -269,7 +268,7 @@
   &__privacy-link {
     font-family: 'Inter', sans-serif;
     font-weight: 700;
-    font-size: 16px;
+    font-size: rem-convert(16px);
     line-height: 1.21;
     color: $white;
     text-decoration: none;
@@ -284,10 +283,10 @@
   // Form validation styles
   &__form-error,
   &__form-success {
-    margin-top: 8px;
-    padding: 8px;
-    border-radius: 4px;
-    font-size: 14px;
+    margin-top: rem-convert(8px);
+    padding: rem-convert(8px);
+    border-radius: rem-convert(4px);
+    font-size: rem-convert(14px);
   }
 
   &__form-error {
@@ -302,9 +301,9 @@
 
   // Loading state
   &__submit-spinner {
-    width: 20px;
-    height: 20px;
-    border: 2px solid $white;
+    width: rem-convert(20px);
+    height: rem-convert(20px);
+    border: rem-convert(2px) solid $white;
     border-top-color: transparent;
     border-radius: 50%;
     animation: spinner 0.8s linear infinite;
