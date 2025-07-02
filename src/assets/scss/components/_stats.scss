@@ -2,13 +2,13 @@
 
 .stats--v1 {
   background: $black;
-  border-radius: rem-convert(32px);
-  padding: rem-convert(104px) 0;
+  border-radius: rem.convert(32px);
+  padding: rem.convert(104px) 0;
 }
 
 .stats__title {
   color: $white;
-  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+  font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
   font-weight: 700;
   font-size: rem.convert(48px);
   line-height: 1.21;
@@ -17,7 +17,7 @@
 
 .stats__subtitle {
   color: $light-blue;
-  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+  font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
   font-weight: 400;
   font-size: rem.convert(16px);
   line-height: 1.21;
@@ -25,39 +25,40 @@
 }
 
 .stats__row {
-.stats__block {
-  background: transparent;
-  border-radius: rem.convert(24px);
-  padding: rem.convert(32px 16px);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  min-height: rem.convert(180px);
-  position: relative;
-}
+  .stats__block {
+    background: transparent;
+    border-radius: rem.convert(24px);
+    padding: rem.convert(32px 16px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: rem.convert(180px);
+    position: relative;
+  }
 
-.stats__number {
-  color: $white;
-  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-  font-weight: 600;
-  font-size: rem.convert(32px);
-  line-height: 1.21;
-  margin-bottom: rem.convert(8px);
-}
+  .stats__number {
+    color: $white;
+    font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
+    font-weight: 600;
+    font-size: rem.convert(32px);
+    line-height: 1.21;
+    margin-bottom: rem.convert(8px);
+  }
 
-.stats__unit {
-  font-size: rem.convert(20px);
-  font-weight: 400;
-  margin-left: rem-convert(4px);
-}
+  .stats__unit {
+    font-size: rem.convert(20px);
+    font-weight: 400;
+    margin-left: rem.convert(4px);
+  }
 
-.stats__desc {
-  color: $light-blue;
-  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-  font-weight: 400;
-  font-size: rem.convert(18px);
-  line-height: 1.21;
+  .stats__desc {
+    color: $light-blue;
+    font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
+    font-weight: 400;
+    font-size: rem.convert(18px);
+    line-height: 1.21;
+  }
 }
 
 // Divider SVGs are styled inline in HTML for color/height
@@ -98,17 +99,14 @@
 
 @media (min-width: 992px) {
   .stats__block:not(:last-child)::after {
-    content: '';
+    content: "";
     position: absolute;
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    width: rem-convert(1px);
-    height: rem-convert(80px);
+    width: rem.convert(1px);
+    height: rem.convert(80px);
     background: $light-blue;
     z-index: 2;
   }
 }
-
-
-

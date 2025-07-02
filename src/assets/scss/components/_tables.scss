@@ -19,10 +19,10 @@
   font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: 1rem;
-  @include rem-convert(padding, 20px);
+  @include rem.convert(padding, 20px);
   background: $light-blue;
   color: $white;
-  @include rem-convert(border-radius, 12px 12px 0 0);
+  @include rem.convert(border-radius, 12px 12px 0 0);
 }
 .clarity-table-card--avg .clarity-table-card__header {
   background: $light-blue;
@@ -41,11 +41,11 @@
   background: var(--white);
 }
 .clarity-table-card--avg .clarity-table-card__row {
-  border-top: rem-convert(1px) solid $light-blue;
+  border-top: rem.convert(1px) solid $light-blue;
   background: $light-blue;
 }
 .clarity-table-card--min .clarity-table-card__row {
-  border-top: rem-convert(1px) solid $light-blue;
+  border-top: rem.convert(1px) solid $light-blue;
   background: $light-blue;
 }
 @media (max-width: 991px) {

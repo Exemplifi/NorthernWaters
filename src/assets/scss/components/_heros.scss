@@ -4,15 +4,15 @@
   --hero-bg: #{$gray};
   --hero-btn-bg: #{$black};
   --hero-btn-bg-hover: #{$black};
-  --hero-btn-radius: #{rem-convert(12px)};
-  --hero-title-size: #{rem-convert(56px)};
-  --hero-title-size-md: #{rem-convert(36px)};
-  --hero-title-size-sm: #{rem-convert(24px)};
-  --hero-subtext-size: #{rem-convert(16px)};
-  --hero-subtext-size-sm: #{rem-convert(14px)};
+  --hero-btn-radius: #{rem.convert(12px)};
+  --hero-title-size: #{rem.convert(56px)};
+  --hero-title-size-md: #{rem.convert(36px)};
+  --hero-title-size-sm: #{rem.convert(24px)};
+  --hero-subtext-size: #{rem.convert(16px)};
+  --hero-subtext-size-sm: #{rem.convert(14px)};
 }
 
-.heero{
+.hero{
   background: var(--hero-bg);
 }
 .hero-section {

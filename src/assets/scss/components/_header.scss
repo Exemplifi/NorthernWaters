@@ -53,7 +53,7 @@
   &__menu-link {
     display: flex !important;
     align-items: center;
-    @include rem-convert(column-gap, 16px);
+    @include rem.convert(column-gap, 16px);
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 500;
     @include rem.convert(font-size, 16px);
@@ -165,10 +165,10 @@
   &__login-btn {
     display: flex;
     align-items: center;
-    @include rem-convert(gap, 8px);
+    @include rem.convert(gap, 8px);
     background-color: $white;
-    @include rem-convert(border-radius, 8px);
-    @include rem-convert(padding, 12px 24px);
+    @include rem.convert(border-radius, 8px);
+    @include rem.convert(padding, 12px 24px);
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
     @include rem.convert(font-size, 16px);
@@ -216,7 +216,7 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    @include rem-convert(height, 1px);
+    @include rem.convert(height, 1px);
     background-color: $light-blue;
   }
 
@@ -229,7 +229,7 @@
       right: 0;
       bottom: 0;
       background-color: rgba($black, 0.95);
-      @include rem-convert(padding, 24px 16px);
+      @include rem.convert(padding, 24px 16px);
       overflow-y: auto;
     }
   }

@@ -7,31 +7,31 @@
   .carousel-v1__title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(32px);
+    font-size: rem.convert(32px);
     color: var(--black);
-    margin-bottom: rem-convert(8px);
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v1__desc {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v1__card {
     background: var(--white);
-    border-radius: rem-convert(24px);
-    box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(var(--black),0.08);
+    border-radius: rem.convert(24px);
+    box-shadow: 0 rem.convert(4px) rem.convert(24px) rgba(var(--black),0.08);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: rem-convert(1px) solid var(--black);
+    border: rem.convert(1px) solid var(--black);
   }
   .carousel-v1__img-bg {
     background: var(--light-blue);
-    border-top-left-radius: rem-convert(24px);
-    border-top-right-radius: rem-convert(24px);
+    border-top-left-radius: rem.convert(24px);
+    border-top-right-radius: rem.convert(24px);
     overflow: hidden;
   }
   .carousel-v1__img {
@@ -51,12 +51,12 @@
   .carousel-v1__card-title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(24px);
+    font-size: rem.convert(24px);
     color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v1__card-desc {
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     color: var(--black);
     font-weight: 400;
     margin-bottom: 0;
@@ -99,26 +99,26 @@
   .carousel-v2__title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(28px);
+    font-size: rem.convert(28px);
     color: $blue;
-    margin-bottom: rem-convert(8px);
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v2__desc {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v2__card {
     background: var(--white);
-    border-radius: rem-convert(20px);
-    box-shadow: 0 rem-convert(2px) rem-convert(12px) rgba(var(--black),0.06);
+    border-radius: rem.convert(20px);
+    box-shadow: 0 rem.convert(2px) rem.convert(12px) rgba(var(--black),0.06);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: rem-convert(1px) solid var(--black);
+    border: rem.convert(1px) solid var(--black);
   }
   .carousel-v2__img {
     width: 100%;
@@ -137,7 +137,7 @@
   .carousel-v2__card-title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(20px);
+    font-size: rem.convert(20px);
     color: $black;
     margin-bottom: 0;
   }
@@ -167,9 +167,9 @@
   .carousel-v3__title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(28px);
+    font-size: rem.convert(28px);
     color: $blue;
-    margin-bottom: rem-convert(8px);
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v3__desc {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
@@ -182,7 +182,7 @@
     background: none;
     border-radius: rem.convert(20px);
     overflow: hidden;
-    box-shadow: 0 rem-convert(2px) rem-convert(12px) rgba($black,0.06);
+    box-shadow: 0 rem.convert(2px) rem.convert(12px) rgba($black,0.06);
     position: relative;
   }
   .carousel-v3__img-wrapper {
@@ -202,9 +202,9 @@
     left: 0; right: 0; bottom: 0;
     background: linear-gradient(180deg, rgba($black,0.0) 0%, rgba($black,0.7) 100%);
     color: $white;
-    padding: rem-convert(24px) rem-convert(16px) rem-convert(16px) rem-convert(16px);
-    border-bottom-left-radius: rem-convert(20px);
-    border-bottom-right-radius: rem-convert(20px);
+    padding: rem.convert(24px) rem.convert(16px) rem.convert(16px) rem.convert(16px);
+    border-bottom-left-radius: rem.convert(20px);
+    border-bottom-right-radius: rem.convert(20px);
   }
   .carousel-v3__overlay-title {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;

@@ -12,8 +12,8 @@
 // Variant 1: Image Card
 .card-v1 {
   background: var(--white);
-  border-radius: rem-convert(24px);
-  box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(49,68,89,0.08);
+  border-radius: rem.convert(24px);
+  box-shadow: 0 rem.convert(4px) rem.convert(24px) rgba(49,68,89,0.08);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -22,8 +22,8 @@
 }
 .card-v1__img-bg {
   background: var(--light-blue);
-  border-top-left-radius: rem-convert(24px);
-  border-top-right-radius: rem-convert(24px);
+  border-top-left-radius: rem.convert(24px);
+  border-top-right-radius: rem.convert(24px);
   overflow: hidden;
 }
 .card-v1__img {
@@ -43,12 +43,12 @@
 .card-v1__title {
   font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
-  font-size: rem-convert(24px);
+  font-size: rem.convert(24px);
   color: var(--black);
   margin-bottom: 0;
 }
 .card-v1__desc {
-  font-size: rem-convert(16px);
+  font-size: rem.convert(16px);
   color: var(--black);
   font-weight: 400;
   margin-bottom: 0;
@@ -87,9 +87,9 @@
 }
 .card-v2__img-bg {
   background: var(--light-blue);
-  border-radius: rem-convert(24px);
-  width: rem-convert(48px);
-  height: rem-convert(48px);
+  border-radius: rem.convert(24px);
+  width: rem.convert(48px);
+  height: rem.convert(48px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -108,12 +108,12 @@
 .card-v2__title {
   font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
-  font-size: rem-convert(24px);
+  font-size: rem.convert(24px);
   color: var(--black);
   margin-bottom: 0;
 }
 .card-v2__desc {
-  font-size: rem-convert(16px);
+  font-size: rem.convert(16px);
   color: var(--black);
   font-weight: 400;
   margin-bottom: 0;
@@ -141,9 +141,9 @@
 // Variant 3: Testimonial Card
 .card-v3 {
   background: var(--light-blue);
-  border-radius: rem-convert(12px);
-  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49,68,89,0.04);
-  padding: rem-convert(24px);
+  border-radius: rem.convert(12px);
+  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49,68,89,0.04);
+  padding: rem.convert(24px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -157,19 +157,19 @@
   height: rem.convert(56px);
   border-radius: 50%;
   object-fit: cover;
-  border: rem-convert(2px) solid var(--black);
+  border: rem.convert(2px) solid var(--black);
 }
 .card-v3__name {
   font-weight: 700;
   color: var(--text-blue);
-  font-size: rem-convert(18px);
+  font-size: rem.convert(18px);
 }
 .card-v3__role {
-  font-size: rem-convert(14px);
+  font-size: rem.convert(14px);
   color: var(--black);
 }
 .card-v3__desc {
-  font-size: rem-convert(16px);
+  font-size: rem.convert(16px);
   color: var(--black);
   font-style: italic;
 }
@@ -196,9 +196,9 @@
 // Variant 4: Numbered Step Card
 .card-v4 {
   background: var(--light-blue);
-  border-radius: rem-convert(12px);
-  box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba(49,68,89,0.08);
-  padding: rem-convert(24px);
+  border-radius: rem.convert(12px);
+  box-shadow: 0 rem.convert(4px) rem.convert(24px) rgba(49,68,89,0.08);
+  padding: rem.convert(24px);
   height: 100%;
   display: flex;
   flex-direction: column;
@@ -206,8 +206,8 @@
   text-align: left;
 }
 .card-v4__circle {
-  width: rem-convert(48px);
-  height: rem-convert(48px);
+  width: rem.convert(48px);
+  height: rem.convert(48px);
   background: var(--black);
   color: var(--black);
   border-radius: 50%;
@@ -227,12 +227,12 @@
 .card-v4__title {
   font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
-  font-size: rem-convert(24px);
+  font-size: rem.convert(24px);
   color: var(--text-blue);
   margin-bottom: 0;
 }
 .card-v4__desc {
-  font-size: rem-convert(16px);
+  font-size: rem.convert(16px);
   color: var(--black);
   font-weight: 400;
   margin-bottom: 0;

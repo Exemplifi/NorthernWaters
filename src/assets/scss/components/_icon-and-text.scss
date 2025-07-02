@@ -41,8 +41,8 @@
 
   .icon-text-wrapper {
     background-color: $light-blue;
-    border-radius: rem-convert(24px);
-    padding: rem-convert(32px);
+    border-radius: rem.convert(24px);
+    padding: rem.convert(32px);
 
     @include media-breakpoint-down(md) {
       padding: rem.convert(24px); // Reduce padding on tablet
@@ -83,7 +83,7 @@
 
       .date {
         font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-        font-size: rem-convert(32px);
+        font-size: rem.convert(32px);
         font-weight: 600;
         line-height: 130%;
         letter-spacing: 0.03em;
@@ -106,9 +106,9 @@
 
   .icon-text-content {
     background: $white;
-    border: rem-convert(1px) solid $light-blue;
-    border-radius: rem-convert(12px);
-    padding: rem-convert(12px);
+    border: rem.convert(1px) solid $light-blue;
+    border-radius: rem.convert(12px);
+    padding: rem.convert(12px);
 
     @include media-breakpoint-down(md) {
       padding: rem.convert(10px); // Slightly reduce padding on tablet
@@ -152,7 +152,7 @@
 
         .event-title {
           font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-          font-size: rem-convert(16px);
+          font-size: rem.convert(16px);
           font-weight: 700;
           line-height: 137.5%;
           color: $black;
@@ -176,7 +176,7 @@
 
         span {
           font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-          font-size: rem-convert(16px);
+          font-size: rem.convert(16px);
           font-weight: 600;
           line-height: 130%;
           color: $black;
@@ -187,8 +187,8 @@
         }
 
         .arrow-circle {
-          width: rem-convert(32px);
-          height: rem-convert(32px);
+          width: rem.convert(32px);
+          height: rem.convert(32px);
           background: $light-blue;
           border-radius: 50%;
           display: flex;
@@ -253,7 +253,7 @@
         .time,
         .type {
           font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-          font-size: rem-convert(16px);
+          font-size: rem.convert(16px);
           font-weight: 500;
           line-height: 137.5%;
           color: var(--gray);
@@ -265,8 +265,8 @@
       }
 
       .divider {
-        width: rem-convert(1px);
-        height: rem-convert(32px);
+        width: rem.convert(1px);
+        height: rem.convert(32px);
         background-color: $black;
 
         @include media-breakpoint-down(sm) {
@@ -292,7 +292,7 @@
     .content-location,
     .content-location p {
       font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-      font-size: rem-convert(16px);
+      font-size: rem.convert(16px);
       font-weight: 500;
       line-height: rem.convert(22px);
       color: var(--gray);
@@ -337,7 +337,7 @@
       }
       .map-link {
         font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-        font-size: rem-convert(16px);
+        font-size: rem.convert(16px);
         font-weight: 500;
         line-height: rem.convert(22px);
         color: var(--light-blue);

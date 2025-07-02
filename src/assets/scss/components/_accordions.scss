@@ -12,9 +12,9 @@
 
 .accordion__item {
   background: var(--light-blue);
-  border-radius: rem-convert(8px);
-  padding: rem-convert(20px 40px);
-  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49, 68, 89, 0.04);
+  border-radius: rem.convert(8px);
+  padding: rem.convert(20px 40px);
+  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49, 68, 89, 0.04);
   transition: box-shadow 0.2s;
 }
 
