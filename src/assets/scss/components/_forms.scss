@@ -3,17 +3,17 @@
 // Contact Form - v1
 
 .form-section {
-  background: $light-bg-blue;
+  background: $light-blue;
   border-radius: rem-convert(24px);
   box-shadow: 0 rem-convert(4px) rem-convert(32px) rgba(49,68,89,0.06);
   padding: rem-convert(48px) 0;
   margin: rem-convert(40px) 0;
 }
 .form-section__title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
-  color: $dark-blue-text;
+  color: $blue;
   margin-bottom: rem-convert(32px);
 }
 .form {
@@ -28,32 +28,32 @@
 .form__label {
   font-size: 1rem;
   font-weight: 600;
-  color: $primary-dark;
+  color: $black;
   margin-bottom: rem-convert(8px);
   display: block;
 }
 .form__input {
   border-radius: rem-convert(8px);
-  border: rem-convert(1px) solid $avatar-border;
-  background: $light-bg-blue;
+  border: rem-convert(1px) solid $gray;
+  background: $light-blue;
   font-size: 1rem;
   padding: rem-convert(12px) rem-convert(16px);
-  color: $primary-dark;
+  color: $black;
   transition: border-color 0.2s, box-shadow 0.2s;
   box-shadow: none;
 }
 .form__input:focus {
-  border-color: $button-blue;
+  border-color: $light-blue;
   outline: none;
   background: $white;
-  box-shadow: 0 0 0 rem-convert(2px) $avatar-border;
+  box-shadow: 0 0 0 rem-convert(2px) $gray;
 }
 .form__input::placeholder {
-  color: $avatar-border;
+  color: $gray;
   opacity: 1;
 }
 .form__btn {
-  background: $dark-blue-text;
+  background: $blue;
   color: $white;
   font-weight: 700;
   font-size: 1.125rem;
@@ -63,7 +63,7 @@
   transition: background 0.2s, box-shadow 0.2s;
 }
 .form__btn:hover, .form__btn:focus {
-  background: $button-blue;
+  background: $light-blue;
   color: $white;
   box-shadow: 0 rem-convert(4px) rem-convert(16px) rgba(49,68,89,0.12);
 }
@@ -109,7 +109,7 @@
   min-height: rem-convert(420px);
 }
 .form-section__info {
-  background: $dark-blue-text;
+  background: $blue;
   color: $white;
   min-height: 100%;
   border-top-left-radius: rem-convert(20px);
@@ -122,7 +122,7 @@
   letter-spacing: -0.01em;
 }
 .form-section__desc {
-  color: $avatar-border;
+  color: $gray;
   font-size: 1.125rem;
   font-weight: 400;
 }
@@ -153,7 +153,7 @@
   transition: background 0.2s;
 }
 .form-section__social-link:hover, .form-section__social-link:focus {
-  background: $avatar-border;
+  background: $gray;
 }
 // Form panel
 .form-section__card .bg-white {
@@ -161,7 +161,7 @@
   border-bottom-right-radius: rem-convert(20px);
 }
 .form__privacy {
-  color: $secondary-text;
+  color: $gray;
   font-size: 0.95rem;
   margin-top: 1rem;
 }
@@ -197,8 +197,8 @@
   appearance: none;
   -webkit-appearance: none;
   -moz-appearance: none;
-  background: $light-bg-blue;
-  border: rem-convert(1px) solid $avatar-border;
+  background: $light-blue;
+  border: rem-convert(1px) solid $gray;
   border-radius: rem-convert(8px);
   padding-right: rem-convert(40px);
 }
@@ -209,14 +209,14 @@
   transform: translateY(-50%);
 }
 .form__file-upload {
-  background: $light-bg-blue;
-  border: rem-convert(1px) solid $avatar-border;
+  background: $light-blue;
+  border: rem-convert(1px) solid $gray;
   border-radius: rem-convert(8px);
   padding: rem-convert(8px) rem-convert(16px);
 }
 .form__file-label {
   cursor: pointer;
-  color: $primary-dark;
+  color: $black;
   font-weight: 600;
 }
 .form__file-icon {
@@ -237,23 +237,23 @@
   border: 0;
 }
 .form__file-helper {
-  color: $secondary-text;
+  color: $gray;
   font-size: 0.95rem;
 }
 .form__recaptcha {
-  background: $light-bg-blue;
-  border: rem-convert(1px) solid $avatar-border;
+  background: $light-blue;
+  border: rem-convert(1px) solid $gray;
   border-radius: rem-convert(8px);
   padding: rem-convert(8px) rem-convert(16px);
 }
 .form__recaptcha-checkbox {
   width: rem-convert(20px);
   height: rem-convert(20px);
-  accent-color: $button-blue;
+  accent-color: $black;
 }
 .form__recaptcha-label {
   font-size: 1rem;
-  color: $primary-dark;
+  color: $black;
   font-weight: 500;
 }
 .form__recaptcha-icon {
@@ -270,7 +270,7 @@
 .form__btn-circle {
   width: rem-convert(32px);
   height: rem-convert(32px);
-  background: $button-blue;
+  background: $black;
   border-radius: 50%;
   display: flex;
   align-items: center;

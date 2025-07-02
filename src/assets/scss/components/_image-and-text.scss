@@ -29,7 +29,7 @@
 .image-text__media-bg {
   position: absolute;
   top: 0; left: 0; right: 0; bottom: 0;
-  background: $avatar-border;
+  background: $gray;
   @include rem-convert(border-radius, 24px);
   z-index: 1;
 }
@@ -46,14 +46,14 @@
 
 .image-text__content {
   flex: 1;
-  color: $primary-dark;
+  color: $black;
   display: flex;
   flex-direction: column;
   @include rem-convert(gap, 24px);
 }
 
 .image-text__title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   @include rem-convert(font-size, 32px);
   line-height: 1.21;
@@ -61,7 +61,7 @@
 }
 
 .image-text__desc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   @include rem-convert(font-size, 16px);
   line-height: 1.21;
@@ -70,7 +70,7 @@
 
 // v1 bullets
 .image-text__bullets-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   @include rem-convert(font-size, 24px);
   color: $gray;
@@ -81,7 +81,7 @@
   @include rem-convert(margin, 0 0 16px 0);
   @include rem-convert(padding, 0 0 0 16px);
   color: $gray;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   @include rem-convert(font-size, 16px);
   line-height: 1.21;
@@ -92,14 +92,14 @@
   @include rem-convert(margin, 16px 0 0 0);
 }
 .image-text__subtitle {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   @include rem-convert(font-size, 24px);
   color: $gray;
   @include rem-convert(margin, 0 0 8px 0);
 }
 .image-text__subdesc {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   @include rem-convert(font-size, 16px);
   color: $gray;
@@ -108,9 +108,9 @@
 
 // Button base
 .image-text__btn {
-  background: $primary-dark;
+  background: $blue;
   color: $white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   @include rem-convert(font-size, 16px);
   @include rem-convert(padding, 12px 32px);
@@ -124,7 +124,7 @@
   @include rem-convert(box-shadow, 0 2px 8px rgba(49,68,89,0.12));
 }
 .image-text__btn:hover, .image-text__btn:focus {
-  background: $button-blue;
+  background: $light-blue;
   color: $white;
 }
 
@@ -134,7 +134,7 @@
   color: $white;
 }
 .image-text__btn--email:hover, .image-text__btn--email:focus {
-  background: $dark-blue-text;
+  background: $blue;
 }
 
 // v3 show more button

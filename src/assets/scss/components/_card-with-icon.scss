@@ -28,23 +28,23 @@
 
     // Color Variants
     &--blue {
-        background-color: $card-light-blue;
-        color: $gray;
+        background-color: var(--light-blue);
+        color: var(--black);
     }
 
     &--navy {
-        background-color: $gray;
-        color: $white;
+        background-color: var(--black);
+        color: var(--white);
     }
 
     &--light-blue {
-        background-color: $card-lighter-blue;
-        color: $gray;
+        background-color: var(--light-blue);
+        color: var(--black);
     }
 
     &--dark-blue {
-        background-color: $card-dark-blue;
-        color: $white;
+        background-color: var(--dark-blue);
+        color: var(--white);
     }
 
     // Hover State

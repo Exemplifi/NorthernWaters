@@ -1,14 +1,14 @@
 // Stats - v1
 
 .stats--v1 {
-  background: $primary-dark;
+  background: $black;
   border-radius: rem-convert(32px);
   padding: rem-convert(104px) 0;
 }
 
 .stats__title {
   color: $white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: rem-convert(48px);
   line-height: 1.21;
@@ -16,8 +16,8 @@
 }
 
 .stats__subtitle {
-  color: $card-light-blue;
-  font-family: 'Inter', sans-serif;
+  color: $light-blue;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   font-size: rem-convert(16px);
   line-height: 1.21;
@@ -43,7 +43,7 @@
 
 .stats__number {
   color: $white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   font-size: rem-convert(32px);
   line-height: 1.21;
@@ -57,8 +57,8 @@
 }
 
 .stats__desc {
-  color: $card-light-blue;
-  font-family: 'Inter', sans-serif;
+  color: $light-blue;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   font-size: rem-convert(18px);
   line-height: 1.21;
@@ -109,7 +109,7 @@
     transform: translateY(-50%);
     width: rem-convert(1px);
     height: rem-convert(80px);
-    background: $border-blue;
+    background: $light-blue;
     z-index: 2;
   }
 }

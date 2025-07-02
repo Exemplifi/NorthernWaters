@@ -54,7 +54,7 @@
     display: flex !important;
     align-items: center;
     @include rem-convert(column-gap, 16px);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 500;
     @include rem-convert(font-size, 16px);
     line-height: 1.2;
@@ -95,7 +95,7 @@
 
   // Submenu
   &__submenu {
-    background-color: $primary-dark;
+    background-color: $black;
     border: none;
     @include rem-convert(border-radius, 8px);
     @include rem-convert(padding, 8px 0);
@@ -110,7 +110,7 @@
 
   // Submenu Link
   &__submenu-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
     @include rem-convert(font-size, 14px);
     line-height: 1.2;
@@ -169,11 +169,11 @@
     background-color: $white;
     @include rem-convert(border-radius, 8px);
     @include rem-convert(padding, 12px 24px);
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
     @include rem-convert(font-size, 16px);
     line-height: 1.2;
-    color: $primary-dark;
+    color: $black;
     text-decoration: none;
     transition: background-color 0.2s ease;
 
@@ -217,7 +217,7 @@
     left: 0;
     width: 100%;
     @include rem-convert(height, 1px);
-    background-color: $border-blue;
+    background-color: $light-blue;
   }
 
   // Responsive Styles
@@ -228,7 +228,7 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba($primary-dark, 0.95);
+      background-color: rgba($black, 0.95);
       @include rem-convert(padding, 24px 16px);
       overflow-y: auto;
     }

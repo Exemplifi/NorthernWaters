@@ -40,7 +40,7 @@
   }
 
   .icon-text-wrapper {
-    background-color: $light-bg-blue;
+    background-color: $light-blue;
     border-radius: rem-convert(24px);
     padding: rem-convert(32px);
 
@@ -82,7 +82,7 @@
       }
 
       .date {
-        font-family: "Inter", sans-serif;
+        font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
         font-size: rem-convert(32px);
         font-weight: 600;
         line-height: 130%;
@@ -106,7 +106,7 @@
 
   .icon-text-content {
     background: $white;
-    border: rem-convert(1px) solid $border-blue;
+    border: rem-convert(1px) solid $light-blue;
     border-radius: rem-convert(12px);
     padding: rem-convert(12px);
 
@@ -151,11 +151,11 @@
         }
 
         .event-title {
-          font-family: "Inter", sans-serif;
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
           font-size: rem-convert(16px);
           font-weight: 700;
           line-height: 137.5%;
-          color: $primary-dark;
+          color: $black;
           margin: 0;
 
           @include media-breakpoint-down(sm) {
@@ -175,11 +175,11 @@
         }
 
         span {
-          font-family: "Inter", sans-serif;
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
           font-size: rem-convert(16px);
           font-weight: 600;
           line-height: 130%;
-          color: $primary-dark;
+          color: $black;
 
           @include media-breakpoint-down(sm) {
             font-size: rem-convert(14px); // Reduce font size on mobile
@@ -189,7 +189,7 @@
         .arrow-circle {
           width: rem-convert(32px);
           height: rem-convert(32px);
-          background: $button-blue;
+          background: $light-blue;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -252,7 +252,7 @@
 
         .time,
         .type {
-          font-family: "Inter", sans-serif;
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
           font-size: rem-convert(16px);
           font-weight: 500;
           line-height: 137.5%;
@@ -267,7 +267,7 @@
       .divider {
         width: rem-convert(1px);
         height: rem-convert(32px);
-        background-color: $divider-gray;
+        background-color: $black;
 
         @include media-breakpoint-down(sm) {
           display: none; // Hide divider on mobile when stacked
@@ -291,7 +291,7 @@
     .content-description p,
     .content-location,
     .content-location p {
-      font-family: "Inter", sans-serif;
+      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
       font-size: rem-convert(16px);
       font-weight: 500;
       line-height: rem-convert(22px);
@@ -336,7 +336,7 @@
         justify-content: center;
       }
       .map-link {
-        font-family: "Inter", sans-serif;
+        font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
         font-size: rem-convert(16px);
         font-weight: 500;
         line-height: rem-convert(22px);
@@ -351,7 +351,7 @@
   .view-more {
     &:hover {
       .arrow-circle {
-        background: darken($button-blue, 10%);
+        background: darken($light-blue, 10%);
       }
       span {
         color: $blue;

@@ -29,8 +29,8 @@ $container-max-widths: (
   xl: 1200px
 );
 :root {
-  --body-font-family: #{$font-family-body};
-  --heading-font-family: #{$font-family-headings};
+  --body-font-family: 'Segoe UI', Arial, sans-serif;
+  --heading-font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   --body-text-color: #{$black};
   --link-color: #{$black};
 

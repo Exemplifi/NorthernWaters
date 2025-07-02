@@ -2,8 +2,8 @@
 
 :root {
   --hero-bg: #{$gray};
-  --hero-btn-bg: #{$dark-blue-text};
-  --hero-btn-bg-hover: #{$button-blue};
+  --hero-btn-bg: #{$black};
+  --hero-btn-bg-hover: #{$black};
   --hero-btn-radius: #{rem-convert(12px)};
   --hero-title-size: #{rem-convert(56px)};
   --hero-title-size-md: #{rem-convert(36px)};
@@ -55,7 +55,7 @@
 }
 
 .hero-title {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: var(--hero-title-size);
   line-height: 1.3;
@@ -64,7 +64,7 @@
 }
 
 .hero-subtext {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 500;
   font-size: var(--hero-subtext-size);
   line-height: 1.2;
@@ -75,7 +75,7 @@
 .hero-btn {
   background: var(--hero-btn-bg);
   color: $white;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 500;
   font-size: var(--hero-subtext-size);
   padding: #{rem-convert(12px)} #{rem-convert(32px)};
