@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Blooming Button - Bootstrap</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap 5 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    .primary-btn {
+      background: transparent;
+      color: #fff;
+      font-weight: bold;
+      font-size: 16px;
+      border-radius: 0;
+      padding: 0;
+      display: inline-flex;
+      align-items: center;
+      text-decoration: none;
+      position: relative;
+      transition: all 0.6s ease-in-out;
+      gap: 10px;
+      padding-right: 4.4rem;
+    }
+    .primary-btn-wrap {
+      background-color: #00853F;
+      transition: all 0.9s ease-in-out;
+      border-radius: 50px;
+      padding: 0.875rem 2rem 1rem 2rem;
+    }
+    .primary-btn:hover .primary-btn-wrap {
+      background-color: #00853F;
+    }
+    .btn-arrow {
+      position: relative;
+      display: inline-block;
+      width: 24px;
+      height: 12px;
+    }
+    .btn-icon {
+      display: inline-block;
+      position: relative;
+      width: 3.25rem;
+      height: 3.25rem;
+      position: absolute;
+      z-index: -1;
+      right: 73px;
+      transition: transform 0.9s;
+      top: 0;
+    }
+    .circle-animation {
+      background: #00853F;
+      border-radius: 50%;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      transition: all 0.8s ease-in-out;
+     
+    }
+    .circle-animation svg {
+        transform: scale(0.6);
+        transition: all 0.5s ease-in-out;
+    }
+    .primary-btn:hover {
+        color: #fff;
+        transition: all 0.5s ease-in-out;
+        transform: scale(1.05);
+      
+    }
+    .primary-btn:hover .btn-icon {
+      transform: translateX(4.7rem);
+      transition: transform 0.9s;
+    }
+    .primary-btn:hover .circle-animation svg {
+      transform: scale(1);
+      transition:all 0.5s ease-in-out;
+    }
+    .liquid-animation{
+      filter:url('#goo');
+    }
+    .liquid-animation-bg {
+      left: 50%;
+    }
+    .liquid-animation-circle {
+      transform: scale(0.6);
+      opacity: 1 !important;
+      background: #00853F !important;
+      width: 52px;
+      height: 52px;
+      transition: all 0.8s ease-in-out;
+    }
+    .liquid-animation-items{
+      border-radius:100px;
+    }
+
+  </style>
+</head>
+
+
+<body class="bg-light d-flex justify-content-center align-items-center vh-100">
+
+<a href="h" class="btn primary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
+  <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+      <span class="btn-text">Water Provider Login</span>
+
+      <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+        <span class="circle-animation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+      </span>     
+  </div>
+</a>
+  
+  
+</body>
+</html>
