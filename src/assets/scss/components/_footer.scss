@@ -4,31 +4,31 @@
 @import "../utils/rem-convert";
 
 .footer {
-  background-color: $white;
-  border-radius: rem-convert(32px 32px 0 0);
+  background-color: var(--white);
+  border-radius: rem.convert(32px 32px 0 0);
 
   &__container {
     max-width: 100%;
     margin: 0 auto;
-    padding: rem-convert(64px 0px);
+    padding: rem.convert(64px 0px);
     display: grid;
     grid-template-columns: auto 1fr 1fr auto;
-    gap: rem-convert(40px);
+    gap: rem.convert(40px);
 
     @include media-breakpoint-down(xl) {
       grid-template-columns: 1fr 1fr;
-      gap: rem-convert(32px);
+      gap: rem.convert(32px);
     }
 
     @include media-breakpoint-down(md) {
       grid-template-columns: 1fr;
-      padding: rem-convert(40px 20px);
+      padding: rem.convert(40px 20px);
     }
   }
 
   &__logo {
     &-img {
-      max-width: rem-convert(170px);
+      max-width: rem.convert(170px);
       height: auto;
     }
 
@@ -39,12 +39,12 @@
   }
 
   &__section-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(20px);
+    font-size: rem.convert(20px);
     line-height: 1.21;
-    color: $primary-dark;
-    margin-bottom: rem-convert(12px);
+    color: $black;
+    margin-bottom: rem.convert(12px);
     border-color: $border-color;
   }
 
@@ -54,7 +54,7 @@
 
       @include media-breakpoint-down(sm) {
         .footer__links-column:not(:last-child) {
-          margin-bottom: rem-convert(20px);
+          margin-bottom: rem.convert(20px);
         }
       }
     }
@@ -63,25 +63,25 @@
   &__links-column {
     display: flex;
     flex-direction: column;
-    gap: rem-convert(14px);
+    gap: rem.convert(14px);
   }
 
   &__link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 500;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $gray;
+    color: var(--gray);
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $primary-dark;
+      color: $black;
     }
 
     &-arrow {
-      width: rem-convert(13.5px);
-      height: rem-convert(13.5px);
+      width: rem.convert(13.5px);
+      height: rem.convert(13.5px);
     }
   }
 
@@ -89,82 +89,82 @@
     &-info {
       display: flex;
       flex-direction: column;
-      gap: rem-convert(12px);
+      gap: rem.convert(12px);
     }
 
     &-item {
-      gap: rem-convert(20px);
+      gap: rem.convert(20px);
     }
 
     &-icon {
-      width: rem-convert(24px);
-      height: rem-convert(24px);
+      width: rem.convert(24px);
+      height: rem.convert(24px);
     }
   }
 
   &__address {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-style: normal;
     font-weight: 500;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $text-muted;
+    color: $black;
   }
 
   &__phone {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 500;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $text-muted;
+    color: $black;
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $primary-dark;
+      color: $black;
     }
   }
 
   &__newsletter {
     &-title {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
       font-weight: 700;
-      font-size: rem-convert(32px);
+      font-size: rem.convert(32px);
       line-height: 1.3;
-      color: $primary-dark;
-      margin-bottom: rem-convert(13px);
+      color: $black;
+      margin-bottom: rem.convert(13px);
     }
 
     &-text {
-      font-family: 'Inter', sans-serif;
+      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
       font-weight: 400;
-      font-size: rem-convert(14px);
+      font-size: rem.convert(14px);
       line-height: 1.21;
-      color: $gray;
-      margin-bottom: rem-convert(20px);
+      color: var(--gray);
+      margin-bottom: rem.convert(20px);
     }
   }
 
   &__form {
     &-group {
-      gap: rem-convert(40px);
+      gap: rem.convert(40px);
 
       @include media-breakpoint-down(sm) {
         flex-direction: column !important;
-        gap: rem-convert(20px);
+        gap: rem.convert(20px);
       }
     }
   }
 
   &__input {
-    min-width: rem-convert(348px);
-    padding: rem-convert(12px);
-    font-family: 'Inter', sans-serif;
-    font-size: rem-convert(14px);
+    min-width: rem.convert(348px);
+    padding: rem.convert(12px);
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-size: rem.convert(14px);
     line-height: 1.43;
-    color: $text-muted;
+    color: $black;
     border: none;
-    border-bottom: rem-convert(1px) solid $primary-dark;
+    border-bottom: rem.convert(1px) solid $black;
     background: transparent;
     border-radius: 0;
 
@@ -176,34 +176,34 @@
     &:focus {
       outline: none;
       box-shadow: none;
-      border-color: $primary;
+      border-color: $black;
     }
 
     &::placeholder {
-      color: $text-muted;
+      color: $black;
     }
   }
 
   &__submit {
-    padding: rem-convert(18px 40px);
-    background-color: $primary-dark;
+    padding: rem.convert(18px 40px);
+    background-color: $black;
     border: none;
-    border-radius: rem-convert(12px);
-    font-family: 'Inter', sans-serif;
+    border-radius: rem.convert(12px);
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(20px);
+    font-size: rem.convert(20px);
     line-height: 1.3;
-    color: $white;
+    color: var(--white);
     transition: background-color 0.3s ease;
     white-space: nowrap;
 
     &:hover {
-      background-color: darken($primary-dark, 5%);
+      background-color: darken($black, 5%);
     }
 
     &-arrow {
-      width: rem-convert(16px);
-      height: rem-convert(16px);
+      width: rem.convert(16px);
+      height: rem.convert(16px);
     }
 
     @include media-breakpoint-down(sm) {
@@ -219,7 +219,7 @@
     }
 
     &-links {
-      gap: rem-convert(16px);
+      gap: rem.convert(16px);
 
       @include media-breakpoint-down(xl) {
         justify-content: center;
@@ -227,83 +227,83 @@
     }
 
     &-link {
-      width: rem-convert(24px);
-      height: rem-convert(24px);
-      background-color: $primary-dark;
-      border-radius: rem-convert(4px);
+      width: rem.convert(24px);
+      height: rem.convert(24px);
+      background-color: $black;
+      border-radius: rem.convert(4px);
       transition: background-color 0.3s ease;
 
       &:hover {
-        background-color: darken($primary-dark, 5%);
+        background-color: darken($black, 5%);
       }
 
       img {
-        width: rem-convert(16px);
-        height: rem-convert(16px);
+        width: rem.convert(16px);
+        height: rem.convert(16px);
       }
     }
   }
 
   &__bottom {
-    background-color: $primary-dark;
-    padding: rem-convert(14px 0);
+    background-color: $black;
+    padding: rem.convert(14px 0);
 
     &-container {
       @include media-breakpoint-down(md) {
         flex-direction: column;
-        gap: rem-convert(10px);
+        gap: rem.convert(10px);
         text-align: center;
       }
     }
   }
 
   &__copyright {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     line-height: 1.75;
-    color: $white;
+    color: var(--white);
   }
 
   &__privacy-link {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $white;
+    color: var(--white);
     text-decoration: none;
     transition: opacity 0.3s ease;
 
     &:hover {
       opacity: 0.9;
-      color: $white;
+      color: var(--white);
     }
   }
 
   // Form validation styles
   &__form-error,
   &__form-success {
-    margin-top: rem-convert(8px);
-    padding: rem-convert(8px);
-    border-radius: rem-convert(4px);
-    font-size: rem-convert(14px);
+    margin-top: rem.convert(8px);
+    padding: rem.convert(8px);
+    border-radius: rem.convert(4px);
+    font-size: rem.convert(14px);
   }
 
   &__form-error {
-    background-color: rgba($danger, 0.1);
-    color: $danger;
+    background-color: var(--danger-10);
+    color: var(--danger);
   }
 
   &__form-success {
-    background-color: rgba($success, 0.1);
-    color: $success;
+    background-color: var(--success-10);
+    color: var(--success);
   }
 
   // Loading state
   &__submit-spinner {
-    width: rem-convert(20px);
-    height: rem-convert(20px);
-    border: rem-convert(2px) solid $white;
+    width: rem.convert(20px);
+    height: rem.convert(20px);
+    border: rem.convert(2px) solid var(--white);
     border-top-color: transparent;
     border-radius: 50%;
     animation: spinner 0.8s linear infinite;

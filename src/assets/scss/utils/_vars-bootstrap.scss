@@ -9,9 +9,9 @@ $grid-columns: 12;
 $grid-gutter-width: rem-calc(32);
 
 // Custom variables (which Bootstrap won't override)
-$font-family-body: "DIN OT", sans-serif;
-$font-family-headings: $font-family-body;
-$font-family-headings-secondary: $font-family-body;
+$font-family-body: 'Segoe UI', Arial, sans-serif;
+$font-family-headings: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+$font-family-headings-secondary: $font-family-headings;
 
 // Bootstrap variables
 $font-family-base: $font-family-body !default;

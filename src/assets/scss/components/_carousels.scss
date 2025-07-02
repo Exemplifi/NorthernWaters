@@ -2,85 +2,85 @@
 .carousel--v1 {
   .carousel-v1__header {
     text-align: left;
-    margin-bottom: rem-convert(32px);
+    margin-bottom: rem.convert(32px);
   }
   .carousel-v1__title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(32px);
-    color: $primary-dark;
-    margin-bottom: rem-convert(8px);
+    font-size: rem.convert(32px);
+    color: var(--black);
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v1__desc {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    font-size: rem-convert(16px);
-    color: $gray;
+    font-size: rem.convert(16px);
+    color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v1__card {
-    background: $white;
-    border-radius: rem-convert(24px);
-    box-shadow: 0 rem-convert(4px) rem-convert(24px) rgba($primary-dark,0.08);
+    background: var(--white);
+    border-radius: rem.convert(24px);
+    box-shadow: 0 rem.convert(4px) rem.convert(24px) rgba(var(--black),0.08);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: rem-convert(1px) solid $avatar-border;
+    border: rem.convert(1px) solid var(--black);
   }
   .carousel-v1__img-bg {
-    background: $card-img-bg;
-    border-top-left-radius: rem-convert(24px);
-    border-top-right-radius: rem-convert(24px);
+    background: var(--light-blue);
+    border-top-left-radius: rem.convert(24px);
+    border-top-right-radius: rem.convert(24px);
     overflow: hidden;
   }
   .carousel-v1__img {
     width: 100%;
-    height: rem-convert(180px);
+    height: rem.convert(180px);
     object-fit: cover;
-    border-top-left-radius: rem-convert(24px);
-    border-top-right-radius: rem-convert(24px);
+    border-top-left-radius: rem.convert(24px);
+    border-top-right-radius: rem.convert(24px);
   }
   .carousel-v1__body {
-    padding: rem-convert(24px);
+    padding: rem.convert(24px);
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: rem-convert(16px);
+    gap: rem.convert(16px);
   }
   .carousel-v1__card-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(24px);
-    color: $primary-dark;
+    font-size: rem.convert(24px);
+    color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v1__card-desc {
-    font-size: rem-convert(16px);
-    color: $text-gray;
+    font-size: rem.convert(16px);
+    color: var(--black);
     font-weight: 400;
     margin-bottom: 0;
   }
   .carousel-v1__stats {
     list-style: disc inside;
-    color: $gray;
-    font-size: rem-convert(15px);
-    margin: 0 0 rem-convert(8px) 0;
-    padding-left: rem-convert(16px);
+    color: var(--gray);
+    font-size: rem.convert(15px);
+    margin: 0 0 rem.convert(8px) 0;
+    padding-left: rem.convert(16px);
   }
   .carousel-v1__btn {
     display: flex;
     align-items: center;
-    gap: rem-convert(8px);
+    gap: rem.convert(8px);
     background: none;
     border: none;
-    color: $button-blue;
-    font-family: 'Inter', sans-serif;
+    color: var(--text-blue);
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(16px);
+    font-size: rem.convert(16px);
     cursor: pointer;
     padding: 0;
-    margin-top: rem-convert(8px);
+    margin-top: rem.convert(8px);
     text-align: left;
   }
   .carousel-v1__btn-icon {
@@ -91,131 +91,131 @@
 
 // Carousel - v2 (Modern Cards)
 .carousel--v2 {
-  background: $light-bg-blue;
+  background: var(--light-blue);
   .carousel-v2__header {
     text-align: left;
-    margin-bottom: rem-convert(32px);
+    margin-bottom: rem.convert(32px);
   }
   .carousel-v2__title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(28px);
-    color: $dark-blue-text;
-    margin-bottom: rem-convert(8px);
+    font-size: rem.convert(28px);
+    color: $blue;
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v2__desc {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    font-size: rem-convert(16px);
-    color: $gray;
+    font-size: rem.convert(16px);
+    color: var(--black);
     margin-bottom: 0;
   }
   .carousel-v2__card {
-    background: $white;
-    border-radius: rem-convert(20px);
-    box-shadow: 0 rem-convert(2px) rem-convert(12px) rgba($primary-dark,0.06);
+    background: var(--white);
+    border-radius: rem.convert(20px);
+    box-shadow: 0 rem.convert(2px) rem.convert(12px) rgba(var(--black),0.06);
     overflow: hidden;
     display: flex;
     flex-direction: column;
     height: 100%;
-    border: rem-convert(1px) solid $icon-bg;
+    border: rem.convert(1px) solid var(--black);
   }
   .carousel-v2__img {
     width: 100%;
-    height: rem-convert(160px);
+    height: rem.convert(160px);
     object-fit: cover;
-    border-top-left-radius: rem-convert(20px);
-    border-top-right-radius: rem-convert(20px);
+    border-top-left-radius: rem.convert(20px);
+    border-top-right-radius: rem.convert(20px);
   }
   .carousel-v2__body {
-    padding: rem-convert(20px);
+    padding: rem.convert(20px);
     flex: 1;
     display: flex;
     flex-direction: column;
-    gap: rem-convert(12px);
+    gap: rem.convert(12px);
   }
   .carousel-v2__card-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    font-size: rem-convert(20px);
-    color: $dark-blue-text;
+    font-size: rem.convert(20px);
+    color: $black;
     margin-bottom: 0;
   }
   .carousel-v2__card-desc {
-    font-size: rem-convert(15px);
-    color: $gray;
+    font-size: rem.convert(15px);
+    color: var(--gray);
     font-weight: 400;
     margin-bottom: 0;
   }
   .carousel-v2__link {
-    color: $button-blue;
+    color: $light-blue;
     font-weight: 600;
     text-decoration: none;
     margin-top: auto;
     transition: color 0.2s;
-    font-size: rem-convert(15px);
+    font-size: rem.convert(15px);
   }
-  .carousel-v2__link:hover { color: $dark-blue-text; }
+  .carousel-v2__link:hover { color: $blue; }
 }
 
 // Carousel - v3 (Image Overlay)
 .carousel--v3 {
   .carousel-v3__header {
     text-align: left;
-    margin-bottom: rem-convert(32px);
+    margin-bottom: rem.convert(32px);
   }
   .carousel-v3__title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(28px);
-    color: $dark-blue-text;
-    margin-bottom: rem-convert(8px);
+    font-size: rem.convert(28px);
+    color: $blue;
+    margin-bottom: rem.convert(8px);
   }
   .carousel-v3__desc {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    font-size: rem-convert(16px);
-    color: $gray;
+    font-size: rem.convert(16px);
+    color: var(--gray);
     margin-bottom: 0;
   }
   .carousel-v3__card {
     background: none;
-    border-radius: rem-convert(20px);
+    border-radius: rem.convert(20px);
     overflow: hidden;
-    box-shadow: 0 rem-convert(2px) rem-convert(12px) rgba($primary-dark,0.06);
+    box-shadow: 0 rem.convert(2px) rem.convert(12px) rgba($black,0.06);
     position: relative;
   }
   .carousel-v3__img-wrapper {
     position: relative;
-    border-radius: rem-convert(20px);
+    border-radius: rem.convert(20px);
     overflow: hidden;
   }
   .carousel-v3__img {
     width: 100%;
-    height: rem-convert(250px);
+    height: rem.convert(250px);
     object-fit: cover;
-    border-radius: rem-convert(20px);
+    border-radius: rem.convert(20px);
     display: block;
   }
   .carousel-v3__overlay {
     position: absolute;
     left: 0; right: 0; bottom: 0;
-    background: linear-gradient(180deg, rgba($primary-dark,0.0) 0%, rgba($primary-dark,0.7) 100%);
+    background: linear-gradient(180deg, rgba($black,0.0) 0%, rgba($black,0.7) 100%);
     color: $white;
-    padding: rem-convert(24px) rem-convert(16px) rem-convert(16px) rem-convert(16px);
-    border-bottom-left-radius: rem-convert(20px);
-    border-bottom-right-radius: rem-convert(20px);
+    padding: rem.convert(24px) rem.convert(16px) rem.convert(16px) rem.convert(16px);
+    border-bottom-left-radius: rem.convert(20px);
+    border-bottom-right-radius: rem.convert(20px);
   }
   .carousel-v3__overlay-title {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 700;
-    font-size: rem-convert(20px);
-    margin-bottom: rem-convert(4px);
-    color: $white;
+    font-size: rem.convert(20px);
+    margin-bottom: rem.convert(4px);
+    color: var(--white);
   }
   .carousel-v3__overlay-desc {
-    font-size: rem-convert(15px);
-    color: $white;
+    font-size: rem.convert(15px);
+    color: var(--white);
     font-weight: 400;
     margin-bottom: 0;
   }
@@ -223,14 +223,14 @@
 
 // Responsive tweaks
 @media (max-width: 991px) {
-  .carousel-v1__img, .carousel-v2__img, .carousel-v3__img { height: rem-convert(120px); }
-  .carousel-v1__body, .carousel-v2__body { padding: rem-convert(12px); }
-  .carousel-v3__overlay { padding: rem-convert(16px) rem-convert(8px) rem-convert(8px) rem-convert(8px); }
+  .carousel-v1__img, .carousel-v2__img, .carousel-v3__img { height: rem.convert(120px); }
+  .carousel-v1__body, .carousel-v2__body { padding: rem.convert(12px); }
+  .carousel-v3__overlay { padding: rem.convert(16px) rem.convert(8px) rem.convert(8px) rem.convert(8px); }
 }
 @media (max-width: 600px) {
-  .carousel-v1__title, .carousel-v2__title, .carousel-v3__title { font-size: rem-convert(18px); }
-  .carousel-v1__card-title, .carousel-v2__card-title, .carousel-v3__overlay-title { font-size: rem-convert(14px); }
-  .carousel-v1__desc, .carousel-v2__desc, .carousel-v3__desc, .carousel-v1__card-desc, .carousel-v2__card-desc, .carousel-v3__overlay-desc { font-size: rem-convert(12px); }
-  .carousel-v1__img, .carousel-v2__img, .carousel-v3__img { height: rem-convert(80px); }
+  .carousel-v1__title, .carousel-v2__title, .carousel-v3__title { font-size: rem.convert(18px); }
+  .carousel-v1__card-title, .carousel-v2__card-title, .carousel-v3__overlay-title { font-size: rem.convert(14px); }
+  .carousel-v1__desc, .carousel-v2__desc, .carousel-v3__desc, .carousel-v1__card-desc, .carousel-v2__card-desc, .carousel-v3__overlay-desc { font-size: rem.convert(12px); }
+  .carousel-v1__img, .carousel-v2__img, .carousel-v3__img { height: rem.convert(80px); }
 }
 

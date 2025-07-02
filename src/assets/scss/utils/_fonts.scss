@@ -1,43 +1,93 @@
 $font-base-url: "../../fonts";
 
+// Sculpin Font Faces
 @font-face {
-  font-family: "Segoe UI Regular";
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-Black.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-Black.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-Black.ttf') format('truetype');
+  font-weight: 900;
   font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/Segoe-UI.woff") format("woff");
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-BlackItalic.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-BlackItalic.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-BlackItalic.ttf') format('truetype');
+  font-weight: 900;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-Bold.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-Bold.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-BoldItalic.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-BoldItalic.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-BoldItalic.ttf') format('truetype');
+  font-weight: 700;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-Medium.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-Medium.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-Medium.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-MediumItalic.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-MediumItalic.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-MediumItalic.ttf') format('truetype');
+  font-weight: 500;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-Regular.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-Regular.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-Regular.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-RegularItalic.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-RegularItalic.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-RegularItalic.ttf') format('truetype');
+  font-weight: 400;
+  font-style: italic;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-Light.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-Light.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-Light.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+}
+@font-face {
+  font-family: 'Sculpin';
+  src: url('#{$font-base-url}/Sculpin-LightItalic.woff2') format('woff2'),
+       url('#{$font-base-url}/Sculpin-LightItalic.woff') format('woff'),
+       url('#{$font-base-url}/Sculpin-LightItalic.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
 }
 
+// Segoe UI Font Faces
 @font-face {
-  font-family: "Segoe UI Italic";
+  font-family: 'Segoe UI';
+  src: url('#{$font-base-url}/SegoeUI.woff2') format('woff2'),
+       url('#{$font-base-url}/SegoeUI.woff') format('woff'),
+       url('#{$font-base-url}/fonnts.com-Segoe-UI.ttf') format('truetype');
+  font-weight: 400;
   font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/Segoe-UI-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Segoe UI Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/Segoe-UI-Bold.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Segoe UI Bold Italic";
-  font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/Segoe-UI-Bold-Italic.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Gowun Batang Regular";
-  font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/GowunBatang-Regular.woff") format("woff");
-}
-
-@font-face {
-  font-family: "Gowun Batang Bold";
-  font-style: normal;
-  font-weight: normal;
-  src: url("#{$font-base-url}/GowunBatang-Bold.woff") format("woff");
 }
