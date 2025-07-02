@@ -3,44 +3,11 @@ body {
   margin: 0;
   font-family: var(--body-font-family);
   font-optical-sizing: auto;
-  font-size: rem.convert(16px);
-  color: var(--dark-grey);
+  font-size: 1rem;
+  color: var(--black);
   line-height: 1.5;
   letter-spacing: 0;
-}
-
-.display-1,
-.display-2,
-.dynamic,
-h1,
-.h1,
-h2,
-.h2,
-h3,
-.h3 {
-  font-weight: $condensed-black;
-  text-transform: uppercase;
-}
-
-.display-1 {
-  font-size: 224px;
-  line-height: 0.9em;
-  letter-spacing: -0.03em;
-  text-transform: uppercase;
-}
-.display-2 {
-  font-size: 4.5rem;
-  line-height: 1.05em;
-  letter-spacing: -0.02em;
-  text-transform: uppercase;
-  @include media-breakpoint-down(lg) {
-    font-size: 2.5rem;
-  }
-}
-
-.dynamic {
-  line-height: 1em;
-  letter-spacing: -0.02em;
+  font-weight: $regular;
 }
 
 h1,
@@ -55,22 +22,25 @@ h5,
 .h5,
 h6,
 .h6 {
-  margin-bottom: rem.convert(24px);
-  margin-top: rem.convert(24px);
+  font-family: var(--heading-font-family);
+  text-transform: uppercase;
+  font-weight: $extra-bold;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
   @include media-breakpoint-down(md) {
-    margin-bottom: rem.convert(16px);
-    margin-top: rem.convert(16px);
+    margin-bottom: 1rem;
+    margin-top: 1rem;
   }
   &:first-child {
     margin-top: 0;
   }
   &:not(:first-child):not(:last-child) {
-    margin-top: rem.convert(24px);
+    margin-top: 1.5rem;
   }
 }
 h1,
 .h1 {
-  font-size: 4rem;
+  font-size: 5rem;
   line-height: 1.1em;
   letter-spacing: -0.02em;
   @include media-breakpoint-down(lg) {
@@ -88,60 +58,75 @@ h2,
 }
 h3,
 .h3 {
-  font-size: 2rem;
+  font-size: 3rem;
   line-height: 1.1em;
   letter-spacing: -0.02em;
   @include media-breakpoint-down(lg) {
-    font-size: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 0;
   }
 }
 h4,
 .h4 {
+  font-size: 2rem;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.5rem;
+  }
+}
+h5,
+.h5 {
   font-size: 1.5rem;
   line-height: 1.5em;
-  font-weight: $bold;
+  letter-spacing: 0;
   @include media-breakpoint-down(lg) {
     font-size: 1.25rem;
   }
 }
-
-.body-1,
-.body-2,
-.body-3 {
+h6,
+.h6 {
+  font-size: 1.25rem;
   line-height: 1.5em;
-  font-weight: $medium;
+  letter-spacing: 0;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.125rem;
+  }
 }
-.body-1 {
+
+.body-lg,
+.body-regular,
+.body-regular-italic {
+  line-height: 1.5em;
+  font-weight: $regular;
+  letter-spacing: 0;
+}
+.body-lg {
   font-size: 1.25rem;
   @include media-breakpoint-down(lg) {
     font-size: 1.125rem;
   }
 }
-.body-3 {
-  font-size: 0.875rem;
+.body-regular,
+.body-regular-italic {
+  font-size: 1rem;
+}
+.body-regular-italic {
+  font-style: italic;
 }
 
 .label {
   font-size: 0.875rem;
-  line-height: 1.2em;
-  font-weight: $bold;
-  letter-spacing: 0.1em;
+  line-height: 1.5em;
+  font-weight: $semibold;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
 }
-.sub-text-large {
-  @include media-breakpoint-up(xl) {
-    padding-left: 48px;
-    & + div {
-      padding-right: 48px;
-    }
-  }
-  p {
-    color: var(--dark-grey);
-    line-height: 1.5em;
-    font-weight: $medium;
-    font-size: rem.convert(20px);
-    @include media-breakpoint-down(lg) {
-      font-size: rem.convert(18px);
-    }
-  }
+button,
+.button {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: $medium;
+  letter-spacing: 0;
 }
+

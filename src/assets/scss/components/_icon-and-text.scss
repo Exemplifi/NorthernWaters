@@ -40,9 +40,9 @@
   }
 
   .icon-text-wrapper {
-    background-color: var(--light-bg-blue);
-    border-radius: rem.convert(24px);
-    padding: rem.convert(32px);
+    background-color: $light-blue;
+    border-radius: rem-convert(24px);
+    padding: rem-convert(32px);
 
     @include media-breakpoint-down(md) {
       padding: rem.convert(24px); // Reduce padding on tablet
@@ -82,8 +82,8 @@
       }
 
       .date {
-        font-family: "Inter", sans-serif;
-        font-size: rem.convert(32px);
+        font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+        font-size: rem-convert(32px);
         font-weight: 600;
         line-height: 130%;
         letter-spacing: 0.03em;
@@ -105,10 +105,10 @@
   }
 
   .icon-text-content {
-    background: var(--white);
-    border: rem.convert(1px) solid var(--border-blue);
-    border-radius: rem.convert(12px);
-    padding: rem.convert(12px);
+    background: $white;
+    border: rem-convert(1px) solid $light-blue;
+    border-radius: rem-convert(12px);
+    padding: rem-convert(12px);
 
     @include media-breakpoint-down(md) {
       padding: rem.convert(10px); // Slightly reduce padding on tablet
@@ -151,11 +151,11 @@
         }
 
         .event-title {
-          font-family: "Inter", sans-serif;
-          font-size: rem.convert(16px);
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+          font-size: rem-convert(16px);
           font-weight: 700;
           line-height: 137.5%;
-          color: var(--primary-dark);
+          color: $black;
           margin: 0;
 
           @include media-breakpoint-down(sm) {
@@ -175,11 +175,11 @@
         }
 
         span {
-          font-family: "Inter", sans-serif;
-          font-size: rem.convert(16px);
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+          font-size: rem-convert(16px);
           font-weight: 600;
           line-height: 130%;
-          color: var(--primary-dark);
+          color: $black;
 
           @include media-breakpoint-down(sm) {
             font-size: rem.convert(14px); // Reduce font size on mobile
@@ -187,9 +187,9 @@
         }
 
         .arrow-circle {
-          width: rem.convert(32px);
-          height: rem.convert(32px);
-          background: var(--button-blue);
+          width: rem-convert(32px);
+          height: rem-convert(32px);
+          background: $light-blue;
           border-radius: 50%;
           display: flex;
           align-items: center;
@@ -252,8 +252,8 @@
 
         .time,
         .type {
-          font-family: "Inter", sans-serif;
-          font-size: rem.convert(16px);
+          font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+          font-size: rem-convert(16px);
           font-weight: 500;
           line-height: 137.5%;
           color: var(--gray);
@@ -265,9 +265,9 @@
       }
 
       .divider {
-        width: rem.convert(1px);
-        height: rem.convert(32px);
-        background-color: var(--divider-gray);
+        width: rem-convert(1px);
+        height: rem-convert(32px);
+        background-color: $black;
 
         @include media-breakpoint-down(sm) {
           display: none; // Hide divider on mobile when stacked
@@ -291,8 +291,8 @@
     .content-description p,
     .content-location,
     .content-location p {
-      font-family: "Inter", sans-serif;
-      font-size: rem.convert(16px);
+      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+      font-size: rem-convert(16px);
       font-weight: 500;
       line-height: rem.convert(22px);
       color: var(--gray);
@@ -336,8 +336,8 @@
         justify-content: center;
       }
       .map-link {
-        font-family: "Inter", sans-serif;
-        font-size: rem.convert(16px);
+        font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+        font-size: rem-convert(16px);
         font-weight: 500;
         line-height: rem.convert(22px);
         color: var(--light-blue);
@@ -351,7 +351,7 @@
   .view-more {
     &:hover {
       .arrow-circle {
-        background: darken($button-blue, 10%) !important;
+        background: darken($light-blue, 10%);
       }
       span {
         color: var(--blue);

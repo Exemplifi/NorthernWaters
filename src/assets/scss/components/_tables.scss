@@ -16,24 +16,24 @@
   min-height: 100%;
 }
 .clarity-table-card__header {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: 1rem;
-  @include rem.convert(padding, 20px);
-  background: var(--table-header-blue);
-  color: var(--white);
-  @include rem.convert(border-radius, 12px 12px 0 0);
+  @include rem-convert(padding, 20px);
+  background: $light-blue;
+  color: $white;
+  @include rem-convert(border-radius, 12px 12px 0 0);
 }
 .clarity-table-card--avg .clarity-table-card__header {
-  background: var(--light-bg-blue);
-  color: var(--black);
+  background: $light-blue;
+  color: $black;
 }
 .clarity-table-card--min .clarity-table-card__header {
-  background: var(--table-light-blue);
-  color: var(--black);
+  background: $light-blue;
+  color: $black;
 }
 .clarity-table-card__row {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-size: 1rem;
   color: var(--black);
   @include rem.convert(padding, 20px 54px);
@@ -41,12 +41,12 @@
   background: var(--white);
 }
 .clarity-table-card--avg .clarity-table-card__row {
-  border-top: rem.convert(1px) solid var(--table-header-blue);
-  background: var(--light-bg-blue);
+  border-top: rem-convert(1px) solid $light-blue;
+  background: $light-blue;
 }
 .clarity-table-card--min .clarity-table-card__row {
-  border-top: rem.convert(1px) solid var(--table-header-blue);
-  background: var(--table-light-blue);
+  border-top: rem-convert(1px) solid $light-blue;
+  background: $light-blue;
 }
 @media (max-width: 991px) {
   .clarity-table-card {

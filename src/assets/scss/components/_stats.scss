@@ -1,14 +1,14 @@
 // Stats - v1
 
 .stats--v1 {
-  background: var(--primary-dark);
-  border-radius: rem.convert(32px);
-  padding: rem.convert(104px) 0;
+  background: $black;
+  border-radius: rem-convert(32px);
+  padding: rem-convert(104px) 0;
 }
 
 .stats__title {
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
+  color: $white;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 700;
   font-size: rem.convert(48px);
   line-height: 1.21;
@@ -16,8 +16,8 @@
 }
 
 .stats__subtitle {
-  color: var(--card-light-blue);
-  font-family: 'Inter', sans-serif;
+  color: $light-blue;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   font-size: rem.convert(16px);
   line-height: 1.21;
@@ -25,10 +25,6 @@
 }
 
 .stats__row {
-  margin-left: 0;
-  margin-right: 0;
-}
-
 .stats__block {
   background: transparent;
   border-radius: rem.convert(24px);
@@ -42,8 +38,8 @@
 }
 
 .stats__number {
-  color: var(--white);
-  font-family: 'Inter', sans-serif;
+  color: $white;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   font-size: rem.convert(32px);
   line-height: 1.21;
@@ -53,12 +49,12 @@
 .stats__unit {
   font-size: rem.convert(20px);
   font-weight: 400;
-  margin-left: rem.convert(4px);
+  margin-left: rem-convert(4px);
 }
 
 .stats__desc {
-  color: var(--card-light-blue);
-  font-family: 'Inter', sans-serif;
+  color: $light-blue;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 400;
   font-size: rem.convert(18px);
   line-height: 1.21;
@@ -107,9 +103,9 @@
     top: 50%;
     right: 0;
     transform: translateY(-50%);
-    width: rem.convert(1px);
-    height: rem.convert(80px);
-    background: var(--border-blue);
+    width: rem-convert(1px);
+    height: rem-convert(80px);
+    background: $light-blue;
     z-index: 2;
   }
 }

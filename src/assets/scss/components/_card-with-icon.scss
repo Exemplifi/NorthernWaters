@@ -28,22 +28,22 @@
 
     // Color Variants
     &--blue {
-        background-color: var(--card-light-blue);
-        color: var(--gray);
+        background-color: var(--light-blue);
+        color: var(--black);
     }
 
     &--navy {
-        background-color: var(--gray);
+        background-color: var(--black);
         color: var(--white);
     }
 
     &--light-blue {
-        background-color: var(--card-lighter-blue);
-        color: var(--gray);
+        background-color: var(--light-blue);
+        color: var(--black);
     }
 
     &--dark-blue {
-        background-color: var(--card-dark-blue);
+        background-color: var(--dark-blue);
         color: var(--white);
     }
 

@@ -11,10 +11,10 @@
 }
 
 .accordion__item {
-  background: var(--light-bg-blue);
-  border-radius: rem.convert(8px);
-  padding: rem.convert(20px 40px);
-  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49, 68, 89, 0.04);
+  background: var(--light-blue);
+  border-radius: rem-convert(8px);
+  padding: rem-convert(20px 40px);
+  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49, 68, 89, 0.04);
   transition: box-shadow 0.2s;
 }
 
@@ -28,7 +28,7 @@
 }
 
 .accordion__question {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-weight: 600;
   font-size: rem.convert(20px);
   line-height: 1.21;

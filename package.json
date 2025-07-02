@@ -9,7 +9,10 @@
     "preview": "vite preview",
     "sass:watch": "sass --watch --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/dist/main.css",
     "build:js": "vite build --config vite.config.js --mode production",
-    "build:all": "sass --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/dist/main.css && vite build --config vite.config.js --mode production"
+    "build:all": "sass --style=compressed --load-path=node_modules src/assets/scss/styles.scss src/assets/dist/main.css && vite build --config vite.config.js --mode production",
+    "figma:mcp": "figma-developer-mcp --stdio",
+    "figma:mcp:http": "figma-developer-mcp",
+    "figma:test": "node test-figma-mcp.js"
   },
   "devDependencies": {
     "figma-developer-mcp": "^0.4.3",
