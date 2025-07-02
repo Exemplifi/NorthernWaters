@@ -3,20 +3,20 @@
 
 .header {
   position: relative;
-  background-color: $gray;
+  background-color: var(--gray);
     @include media-breakpoint-up(lg) {
-        @include rem-convert(padding, 5px 0);
+        @include rem.convert(padding, 5px 0);
     }
   // Navbar Base Styles
   .navbar {
     padding: 0;
-    @include rem-convert(min-height, 56px);
+    @include rem.convert(min-height, 56px);
   }
 
   // Logo
   &__logo {
     display: block;
-    @include rem-convert((width, height), 149px, 56px);
+    @include rem.convert((width, height), 149px, 56px);
 
     img {
       width: 100%;
@@ -31,7 +31,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include rem-convert(margin-left, 21px);
+      @include rem.convert(margin-left, 21px);
     }
   }
 
@@ -39,7 +39,7 @@
   &__menu {
     @include media-breakpoint-up(lg) {
       display: flex;
-      @include rem-convert(gap, 16px);
+      @include rem.convert(gap, 16px);
       margin-right: auto;
     }
   }
@@ -56,13 +56,13 @@
     @include rem-convert(column-gap, 16px);
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 500;
-    @include rem-convert(font-size, 16px);
+    @include rem.convert(font-size, 16px);
     line-height: 1.2;
-    color: $white !important;
-    @include rem-convert(padding, 8px 0);
+    color: var(--white) !important;
+    @include rem.convert(padding, 8px 0);
 
     @include media-breakpoint-up(lg) {
-      @include rem-convert(padding, 16px 0);
+      @include rem.convert(padding, 16px 0);
     }
     @include media-breakpoint-down(lg) {
         justify-content: space-between;
@@ -81,7 +81,7 @@
 
   // Menu Icon (chevron)
   &__menu-icon {
-    @include rem-convert((width, height), 12px, 6px);
+    @include rem.convert((width, height), 12px, 6px);
     transition: transform 0.3s ease;
 
     &.rotated {
@@ -97,9 +97,9 @@
   &__submenu {
     background-color: $black;
     border: none;
-    @include rem-convert(border-radius, 8px);
-    @include rem-convert(padding, 8px 0);
-    @include rem-convert(min-width, 200px);
+    @include rem.convert(border-radius, 8px);
+    @include rem.convert(padding, 8px 0);
+    @include rem.convert(min-width, 200px);
 
     @include media-breakpoint-down(lg) {
       border-radius: 0;
@@ -112,10 +112,10 @@
   &__submenu-link {
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 400;
-    @include rem-convert(font-size, 14px);
+    @include rem.convert(font-size, 14px);
     line-height: 1.2;
-    color: $white;
-    @include rem-convert(padding, 8px 16px);
+    color: var(--white);
+    @include rem.convert(padding, 8px 16px);
 
     &:hover,
     &:focus {
@@ -128,8 +128,8 @@
   &__actions {
     display: flex;
     align-items: center;
-    @include rem-convert(gap, 24px);
-    @include rem-convert(margin-top, 16px);
+    @include rem.convert(gap, 24px);
+    @include rem.convert(margin-top, 16px);
 
     @include media-breakpoint-up(lg) {
       margin-top: 0;
@@ -144,7 +144,7 @@
     background: none;
     border: none;
     padding: 0;
-    @include rem-convert((width, height), 28px, 28px);
+    @include rem.convert((width, height), 28px, 28px);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -157,7 +157,7 @@
     }
 
     img {
-      @include rem-convert((width, height), 18.67px, 18.67px);
+      @include rem.convert((width, height), 18.67px, 18.67px);
     }
   }
 
@@ -171,7 +171,7 @@
     @include rem-convert(padding, 12px 24px);
     font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
     font-weight: 600;
-    @include rem-convert(font-size, 16px);
+    @include rem.convert(font-size, 16px);
     line-height: 1.2;
     color: $black;
     text-decoration: none;
@@ -183,7 +183,7 @@
     }
 
     img {
-      @include rem-convert((width, height), 16px, 16px);
+      @include rem.convert((width, height), 16px, 16px);
     }
   }
 
@@ -191,7 +191,7 @@
   &__toggle {
     padding: 0;
     border: none;
-    @include rem-convert((width, height), 32px, 32px);
+    @include rem.convert((width, height), 32px, 32px);
     transition: all 0.3s ease;
 
     @include media-breakpoint-up(lg) {
@@ -224,7 +224,7 @@
   @include media-breakpoint-down(lg) {
     .navbar-collapse {
       position: fixed;
-      @include rem-convert(top, 56px);
+      @include rem.convert(top, 56px);
       left: 0;
       right: 0;
       bottom: 0;

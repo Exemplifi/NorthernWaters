@@ -3,10 +3,10 @@
 // Utility class for screen reader only content
 .sr-only {
   position: absolute;
-  width: rem-convert(1px);
-  height: rem-convert(1px);
+  width: rem.convert(1px);
+  height: rem.convert(1px);
   padding: 0;
-  margin: rem-convert(-1px);
+  margin: rem.convert(-1px);
   overflow: hidden;
   clip: rect(0, 0, 0, 0);
   white-space: nowrap;
@@ -18,24 +18,24 @@
   width: 100%;
 
   .icon-text-container {
-    max-width: rem-convert(1200px);
+    max-width: rem.convert(1200px);
     margin: 0 auto;
 
     @include media-breakpoint-down(xl) {
-      max-width: rem-convert(960px); // Adjust container width for xl devices
+      max-width: rem.convert(960px); // Adjust container width for xl devices
     }
 
     @include media-breakpoint-down(lg) {
-      max-width: rem-convert(720px); // Adjust container width for lg devices
+      max-width: rem.convert(720px); // Adjust container width for lg devices
     }
 
     @include media-breakpoint-down(md) {
-      max-width: rem-convert(540px); // Adjust container width for md devices
+      max-width: rem.convert(540px); // Adjust container width for md devices
     }
 
     @include media-breakpoint-down(sm) {
       max-width: 100%; // Full width for mobile
-      padding: 0 rem-convert(16px); // Add some padding on mobile
+      padding: 0 rem.convert(16px); // Add some padding on mobile
     }
   }
 
@@ -45,39 +45,39 @@
     padding: rem-convert(32px);
 
     @include media-breakpoint-down(md) {
-      padding: rem-convert(24px); // Reduce padding on tablet
-      border-radius: rem-convert(16px); // Slightly reduce border radius
+      padding: rem.convert(24px); // Reduce padding on tablet
+      border-radius: rem.convert(16px); // Slightly reduce border radius
     }
 
     @include media-breakpoint-down(sm) {
-      padding: rem-convert(16px); // Further reduce padding on mobile
-      border-radius: rem-convert(12px); // Further reduce border radius
+      padding: rem.convert(16px); // Further reduce padding on mobile
+      border-radius: rem.convert(12px); // Further reduce border radius
     }
   }
 
   .icon-text-header {
-    margin-bottom: rem-convert(16px);
+    margin-bottom: rem.convert(16px);
 
     .date-icon {
       display: flex;
       align-items: center;
-      gap: rem-convert(16px);
+      gap: rem.convert(16px);
 
       @include media-breakpoint-down(md) {
-        gap: rem-convert(12px); // Reduce gap on tablet
+        gap: rem.convert(12px); // Reduce gap on tablet
       }
 
       .calendar-icon {
-        width: rem-convert(30px);
-        height: rem-convert(30px);
+        width: rem.convert(30px);
+        height: rem.convert(30px);
         position: relative;
         display: flex;
         align-items: center;
         justify-content: center;
 
         @include media-breakpoint-down(md) {
-          width: rem-convert(24px); // Slightly reduce icon size on tablet
-          height: rem-convert(24px);
+          width: rem.convert(24px); // Slightly reduce icon size on tablet
+          height: rem.convert(24px);
         }
       }
 
@@ -87,18 +87,18 @@
         font-weight: 600;
         line-height: 130%;
         letter-spacing: 0.03em;
-        color: $blue;
+        color: var(--blue);
 
         @include media-breakpoint-down(lg) {
-          font-size: rem-convert(28px); // Reduce font size on tablet landscape
+          font-size: rem.convert(28px); // Reduce font size on tablet landscape
         }
 
         @include media-breakpoint-down(md) {
-          font-size: rem-convert(24px); // Further reduce font size on tablet portrait
+          font-size: rem.convert(24px); // Further reduce font size on tablet portrait
         }
 
         @include media-breakpoint-down(sm) {
-          font-size: rem-convert(20px); // Smallest font size for mobile
+          font-size: rem.convert(20px); // Smallest font size for mobile
         }
       }
     }
@@ -111,42 +111,42 @@
     padding: rem-convert(12px);
 
     @include media-breakpoint-down(md) {
-      padding: rem-convert(10px); // Slightly reduce padding on tablet
+      padding: rem.convert(10px); // Slightly reduce padding on tablet
     }
 
     @include media-breakpoint-down(sm) {
-      padding: rem-convert(8px); // Further reduce padding on mobile
-      border-radius: rem-convert(8px); // Reduce border radius on mobile
+      padding: rem.convert(8px); // Further reduce padding on mobile
+      border-radius: rem.convert(8px); // Reduce border radius on mobile
     }
 
     .content-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: rem-convert(12px);
+      margin-bottom: rem.convert(12px);
 
       @include media-breakpoint-down(sm) {
         flex-direction: column; // Stack elements on mobile
         align-items: flex-end;
-        gap: rem-convert(8px);
+        gap: rem.convert(8px);
       }
 
       .event-info {
         display: flex;
         align-items: center;
-        gap: rem-convert(12px);
+        gap: rem.convert(12px);
 
         @include media-breakpoint-down(md) {
-          gap: rem-convert(8px); // Reduce gap on tablet
+          gap: rem.convert(8px); // Reduce gap on tablet
         }
 
         .event-icon {
-          width: rem-convert(24px);
-          height: rem-convert(24px);
+          width: rem.convert(24px);
+          height: rem.convert(24px);
 
           @include media-breakpoint-down(md) {
-            width: rem-convert(20px); // Reduce icon size on tablet
-            height: rem-convert(20px);
+            width: rem.convert(20px); // Reduce icon size on tablet
+            height: rem.convert(20px);
           }
         }
 
@@ -159,7 +159,7 @@
           margin: 0;
 
           @include media-breakpoint-down(sm) {
-            font-size: rem-convert(14px); // Reduce font size on mobile
+            font-size: rem.convert(14px); // Reduce font size on mobile
           }
         }
       }
@@ -167,11 +167,11 @@
       .view-more {
         display: flex;
         align-items: center;
-        gap: rem-convert(12px);
+        gap: rem.convert(12px);
         cursor: pointer;
 
         @include media-breakpoint-down(md) {
-          gap: rem-convert(8px); // Reduce gap on tablet
+          gap: rem.convert(8px); // Reduce gap on tablet
         }
 
         span {
@@ -182,7 +182,7 @@
           color: $black;
 
           @include media-breakpoint-down(sm) {
-            font-size: rem-convert(14px); // Reduce font size on mobile
+            font-size: rem.convert(14px); // Reduce font size on mobile
           }
         }
 
@@ -196,8 +196,8 @@
           justify-content: center;
 
           img {
-            width: rem-convert(13.5px);
-            height: rem-convert(13.5px);
+            width: rem.convert(13.5px);
+            height: rem.convert(13.5px);
             transition: transform 0.3s ease;
 
             &.rotate {
@@ -206,13 +206,13 @@
           }
 
           @include media-breakpoint-down(md) {
-            width: rem-convert(28px); // Reduce circle size on tablet
-            height: rem-convert(28px);
+            width: rem.convert(28px); // Reduce circle size on tablet
+            height: rem.convert(28px);
           }
 
           @include media-breakpoint-down(sm) {
-            width: rem-convert(24px); // Further reduce circle size on mobile
-            height: rem-convert(24px);
+            width: rem.convert(24px); // Further reduce circle size on mobile
+            height: rem.convert(24px);
           }
         }
       }
@@ -221,32 +221,32 @@
     .content-details {
       display: flex;
       align-items: center;
-      gap: rem-convert(12px);
-      margin-bottom: rem-convert(12px);
+      gap: rem.convert(12px);
+      margin-bottom: rem.convert(12px);
 
       @include media-breakpoint-down(sm) {
         flex-direction: column; // Stack on mobile
         align-items: flex-start;
-        gap: rem-convert(8px);
+        gap: rem.convert(8px);
       }
 
       .time-info,
       .event-type {
         display: flex;
         align-items: center;
-        gap: rem-convert(12px);
+        gap: rem.convert(12px);
 
         @include media-breakpoint-down(md) {
-          gap: rem-convert(8px); // Reduce gap on tablet
+          gap: rem.convert(8px); // Reduce gap on tablet
         }
 
         .time-icon {
-          width: rem-convert(24px);
-          height: rem-convert(24px);
+          width: rem.convert(24px);
+          height: rem.convert(24px);
 
           @include media-breakpoint-down(md) {
-            width: rem-convert(20px); // Reduce icon size on tablet
-            height: rem-convert(20px);
+            width: rem.convert(20px); // Reduce icon size on tablet
+            height: rem.convert(20px);
           }
         }
 
@@ -256,10 +256,10 @@
           font-size: rem-convert(16px);
           font-weight: 500;
           line-height: 137.5%;
-          color: $gray;
+          color: var(--gray);
 
           @include media-breakpoint-down(sm) {
-            font-size: rem-convert(14px); // Reduce font size on mobile
+            font-size: rem.convert(14px); // Reduce font size on mobile
           }
         }
       }
@@ -282,8 +282,8 @@
       transition: max-height 0.3s ease-out, opacity 0.3s ease-out, margin-top 0.3s ease-out;
 
       &.show {
-        max-height: rem-convert(500px); // Adjust this value based on your content's maximum height
-        margin-top: rem-convert(16px);
+        max-height: rem.convert(500px); // Adjust this value based on your content's maximum height
+        margin-top: rem.convert(16px);
         opacity: 1;
       }
     }
@@ -294,17 +294,17 @@
       font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
       font-size: rem-convert(16px);
       font-weight: 500;
-      line-height: rem-convert(22px);
-      color: $gray;
+      line-height: rem.convert(22px);
+      color: var(--gray);
     }
     .content-description {
       display: flex;
       align-items: center;
-      gap: rem-convert(12px);
-      margin-bottom: rem-convert(12px);
+      gap: rem.convert(12px);
+      margin-bottom: rem.convert(12px);
       .info-icon {
-        width: rem-convert(24px);
-        height: rem-convert(24px);
+        width: rem.convert(24px);
+        height: rem.convert(24px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -313,11 +313,11 @@
     .content-location {
       display: flex;
       align-items: center;
-      gap: rem-convert(12px);
-      margin-bottom: rem-convert(12px);
+      gap: rem.convert(12px);
+      margin-bottom: rem.convert(12px);
       .location-icon {
-        width: rem-convert(24px);
-        height: rem-convert(24px);
+        width: rem.convert(24px);
+        height: rem.convert(24px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -326,11 +326,11 @@
     .content-map-link {
       display: flex;
       align-items: center;
-      gap: rem-convert(12px);
-      margin-bottom: rem-convert(12px);
+      gap: rem.convert(12px);
+      margin-bottom: rem.convert(12px);
       .map-icon {
-        width: rem-convert(24px);
-        height: rem-convert(24px);
+        width: rem.convert(24px);
+        height: rem.convert(24px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -339,8 +339,8 @@
         font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
         font-size: rem-convert(16px);
         font-weight: 500;
-        line-height: rem-convert(22px);
-        color: $light-blue;
+        line-height: rem.convert(22px);
+        color: var(--light-blue);
       }
     }
   }
@@ -354,14 +354,14 @@
         background: darken($light-blue, 10%);
       }
       span {
-        color: $blue;
+        color: var(--blue);
       }
     }
 
     &:focus {
-      outline: rem-convert(2px) solid $blue;
-      outline-offset: rem-convert(2px);
-      border-radius: rem-convert(4px);
+      outline: rem.convert(2px) solid var(--blue);
+      outline-offset: rem.convert(2px);
+      border-radius: rem.convert(4px);
     }
   }
 }

@@ -1,19 +1,19 @@
 // Card Grid Container
 .card-grid {
-    padding: rem-convert(2rem) 0;
+    padding: rem.convert(2rem) 0;
 
     &__container {
         display: flex;
         flex-wrap: nowrap;
-        gap: rem-convert(24px);
+        gap: rem.convert(24px);
         justify-content: center;
-        max-width: rem-convert(1200px);
+        max-width: rem.convert(1200px);
         margin: 0 auto;
-        padding: 0 rem-convert(1rem);
+        padding: 0 rem.convert(1rem);
 
-        @media (max-width: rem-convert(768px)) {
+        @media (max-width: rem.convert(768px)) {
             flex-wrap: wrap;
-            gap: rem-convert(16px);
+            gap: rem.convert(16px);
         }
     }
 }
@@ -22,8 +22,8 @@
 .card-icon {
     flex: 1;
     min-width: 0;
-    padding: rem-convert(24px);
-    border-radius: rem-convert(24px);
+    padding: rem.convert(24px);
+    border-radius: rem.convert(24px);
     transition: transform 0.3s ease;
 
     // Color Variants
@@ -49,27 +49,27 @@
 
     // Hover State
     &:hover {
-        transform: translateY(rem-convert(-4px));
+        transform: translateY(rem.convert(-4px));
     }
 
     // Focus State for Accessibility
     &:focus-within {
-        outline: rem-convert(2px) solid $gray;
-        outline-offset: rem-convert(2px);
+        outline: rem.convert(2px) solid var(--gray);
+        outline-offset: rem.convert(2px);
     }
 
     // Content Container
     &__content {
         display: flex;
         flex-direction: column;
-        gap: rem-convert(24px);
+        gap: rem.convert(24px);
         width: 100%;
     }
 
     // Image Wrapper
     &__image-wrapper {
-        width: rem-convert(64px);
-        height: rem-convert(64px);
+        width: rem.convert(64px);
+        height: rem.convert(64px);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -85,7 +85,7 @@
     // Text
     &__text {
         margin: 0;
-        font-size: rem-convert(16px);
+        font-size: rem.convert(16px);
         line-height: 1.21;
         font-family: 'Inter', sans-serif;
         font-weight: 400;
@@ -101,9 +101,9 @@
     }
 
     // Responsive Adjustments
-    @media (max-width: rem-convert(768px)) {
+    @media (max-width: rem.convert(768px)) {
         width: 100%;
-        max-width: rem-convert(282px);
+        max-width: rem.convert(282px);
         flex: none;
     }
 }

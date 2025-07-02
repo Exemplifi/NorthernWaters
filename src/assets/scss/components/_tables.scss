@@ -3,14 +3,14 @@
 // Clarity Table Cards - Figma v1
 
 .clarity-table-section {
-  background: $white;
-  @include rem-convert(padding, 40px 0);
+  background: var(--white);
+  @include rem.convert(padding, 40px 0);
 }
 .clarity-table-card {
-  @include rem-convert(border-radius, 12px);
+  @include rem.convert(border-radius, 12px);
   overflow: hidden;
-  @include rem-convert(margin-bottom, 24px);
-  box-shadow: 0 rem-convert(2px) rem-convert(8px) rgba(49,68,89,0.06);
+  @include rem.convert(margin-bottom, 24px);
+  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49,68,89,0.06);
   display: flex;
   flex-direction: column;
   min-height: 100%;
@@ -35,10 +35,10 @@
 .clarity-table-card__row {
   font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
   font-size: 1rem;
-  color: $black;
-  @include rem-convert(padding, 20px 54px);
-  border-top: rem-convert(1px) solid $white;
-  background: $white;
+  color: var(--black);
+  @include rem.convert(padding, 20px 54px);
+  border-top: rem.convert(1px) solid var(--white);
+  background: var(--white);
 }
 .clarity-table-card--avg .clarity-table-card__row {
   border-top: rem-convert(1px) solid $light-blue;
@@ -50,15 +50,15 @@
 }
 @media (max-width: 991px) {
   .clarity-table-card {
-    @include rem-convert(margin-bottom, 16px);
+    @include rem.convert(margin-bottom, 16px);
   }
 }
 @media (max-width: 600px) {
   .clarity-table-section {
-    @include rem-convert(padding, 16px 0);
+    @include rem.convert(padding, 16px 0);
   }
   .clarity-table-card__header, .clarity-table-card__row {
-    @include rem-convert(padding, 12px 16px);
+    @include rem.convert(padding, 12px 16px);
     font-size: 0.95rem;
   }
 }
