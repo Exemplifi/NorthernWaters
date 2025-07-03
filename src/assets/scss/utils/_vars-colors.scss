@@ -3,27 +3,49 @@
 
 $site-colors: (
   "black": #111111,
+  "black-rgb": "17, 17, 17",
   "white": #ffffff,
+  "white-rgb": "255, 255, 255",
   "gray": #585858,
+  "gray-rgb": "88, 88, 88",
   "off-white": #FFFEF6,
+  "off-white-rgb": "255, 254, 246",
   "green": #00853F,
+  "green-rgb": "0, 133, 63",
   "light-blue": #53C2FD,
+  "light-blue-rgb": "83, 194, 253",
   "light-green": #54B948,
+  "light-green-rgb": "84, 185, 72",
   "blue": #004A64,
+  "blue-rgb": "0, 74, 100",
   "success": #16A34A,
+  "success-rgb": "22, 163, 74",
   "error": #CC0000,
-  "alert": #FEBF00
+  "error-rgb": "204, 0, 0",
+  "alert": #FEBF00,
+  "alert-rgb": "254, 191, 0"
 );
 
 // Rebranding
 $black: map.get($site-colors, "black");
+$black-rgb: map.get($site-colors, "black-rgb");
 $white: map.get($site-colors, "white");
+$white-rgb: map.get($site-colors, "white-rgb");
 $gray: map.get($site-colors, "gray");
+$gray-rgb: map.get($site-colors, "gray-rgb");
 $off-white: map.get($site-colors, "off-white");
+$off-white-rgb: map.get($site-colors, "off-white-rgb");
 $green: map.get($site-colors, "green");
+$green-rgb: map.get($site-colors, "green-rgb");
 $light-blue: map.get($site-colors, "light-blue");
+$light-blue-rgb: map.get($site-colors, "light-blue-rgb");
 $light-green: map.get($site-colors, "light-green");
+$light-green-rgb: map.get($site-colors, "light-green-rgb");
 $blue: map.get($site-colors, "blue");
+$blue-rgb: map.get($site-colors, "blue-rgb");
 $success: map.get($site-colors, "success");
+$success-rgb: map.get($site-colors, "success-rgb");
 $error: map.get($site-colors, "error");
+$error-rgb: map.get($site-colors, "error-rgb");
 $alert: map.get($site-colors, "alert");
+$alert-rgb: map.get($site-colors, "alert-rgb");

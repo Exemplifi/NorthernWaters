@@ -120,4 +120,11 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
   });
+
+  // Dynamic Year
+  const year = new Date().getFullYear();
+  const yearElement = document.querySelector('.footer__year');
+  if (yearElement) {
+    yearElement.textContent = year;
+  }
 });
