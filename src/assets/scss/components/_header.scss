@@ -3,20 +3,22 @@
 
 .header {
   position: relative;
-  background-color: var(--gray);
-    @include media-breakpoint-up(lg) {
-        @include rem.convert(padding, 5px 0);
-    }
+  background-color: var(--white);
+  border-radius: rem.convert(16px);
+  @include media-breakpoint-up(lg) {
+    @include rem.convert(padding, 16px 0);
+  }
   // Navbar Base Styles
   .navbar {
-    padding: 0;
+    padding: 0 12px;
     @include rem.convert(min-height, 56px);
   }
 
   // Logo
   &__logo {
     display: block;
-    @include rem.convert((width, height), 149px, 56px);
+    width: rem.convert(140px);
+    height: rem.convert(45px);
 
     img {
       width: 100%;
@@ -31,7 +33,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include rem.convert(margin-left, 21px);
+      @include rem.convert(margin-left, 108px);
     }
   }
 
@@ -39,7 +41,7 @@
   &__menu {
     @include media-breakpoint-up(lg) {
       display: flex;
-      @include rem.convert(gap, 16px);
+      @include rem.convert(gap, 8px);
       margin-right: auto;
     }
   }
@@ -53,24 +55,27 @@
   &__menu-link {
     display: flex !important;
     align-items: center;
-    @include rem.convert(column-gap, 16px);
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-weight: 500;
+    @include rem.convert(column-gap, 8px);
+    font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
+    font-weight: $semibold;
     @include rem.convert(font-size, 16px);
     line-height: 1.2;
-    color: var(--white) !important;
+    color: var(--black) !important;
     @include rem.convert(padding, 8px 0);
 
     @include media-breakpoint-up(lg) {
-      @include rem.convert(padding, 16px 0);
+      @include rem.convert(padding, 15px 24px !important);
     }
     @include media-breakpoint-down(lg) {
-        justify-content: space-between;
+      justify-content: space-between;
+      padding: 1rem;
     }
 
     &:hover,
     &:focus {
-      color: rgba($white, 0.8) !important;
+      color: rgba(var(--black-rgb), 0.8) !important;
+      background-color: rgba(var(--green-rgb), 0.2);
+      border-radius: rem.convert(50px);
     }
 
     // Remove Bootstrap's default dropdown arrow
@@ -81,7 +86,9 @@
 
   // Menu Icon (chevron)
   &__menu-icon {
-    @include rem.convert((width, height), 12px, 6px);
+    // @include rem.convert((width, height), 12px, 6px);
+    width: rem.convert(24px);
+    height: rem.convert(18px);
     transition: transform 0.3s ease;
 
     &.rotated {
@@ -95,11 +102,12 @@
 
   // Submenu
   &__submenu {
-    background-color: $black;
+    background-color: rgba($white, 0.8);
     border: none;
     @include rem.convert(border-radius, 8px);
     @include rem.convert(padding, 8px 0);
     @include rem.convert(min-width, 200px);
+    text-align: center;
 
     @include media-breakpoint-down(lg) {
       border-radius: 0;
@@ -110,17 +118,17 @@
 
   // Submenu Link
   &__submenu-link {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
     font-weight: 400;
     @include rem.convert(font-size, 14px);
     line-height: 1.2;
-    color: var(--white);
+    color: var(--black);
     @include rem.convert(padding, 8px 16px);
 
     &:hover,
     &:focus {
       background-color: rgba($white, 0.1);
-      color: rgba($white, 0.8);
+      color: var(--black);
     }
   }
 
@@ -135,7 +143,9 @@
       margin-top: 0;
     }
     @include media-breakpoint-down(lg) {
-        justify-content: space-between;
+      justify-content: space-between;
+      align-items: center;
+      flex-direction: column;
     }
   }
 
@@ -165,11 +175,10 @@
   &__login-btn {
     display: flex;
     align-items: center;
-    @include rem.convert(gap, 8px);
-    background-color: $white;
-    @include rem.convert(border-radius, 8px);
+    background-color: var(--green);
+    @include rem.convert(border-radius, 40px);
     @include rem.convert(padding, 12px 24px);
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
     font-weight: 600;
     @include rem.convert(font-size, 16px);
     line-height: 1.2;
@@ -199,25 +208,15 @@
     }
 
     .navbar-toggler-icon {
-      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 12H21M3 6H21M3 18H21' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 12H21M3 6H21M3 18H21' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       transition: background-image 0.3s ease;
     }
 
     &[aria-expanded="true"] {
       .navbar-toggler-icon {
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="%23FFFFFF" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="%23000000" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>');
       }
     }
-  }
-
-  // Bottom Border
-  &__border {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    @include rem.convert(height, 1px);
-    background-color: $light-blue;
   }
 
   // Responsive Styles
@@ -228,9 +227,10 @@
       left: 0;
       right: 0;
       bottom: 0;
-      background-color: rgba($black, 0.95);
+      background-color: var(--white);
       @include rem.convert(padding, 24px 16px);
       overflow-y: auto;
+      overflow-x: hidden;
     }
   }
 }

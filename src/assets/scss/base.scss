@@ -54,6 +54,10 @@ html,
 body {
   margin: 0;
   padding: 0;
+  -webkit-font-smoothing: antialiased; // for macOS & Safari
+  -moz-osx-font-smoothing: grayscale;  // for Firefox on macOS
+  font-smooth: always;                 // for older versions of IE (non-standard)
+  text-rendering: optimizeLegibility;  // improves kerning and ligatures
 }
 
 p {
