@@ -1,7 +1,7 @@
 section{
-  padding: 80px 24px;
+  padding: 80px 0;
   @include media-breakpoint-down(lg) {
-    padding: 56px 24px;
+    padding: 56px 0;
   }
 }
 .bg-off-white {

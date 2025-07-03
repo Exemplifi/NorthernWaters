@@ -42,7 +42,6 @@ h1,
   font-size: 5rem;
   line-height: 1.1em;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   @include media-breakpoint-down(lg) {
     font-size: 3.5rem;
   }
@@ -52,7 +51,6 @@ h2,
   font-size: 3.5rem;
   line-height: 1.1em;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   @include media-breakpoint-down(lg) {
     font-size: 3rem;
   }
@@ -62,7 +60,6 @@ h3,
   font-size: 3rem;
   line-height: 1.1em;
   letter-spacing: -0.02em;
-  text-transform: uppercase;
   @include media-breakpoint-down(lg) {
     font-size: 2rem;
     letter-spacing: 0;
@@ -117,6 +114,7 @@ h6,
   font-style: italic;
 }
 
+label,
 .label {
   font-size: 0.875rem;
   line-height: 1.5em;

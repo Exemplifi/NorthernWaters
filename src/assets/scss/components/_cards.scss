@@ -1,66 +1,107 @@
-.card {
-  background: var(--blue);
-  border-radius: 1rem;
-  overflow: hidden;
-  border: none;
-  display: flex;
-  flex-direction: column;
-  margin-bottom: 1.5rem;
-  .card-img-top {
-    height: rem.convert(290px);
-    object-fit: cover;
-    object-position: top;
-    border-top-left-radius: 1rem;
-    border-top-right-radius: 1rem;
-    width: 100%;
-  }
-  .card-body {
+.cards-section {
+  .card {
     background: var(--blue);
-    color: var(--white);
-    padding: 2rem;
-    height: 100%;
-    .card-title-wrapper {
-      margin-bottom: 1.5rem;
-      padding-bottom: 1.5rem;
-      border-bottom: 1px solid #FFFFFF99;
-      .card-title {
-        margin-bottom: 0;
-      }
+    border-radius: 1rem;
+    overflow: hidden;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 1.5rem;
+    .card-img-top {
+      height: rem.convert(320px);
+      object-fit: cover;
+      object-position: center;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      width: 100%;
     }
-    .card-text-wrapper {  
-      margin-bottom: 1.5rem;
-      .card-text {
-        margin-bottom: 0;
-      }
-    }
-    .card-cta {
-      padding: 0;
-      background: none;
-      border: none;
-      box-shadow: none;
-      outline: none;
-      display: inline-block;
-      &:focus-visible {
-        outline: 2px solid var(--white);
-        outline-offset: 2px;
-      }
-      .card-cta-icon {
-        width: rem.convert(32px);
-        height: rem.convert(32px);
-        background: var(--white);
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        border-radius: 50%;
-        transition: background 0.2s;
-        svg {
-          display: block;
+    .card-body {
+      background: var(--blue);
+      color: var(--white);
+      padding: 2rem;
+      height: 100%;
+      .card-title-wrapper {
+        margin-bottom: 1.5rem;
+        padding-bottom: 1.5rem;
+        border-bottom: 1px solid #FFFFFF99;
+        .card-title {
+          margin-bottom: 0;
         }
       }
-      &:hover .card-cta-icon, &:focus .card-cta-icon {
-        background: var(--green);
-        svg path {
-          stroke: var(--white);
+      .card-text-wrapper {  
+        margin-bottom: 1.5rem;
+        .card-text {
+          margin-bottom: 0;
+        }
+      }
+      .card-cta {
+        padding: 0;
+        background: none;
+        border: none;
+        box-shadow: none;
+        outline: none;
+        display: inline-block;
+        &:focus-visible {
+          outline: 2px solid var(--white);
+          outline-offset: 2px;
+        }
+        .card-cta-icon {
+          width: rem.convert(32px);
+          height: rem.convert(32px);
+          background: var(--white);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          border-radius: 50%;
+          transition: background 0.2s;
+          svg {
+            display: block;
+          }
+        }
+        &:hover .card-cta-icon, &:focus .card-cta-icon {
+          background: var(--green);
+          svg path {
+            stroke: var(--white);
+          }
+        }
+      }
+    }
+  }
+  .cards-row{
+    .col-lg-4{
+      &:nth-last-child(-n + 3) {
+        .card {
+          @media (min-width: 990px) {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &:nth-last-child(-n + 2) {
+        .card {
+          @media (min-width: 768px) {
+            margin-bottom: 0;
+          }
+        }
+      }
+      &:last-child {
+        .card {
+            margin-bottom: 0;
+        }
+      }
+    }
+  }
+  &.directors-card{
+    .card{
+      .card-body{
+        .directors-card-county-wrapper{
+          margin-bottom: 1.5rem;
+          padding-bottom: 1.5rem;
+          border-bottom: 1px solid #FFFFFF99;
+        }
+        .card-title-wrapper{
+          margin-bottom: 8px;
+          padding-bottom: 0;
+          border-bottom: none;
         }
       }
     }
