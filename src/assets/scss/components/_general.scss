@@ -1,3 +1,6 @@
+.container{
+  max-width: rem.convert(1280px);
+}
 section{
   padding: 80px 0;
   @include media-breakpoint-down(lg) {
