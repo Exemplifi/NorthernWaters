@@ -9,6 +9,7 @@ section{
 }
 .bg-off-white {
   background: var(--off-white);
+  color: var(--black);
 }
 .text-truncate-2-lines {
   display: -webkit-box;
@@ -26,4 +27,20 @@ section{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
+}
+ul{
+  margin: 1rem 0;
+  li{
+    margin-bottom: 1rem;
+    &::marker{
+      font-size: 1.5rem;
+    }
+    &:last-child{
+      margin-bottom: 0;
+    }
+  }
+}
+a{
+  color: var(--green);
+  text-decoration: underline;
 }

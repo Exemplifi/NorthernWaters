@@ -4,6 +4,8 @@
 $site-colors: (
   "black": #111111,
   "black-rgb": "17, 17, 17",
+  "black-2":"#1D1D1D",
+  "black-2-rgb": "29, 29, 29",
   "white": #ffffff,
   "white-rgb": "255, 255, 255",
   "gray": #585858,
@@ -29,6 +31,8 @@ $site-colors: (
 // Rebranding
 $black: map.get($site-colors, "black");
 $black-rgb: map.get($site-colors, "black-rgb");
+$black-2: map.get($site-colors, "black-2");
+$black-2-rgb: map.get($site-colors, "black-2-rgb");
 $white: map.get($site-colors, "white");
 $white-rgb: map.get($site-colors, "white-rgb");
 $gray: map.get($site-colors, "gray");
