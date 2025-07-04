@@ -456,30 +456,33 @@
           list-style: none;
           display: flex;
           align-items: center;
+          margin-bottom: rem.convert(24px);
           h4,
           a,
           i,
           svg {
             color: var(--white);
+            width: rem.convert(24px);
+            height: rem.convert(24px);
+          }
+          p {
+            flex: 1 1 0;
           }
           a {
             text-decoration: none;
             border-bottom: 1px solid var(--white);
           }
           &:nth-child(1) {
-            margin-bottom: rem.convert(24px);
             column-gap: 16px;
             h4 {
               margin: 0;
             }
           }
-          &:nth-child(2) {
-            margin-bottom: rem.convert(24px);
+          &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
             column-gap: 12px;
           }
-          &:nth-child(3) {
-            margin-bottom: rem.convert(0px);
-            column-gap: 12px;
+          &:last-child {
+            margin-bottom: 0;
           }
         }
       }

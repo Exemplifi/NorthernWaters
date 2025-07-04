@@ -1,0 +1,22 @@
+.simple-text-centre-wrapper {
+  background-color: var(--off-white);
+  padding-top: 80px;
+  padding-bottom: 80px;
+  .simple-heading {
+    text-align: center;
+    max-width: rem.convert(800px);
+    margin: 0 auto;
+    padding-bottom: rem.convert(24px);
+    font-weight: $bold;
+  }
+  .simple-text {
+    text-align: center;
+    max-width: rem.convert(800px);
+    margin: 0 auto;
+    color: var(--black);
+    font-size: rem.convert(20px);
+    line-height: rem.convert(30px);
+    font-family: var(--body-font-family);
+    font-weight: $regular;
+  }
+}
