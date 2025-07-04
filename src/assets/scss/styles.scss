@@ -4,7 +4,8 @@
 @use './base/bootstrap' as *;
 
 // // all page styles
-@use './page/home' as *;
+@use './page/home';
+@use './page/finance-page';
 
 // Importing base
 @use "base";
