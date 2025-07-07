@@ -8,8 +8,8 @@
 </head>
 
 
-<body class="bg-light d-flex justify-content-center align-items-center vh-100">
-
+<body class="bg-light d-flex justify-content-center align-items-center vh-100 bg-dark">
+<!-- Primary Button starts here-->
 <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
   <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
       <span class="btn-text">Water Provider Login</span>
@@ -33,7 +33,32 @@
       </span>
   </div>
 </a>
+<!-- Primary Button ends here-->
 
+<!-- Secondary Button starts here-->
+<a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
+  <div class="secondary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+      <span class="btn-text">Water Provider Login</span>
 
+      <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+        <span class="circle-animation">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+        </span>
+        <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+          <defs>
+            <filter id="goo">
+              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+              <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+              <feBlend in="SourceGraphic" in2="goo" />
+            </filter>
+          </defs>
+        </svg>
+      </span>
+  </div>
+</a>
+<!-- Secondary Button ends here-->
 </body>
 </html>
