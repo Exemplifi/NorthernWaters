@@ -6,17 +6,32 @@ section{
   padding: 80px 24px;
   & + section  {
       padding-top: 0;
+      @include media-breakpoint-down(lg) {
+        padding-top: 0;
+      }
   }
   &.bg-black {
       padding-top: 80px;
+      @include media-breakpoint-down(lg) {
+        padding-top: 80px;
+      }
       & + .bg-black {
           padding-top: 0;
+          @include media-breakpoint-down(lg) {
+            padding-top: 0;
+          }
       }
   }
   &.bg-off-white {
       padding-top: 80px;
+      @include media-breakpoint-down(lg) {
+        padding-top: 80px;
+      }
       & + .bg-off-white {
           padding-top: 0;
+          @include media-breakpoint-down(lg) {
+            padding-top: 0;
+          }
       }
   }
   @include media-breakpoint-down(lg) {
