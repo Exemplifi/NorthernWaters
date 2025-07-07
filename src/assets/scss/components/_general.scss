@@ -1,10 +1,11 @@
 .container{
   max-width: rem.convert(1280px);
+  padding: 0;
 }
-section{
-  padding: 80px 0;
+.py-80{
+  padding: 80px 24px;
   @include media-breakpoint-down(lg) {
-    padding: 56px 0;
+    padding: 56px 24px;
   }
 }
 .bg-off-white {
@@ -27,18 +28,6 @@ section{
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: normal;
-}
-ul{
-  margin: 1rem 0;
-  li{
-    margin-bottom: 1rem;
-    &::marker{
-      font-size: 1.5rem;
-    }
-    &:last-child{
-      margin-bottom: 0;
-    }
-  }
 }
 a{
   color: var(--green);
