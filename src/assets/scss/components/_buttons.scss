@@ -26,6 +26,17 @@ $transition-fast: all 0.5s ease-in-out;
     transform: scale(1.05);
     transition: $transition-fast;
   }
+  &:active,
+  &:focus,
+  &:focus-visible {
+    transform: scale(1.05);
+    outline: 1px solid var(--green);
+    outline-offset: 2px;
+    border-radius: rem.convert(50px);
+    color: var(--white);
+    border: none !important;
+    border-color: transparent !important;
+  }
 
   .primary-btn-wrap {
     background-color: var(--green);
@@ -48,7 +59,8 @@ $transition-fast: all 0.5s ease-in-out;
     height: 3.25rem;
     z-index: -1;
     right: rem.convert(73px);
-    top: 0;
+    top: 50%;
+    transform: translate(0, -50%);
     transition: transform 1.2s;
     .circle-animation {
       background: var(--green);
@@ -70,7 +82,8 @@ $transition-fast: all 0.5s ease-in-out;
   &:hover {
     padding: 0 4.4rem 0 0;
     .btn-icon {
-      transform: translateX(4.6rem);
+      top: 50%;
+      transform: translate(4.6rem, -50%);
     }
 
     .circle-animation svg {
@@ -102,7 +115,16 @@ $transition-fast: all 0.5s ease-in-out;
     transform: scale(1.05);
     transition: $transition-fast;
   }
-
+  &:active,
+  &:focus,
+  &:focus-visible {
+    outline: 1px solid var(--white);
+    outline-offset: 2px;
+    border-radius: rem.convert(50px);
+    color: var(--black) !important;
+    border: none !important;
+    border-color: transparent !important;
+  }
   .secondary-btn-wrap {
     background-color: var(--white);
     transition:  all 0.9s ease-in-out;
@@ -124,7 +146,8 @@ $transition-fast: all 0.5s ease-in-out;
     height: 3.25rem;
     z-index: -1;
     right: rem.convert(73px);
-    top: 0;
+    top: 50%;
+    transform: translate(0, -50%);
     transition: transform 1.2s;
     .circle-animation {
       background: var(--white);
@@ -146,7 +169,8 @@ $transition-fast: all 0.5s ease-in-out;
   &:hover {
     padding: 0 4.4rem 0 0;
     .btn-icon {
-      transform: translateX(4.6rem);
+      top: 50%;
+      transform: translate(4.6rem, -50%);
     }
 
     .circle-animation svg {

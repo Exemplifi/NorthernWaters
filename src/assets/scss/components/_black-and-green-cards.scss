@@ -1,0 +1,53 @@
+.black-green-cards-wrapper {
+  display: flex;
+  width: 100%;
+  gap: rem.convert(0px);
+  border-radius: rem.convert(16px);
+  background-color: var(--green);
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+  }
+  .black-card {
+    background-color: var(--black);
+    color: var(--white);
+    padding: rem.convert(40px);
+    border-radius: rem.convert(16px);
+    flex-basis: 50%;
+    @include media-breakpoint-down(md) {
+      flex-basis: 100%;
+    }
+    .black-card-content-title {
+      font-size: rem.convert(56px);
+      font-weight: 700;
+      line-height: 110%;
+      margin-bottom: rem.convert(16px);
+      text-transform: capitalize;
+    }
+    .black-card-content-text {
+      padding-top: rem.convert(24px);
+      padding-bottom: rem.convert(40px);
+    }
+  }
+  .green-card {
+    background-color: var(--green);
+    color: var(--white);
+    padding: rem.convert(40px);
+    border-radius: rem.convert(16px);
+    flex-basis: 50%;
+    @include media-breakpoint-down(md) {
+      flex-basis: 100%;
+    }
+    .green-card-content-title {
+      font-size: rem.convert(56px);
+      font-weight: 700;
+      line-height: 110%;
+      margin-bottom: rem.convert(16px);
+      text-transform: capitalize;
+      letter-spacing: -2%;
+    }
+    .green-card-content-text {
+      padding-top: rem.convert(24px);
+      padding-bottom: rem.convert(40px);
+    }
+  }
+}
