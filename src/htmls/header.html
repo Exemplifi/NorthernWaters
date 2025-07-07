@@ -9,12 +9,12 @@
 <body>
 
     <!-- Header Component -->
-    <header class="header">
-      <nav class="navbar navbar-expand-lg">
-        <div class="container">
+    <header class="header container">
+      <nav class="navbar navbar-expand-lg row mx-0">
+        <div class="col-12 d-flex justify-content-between align-items-center">
           <!-- Logo -->
           <a href="/" class="header__logo" aria-label="Northern Water Home">
-            <img src="../assets/images/northern-water-logo.svg" alt="Northern Water Logo" width="149" height="56">
+            <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149" height="56">
           </a>
 
           <!-- Mobile Toggle Button -->
@@ -29,7 +29,7 @@
               <li class="nav-item dropdown header__menu-item">
                 <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Water
-                  <img src="../assets/images/chevron-down.svg" alt="" class="header__menu-icon" aria-hidden="true">
+                  <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
                 </a>
                 <ul class="dropdown-menu header__submenu">
                   <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
@@ -41,7 +41,7 @@
               <li class="nav-item dropdown header__menu-item">
                 <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Environment
-                  <img src="../assets/images/chevron-down.svg" alt="" class="header__menu-icon" aria-hidden="true">
+                  <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
                 </a>
                 <ul class="dropdown-menu header__submenu">
                   <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
@@ -53,7 +53,7 @@
               <li class="nav-item dropdown header__menu-item">
                 <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   Data
-                  <img src="../assets/images/chevron-down.svg" alt="" class="header__menu-icon" aria-hidden="true">
+                  <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
                 </a>
                 <ul class="dropdown-menu header__submenu">
                   <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
@@ -65,7 +65,7 @@
               <li class="nav-item dropdown header__menu-item">
                 <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
                   About
-                  <img src="../assets/images/chevron-down.svg" alt="" class="header__menu-icon" aria-hidden="true">
+                  <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
                 </a>
                 <ul class="dropdown-menu header__submenu">
                   <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
@@ -83,21 +83,40 @@
             <div class="header__actions">
               <!-- Search Button -->
               <button type="button" class="header__search-btn" aria-label="Open search">
-                <img src="../assets/images/search.svg" alt="" aria-hidden="true">
+                <i data-lucide="search" alt="search-icon" aria-hidden="true"></i>
               </button>
 
               <!-- Login Button -->
-              <a href="/login" class="btn header__login-btn">
+              <!--<a href="/login" class="btn header__login-btn">
                 Water Provider Login
-                <img src="../assets/images/arrow-right.svg" alt="" aria-hidden="true">
+              </a> -->
+              <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
+                <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+                    <span class="btn-text">Water Provider Login</span>
+
+                    <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+                      <span class="circle-animation">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          </svg>
+                      </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                        <defs>
+                          <filter id="goo">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </span>
+                </div>
               </a>
             </div>
           </div>
         </div>
       </nav>
-
-      <!-- Bottom Border -->
-      <div class="header__border"></div>
     </header>
 
     <script src="../assets/dist/main.min.js"></script>

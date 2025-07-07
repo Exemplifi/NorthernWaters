@@ -4,17 +4,21 @@
 @import "../utils/rem-convert";
 
 .footer {
-  background-color: var(--white);
-  border-radius: rem.convert(32px 32px 0 0);
-
+  background-color: var(--black);
+  border-radius: rem.convert(0);
+  padding-top: rem.convert(80px);
+  &__newsletter {
+    padding-bottom: rem.convert(48px);
+  }
   &__container {
     max-width: 100%;
     margin: 0 auto;
-    padding: rem.convert(64px 0px);
+    padding: rem.convert(40px 40px);
     display: grid;
-    grid-template-columns: auto 1fr 1fr auto;
-    gap: rem.convert(40px);
-
+    grid-template-columns: 530px 289px auto;
+    gap: rem.convert(98px);
+    background-color: rgba(var(--white-rgb), 0.1);
+    border-radius: rem.convert(16px);
     @include media-breakpoint-down(xl) {
       grid-template-columns: 1fr 1fr;
       gap: rem.convert(32px);
@@ -26,26 +30,16 @@
     }
   }
 
-  &__logo {
-    &-img {
-      max-width: rem.convert(170px);
-      height: auto;
-    }
-
-    @include media-breakpoint-down(xl) {
-      grid-column: 1 / -1;
-      text-align: center;
-    }
-  }
-
   &__section-title {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-family: var(--heading-font-family);
     font-weight: 600;
-    font-size: rem.convert(20px);
+    text-transform: uppercase;
+    font-size: rem.convert(14px);
     line-height: 1.21;
-    color: $black;
-    margin-bottom: rem.convert(12px);
-    border-color: $border-color;
+    color: var(--white);
+    padding-bottom: rem.convert(16px);
+    margin-bottom: rem.convert(32px);
+    border-color: var(--white);
   }
 
   &__quick-links {
@@ -61,22 +55,23 @@
   }
 
   &__links-column {
-    display: flex;
-    flex-direction: column;
-    gap: rem.convert(14px);
+    display: grid;
+    grid-template-columns: auto 1fr;
+    column-gap: rem.convert(80px);
+    row-gap: rem.convert(24px);
   }
 
   &__link {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-weight: 500;
+    font-family: var(--heading-font-family);
+    font-weight: $regular;
     font-size: rem.convert(16px);
     line-height: 1.21;
-    color: var(--gray);
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $black;
+      color: rgba(var(--white-rgb), 0.8);
     }
 
     &-arrow {
@@ -93,78 +88,95 @@
     }
 
     &-item {
-      gap: rem.convert(20px);
+      gap: rem.convert(8px);
     }
 
     &-icon {
-      width: rem.convert(24px);
-      height: rem.convert(24px);
+      width: rem.convert(20px);
+      height: rem.convert(20px);
+      color: var(--white);
     }
   }
 
   &__address {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-family: var(--heading-font-family);
     font-style: normal;
     font-weight: 500;
     font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $black;
+    color: var(--white);
+    cursor: pointer;
+    &:hover {
+      color: rgba(var(--white-rgb), 0.8);
+    }
   }
 
   &__phone {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+    font-family: var(--heading-font-family);
     font-weight: 500;
     font-size: rem.convert(16px);
     line-height: 1.21;
-    color: $black;
+    color: var(--white);
     text-decoration: none;
     transition: color 0.3s ease;
 
     &:hover {
-      color: $black;
+      color: rgba(var(--white-rgb), 0.8);
     }
   }
 
   &__newsletter {
     &-title {
-      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+      font-family: var(--heading-font-family);
       font-weight: 700;
       font-size: rem.convert(32px);
       line-height: 1.3;
-      color: $black;
+      color: var(--white);
       margin-bottom: rem.convert(13px);
+      text-transform: capitalize;
     }
 
     &-text {
-      font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-      font-weight: 400;
-      font-size: rem.convert(14px);
+      font-family: var(--heading-font-family);
+      font-weight: $regular;
+      font-size: rem.convert(20px);
       line-height: 1.21;
-      color: var(--gray);
+      color: var(--white);
       margin-bottom: rem.convert(20px);
     }
   }
 
   &__form {
     &-group {
-      gap: rem.convert(40px);
-
+      gap: rem.convert(24px);
+      .form-floating {
+        width: 100%;
+      }
       @include media-breakpoint-down(sm) {
         flex-direction: column !important;
         gap: rem.convert(20px);
+      }
+      .footer__form-group--focused {
+        label.footer__input-label {
+          color: var(--white) !important;
+          font-size: rem.convert(12px);
+          padding-bottom: rem.convert(16px);
+        }
       }
     }
   }
 
   &__input {
-    min-width: rem.convert(348px);
-    padding: rem.convert(12px);
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-size: rem.convert(14px);
+    min-width: rem.convert(458px);
+    max-width: rem.convert(458px);
+    padding-left: rem.convert(0px) !important;
+    padding-right: rem.convert(0px) !important;
+    font-family: var(--heading-font-family);
+    font-size: rem.convert(20px);
     line-height: 1.43;
     color: $black;
     border: none;
-    border-bottom: rem.convert(1px) solid $black;
+    border-bottom: rem.convert(1px) solid var(--white);
     background: transparent;
     border-radius: 0;
 
@@ -176,7 +188,9 @@
     &:focus {
       outline: none;
       box-shadow: none;
-      border-color: $black;
+      border-color: var(--white);
+      background-color: var(--black);
+      color: var(--white);
     }
 
     &::placeholder {
@@ -184,21 +198,31 @@
     }
   }
 
+  &__input-label {
+    font-family: var(--heading-font-family);
+    font-weight: $regular;
+    font-size: rem.convert(16px);
+    line-height: 1.43;
+    color: var(--white) !important;
+    transition: all 0.3s ease;
+    padding-left: rem.convert(0px) !important;
+  }
+
   &__submit {
     padding: rem.convert(18px 40px);
-    background-color: $black;
+    background-color: var(--white);
     border: none;
-    border-radius: rem.convert(12px);
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-weight: 600;
-    font-size: rem.convert(20px);
+    border-radius: rem.convert(40px);
+    font-family: var(--heading-font-family);
+    font-weight: $semibold;
+    font-size: rem.convert(16px);
     line-height: 1.3;
-    color: var(--white);
+    color: var(--black);
     transition: background-color 0.3s ease;
     white-space: nowrap;
 
     &:hover {
-      background-color: darken($black, 5%);
+      background-color: var(--white);
     }
 
     &-arrow {
@@ -238,8 +262,8 @@
       }
 
       img {
-        width: rem.convert(16px);
-        height: rem.convert(16px);
+        width: rem.convert(24px);
+        height: rem.convert(24px);
       }
     }
   }
@@ -258,26 +282,11 @@
   }
 
   &__copyright {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-weight: 700;
+    font-family: var(--heading-font-family);
+    font-weight: $regular;
     font-size: rem.convert(16px);
     line-height: 1.75;
     color: var(--white);
-  }
-
-  &__privacy-link {
-    font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
-    font-weight: 700;
-    font-size: rem.convert(16px);
-    line-height: 1.21;
-    color: var(--white);
-    text-decoration: none;
-    transition: opacity 0.3s ease;
-
-    &:hover {
-      opacity: 0.9;
-      color: var(--white);
-    }
   }
 
   // Form validation styles

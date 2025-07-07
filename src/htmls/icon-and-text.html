@@ -4,103 +4,263 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Icon and Text Component</title>
-    <link rel="stylesheet" href="../assets/dist/main.css">
+    <link rel="stylesheet" href="../assets/dist/main.css" />
   </head>
   <body>
+    <!-- Icon and Text Component v1 starts here -->
     <section class="icon-text-section">
-      <div class="icon-text-container">
-        <div class="icon-text-wrapper">
-          <div class="icon-text-header">
-            <div class="date-icon">
-              <div class="calendar-icon" role="img" aria-label="Calendar icon">
-                <img
-                  src="../assets/images/calender-icon.svg"
-                  alt=""
-                  class="calender-icon-img"
-                />
-              </div>
-              <span class="date" role="heading" aria-level="2">Sept 1</span>
-            </div>
-          </div>
-          <div class="icon-text-content">
-            <div class="content-header">
-              <div class="event-info">
-                <div class="event-icon" role="img" aria-label="Document icon">
-                  <img src="../assets/images/document.svg" alt="" />
-                </div>
-                <h3 class="event-title">
-                  Labor Day - Northern Water Offices Closed
-                </h3>
-              </div>
-              <div class="view-more" tabindex="0">
-                <span>View More</span>
-                <div class="arrow-circle">
-                  <img
-                    src="../assets/images/arrow-bottom.svg"
-                    alt=""
-                    aria-hidden="true"
-                    class=""
-                  />
-                </div>
-              </div>
-            </div>
-            <div class="content-details">
-              <div class="time-info">
-                <div class="time-icon" role="img" aria-label="Time icon">
-                  <img src="../assets/images/time.svg" alt="" />
-                </div>
-                <span class="time">12:00 AM - 12:00AM</span>
-              </div>
-              <div class="divider"></div>
-              <div class="event-type">
-                <div class="time-icon" role="img" aria-label="Time icon">
-                  <img src="../assets/images/holiday-icon.svg" alt="" />
-                </div>
-                <span class="type">Holiday</span>
-              </div>
-            </div>
-            <div class="content-hidden">
-              <div class="content-description">
-                <div class="info-icon" role="img" aria-label="Info icon">
-                  <img
-                    src="../assets/images/icon-text-info-icon.svg"
-                    alt=""
-                    class="info-icon-img"
-                  />
-                </div>
-                <p>
-                  Northern Water offices will be closed in observance of Labor
-                  Day.
-                </p>
-              </div>
-              <div class="content-location">
-                <div class="location-icon" role="img" aria-label="Location icon">
-                  <img
-                    src="../assets/images/location-icon.svg"
-                    alt=""
-                    class="info-icon-img"
-                  />
-                </div>
-                <p>
-                    Northern Water, 220 Water Ave.
-                    Berthoud, CO 80513
-                </p>
-              </div>
-              <div class="content-map-link">
-                <div class="map-icon" role="img" aria-label="Map icon">
+      <div class="icon-text-container container">
+        <div class="row">
+          <div class="col-12">
+            <div class="icon-text-wrapper">
+              <div class="icon-text-header">
+                <div class="date-icon">
+                  <div
+                    class="calendar-icon"
+                    role="img"
+                    aria-label="Calendar icon"
+                  >
                     <img
-                      src="../assets/images/view-map-icon.svg"
+                      src="../assets/images/calender-icon.svg"
                       alt=""
-                      class="info-icon-img"
+                      class="calender-icon-img"
                     />
                   </div>
-                  <a href="#" class="map-link">View on Google Map</a>
+                  <span class="date" role="heading" aria-level="2">Sept 1</span>
+                </div>
+              </div>
+              <div class="icon-text-content">
+                <div class="content-header">
+                  <div class="event-info">
+                    <div
+                      class="event-icon"
+                      role="img"
+                      aria-label="Document icon"
+                    >
+                      <img src="../assets/images/document.svg" alt="" />
+                    </div>
+                    <h3 class="event-title">
+                      Labor Day - Northern Water Offices Closed
+                    </h3>
+                  </div>
+                  <div class="view-more" tabindex="0">
+                    <span>View More</span>
+                    <div class="arrow-circle">
+                      <img
+                        src="../assets/images/arrow-bottom.svg"
+                        alt=""
+                        aria-hidden="true"
+                        class=""
+                      />
+                    </div>
+                  </div>
+                </div>
+                <div class="content-details">
+                  <div class="time-info">
+                    <div class="time-icon" role="img" aria-label="Time icon">
+                      <img src="../assets/images/time.svg" alt="" />
+                    </div>
+                    <span class="time">12:00 AM - 12:00AM</span>
+                  </div>
+                  <div class="divider"></div>
+                  <div class="event-type">
+                    <div class="time-icon" role="img" aria-label="Time icon">
+                      <img src="../assets/images/holiday-icon.svg" alt="" />
+                    </div>
+                    <span class="type">Holiday</span>
+                  </div>
+                </div>
+                <div class="content-hidden">
+                  <div class="content-description">
+                    <div class="info-icon" role="img" aria-label="Info icon">
+                      <img
+                        src="../assets/images/icon-text-info-icon.svg"
+                        alt=""
+                        class="info-icon-img"
+                      />
+                    </div>
+                    <p>
+                      Northern Water offices will be closed in observance of
+                      Labor Day.
+                    </p>
+                  </div>
+                  <div class="content-location">
+                    <div
+                      class="location-icon"
+                      role="img"
+                      aria-label="Location icon"
+                    >
+                      <img
+                        src="../assets/images/location-icon.svg"
+                        alt=""
+                        class="info-icon-img"
+                      />
+                    </div>
+                    <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                  </div>
+                  <div class="content-map-link">
+                    <div class="map-icon" role="img" aria-label="Map icon">
+                      <img
+                        src="../assets/images/view-map-icon.svg"
+                        alt=""
+                        class="info-icon-img"
+                      />
+                    </div>
+                    <a href="#" class="map-link">View on Google Map</a>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </section>
+    <!-- Icon and Text Component v1 ends here -->
+
+    <!-- Icon and Text Component v2 green starts here -->
+    <div class="container-fluid icon-text-section-v2">
+      <div class="icon-text-v2-container container">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-content-wrapper">
+              <div class="text-left">
+                <h2>Annual Budget</h2>
+              </div>
+              <div class="text-right">
+                <p>
+                  The Board of Directors for Northern Water and the Municipal
+                  Subdistrict adopts budgets in August for the following fiscal
+                  year. The budgets contain information about operating
+                  expenses, revenues, earning on investments and other financial
+                  details. 
+                </p>
+              </div>
+            </div>
+            <div class="icon-content-wrapper green-bg">
+              <div class="icon-content">
+                <ul>
+                  <li>
+                    <i data-lucide="calendar-days"></i>
+                    <h4>2025</h4>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2025 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2025 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="icon-content">
+                <ul>
+                  <li>
+                    <i data-lucide="calendar-days"></i>
+                    <h4>2024</h4>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2024 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2024 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="icon-content">
+                <ul>
+                  <li><i data-lucide="calendar-days"></i> <h4>2023</h4></li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2023 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2023 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icon and Text Component v2 green ends here -->
+
+    <!-- Icon and Text Component v2 blue starts here -->
+    <div class="container-fluid icon-text-section-v2">
+      <div class="icon-text-v2-container container">
+        <div class="row">
+          <div class="col-12">
+            <div class="text-content-wrapper">
+              <div class="text-left">
+                <h2>Annual Budget</h2>
+              </div>
+              <div class="text-right">
+                <p>
+                  The Board of Directors for Northern Water and the Municipal
+                  Subdistrict adopts budgets in August for the following fiscal
+                  year. The budgets contain information about operating
+                  expenses, revenues, earning on investments and other financial
+                  details. 
+                </p>
+              </div>
+            </div>
+            <div class="icon-content-wrapper blue-bg">
+              <div class="icon-content">
+                <ul>
+                  <li>
+                    <i data-lucide="calendar-days"></i>
+                    <h4>2025</h4>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2025 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2025 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="icon-content">
+                <ul>
+                  <li>
+                    <i data-lucide="calendar-days"></i>
+                    <h4>2024</h4>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2024 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2024 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+              <div class="icon-content">
+                <ul>
+                  <li><i data-lucide="calendar-days"></i> <h4>2023</h4></li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2023 Northern Water Budget</a></p>
+                  </li>
+                  <li>
+                    <i data-lucide="file-down"></i>
+                    <p><a href="#">2023 Municipal Subdistrict Budget</a></p>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Icon and Text Component v2 blue ends here -->
+
     <script src="../assets/dist/main.min.js"></script>
   </body>
 </html>

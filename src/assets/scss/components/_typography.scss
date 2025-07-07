@@ -23,7 +23,6 @@ h5,
 h6,
 .h6 {
   font-family: var(--heading-font-family);
-  text-transform: uppercase;
   font-weight: $extra-bold;
   margin-bottom: 1.5rem;
   margin-top: 1.5rem;
@@ -115,6 +114,7 @@ h6,
   font-style: italic;
 }
 
+label,
 .label {
   font-size: 0.875rem;
   line-height: 1.5em;
@@ -130,3 +130,9 @@ button,
   letter-spacing: 0;
 }
 
+p {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
