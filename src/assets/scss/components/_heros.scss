@@ -310,3 +310,12 @@
     }
   }
 }
+
+.inner-hero{
+  background: var(--blue);
+  min-height: rem.convert(336px);
+  padding-top: rem.convert(201px);
+  h1{
+    color: var(--white);
+  }
+}

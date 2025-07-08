@@ -154,10 +154,10 @@
         </div>
     </section>
 
-    <section>
+    <section class="search-results-wrap">
         <div class="container">
             <div class="row">
-                <div class="col-12 search-results-wrap">
+                <div class="col-12 search-results-inner ">
                     <!-- Search Bar and Results Count -->
                     <div class="search-bar-container">
                         <form class="search-form" role="search" aria-label="Sitewide search">
@@ -236,7 +236,7 @@
         </div>
     </section>
 
-    <script>
+    <!-- <script>
         document.querySelectorAll('.search-result-card').forEach(function(card) {
             card.addEventListener('mouseenter', function() {
                 const prev = card.previousElementSibling;
@@ -250,6 +250,19 @@
                     prev.classList.remove('highlight');
                 }
             });
+        });
+
+    </script> -->
+    <script>
+        $(document).ready(function () {
+            $('.search-result-card').hover(
+                function () {
+                    $(this).prev('.search-result-card').addClass('highlight');
+                },
+                function () {
+                    $(this).prev('.search-result-card').removeClass('highlight');
+                }
+            );
         });
 
     </script>
