@@ -81,24 +81,26 @@
 @include media-breakpoint-down(lg) {
   .stats-section{
     .stats-container{
-      padding: rem.convert(56px) 0;
+      padding: rem.convert(64px) 0;
       .stats-header{
-        margin-bottom: rem.convert(48px);
+        margin-bottom: rem.convert(40px);
       }
       .stats-cards-row{
         grid-template-columns: none;
         .stats-card{
           border-right: none;
-          margin-bottom: rem.convert(32px);
+          margin-bottom: rem.convert(24px);
           padding-bottom: rem.convert(24px);
           border-bottom: 1.5px solid var(--light-green);
           padding-left: 0;
           padding-right: 0;
+          width: 100%;
           &:last-child{
             margin-bottom: 0;
+            border-bottom: none;
           }
-          .stats-card-desc{
-            max-width: rem.convert(400px);
+          .stats-card-value{
+            margin-bottom: rem.convert(24px);
           }
         }
       }
@@ -110,6 +112,7 @@
           flex-direction: column;
           .stats-card{
             min-width: rem.convert(180px);
+            width: 100%;
           }
         }
       }

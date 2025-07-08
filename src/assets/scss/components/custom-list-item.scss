@@ -10,7 +10,6 @@
       list-style: none;
       margin: 0;
       padding: 0;
-      margin-bottom: rem.convert(48px);
       .custom-list-item {
         position: relative;
         padding-left: rem.convert(32px);
@@ -55,6 +54,22 @@
             margin: 0 0 rem.convert(8px) 0;
           }
         }
+      }
+    }
+    .custom-list-btn{
+      margin-top: rem.convert(48px);
+    }
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  .custom-list-section{
+    .custom-list-container {
+      .custom-list-title {
+        margin-bottom: rem.convert(40px);
+      }
+      .custom-list-btn{
+        margin-top: rem.convert(40px);
       }
     }
   }
