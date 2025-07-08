@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Our Data page</title>
+    <link rel="stylesheet" href="../assets/dist/main.css" />
+  </head>
+  <body>
+    <!-- Hero Secondary starts here -->
+    <section class="hero-secondary">
+      <div class="container-fluid p-0">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-img-wrapper">
+                <img
+                  src="../assets/images/secondary-hero-bg-01.jpg"
+                  alt="Hero background"
+                  class="hero-secondary-image"
+                />
+              </div>
+              <div class="hero-img-overlay"></div>
+              <!--Header starts-->
+              <header class="header container">
+                <nav class="navbar navbar-expand-lg row mx-0">
+                  <div
+                    class="col-12 d-flex justify-content-between align-items-center"
+                  >
+                    <!-- Logo -->
+                    <a
+                      href="/"
+                      class="header__logo"
+                      aria-label="Northern Water Home"
+                    >
+                      <img
+                        src="../assets/images/northern-water-colorful-logo.svg"
+                        alt="Northern Water Logo"
+                        width="149"
+                        height="56"
+                      />
+                    </a>
+
+                    <!-- Mobile Toggle Button -->
+                    <button
+                      class="navbar-toggler header__toggle"
+                      type="button"
+                      data-bs-toggle="collapse"
+                      data-bs-target="#headerNavigation2"
+                      aria-controls="headerNavigation2"
+                      aria-expanded="false"
+                      aria-label="Toggle navigation"
+                    >
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <!-- Navigation -->
+                    <div
+                      class="collapse navbar-collapse header__navigation"
+                      id="headerNavigation2"
+                    >
+                      <ul class="navbar-nav header__menu">
+                        <!-- Water Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                          <a
+                            class="nav-link dropdown-toggle header__menu-link"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Water
+                            <i
+                              data-lucide="chevron-down"
+                              class="header__menu-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </a>
+                          <ul class="dropdown-menu header__submenu">
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 2</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- Environment Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                          <a
+                            class="nav-link dropdown-toggle header__menu-link"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Environment
+                            <i
+                              data-lucide="chevron-down"
+                              class="header__menu-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </a>
+                          <ul class="dropdown-menu header__submenu">
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 2</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- Data Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                          <a
+                            class="nav-link dropdown-toggle header__menu-link"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            Data
+                            <i
+                              data-lucide="chevron-down"
+                              class="header__menu-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </a>
+                          <ul class="dropdown-menu header__submenu">
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 2</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                          <a
+                            class="nav-link dropdown-toggle header__menu-link"
+                            href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"
+                          >
+                            About
+                            <i
+                              data-lucide="chevron-down"
+                              class="header__menu-icon"
+                              aria-hidden="true"
+                            ></i>
+                          </a>
+                          <ul class="dropdown-menu header__submenu">
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 1</a
+                              >
+                            </li>
+                            <li>
+                              <a
+                                class="dropdown-item header__submenu-link"
+                                href="#"
+                                >Submenu Item 2</a
+                              >
+                            </li>
+                          </ul>
+                        </li>
+
+                        <!-- News Link -->
+                        <li class="nav-item header__menu-item">
+                          <a class="nav-link header__menu-link" href="#"
+                            >News</a
+                          >
+                        </li>
+                      </ul>
+
+                      <!-- Right Side Actions -->
+                      <div class="header__actions">
+                        <!-- Search Button -->
+                        <button
+                          type="button"
+                          class="header__search-btn"
+                          aria-label="Open search"
+                        >
+                          <i
+                            data-lucide="search"
+                            alt="search-icon"
+                            aria-hidden="true"
+                          ></i>
+                        </button>
+
+                        <!-- Login Button -->
+                        <!--<a href="/login" class="btn header__login-btn">
+                            Water Provider Login
+                          </a> -->
+                        <a
+                          href="#"
+                          class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                          aria-label="Water Provider Login"
+                        >
+                          <div
+                            class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                          >
+                            <span class="btn-text">Water Provider Login</span>
+
+                            <span
+                              class="btn-icon liquid-animation-items liquid-animation-circle move"
+                            >
+                              <span class="circle-animation">
+                                <svg
+                                  width="24"
+                                  height="24"
+                                  viewBox="0 0 24 24"
+                                  fill="none"
+                                  xmlns="http://www.w3.org/2000/svg"
+                                >
+                                  <path
+                                    d="M5 12H19"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                  <path
+                                    d="M12 5L19 12L12 19"
+                                    stroke="#fff"
+                                    stroke-width="2"
+                                    stroke-linecap="round"
+                                    stroke-linejoin="round"
+                                  />
+                                </svg>
+                              </span>
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                version="1.1"
+                              >
+                                <defs>
+                                  <filter id="goo">
+                                    <feGaussianBlur
+                                      in="SourceGraphic"
+                                      stdDeviation="10"
+                                      result="blur"
+                                    />
+                                    <feColorMatrix
+                                      in="blur"
+                                      mode="matrix"
+                                      values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                      result="goo"
+                                    />
+                                    <feBlend in="SourceGraphic" in2="goo" />
+                                  </filter>
+                                </defs>
+                              </svg>
+                            </span>
+                          </div>
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </nav>
+              </header>
+              <!--Header ends-->
+              <!--Hero content starts-->
+              <div class="hero-content">
+                <h1 class="hero-title">about us</h1>
+              </div>
+              <!--Hero content ends-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Secondary ends here -->
+    <!-- Black and Green Cards starts here -->
+    <div class="container-fluid black-green-cards-container-full">
+      <div class="container black-green-cards-container">
+        <div class="row">
+          <div class="col-12 p-0">
+            <div class="black-green-cards-wrapper">
+              <div class="black-card">
+                <div class="black-card-content">
+                  <h2 class="black-card-content-title">
+                    Capturing Data From Our Projects
+                  </h2>
+                  <section class="black-card-content-text">
+                    <p>
+                      Northern Water collects real-time flow data for the
+                      Colorado-Big Thompson Project and Windy Gap Project. The
+                      data for selected canals, streams, rivers, reservoirs and
+                      watersheds can be viewed and
+                      downloaded through our website portal.
+                    </p>
+                  </section>
+                  <!-- Secondary Button starts here-->
+                  <a
+                    href="#"
+                    class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                    role="button"
+                    aria-label="Northern Water Data Portal"
+                    tabindex="0"
+                    data-button-type="secondary"
+                  >
+                    <div
+                      class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                    >
+                      <span class="btn-text">Northern Water Data Portal</span>
+                      <span
+                        class="btn-icon liquid-animation-items liquid-animation-circle move"
+                        aria-hidden="true"
+                      >
+                        <span class="circle-animation">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Right arrow"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12 5L19 12L12 19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                          aria-hidden="true"
+                        >
+                          <defs>
+                            <filter id="goo-secondary">
+                              <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="10"
+                                result="blur"
+                              />
+                              <feColorMatrix
+                                in="blur"
+                                mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                result="goo"
+                              />
+                              <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                  <!-- Secondary Button ends here-->
+                </div>
+              </div>
+              <div class="green-card">
+                <div class="green-card-content">
+                  <h2 class="green-card-content-title">
+                    State of Colorado Data
+                  </h2>
+                  <section class="green-card-content-text">
+                    <p>
+                      Northern Water pushes its data to the State of Colorado,
+                      which is available on the state's data portal. 
+                    </p>
+                  </section>
+                  <!-- Secondary Button starts here-->
+                  <a
+                    href="#"
+                    class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                    role="button"
+                    aria-label="State of Colorado Portal"
+                    tabindex="0"
+                    data-button-type="secondary"
+                  >
+                    <div
+                      class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                    >
+                      <span class="btn-text">State of Colorado Portal</span>
+                      <span
+                        class="btn-icon liquid-animation-items liquid-animation-circle move"
+                        aria-hidden="true"
+                      >
+                        <span class="circle-animation">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Right arrow"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12 5L19 12L12 19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                          aria-hidden="true"
+                        >
+                          <defs>
+                            <filter id="goo-secondary">
+                              <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="10"
+                                result="blur"
+                              />
+                              <feColorMatrix
+                                in="blur"
+                                mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                result="goo"
+                              />
+                              <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                  <!-- Secondary Button ends here-->
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Black and Green Cards ends here -->
+    <!-- Footer starts here -->
+    <footer class="footer" role="contentinfo">
+      <div class="container-fluid">
+        <div class="container">
+          <!-- Newsletter Section -->
+          <div class="row footer__newsletter">
+            <div class="col-12 col-lg-6">
+              <h2 class="footer__newsletter-title">Stay Informed</h2>
+              <p class="footer__newsletter-text">
+                Sign up for our newsletter to receive the latest updates on
+                projects, events, and water conservation efforts.
+              </p>
+            </div>
+            <div class="col-12 col-lg-6">
+              <form class="footer__form" aria-label="Newsletter Subscription">
+                <div class="footer__form-group d-flex align-items-end">
+                  <div class="form-floating flex-grow-1">
+                    <input
+                      type="email"
+                      id="email"
+                      class="footer__input form-control"
+                      placeholder="Enter your email ID"
+                      required
+                      aria-required="true"
+                    />
+                    <label for="email" class="footer__input-label"
+                      >Enter your email ID</label
+                    >
+                  </div>
+                  <button
+                    type="submit"
+                    class="footer__submit d-flex align-items-center"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row footer__container">
+            <!-- Quick Links Section -->
+            <div class="footer__quick-links">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Quick Link
+              </h3>
+              <div class="footer__links-grid row p-0">
+                <div class="footer__links-column p-0">
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Contact Us
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Data Policy
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Accessibility
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Social Media Policy
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Contact Section -->
+            <div class="footer__contact">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Contact Us
+              </h3>
+              <div class="footer__contact-info">
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="map-pin"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <address class="footer__address mb-0">
+                    220 Water Ave., Berthoud, CO 80513
+                  </address>
+                </div>
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="phone"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <a href="tel:800-369-7246" class="footer__phone"
+                    >800-369-7246</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer__social">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Follow us
+              </h3>
+              <div class="footer__social-links d-flex">
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Facebook page"
+                >
+                  <img
+                    src="../assets/images/facebook-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Twitter page"
+                >
+                  <img
+                    src="../assets/images/twitter-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Instagram page"
+                >
+                  <img
+                    src="../assets/images/instagram-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our LinkedIn page"
+                >
+                  <img
+                    src="../assets/images/linkedin-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our YouTube channel"
+                >
+                  <img
+                    src="../assets/images/youtube-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Copyright Section -->
+      <div class="footer__bottom">
+        <div
+          class="container footer__bottom-container d-flex justify-content-center align-items-center"
+        >
+          <p class="footer__copyright mb-0">
+            Copyright © <span class="footer__year"></span> Northern Water
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends here -->
+    <script src="../assets/dist/main.min.js"></script>
+  </body>
+</html>

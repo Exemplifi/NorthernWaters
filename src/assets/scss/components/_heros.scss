@@ -154,6 +154,7 @@
   background: var(--hero-bg);
   padding: 0;
   overflow-x: hidden;
+  overflow-y: visible;
   .hero-section {
     position: relative;
     width: 100vw;
@@ -190,18 +191,6 @@
         #004a64 100%
       );
       z-index: 2;
-    }
-    .header {
-      z-index: 4;
-      .navbar-collapse {
-        @include media-breakpoint-down(lg) {
-          position: absolute;
-        }
-        &.show {
-          position: absolute;
-          height: fit-content;
-        }
-      }
     }
     .hero-secondary-image {
       width: 100%;

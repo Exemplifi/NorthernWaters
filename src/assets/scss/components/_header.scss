@@ -2,16 +2,58 @@
 @import "../utils/rem-convert";
 
 .header {
-  position: relative;
+  z-index: 4;
+  position: absolute;
+  top: rem.convert(32px);
+  left: 0;
+  right: 0;
   background-color: var(--white);
   border-radius: rem.convert(16px);
+  max-width: rem.convert(1280px);
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s ease;
+  transform: translateY(0);
   @include media-breakpoint-up(lg) {
-    @include rem.convert(padding, 16px 0);
+    padding: rem.convert(16px) 0 !important;
+  }
+  @include media-breakpoint-down(lg) {
+    max-width: rem.convert(90%);
+  }
+  &.sticky {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    border-radius: rem.convert(0px);
+    width: 100%;
+    max-width: rem.convert(100%);
+    transform: translateY(0);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    animation: headerSlideDown 0.5s ease-out;
+    @media (prefers-reduced-motion: reduce) {
+      transition: none;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    transition: none;
   }
   // Navbar Base Styles
   .navbar {
     padding: 0 12px;
     @include rem.convert(min-height, 56px);
+    .navbar-collapse {
+      @include media-breakpoint-down(lg) {
+        position: absolute;
+      }
+      &.show {
+        position: absolute;
+        height: fit-content;
+      }
+    }
   }
 
   // Logo
@@ -232,5 +274,14 @@
       overflow-y: auto;
       overflow-x: hidden;
     }
+  }
+}
+
+@keyframes headerSlideDown {
+  from {
+    transform: translateY(-100%);
+  }
+  to {
+    transform: translateY(0);
   }
 }
