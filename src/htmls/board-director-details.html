@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Board Director Detail</title>
+  <link rel="stylesheet" href="../assets/dist/main.css">
+  <style>
+    .header{
+      position: fixed;
+      top: 33px;
+      left: 50%;
+      z-index: 9999;
+      transform: translateX(-50%);
+    }
+  </style>
+</head>
+
+<body>
+
+
+
+  <header class="header container">
+    <nav class="navbar navbar-expand-lg row mx-0">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="/" class="header__logo" aria-label="Northern Water Home">
+          <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149" height="56">
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+          <ul class="navbar-nav header__menu">
+            <!-- Water Dropdown -->
+            <li class="nav-item dropdown header__menu-item">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Water
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu">
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+              </ul>
+            </li>
+
+            <!-- Environment Dropdown -->
+            <li class="nav-item dropdown header__menu-item">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Environment
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu">
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+              </ul>
+            </li>
+
+            <!-- Data Dropdown -->
+            <li class="nav-item dropdown header__menu-item">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Data
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu">
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown header__menu-item">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                About
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu">
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+              </ul>
+            </li>
+
+            <!-- News Link -->
+            <li class="nav-item header__menu-item">
+              <a class="nav-link header__menu-link" href="#">News</a>
+            </li>
+          </ul>
+
+          <!-- Right Side Actions -->
+          <div class="header__actions">
+            <!-- Search Button -->
+            <button type="button" class="header__search-btn" aria-label="Open search">
+              <i data-lucide="search" alt="search-icon" aria-hidden="true"></i>
+            </button>
+
+            <!-- Login Button -->
+            <!--<a href="/login" class="btn header__login-btn">
+              Water Provider Login
+            </a> -->
+            <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
+              <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+                  <span class="btn-text">Water Provider Login</span>
+
+                  <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+                    <span class="circle-animation">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                          <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                          <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                      <defs>
+                        <filter id="goo">
+                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                          <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                      </defs>
+                    </svg>
+                  </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <section class="inner-hero">
+       <div class="container">
+        <div class="row">
+          <div class="col-12">
+            <h1>Bill Emslie</h1>
+          </div>
+        </div>
+       </div>
+  </section>
+
+  <section class="board-director-detail">
+    <div class="container">
+      <div class="row g-5">
+        <div class="col-12 col-md-6 img-wrap">
+          <img src="../assets/images/directors-card-1.jpg" alt="Bill Emslie" class="img-fluid">
+        </div>
+        <div class="col-12 col-md-6 content-wrap">
+          <h2>President, Municipal Subdistrict</h2>
+          <ul class="details-list">
+            <li>
+              <span class="icon-wrap"><img src="../assets/images/home.svg" alt="" role="presentation"
+                  class="img-fluid" /></span>
+              Larimer County
+            </li>
+            <li>
+              <span class="icon-wrap"><img src="../assets/images/calendar.svg" alt="" role="presentation"
+                  class="img-fluid" /></span> 
+                  <span><strong>Current Term:</strong> Sept. 28, 2021 - Sept. 28, 2025</span>
+            </li>
+            <li>
+              <span class="icon-wrap"><img src="../assets/images/calendar.svg" alt="" role="presentation"
+                  class="img-fluid" /></span>
+                  <span><strong>Director Since:</strong> Sept. 28, 2005</span>
+            </li>
+          </ul>
+          <p>Bill Emslie has a Bachelor of Science degree in electrical engineering from the United States Naval Academy
+            and a Master of Science degree in electrical engineering from Michigan State University. He also attended
+            Colorado State University and the U.S. Navy Nuclear Power School. Emslie is a retired captain in the United
+            States Navy having served in the Navy Nuclear Submarine Force in both active duty and reserve assignments. 
+          </p>
+          <p> He is retired from Platte River Power Authority where he was a senior project engineer for construction of
+            utility generation and transmission projects. He also managed Platte River’s water resources. He has also
+            done electronic controls testing for Horizon Technology and energy conservation engineering for the Public
+            Service Company of New Mexico. </p>
+          <h3 class="h5">Emslie's Professional Civic Organization Experience Includes:</h3>
+          <ul class="director-experience-list">
+            <li>Past president Boy Scouts of America Longs Peak Council and current member of the board of trustees</li>
+            <li>Past District Governor for Rotary District 5440</li>
+            <li>Rotary Club of Fort Collins, after work past president and current member</li>
+            <li>Fort Collins Area United Way, past president and campaign chair</li>
+            <li>American Public Power Association, Demonstration of Energy Efficient Developments, Past Board Chair and
+              member board of directors</li>
+            <li>Poudre School District, past chair of mill levy increase to support budget</li>
+            <li>Association of the United States Navy, past vice president of professional development</li>
+            <li>Shamrock Irrigation Company, member and past president</li>
+            <li>Institute of Electrical and Electronics Engineers, member</li>
+          </ul>
+          <p>
+        </div>
+      </div>
+    </div>
+  </section>
+</body>
+</html>
