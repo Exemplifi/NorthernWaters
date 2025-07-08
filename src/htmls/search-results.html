@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search NW</title>
+    <link rel="stylesheet" href="../assets/dist/main.css">
+    <style>
+        .header {
+            position: fixed;
+            top: 33px;
+            left: 50%;
+            transform: translateX(-50%);
+            z-index: 9999;
+        }
+    </style>
+</head>
+
+<body>
+
+
+
+    <header class="header container">
+        <nav class="navbar navbar-expand-lg row mx-0">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a href="/" class="header__logo" aria-label="Northern Water Home">
+                    <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
+                        height="56">
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+                    <ul class="navbar-nav header__menu">
+                        <!-- Water Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Water
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Environment Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Environment
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Data Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Data
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- News Link -->
+                        <li class="nav-item header__menu-item">
+                            <a class="nav-link header__menu-link" href="#">News</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Actions -->
+                    <div class="header__actions">
+                        <!-- Search Button -->
+                        <button type="button" class="header__search-btn" aria-label="Open search">
+                            <i data-lucide="search" alt="search-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <!-- Login Button -->
+                        <!--<a href="/login" class="btn header__login-btn">
+              Water Provider Login
+            </a> -->
+                        <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                            aria-label="Water Provider Login">
+                            <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+                                <span class="btn-text">Water Provider Login</span>
+
+                                <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+                                    <span class="circle-animation">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <defs>
+                                            <filter id="goo">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                                <feColorMatrix in="blur" mode="matrix"
+                                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                                    result="goo" />
+                                                <feBlend in="SourceGraphic" in2="goo" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <section class="inner-hero">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>Search Results</h1>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12 search-results-wrap">
+                    <!-- Search Bar and Results Count -->
+                    <div class="search-bar-container">
+                        <form class="search-form" role="search" aria-label="Sitewide search">
+                            <label for="search-input" class="visually-hidden">Search</label>
+                            <input type="search" id="search-input" class="form-control" placeholder="Search" />
+                            <button type="reset" class="reset-btn" aria-label="Clear search input">
+                                <img src="../assets/images/close.svg" alt="" role="presentation" />
+                            </button>
+                        </form>
+                        <div class="results-show-wrap" aria-live="polite">
+                            Showing 1–5 of 30 results
+                        </div>
+                    </div>
+
+
+                    <!-- Search Results List -->
+                    <div class="search-results-list">
+                        <div class="search-result-card">
+                            <div class="result-title">
+                                <a href="#">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</a>
+                            </div>
+                            <div class="result-desc">
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et
+                                    velit
+                                    interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent
+                                    per
+                                    conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+                                    lobortis.</p>
+                            </div>
+                        </div>
+                        <div class="search-result-card">
+                            <div class="result-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                            <div class="result-desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per
+                                conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+                                lobortis.
+                            </div>
+                        </div>
+                        <div class="search-result-card">
+                            <div class="result-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                            <div class="result-desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per
+                                conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+                                lobortis.
+                            </div>
+                        </div>
+                        <div class="search-result-card">
+                            <div class="result-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                            <div class="result-desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per
+                                conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+                                lobortis.
+                            </div>
+                        </div>
+                        <div class="search-result-card">
+                            <div class="result-title">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</div>
+                            <div class="result-desc">
+                                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit
+                                interdum, ac aliquet odio mattis. Class aptent taciti sociosqu ad litora torquent per
+                                conubia nostra, per inceptos himenaeos. Curabitur tempus urna at turpis condimentum
+                                lobortis.
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Load More Button -->
+                    <div class="load-more-container">
+                        <button class="load-more-btn">Load More</button>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.querySelectorAll('.search-result-card').forEach(function(card) {
+            card.addEventListener('mouseenter', function() {
+                const prev = card.previousElementSibling;
+                if (prev && prev.classList.contains('search-result-card')) {
+                    prev.classList.add('highlight');
+                }
+            });
+            card.addEventListener('mouseleave', function() {
+                const prev = card.previousElementSibling;
+                if (prev && prev.classList.contains('search-result-card')) {
+                    prev.classList.remove('highlight');
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>
