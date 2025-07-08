@@ -125,6 +125,17 @@ const setupHeader = () => {
 
   setupDropdownKeyboardNavigation();
   setupAccessibility();
+
+  // Make Sure Header is Sticky on Scroll and Fixed on Top
+  window.addEventListener('scroll', () => {
+    const header = document.querySelector('.header');
+    const windowHeight = window.innerHeight;
+    if (window.scrollY > windowHeight) {
+      header.classList.add('sticky');
+    } else {
+      header.classList.remove('sticky');
+    }
+  });
 };
 
 // Initialize header

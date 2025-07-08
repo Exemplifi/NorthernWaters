@@ -1,53 +1,79 @@
-.black-green-cards-wrapper {
-  display: flex;
+.black-green-cards-container-full {
+  padding: rem.convert(80px) 0;
   width: 100%;
-  gap: rem.convert(0px);
-  border-radius: rem.convert(16px);
-  background-color: var(--green);
-  @include media-breakpoint-down(md) {
-    flex-direction: column;
-  }
-  .black-card {
-    background-color: var(--black);
-    color: var(--white);
-    padding: rem.convert(40px);
-    border-radius: rem.convert(16px);
-    flex-basis: 50%;
-    @include media-breakpoint-down(md) {
-      flex-basis: 100%;
+  background-color: var(--off-white);
+  .black-green-cards-container {
+    max-width: rem.convert(1280px);
+    margin: 0 auto;
+    @include media-breakpoint-down(xl) {
+      // max-width: rem.convert(960px); // Adjust container width for xl devices
+      padding: rem.convert(40px);
     }
-    .black-card-content-title {
-      font-size: rem.convert(56px);
-      font-weight: 700;
-      line-height: 110%;
-      margin-bottom: rem.convert(16px);
-      text-transform: capitalize;
-    }
-    .black-card-content-text {
-      padding-top: rem.convert(24px);
-      padding-bottom: rem.convert(40px);
-    }
-  }
-  .green-card {
-    background-color: var(--green);
-    color: var(--white);
-    padding: rem.convert(40px);
-    border-radius: rem.convert(16px);
-    flex-basis: 50%;
-    @include media-breakpoint-down(md) {
-      flex-basis: 100%;
-    }
-    .green-card-content-title {
-      font-size: rem.convert(56px);
-      font-weight: 700;
-      line-height: 110%;
-      margin-bottom: rem.convert(16px);
-      text-transform: capitalize;
-      letter-spacing: -2%;
-    }
-    .green-card-content-text {
-      padding-top: rem.convert(24px);
-      padding-bottom: rem.convert(40px);
+
+    // @include media-breakpoint-down(lg) {
+    //   max-width: rem.convert(720px); // Adjust container width for lg devices
+    // }
+
+    // @include media-breakpoint-down(md) {
+    //   max-width: rem.convert(540px); // Adjust container width for md devices
+    // }
+
+    // @include media-breakpoint-down(sm) {
+    //   max-width: 100%; // Full width for mobile
+    //   padding: rem.convert(24px); // Add some padding on mobile
+    // }
+    .black-green-cards-wrapper {
+      display: flex;
+      width: 100%;
+      gap: rem.convert(0px);
+      border-radius: rem.convert(16px);
+      background-color: var(--green);
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+      }
+      .black-card {
+        background-color: var(--black);
+        color: var(--white);
+        padding: rem.convert(40px);
+        border-radius: rem.convert(16px);
+        flex-basis: 50%;
+        @include media-breakpoint-down(md) {
+          flex-basis: 100%;
+        }
+        .black-card-content-title {
+          font-size: rem.convert(56px);
+          font-weight: 700;
+          line-height: 110%;
+          margin-bottom: rem.convert(16px);
+          text-transform: capitalize;
+        }
+        .black-card-content-text {
+          padding-top: rem.convert(24px);
+          padding-bottom: rem.convert(40px);
+        }
+      }
+      .green-card {
+        background-color: var(--green);
+        color: var(--white);
+        padding: rem.convert(40px);
+        border-radius: rem.convert(16px);
+        flex-basis: 50%;
+        @include media-breakpoint-down(md) {
+          flex-basis: 100%;
+        }
+        .green-card-content-title {
+          font-size: rem.convert(56px);
+          font-weight: 700;
+          line-height: 110%;
+          margin-bottom: rem.convert(16px);
+          text-transform: capitalize;
+          letter-spacing: -2%;
+        }
+        .green-card-content-text {
+          padding-top: rem.convert(24px);
+          padding-bottom: rem.convert(40px);
+        }
+      }
     }
   }
 }
