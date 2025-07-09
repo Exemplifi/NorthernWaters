@@ -7,6 +7,7 @@
     display: flex;
     flex-direction: column;
     margin-bottom: 1.5rem;
+    height: auto;
     .card-img-top {
       height: rem.convert(320px);
       object-fit: cover;
@@ -19,14 +20,16 @@
       background: var(--blue);
       color: var(--white);
       padding: 2rem;
-      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
       @include media-breakpoint-down(lg){
         padding: 1.5rem;
       }
       .card-title-wrapper {
         margin-bottom: 1.5rem;
-        padding-bottom: 1.5rem;
-        border-bottom: 1px solid #FFFFFF99;
+        // padding-bottom: 1.5rem;
+        // border-bottom: 1px solid #FFFFFF99;
         @include media-breakpoint-down(lg){
           padding-bottom: 1rem;
         }
@@ -34,7 +37,9 @@
           margin-bottom: 0;
         }
       }
-      .card-text-wrapper {  
+      .card-text-wrapper {
+        padding-top: 1.5rem;
+        border-top: 1px solid #FFFFFF99;
         margin-bottom: 1.5rem;
         .card-text {
           margin-bottom: 0;
@@ -74,7 +79,10 @@
     }
   }
   .cards-row{
+    display: flex;
+    flex-wrap: wrap;
     .col-lg-4{
+      display: flex;
       &:nth-last-child(-n + 3) {
         .card {
           @media (min-width: 990px) {
