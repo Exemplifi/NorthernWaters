@@ -90,6 +90,11 @@ $transition-fast: all 0.5s ease-in-out;
       transform: scale(1);
     }
   }
+  &.primary-btn-no-icon {
+    &:hover {
+      padding: 0;
+    }
+  }
 }
 
 // Secondary Button Component
@@ -175,6 +180,11 @@ $transition-fast: all 0.5s ease-in-out;
 
     .circle-animation svg {
       transform: scale(1);
+    }
+  }
+  &.secondary-btn-no-icon {
+    &:hover {
+      padding: 0;
     }
   }
 }
