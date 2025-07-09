@@ -1,188 +1,559 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Board Director Detail</title>
+    <link rel="stylesheet" href="../assets/dist/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Board Director Detail</title>
-  <link rel="stylesheet" href="../assets/dist/main.css">
-</head>
+  <body>
+    <!-- Skip to main content link -->
+    <a href="#main-content" class="skip-link visually-hidden-focusable"
+      >Skip to main content</a
+    >
 
-<body>
+    <!-- Header Component starts here -->
+    <header class="header container-fluid" role="banner">
+      <nav
+        class="navbar navbar-expand-lg row mx-0 container"
+        aria-label="Main navigation"
+      >
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a href="/" class="header__logo" aria-label="Northern Water Home">
+            <img
+              src="../assets/images/northern-water-colorful-logo.svg"
+              alt="Northern Water Logo"
+              width="149"
+              height="56"
+            />
+          </a>
 
+          <!-- Mobile Toggle Button -->
+          <button
+            class="navbar-toggler header__toggle"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#headerNavigation"
+            aria-controls="headerNavigation"
+            aria-expanded="false"
+            aria-label="Toggle navigation menu"
+          >
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          </button>
 
+          <!-- Navigation -->
+          <div
+            class="collapse navbar-collapse header__navigation"
+            id="headerNavigation"
+          >
+            <ul
+              class="navbar-nav header__menu"
+              role="menubar"
+              aria-label="Main Menu"
+            >
+              <!-- Water Dropdown -->
+              <li class="nav-item dropdown header__menu-item" role="none">
+                <a
+                  class="nav-link dropdown-toggle header__menu-link"
+                  href="#"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-controls="waterSubmenu"
+                >
+                  Water
+                  <i
+                    data-lucide="chevron-down"
+                    class="header__menu-icon"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+                <ul
+                  class="dropdown-menu header__submenu"
+                  id="waterSubmenu"
+                  role="menu"
+                  aria-label="Water submenu"
+                >
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 1</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-  <header class="header container">
-    <nav class="navbar navbar-expand-lg row mx-0">
-      <div class="col-12 d-flex justify-content-between align-items-center">
-        <!-- Logo -->
-        <a href="/" class="header__logo" aria-label="Northern Water Home">
-          <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149" height="56">
-        </a>
+              <!-- Environment Dropdown -->
+              <li class="nav-item dropdown header__menu-item" role="none">
+                <a
+                  class="nav-link dropdown-toggle header__menu-link"
+                  href="#"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-controls="environmentSubmenu"
+                >
+                  Environment
+                  <i
+                    data-lucide="chevron-down"
+                    class="header__menu-icon"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+                <ul
+                  class="dropdown-menu header__submenu"
+                  id="environmentSubmenu"
+                  role="menu"
+                  aria-label="Environment submenu"
+                >
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 1</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-        <!-- Mobile Toggle Button -->
-        <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse" data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+              <!-- Data Dropdown -->
+              <li class="nav-item dropdown header__menu-item" role="none">
+                <a
+                  class="nav-link dropdown-toggle header__menu-link"
+                  href="#"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-controls="dataSubmenu"
+                >
+                  Data
+                  <i
+                    data-lucide="chevron-down"
+                    class="header__menu-icon"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+                <ul
+                  class="dropdown-menu header__submenu"
+                  id="dataSubmenu"
+                  role="menu"
+                  aria-label="Data submenu"
+                >
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 1</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-        <!-- Navigation -->
-        <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
-          <ul class="navbar-nav header__menu">
-            <!-- Water Dropdown -->
-            <li class="nav-item dropdown header__menu-item">
-              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Water
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown-menu header__submenu">
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
-              </ul>
-            </li>
+              <!-- About Dropdown -->
+              <li class="nav-item dropdown header__menu-item" role="none">
+                <a
+                  class="nav-link dropdown-toggle header__menu-link"
+                  href="#"
+                  role="menuitem"
+                  aria-haspopup="true"
+                  data-bs-toggle="dropdown"
+                  aria-expanded="false"
+                  aria-controls="aboutSubmenu"
+                >
+                  About
+                  <i
+                    data-lucide="chevron-down"
+                    class="header__menu-icon"
+                    aria-hidden="true"
+                  ></i>
+                </a>
+                <ul
+                  class="dropdown-menu header__submenu"
+                  id="aboutSubmenu"
+                  role="menu"
+                  aria-label="About submenu"
+                >
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 1</a
+                    >
+                  </li>
+                  <li role="none">
+                    <a
+                      class="dropdown-item header__submenu-link"
+                      href="#"
+                      role="menuitem"
+                      >Submenu Item 2</a
+                    >
+                  </li>
+                </ul>
+              </li>
 
-            <!-- Environment Dropdown -->
-            <li class="nav-item dropdown header__menu-item">
-              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Environment
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown-menu header__submenu">
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
-              </ul>
-            </li>
+              <!-- News Link -->
+              <li class="nav-item header__menu-item" role="none">
+                <a class="nav-link header__menu-link" href="#" role="menuitem"
+                  >News</a
+                >
+              </li>
+            </ul>
 
-            <!-- Data Dropdown -->
-            <li class="nav-item dropdown header__menu-item">
-              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                Data
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown-menu header__submenu">
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
-              </ul>
-            </li>
+            <!-- Right Side Actions -->
+            <div class="header__actions">
+              <!-- Search Button -->
+              <button
+                type="button"
+                class="header__search-btn"
+                aria-label="Open search"
+                aria-expanded="false"
+                aria-controls="searchPanel"
+              >
+                <i data-lucide="search" aria-hidden="true"></i>
+              </button>
 
-            <!-- About Dropdown -->
-            <li class="nav-item dropdown header__menu-item">
-              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                About
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <ul class="dropdown-menu header__submenu">
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
-                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
-              </ul>
-            </li>
-
-            <!-- News Link -->
-            <li class="nav-item header__menu-item">
-              <a class="nav-link header__menu-link" href="#">News</a>
-            </li>
-          </ul>
-
-          <!-- Right Side Actions -->
-          <div class="header__actions">
-            <!-- Search Button -->
-            <button type="button" class="header__search-btn" aria-label="Open search">
-              <i data-lucide="search" alt="search-icon" aria-hidden="true"></i>
-            </button>
-
-            <!-- Login Button -->
-            <!--<a href="/login" class="btn header__login-btn">
-              Water Provider Login
-            </a> -->
-            <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" aria-label="Water Provider Login">
-              <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+              <!-- Login Button -->
+              <!-- Primary Button without icon starts here-->
+              <a
+                href="#"
+                class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center"
+                role="button"
+                aria-label="Water Provider Login"
+                tabindex="0"
+                data-button-type="primary"
+              >
+                <div class="primary-btn-wrap norm">
                   <span class="btn-text">Water Provider Login</span>
-
-                  <span class="btn-icon liquid-animation-items liquid-animation-circle move">
-                    <span class="circle-animation">
-                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                          <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                          <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
-                    </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                      <defs>
-                        <filter id="goo">
-                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
-                          <feBlend in="SourceGraphic" in2="goo" />
-                        </filter>
-                      </defs>
-                    </svg>
-                  </span>
-              </div>
-            </a>
+                </div>
+              </a>
+              <!-- Primary Button without icon ends here-->
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
-
-  <section class="inner-hero">
-       <div class="container">
-        <div class="row">
-          <div class="col-12">
-            <h1>Bill Emslie</h1>
+      </nav>
+    </header>
+    <!-- Header Component ends here -->
+    <main id="main-content" tabindex="-1">
+      <section class="inner-hero">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Bill Emslie</h1>
+            </div>
           </div>
         </div>
-       </div>
-  </section>
+      </section>
 
-  <section class="board-director-detail">
-    <div class="container">
-      <div class="row g-5">
-        <div class="col-12 col-md-6 img-wrap">
-          <img src="../assets/images/directors-card-1.jpg" alt="Bill Emslie" class="img-fluid">
-        </div>
-        <div class="col-12 col-md-6 content-wrap">
-          <h2>President, Municipal Subdistrict</h2>
-          <ul class="details-list">
-            <li>
-              <span class="icon-wrap"><img src="../assets/images/home.svg" alt="" role="presentation"
-                  class="img-fluid" /></span>
-              Larimer County
-            </li>
-            <li>
-              <span class="icon-wrap"><img src="../assets/images/calendar.svg" alt="" role="presentation"
-                  class="img-fluid" /></span> 
-                  <span><strong>Current Term:</strong> Sept. 28, 2021 - Sept. 28, 2025</span>
-            </li>
-            <li>
-              <span class="icon-wrap"><img src="../assets/images/calendar.svg" alt="" role="presentation"
-                  class="img-fluid" /></span>
+      <section class="board-director-detail">
+        <div class="container">
+          <div class="row g-5">
+            <div class="col-12 col-md-6 img-wrap">
+              <img
+                src="../assets/images/directors-card-1.jpg"
+                alt="Bill Emslie"
+                class="img-fluid"
+              />
+            </div>
+            <div class="col-12 col-md-6 content-wrap">
+              <h2>President, Municipal Subdistrict</h2>
+              <ul class="details-list">
+                <li>
+                  <span class="icon-wrap"
+                    ><img
+                      src="../assets/images/home.svg"
+                      alt=""
+                      role="presentation"
+                      class="img-fluid"
+                  /></span>
+                  Larimer County
+                </li>
+                <li>
+                  <span class="icon-wrap"
+                    ><img
+                      src="../assets/images/calendar.svg"
+                      alt=""
+                      role="presentation"
+                      class="img-fluid"
+                  /></span>
+                  <span
+                    ><strong>Current Term:</strong> Sept. 28, 2021 - Sept. 28,
+                    2025</span
+                  >
+                </li>
+                <li>
+                  <span class="icon-wrap"
+                    ><img
+                      src="../assets/images/calendar.svg"
+                      alt=""
+                      role="presentation"
+                      class="img-fluid"
+                  /></span>
                   <span><strong>Director Since:</strong> Sept. 28, 2005</span>
-            </li>
-          </ul>
-          <p>Bill Emslie has a Bachelor of Science degree in electrical engineering from the United States Naval Academy
-            and a Master of Science degree in electrical engineering from Michigan State University. He also attended
-            Colorado State University and the U.S. Navy Nuclear Power School. Emslie is a retired captain in the United
-            States Navy having served in the Navy Nuclear Submarine Force in both active duty and reserve assignments. 
-          </p>
-          <p> He is retired from Platte River Power Authority where he was a senior project engineer for construction of
-            utility generation and transmission projects. He also managed Platte River’s water resources. He has also
-            done electronic controls testing for Horizon Technology and energy conservation engineering for the Public
-            Service Company of New Mexico. </p>
-          <h3 class="h5">Emslie's Professional Civic Organization Experience Includes:</h3>
-          <ul class="director-experience-list">
-            <li>Past president Boy Scouts of America Longs Peak Council and current member of the board of trustees</li>
-            <li>Past District Governor for Rotary District 5440</li>
-            <li>Rotary Club of Fort Collins, after work past president and current member</li>
-            <li>Fort Collins Area United Way, past president and campaign chair</li>
-            <li>American Public Power Association, Demonstration of Energy Efficient Developments, Past Board Chair and
-              member board of directors</li>
-            <li>Poudre School District, past chair of mill levy increase to support budget</li>
-            <li>Association of the United States Navy, past vice president of professional development</li>
-            <li>Shamrock Irrigation Company, member and past president</li>
-            <li>Institute of Electrical and Electronics Engineers, member</li>
-          </ul>
-          <p>
+                </li>
+              </ul>
+              <p>
+                Bill Emslie has a Bachelor of Science degree in electrical
+                engineering from the United States Naval Academy and a Master of
+                Science degree in electrical engineering from Michigan State
+                University. He also attended Colorado State University and the
+                U.S. Navy Nuclear Power School. Emslie is a retired captain in
+                the United States Navy having served in the Navy Nuclear
+                Submarine Force in both active duty and reserve assignments. 
+              </p>
+              <p>
+                He is retired from Platte River Power Authority where he was a
+                senior project engineer for construction of utility generation
+                and transmission projects. He also managed Platte River’s water
+                resources. He has also done electronic controls testing for
+                Horizon Technology and energy conservation engineering for the
+                Public Service Company of New Mexico. 
+              </p>
+              <h3 class="h5">
+                Emslie's Professional Civic Organization Experience Includes:
+              </h3>
+              <ul class="director-experience-list">
+                <li>
+                  Past president Boy Scouts of America Longs Peak Council and
+                  current member of the board of trustees
+                </li>
+                <li>Past District Governor for Rotary District 5440</li>
+                <li>
+                  Rotary Club of Fort Collins, after work past president and
+                  current member
+                </li>
+                <li>
+                  Fort Collins Area United Way, past president and campaign
+                  chair
+                </li>
+                <li>
+                  American Public Power Association, Demonstration of Energy
+                  Efficient Developments, Past Board Chair and member board of
+                  directors
+                </li>
+                <li>
+                  Poudre School District, past chair of mill levy increase to
+                  support budget
+                </li>
+                <li>
+                  Association of the United States Navy, past vice president of
+                  professional development
+                </li>
+                <li>Shamrock Irrigation Company, member and past president</li>
+                <li>
+                  Institute of Electrical and Electronics Engineers, member
+                </li>
+              </ul>
+              <p></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <!-- Footer starts here -->
+    <footer class="footer" role="contentinfo">
+      <div class="container-fluid">
+        <div class="container">
+          <!-- Newsletter Section -->
+          <div class="row footer__newsletter">
+            <div class="col-12 col-lg-6">
+              <h2 class="footer__newsletter-title">Stay Informed</h2>
+              <p class="footer__newsletter-text">
+                Sign up for our newsletter to receive the latest updates on
+                projects, events, and water conservation efforts.
+              </p>
+            </div>
+            <div class="col-12 col-lg-6">
+              <form class="footer__form" aria-label="Newsletter Subscription">
+                <div class="footer__form-group d-flex align-items-end">
+                  <div class="form-floating flex-grow-1">
+                    <input
+                      type="email"
+                      id="email"
+                      class="footer__input form-control"
+                      placeholder="Enter your email ID"
+                      required
+                      aria-required="true"
+                      aria-describedby="email-help"
+                      autocomplete="email"
+                    />
+                    <label for="email" class="footer__input-label">Enter your email ID</label>
+                    <div id="email-help" class="form-text visually-hidden">Please enter a valid email address to receive our newsletter</div>
+                  </div>
+                  <button
+                    type="submit"
+                    class="footer__submit d-flex align-items-center"
+                    aria-label="Subscribe to newsletter"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row footer__container">
+            <!-- Quick Links Section -->
+            <div class="footer__quick-links">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Quick Link
+              </h3>
+              <div class="footer__links-grid row p-0">
+                <div class="footer__links-column p-0">
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Contact Us
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Data Policy
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Accessibility
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Social Media Policy
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Contact Section -->
+            <div class="footer__contact">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Contact Us
+              </h3>
+              <div class="footer__contact-info">
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="map-pin"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <address class="footer__address mb-0">
+                    220 Water Ave., Berthoud, CO 80513
+                  </address>
+                </div>
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="phone"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <a href="tel:800-369-7246" class="footer__phone"
+                    >800-369-7246</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer__social">
+              <h3 class="footer__section-title border-bottom pb-3">
+                Follow us
+              </h3>
+              <div class="footer__social-links d-flex">
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Facebook page"
+                >
+                  <img
+                    src="../assets/images/facebook-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Twitter page"
+                >
+                  <img
+                    src="../assets/images/twitter-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Instagram page"
+                >
+                  <img
+                    src="../assets/images/instagram-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our LinkedIn page"
+                >
+                  <img
+                    src="../assets/images/linkedin-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our YouTube channel"
+                >
+                  <img
+                    src="../assets/images/youtube-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
-</body>
+
+      <!-- Copyright Section -->
+      <div class="footer__bottom">
+        <div
+          class="container footer__bottom-container d-flex justify-content-center align-items-center"
+        >
+          <p class="footer__copyright mb-0">
+            Copyright © <span class="footer__year"></span> Northern Water
+          </p>
+        </div>
+      </div>
+    </footer>
+    <!-- Footer ends here -->
+    <script src="../assets/dist/main.min.js"></script>
+  </body>
 </html>
