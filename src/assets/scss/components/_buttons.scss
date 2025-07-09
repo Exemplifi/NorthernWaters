@@ -223,3 +223,25 @@ $transition-fast: all 0.5s ease-in-out;
 // .primary-btn:hover .circle-animation svg {
 //   animation: arrow-bounce-right 0.7s cubic-bezier(.68, -0.55, .27, 1.55);
 // }
+
+.tertiary-btn {
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: rem.convert(16px);
+  font-weight: 600;
+  color: var(--black);
+  .card-cta-icon {
+    width: rem.convert(32px);
+    height: rem.convert(32px);
+    background: var(--green);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    transition: background 0.2s;
+    svg {
+      display: block;
+    }
+  }
+}
