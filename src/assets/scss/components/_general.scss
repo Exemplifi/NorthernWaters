@@ -63,3 +63,18 @@ a{
   color: var(--green);
   text-decoration: underline;
 }
+
+.bg-black {
+  background: var(--black);
+
+  * {
+    color: var(--white);
+  }
+
+  .secondary-btn {
+    .btn-text {
+      color: var(--black) !important;
+    }
+
+  }
+}

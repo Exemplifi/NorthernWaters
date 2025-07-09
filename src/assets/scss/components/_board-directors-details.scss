@@ -177,3 +177,121 @@
     }
   }
 }
+
+.mgt-card {
+  background: var(--blue);
+  padding: rem.convert(24px);
+  border-radius: rem.convert(16px);
+  display: flex;
+  gap: rem.convert(48px);
+  flex-direction: row;
+
+  &:not(:last-of-type) {
+    margin-bottom: rem.convert(24px);
+  }
+
+  @include media-breakpoint-down(md) {
+    flex-direction: column;
+    gap: rem.convert(24px);
+  }
+
+  * {
+    color: var(--white);
+  }
+
+  .img-wrap {
+    flex: 0 0 264px;
+    max-width: rem.convert(264px);
+    height: rem.convert(281px);
+
+    @include media-breakpoint-down(md) {
+      flex: 1;
+      max-width: 100%;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+      border-radius: rem.convert(16px);
+    }
+  }
+
+  .mgt-desc-wrap {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+
+    .mgt-info {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: rem.convert(24px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+      margin-bottom: rem.convert(40px);
+
+      @include media-breakpoint-down(md) {
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: flex-start;
+        margin-bottom: rem.convert(24px);
+      }
+
+      .content {
+        h3 {
+          margin-bottom: rem.convert(16px);
+        }
+
+        p {
+          font-size: rem.convert(14px);
+          text-transform: uppercase;
+          letter-spacing: 0.06em;
+          font-weight: 600;
+        }
+      }
+
+      .link-wrap {
+        @include media-breakpoint-down(md) {
+          margin-top: rem.convert(16px);
+        }
+
+        img {
+          margin-right: rem.convert(16px);
+        }
+      }
+    }
+    .mgt-details {
+      margin-bottom: rem.convert(24px);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      transition: max-height 0.3s ease-in-out;
+      &.expand {
+        -webkit-line-clamp: unset;
+        max-height: 100%; 
+      }
+    }
+    .btn.read-more-btn {
+      width: max-content;
+      min-width: rem.convert(131px);
+      display: inline-flex;
+      align-items: center;
+      padding: 0;
+      gap: rem.convert(16px);
+
+      .icon-wrap {
+        width: rem.convert(32px);
+        height: rem.convert(32px);
+        border-radius: 50%;
+        background: var(--white);
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.3s ease-in-out;
+      }
+    }
+
+  }
+}

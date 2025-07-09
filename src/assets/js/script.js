@@ -61,4 +61,32 @@ document.addEventListener('DOMContentLoaded', function () {
       ]
     });
   }
+
+  $('.read-more-btn').each(function () {
+    var $btn = $(this);
+    var showMoreText = 'Show More';
+    var showLessText = 'Show Less';
+    $btn.on('click', function () {
+      // Find the nearest .mgt-desc-wrap, then its .mgt-details child
+      var $descWrap = $btn.closest('.mgt-desc-wrap');
+      var $details = $descWrap.find('.mgt-details');
+      var isExpanded = $details.hasClass('expand');
+
+      if (!isExpanded) {
+        $details.addClass('expand');
+        $btn.attr('aria-expanded', 'true');
+        // Update button text to "Show Less"
+        $btn.contents().filter(function () {
+          return this.nodeType === 3; // Node.TEXT_NODE
+        }).first().replaceWith(showLessText + ' ');
+      } else {
+        $details.removeClass('expand');
+        $btn.attr('aria-expanded', 'false');
+        // Update button text to "Show More"
+        $btn.contents().filter(function () {
+          return this.nodeType === 3; // Node.TEXT_NODE
+        }).first().replaceWith(showMoreText + ' ');
+      }
+    });
+  });
 }); 

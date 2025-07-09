@@ -1,0 +1,500 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Management and Organization Page</title>
+    <link rel="stylesheet" href="../assets/dist/main.css">
+</head>
+
+<body>
+
+
+
+    <header class="header container">
+        <nav class="navbar navbar-expand-lg row mx-0">
+            <div class="col-12 d-flex justify-content-between align-items-center">
+                <!-- Logo -->
+                <a href="/" class="header__logo" aria-label="Northern Water Home">
+                    <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
+                        height="56">
+                </a>
+
+                <!-- Mobile Toggle Button -->
+                <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <!-- Navigation -->
+                <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+                    <ul class="navbar-nav header__menu">
+                        <!-- Water Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Water
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Environment Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Environment
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- Data Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                Data
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- About Dropdown -->
+                        <li class="nav-item dropdown header__menu-item">
+                            <a class="nav-link dropdown-toggle header__menu-link" href="#" role="button"
+                                data-bs-toggle="dropdown" aria-expanded="false">
+                                About
+                                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                            </a>
+                            <ul class="dropdown-menu header__submenu">
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 1</a></li>
+                                <li><a class="dropdown-item header__submenu-link" href="#">Submenu Item 2</a></li>
+                            </ul>
+                        </li>
+
+                        <!-- News Link -->
+                        <li class="nav-item header__menu-item">
+                            <a class="nav-link header__menu-link" href="#">News</a>
+                        </li>
+                    </ul>
+
+                    <!-- Right Side Actions -->
+                    <div class="header__actions">
+                        <!-- Search Button -->
+                        <button type="button" class="header__search-btn" aria-label="Open search">
+                            <i data-lucide="search" alt="search-icon" aria-hidden="true"></i>
+                        </button>
+
+                        <!-- Login Button -->
+                        <!--<a href="/login" class="btn header__login-btn">
+              Water Provider Login
+            </a> -->
+                        <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                            aria-label="Water Provider Login">
+                            <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+                                <span class="btn-text">Water Provider Login</span>
+
+                                <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+                                    <span class="circle-animation">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                            xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2"
+                                                stroke-linecap="round" stroke-linejoin="round" />
+                                        </svg>
+                                    </span>
+                                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                                        <defs>
+                                            <filter id="goo">
+                                                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                                <feColorMatrix in="blur" mode="matrix"
+                                                    values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                                    result="goo" />
+                                                <feBlend in="SourceGraphic" in2="goo" />
+                                            </filter>
+                                        </defs>
+                                    </svg>
+                                </span>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Secondary starts here -->
+    <section class="hero-secondary">
+        <div class="container-fluid p-0">
+            <div class="row">
+                <div class="col-12">
+                    <div class="hero-section">
+                        <div class="hero-img-wrapper">
+                            <img src="../assets/images/management-org-hero.jpg" alt="Hero background"
+                                class="hero-secondary-image" />
+                        </div>
+                        <div class="hero-img-overlay"></div>
+                        <!--Hero content starts-->
+                        <div class="hero-content">
+                            <h1 class="hero-title">Management and Organization</h1>
+                        </div>
+                        <!--Hero content ends-->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Hero Secondary ends here -->
+
+    </section>
+
+    <section class="two-col-text">
+        <div class="container bg-black rounded-4 p-4 p-lg-5">
+            <div class="row">
+                <div class="col-12 col-md-6 border-right">
+                    <h2>A Growing Organization</h2>
+                </div>
+                <div class="col-12 col-md-6 content-wrap">
+                    <p>
+                        Northern Water is the largest water provider in Northeastern Colorado. Under the umbrella of our
+                        13-member board, Northern Water is led by a general manager and four division directors. The
+                        division directors oversee their respective divisions’ operations and supervise department
+                        managers with employees ranging from support personnel and engineers, to operation, maintenance
+                        and administrative staff.
+                    </p>
+                    <!-- Secondary Button starts here-->
+                    <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                        role="button" aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
+                        <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                            <span class="btn-text">Water Provider Login</span>
+                            <span class="btn-icon liquid-animation-items liquid-animation-circle move"
+                                aria-hidden="true">
+                                <span class="circle-animation">
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right arrow">
+                                        <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                            stroke-linejoin="round" />
+                                        <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2"
+                                            stroke-linecap="round" stroke-linejoin="round" />
+                                    </svg>
+                                </span>
+                                <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                                    <defs>
+                                        <filter id="goo-secondary">
+                                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                                            <feColorMatrix in="blur" mode="matrix"
+                                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                                            <feBlend in="SourceGraphic" in2="goo" />
+                                        </filter>
+                                    </defs>
+                                </svg>
+                            </span>
+                        </div>
+                    </a>
+                    <!-- Secondary Button ends here-->
+                </div>
+            </div>
+        </div>
+        </div>
+        </div>
+    </section>
+
+    <!-- Management Team Section starts here -->
+    <section>
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Team Member 1 -->
+                    <article class="mgt-card">
+                        <div class="img-wrap">
+                            <img src="../assets/images/Bradleyd-Wind.webp" alt="Bradley D. Wind image" loading="lazy"
+                                decoding="async" />
+                        </div>
+                        <div class="mgt-desc-wrap">
+                            <div class="mgt-info">
+                                <div class="content">
+                                    <h3 class="h4">Bradley D. Wind</h3>
+                                    <p>General Manager</p>
+                                </div>
+                                <div class="link-wrap">
+                                    <img src="../assets/images/mail.svg" alt="" role="presentation">
+                                    <a href="mailto:bradley.wind@northernwater.org">
+                                        Email Bradley
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgt-details">
+                                <p>Bradley Wind was promoted to general manager in 2018, the sixth general manager in
+                                    the history of Northern Water. He has worked at Northern Water since 1994 serving as
+                                    an engineer and deputy manager of operations. Wind has several degrees from Colorado
+                                    State University - a bachelor's in civil engineering and agricultural engineering,
+                                    and a master's in business administration. He also has a master's in agricultural
+                                    engineering from the University of California at Davis.</p>
+                                <h4 class="h6">About the Engineering Division</h4>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                            </div>
+                            <button class="btn read-more-btn" aria-expanded="false">
+                                Show More <span class="icon-wrap"><img src="../assets/images/arrow-down.svg" alt=""
+                                        role="presentation"></span>
+                            </button>
+
+                        </div>
+                    </article>
+                    <!-- Team Member 2 -->
+                    <article class="mgt-card">
+                        <div class="img-wrap">
+                            <img src="../assets/images/jeff-drager.webp" alt="Bradley D. Wind image" loading="lazy"
+                                decoding="async" />
+                        </div>
+                        <div class="mgt-desc-wrap">
+                            <div class="mgt-info">
+                                <div class="content">
+                                    <h3 class="h4">Jeff Drager</h3>
+                                    <p>Director of Engineering </p>
+                                </div>
+                                <div class="link-wrap">
+                                    <img src="../assets/images/mail.svg" alt="" role="presentation">
+                                    <a href="mailto:bradley.wind@northernwater.org">
+                                        Email Jeff
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgt-details">
+                                <p>Jeff Drager has a bachelor’s degree in civil engineering from Colorado State
+                                    University and a master’s in water resources engineering from Stanford University.
+                                    He is a registered professional engineer in Colorado and California. Drager has
+                                    worked at Northern Water since 1995 where he has also served as project manager for
+                                    the Windy Gap Firming Project, which involved a 18-year NEPA/permitting process. He
+                                    has also served as project manager for other water supply projects in Colorado and
+                                    California as both a consultant and owner’s representative. </p>
+                                <h4 class="h6">About the Engineering Division</h4>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                            </div>
+                            <button class="btn read-more-btn" aria-expanded="false">
+                                Show More <span class="icon-wrap"><img src="../assets/images/arrow-down.svg" alt=""
+                                        role="presentation"></span>
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <!-- Team Member 3 -->
+                    <article class="mgt-card">
+                        <div class="img-wrap">
+                            <img src="../assets/images/esther-vincent.webp" alt="Esther Vincent Image" loading="lazy"
+                                decoding="async" />
+                        </div>
+                        <div class="mgt-desc-wrap">
+                            <div class="mgt-info">
+                                <div class="content">
+                                    <h3 class="h4">Esther Vincent</h3>
+                                    <p>Director of Environmental Services </p>
+                                </div>
+                                <div class="link-wrap">
+                                    <img src="../assets/images/mail.svg" alt="" role="presentation">
+                                    <a href="mailto:bradley.wind@northernwater.org">
+                                        Email Esther
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgt-details">
+                                <p>Esther Vincent completed her master's degree in Civil Engineering in 1999 from the
+                                    Grenoble Institute of Technology in France. She is a registered Professional
+                                    Engineer in Colorado and has been an integral part of Northern Water since 1999.
+                                    Recently, she has been spearheading Northern Water's efforts in post-fire watershed
+                                    restoration following the devastating 2020 East Troublesome Fire. Her expertise
+                                    encompasses water quality, watershed management, water supply planning,
+                                    environmental permitting and regulations, and water conservation. In her role, she
+                                    oversees critical aspects of Northern Water's operations, including water quality
+                                    management, water efficiency, and flow monitoring programs. Additionally, she is
+                                    responsible for environmental planning and compliance, as well as the management of
+                                    environmental data systems. Esther is an active contributor to various
+                                    organizations, having served on the boards of the Grand County Water Information
+                                    Network, the Big Thompson Watershed Forum, and the Colorado WaterWise Council. She
+                                    is also an alumna of the Water Education Colorado Water Leaders program. Esther was
+                                    born and raised in Paris, France. During her free time, she thoroughly enjoys
+                                    exploring Colorado's breathtaking backcountry with her family and friends, whether
+                                    it be on foot, bike or skis. Email Esther</p>
+                                <h4 class="h6">About the Engineering Division</h4>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                            </div>
+                            <button class="btn read-more-btn" aria-expanded="false">
+                                Show More <span class="icon-wrap"><img src="../assets/images/arrow-down.svg" alt=""
+                                        role="presentation"></span>
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <!-- Team Member 4 -->
+                    <article class="mgt-card">
+                        <div class="img-wrap">
+                            <img src="../assets/images/jerry-gibbens.webp" alt="Esther Vincent Image" loading="lazy"
+                                decoding="async" />
+                        </div>
+                        <div class="mgt-desc-wrap">
+                            <div class="mgt-info">
+                                <div class="content">
+                                    <h3 class="h4">Jerry Gibbens</h3>
+                                    <p>Director of Operations</p>
+                                </div>
+                                <div class="link-wrap">
+                                    <img src="../assets/images/mail.svg" alt="" role="presentation">
+                                    <a href="mailto:bradley.wind@northernwater.org">
+                                        Email Jerry
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgt-details">
+                                <p>Esther Vincent completed her master's degree in Civil Engineering in 1999 from the
+                                    Grenoble Institute of Technology in France. She is a registered Professional
+                                    Engineer in Colorado and has been an integral part of Northern Water since 1999.
+                                    Recently, she has been spearheading Northern Water's efforts in post-fire watershed
+                                    restoration following the devastating 2020 East Troublesome Fire. Her expertise
+                                    encompasses water quality, watershed management, water supply planning,
+                                    environmental permitting and regulations, and water conservation. In her role, she
+                                    oversees critical aspects of Northern Water's operations, including water quality
+                                    management, water efficiency, and flow monitoring programs. Additionally, she is
+                                    responsible for environmental planning and compliance, as well as the management of
+                                    environmental data systems. Esther is an active contributor to various
+                                    organizations, having served on the boards of the Grand County Water Information
+                                    Network, the Big Thompson Watershed Forum, and the Colorado WaterWise Council. She
+                                    is also an alumna of the Water Education Colorado Water Leaders program. Esther was
+                                    born and raised in Paris, France. During her free time, she thoroughly enjoys
+                                    exploring Colorado's breathtaking backcountry with her family and friends, whether
+                                    it be on foot, bike or skis. Email Esther</p>
+                                <h4 class="h6">About the Engineering Division</h4>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                            </div>
+                            <button class="btn read-more-btn" aria-expanded="false">
+                                Show More <span class="icon-wrap"><img src="../assets/images/arrow-down.svg" alt=""
+                                        role="presentation"></span>
+                            </button>
+
+                        </div>
+                    </article>
+
+                    <!-- Team Member 4 -->
+                    <article class="mgt-card">
+                        <div class="img-wrap">
+                            <img src="../assets/images/sander-blackburn.webp" alt="Sander Blackburn Image"
+                                loading="lazy" decoding="async" />
+                        </div>
+                        <div class="mgt-desc-wrap">
+                            <div class="mgt-info">
+                                <div class="content">
+                                    <h3 class="h4">Sander Blackburn</h3>
+                                    <p>Director of Finance and Administration</p>
+                                </div>
+                                <div class="link-wrap">
+                                    <img src="../assets/images/mail.svg" alt="" role="presentation">
+                                    <a href="mailto:bradley.wind@northernwater.org">
+                                        Email Sander
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="mgt-details">
+                                <p>Esther Vincent completed her master's degree in Civil Engineering in 1999 from the
+                                    Grenoble Institute of Technology in France. She is a registered Professional
+                                    Engineer in Colorado and has been an integral part of Northern Water since 1999.
+                                    Recently, she has been spearheading Northern Water's efforts in post-fire watershed
+                                    restoration following the devastating 2020 East Troublesome Fire. Her expertise
+                                    encompasses water quality, watershed management, water supply planning,
+                                    environmental permitting and regulations, and water conservation. In her role, she
+                                    oversees critical aspects of Northern Water's operations, including water quality
+                                    management, water efficiency, and flow monitoring programs. Additionally, she is
+                                    responsible for environmental planning and compliance, as well as the management of
+                                    environmental data systems. Esther is an active contributor to various
+                                    organizations, having served on the boards of the Grand County Water Information
+                                    Network, the Big Thompson Watershed Forum, and the Colorado WaterWise Council. She
+                                    is also an alumna of the Water Education Colorado Water Leaders program. Esther was
+                                    born and raised in Paris, France. During her free time, she thoroughly enjoys
+                                    exploring Colorado's breathtaking backcountry with her family and friends, whether
+                                    it be on foot, bike or skis. Email Esther</p>
+                                <h4 class="h6">About the Engineering Division</h4>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                                <p>The Engineering Division helps ensure efficient and timely water deliveries while
+                                    also planning for future water supplies and other organizational goals.
+                                    Responsibilities include: water supply planning and forecasting to maximize
+                                    operations; designing improvements to existing water supply and delivery systems;
+                                    planning new water supply projects; protecting water supplies through water rights
+                                    and permitting issues; and managing property and real estate. </p>
+                            </div>
+                            <button class="btn read-more-btn" aria-expanded="false">
+                                Show More <span class="icon-wrap"><img src="../assets/images/arrow-down.svg" alt=""
+                                        role="presentation"></span>
+                            </button>
+
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Management Team Section ends here -->
+
+    <script src="../assets/dist/main.min.js"></script>
+</body>
+
+</html>
