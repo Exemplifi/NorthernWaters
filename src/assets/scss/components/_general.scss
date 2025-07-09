@@ -42,6 +42,10 @@ section{
   background: var(--off-white);
   color: var(--black);
 }
+.bg-green{
+  background: var(--green);
+  color: var(--white);
+}
 .text-truncate-2-lines {
   display: -webkit-box;
   -webkit-line-clamp: 2;

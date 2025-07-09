@@ -55,9 +55,9 @@
           }
         }
       }
-    }
-    .custom-list-btn{
-      margin-top: rem.convert(48px);
+      & + a.btn{
+        margin-top: rem.convert(48px);
+      }
     }
   }
 }
@@ -68,8 +68,10 @@
       .custom-list-title {
         margin-bottom: rem.convert(40px);
       }
-      .custom-list-btn{
-        margin-top: rem.convert(40px);
+      .custom-list{
+        & + a.btn{
+          margin-top: rem.convert(40px);
+        }
       }
     }
   }
