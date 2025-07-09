@@ -20,6 +20,7 @@
 
   .img-wrap {
     height: rem.convert(418px);
+
     img,
     iframe,
     video {
@@ -28,15 +29,18 @@
       height: 100%;
       object-fit: cover;
     }
+
     iframe {
       height: rem.convert(418px);
     }
   }
-  .img-caption{
+
+  .img-caption {
     margin-top: rem.convert(12px);
     font-style: italic;
     color: var(--gray);
-    @include media-breakpoint-down(lg){
+
+    @include media-breakpoint-down(lg) {
       margin-top: rem.convert(8px);
     }
   }
@@ -45,14 +49,23 @@
     >.container {
       >.row {
         flex-direction: row-reverse;
+
+        @include media-breakpoint-down(lg) {
+          flex-direction: column-reverse;
+        }
       }
     }
   }
-  >.container {
-    >.row {
-       > div:first-child{
-        @include media-breakpoint-down(lg){
-          margin-bottom: rem.convert(40px);
+
+  @include media-breakpoint-down(lg) {
+    >.container {
+      >.row {
+        flex-direction: column-reverse;
+        >div {
+          align-self: center;
+          &:last-child {
+            margin-bottom: rem.convert(40px);
+          }
         }
       }
     }
