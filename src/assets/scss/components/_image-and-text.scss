@@ -34,6 +34,8 @@
   }
   .img-caption{
     margin-top: rem.convert(12px);
+    font-style: italic;
+    color: var(--gray);
   }
 
   &.img-left {
