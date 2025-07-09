@@ -50,7 +50,7 @@
         min-width: rem.convert(220px);
         width: 100%;
         padding: 0 rem.convert(32px);
-        border-right: 1.5px solid var(--light-green);
+        border-right: 2px solid var(--light-green);
         text-align: center;
         &:first-child{
           padding-left: 0;
@@ -61,6 +61,9 @@
         }
         .stats-card-unit{
           display: block;
+          @include media-breakpoint-down(lg){
+            display: inline;
+          }
         }
       }
     }
@@ -76,6 +79,7 @@
         .stats-card{
           min-width: rem.convert(180px);
           width: auto;
+          box-sizing: content-box;
         }
       }
     }
@@ -99,16 +103,20 @@
           border-right: none;
           margin-bottom: rem.convert(24px);
           padding-bottom: rem.convert(24px);
-          border-bottom: 1.5px solid var(--light-green);
+          border-bottom: 2px solid var(--light-green);
           padding-left: 0;
           padding-right: 0;
           width: 100%;
           &:last-child{
             margin-bottom: 0;
             border-bottom: none;
+            padding-bottom: 0;
           }
           .stats-card-value{
             margin-bottom: rem.convert(24px);
+            @include media-breakpoint-down(lg){
+              margin-bottom: rem.convert(16px);
+            }
           }
         }
       }

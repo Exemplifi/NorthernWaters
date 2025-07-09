@@ -29,7 +29,7 @@
     justify-content: flex-start;
     padding: rem.convert(32px) rem.convert(80px);
     @include media-breakpoint-down(lg) {
-      padding: rem.convert(32px) rem.convert(32px);
+      padding: rem.convert(24px) ;
     }
     .hero-video-wrapper {
       position: absolute;
@@ -98,18 +98,10 @@
     }
 
     .hero-title {
-      @include media-breakpoint-down(lg) {
-        font-size: var(--hero-title-size-md);
-        line-height: rem.convert(50px);
-      }
-      font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
-      font-weight: 700;
-      font-size: var(--hero-title-size);
-      line-height: rem.convert(80px);
       margin: 0 0 #{rem.convert(24px)} 0;
       text-shadow: 0 #{rem.convert(2px)} #{rem.convert(16px)}
         rgba(0, 0, 0, 0.18);
-      max-width: rem.convert(840px);
+      max-width: rem.convert(600px);
       text-transform: capitalize;
     }
 
@@ -168,7 +160,7 @@
     justify-content: flex-start;
     padding: rem.convert(32px) rem.convert(80px) rem.convert(80px) rem.convert(80px);
     @include media-breakpoint-down(lg) {
-      padding: rem.convert(32px) rem.convert(32px);
+      padding: rem.convert(24px);
       min-height: rem.convert(300px);
       height: rem.convert(300px);
     }
@@ -216,18 +208,10 @@
     }
 
     .hero-title {
-      @include media-breakpoint-down(lg) {
-        font-size: var(--hero-title-size-md);
-        line-height: rem.convert(50px);
-      }
-      font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
-      font-weight: 700;
-      font-size: var(--hero-title-size);
-      line-height: rem.convert(80px);
       margin: 0;
       text-shadow: 0 #{rem.convert(2px)} #{rem.convert(16px)}
         rgba(0, 0, 0, 0.18);
-      max-width: rem.convert(840px);
+      max-width: rem.convert(600px);
       text-transform: capitalize;
     }
 
@@ -284,9 +268,6 @@
     .hero-content {
       padding: 0 0 #{rem.convert(32px)} #{rem.convert(32px)};
     }
-    .hero-title {
-      font-size: var(--hero-title-size-md);
-    }
   }
 }
 @media (max-width: 600px) {
@@ -297,9 +278,6 @@
     .hero-content {
       padding: 0 0 #{rem.convert(16px)} #{rem.convert(16px)};
       gap: #{rem.convert(16px)};
-    }
-    .hero-title {
-      font-size: var(--hero-title-size-sm);
     }
     .hero-subtext,
     .hero-btn {

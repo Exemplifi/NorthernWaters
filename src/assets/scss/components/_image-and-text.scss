@@ -14,7 +14,7 @@
     margin-top: rem.convert(40px);
 
     @include media-breakpoint-down(md) {
-      margin-top: rem.convert(24px);
+      margin-top: rem.convert(32px);
     }
   }
 
@@ -36,6 +36,9 @@
     margin-top: rem.convert(12px);
     font-style: italic;
     color: var(--gray);
+    @include media-breakpoint-down(lg){
+      margin-top: rem.convert(8px);
+    }
   }
 
   &.img-left {
@@ -45,12 +48,13 @@
       }
     }
   }
-}
-
-section.image-text {
-  padding-top: 0;
-  padding-bottom: rem.convert(80px);
-  @include media-breakpoint-down(md) {
-    padding-bottom: rem.convert(48px);
+  >.container {
+    >.row {
+       > div:first-child{
+        @include media-breakpoint-down(lg){
+          margin-bottom: rem.convert(40px);
+        }
+      }
+    }
   }
 }
