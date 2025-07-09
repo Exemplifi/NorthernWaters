@@ -27,7 +27,7 @@
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
             <defs>
-              <filter id="goo-primary-1">
+              <filter id="goo-filter-{{UNIQUE_ID}}">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                 <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
                 <feBlend in="SourceGraphic" in2="goo" />
@@ -56,7 +56,7 @@
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
             <defs>
-              <filter id="goo-primary-2">
+              <filter id="goo-filter-{{UNIQUE_ID}}">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                 <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
                 <feBlend in="SourceGraphic" in2="goo" />
@@ -85,7 +85,7 @@
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
             <defs>
-              <filter id="goo-secondary-1">
+              <filter id="goo-filter-{{UNIQUE_ID}}">
                 <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                 <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
                 <feBlend in="SourceGraphic" in2="goo" />
@@ -95,6 +95,8 @@
         </span>
       </div>
     </a>
+
+    
     <!-- Secondary Button ends here-->
   </main>
 
@@ -108,6 +110,17 @@
           button.click();
         }
       });
+    });
+
+    // Add unique filter id to each button
+    document.querySelectorAll('.btn.liquid-animation').forEach((btn, index) => {
+      const uniqueId = `goo-filter-${index}`;
+      const svgDefs = btn.querySelector('svg defs');
+      const filter = svgDefs?.querySelector('filter');
+      if (filter) {
+        filter.id = uniqueId;
+        btn.style.filter = `url(#${uniqueId})`;
+      }
     });
   </script>
 </body>
