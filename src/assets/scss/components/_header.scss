@@ -25,9 +25,9 @@
   &.sticky {
     position: fixed;
     top: rem.convert(32px);
-    left: 0;
-    right: 0;
-    width: 100%;
+    left: 24px;
+    right: 24px;
+    width: calc(100% - 48px);
     max-width: rem.convert(1280px);
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
