@@ -24,12 +24,11 @@
   }
   &.sticky {
     position: fixed;
-    top: 0;
+    top: rem.convert(32px);
     left: 0;
     right: 0;
-    border-radius: rem.convert(0px);
     width: 100%;
-    max-width: rem.convert(100%);
+    max-width: rem.convert(1280px);
     transform: translateY(0);
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
     animation: headerSlideDown 0.5s ease-out;

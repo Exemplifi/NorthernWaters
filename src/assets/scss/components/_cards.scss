@@ -86,14 +86,14 @@
       &:nth-last-child(-n + 3) {
         .card {
           @media (min-width: 990px) {
-            margin-bottom: 0;
+            // margin-bottom: 0;
           }
         }
       }
       &:nth-last-child(-n + 2) {
         .card {
           @media (min-width: 768px) {
-            margin-bottom: 0;
+            // margin-bottom: 0;
           }
         }
       }
