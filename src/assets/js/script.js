@@ -176,18 +176,25 @@ document.addEventListener("DOMContentLoaded", function () {
         card.style.marginBottom = '';
       });
 
-      if (totalCards >= 3) {
-        const isDivisibleBy3 = totalCards % 3 === 0;
+      if (window.innerWidth >= 992) {
+        if (totalCards >= 3) {
+          const isDivisibleBy3 = totalCards % 3 === 0;
 
-        if (isDivisibleBy3) {
-          // If divisible by 3, remove margin from last 3 cards
+          if (isDivisibleBy3) {
+            // If divisible by 3, remove margin from last 3 cards
+            cards[totalCards - 1].style.marginBottom = '0';
+            cards[totalCards - 2].style.marginBottom = '0';
+            cards[totalCards - 3].style.marginBottom = '0';
+          } else {
+            // If not divisible by 3, remove margin from 2nd and 3rd last cards only
+            cards[totalCards - 1].style.marginBottom = '0';
+            // Last card keeps its margin
+          }
+        }
+      } else {
+        // For screens smaller than 992px, only remove margin from last card
+        if (totalCards > 0) {
           cards[totalCards - 1].style.marginBottom = '0';
-          cards[totalCards - 2].style.marginBottom = '0';
-          cards[totalCards - 3].style.marginBottom = '0';
-        } else {
-          // If not divisible by 3, remove margin from 2nd and 3rd last cards only
-          cards[totalCards - 1].style.marginBottom = '0';
-          // Last card keeps its margin
         }
       }
     });
