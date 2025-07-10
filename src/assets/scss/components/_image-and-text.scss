@@ -4,8 +4,11 @@
       border-bottom: 1px solid rgba(17, 17, 17, 0.6);
       margin-bottom: rem.convert(40px);
 
-      @include media-breakpoint-down(md) {
-        margin-bottom: rem.convert(24px);
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem.convert(16px);
+        h2{
+          margin-bottom: rem.convert(16px);
+        }
       }
     }
   }
@@ -13,7 +16,7 @@
   .primary-btn {
     margin-top: rem.convert(40px);
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       margin-top: rem.convert(32px);
     }
   }
@@ -56,16 +59,18 @@
       }
     }
   }
-  >.container {
-    >.row {
-      > div {
-        &:last-child {
-          position: sticky;
-          top: rem.convert(90px);
-          height: fit-content;
+  @include media-breakpoint-up(lg) {
+    >.container {
+      >.row {
+        > div {
+          &:last-child {
+            position: sticky;
+            top: rem.convert(90px);
+            height: fit-content;
+          }
         }
       }
-    }
+    } 
   }
   @include media-breakpoint-down(lg) {
     >.container {

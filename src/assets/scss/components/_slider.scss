@@ -1,9 +1,9 @@
 .slider-section {
   .card-slider {
-    margin-bottom: rem.convert(80px);
+    margin-bottom: rem.convert(96px);
 
-    @include media-breakpoint-down(md) {
-      margin-bottom: rem.convert(96px);
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem.convert(88px);
     }
 
     .card {
@@ -43,7 +43,7 @@
         flex-direction: column;
         gap: rem.convert(24px);
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
           padding: rem.convert(24px 24px 16px 24px);
         }
 
@@ -141,7 +141,7 @@
       border: none;
       top: calc(100% + 72px);
 
-      @include media-breakpoint-down(md) {
+      @include media-breakpoint-down(lg) {
         top: calc(100% + 64px);
       }
 
@@ -187,7 +187,7 @@
 .heading-wrap {
   margin-bottom: rem.convert(48px);
 
-  @include media-breakpoint-down(md) {
+  @include media-breakpoint-down(lg) {
     margin-bottom: rem.convert(40px);
   }
 
@@ -197,7 +197,7 @@
     justify-content: space-between;
     align-items: center;
 
-    @include media-breakpoint-down(md) {
+    @include media-breakpoint-down(lg) {
       margin-bottom: rem.convert(40px);
     }
 
@@ -211,9 +211,9 @@
 
     .heading {
       h2 {
-        margin-bottom: rem.convert(32px);
+        margin-bottom: rem.convert(24px);
 
-        @include media-breakpoint-down(md) {
+        @include media-breakpoint-down(lg) {
           margin-bottom: rem.convert(16px);
         }
       }

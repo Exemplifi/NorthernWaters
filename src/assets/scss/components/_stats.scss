@@ -19,7 +19,7 @@
       }
     }
     & + .stats-container{
-      padding: 5rem 0;
+      padding-bottom: 0;
     }
   }
   .stats-container{
@@ -90,7 +90,7 @@
   .stats-section{
     .stats-image-container{
       & + .stats-container{
-        padding: rem.convert(64px) 0;
+        padding-bottom: 0;
       }
     }
     .stats-container{
