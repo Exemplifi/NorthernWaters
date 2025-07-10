@@ -389,17 +389,17 @@
         <div class="container">
           <!-- Newsletter Section -->
           <div class="row footer__newsletter">
-            <div class="col-12 col-lg-6">
-              <h2 class="footer__newsletter-title">Stay Informed</h2>
+            <div class="footer__newsletter-left">
+              <h2 class="footer__newsletter-title">Stay Informed.</h2>
               <p class="footer__newsletter-text">
                 Sign up for our newsletter to receive the latest updates on
                 projects, events, and water conservation efforts.
               </p>
             </div>
-            <div class="col-12 col-lg-6">
+            <div class="footer__newsletter-right">
               <form class="footer__form" aria-label="Newsletter Subscription">
                 <div class="footer__form-group d-flex align-items-end">
-                  <div class="form-floating flex-grow-1">
+                  <div class="form-floating">
                     <input
                       type="email"
                       id="email"
@@ -407,19 +407,25 @@
                       placeholder="Enter your email ID"
                       required
                       aria-required="true"
-                      aria-describedby="email-help"
-                      autocomplete="email"
                     />
-                    <label for="email" class="footer__input-label">Enter your email ID</label>
-                    <div id="email-help" class="form-text visually-hidden">Please enter a valid email address to receive our newsletter</div>
+                    <label for="email" class="footer__input-label"
+                      >Enter your email ID</label
+                    >
                   </div>
-                  <button
-                    type="submit"
-                    class="footer__submit d-flex align-items-center"
-                    aria-label="Subscribe to newsletter"
+                  <!-- Secondary Button without icon starts here-->
+                  <a
+                    href="#"
+                    class="btn secondary-btn secondary-btn-no-icon d-inline-flex align-items-center"
+                    role="button"
+                    aria-label="Water Provider Login"
+                    tabindex="0"
+                    data-button-type="secondary"
                   >
-                    Subscribe
-                  </button>
+                    <div class="secondary-btn-wrap norm">
+                      <span class="btn-text">Subscribe</span>
+                    </div>
+                  </a>
+                  <!-- Secondary Button without icon ends here-->
                 </div>
               </form>
             </div>
