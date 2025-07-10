@@ -1,4 +1,14 @@
 .two-col-text-image-section{
+    padding-left: 0;
+    padding-right: 0;
+    .container-fluid{
+        >.row{
+            >.div{
+                padding-left: 0;
+                padding-right: 0;
+            }
+        }
+    }
     .two-col-text-image-section_title{
         max-width: rem.convert(900px);
         text-align: center;
@@ -36,8 +46,19 @@
             margin-top: -50%;
         }
         .two-col-text-image-row{
+            --bs-gutter-x: 0;
+            --bs-gutter-y: 0;
             border-radius: 1rem;
             overflow: hidden;
+            background: var(--green);
+            color: var(--white);
+            >.div:first-child{
+                background-color: var(--black);
+                color: var(--white);
+                border-radius: 1rem;
+                display: flex;
+                align-items: center;
+            }
             .two-col-text-image-card{
                 padding: rem.convert(40px);
                 border-radius: 1rem;
