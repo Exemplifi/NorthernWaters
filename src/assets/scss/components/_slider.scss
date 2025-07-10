@@ -1,16 +1,19 @@
 .slider-section {
   .card-slider {
     margin-bottom: rem.convert(80px);
+
     @include media-breakpoint-down(md) {
       margin-bottom: rem.convert(96px);
     }
 
     .card {
-      display: flex;
+      display: flex !important;
       flex-direction: column;
       align-items: center;
+      height: 100%;
       border: none;
       border-radius: rem.convert(16px);
+      padding-bottom: rem.convert(32px);
 
       &.bg-blue {
         background: var(--blue);
@@ -31,16 +34,17 @@
           border-top-left-radius: rem.convert(16px);
           border-top-right-radius: rem.convert(16px);
         }
+
       }
 
       .content-wrap {
-        padding: rem.convert(32px);
+        padding: rem.convert(32px 32px 24px 32px);
         display: flex;
         flex-direction: column;
         gap: rem.convert(24px);
 
         @include media-breakpoint-down(md) {
-          padding: rem.convert(24px);
+          padding: rem.convert(24px 24px 16px 24px);
         }
 
         .heading {
@@ -54,9 +58,11 @@
             text-overflow: ellipsis;
           }
         }
+
       }
 
       .link-wrap {
+        margin: auto auto 0 32px;
         .card-cta {
           &:focus-visible {
             outline: 2px solid var(--white);
@@ -93,13 +99,16 @@
         list-style: none;
         padding-left: 0;
         margin: 0;
+
         li {
           position: relative;
           padding-left: rem.convert(24px);
           margin-bottom: rem.convert(12px);
+
           &:last-child {
             margin-bottom: 0;
           }
+
           &::before {
             content: "";
             position: absolute;
@@ -147,11 +156,12 @@
         }
       }
     }
+
     .slick-prev {
       left: calc(50% - 56px);
 
       &:before {
-        content: url("../../assets/images/arrow-left.svg");
+        content: url('../../assets/images/arrow-left.svg');
       }
     }
 
@@ -159,9 +169,18 @@
       right: calc(50% - 56px);
 
       &:before {
-        content: url("../../assets/images/arrow-right.svg");
+        content: url('../../assets/images/arrow-right.svg');
       }
     }
+  }
+
+  .slick-track {
+    display: flex;
+  }
+
+  .slick-track .slick-slide {
+    display: flex;
+    height: auto;
   }
 }
 
@@ -208,10 +227,5 @@
     p {
       font-size: rem.convert(20px);
     }
-  }
-}
-.slick-loading {
-  .slick-list {
-    background: transparent;
   }
 }
