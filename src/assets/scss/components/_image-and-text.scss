@@ -56,7 +56,17 @@
       }
     }
   }
-
+  >.container {
+    >.row {
+      > div {
+        &:last-child {
+          position: sticky;
+          top: rem.convert(90px);
+          height: fit-content;
+        }
+      }
+    }
+  }
   @include media-breakpoint-down(lg) {
     >.container {
       >.row {
