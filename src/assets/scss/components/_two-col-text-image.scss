@@ -30,6 +30,7 @@
         margin-top: -20%;
         position: relative;
         z-index: 2;
+        padding: 0 rem.convert(24px);
         @include media-breakpoint-down(lg){
             padding: 0 rem.convert(24px);
             margin-top: -50%;
@@ -121,6 +122,67 @@
                             padding: 1.5rem 0 0 0;
                             border-left: none;
                             border-top: 1px solid #FFFEF699;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    &.home-page-component{
+        .two-col-text-image-section_title{
+            max-width: none;
+            margin-bottom: 0.5rem;
+            @include media-breakpoint-down(lg){
+                margin-bottom: 0;
+            }
+        }
+        .two-col-text-image-image-wrap{
+            img{
+                object-position: bottom;
+                @include media-breakpoint-down(lg){
+                    object-position: center;
+                }
+            }
+        }
+        .two-col-text-image-container{
+            margin-top: -150px;
+            @include media-breakpoint-down(lg){
+                margin-top: 0;
+            }
+            .two-col-text-image-row{
+                .two-col-text-image-card{
+                    .two-col-text-image-card-title{
+                        span{
+                            display: block;
+                        }
+                        @include media-breakpoint-down(lg){
+                            margin-bottom: rem.convert(16px);
+                        }
+                    }
+                    .two-col-text-image-card-title-green{
+                        margin-bottom: rem.convert(24px);
+                        @include media-breakpoint-down(lg){
+                            margin-bottom: rem.convert(16px);
+                        }
+                    }
+                    .white-icon-lst{
+                        li{
+                            margin-bottom: rem.convert(12px);
+                            &::before{
+                                background: var(--white);
+                            }
+                            &:last-child{
+                                margin-bottom: 0;
+                            }
+                        }
+                        &:last-of-type{
+                            margin-bottom: 0;
+                        }
+                    }
+                    a.btn{
+                        margin-top: rem.convert(40px);
+                        @include media-breakpoint-down(lg){
+                            margin-top: rem.convert(24px);
                         }
                     }
                 }
