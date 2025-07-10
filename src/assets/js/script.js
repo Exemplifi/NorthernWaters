@@ -70,7 +70,7 @@ document.addEventListener("DOMContentLoaded", function () {
       $(this).prev(".search-result-card").removeClass("highlight");
     }
   );
-  
+
   $(".read-more-btn").each(function () {
     var $btn = $(this);
     var showMoreText = "Show More";
@@ -162,4 +162,40 @@ document.addEventListener("DOMContentLoaded", function () {
       ],
     });
   }
+
+  // Handle card margins based on total number of cards
+  function adjustCardMargins() {
+    const cardRows = document.querySelectorAll('.cards-row');
+
+    cardRows.forEach(row => {
+      const cards = row.querySelectorAll('.card');
+      const totalCards = cards.length;
+
+      // First, reset all margins
+      cards.forEach(card => {
+        card.style.marginBottom = '';
+      });
+
+      if (totalCards >= 3) {
+        const isDivisibleBy3 = totalCards % 3 === 0;
+
+        if (isDivisibleBy3) {
+          // If divisible by 3, remove margin from last 3 cards
+          cards[totalCards - 1].style.marginBottom = '0';
+          cards[totalCards - 2].style.marginBottom = '0';
+          cards[totalCards - 3].style.marginBottom = '0';
+        } else {
+          // If not divisible by 3, remove margin from 2nd and 3rd last cards only
+          cards[totalCards - 1].style.marginBottom = '0';
+          // Last card keeps its margin
+        }
+      }
+    });
+  }
+
+  // Run on page load
+  adjustCardMargins();
+
+  // Run on window resize
+  window.addEventListener('resize', adjustCardMargins);
 });
