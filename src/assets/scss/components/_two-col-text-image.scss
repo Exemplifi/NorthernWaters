@@ -3,7 +3,7 @@
     padding-right: 0;
     .container-fluid{
         >.row{
-            >.div{
+            >div{
                 padding-left: 0;
                 padding-right: 0;
             }
@@ -52,7 +52,7 @@
             overflow: hidden;
             background: var(--green);
             color: var(--white);
-            >.div:first-child{
+            >div:first-child{
                 background-color: var(--black);
                 color: var(--white);
                 border-radius: 1rem;

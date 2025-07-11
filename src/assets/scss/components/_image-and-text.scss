@@ -23,6 +23,9 @@
 
   .img-wrap {
     height: rem.convert(418px);
+     @include media-breakpoint-down(lg){
+        height: rem.convert(350px);
+      }
 
     img,
     iframe,
@@ -35,6 +38,9 @@
 
     iframe {
       height: rem.convert(418px);
+      @include media-breakpoint-down(lg){
+        height: 100%;
+      }
     }
   }
 

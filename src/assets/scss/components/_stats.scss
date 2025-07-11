@@ -93,6 +93,9 @@
           min-width: rem.convert(180px);
           width: auto;
           box-sizing: content-box;
+          @media (max-width: 1280px) and (min-width: 991px){
+            min-width: rem.convert(1px);
+          }
         }
       }
     }
