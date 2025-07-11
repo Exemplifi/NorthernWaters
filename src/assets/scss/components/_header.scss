@@ -31,18 +31,6 @@
     max-width: 100%;
     margin: 0;
   }
-  // &.sticky {
-  //   position: fixed;
-  //   top: rem.convert(32px);
-  //   left: 24px;
-  //   right: 24px;
-  //   width: calc(100% - 48px);
-  //   max-width: rem.convert(1280px);
-  //   transform: translateY(0);
-  //   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  //   animation: headerSlideDown 0.5s ease-out;
-  //   border-radius: rem.convert(16px);
-  // }
   &.upwards {
     position: absolute;
     top: -100%;
@@ -56,8 +44,8 @@
   }
   // Navbar Base Styles
   .navbar {
-    padding: 0 12px;
-    min-height: rem.convert(84px);
+    padding: rem.convert(16px) rem.convert(12px);
+    min-height: rem.convert(52px);
     @include media-breakpoint-down(lg) {
       min-height: rem.convert(64px);
     }
@@ -76,6 +64,8 @@
   &__logo {
     display: block;
     width: rem.convert(140px);
+    min-width: rem.convert(140px);
+    max-width: rem.convert(140px);
     height: rem.convert(45px);
     &:focus,
     &:focus-visible {
@@ -100,7 +90,7 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      @include rem.convert(margin-left, 108px);
+      margin-left: auto;
     }
   }
 
@@ -108,8 +98,7 @@
   &__menu {
     @include media-breakpoint-up(lg) {
       display: flex;
-      @include rem.convert(gap, 8px);
-      margin-right: auto;
+      margin:0 auto;
     }
   }
 

@@ -1,14 +1,7 @@
 .simple-text-centre-wrapper {
   background-color: var(--off-white);
-  padding: rem.convert(0);
   .simple-text-centre-container {
-    max-width: rem.convert(1280px);
-    margin: 0 auto;
-    padding: rem.convert(80px);
     background-color: var(--off-white);
-    @include media-breakpoint-down(lg) {
-      padding: rem.convert(40px);
-    }
   }
   .simple-heading {
     text-align: center;

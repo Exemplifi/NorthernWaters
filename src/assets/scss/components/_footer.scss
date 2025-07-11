@@ -7,7 +7,7 @@
   background-color: var(--black);
   border-radius: rem.convert(0);
   padding-top: rem.convert(80px);
-  @include media-breakpoint-down(lg) {
+  @include media-breakpoint-down(xl) {
     padding: rem.convert(64px 24px 24px 24px);
   }
   &__container {
@@ -15,10 +15,14 @@
     margin: 0 auto;
     padding: rem.convert(40px 40px);
     display: grid;
-    grid-template-columns: 530px 289px auto;
+    grid-template-columns: 530px 1fr auto;
     gap: rem.convert(98px);
     background-color: rgba(var(--white-rgb), 0.1);
     border-radius: rem.convert(16px);
+    @include media-breakpoint-down(xl) {
+      column-gap: rem.convert(32px);
+      row-gap: rem.convert(40px);
+    }
     @include media-breakpoint-down(lg) {
       grid-template-columns: 1fr 1fr;
       column-gap: rem.convert(32px);
@@ -143,6 +147,9 @@
     padding-bottom: rem.convert(48px);
     flex-wrap: nowrap;
     column-gap: rem.convert(162px);
+    @include media-breakpoint-down(xl) {
+      column-gap: rem.convert(100px);
+    }
     @include media-breakpoint-down(lg) {
       flex-direction: column;
       padding-bottom: rem.convert(40px);
@@ -187,9 +194,6 @@
       @include media-breakpoint-down(lg) {
         flex-direction: column;
       }
-      .form-floating {
-        width: 100%;
-      }
       @include media-breakpoint-down(sm) {
         flex-direction: column !important;
         gap: rem.convert(24px);
@@ -207,6 +211,9 @@
       }
       .form-floating {
         width: rem.convert(458px);
+        @include media-breakpoint-down(xl) {
+          width: auto;
+        }
         @include media-breakpoint-down(lg) {
           width: 100%;
         }
