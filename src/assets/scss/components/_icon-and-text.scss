@@ -4,42 +4,10 @@
   padding: 0;
   width: 100%;
 
-  .icon-text-container {
-    max-width: rem.convert(1280px);
-    margin: 0 auto;
-
-    @include media-breakpoint-down(xl) {
-      max-width: rem.convert(960px); // Adjust container width for xl devices
-    }
-
-    @include media-breakpoint-down(lg) {
-      max-width: rem.convert(720px); // Adjust container width for lg devices
-    }
-
-    @include media-breakpoint-down(md) {
-      max-width: rem.convert(540px); // Adjust container width for md devices
-    }
-
-    @include media-breakpoint-down(sm) {
-      max-width: 100%; // Full width for mobile
-      padding: 0 rem.convert(16px); // Add some padding on mobile
-    }
-  }
-
   .icon-text-wrapper {
     background-color: $light-blue;
     border-radius: rem.convert(24px);
-    padding: rem.convert(32px);
-
-    @include media-breakpoint-down(md) {
-      padding: rem.convert(24px); // Reduce padding on tablet
-      border-radius: rem.convert(16px); // Slightly reduce border radius
-    }
-
-    @include media-breakpoint-down(sm) {
-      padding: rem.convert(16px); // Further reduce padding on mobile
-      border-radius: rem.convert(12px); // Further reduce border radius
-    }
+    padding: rem.convert(40px);
   }
 
   .icon-text-header {
@@ -368,30 +336,8 @@
 }
 
 .icon-text-section-v2 {
-  padding: 0;
-  width: 100%;
+  background-color: var(--off-white);
   .icon-text-v2-container {
-    max-width: rem.convert(1280px);
-    margin: 0 auto;
-    padding: rem.convert(80px);
-    background-color: var(--off-white);
-    // @include media-breakpoint-down(xl) {
-    //   max-width: rem.convert(960px); // Adjust container width for xl devices
-    // }
-
-    @include media-breakpoint-down(lg) {
-      // max-width: rem.convert(720px); // Adjust container width for lg devices
-      padding: rem.convert(40px);
-    }
-
-    // @include media-breakpoint-down(md) {
-    //   max-width: rem.convert(540px); // Adjust container width for md devices
-    // }
-
-    // @include media-breakpoint-down(sm) {
-    //   max-width: 100%; // Full width for mobile
-    //   padding: rem.convert(24px); // Add some padding on mobile
-    // }
   }
   .text-content-wrapper {
     display: flex;

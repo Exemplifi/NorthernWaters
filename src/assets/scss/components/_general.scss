@@ -1,6 +1,12 @@
 .container{
-  max-width: rem.convert(1440px);
+  max-width: rem.convert(1280px);
   padding: 0;
+  @include media-breakpoint-up(xxl) {
+    max-width: rem.convert(1320px);
+  }
+  @include media-breakpoint-down(xxl){
+    max-width: rem.convert(1280px);
+  }
 }
 .section-wrapper{
   padding: 5rem 1.5rem;
