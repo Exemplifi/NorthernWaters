@@ -239,11 +239,18 @@
     }
 
     &:focus {
-      outline: none;
+      outline: rem.convert(2px) solid var(--white);
+      outline-offset: rem.convert(2px);
       box-shadow: none;
       border-color: var(--white);
       background-color: var(--black);
       color: var(--white);
+    }
+
+    // Ensure high contrast focus styles are respected
+    &:focus-visible {
+      outline: rem.convert(2px) solid var(--white);
+      outline-offset: rem.convert(2px);
     }
 
     &::placeholder {

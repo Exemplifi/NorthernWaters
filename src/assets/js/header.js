@@ -1,29 +1,29 @@
 // Header Component JavaScript
 const setupHeader = () => {
-  const header = document.querySelector('.header');
+  const header = document.querySelector(".header");
   if (!header) return;
 
-  const searchBtn = header.querySelector('.header__search-btn');
-  const mobileToggle = header.querySelector('.header__toggle');
-  const navbarCollapse = header.querySelector('.navbar-collapse');
+  const searchBtn = header.querySelector(".header__search-btn");
+  const mobileToggle = header.querySelector(".header__toggle");
+  const navbarCollapse = header.querySelector(".navbar-collapse");
 
   const handleSearch = () => {
     // TODO: Implement search functionality
-    console.log('Search clicked');
+    console.log("Search clicked");
   };
 
   const handleMobileMenu = () => {
-    document.body.classList.toggle('menu-open');
+    document.body.classList.toggle("menu-open");
     // Update ARIA expanded state
     if (mobileToggle) {
-      const isExpanded = mobileToggle.getAttribute('aria-expanded') === 'true';
-      mobileToggle.setAttribute('aria-expanded', !isExpanded);
+      const isExpanded = mobileToggle.getAttribute("aria-expanded") === "true";
+      mobileToggle.setAttribute("aria-expanded", !isExpanded);
     }
   };
 
   const handleOutsideClick = (e) => {
     if (
-      document.body.classList.contains('menu-open') &&
+      document.body.classList.contains("menu-open") &&
       !header.contains(e.target)
     ) {
       mobileToggle.click();
@@ -31,28 +31,28 @@ const setupHeader = () => {
   };
 
   const handleEscapeKey = (e) => {
-    if (e.key === 'Escape' && document.body.classList.contains('menu-open')) {
+    if (e.key === "Escape" && document.body.classList.contains("menu-open")) {
       mobileToggle.click();
     }
   };
 
   const setupDropdownKeyboardNavigation = () => {
-    const dropdowns = header.querySelectorAll('.dropdown');
-    dropdowns.forEach(dropdown => {
-      const trigger = dropdown.querySelector('.dropdown-toggle');
-      const menu = dropdown.querySelector('.dropdown-menu');
-      const menuIcon = trigger?.querySelector('.header__menu-icon');
+    const dropdowns = header.querySelectorAll(".dropdown");
+    dropdowns.forEach((dropdown) => {
+      const trigger = dropdown.querySelector(".dropdown-toggle");
+      const menu = dropdown.querySelector(".dropdown-menu");
+      const menuIcon = trigger?.querySelector(".header__menu-icon");
 
       if (trigger && menu) {
         // Add click event listener for icon rotation
-        trigger.addEventListener('click', () => {
+        trigger.addEventListener("click", () => {
           if (menuIcon) {
-            menuIcon.classList.toggle('rotated');
+            menuIcon.classList.toggle("rotated");
           }
         });
 
-        trigger.addEventListener('keydown', (e) => {
-          if (e.key === 'Enter' || e.key === ' ') {
+        trigger.addEventListener("keydown", (e) => {
+          if (e.key === "Enter" || e.key === " ") {
             e.preventDefault();
             trigger.click();
           }
@@ -65,8 +65,8 @@ const setupHeader = () => {
     // Ensure proper ARIA states for mobile menu
     if (mobileToggle && navbarCollapse) {
       const updateAriaExpanded = () => {
-        const isExpanded = document.body.classList.contains('menu-open');
-        mobileToggle.setAttribute('aria-expanded', isExpanded);
+        const isExpanded = document.body.classList.contains("menu-open");
+        mobileToggle.setAttribute("aria-expanded", isExpanded);
       };
 
       // Update ARIA states when menu opens/closes
@@ -76,31 +76,34 @@ const setupHeader = () => {
 
       observer.observe(document.body, {
         attributes: true,
-        attributeFilter: ['class']
+        attributeFilter: ["class"],
       });
     }
 
     // Add keyboard navigation for dropdowns
-    const dropdowns = header.querySelectorAll('.dropdown-menu');
-    dropdowns.forEach(dropdown => {
-      const items = dropdown.querySelectorAll('.dropdown-item');
+    const dropdowns = header.querySelectorAll(".dropdown-menu");
+    dropdowns.forEach((dropdown) => {
+      const items = dropdown.querySelectorAll(".dropdown-item");
 
       items.forEach((item, index) => {
-        item.addEventListener('keydown', (e) => {
+        item.addEventListener("keydown", (e) => {
           let targetItem;
 
           switch (e.key) {
-            case 'ArrowUp':
+            case "ArrowUp":
               e.preventDefault();
               targetItem = items[index - 1] || items[items.length - 1];
               break;
-            case 'ArrowDown':
+            case "ArrowDown":
               e.preventDefault();
               targetItem = items[index + 1] || items[0];
               break;
-            case 'Escape':
+            case "Escape":
               e.preventDefault();
-              dropdown.closest('.dropdown').querySelector('.dropdown-toggle').click();
+              dropdown
+                .closest(".dropdown")
+                .querySelector(".dropdown-toggle")
+                .click();
               break;
           }
 
@@ -114,29 +117,39 @@ const setupHeader = () => {
 
   // Bind events
   if (searchBtn) {
-    searchBtn.addEventListener('click', handleSearch);
+    searchBtn.addEventListener("click", handleSearch);
   }
 
   if (mobileToggle && navbarCollapse) {
-    mobileToggle.addEventListener('click', handleMobileMenu);
-    document.addEventListener('click', handleOutsideClick);
-    document.addEventListener('keydown', handleEscapeKey);
+    mobileToggle.addEventListener("click", handleMobileMenu);
+    document.addEventListener("click", handleOutsideClick);
+    document.addEventListener("keydown", handleEscapeKey);
   }
 
   setupDropdownKeyboardNavigation();
   setupAccessibility();
 
-  // Make Sure Header is Sticky on Scroll and Fixed on Top
-  window.addEventListener('scroll', () => {
-    const header = document.querySelector('.header');
-    const windowHeight = window.innerHeight;
-    if (window.scrollY > windowHeight) {
-      header.classList.add('sticky');
+  // Header On Scroll Script
+  let lastScrollTop = 0;
+
+  window.addEventListener("scroll", function () {
+    let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+
+    if (scrollTop > lastScrollTop) {
+      // Scrolling up
+      document
+        .querySelectorAll(".header")
+        .forEach((el) => el.classList.add("upwards"));
     } else {
-      header.classList.remove('sticky');
+      // Scrolling down
+      document
+        .querySelectorAll(".header")
+        .forEach((el) => el.classList.remove("upwards"));
     }
+
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For iOS & Safari bounce
   });
 };
 
 // Initialize header
-document.addEventListener('DOMContentLoaded', setupHeader);
+document.addEventListener("DOMContentLoaded", setupHeader);
