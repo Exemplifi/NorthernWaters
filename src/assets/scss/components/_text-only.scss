@@ -2,28 +2,22 @@
 
 .text-only-container-v1-full {
   .text-only-container {
+    padding: rem.convert(48px);
+    border-radius: rem.convert(16px);
+    @include media-breakpoint-down(md) {
+      padding: rem.convert(24px);
+    }
     .text-only-content-v1-wrapper {
-      display: flex;
-      flex-direction: row;
       align-items: stretch;
-      justify-content: space-between;
-      column-gap: rem.convert(48px);
-      padding: rem.convert(48px);
-      border-radius: rem.convert(16px);
-      @include media-breakpoint-down(md) {
-        flex-direction: column;
-        flex-wrap: wrap;
-        padding: rem.convert(24px);
-      }
       .text-only-content-v1-left {
-        flex: 1 1 50%;
         position: relative;
-        @include media-breakpoint-down(md) {
-          flex: 1 1 100%;
+        padding-right: rem.convert(24px);
+        @include media-breakpoint-down(lg) {
+          padding-right: rem.convert(12px);
         }
         .text-only-content-v1-title {
           margin-bottom: rem.convert(0px);
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             margin-bottom: rem.convert(24px);
             padding-bottom: rem.convert(16px);
             border-bottom: 1px solid #FFFFFF99;
@@ -39,16 +33,16 @@
           top: 0;
           right: 0;
           bottom: 0;
-          @include media-breakpoint-down(md) {
+          @include media-breakpoint-down(lg) {
             content: none;
           }
         }
       }
       .text-only-content-v1-right {
-        flex: 1 1 50%;
         align-self: center;
-        @include media-breakpoint-down(md) {
-          flex: 1 1 100%;
+        padding-left: rem.convert(24px);
+        @include media-breakpoint-down(lg) {
+          padding-left: rem.convert(12px);
         }
         .text-only-content-v1-text {
           p {
