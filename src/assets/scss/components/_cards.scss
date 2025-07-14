@@ -104,6 +104,12 @@
       display: flex;
     }
   }
+  .buttons-row {
+    margin-top: rem.convert(48px);
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
   &.directors-card {
     .card {
       .card-body {
