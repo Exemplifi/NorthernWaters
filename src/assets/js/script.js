@@ -132,7 +132,7 @@ document.addEventListener("DOMContentLoaded", function () {
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1.15,
+            slidesToShow: 1.1,
           },
         },
       ],

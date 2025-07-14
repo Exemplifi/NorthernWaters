@@ -27,6 +27,7 @@
     .slick-list {
       margin-left: rem.convert(-24px);
       padding-left: rem.convert(12px);
+      padding-right: rem.convert(24px);
       @include media-breakpoint-down(xxl) {
         padding-left: rem.convert(24px);
         margin-left: rem.convert(0px);
@@ -43,9 +44,6 @@
         overflow: visible;
         display: flex;
         height: auto;
-        &:last-child {
-          margin-right: 0;
-        }
         @include media-breakpoint-down(md) {
           margin-right: rem.convert(16px);
           padding: rem.convert(4px);
@@ -233,7 +231,10 @@
       }
     }
     .link-wrap {
-      margin: auto auto 0 32px;
+      margin: auto auto 0 rem.convert(32px);
+      @include media-breakpoint-down(md){
+        margin: auto auto 0 rem.convert(24px);
+      }
       .card-cta {
         &:focus-visible {
           outline: 2px solid var(--white);
