@@ -6,7 +6,7 @@
     }
   }
   .slider-container {
-    padding-left: calc(50vw - 700px + 2.75rem);
+    padding-left: calc(50vw - 700px + 3rem);
     padding-right: 0;
     margin-right: rem.convert(-24px);
     @include media-breakpoint-down(md) {
@@ -44,6 +44,9 @@
         overflow: visible;
         display: flex;
         height: auto;
+        > div{
+          width: 100%;
+        }
         @include media-breakpoint-down(md) {
           margin-right: rem.convert(16px);
           padding: rem.convert(4px);
