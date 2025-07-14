@@ -109,57 +109,94 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   });
 
-  if ($(".news-slider").length) {
-    $(".news-slider").slick({
+  //Slider Script
+  // Initialize card sliders only if they exist
+  if ($('.card-slider').length) {
+    // Common slider configuration
+    var sliderConfig = {
       dots: false,
-      arrows: true,
+      arrows: false,
       infinite: false,
       autoplay: false,
-      slidesToShow: 3.2,
+      slidesToShow: 3.25,
       slidesToScroll: 1,
       accessibility: true,
-      cssEase: "linear",
+      cssEase: 'linear',
       responsive: [
         {
           breakpoint: 1024,
           settings: {
-            slidesToShow: 2.1,
+            slidesToShow: 2.2,
           },
         },
         {
           breakpoint: 768,
           settings: {
-            slidesToShow: 1.1,
+            slidesToShow: 1.15,
           },
         },
       ],
+    };
+
+    // Initialize all card sliders
+    $('.card-slider').each(function() {
+      var $slider = $(this);
+      $slider.slick(sliderConfig);
+      
+      // Bind navigation buttons for this specific slider
+      var $section = $slider.closest('.slider-section');
+      var $prevBtn = $section.find(".slider-btn-wrap .prev-btn");
+      var $nextBtn = $section.find(".slider-btn-wrap .next-btn");
+      
+      $prevBtn.on("click", function () {
+        $slider.slick("slickPrev");
+        checkIfFirstOrLastSlideActive($slider);
+      });
+      
+      $nextBtn.on("click", function () {
+        $slider.slick("slickNext");
+        checkIfFirstOrLastSlideActive($slider);
+      });
+      
+      // Initialize button states
+      checkIfFirstOrLastSlideActive($slider);
+      
+      // Update button states on slide change
+      $slider.on("init reInit afterChange", function () {
+        checkIfFirstOrLastSlideActive($slider);
+      });
     });
+
+    function checkIfFirstOrLastSlideActive($slider) {
+      var $slides = $slider.find(".slick-slide");
+      var $firstSlide = $slides.first();
+      var $lastSlide = $slides.last();
+      var $section = $slider.closest('.slider-section');
+      var $prevBtn = $section.find(".slider-btn-wrap .prev-btn");
+      var $nextBtn = $section.find(".slider-btn-wrap .next-btn");
+      
+      // Check if first slide is active
+      if ($firstSlide.hasClass("slick-active")) {
+        $prevBtn.addClass("disabled")
+                .attr("disabled", true)
+                .attr("aria-disabled", true);
+      } else {
+        $prevBtn.removeClass("disabled")
+                .removeAttr("disabled")
+                .attr("aria-disabled", false);
+      }
+      
+      // Check if last slide is active
+      if ($lastSlide.hasClass("slick-active")) {
+        $nextBtn.addClass("disabled")
+                .attr("disabled", true)
+                .attr("aria-disabled", true);
+      } else {
+        $nextBtn.removeClass("disabled")
+                .removeAttr("disabled")
+                .attr("aria-disabled", false);
+      }
+    }
   }
 
-  if ($(".project-slider").length) {
-    $(".project-slider").slick({
-      dots: false,
-      arrows: true,
-      infinite: false,
-      autoplay: false,
-      slidesToShow: 3.2,
-      slidesToScroll: 1,
-      accessibility: true,
-      cssEase: "linear",
-      responsive: [
-        {
-          breakpoint: 1024,
-          settings: {
-            slidesToShow: 2.1,
-          },
-        },
-        {
-          breakpoint: 768,
-          settings: {
-            slidesToShow: 1.1,
-          },
-        },
-      ],
-    });
-  }
 });
