@@ -6,9 +6,22 @@
     border: none;
     display: flex;
     flex-direction: column;
-    margin-bottom: 1.5rem;
+    // margin-bottom: 1.5rem;
     height: auto;
     width: 100%;
+    .card-img-wrapper {
+      overflow: hidden;
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+      margin: 0; // Reset default <figure> margin
+
+      // Zoom on hover/tap/focus
+      &:hover .card-img-top,
+      &:focus-within .card-img-top,
+      &:active .card-img-top {
+        transform: scale(1.05);
+      }
+    }
     .card-img-top {
       height: rem.convert(320px);
       object-fit: cover;
@@ -16,6 +29,8 @@
       border-top-left-radius: 1rem;
       border-top-right-radius: 1rem;
       width: 100%;
+      transition: transform 0.4s ease-in-out;
+      transform-origin: center center;
     }
     .card-body {
       background: var(--blue);
@@ -24,14 +39,14 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(lg) {
         padding: 1.5rem;
       }
       .card-title-wrapper {
         margin-bottom: 1.5rem;
         // padding-bottom: 1.5rem;
         // border-bottom: 1px solid #FFFFFF99;
-        @include media-breakpoint-down(lg){
+        @include media-breakpoint-down(lg) {
           padding-bottom: 1rem;
         }
         .card-title {
@@ -40,7 +55,7 @@
       }
       .card-text-wrapper {
         padding-top: 1.5rem;
-        border-top: 1px solid #FFFFFF99;
+        border-top: 1px solid #ffffff99;
         margin-bottom: 1.5rem;
         .card-text {
           margin-bottom: 0;
@@ -53,6 +68,7 @@
         box-shadow: none;
         outline: none;
         display: inline-block;
+        width: fit-content;
         &:focus-visible {
           outline: 2px solid var(--white);
           outline-offset: 2px;
@@ -70,7 +86,8 @@
             display: block;
           }
         }
-        &:hover .card-cta-icon, &:focus .card-cta-icon {
+        &:hover .card-cta-icon,
+        &:focus .card-cta-icon {
           background: var(--green);
           svg path {
             stroke: var(--white);
@@ -79,10 +96,11 @@
       }
     }
   }
-  .cards-row{
+  .cards-row {
     display: flex;
     flex-wrap: wrap;
-    .col-lg-4{
+    row-gap: 1.5rem;
+    .col-lg-4 {
       display: flex;
       &:nth-last-child(-n + 3) {
         .card {
@@ -100,20 +118,20 @@
       }
       &:last-child {
         .card {
-            margin-bottom: 0;
+          // margin-bottom: 0;
         }
       }
     }
   }
-  &.directors-card{
-    .card{
-      .card-body{
-        .directors-card-county-wrapper{
+  &.directors-card {
+    .card {
+      .card-body {
+        .directors-card-county-wrapper {
           margin-bottom: 1.5rem;
           padding-bottom: 1.5rem;
-          border-bottom: 1px solid #FFFFFF99;
+          border-bottom: 1px solid #ffffff99;
         }
-        .card-title-wrapper{
+        .card-title-wrapper {
           margin-bottom: 8px;
           padding-bottom: 0;
           border-bottom: none;
@@ -122,5 +140,3 @@
     }
   }
 }
-
-
