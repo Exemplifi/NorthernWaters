@@ -15,7 +15,6 @@ createIcons({ icons });
 import './form.js';
 import './hero.js';
 import './script.js';
-import './card-with-icon.js';
 import './icon-with-text.js';
 import './header.js';
 import './footer.js';

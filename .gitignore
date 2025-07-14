@@ -30,7 +30,7 @@ dist-ssr
 .env.production.local
 
 # Cursor config
-.cursor/
+.cursor
 
 # Video files
 src/assets/videos/*.mp4

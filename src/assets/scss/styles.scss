@@ -3,9 +3,6 @@
 // all base styles
 @use './base/bootstrap' as *;
 
-// // all page styles
-@use './page/home';
-@use './page/finance-page';
 
 // Importing base
 @use "base";
