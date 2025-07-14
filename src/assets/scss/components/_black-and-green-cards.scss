@@ -5,6 +5,7 @@
     .black-green-cards-wrapper {
       border-radius: rem.convert(16px);
       background-color: var(--green);
+      margin: 0;
       > div:nth-child(1) {
         background-color: var(--black);
         color: var(--white);

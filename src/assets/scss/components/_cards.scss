@@ -102,25 +102,6 @@
     row-gap: 1.5rem;
     .col-lg-4 {
       display: flex;
-      &:nth-last-child(-n + 3) {
-        .card {
-          @media (min-width: 990px) {
-            // margin-bottom: 0;
-          }
-        }
-      }
-      &:nth-last-child(-n + 2) {
-        .card {
-          @media (min-width: 768px) {
-            // margin-bottom: 0;
-          }
-        }
-      }
-      &:last-child {
-        .card {
-          // margin-bottom: 0;
-        }
-      }
     }
   }
   &.directors-card {
