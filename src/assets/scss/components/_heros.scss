@@ -193,7 +193,7 @@
       position: absolute;
       top: 0;
       left: 0;
-      object-position: center 14%;
+      object-position: center 50%;
     }
     .hero-content {
       position: relative;
@@ -212,8 +212,9 @@
       margin: 0;
       text-shadow: 0 #{rem.convert(2px)} #{rem.convert(16px)}
         rgba(0, 0, 0, 0.18);
-      max-width: rem.convert(740px);
+      max-width: max-content;
       text-transform: capitalize;
+      @include convert-percent(rem.convert(80px), -2);
     }
 
     .hero-subtext {
