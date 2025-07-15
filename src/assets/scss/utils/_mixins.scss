@@ -8,6 +8,10 @@
   box-sizing: $box-model;
 }
 
+@mixin convert-percent($value, $percent) {
+  letter-spacing: ($value * $percent / 100);
+}
+
 // for clearfix
 @mixin clearfix {
   &::before,
