@@ -1,0 +1,68 @@
+.container-404 {
+    padding-left: rem.convert(8px);
+    padding-right: rem.convert(8px);
+    overflow-x: hidden;
+  .content-404 {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: auto;
+    width: 100%;
+    .text-404 {
+      padding: rem.convert(80px) 0 rem.convert(80px) rem.convert(80px);
+      .icon-404 {
+        padding-bottom: rem.convert(24px);
+      }
+      .button-404-wrapper {
+        padding-top: rem.convert(24px);
+      }
+    }
+    .animation-404 {
+      .image-wrapper {
+        position: relative;
+        width: rem.convert(493px);
+        height: rem.convert(671px);
+        margin-top: rem.convert(8px);
+        margin-bottom: rem.convert(8px);
+        border-radius: rem.convert(16px);
+         img {
+            border-radius: rem.convert(16px);
+         }
+      }
+
+      .image-wrapper img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: opacity 3s ease;
+      }
+
+      .image1 {
+        animation: fadeOut 3s ease-in-out 1 forwards;
+        animation-delay: 1s;
+      }
+
+      .image2 {
+        opacity: 0;
+        animation: fadeIn 3s ease-in-out 1 forwards;
+        animation-delay: 1s;
+      }
+
+      @keyframes fadeOut {
+        to {
+          opacity: 0;
+        }
+      }
+
+      @keyframes fadeIn {
+        to {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

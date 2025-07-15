@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>404 Page</title>
+  <link rel="stylesheet" href="../assets/dist/main.css" />
+</head>
+
+<body>
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+  <!-- Header Component starts here -->
+  <header class="header container-fluid less-spacing-top" role="banner">
+    <nav class="navbar navbar-expand-lg row mx-0 container" aria-label="Main navigation">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="/" class="header__logo" aria-label="Northern Water Home">
+          <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
+            height="56" />
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+          data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
+          aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          <span class="navbar-toggler-label">Menu</span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+          <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
+            <!-- Water Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="waterSubmenu">
+                Water
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="waterSubmenu" role="menu" aria-label="Water submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Environment Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="environmentSubmenu">
+                Environment
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="environmentSubmenu" role="menu"
+                aria-label="Environment submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Data Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="dataSubmenu">
+                Data
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="dataSubmenu" role="menu" aria-label="Data submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="aboutSubmenu">
+                About
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="aboutSubmenu" role="menu" aria-label="About submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- News Link -->
+            <li class="nav-item header__menu-item" role="none">
+              <a class="nav-link header__menu-link" href="#" role="menuitem">News</a>
+            </li>
+          </ul>
+
+          <!-- Right Side Actions -->
+          <div class="header__actions">
+            <!-- Search Button -->
+            <button type="button" class="header__search-btn" aria-label="Open search" aria-expanded="false"
+              aria-controls="searchPanel">
+              <i data-lucide="search" aria-hidden="true"></i>
+            </button>
+
+            <!-- Login Button -->
+            <!-- Primary Button without icon starts here-->
+            <a href="#" class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center" role="button"
+              aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
+              <div class="primary-btn-wrap norm">
+                <span class="btn-text">Water Provider Login</span>
+              </div>
+            </a>
+            <!-- Primary Button without icon ends here-->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Header Component ends here -->
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Tertiary starts here -->
+    <section class="hero-tertiary blue-bg">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-tertiary-content"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Tertiary ends here -->
+    <!-- 404 content starts here -->
+    <section class="container-fluid container-404">
+      <div class="row">
+        <div class="col-12">
+          <div class="content-404">
+            <div class="text-404">
+              <div class="icon-404">
+                <img src="../assets/images/404.svg" alt="404 Icon" />
+              </div>
+              <h3>All Dried Up</h3>
+              <h5>
+                <span>Whoops!</span>
+                <span>This page didn’t make it downstream.</span>
+              </h5>
+              <div class="button-404-wrapper">
+                <!-- Primary Button starts here-->
+                <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" role="button"
+                  aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
+                  <div class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                    <span class="btn-text">Water Provider Login</span>
+                    <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                      <span class="circle-animation">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                          role="img" aria-label="Right arrow">
+                          <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                          <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                        <defs>
+                          <filter id="goo-filter-{{UNIQUE_ID}}">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                              result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+                <!-- Primary Button ends here-->
+              </div>
+            </div>
+            <div class="animation-404">
+              <div class="image-wrapper">
+                <img src="../assets/images/404-img-1.webp" alt="Image 1" class="image1">
+                <img src="../assets/images/404-img-2.webp" alt="Image 2" class="image2">
+              </div>
+            </div>
+          </div>
+        </div>
+    </section>
+    <!-- 404 content ends here -->
+  </main>
+  <!-- Footer starts here -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <!-- Newsletter Section -->
+      <div class="row footer__newsletter">
+        <div class="footer__newsletter-left">
+          <h2 class="footer__newsletter-title">Stay Informed.</h2>
+          <p class="footer__newsletter-text">
+            Sign up for our newsletter to receive the latest updates on
+            projects, events, and water conservation efforts.
+          </p>
+        </div>
+        <div class="footer__newsletter-right">
+          <form class="footer__form" aria-label="Newsletter Subscription">
+            <div class="footer__form-group d-flex align-items-end">
+              <div class="form-floating">
+                <input type="email" id="email" class="footer__input form-control" placeholder="Enter your email ID"
+                  required aria-required="true" />
+                <label for="email" class="footer__input-label">Enter your email ID</label>
+              </div>
+              <!-- Secondary Button without icon starts here-->
+              <a href="#" class="btn secondary-btn secondary-btn-no-icon d-inline-flex align-items-center" role="button"
+                aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
+                <div class="secondary-btn-wrap norm">
+                  <span class="btn-text">Subscribe</span>
+                </div>
+              </a>
+              <!-- Secondary Button without icon ends here-->
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row footer__container">
+        <!-- Quick Links Section -->
+        <div class="footer__quick-links">
+          <h3 class="footer__section-title border-bottom pb-3">Quick Link</h3>
+          <div class="footer__links-grid row p-0">
+            <div class="footer__links-column p-0">
+              <a href="#" class="footer__link d-flex align-items-center">
+                Contact Us
+              </a>
+              <a href="#" class="footer__link d-flex align-items-center">
+                Data Policy
+              </a>
+              <a href="#" class="footer__link d-flex align-items-center">
+                Accessibility
+              </a>
+              <a href="#" class="footer__link d-flex align-items-center">
+                Social Media Policy
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="footer__contact">
+          <h3 class="footer__section-title border-bottom pb-3">Contact Us</h3>
+          <div class="footer__contact-info">
+            <div class="footer__contact-item d-flex align-items-center">
+              <i data-lucide="map-pin" class="footer__contact-icon" aria-hidden="true"></i>
+              <address class="footer__address mb-0">
+                220 Water Ave., Berthoud, CO 80513
+              </address>
+            </div>
+            <div class="footer__contact-item d-flex align-items-center">
+              <i data-lucide="phone" class="footer__contact-icon" aria-hidden="true"></i>
+              <a href="tel:800-369-7246" class="footer__phone">800-369-7246</a>
+            </div>
+          </div>
+        </div>
+        <!-- Social Media Section -->
+        <div class="footer__social">
+          <h3 class="footer__section-title border-bottom pb-3">Follow us</h3>
+          <div class="footer__social-links d-flex">
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Facebook page">
+              <img src="../assets/images/facebook-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Twitter page">
+              <img src="../assets/images/twitter-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Instagram page">
+              <img src="../assets/images/instagram-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our LinkedIn page">
+              <img src="../assets/images/linkedin-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our YouTube channel">
+              <img src="../assets/images/youtube-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer__bottom">
+      <div class="container footer__bottom-container d-flex justify-content-center align-items-center">
+        <p class="footer__copyright mb-0">
+          Copyright © <span class="footer__year"></span> Northern Water
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer ends here -->
+  <script src="../assets/dist/main.min.js"></script>
+</body>
+
+</html>

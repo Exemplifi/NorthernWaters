@@ -17,6 +17,12 @@
   transition: all 0.5s ease;
   transform: translateY(0);
   box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+  &.less-spacing-top {
+    top: rem.convert(24px);
+    @include media-breakpoint-down(lg) {
+      top: 0;
+    }
+  }
   @include media-breakpoint-up(lg) {
     padding: 0;
   }
