@@ -252,6 +252,20 @@
     }
   }
 }
+
+.hero-tertiary {
+  background: var(--off-white);
+  padding: rem.convert(24px) 0;
+  overflow-x: hidden;
+  overflow-y: visible;
+  box-sizing: content-box;
+  @include media-breakpoint-down(lg) {
+    padding: 0;
+  }
+  &.blue-bg {
+    background: var(--blue);
+  }
+}
 // Responsive adjustments
 @media (max-width: 1200px) {
   .hero {
