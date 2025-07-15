@@ -44,7 +44,7 @@
         overflow: visible;
         display: flex;
         height: auto;
-        > div{
+        > div {
           width: 100%;
         }
         @include media-breakpoint-down(md) {
@@ -174,13 +174,6 @@
   transition-property: transform;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
   height: 100%;
-
-  &:hover {
-    @include media-breakpoint-up(md) {
-      transform: scale(1.05);
-    }
-  }
-
   .card {
     display: flex !important;
     flex-direction: column;
@@ -189,7 +182,7 @@
     border: none;
     border-radius: rem.convert(16px);
     padding-bottom: rem.convert(32px);
-
+    text-decoration: none;
     &.bg-blue {
       background: var(--blue);
 
@@ -216,7 +209,13 @@
       display: flex;
       flex-direction: column;
       gap: rem.convert(24px);
-
+      p {
+        display: -webkit-box;
+        -webkit-line-clamp: 4;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
       @include media-breakpoint-down(md) {
         padding: rem.convert(24px 24px 16px 24px);
       }
@@ -235,7 +234,7 @@
     }
     .link-wrap {
       margin: auto auto 0 rem.convert(32px);
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         margin: auto auto 0 rem.convert(24px);
       }
       .card-cta {
@@ -294,6 +293,23 @@
           background: var(--white);
           border-radius: 50%;
           display: inline-block;
+        }
+      }
+    }
+  }
+  &:hover {
+    @include media-breakpoint-up(md) {
+      transform: scale(1.05);
+      .card {
+        .link-wrap {
+          .card-cta {
+            .card-cta-icon {
+              background: var(--green);
+              svg path {
+                stroke: var(--white);
+              }
+            }
+          }
         }
       }
     }
