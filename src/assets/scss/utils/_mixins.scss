@@ -8,8 +8,19 @@
   box-sizing: $box-model;
 }
 
-@mixin convert-percent($value, $percent) {
-  letter-spacing: ($value * $percent / 100);
+@mixin convert-percent($property, $value, $percent) {
+  $base-font-size: 16px;
+
+  // Normalize input value to px if it's in rem
+  @if unit($value) == rem {
+    $value: $value * $base-font-size;
+  }
+
+  // Calculate percentage of value and convert result to rem
+  $result: ($value * $percent / 100) / $base-font-size;
+
+  // Output the desired CSS property with the calculated rem value
+  #{$property}: #{$result}rem;
 }
 
 // for clearfix
