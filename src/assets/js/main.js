@@ -18,6 +18,6 @@ import './script.js';
 import './icon-with-text.js';
 import './header.js';
 import './footer.js';
-
+import './calender.js';
 
 
