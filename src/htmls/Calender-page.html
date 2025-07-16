@@ -12,7 +12,263 @@
     <!-- Skip to main content link -->
     <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
 
-    <!-- Hero Secondary starts here -->
+    <!-- Header Component starts here -->
+    <header class="header container-fluid" role="banner">
+        <nav
+          class="navbar navbar-expand-lg row mx-0 container"
+          aria-label="Main navigation"
+        >
+          <div class="col-12 d-flex justify-content-between align-items-center">
+            <!-- Logo -->
+            <a href="/" class="header__logo" aria-label="Northern Water Home">
+              <img
+                src="../assets/images/northern-water-colorful-logo.svg"
+                alt="Northern Water Logo"
+                width="149"
+                height="56"
+              />
+            </a>
+  
+            <!-- Mobile Toggle Button -->
+            <button
+              class="navbar-toggler header__toggle"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#headerNavigation"
+              aria-controls="headerNavigation"
+              aria-expanded="false"
+              aria-label="Toggle navigation menu"
+            >
+              <span class="navbar-toggler-icon" aria-hidden="true"></span>
+              <span class="navbar-toggler-label">Menu</span>
+            </button>
+  
+            <!-- Navigation -->
+            <div
+              class="collapse navbar-collapse header__navigation"
+              id="headerNavigation"
+            >
+              <ul
+                class="navbar-nav header__menu"
+                role="menubar"
+                aria-label="Main Menu"
+              >
+                <!-- Water Dropdown -->
+                <li class="nav-item dropdown header__menu-item" role="none">
+                  <a
+                    class="nav-link dropdown-toggle header__menu-link"
+                    href="#"
+                    role="menuitem"
+                    aria-haspopup="true"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-controls="waterSubmenu"
+                  >
+                    Water
+                    <i
+                      data-lucide="chevron-down"
+                      class="header__menu-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                  <ul
+                    class="dropdown-menu header__submenu"
+                    id="waterSubmenu"
+                    role="menu"
+                    aria-label="Water submenu"
+                  >
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 1</a
+                      >
+                    </li>
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 2</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+  
+                <!-- Environment Dropdown -->
+                <li class="nav-item dropdown header__menu-item" role="none">
+                  <a
+                    class="nav-link dropdown-toggle header__menu-link"
+                    href="#"
+                    role="menuitem"
+                    aria-haspopup="true"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-controls="environmentSubmenu"
+                  >
+                    Environment
+                    <i
+                      data-lucide="chevron-down"
+                      class="header__menu-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                  <ul
+                    class="dropdown-menu header__submenu"
+                    id="environmentSubmenu"
+                    role="menu"
+                    aria-label="Environment submenu"
+                  >
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 1</a
+                      >
+                    </li>
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 2</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+  
+                <!-- Data Dropdown -->
+                <li class="nav-item dropdown header__menu-item" role="none">
+                  <a
+                    class="nav-link dropdown-toggle header__menu-link"
+                    href="#"
+                    role="menuitem"
+                    aria-haspopup="true"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-controls="dataSubmenu"
+                  >
+                    Data
+                    <i
+                      data-lucide="chevron-down"
+                      class="header__menu-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                  <ul
+                    class="dropdown-menu header__submenu"
+                    id="dataSubmenu"
+                    role="menu"
+                    aria-label="Data submenu"
+                  >
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 1</a
+                      >
+                    </li>
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 2</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+  
+                <!-- About Dropdown -->
+                <li class="nav-item dropdown header__menu-item" role="none">
+                  <a
+                    class="nav-link dropdown-toggle header__menu-link"
+                    href="#"
+                    role="menuitem"
+                    aria-haspopup="true"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                    aria-controls="aboutSubmenu"
+                  >
+                    About
+                    <i
+                      data-lucide="chevron-down"
+                      class="header__menu-icon"
+                      aria-hidden="true"
+                    ></i>
+                  </a>
+                  <ul
+                    class="dropdown-menu header__submenu"
+                    id="aboutSubmenu"
+                    role="menu"
+                    aria-label="About submenu"
+                  >
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 1</a
+                      >
+                    </li>
+                    <li role="none">
+                      <a
+                        class="dropdown-item header__submenu-link"
+                        href="#"
+                        role="menuitem"
+                        >Submenu Item 2</a
+                      >
+                    </li>
+                  </ul>
+                </li>
+  
+                <!-- News Link -->
+                <li class="nav-item header__menu-item" role="none">
+                  <a class="nav-link header__menu-link" href="#" role="menuitem"
+                    >News</a
+                  >
+                </li>
+              </ul>
+  
+              <!-- Right Side Actions -->
+              <div class="header__actions">
+                <!-- Search Button -->
+                <button
+                  type="button"
+                  class="header__search-btn"
+                  aria-label="Open search"
+                  aria-expanded="false"
+                  aria-controls="searchPanel"
+                >
+                  <i data-lucide="search" aria-hidden="true"></i>
+                </button>
+  
+                <!-- Login Button -->
+                <!-- Primary Button without icon starts here-->
+                <a
+                  href="#"
+                  class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center"
+                  role="button"
+                  aria-label="Water Provider Login"
+                  tabindex="0"
+                  data-button-type="primary"
+                >
+                  <div class="primary-btn-wrap norm">
+                    <span class="btn-text">Water Provider Login</span>
+                  </div>
+                </a>
+                <!-- Primary Button without icon ends here-->
+              </div>
+            </div>
+          </div>
+        </nav>
+      </header>
+
+    <main>
+        <!-- Hero Secondary starts here -->
     <section class="hero-secondary">
         <div class="container-fluid p-0">
             <div class="row">
@@ -44,9 +300,19 @@
                                 Filter Event Types
                             </h4>
                             <div class="filter-date-selector">
-                                <div class="date-picker-wrapper">
-                                    <input type="date" id="calendar-date-picker" name="calendar-date-picker"
-                                        class="date-picker-input" aria-label="Select date" />
+                                <div class="custom-date-range-picker" id="custom-date-range-picker">
+                                    <div class="calendar-range-display">
+                                        <img src="../assets/images/calender-icon.svg" alt="Calendar" class="calendar-icon">
+                                        <span class="calendar-range-text">1 sep - 29 nov 2025</span>
+                                    </div>
+                                    <div class="calender-range-btn-wrapper">
+                                        <button class="calendar-nav calendar-nav-left" aria-label="Previous month">
+                                            <img src="../assets/images/arrow-left.svg" alt="Previous" />
+                                        </button>
+                                        <button class="calendar-nav calendar-nav-right" aria-label="Next month">
+                                            <img src="../assets/images/arrow-right.svg" alt="Next bar" />
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -279,6 +545,699 @@
                                 </div>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row event-card-section">
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-card-date-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path d="M10.668 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.3333 5.33325H6.66667C5.19391 5.33325 4 6.52716 4 7.99992V26.6666C4 28.1393 5.19391 29.3333 6.66667 29.3333H25.3333C26.8061 29.3333 28 28.1393 28 26.6666V7.99992C28 6.52716 26.8061 5.33325 25.3333 5.33325Z"
+                                        stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4 13.3333H28" stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10.668 18.6667H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 18.6667H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 18.6667H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.668 24H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 24H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 24H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h5 class="event-card-date">
+                                Sept  4
+                            </h5>
+                        </div>
+                        <div class="event-card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-12 event-details-wrapper">
+                                    <div class="event-card-title-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 9H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 13H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 17H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <h6 class="event-card-title">
+                                            Board of Directors Planning Session
+                                        </h6>
+                                    </div>
+                                    <div class="event-card-details">
+                                        <div class="event-card-time">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6V12L16 14" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>12:00 AM - 12:00 AM</p>
+                                        </div>
+                                        <div class="event-card-type board-meetings">
+                                            <p>Board Meetings</p>
+                                        </div>
+                                    </div>
+                                    <div class="event-extra-details">
+                                        <div class="event-card-note">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 16H12.01" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12 8V12" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15.312 2C15.8424 2.00011 16.351 2.2109 16.726 2.586L21.414 7.274C21.7891 7.64899 21.9999 8.15761 22 8.688V15.312C21.9999 15.8424 21.7891 16.351 21.414 16.726L16.726 21.414C16.351 21.7891 15.8424 21.9999 15.312 22H8.688C8.15761 21.9999 7.64899 21.7891 7.274 21.414L2.586 16.726C2.2109 16.351 2.00011 15.8424 2 15.312V8.688C2.00011 8.15761 2.2109 7.64899 2.586 7.274L7.274 2.586C7.64899 2.2109 8.15761 2.00011 8.688 2H15.312Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water offices will be closed in observance of Labor Day.</p>
+                                        </div>
+                                        <div class="event-card-location">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.4277 21.9293 12.2168 21.9998 12 21.9998C11.7832 21.9998 11.5723 21.9293 11.399 21.799C9.539 20.193 4 14.993 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                                        </div>
+                                        <a href="#" class="event-map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M14.106 5.55302C14.3836 5.69173 14.6897 5.76395 15 5.76395C15.3103 5.76395 15.6164 5.69173 15.894 5.55302L19.553 3.72302C19.7056 3.64678 19.8751 3.61083 20.0455 3.61858C20.2159 3.62634 20.3814 3.67755 20.5265 3.76735C20.6715 3.85714 20.7911 3.98253 20.874 4.1316C20.9569 4.28067 21.0003 4.44846 21 4.61902V17.383C20.9999 17.5687 20.9481 17.7506 20.8505 17.9085C20.7528 18.0664 20.6131 18.194 20.447 18.277L15.894 20.554C15.6164 20.6927 15.3103 20.7649 15 20.7649C14.6897 20.7649 14.3836 20.6927 14.106 20.554L9.894 18.448C9.6164 18.3093 9.31033 18.2371 9 18.2371C8.68967 18.2371 8.3836 18.3093 8.106 18.448L4.447 20.278C4.29436 20.3543 4.12473 20.3902 3.95426 20.3824C3.78379 20.3746 3.61816 20.3233 3.47312 20.2334C3.32808 20.1435 3.20846 20.018 3.12565 19.8688C3.04284 19.7196 2.99958 19.5517 3 19.381V6.61802C3.0001 6.43235 3.05189 6.25039 3.14956 6.09249C3.24722 5.93459 3.38692 5.80701 3.553 5.72402L8.106 3.44702C8.3836 3.3083 8.68967 3.23608 9 3.23608C9.31033 3.23608 9.6164 3.3083 9.894 3.44702L14.106 5.55302Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M15 5.76392V20.7639" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 3.23608V18.2361" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>View on Google Map</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-12">
+                                    <div class="event-card-btn">
+                                        <!-- tertiary Btn -->
+                                        <a href="#" class="tertiary-btn">
+                                            View More
+                                            <span class="card-cta-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33"
+                                                        stroke-linecap="round"></path>
+                                                    <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff"
+                                                        stroke-width="1.33" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>  
+                    </div>
+                </div>
+            </div>
+            <div class="row event-card-section">
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-card-date-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path d="M10.668 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.3333 5.33325H6.66667C5.19391 5.33325 4 6.52716 4 7.99992V26.6666C4 28.1393 5.19391 29.3333 6.66667 29.3333H25.3333C26.8061 29.3333 28 28.1393 28 26.6666V7.99992C28 6.52716 26.8061 5.33325 25.3333 5.33325Z"
+                                        stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4 13.3333H28" stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10.668 18.6667H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 18.6667H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 18.6667H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.668 24H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 24H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 24H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h5 class="event-card-date">
+                                Sept 11
+                            </h5>
+                        </div>
+                        <div class="event-card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-12 event-details-wrapper">
+                                    <div class="event-card-title-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 9H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 13H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 17H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <h6 class="event-card-title">
+                                            Benefits and Human Resources Committee Meeting
+                                        </h6>
+                                    </div>
+                                    <div class="event-card-details">
+                                        <div class="event-card-time">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6V12L16 14" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>12:00 AM - 12:00 AM</p>
+                                        </div>
+                                        <div class="event-card-type committee-meetings">
+                                            <p>Committee Meetings</p>
+                                        </div>
+                                    </div>
+                                    <div class="event-extra-details">
+                                        <div class="event-card-note">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 16H12.01" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12 8V12" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15.312 2C15.8424 2.00011 16.351 2.2109 16.726 2.586L21.414 7.274C21.7891 7.64899 21.9999 8.15761 22 8.688V15.312C21.9999 15.8424 21.7891 16.351 21.414 16.726L16.726 21.414C16.351 21.7891 15.8424 21.9999 15.312 22H8.688C8.15761 21.9999 7.64899 21.7891 7.274 21.414L2.586 16.726C2.2109 16.351 2.00011 15.8424 2 15.312V8.688C2.00011 8.15761 2.2109 7.64899 2.586 7.274L7.274 2.586C7.64899 2.2109 8.15761 2.00011 8.688 2H15.312Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water offices will be closed in observance of Labor Day.</p>
+                                        </div>
+                                        <div class="event-card-location">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.4277 21.9293 12.2168 21.9998 12 21.9998C11.7832 21.9998 11.5723 21.9293 11.399 21.799C9.539 20.193 4 14.993 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                                        </div>
+                                        <a href="#" class="event-map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M14.106 5.55302C14.3836 5.69173 14.6897 5.76395 15 5.76395C15.3103 5.76395 15.6164 5.69173 15.894 5.55302L19.553 3.72302C19.7056 3.64678 19.8751 3.61083 20.0455 3.61858C20.2159 3.62634 20.3814 3.67755 20.5265 3.76735C20.6715 3.85714 20.7911 3.98253 20.874 4.1316C20.9569 4.28067 21.0003 4.44846 21 4.61902V17.383C20.9999 17.5687 20.9481 17.7506 20.8505 17.9085C20.7528 18.0664 20.6131 18.194 20.447 18.277L15.894 20.554C15.6164 20.6927 15.3103 20.7649 15 20.7649C14.6897 20.7649 14.3836 20.6927 14.106 20.554L9.894 18.448C9.6164 18.3093 9.31033 18.2371 9 18.2371C8.68967 18.2371 8.3836 18.3093 8.106 18.448L4.447 20.278C4.29436 20.3543 4.12473 20.3902 3.95426 20.3824C3.78379 20.3746 3.61816 20.3233 3.47312 20.2334C3.32808 20.1435 3.20846 20.018 3.12565 19.8688C3.04284 19.7196 2.99958 19.5517 3 19.381V6.61802C3.0001 6.43235 3.05189 6.25039 3.14956 6.09249C3.24722 5.93459 3.38692 5.80701 3.553 5.72402L8.106 3.44702C8.3836 3.3083 8.68967 3.23608 9 3.23608C9.31033 3.23608 9.6164 3.3083 9.894 3.44702L14.106 5.55302Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M15 5.76392V20.7639" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 3.23608V18.2361" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>View on Google Map</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-12">
+                                    <div class="event-card-btn">
+                                        <!-- tertiary Btn -->
+                                        <a href="#" class="tertiary-btn">
+                                            View More
+                                            <span class="card-cta-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33"
+                                                        stroke-linecap="round"></path>
+                                                    <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff"
+                                                        stroke-width="1.33" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="event-card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-12 event-details-wrapper">
+                                    <div class="event-card-title-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 9H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 13H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 17H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <h6 class="event-card-title">
+                                            Board of Directors Meeting
+                                        </h6>
+                                    </div>
+                                    <div class="event-card-details">
+                                        <div class="event-card-time">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6V12L16 14" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>12:00 AM - 12:00 AM</p>
+                                        </div>
+                                        <div class="event-card-type holiday">
+                                            <p>Holiday</p>
+                                        </div>
+                                    </div>
+
+                                    <div class="event-extra-details">
+                                        <div class="event-card-note">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 16H12.01" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12 8V12" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15.312 2C15.8424 2.00011 16.351 2.2109 16.726 2.586L21.414 7.274C21.7891 7.64899 21.9999 8.15761 22 8.688V15.312C21.9999 15.8424 21.7891 16.351 21.414 16.726L16.726 21.414C16.351 21.7891 15.8424 21.9999 15.312 22H8.688C8.15761 21.9999 7.64899 21.7891 7.274 21.414L2.586 16.726C2.2109 16.351 2.00011 15.8424 2 15.312V8.688C2.00011 8.15761 2.2109 7.64899 2.586 7.274L7.274 2.586C7.64899 2.2109 8.15761 2.00011 8.688 2H15.312Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water offices will be closed in observance of Labor Day.</p>
+                                        </div>
+                                        <div class="event-card-location">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.4277 21.9293 12.2168 21.9998 12 21.9998C11.7832 21.9998 11.5723 21.9293 11.399 21.799C9.539 20.193 4 14.993 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                                        </div>
+                                        <a href="#" class="event-map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M14.106 5.55302C14.3836 5.69173 14.6897 5.76395 15 5.76395C15.3103 5.76395 15.6164 5.69173 15.894 5.55302L19.553 3.72302C19.7056 3.64678 19.8751 3.61083 20.0455 3.61858C20.2159 3.62634 20.3814 3.67755 20.5265 3.76735C20.6715 3.85714 20.7911 3.98253 20.874 4.1316C20.9569 4.28067 21.0003 4.44846 21 4.61902V17.383C20.9999 17.5687 20.9481 17.7506 20.8505 17.9085C20.7528 18.0664 20.6131 18.194 20.447 18.277L15.894 20.554C15.6164 20.6927 15.3103 20.7649 15 20.7649C14.6897 20.7649 14.3836 20.6927 14.106 20.554L9.894 18.448C9.6164 18.3093 9.31033 18.2371 9 18.2371C8.68967 18.2371 8.3836 18.3093 8.106 18.448L4.447 20.278C4.29436 20.3543 4.12473 20.3902 3.95426 20.3824C3.78379 20.3746 3.61816 20.3233 3.47312 20.2334C3.32808 20.1435 3.20846 20.018 3.12565 19.8688C3.04284 19.7196 2.99958 19.5517 3 19.381V6.61802C3.0001 6.43235 3.05189 6.25039 3.14956 6.09249C3.24722 5.93459 3.38692 5.80701 3.553 5.72402L8.106 3.44702C8.3836 3.3083 8.68967 3.23608 9 3.23608C9.31033 3.23608 9.6164 3.3083 9.894 3.44702L14.106 5.55302Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M15 5.76392V20.7639" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 3.23608V18.2361" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>View on Google Map</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-12">
+                                    <div class="event-card-btn">
+                                        <!-- tertiary Btn -->
+                                        <a href="#" class="tertiary-btn">
+                                            View More
+                                            <span class="card-cta-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33"
+                                                        stroke-linecap="round"></path>
+                                                    <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff"
+                                                        stroke-width="1.33" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row event-card-section">
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-card-date-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path d="M10.668 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.3333 5.33325H6.66667C5.19391 5.33325 4 6.52716 4 7.99992V26.6666C4 28.1393 5.19391 29.3333 6.66667 29.3333H25.3333C26.8061 29.3333 28 28.1393 28 26.6666V7.99992C28 6.52716 26.8061 5.33325 25.3333 5.33325Z"
+                                        stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4 13.3333H28" stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10.668 18.6667H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 18.6667H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 18.6667H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.668 24H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 24H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 24H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h5 class="event-card-date">
+                                Sept 12
+                            </h5>
+                        </div>
+                        <div class="event-card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-12 event-details-wrapper">
+                                    <div class="event-card-title-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 9H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 13H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 17H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <h6 class="event-card-title">
+                                            Conservation Garden Tour
+                                        </h6>
+                                    </div>
+                                    <div class="event-card-details">
+                                        <div class="event-card-time">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6V12L16 14" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>12:00 AM - 12:00 AM</p>
+                                        </div>
+                                        <div class="event-card-type events-tours">
+                                            <p>Events & Tours</p>
+                                        </div>
+                                    </div>
+                                    <div class="event-extra-details">
+                                        <div class="event-card-note">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 16H12.01" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12 8V12" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15.312 2C15.8424 2.00011 16.351 2.2109 16.726 2.586L21.414 7.274C21.7891 7.64899 21.9999 8.15761 22 8.688V15.312C21.9999 15.8424 21.7891 16.351 21.414 16.726L16.726 21.414C16.351 21.7891 15.8424 21.9999 15.312 22H8.688C8.15761 21.9999 7.64899 21.7891 7.274 21.414L2.586 16.726C2.2109 16.351 2.00011 15.8424 2 15.312V8.688C2.00011 8.15761 2.2109 7.64899 2.586 7.274L7.274 2.586C7.64899 2.2109 8.15761 2.00011 8.688 2H15.312Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water offices will be closed in observance of Labor Day.</p>
+                                        </div>
+                                        <div class="event-card-location">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.4277 21.9293 12.2168 21.9998 12 21.9998C11.7832 21.9998 11.5723 21.9293 11.399 21.799C9.539 20.193 4 14.993 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                                        </div>
+                                        <a href="#" class="event-map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M14.106 5.55302C14.3836 5.69173 14.6897 5.76395 15 5.76395C15.3103 5.76395 15.6164 5.69173 15.894 5.55302L19.553 3.72302C19.7056 3.64678 19.8751 3.61083 20.0455 3.61858C20.2159 3.62634 20.3814 3.67755 20.5265 3.76735C20.6715 3.85714 20.7911 3.98253 20.874 4.1316C20.9569 4.28067 21.0003 4.44846 21 4.61902V17.383C20.9999 17.5687 20.9481 17.7506 20.8505 17.9085C20.7528 18.0664 20.6131 18.194 20.447 18.277L15.894 20.554C15.6164 20.6927 15.3103 20.7649 15 20.7649C14.6897 20.7649 14.3836 20.6927 14.106 20.554L9.894 18.448C9.6164 18.3093 9.31033 18.2371 9 18.2371C8.68967 18.2371 8.3836 18.3093 8.106 18.448L4.447 20.278C4.29436 20.3543 4.12473 20.3902 3.95426 20.3824C3.78379 20.3746 3.61816 20.3233 3.47312 20.2334C3.32808 20.1435 3.20846 20.018 3.12565 19.8688C3.04284 19.7196 2.99958 19.5517 3 19.381V6.61802C3.0001 6.43235 3.05189 6.25039 3.14956 6.09249C3.24722 5.93459 3.38692 5.80701 3.553 5.72402L8.106 3.44702C8.3836 3.3083 8.68967 3.23608 9 3.23608C9.31033 3.23608 9.6164 3.3083 9.894 3.44702L14.106 5.55302Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M15 5.76392V20.7639" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 3.23608V18.2361" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>View on Google Map</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-12">
+                                    <div class="event-card-btn">
+                                        <!-- tertiary Btn -->
+                                        <a href="#" class="tertiary-btn">
+                                            View More
+                                            <span class="card-cta-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33"
+                                                        stroke-linecap="round"></path>
+                                                    <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff"
+                                                        stroke-width="1.33" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="row event-card-section">
+                <div class="col-12">
+                    <div class="event-card">
+                        <div class="event-card-header">
+                            <div class="event-card-date-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32"
+                                    fill="none">
+                                    <path d="M10.668 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 2.66663V7.99996" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path
+                                        d="M25.3333 5.33325H6.66667C5.19391 5.33325 4 6.52716 4 7.99992V26.6666C4 28.1393 5.19391 29.3333 6.66667 29.3333H25.3333C26.8061 29.3333 28 28.1393 28 26.6666V7.99992C28 6.52716 26.8061 5.33325 25.3333 5.33325Z"
+                                        stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M4 13.3333H28" stroke="white" stroke-width="2.66667" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                    <path d="M10.668 18.6667H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 18.6667H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 18.6667H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M10.668 24H10.6813" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M16 24H16.0133" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                    <path d="M21.332 24H21.3454" stroke="white" stroke-width="2.66667"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <h5 class="event-card-date">
+                                Oct 2
+                            </h5>
+                        </div>
+                        <div class="event-card-body">
+                            <div class="row">
+                                <div class="col-lg-9 col-12 event-details-wrapper">
+                                    <div class="event-card-title-wrapper">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                            viewBox="0 0 24 24" fill="none">
+                                            <path
+                                                d="M15 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V7L15 2Z"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path
+                                                d="M14 2V6C14 6.53043 14.2107 7.03914 14.5858 7.41421C14.9609 7.78929 15.4696 8 16 8H20"
+                                                stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M10 9H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 13H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                            <path d="M16 17H8" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                stroke-linejoin="round" />
+                                        </svg>
+                                        <h6 class="event-card-title">
+                                            Board of Directors Planning Session
+                                        </h6>
+                                    </div>
+                                    <div class="event-card-details">
+                                        <div class="event-card-time">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M12 6V12L16 14" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>12:00 AM - 12:00 AM</p>
+                                        </div>
+                                        <div class="event-card-type holiday">
+                                            <p>Holiday</p>
+                                        </div>
+                                    </div>
+                                    <div class="event-extra-details">
+                                        <div class="event-card-note">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path d="M12 16H12.01" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M12 8V12" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path
+                                                    d="M15.312 2C15.8424 2.00011 16.351 2.2109 16.726 2.586L21.414 7.274C21.7891 7.64899 21.9999 8.15761 22 8.688V15.312C21.9999 15.8424 21.7891 16.351 21.414 16.726L16.726 21.414C16.351 21.7891 15.8424 21.9999 15.312 22H8.688C8.15761 21.9999 7.64899 21.7891 7.274 21.414L2.586 16.726C2.2109 16.351 2.00011 15.8424 2 15.312V8.688C2.00011 8.15761 2.2109 7.64899 2.586 7.274L7.274 2.586C7.64899 2.2109 8.15761 2.00011 8.688 2H15.312Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water offices will be closed in observance of Labor Day.</p>
+                                        </div>
+                                        <div class="event-card-location">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M20 10C20 14.993 14.461 20.193 12.601 21.799C12.4277 21.9293 12.2168 21.9998 12 21.9998C11.7832 21.9998 11.5723 21.9293 11.399 21.799C9.539 20.193 4 14.993 4 10C4 7.87827 4.84285 5.84344 6.34315 4.34315C7.84344 2.84285 9.87827 2 12 2C14.1217 2 16.1566 2.84285 17.6569 4.34315C19.1571 5.84344 20 7.87827 20 10Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path
+                                                    d="M12 13C13.6569 13 15 11.6569 15 10C15 8.34315 13.6569 7 12 7C10.3431 7 9 8.34315 9 10C9 11.6569 10.3431 13 12 13Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                            </svg>
+                                            <p>Northern Water, 220 Water Ave. Berthoud, CO 80513</p>
+                                        </div>
+                                        <a href="#" class="event-map-link">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
+                                                viewBox="0 0 24 24" fill="none">
+                                                <path
+                                                    d="M14.106 5.55302C14.3836 5.69173 14.6897 5.76395 15 5.76395C15.3103 5.76395 15.6164 5.69173 15.894 5.55302L19.553 3.72302C19.7056 3.64678 19.8751 3.61083 20.0455 3.61858C20.2159 3.62634 20.3814 3.67755 20.5265 3.76735C20.6715 3.85714 20.7911 3.98253 20.874 4.1316C20.9569 4.28067 21.0003 4.44846 21 4.61902V17.383C20.9999 17.5687 20.9481 17.7506 20.8505 17.9085C20.7528 18.0664 20.6131 18.194 20.447 18.277L15.894 20.554C15.6164 20.6927 15.3103 20.7649 15 20.7649C14.6897 20.7649 14.3836 20.6927 14.106 20.554L9.894 18.448C9.6164 18.3093 9.31033 18.2371 9 18.2371C8.68967 18.2371 8.3836 18.3093 8.106 18.448L4.447 20.278C4.29436 20.3543 4.12473 20.3902 3.95426 20.3824C3.78379 20.3746 3.61816 20.3233 3.47312 20.2334C3.32808 20.1435 3.20846 20.018 3.12565 19.8688C3.04284 19.7196 2.99958 19.5517 3 19.381V6.61802C3.0001 6.43235 3.05189 6.25039 3.14956 6.09249C3.24722 5.93459 3.38692 5.80701 3.553 5.72402L8.106 3.44702C8.3836 3.3083 8.68967 3.23608 9 3.23608C9.31033 3.23608 9.6164 3.3083 9.894 3.44702L14.106 5.55302Z"
+                                                    stroke="#111111" stroke-width="2" stroke-linecap="round"
+                                                    stroke-linejoin="round" />
+                                                <path d="M15 5.76392V20.7639" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                                <path d="M9 3.23608V18.2361" stroke="#111111" stroke-width="2"
+                                                    stroke-linecap="round" stroke-linejoin="round" />
+                                            </svg>
+                                            <p>View on Google Map</p>
+                                        </a>
+                                    </div>
+                                </div>
+                                <div class="col-lg-3 col-12">
+                                    <div class="event-card-btn">
+                                        <!-- tertiary Btn -->
+                                        <a href="#" class="tertiary-btn">
+                                            View More
+                                            <span class="card-cta-icon">
+                                                <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
+                                                    xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
+                                                    focusable="false">
+                                                    <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33"
+                                                        stroke-linecap="round"></path>
+                                                    <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff"
+                                                        stroke-width="1.33" stroke-linecap="round"
+                                                        stroke-linejoin="round"></path>
+                                                </svg>
+                                            </span>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                         <div class="event-card-body">
                             <div class="row">
                                 <div class="col-lg-9 col-12 event-details-wrapper">
@@ -393,6 +1352,176 @@
             </div>
         </div>
     </section>
+    </main>
+
+    <!-- Footer starts here -->
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+          <!-- Newsletter Section -->
+          <div class="row footer__newsletter">
+            <div class="footer__newsletter-left">
+              <h2 class="footer__newsletter-title">Stay Informed.</h2>
+              <p class="footer__newsletter-text">
+                Sign up for our newsletter to receive the latest updates on
+                projects, events, and water conservation efforts.
+              </p>
+            </div>
+            <div class="footer__newsletter-right">
+              <form class="footer__form" aria-label="Newsletter Subscription">
+                <div class="footer__form-group d-flex align-items-end">
+                  <div class="form-floating">
+                    <input
+                      type="email"
+                      id="email"
+                      class="footer__input form-control"
+                      placeholder="Enter your email ID"
+                      required
+                      aria-required="true"
+                    />
+                    <label for="email" class="footer__input-label"
+                      >Enter your email ID</label
+                    >
+                  </div>
+                  <!-- Secondary Button without icon starts here-->
+                  <a
+                    href="#"
+                    class="btn secondary-btn secondary-btn-no-icon d-inline-flex align-items-center"
+                    role="button"
+                    aria-label="Water Provider Login"
+                    tabindex="0"
+                    data-button-type="secondary"
+                  >
+                    <div class="secondary-btn-wrap norm">
+                      <span class="btn-text">Subscribe</span>
+                    </div>
+                  </a>
+                  <!-- Secondary Button without icon ends here-->
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="row footer__container">
+            <!-- Quick Links Section -->
+            <div class="footer__quick-links">
+              <h3 class="footer__section-title border-bottom pb-3">Quick Link</h3>
+              <div class="footer__links-grid row p-0">
+                <div class="footer__links-column p-0">
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Contact Us
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Data Policy
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Accessibility
+                  </a>
+                  <a href="#" class="footer__link d-flex align-items-center">
+                    Social Media Policy
+                  </a>
+                </div>
+              </div>
+            </div>
+            <!-- Contact Section -->
+            <div class="footer__contact">
+              <h3 class="footer__section-title border-bottom pb-3">Contact Us</h3>
+              <div class="footer__contact-info">
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="map-pin"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <address class="footer__address mb-0">
+                    220 Water Ave., Berthoud, CO 80513
+                  </address>
+                </div>
+                <div class="footer__contact-item d-flex align-items-center">
+                  <i
+                    data-lucide="phone"
+                    class="footer__contact-icon"
+                    aria-hidden="true"
+                  ></i>
+                  <a href="tel:800-369-7246" class="footer__phone"
+                    >800-369-7246</a
+                  >
+                </div>
+              </div>
+            </div>
+            <!-- Social Media Section -->
+            <div class="footer__social">
+              <h3 class="footer__section-title border-bottom pb-3">Follow us</h3>
+              <div class="footer__social-links d-flex">
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Facebook page"
+                >
+                  <img
+                    src="../assets/images/facebook-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Twitter page"
+                >
+                  <img
+                    src="../assets/images/twitter-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our Instagram page"
+                >
+                  <img
+                    src="../assets/images/instagram-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our LinkedIn page"
+                >
+                  <img
+                    src="../assets/images/linkedin-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+                <a
+                  href="#"
+                  class="footer__social-link d-flex align-items-center justify-content-center"
+                  aria-label="Visit our YouTube channel"
+                >
+                  <img
+                    src="../assets/images/youtube-footer-icon.svg"
+                    alt=""
+                    aria-hidden="true"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Copyright Section -->
+        <div class="footer__bottom">
+          <div
+            class="container footer__bottom-container d-flex justify-content-center align-items-center"
+          >
+            <p class="footer__copyright mb-0">
+              Copyright © <span class="footer__year"></span> Northern Water
+            </p>
+          </div>
+        </div>
+      </footer>
     <!-- Hero Secondary ends here -->
     <script src="../assets/dist/main.min.js"></script>
 </body>

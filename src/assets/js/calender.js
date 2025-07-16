@@ -26,7 +26,7 @@ document.addEventListener('DOMContentLoaded', function () {
     element.style.maxHeight = '0';
     setTimeout(function () {
       element.style.display = 'none';
-    }, 300);
+    }, 280);
   }
 
   document.querySelectorAll('.event-card-btn .tertiary-btn').forEach(function (btn) {
