@@ -135,19 +135,26 @@ const setupHeader = () => {
   window.addEventListener("scroll", function () {
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
 
-    if (scrollTop > lastScrollTop) {
-      // Scrolling up
-      document
-        .querySelectorAll(".header")
-        .forEach((el) => el.classList.add("upwards"));
-    } else {
+    const headers = document.querySelectorAll(".header");
+
+    if (scrollTop === 0) {
+      // At the very top of the page – remove both classes
+      headers.forEach((el) => el.classList.remove("upwards", "downwards"));
+    } else if (scrollTop > lastScrollTop) {
       // Scrolling down
-      document
-        .querySelectorAll(".header")
-        .forEach((el) => el.classList.remove("upwards"));
+      headers.forEach((el) => {
+        el.classList.add("downwards");
+        el.classList.remove("upwards");
+      });
+    } else if (scrollTop < lastScrollTop) {
+      // Scrolling up
+      headers.forEach((el) => {
+        el.classList.add("upwards");
+        el.classList.remove("downwards");
+      });
     }
 
-    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // For iOS & Safari bounce
+    lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
   });
 };
 

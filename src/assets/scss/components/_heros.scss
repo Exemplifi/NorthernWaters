@@ -158,12 +158,12 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: rem.convert(32px) rem.convert(80px) rem.convert(80px)
-      rem.convert(80px);
+    padding: rem.convert(32px) rem.convert(80px) rem.convert(80px) rem.convert(80px);
+
     @include media-breakpoint-down(lg) {
       padding: rem.convert(24px);
       min-height: rem.convert(300px);
-      height: rem.convert(300px);
+      height: rem.convert(272px);
     }
     .hero-img-wrapper {
       position: absolute;
@@ -214,7 +214,10 @@
         rgba(0, 0, 0, 0.18);
       max-width: max-content;
       text-transform: capitalize;
-      @include convert-percent(rem.convert(80px), -2);
+      @include convert-percent(letter-spacing, 80px, -2);
+      @include media-breakpoint-down(lg) {
+        @include convert-percent(letter-spacing, 44px, -2);
+      }
     }
 
     .hero-subtext {

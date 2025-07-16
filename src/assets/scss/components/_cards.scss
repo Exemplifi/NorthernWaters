@@ -56,11 +56,6 @@
         }
         .card-title-wrapper {
           margin-bottom: 1.5rem;
-          // padding-bottom: 1.5rem;
-          // border-bottom: 1px solid #FFFFFF99;
-          @include media-breakpoint-down(lg) {
-            padding-bottom: 1rem;
-          }
           .card-title {
             margin-bottom: 0;
           }
