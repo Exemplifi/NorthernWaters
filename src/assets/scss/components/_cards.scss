@@ -1,6 +1,6 @@
 .cards-section {
   .card {
-    background: var(--blue);
+    background: transparent;
     border-radius: 1rem;
     // overflow: hidden;
     border: none;
@@ -110,7 +110,10 @@
           transform: scale(1.05);
         }
       }
-      &:focus, &:focus-visible {
+      &:focus {
+        outline: none;
+      }
+      &:focus-visible {
         outline: 1px solid var(--black);
         outline-offset: 2px;
       }

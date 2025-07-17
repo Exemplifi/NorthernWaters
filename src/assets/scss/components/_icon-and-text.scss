@@ -347,7 +347,7 @@
     @include media-breakpoint-down(lg) {
       flex-direction: column;
       column-gap: rem.convert(0px);
-      row-gap: rem.convert(24px);
+      row-gap: rem.convert(16px);
     }
     .text-left {
       flex: 1 1 0;
