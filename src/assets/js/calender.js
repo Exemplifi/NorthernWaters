@@ -39,22 +39,7 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!details) return;
       // Find the svg in this button
       var svg = btn.querySelector('svg');
-      // Close all other .event-extra-details in this .event-card and reset their svgs
-      var eventCard = btn.closest('.event-card');
-      if (eventCard) {
-        eventCard.querySelectorAll('.event-card-btn .tertiary-btn').forEach(function (otherBtn) {
-          var otherCardBody = otherBtn.closest('.event-card-body');
-          var otherDetails = otherCardBody ? otherCardBody.querySelector('.event-extra-details') : null;
-          var otherSvg = otherBtn.querySelector('svg');
-          if (otherDetails && otherDetails !== details) {
-            slideUp(otherDetails);
-            if (otherSvg) {
-              otherSvg.style.transform = 'rotate(90deg)';
-            }
-          }
-        });
-      }
-      // Toggle this one
+      // Toggle only this one, do not close others
       if (details.style.display === 'flex' && details.style.maxHeight !== '0px') {
         slideUp(details);
         if (svg) {
