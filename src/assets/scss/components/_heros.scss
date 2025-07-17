@@ -102,7 +102,7 @@
       text-shadow: 0 #{rem.convert(2px)} #{rem.convert(16px)}
         rgba(0, 0, 0, 0.18);
       max-width: rem.convert(600px);
-      text-transform: capitalize;
+      text-transform: none;
     }
 
     .hero-subtext {
@@ -213,7 +213,7 @@
       text-shadow: 0 #{rem.convert(2px)} #{rem.convert(16px)}
         rgba(0, 0, 0, 0.18);
       max-width: max-content;
-      text-transform: capitalize;
+      text-transform: none;
       @include convert-percent(letter-spacing, 80px, -2);
       @include media-breakpoint-down(lg) {
         @include convert-percent(letter-spacing, 44px, -2);

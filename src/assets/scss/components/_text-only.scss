@@ -11,9 +11,10 @@
       align-items: stretch;
       .text-only-content-v1-left {
         position: relative;
-        padding-right: rem.convert(24px);
+        padding-right: rem.convert(48px);
         @include media-breakpoint-down(lg) {
-          padding-right: rem.convert(12px);
+          padding-right: rem.convert(12px) !important;
+          padding-left: rem.convert(12px) !important;
         }
         .text-only-content-v1-title {
           margin-bottom: rem.convert(0px);
@@ -40,9 +41,10 @@
       }
       .text-only-content-v1-right {
         align-self: center;
-        padding-left: rem.convert(24px);
+        padding-left: rem.convert(48px);
         @include media-breakpoint-down(lg) {
-          padding-left: rem.convert(12px);
+          padding-right: rem.convert(12px) !important;
+          padding-left: rem.convert(12px) !important;
         }
         .text-only-content-v1-text {
           p {
