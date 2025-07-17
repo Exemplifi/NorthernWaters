@@ -532,6 +532,7 @@
                   aria-label="Water Provider Login"
                   tabindex="0"
                   data-button-type="secondary"
+                  style="filter: url('#goo-filter-2')"
                 >
                   <div
                     class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
@@ -557,14 +558,14 @@
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                          />
+                          ></path>
                           <path
                             d="M12 5L19 12L12 19"
                             stroke="#111111"
                             stroke-width="2"
                             stroke-linecap="round"
                             stroke-linejoin="round"
-                          />
+                          ></path>
                         </svg>
                       </span>
                       <svg
@@ -573,19 +574,19 @@
                         aria-hidden="true"
                       >
                         <defs>
-                          <filter id="goo-secondary">
+                          <filter id="goo-filter-2">
                             <feGaussianBlur
                               in="SourceGraphic"
                               stdDeviation="10"
                               result="blur"
-                            />
+                            ></feGaussianBlur>
                             <feColorMatrix
                               in="blur"
                               mode="matrix"
                               values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                               result="goo"
-                            />
-                            <feBlend in="SourceGraphic" in2="goo" />
+                            ></feColorMatrix>
+                            <feBlend in="SourceGraphic" in2="goo"></feBlend>
                           </filter>
                         </defs>
                       </svg>
@@ -834,18 +835,23 @@
                 publishing software like Aldus PageMaker including versions of
                 Lorem Ipsum.
               </p>
+              <!-- Primary Button starts here-->
               <a
                 href="#"
                 class="btn primary-btn d-inline-flex align-items-center liquid-animation"
-                aria-label="Learn More"
+                role="button"
+                aria-label="Water Provider Login"
+                tabindex="0"
+                data-button-type="primary"
+                style="filter: url('#goo-filter-0')"
               >
                 <div
                   class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
                 >
                   <span class="btn-text">Learn More</span>
-
                   <span
                     class="btn-icon liquid-animation-items liquid-animation-circle move"
+                    aria-hidden="true"
                   >
                     <span class="circle-animation">
                       <svg
@@ -854,6 +860,8 @@
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Right arrow"
                       >
                         <path
                           d="M5 12H19"
@@ -861,37 +869,42 @@
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                        />
+                        ></path>
                         <path
                           d="M12 5L19 12L12 19"
                           stroke="#fff"
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                        />
+                        ></path>
                       </svg>
                     </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      aria-hidden="true"
+                    >
                       <defs>
-                        <filter id="goo-filter-{{UNIQUE_ID}}">
+                        <filter id="goo-filter-0">
                           <feGaussianBlur
                             in="SourceGraphic"
                             stdDeviation="10"
                             result="blur"
-                          />
+                          ></feGaussianBlur>
                           <feColorMatrix
                             in="blur"
                             mode="matrix"
                             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                             result="goo"
-                          />
-                          <feBlend in="SourceGraphic" in2="goo" />
+                          ></feColorMatrix>
+                          <feBlend in="SourceGraphic" in2="goo"></feBlend>
                         </filter>
                       </defs>
                     </svg>
                   </span>
                 </div>
               </a>
+              <!-- Primary Button ends here-->
             </div>
             <div class="col-12 col-lg-6">
               <div class="img-wrap">
@@ -940,18 +953,22 @@
                 join Northern Water and be part of an exciting future in our
                 region's water supplies.
               </p>
+              <!-- Primary Button starts here-->
               <a
                 href="#"
                 class="btn primary-btn d-inline-flex align-items-center liquid-animation"
-                aria-label="Visit Our Campus Page"
+                role="button"
+                aria-label="Water Provider Login"
+                tabindex="0"
+                data-button-type="primary"
               >
                 <div
                   class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
                 >
                   <span class="btn-text">Visit Our Campus Page</span>
-
                   <span
                     class="btn-icon liquid-animation-items liquid-animation-circle move"
+                    aria-hidden="true"
                   >
                     <span class="circle-animation">
                       <svg
@@ -960,6 +977,8 @@
                         viewBox="0 0 24 24"
                         fill="none"
                         xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Right arrow"
                       >
                         <path
                           d="M5 12H19"
@@ -977,7 +996,11 @@
                         />
                       </svg>
                     </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      aria-hidden="true"
+                    >
                       <defs>
                         <filter id="goo-filter-{{UNIQUE_ID}}">
                           <feGaussianBlur
@@ -998,6 +1021,7 @@
                   </span>
                 </div>
               </a>
+              <!-- Primary Button ends here-->
             </div>
             <div class="col-12 col-lg-6">
               <div class="img-wrap">
@@ -1071,18 +1095,10 @@
             <h3 class="footer__section-title border-bottom pb-3">Quick Link</h3>
             <div class="footer__links-grid row p-0">
               <div class="footer__links-column p-0">
-                <a href="#" class="footer__link">
-                  Contact Us
-                </a>
-                <a href="#" class="footer__link">
-                  Data Policy
-                </a>
-                <a href="#" class="footer__link">
-                  Accessibility
-                </a>
-                <a href="#" class="footer__link">
-                  Social Media Policy
-                </a>
+                <a href="#" class="footer__link"> Contact Us </a>
+                <a href="#" class="footer__link"> Data Policy </a>
+                <a href="#" class="footer__link"> Accessibility </a>
+                <a href="#" class="footer__link"> Social Media Policy </a>
               </div>
             </div>
           </div>
