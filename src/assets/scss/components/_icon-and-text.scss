@@ -382,7 +382,7 @@
     column-gap: rem.convert(96px);
     @include media-breakpoint-down(lg) {
       flex-direction: column;
-      row-gap: rem.convert(48px);
+      row-gap: rem.convert(80px);
       padding: rem.convert(24px);
     }
     .icon-content {
@@ -417,13 +417,36 @@
               margin: 0;
             }
           }
-          &:nth-child(2), &:nth-child(3), &:nth-child(4), &:nth-child(5) {
+          &:nth-child(2),
+          &:nth-child(3),
+          &:nth-child(4),
+          &:nth-child(5) {
             column-gap: 12px;
           }
           &:last-child {
             margin-bottom: 0;
           }
           &::before {
+            content: none;
+          }
+        }
+      }
+      &:nth-child(1) {
+        position: relative;
+        &::before {
+          content: none;
+        }
+        &:after {
+          position: absolute;
+          left: 0;
+          right: 0;
+          content: "";
+          height: rem.convert(1px);
+          width: 100%;
+          background: rgba(var(--off-white-rgb), 0.6);
+          top: 100%;
+          margin-top: rem.convert(40px);
+          @include media-breakpoint-up(lg) {
             content: none;
           }
         }
@@ -437,7 +460,24 @@
           bottom: 0;
           left: rem.convert(-48px);
           width: rem.convert(1px);
-          background-color: var(--white);
+          background: rgba(var(--off-white-rgb), 0.6);
+          @include media-breakpoint-down(lg) {
+            content: none;
+          }
+        }
+        &::after {
+          position: absolute;
+          left: 0;
+          right: 0;
+          content: "";
+          height: rem.convert(1px);
+          width: 100%;
+          background: rgba(var(--off-white-rgb), 0.6);
+          top: 100%;
+          margin-top: rem.convert(40px);
+          @include media-breakpoint-up(lg) {
+            content: none;
+          }
         }
       }
       &:nth-child(3) {
@@ -449,7 +489,10 @@
           bottom: 0;
           left: rem.convert(-48px);
           width: rem.convert(1px);
-          background-color: var(--white);
+          background: rgba(var(--off-white-rgb), 0.6);
+          @include media-breakpoint-down(lg) {
+            content: none;
+          }
         }
       }
     }
