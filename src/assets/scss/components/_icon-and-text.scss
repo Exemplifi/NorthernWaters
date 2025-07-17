@@ -348,6 +348,7 @@
       flex-direction: column;
       column-gap: rem.convert(0px);
       row-gap: rem.convert(16px);
+      margin-bottom: rem.convert(40px);
     }
     .text-left {
       flex: 1 1 0;
@@ -382,6 +383,7 @@
     @include media-breakpoint-down(lg) {
       flex-direction: column;
       row-gap: rem.convert(48px);
+      padding: rem.convert(24px);
     }
     .icon-content {
       flex: 1 1 0;
