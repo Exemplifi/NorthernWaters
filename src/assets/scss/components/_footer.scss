@@ -180,10 +180,13 @@
       font-weight: $regular;
       font-size: rem.convert(20px);
       line-height: 150%;
+      @include convert-percent(line-height, 20px, 150);
       color: var(--white);
       margin-bottom: rem.convert(0px) !important;
       @include media-breakpoint-down(lg) {
         margin-bottom: rem.convert(32px) !important;
+        font-size: rem.convert(18px);
+        @include convert-percent(line-height, 18px, 150);
       }
     }
   }
