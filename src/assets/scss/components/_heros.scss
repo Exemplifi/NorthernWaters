@@ -147,6 +147,22 @@
   padding: 0;
   overflow-x: hidden;
   overflow-y: visible;
+  &.title-with-width{
+    .hero-section{
+      @include media-breakpoint-down(lg){
+        min-height: rem.convert(272px);
+      }
+      .hero-img-overlay{
+        @include media-breakpoint-down(lg){
+          background-image: linear-gradient(326.35deg, rgba(0, 74, 100, 0) 10.69%, #004A64 92.59%);
+        }
+      }
+      .hero-content{
+        max-width: rem.convert(600px);
+        margin-right: auto;
+      }
+    }
+  }
   .hero-section {
     position: relative;
     width: 100vw;

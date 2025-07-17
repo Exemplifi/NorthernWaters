@@ -91,6 +91,9 @@ $transition-fast: all 0.5s ease-in-out;
     }
   }
   &.primary-btn-no-icon {
+    .primary-btn-wrap{
+      padding: rem.convert(12px) 2rem rem.convert(14px) 2rem;
+    }
     &:hover {
       padding: 0;
     }

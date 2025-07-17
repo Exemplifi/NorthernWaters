@@ -130,7 +130,7 @@
     @include rem.convert(padding, 8px 0);
 
     @include media-breakpoint-up(lg) {
-      @include rem.convert(padding, 15px 24px !important);
+      @include rem.convert(padding, 12px 24px !important);
     }
     @include media-breakpoint-down(lg) {
       justify-content: space-between;

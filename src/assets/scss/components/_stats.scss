@@ -90,11 +90,25 @@
         justify-content: center;
         align-items: center;
         .stats-card{
-          min-width: rem.convert(180px);
+          padding: 1rem 1.5rem;
           width: auto;
           box-sizing: content-box;
-          @media (max-width: 1280px) and (min-width: 991px){
-            min-width: rem.convert(1px);
+          min-width: rem.convert(200px);
+          @media (max-width: 1280px) and (min-width: 993px){
+            min-width: clamp(0.0625rem, -42.7778rem + 69.0972vw, 12.5rem);
+          }
+          &:first-child{
+            padding-left: 0;
+          }
+          &:last-child{
+            padding-right: 0;
+          }
+          @include media-breakpoint-down(lg){
+            padding-bottom: 1.5rem;
+            padding-left: 0;
+            padding-right: 0;
+            width: 100%;
+            padding-top: 0;
           }
         }
       }

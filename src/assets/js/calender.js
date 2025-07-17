@@ -40,15 +40,25 @@ document.addEventListener('DOMContentLoaded', function () {
       // Find the svg in this button
       var svg = btn.querySelector('svg');
       // Toggle only this one, do not close others
+      // Find the text node (not the span) inside the button
+      var btnTextNode = Array.from(btn.childNodes).find(function(node) {
+        return node.nodeType === Node.TEXT_NODE && node.textContent.trim() !== '';
+      });
       if (details.style.display === 'flex' && details.style.maxHeight !== '0px') {
         slideUp(details);
         if (svg) {
           svg.style.transform = 'rotate(90deg)';
         }
+        if (btnTextNode) {
+          btnTextNode.textContent = ' View More ';
+        }
       } else {
         slideDown(details);
         if (svg) {
           svg.style.transform = 'rotate(-90deg)';
+        }
+        if (btnTextNode) {
+          btnTextNode.textContent = ' View Less ';
         }
       }
     });
