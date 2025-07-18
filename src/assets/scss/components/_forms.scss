@@ -327,7 +327,7 @@
     padding: rem.convert(12px 16px);
     font-size: rem.convert(16px);
     font-weight: $regular;
-
+    border-radius: 8px;
     &:focus {
       box-shadow: none;
     }
@@ -340,7 +340,7 @@
   }
   .upload-wrapper {
     position: relative;
-    height: rem.convert(48px);
+    height: rem.convert(50px);
     background-color: var(--white);
     border: 1px solid #11111133;
     border-radius: rem.convert(8px);
