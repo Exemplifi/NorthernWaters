@@ -1,373 +1,642 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Image and Text Components (v1, v2, v3)</title>
+    <link rel="stylesheet" href="../../assets/dist/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Image and Text Components (v1, v2, v3)</title>
-  <link rel="stylesheet" href="../../assets/dist/main.css">
-</head>
-
-<body>
-  <!-- Image Text - Right Image -->
-  <section class="section-wrapper image-text meeting-event-wrap bg-off-white">
-    <div class="container">
-      <div class="row image-text-row">
-        <div class="col-12 col-lg-6  ">
-          <div class="heading-wrap">
-            <h2>Upcoming Meetings and Events.</h2>
+  <body>
+    <!-- Image Text - Right Image -->
+    <section class="section-wrapper image-text meeting-event-wrap bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Upcoming Meetings and Events.</h2>
+            </div>
+            <p>
+              Join us for upcoming meetings and events to explore how Northern
+              Water is shaping the future of water in Northern Colorado. Visit
+              our campus, meet the team, and see our impact firsthand.
+            </p>
           </div>
-          <p>
-            Join us for upcoming meetings and events to explore how Northern Water is shaping the future of water in
-            Northern Colorado. Visit our campus, meet the team, and see our impact firsthand.
-          </p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="img-wrap">
-            <img class="img-fluid" src="../../assets/images/card-7.jpg" alt="Upcoming Meetings and Events" loading="lazy" />
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img
+                class="img-fluid"
+                src="../../assets/images/card-7.jpg"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
+            </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Image Text - Right Image Ends-->
+    </section>
+    <!-- Image Text - Right Image Ends-->
 
+    <!-- Image Text - left Image -->
+    <section class="section-wrapper image-text img-left bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Join Our Team.</h2>
+            </div>
+            <p>
+              At Northern Water, we're looking for passionate individuals to
+              help us manage and protect the vital water resources of Northern
+              Colorado.
+            </p>
+            <a
+              href="#"
+              class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+              aria-label="Water Provider Login"
+            >
+              <div
+                class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+              >
+                <span class="btn-text">Water Provider Login</span>
 
-  <!-- Image Text - left Image -->
-  <section class="section-wrapper image-text img-left bg-off-white">
-    <div class="container">
-      <div class="row image-text-row">
-        <div class="col-12 col-lg-6 ">
-          <div class="heading-wrap">
-            <h2>Join Our Team.</h2>
-          </div>
-          <p>
-            At Northern Water, we're looking for passionate individuals to help us manage and protect the vital water
-            resources of Northern Colorado.
-          </p>
-          <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation"
-            aria-label="Water Provider Login">
-            <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
-              <span class="btn-text">Water Provider Login</span>
-
-              <span class="btn-icon liquid-animation-items liquid-animation-circle move">
-                <span class="circle-animation">
-                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                      stroke-linejoin="round" />
+                <span
+                  class="btn-icon liquid-animation-items liquid-animation-circle move"
+                >
+                  <span class="circle-animation">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12H19"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 5L19 12L12 19"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                      <filter id="goo">
+                        <feGaussianBlur
+                          in="SourceGraphic"
+                          stdDeviation="10"
+                          result="blur"
+                        />
+                        <feColorMatrix
+                          in="blur"
+                          mode="matrix"
+                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                          result="goo"
+                        />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
                   </svg>
                 </span>
-                <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
-                  <defs>
-                    <filter id="goo">
-                      <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                      <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                        result="goo" />
-                      <feBlend in="SourceGraphic" in2="goo" />
-                    </filter>
-                  </defs>
-                </svg>
-              </span>
-            </div>
-          </a>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="img-wrap">
-            <img class="img-fluid" src="../../assets/images/card-7.jpg" alt="Upcoming Meetings and Events" loading="lazy" />
+              </div>
+            </a>
           </div>
-          <div class="img-caption">Northern Water field tour event, Summer 2023.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Image Text - Left Image Ends-->
-
-  <section class="section-wrapper image-text img-left bg-off-white">
-    <div class="container">
-      <div class="row image-text-row">
-        <div class="col-12 col-lg-6 ">
-          <div class="heading-wrap">
-            <h2>Northern Water</h2>
-          </div>
-          <p>
-            The seed for the Northern Colorado Water Conservancy District was planted during the 1930s, when Colorado
-            was suffering through the Great Depression and a devastating drought. Entire fields of topsoil were
-            blowing
-            away and one-third of the farms in Larimer County were put up for sale.
-          </p>
-          <p>
-            In the summer of 1933, the Greeley Chamber of Commerce organized the Grand Lake Committee to pursue
-            surveying and funding a water diversion project. The committee was the predecessor to the Northern
-            Colorado
-            Water Users Association, a group of civic leaders formed in 1935 to propose the Colorado-Big Thompson
-            Project, or "Big Tom" as it was called, to provide supplemental water to Northeastern Colorado farmers.
-          </p>
-          <p>
-            In May 1937, the Colorado Legislature passed the Water Conservancy Act, laying the groundwork to create
-            the
-            Northern Colorado Water Conservancy District the same year.
-          </p>
-          <p>
-            The C-BT Project began its first year of water deliveries to the full district in 1957 and since then has
-            collected and delivered more than 200,000 acre-feet of supplemental water each year on
-            average. Through its design, the project collects and stores water from the melting snowpack near
-            the headwaters of the Colorado River and brings it underneath the Continental Divide to Northeastern
-            Colorado.  
-          </p>
-          <p>
-            When we began in 1937 our main purpose was to provide supplemental irrigation water to farmers in
-            Northeastern Colorado.<a href="#">The meetings begin at 9 a.m,</a> Today, we also provide supplemental
-            year-round water to local municipalities, rural
-            and domestic water districts, and local industries.
-          </p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="img-wrap">
-            <img class="img-fluid" src="../../assets/images/card-7.jpg" alt="Upcoming Meetings and Events" loading="lazy" />
-          </div>
-          <div class="img-caption">Northern Water field tour event, Summer 2023.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section-wrapper image-text img-left bg-off-white">
-    <div class="container">
-      <div class="row image-text-row">
-        <div class="col-12 col-lg-6 ">
-          <div class="heading-wrap">
-            <h2>Northern Water</h2>
-          </div>
-          <p>
-            The seed for the Northern Colorado Water Conservancy District was planted during the 1930s, when Colorado
-            was suffering through the Great Depression and a devastating drought. Entire fields of topsoil were
-            blowing
-            away and one-third of the farms in Larimer County were put up for sale.
-          </p>
-          <p>
-            In the summer of 1933, the Greeley Chamber of Commerce organized the Grand Lake Committee to pursue
-            surveying and funding a water diversion project. The committee was the predecessor to the Northern
-            Colorado
-            Water Users Association, a group of civic leaders formed in 1935 to propose the Colorado-Big Thompson
-            Project, or "Big Tom" as it was called, to provide supplemental water to Northeastern Colorado farmers.
-          </p>
-          <p>
-            In May 1937, the Colorado Legislature passed the Water Conservancy Act, laying the groundwork to create
-            the
-            Northern Colorado Water Conservancy District the same year.
-          </p>
-          <p>
-            The C-BT Project began its first year of water deliveries to the full district in 1957 and since then has
-            collected and delivered more than 200,000 acre-feet of supplemental water each year on
-            average. Through its design, the project collects and stores water from the melting snowpack near
-            the headwaters of the Colorado River and brings it underneath the Continental Divide to Northeastern
-            Colorado.  
-          </p>
-          <p>
-            When we began in 1937 our main purpose was to provide supplemental irrigation water to farmers in
-            Northeastern Colorado.<a href="#">The meetings begin at 9 a.m,</a> Today, we also provide supplemental
-            year-round water to local municipalities, rural
-            and domestic water districts, and local industries.
-          </p>
-        </div>
-        <div class="col-12 col-lg-6">
-          <div class="img-wrap">
-            <img class="img-fluid" src="../../assets/images/card-7.jpg" alt="Upcoming Meetings and Events" loading="lazy" />
-          </div>
-          <div class="img-caption">Northern Water field tour event, Summer 2023.</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Image Text - left video -->
-  <section class="section-wrapper image-text img-left bg-off-white">
-    <div class="container">
-      <div class="row image-text-row">
-        <div class="col-12 col-lg-5 ">
-          <div class="heading-wrap">
-            <h2>Delivering Water to More Than 1 Million People</h2>
-          </div>
-          <p>
-            The Colorado-Big Thompson Project collects, stores and delivers more than 200,000 acre-feet of supplemental
-            water each year. Melting snowpack in the Colorado River headwaters on the West Slope is diverted through a
-            tunnel beneath the Continental Divide to approximately 1,064,000 million residents and 615,000 acres of
-            irrigated farmland in Northeastern Colorado. Together with the U.S. Bureau of Reclamation, we jointly
-            operate, maintain and fund this federally-owned project.
-          </p>
-
-        </div>
-        <div class="col-12 col-lg-7">
-          <div class="img-wrap">
+          <div class="col-12 col-lg-6">
             <div class="img-wrap">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/D0UnqGm_miA?si=wD2AQ7VwCXP9mzjV"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
-              <!-- <video width="640" height="360" controls>
+              <img
+                class="img-fluid"
+                src="../../assets/images/card-7.jpg"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
+            </div>
+            <div class="img-caption">
+              Northern Water field tour event, Summer 2023.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image Text - Left Image Ends-->
+
+    <!-- Image Text - left Image equal width starts-->
+    <!-- Add img-text-equal-height class to the section -->
+    <section class="section-wrapper image-text img-text-equal-height img-left bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Our Governing Board of Directors.</h2>
+            </div>
+            <p>
+              Northern Water and the Municipal Subdistrict operate through the leadership of a 13-member Board of Directors, plus 1 Director Emeritus, that establish policy and strategic direction. Directors from the eight counties within Northern Water’s boundaries are appointed to four-year terms by district court judges.  
+            </p>
+            <p>
+              The Municipal Subdistrict Board elects its own officers, but its directors are the same as the Northern Water Board.  
+            </p>
+            <p>
+              Meetings for the Board of Directors are monthly on the first Thursday of the month for a Planning Session and on the second Thursday of the month for a regular meeting. <a href="#">The meetings begin at 9 a.m</a>, are open to the public and take place at Northern Water’s Berthoud headquarters.</a>
+            </p>
+            <a
+              href="#"
+              class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+              aria-label="Board of Directors Term List"
+            >
+              <div
+                class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+              >
+                <span class="btn-text">Board of Directors Term List</span>
+
+                <span
+                  class="btn-icon liquid-animation-items liquid-animation-circle move"
+                >
+                  <span class="circle-animation">
+                    <svg
+                      width="24"
+                      height="24"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        d="M5 12H19"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12 5L19 12L12 19"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                      <filter id="goo">
+                        <feGaussianBlur
+                          in="SourceGraphic"
+                          stdDeviation="10"
+                          result="blur"
+                        />
+                        <feColorMatrix
+                          in="blur"
+                          mode="matrix"
+                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                          result="goo"
+                        />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img
+                class="img-fluid"
+                src="../../assets/images/board-of-directors-meeting-img.webp"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image Text - Left Image equal width Ends-->
+
+    <section class="section-wrapper image-text img-left bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Northern Water</h2>
+            </div>
+            <p>
+              The seed for the Northern Colorado Water Conservancy District was
+              planted during the 1930s, when Colorado was suffering through the
+              Great Depression and a devastating drought. Entire fields of
+              topsoil were blowing away and one-third of the farms in Larimer
+              County were put up for sale.
+            </p>
+            <p>
+              In the summer of 1933, the Greeley Chamber of Commerce organized
+              the Grand Lake Committee to pursue surveying and funding a water
+              diversion project. The committee was the predecessor to the
+              Northern Colorado Water Users Association, a group of civic
+              leaders formed in 1935 to propose the Colorado-Big Thompson
+              Project, or "Big Tom" as it was called, to provide supplemental
+              water to Northeastern Colorado farmers.
+            </p>
+            <p>
+              In May 1937, the Colorado Legislature passed the Water Conservancy
+              Act, laying the groundwork to create the Northern Colorado Water
+              Conservancy District the same year.
+            </p>
+            <p>
+              The C-BT Project began its first year of water deliveries to the
+              full district in 1957 and since then has collected and delivered
+              more than 200,000 acre-feet of supplemental water each year on
+              average. Through its design, the project collects and stores water
+              from the melting snowpack near the headwaters of the Colorado
+              River and brings it underneath the Continental Divide to
+              Northeastern Colorado.  
+            </p>
+            <p>
+              When we began in 1937 our main purpose was to provide supplemental
+              irrigation water to farmers in Northeastern Colorado.<a href="#"
+                >The meetings begin at 9 a.m,</a
+              >
+              Today, we also provide supplemental year-round water to local
+              municipalities, rural and domestic water districts, and local
+              industries.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img
+                class="img-fluid"
+                src="../../assets/images/card-7.jpg"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
+            </div>
+            <div class="img-caption">
+              Northern Water field tour event, Summer 2023.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section-wrapper image-text img-left bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Northern Water</h2>
+            </div>
+            <p>
+              The seed for the Northern Colorado Water Conservancy District was
+              planted during the 1930s, when Colorado was suffering through the
+              Great Depression and a devastating drought. Entire fields of
+              topsoil were blowing away and one-third of the farms in Larimer
+              County were put up for sale.
+            </p>
+            <p>
+              In the summer of 1933, the Greeley Chamber of Commerce organized
+              the Grand Lake Committee to pursue surveying and funding a water
+              diversion project. The committee was the predecessor to the
+              Northern Colorado Water Users Association, a group of civic
+              leaders formed in 1935 to propose the Colorado-Big Thompson
+              Project, or "Big Tom" as it was called, to provide supplemental
+              water to Northeastern Colorado farmers.
+            </p>
+            <p>
+              In May 1937, the Colorado Legislature passed the Water Conservancy
+              Act, laying the groundwork to create the Northern Colorado Water
+              Conservancy District the same year.
+            </p>
+            <p>
+              The C-BT Project began its first year of water deliveries to the
+              full district in 1957 and since then has collected and delivered
+              more than 200,000 acre-feet of supplemental water each year on
+              average. Through its design, the project collects and stores water
+              from the melting snowpack near the headwaters of the Colorado
+              River and brings it underneath the Continental Divide to
+              Northeastern Colorado.  
+            </p>
+            <p>
+              When we began in 1937 our main purpose was to provide supplemental
+              irrigation water to farmers in Northeastern Colorado.<a href="#"
+                >The meetings begin at 9 a.m,</a
+              >
+              Today, we also provide supplemental year-round water to local
+              municipalities, rural and domestic water districts, and local
+              industries.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img
+                class="img-fluid"
+                src="../../assets/images/card-7.jpg"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
+            </div>
+            <div class="img-caption">
+              Northern Water field tour event, Summer 2023.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Text - left video -->
+    <section class="section-wrapper image-text img-left bg-off-white">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-5">
+            <div class="heading-wrap">
+              <h2>Delivering Water to More Than 1 Million People</h2>
+            </div>
+            <p>
+              The Colorado-Big Thompson Project collects, stores and delivers
+              more than 200,000 acre-feet of supplemental water each year.
+              Melting snowpack in the Colorado River headwaters on the West
+              Slope is diverted through a tunnel beneath the Continental Divide
+              to approximately 1,064,000 million residents and 615,000 acres of
+              irrigated farmland in Northeastern Colorado. Together with the
+              U.S. Bureau of Reclamation, we jointly operate, maintain and fund
+              this federally-owned project.
+            </p>
+          </div>
+          <div class="col-12 col-lg-7">
+            <div class="img-wrap">
+              <div class="img-wrap">
+                <iframe
+                  width="560"
+                  height="315"
+                  src="https://www.youtube.com/embed/D0UnqGm_miA?si=wD2AQ7VwCXP9mzjV"
+                  title="YouTube video player"
+                  frameborder="0"
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                  referrerpolicy="strict-origin-when-cross-origin"
+                  allowfullscreen
+                ></iframe>
+                <!-- <video width="640" height="360" controls>
                   <source src="https://www.w3schools.com/html/mov_bbb.mp4" type="video/mp4">
                   Your browser does not support the video tag.
                 </video> -->
+              </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Image Text - Left video Ends-->
+    </section>
+    <!-- Image Text - Left video Ends-->
 
-  <!-- Image Text - Meeting Event Wrap and text-only row -->
-  <section class="section-wrapper image-text meeting-event-wrap home-page-component bg-off-white">
-    <div class="container">
+    <!-- Image Text - Meeting Event Wrap and text-only row -->
+    <section
+      class="section-wrapper image-text meeting-event-wrap home-page-component bg-off-white"
+    >
+      <div class="container">
         <div class="row image-text-row">
-            <div class="col-12 col-lg-6">
-                <div class="heading-wrap">
-                    <h2>Upcoming Meetings and Events.</h2>
-                </div>
-                <p>
-                    Join us for upcoming meetings and events to explore how Northern Water is shaping the future
-                    of water in
-                    Northern Colorado. Visit our campus, meet the team, and see our impact firsthand.
-                </p>
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap">
+              <h2>Upcoming Meetings and Events.</h2>
             </div>
-            <div class="col-12 col-lg-6">
-                <div class="img-wrap">
-                    <img class="img-fluid" src="../../assets/images/Upcoming events.jpg"
-                        alt="Upcoming Meetings and Events" loading="lazy" />
-                </div>
+            <p>
+              Join us for upcoming meetings and events to explore how Northern
+              Water is shaping the future of water in Northern Colorado. Visit
+              our campus, meet the team, and see our impact firsthand.
+            </p>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img
+                class="img-fluid"
+                src="../../assets/images/Upcoming events.jpg"
+                alt="Upcoming Meetings and Events"
+                loading="lazy"
+              />
             </div>
+          </div>
         </div>
         <div class="row text-only-row">
-            <div class="col-12 col-md-6">
-                <div class="event-card ">
-                    <div class="event-card-date">
-                        <div class="event-card-month label">JULY</div>
-                        <h2 class="event-card-day">09</h2>
-                    </div>
-                    <div class="event-card-content">
-                        <h5 class="event-card-title">Conservation Garden Tour</h5>
-                        <div class="event-card-meta">
-                            <div class="event-card-meta-item">
-                                <span class="event-card-meta-icon">
-                                    <svg width="24" height="24" viewBox="0 0 22 22" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time">
-                                        <path
-                                            d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
-                            </div>
-                            <div class="event-card-meta-item">
-                                <span class="event-card-meta-icon">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Event Type">
-                                        <path
-                                            d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <p class="event-card-meta-text">Events & Tours</p>
-                            </div>
-                        </div>
-                    </div>
+          <div class="col-12 col-md-6">
+            <div class="event-card">
+              <div class="event-card-date">
+                <div class="event-card-month label">JULY</div>
+                <h2 class="event-card-day">09</h2>
+              </div>
+              <div class="event-card-content">
+                <h5 class="event-card-title">Conservation Garden Tour</h5>
+                <div class="event-card-meta">
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Time"
+                      >
+                        <path
+                          d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
+                  </div>
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Event Type"
+                      >
+                        <path
+                          d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">Events & Tours</p>
+                  </div>
                 </div>
+              </div>
             </div>
-            <div class="col-12 col-md-6">
-                <div class="event-card">
-                    <div class="event-card-date">
-                        <div class="event-card-month label">JULY</div>
-                        <h2 class="event-card-day">13</h2>
-                    </div>
-                    <div class="event-card-content">
-                        <h5 class="event-card-title">Board Meeting</h5>
-                        <div class="event-card-meta">
-                            <div class="event-card-meta-item">
-                                <span class="event-card-meta-icon">
-                                    <svg width="24" height="24" viewBox="0 0 22 22" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Time">
-                                        <path
-                                            d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
-                            </div>
-                            <div class="event-card-meta-item">
-                                <span class="event-card-meta-icon">
-                                    <svg width="24" height="24" viewBox="0 0 20 20" fill="none"
-                                        xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Event Type">
-                                        <path
-                                            d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                        <path
-                                            d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
-                                            stroke="white" stroke-width="1.5" stroke-linecap="round"
-                                            stroke-linejoin="round" />
-                                    </svg>
-                                </span>
-                                <p class="event-card-meta-text">Events & Tours</p>
-                            </div>
-                        </div>
-                    </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="event-card">
+              <div class="event-card-date">
+                <div class="event-card-month label">JULY</div>
+                <h2 class="event-card-day">13</h2>
+              </div>
+              <div class="event-card-content">
+                <h5 class="event-card-title">Board Meeting</h5>
+                <div class="event-card-meta">
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 22 22"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Time"
+                      >
+                        <path
+                          d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
+                  </div>
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 20 20"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Event Type"
+                      >
+                        <path
+                          d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                        <path
+                          d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
+                          stroke="white"
+                          stroke-width="1.5"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">Events & Tours</p>
+                  </div>
                 </div>
+              </div>
             </div>
+          </div>
         </div>
         <div class="row btn-only-row">
-            <div class="col-12 text-center">
-                <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation"
-                    role="button" aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
-                    <div class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-                        <span class="btn-text">Load More</span>
-                        <span class="btn-icon liquid-animation-items liquid-animation-circle move"
-                            aria-hidden="true">
-                            <span class="circle-animation">
-                                <svg width="25" height="24" viewBox="0 0 25 24" fill="none"
-                                    xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Plus icon">
-                                    <path d="M5.5 12H19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                    <path d="M12.5 5V19" stroke="#fff" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round" />
-                                </svg>
-                            </span>
-                            <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-                                <defs>
-                                    <filter id="goo-filter-{{UNIQUE_ID}}">
-                                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                                        <feColorMatrix in="blur" mode="matrix"
-                                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                                            result="goo" />
-                                        <feBlend in="SourceGraphic" in2="goo" />
-                                    </filter>
-                                </defs>
-                            </svg>
-                        </span>
-                    </div>
-                </a>
-            </div>
+          <div class="col-12 text-center">
+            <a
+              href="#"
+              class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+              role="button"
+              aria-label="Water Provider Login"
+              tabindex="0"
+              data-button-type="primary"
+            >
+              <div
+                class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+              >
+                <span class="btn-text">Load More</span>
+                <span
+                  class="btn-icon liquid-animation-items liquid-animation-circle move"
+                  aria-hidden="true"
+                >
+                  <span class="circle-animation">
+                    <svg
+                      width="25"
+                      height="24"
+                      viewBox="0 0 25 24"
+                      fill="none"
+                      xmlns="http://www.w3.org/2000/svg"
+                      role="img"
+                      aria-label="Plus icon"
+                    >
+                      <path
+                        d="M5.5 12H19.5"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                      <path
+                        d="M12.5 5V19"
+                        stroke="#fff"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                      />
+                    </svg>
+                  </span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    version="1.1"
+                    aria-hidden="true"
+                  >
+                    <defs>
+                      <filter id="goo-filter-{{UNIQUE_ID}}">
+                        <feGaussianBlur
+                          in="SourceGraphic"
+                          stdDeviation="10"
+                          result="blur"
+                        />
+                        <feColorMatrix
+                          in="blur"
+                          mode="matrix"
+                          values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                          result="goo"
+                        />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
         </div>
-    </div>
-  </section>
-  <!-- Image Text - Meeting Event Wrap and text-only row Ends-->
+      </div>
+    </section>
+    <!-- Image Text - Meeting Event Wrap and text-only row Ends-->
 
-  <script src="../../assets/dist/main.min.js"></script>
-</body>
-
+    <script src="../../assets/dist/main.min.js"></script>
+  </body>
 </html>

@@ -198,20 +198,54 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     }
   }
-  // Counter Script
-  if($('.counter-count').length > 0){
-    $('.counter-count').each(function () {
-      $(this).prop('Counter',0).animate({
-          Counter: $(this).text()
-      }, {
-          duration: 5000,
-          easing: 'swing',
-          step: function (now) {
-              $(this).text(Math.ceil(now));
-          }
-      });
-    });
-  }
-  
+  // Counter animation with intersection observer
+  let counterAnimationTriggered = false;
 
+  if($('.counter-count').length > 0){
+    const counterContainer = document.querySelector('.counter-count-container');
+    
+    if (counterContainer) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          // Check if 30% of the element is visible and animation hasn't been triggered yet
+          if (entry.isIntersecting && entry.intersectionRatio >= 0.3 && !counterAnimationTriggered) {
+            counterAnimationTriggered = true;
+            
+            $('.counter-count').each(function () {
+              $(this).prop('Counter',0).animate({
+                  Counter: $(this).text()
+              }, {
+                  duration: 5000,
+                  easing: 'swing',
+                  step: function (now) {
+                      $(this).text(Math.ceil(now));
+                  }
+              });
+            });
+            
+            // Disconnect observer after animation is triggered
+            observer.disconnect();
+          }
+        });
+      }, {
+        threshold: 0.3, // Trigger when 30% is visible
+        rootMargin: '0px'
+      });
+      
+      observer.observe(counterContainer);
+    } else {
+      // Fallback if container not found - trigger immediately
+      $('.counter-count').each(function () {
+        $(this).prop('Counter',0).animate({
+            Counter: $(this).text()
+        }, {
+            duration: 5000,
+            easing: 'swing',
+            step: function (now) {
+                $(this).text(Math.ceil(now));
+            }
+        });
+      });
+    }
+  }
 });
