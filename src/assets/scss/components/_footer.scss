@@ -159,6 +159,9 @@
     }
     &-right {
       flex: 1 1 50%;
+      @include media-breakpoint-up(lg) {
+        padding-top: rem.convert(25px);
+      }
     }
     &-title {
       font-family: var(--heading-font-family);
