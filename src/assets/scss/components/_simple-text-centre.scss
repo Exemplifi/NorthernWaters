@@ -19,5 +19,10 @@
     line-height: rem.convert(30px);
     font-family: var(--body-font-family);
     font-weight: $regular;
+    @include media-breakpoint-down(lg) {
+      font-size: rem.convert(18px);
+      @include convert-percent(line-height, 18px, 150);
+      text-align: left;
+    }
   }
 }

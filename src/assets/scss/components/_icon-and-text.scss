@@ -360,6 +360,11 @@
         line-height: 110%;
         color: var(--black);
         word-break: break-word;
+        @include media-breakpoint-down(lg) {
+          font-size: rem.convert(40px);
+          @include convert-percent(line-height, 40px, 110);
+          @include convert-percent(letter-spacing, 40px, -2);
+        }
       }
     }
     .text-right {
@@ -371,6 +376,10 @@
         line-height: rem.convert(30px);
         color: var(--black);
         text-align: left;
+        @include media-breakpoint-down(lg) {
+          font-size: rem.convert(18px);
+          @include convert-percent(line-height, 18px, 150);
+        }
       }
     }
   }
@@ -395,6 +404,12 @@
           display: flex;
           align-items: center;
           margin-bottom: rem.convert(24px);
+          &:first-child {
+            svg {
+              width: rem.convert(32px);
+              height: rem.convert(32px);
+            }
+          }
           a,
           i,
           svg {
