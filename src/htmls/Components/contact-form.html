@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cards Component Variants</title>
+    <link rel="stylesheet" href="../../assets/dist/main.css" />
+  </head>
+  <body>
+
+    
+
+    <section class="section-wrapper bg-off-white">
+        <div class="container">
+            <div class="row gx-5">
+                <div class="col-12 col-lg-6">
+                    <h4 class="title">Signage Request</h4>
+                    <form>
+                        <div class="row g-3">
+                          <div class="col-md-6">
+                            <label for="name" class="form-label">Name*</label>
+                            <input type="text" class="form-control" id="name" required>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="organization" class="form-label">Organization*</label>
+                            <input type="text" class="form-control" id="organization">
+                            <div class="error-text">⚠️ Please fill this in</div>
+                          </div>
+                    
+                          <div class="col-md-6">
+                            <label for="email" class="form-label">Email*</label>
+                            <input type="email" class="form-control" id="email" >
+                            <div class="error-text">⚠️ Please fill this in</div>
+                          </div>
+                          <div class="col-md-6">
+                            <label for="phone" class="form-label">Phone Number*</label>
+                            <input type="tel" class="form-control" id="phone" required>
+                            <div class="error-text">⚠️ Please fill this in</div>
+                          </div>
+                    
+                          <div class="col-md-6">
+                            <label for="signType" class="form-label">Sign Type*</label>
+                            <select class="form-select" id="signType" required>
+                              <option value="">Select the sign type</option>
+                              <option value="digital">Digital</option>
+                              <option value="print">Print</option>
+                            </select>
+                          </div>
+                    
+                          <div class="col-md-6">
+                            <label for="logo" class="form-label">Logo*</label>
+                            <input type="file" class="form-control" id="logo" required>
+                            <small class="form-text text-muted">Please upload a png or eps file of your logo.</small>
+                          </div>
+                    
+                          <div class="col-12">
+                            <label class="form-label d-block">reCAPTCHA</label>
+                            <div class="g-recaptcha" data-sitekey="your-site-key"></div>
+                          </div>
+                    
+                          <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-success px-5">Submit</button>
+                          </div>
+                        </div>
+                      </form>
+                </div>
+                <div class="col-12 col-lg-6">
+                    <h4 class="title">Sign Examples</h4>
+                    <div class="inner-wrap">
+    
+                        <img src="../../../src/assets/images/contact-setion-img.svg" class="img-fluid" alt="">
+                    </div>
+               </div>
+            </div>
+        </div>
+    </section>
+   
+    
+    <script src="../../assets/dist/main.min.js"></script>
+  </body>
+</html>
