@@ -33,6 +33,10 @@
     }
     & + .stats-container{
       padding-bottom: 0;
+      padding-top: rem.convert(80px);
+      @include media-breakpoint-down(lg){
+        padding-top: rem.convert(64px);
+      }
     }
   }
   .stats-container{
@@ -76,6 +80,7 @@
           display: block;
           @include media-breakpoint-down(lg){
             display: inline;
+            white-space: nowrap;
           }
         }
       }
