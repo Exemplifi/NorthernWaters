@@ -30,3 +30,24 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const wrapper = document.querySelector('.upload-wrapper');
+  const fileInput = wrapper.querySelector('input[type="file"]');
+
+  // Make wrapper clickable
+  wrapper.addEventListener('click', function () {
+    fileInput.click();
+  });
+
+  // Optional: Show selected file name in .upload-placeholder
+  fileInput.addEventListener('change', function () {
+    const fileName = this.files[0]?.name || 'Choose file';
+    const placeholder = wrapper.querySelector('.upload-placeholder');
+    if (placeholder) {
+      placeholder.textContent = fileName;
+    }
+  });
+});
