@@ -123,9 +123,11 @@
     }
     @include media-breakpoint-down(md){
       margin-top: -2rem;
+      padding-top: 1.5rem;
     }
     @include media-breakpoint-down(sm){
       margin-top: -4rem;
+      padding-top: 1.5rem;
     }
     .container{
       margin: auto;

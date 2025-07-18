@@ -7,16 +7,30 @@
     <link rel="stylesheet" href="../../assets/dist/main.css">
 </head>
 <body>
-  <section class="wave-animation-section section-wrapper">
+  <section class="wave-animation-section section-wrapper" aria-labelledby="wave-animation-heading">
     <div class="container-fluid">
       <div class="row">
         <div class="col-12">
-          <h2 class="wave-animation-title">Securing Colorado's Water Future.</h2>
+          <h2 class="wave-animation-title" id="wave-animation-heading">Securing Colorado's Water Future.</h2>
           <div class="wave-animation-wrapper">
             <div class="wave-animation-container">
-              <div class="wave wave-gradient"></div>
-              <div class="wave wave-svg"></div>
+              <div class="wave wave-gradient" aria-hidden="true"></div>
+              <div class="wave wave-svg" aria-hidden="true"></div>
             </div>
+            <!-- Animation Control Button for AAA Compliance -->
+            <button 
+              class="animation-control-btn" 
+              aria-label="Pause wave animation" 
+              aria-pressed="false"
+              title="Pause/Resume wave animation">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M6 4H10V20H6V4Z" fill="currentColor"/>
+                <path d="M14 4H18V20H14V4Z" fill="currentColor"/>
+              </svg>
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="play-icon">
+                <path d="M8 5V19L19 12L8 5Z" fill="currentColor"/>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -48,8 +62,9 @@
                 <p class="work-item">Protecting watersheds for future generations</p>
               </div>
               <div class="cta-wrapper">
-                <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-                  aria-label="Visit Our Campus" tabindex="0" data-button-type="secondary">
+                <button class="btn secondary-btn d-inline-flex align-items-center liquid-animation" 
+                  aria-label="Visit Our Campus - Opens in new window"
+                  data-button-type="secondary">
                   <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
                     <span class="btn-text">Visit Our Campus</span>
                     <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
@@ -63,7 +78,7 @@
                       </span>
                       <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
                         <defs>
-                          <filter id="goo-filter-{{UNIQUE_ID}}">
+                          <filter id="goo-filter-wave-animation">
                             <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
                             <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                               result="goo" />
@@ -73,7 +88,7 @@
                       </svg>
                     </span>
                   </div>
-                </a>
+                </button>
               </div>
             </div>
           </div>
