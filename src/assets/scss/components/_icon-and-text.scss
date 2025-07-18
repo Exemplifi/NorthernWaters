@@ -575,12 +575,6 @@
         .card-title{
           margin-bottom: rem.convert(8px);
         }
-        .card-description{
-          font-size: rem.convert(20px);
-          @include media-breakpoint-down(md){
-            font-size: rem.convert(18px);
-          }
-        }
       }
     }
   }

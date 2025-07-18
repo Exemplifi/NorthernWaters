@@ -148,37 +148,41 @@
 
     <main id="main-content" tabindex="-1">
         <!-- Hero Carousel starts here -->
-        <section class="hero carousel-hero">
+        <section class="hero carousel-hero" aria-labelledby="hero-heading">
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-12">
                         <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
                             <!-- Indicators -->
-                            <div class="carousel-indicators">
+                            <div class="carousel-indicators" role="tablist" aria-label="Carousel navigation">
                                 <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0"
-                                    class="active" aria-current="true" aria-label="Slide 1"></button>
+                                    class="active" aria-current="true" aria-label="Go to slide 1 of 3" role="tab" aria-selected="true"></button>
                                 <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1"
-                                    aria-label="Slide 2"></button>
+                                    aria-label="Go to slide 2 of 3" role="tab" aria-selected="false"></button>
                                 <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2"
-                                    aria-label="Slide 3"></button>
+                                    aria-label="Go to slide 3 of 3" role="tab" aria-selected="false"></button>
                             </div>
-                            <div class="carousel-inner">
-                                <div class="carousel-item active">
+                            
+                            <!-- Carousel Status for Screen Readers -->
+                            <div class="carousel-status visually-hidden" aria-live="polite" aria-atomic="true"></div>
+                            
+                            <div class="carousel-inner" role="listbox">
+                                <div class="carousel-item active" role="option" aria-selected="true">
                                     <div class="hero-img-wrapper">
-                                        <img src="../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
+                                        <img src="../assets/images/hero-carousel.jpg" alt="Construction site showing the main dam structure with heavy machinery and workers" class="hero-img">
                                     </div>
                                     <div class="content-wrapper">
-                                        <h1 class="hero-title">Building the Main Dam</h1>
+                                        <h1 id="hero-heading" class="hero-title">Building the Main Dam</h1>
                                         <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill
                                             embankment, only the
                                             second of its kind in the United States and by far the tallest.</p>
                                         <a href="#"
                                             class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
-                                            role="button" aria-label="Water Provider Login" tabindex="0"
+                                            role="button" aria-label="Learn more about the main dam project" tabindex="0"
                                             data-button-type="secondary">
                                             <div
                                                 class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-                                                <span class="btn-text">Water Provider Login</span>
+                                                <span class="btn-text">Learn More</span>
                                                 <span
                                                     class="btn-icon liquid-animation-items liquid-animation-circle move"
                                                     aria-hidden="true">
@@ -211,9 +215,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" role="option" aria-selected="false">
                                     <div class="hero-img-wrapper">
-                                        <img src="../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
+                                        <img src="../assets/images/hero-carousel.jpg" alt="Aerial view of the dam construction site showing progress and surrounding landscape" class="hero-img">
                                     </div>
                                     <div class="content-wrapper">
                                         <h1 class="hero-title">Building the Main Dam 2</h1>
@@ -222,11 +226,11 @@
                                             second of its kind in the United States and by far the tallest.</p>
                                         <a href="#"
                                             class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
-                                            role="button" aria-label="Water Provider Login" tabindex="0"
+                                            role="button" aria-label="Learn more about the main dam project" tabindex="0"
                                             data-button-type="secondary">
                                             <div
                                                 class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-                                                <span class="btn-text">Water Provider Login</span>
+                                                <span class="btn-text">Learn More</span>
                                                 <span
                                                     class="btn-icon liquid-animation-items liquid-animation-circle move"
                                                     aria-hidden="true">
@@ -259,9 +263,9 @@
                                         </a>
                                     </div>
                                 </div>
-                                <div class="carousel-item">
+                                <div class="carousel-item" role="option" aria-selected="false">
                                     <div class="hero-img-wrapper">
-                                        <img src="../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
+                                        <img src="../assets/images/hero-carousel.jpg" alt="Close-up view of dam construction materials and engineering details" class="hero-img">
                                     </div>
                                     <div class="content-wrapper">
                                         <h1 class="hero-title">Building the Main Dam 3</h1>
@@ -270,11 +274,11 @@
                                             second of its kind in the United States and by far the tallest.</p>
                                         <a href="#"
                                             class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
-                                            role="button" aria-label="Water Provider Login" tabindex="0"
+                                            role="button" aria-label="Learn more about the main dam project" tabindex="0"
                                             data-button-type="secondary">
                                             <div
                                                 class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-                                                <span class="btn-text">Water Provider Login</span>
+                                                <span class="btn-text">Learn More</span>
                                                 <span
                                                     class="btn-icon liquid-animation-items liquid-animation-circle move"
                                                     aria-hidden="true">
@@ -314,12 +318,13 @@
             </div>
         </section>
         <!-- Hero Carousel ends here -->
+        
         <!-- Icon and Text Component v3  starts here -->
-        <section class="section-wrapper bg-off-white icon-text-section-v3">
+        <section class="section-wrapper bg-off-white icon-text-section-v3" aria-labelledby="project-overview-heading">
             <div class="container">
                 <div class="row text-content-row">
                     <div class="col-12 col-md-6">
-                        <h2 class="text-title">Chimney Hollow Reservoir Project</h2>
+                        <h2 id="project-overview-heading" class="text-title">Chimney Hollow Reservoir Project</h2>
                     </div>
                     <div class="col-12 col-md-6">
                         <p class="text-content">
@@ -331,12 +336,11 @@
                         </p>
                     </div>
                 </div>
-                <div class="row icon-text-row">
-                    <div class="col-12 col-md-3">
+                <div class="row icon-text-row" role="list" aria-label="Project benefits">
+                    <div class="col-12 col-md-3" role="listitem">
                         <div class="icon-text-card">
                             <div class="icon-wrapper">
-                                <img src="../assets/images/storage-icon.png" alt="" class="icon-img"
-                                    aria-hidden="true" />
+                                <img src="../assets/images/storage-icon.png" alt="Storage tank icon representing water storage capacity" class="icon-img" />
                             </div>
                             <div class="text-content">
                                 <h4 class="card-title">Storage</h4>
@@ -347,11 +351,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3" role="listitem">
                         <div class="icon-text-card">
                             <div class="icon-wrapper">
-                                <img src="../assets/images/Environment-icon.png" alt="" class="icon-img"
-                                    aria-hidden="true" />
+                                <img src="../assets/images/Environment-icon.png" alt="Environmental protection icon representing ecological benefits" class="icon-img" />
                             </div>
                             <div class="text-content">
                                 <h4 class="card-title">Environment</h4>
@@ -361,11 +364,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3" role="listitem">
                         <div class="icon-text-card">
                             <div class="icon-wrapper">
-                                <img src="../assets/images/Recreation-icon.png" alt="" class="icon-img"
-                                    aria-hidden="true" />
+                                <img src="../assets/images/Recreation-icon.png" alt="Recreation icon representing outdoor activities and leisure" class="icon-img" />
                             </div>
                             <div class="text-content">
                                 <h4 class="card-title">Recreation</h4>
@@ -375,11 +377,10 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-12 col-md-3">
+                    <div class="col-12 col-md-3" role="listitem">
                         <div class="icon-text-card">
                             <div class="icon-wrapper">
-                                <img src="../assets/images/Demand-icon.png" alt="" class="icon-img"
-                                    aria-hidden="true" />
+                                <img src="../assets/images/Demand-icon.png" alt="Demand icon representing water supply needs" class="icon-img" />
                             </div>
                             <div class="text-content">
                                 <h4 class="card-title">Demand</h4>
@@ -401,7 +402,7 @@
                         <div class="heading">
                             <h2 id="news-heading">News</h2>
                         </div>
-                        <a href="#" class="tertiary-btn">
+                        <a href="#" class="tertiary-btn" aria-label="View all news articles">
                             Read More
                             <span class="card-cta-icon">
                                 <svg width="16" height="16" viewBox="0 0 16 16" fill="none"
@@ -426,7 +427,7 @@
                             aria-label="Read more about Smart Watering: Maximizing Irrigation">
                             <div class="img-wrap">
                                 <img src="../assets/images/news-slider-1.jpg"
-                                    alt="Smart Watering irrigation system demonstration" />
+                                    alt="Smart Watering irrigation system demonstration showing automated sprinklers" />
                             </div>
                             <div class="content-wrap">
                                 <div class="heading">
@@ -486,7 +487,7 @@
                     <div class="card-wrap">
                         <a href="#" class="card bg-blue" aria-label="Read more about Conservation Gardens in Berthoud">
                             <div class="img-wrap">
-                                <img src="../assets/images/news-slider-3.jpg" alt="Conservation Gardens in Berthoud" />
+                                <img src="../assets/images/news-slider-3.jpg" alt="Conservation Gardens in Berthoud showing water-efficient landscaping" />
                             </div>
                             <div class="content-wrap">
                                 <div class="heading">
@@ -516,7 +517,7 @@
                     <div class="card-wrap">
                         <a href="#" class="card bg-blue" aria-label="Read more about water conservation features">
                             <div class="img-wrap">
-                                <img src="../assets/images/news-slider-4.jpg" alt="Water conservation demonstration" />
+                                <img src="../assets/images/news-slider-4.jpg" alt="Water conservation demonstration showing efficient irrigation methods" />
                             </div>
                             <div class="content-wrap">
                                 <div class="heading">
@@ -544,9 +545,9 @@
                 </div>
             </div>
             <div class="slider-btn-wrap">
-                <button class="prev-btn"><img src="../assets/images/arrow-left.svg" alt="" aria-hidden="true" /><span
+                <button class="prev-btn" aria-label="Previous news slide"><img src="../assets/images/arrow-left.svg" alt="" aria-hidden="true" /><span
                         class="sr-only">Previous Slide</span></button>
-                <button class="next-btn"><img src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" /><span
+                <button class="next-btn" aria-label="Next news slide"><img src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" /><span
                         class="sr-only">Next Slide</span></button>
             </div>
             <!-- Slider Ends -->
