@@ -24,9 +24,9 @@
   .img-wrap {
     position: relative;
     width: 100%;
-    height: rem.convert(418px);
-    min-height: rem.convert(418px);
-    max-height: rem.convert(418px);
+    height: fit-content;
+    // min-height: rem.convert(418px);
+    // max-height: rem.convert(418px);
     overflow: hidden;
 
     @include media-breakpoint-down(lg) {

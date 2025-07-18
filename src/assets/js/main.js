@@ -19,4 +19,5 @@ import './header.js';
 import './footer.js';
 import './calender.js';
 import './script.js';
+import './image-text.js';
 
