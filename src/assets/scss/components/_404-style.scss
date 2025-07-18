@@ -54,7 +54,7 @@
       .button-404-wrapper {
         padding-top: rem.convert(24px);
         @include media-breakpoint-down(sm) {
-          padding-top: rem.convert(16px);
+          padding-top: rem.convert(24px);
         }
       }
     }
