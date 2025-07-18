@@ -423,6 +423,7 @@
   }
   @include media-breakpoint-down(lg) {
     padding: 0;
+    display: none;
   }
   &.blue-bg {
     background: var(--blue);

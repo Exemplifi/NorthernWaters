@@ -2,12 +2,13 @@
   padding-left: rem.convert(8px);
   padding-right: rem.convert(8px);
   overflow-x: hidden;
+  background-color: var(--off-white);
   .content-404 {
     align-items: center;
     height: auto;
     width: 100%;
     margin: 0 auto;
-    background-color: var(--color-white);
+    background-color: var(--off-white);
     @include media-breakpoint-down(lg) {
       flex-direction: column-reverse;
     }
