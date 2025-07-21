@@ -319,6 +319,13 @@
         margin-right: auto;
       }
     }
+    &.longer-title{
+      .hero-section{
+        .hero-content{
+          max-width: rem.convert(712px);
+        }
+      }
+    }
   }
   .hero-section {
     position: relative;
