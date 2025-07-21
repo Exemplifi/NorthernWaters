@@ -446,6 +446,10 @@
   &.blue-bg {
     background: var(--blue);
   }
+  &.bg-off-white {
+   height: rem.convert(132px);
+   box-sizing: border-box;
+  }
 }
 // Responsive adjustments
 @media (max-width: 1200px) {
