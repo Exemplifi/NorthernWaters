@@ -1,0 +1,65 @@
+.section-wrapper {
+  &.bg-off-white {
+    // ... existing code ...
+  }
+}
+
+.links-listing-wrap {
+  // ... existing code ...
+  h3 {
+    @include media-breakpoint-up(lg) {
+      max-width: rem.convert(800px);
+    }
+  }
+  .link-heading-row {
+    .col-12 {
+      border-bottom: 1px solid var(--black);
+    }
+  }
+  .links-row {
+    margin-top: rem.convert(48px);
+    row-gap: rem.convert(48px);
+    @include media-breakpoint-down(lg) {
+      row-gap: rem.convert(40px);
+      margin-top: rem.convert(40px);
+    }
+    .links-listing-wrap {
+      ul {
+        // ... existing code ...
+        padding: 0;
+        list-style: none;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        row-gap: rem.convert(20px);
+        li {
+          // ... existing code ...
+
+          h6 {
+            // ... existing code ...
+          }
+
+          a {
+            // ... existing code ...
+
+            &.tertiary-btn {
+              // ... existing code ...
+
+              .card-cta-icon {
+                // ... existing code ...
+
+                svg {
+                  // ... existing code ...
+
+                  path {
+                    // ... existing code ...
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
