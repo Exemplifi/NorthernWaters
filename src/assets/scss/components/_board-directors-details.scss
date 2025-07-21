@@ -5,7 +5,7 @@
   }
   .row {
     --bs-gutter-x: 3rem;
-    --bs-gutter-y: 3rem;
+    --bs-gutter-y: 2.5rem;
     .img-wrap {
       @include media-breakpoint-up(lg) {
         position: sticky;
@@ -25,9 +25,14 @@
   }
 
   .content-wrap {
+    .content-title{
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem.convert(24px);
+      }
+    }
     .details-list {
       padding: 0;
-      margin: rem.convert(0 0 40px 0);
+      margin: rem.convert(0 0 24px 0);
       list-style: none;
 
       li {
@@ -70,15 +75,19 @@
   .director-experience-list {
     list-style: none;
     padding-left: 0;
+    margin-bottom: rem.convert(24px);
     li {
       position: relative;
-      padding-left: rem.convert(24px);
+      padding-left: rem.convert(32px);
       margin-bottom: rem.convert(8px);
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem.convert(12px);
+      }
 
       &::before {
         content: "";
         position: absolute;
-        left: 0;
+        left: 0.5rem;
         top: rem.convert(8px);
         width: rem.convert(8px);
         height: rem.convert(8px);
@@ -219,11 +228,14 @@
 
   &:not(:last-of-type) {
     margin-bottom: rem.convert(24px);
+    @include media-breakpoint-down(md) {
+      margin-bottom: rem.convert(16px);
+    }
   }
 
   @include media-breakpoint-down(md) {
     flex-direction: column;
-    gap: rem.convert(24px);
+    gap: rem.convert(40px);
   }
 
   * {
@@ -264,12 +276,12 @@
         flex-direction: column;
         justify-content: flex-start;
         align-items: flex-start;
-        margin-bottom: rem.convert(24px);
+        margin-bottom: rem.convert(16px);
       }
 
       .content {
         h3 {
-          margin-bottom: rem.convert(16px);
+          margin-bottom: 0.25rem;
         }
 
         p {

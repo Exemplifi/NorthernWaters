@@ -319,6 +319,13 @@
         margin-right: auto;
       }
     }
+    &.longer-title{
+      .hero-section{
+        .hero-content{
+          max-width: rem.convert(712px);
+        }
+      }
+    }
   }
   .hero-section {
     position: relative;
@@ -445,6 +452,10 @@
   }
   &.blue-bg {
     background: var(--blue);
+  }
+  &.bg-off-white {
+   height: rem.convert(132px);
+   box-sizing: border-box;
   }
 }
 // Responsive adjustments

@@ -1,12 +1,7 @@
 .slider-section {
   overflow-x: hidden;
-  .container {
-    @include media-breakpoint-down(xxl) {
-      padding: rem.convert(0 24px);
-    }
-  }
   .slider-container {
-    padding-left: calc(50vw - 700px + 3rem);
+    padding-left: calc(50vw - 700px + 2rem);
     padding-right: 0;
     margin-right: rem.convert(-24px);
     @include media-breakpoint-down(md) {
@@ -26,14 +21,9 @@
     position: relative;
     .slick-list {
       margin-left: rem.convert(-24px);
-      padding-left: rem.convert(12px);
       padding-right: rem.convert(24px);
       @include media-breakpoint-down(xxl) {
-        padding-left: rem.convert(24px);
         margin-left: rem.convert(0px);
-      }
-      @include media-breakpoint-down(md) {
-        padding-left: rem.convert(20px);
       }
     }
     .slick-track {
