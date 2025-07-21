@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Cards Component Variants</title>
+    <title>Signage Form</title>
     <link rel="stylesheet" href="../../assets/dist/main.css" />
 
   </head>
@@ -21,14 +21,14 @@
 
                           <div class="col-md-6">
                             <label for="name">Name*</label>
-                            <input type="text" class="form-control isvalid" id="name" placeholder="Name">
+                            <input type="text" class="form-control " id="name" placeholder="Name">
                             <div class="error-text d-none"><i data-lucide="triangle-alert"></i> Please fill this in</div>
                           </div>
 
                           <div class="col-md-6">
                             <label for="organization">Organization*</label>
-                            <input type="text" class="form-control isinvalid" id="organization" placeholder="Enter the organization name">
-                            <div class="error-text"><i data-lucide="triangle-alert"></i> Please fill this in</div>
+                            <input type="text" class="form-control " id="organization" placeholder="Enter the organization name">
+                            <div class="error-text d-none"><i data-lucide="triangle-alert"></i> Please fill this in</div>
                           </div>
                     
                           <div class="col-md-6">
@@ -38,8 +38,8 @@
                           </div>
                           <div class="col-md-6">
                             <label for="phone">Phone Number*</label>
-                            <input type="tel" class="form-control isinvalid" id="phone" placeholder="Enter the phone number">
-                            <div class="error-text"><i data-lucide="triangle-alert"></i> Please fill this in</div>
+                            <input type="tel" class="form-control" id="phone" placeholder="Enter the phone number">
+                            <div class="error-text d-none"><i data-lucide="triangle-alert"></i> Please fill this in</div>
                           </div>
                     
                           <div class="col-md-6 ">
@@ -53,12 +53,12 @@
                     
                           <div class="col-md-6">
                               <label for="logoUpload">LOGO*</label>
-                              <div class="upload-wrapper">
+                              <div class="upload-wrapper " id="logoUpload">
                                 <span class="upload-placeholder">Choose file</span>
                                 <span class="upload-icon">
                                   <img src="../../assets/images/upload file.svg" alt="Upload Icon">
                                 </span>
-                                <input type="file" id="logoUpload" accept=".png, .eps" class="form-control-file" onchange="updateFileName(this)">
+                                <input type="file"  accept=".png, .eps" class="form-control-file" onchange="updateFileName(this)">
                               </div>
                               <small class="form-text">Please upload a PNG or EPS file of your logo.</small>
                           </div>
@@ -88,7 +88,7 @@
    <!---signup form end-->
     
     <script src="../../assets/dist/main.min.js"></script>
-   
   
+   
   </body>
 </html>

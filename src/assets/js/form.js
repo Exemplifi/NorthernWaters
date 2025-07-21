@@ -51,3 +51,58 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   });
 });
+
+
+document.addEventListener("DOMContentLoaded", function () {
+  const form = document.querySelector(".signage-request-form form");
+
+  form.addEventListener("submit", function (e) {
+    e.preventDefault();
+
+    let isFormValid = true;
+
+    const requiredFields = [
+      { id: "name" },
+      { id: "organization" },
+      { id: "email", type: "email" },
+      { id: "phone" },
+      { id: "signType", isSelect: true },
+      { id: "logoUpload", isFile: true, isWrapper: true }
+    ];
+
+    requiredFields.forEach(field => {
+      const input = field.isWrapper
+        ? document.querySelector(`#${field.id} input[type="file"]`)
+        : document.getElementById(field.id);
+
+      const container = field.isWrapper ? input.closest(".upload-wrapper") : input;
+      const errorText = container.closest(".col-md-6, .col-12").querySelector(".error-text");
+
+      let isValid = true;
+
+      if (field.isSelect) {
+        isValid = input.value !== "" && !input.options[input.selectedIndex].disabled;
+      } else if (field.isFile) {
+        isValid = input.files.length > 0;
+      } else if (field.type === "email") {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        isValid = emailRegex.test(input.value.trim());
+      } else {
+        isValid = input.value.trim() !== "";
+      }
+
+      if (isValid) {
+        container.classList.add("isvalid");
+        container.classList.remove("isinvalid");
+        errorText?.classList.add("d-none");
+      } else {
+        container.classList.remove("isvalid");
+        container.classList.add("isinvalid");
+        errorText?.classList.remove("d-none");
+        isFormValid = false;
+      }
+    });
+
+   
+  });
+});

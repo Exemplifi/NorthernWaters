@@ -305,10 +305,10 @@
     }
   }
   .isvalid {
-    border: 2px solid var(--success);
+    border: 2px solid var(--success) !important;
   }
   .isinvalid {
-    border: 1px solid var(--error);
+    border: 1px solid var(--error) !important;
   }
   .form-text {
     font-size: 16px;
