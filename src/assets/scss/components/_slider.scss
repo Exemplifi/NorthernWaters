@@ -8,22 +8,16 @@
       overflow: visible;
       margin-top: rem.convert(20px);
     }
-
-    // @media (min-width: 1720px) {
-    //   padding-left: calc(50vw - 700px + 2.75rem);
-    // }
-    // @media (min-width: 1920px) {
-    //   padding-left: calc(50vw - 700px + 2.75rem);
-    // }
   }
 
   .card-slider {
     position: relative;
     .slick-list {
-      margin-left: rem.convert(-24px);
-      padding-right: rem.convert(24px);
+      margin-left: rem.convert(-44px);
+      //padding-right: rem.convert(24px);
+      padding-left: rem.convert(24px);
       @include media-breakpoint-down(xxl) {
-        margin-left: rem.convert(0px);
+        margin-left: rem.convert(-26px);
       }
     }
     .slick-track {

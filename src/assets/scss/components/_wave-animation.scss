@@ -157,6 +157,7 @@
         border-bottom: 1px solid var(--light-blue);
         .stat-text{
           margin-bottom: 1rem;
+          letter-spacing: -0.02em;
           color: var(--white);
           .stat-number{
             color: var(--light-blue);
@@ -166,6 +167,9 @@
     }
     .work-content{
       color: var(--white);
+      .work-title{
+        letter-spacing: -0.02em;
+      }
       .work-list{
         border-left: 1px solid var(--light-blue);
         padding-left: 1rem;

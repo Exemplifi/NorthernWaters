@@ -7,10 +7,16 @@
     display: flex;
     flex-direction: column;
     // margin-bottom: 1.5rem;
-    height: auto;
     width: 100%;
     position: relative;
     border-radius: 1rem;
+    transition-duration: .3s;
+    transition-property: transform;
+    transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    &:hover {
+        transform: scale(1.04);
+    }
 
     > a {
       text-decoration: none;
@@ -43,14 +49,14 @@
         }
       }
       .card-img-top {
-        height: 100%;
+        height: calc(100% + 32px);
         object-fit: cover;
-        object-position: center;
+        object-position: center -32px;
         border-top-left-radius: 1rem;
         border-top-right-radius: 1rem;
         width: 100%;
-        transition: transform 0.4s ease-in-out;
-        transform-origin: center center;
+        //transition: transform 0.4s ease-in-out;
+        //transform-origin: center center;
       }
       .card-body {
         background: var(--blue);
@@ -124,19 +130,19 @@
           }
           &:hover .card-cta-icon,
           &:focus .card-cta-icon {
-            background: var(--green);
-            svg path {
-              stroke: var(--white);
-            }
+            // background: var(--green);
+            // svg path {
+            //   stroke: var(--white);
+            // }
           }
         }
       }
-      &:hover,
-      &:focus-within {
-        .card-img-top {
-          transform: scale(1.05);
-        }
-      }
+      // &:hover,
+      // &:focus-within {
+      //   .card-img-top {
+      //     transform: scale(1.05);
+      //   }
+      // }
       &:focus {
         outline: none;
       }
