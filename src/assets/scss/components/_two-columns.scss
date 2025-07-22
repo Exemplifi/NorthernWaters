@@ -1,0 +1,77 @@
+.section-wrapper {
+  &.two-columns-component {
+    .container {
+      .row {
+        [class^="col"]:first-child {
+          padding-right: rem.convert(32px);
+          @include media-breakpoint-down(lg) {
+            padding-right: 0;
+          }
+          h3 {
+            margin-top: rem.convert(48px);
+            padding-bottom: rem.convert(24px);
+            border-bottom: 1px solid rgba(var(--black-rgb), 0.6);
+            @include media-breakpoint-down(lg) {
+              margin-top: rem.convert(40px);
+              padding-bottom: rem.convert(16px);
+              margin-bottom: rem.convert(24px);
+            }
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+          p {
+            &:last-child {
+              margin-bottom: 0;
+              @include media-breakpoint-down(lg) {
+                margin-bottom: rem.convert(40px);
+              }
+            }
+          }
+        }
+        [class^="col"]:last-child {
+          padding: rem.convert(32px);
+          border-radius: rem.convert(16px);
+          background-color: var(--blue);
+          color: var(--white);
+          * {
+            color: var(--white);
+          }
+          h4 {
+            margin-top: rem.convert(48px);
+            padding-bottom: rem.convert(24px);
+            border-bottom: 1px solid rgba(var(--white-rgb), 0.6);
+            @include media-breakpoint-down(lg) {
+              margin-top: rem.convert(40px);
+              padding-bottom: rem.convert(16px);
+              margin-bottom: rem.convert(24px);
+            }
+            &:first-child {
+              margin-top: 0;
+            }
+          }
+          h6 {
+            margin-top: rem.convert(48px);
+            @include media-breakpoint-down(lg) {
+              margin-top: rem.convert(40px);
+              margin-bottom: rem.convert(24px);
+            }
+          }
+          ul {
+            padding-left: rem.convert(20px);
+            li::marker {
+              color: var(--white);
+              font-size: rem.convert(20px);
+            }
+            li {
+              margin-bottom: rem.convert(12px);
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
