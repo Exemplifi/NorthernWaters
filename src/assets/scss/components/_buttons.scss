@@ -2,7 +2,6 @@
 $transition-smooth: all 0.8s ease-in-out;
 $transition-fast: all 0.5s ease-in-out;
 
-
 // Primary Button Component
 .primary-btn {
   background: transparent;
@@ -20,7 +19,7 @@ $transition-fast: all 0.5s ease-in-out;
   gap: rem.convert(10px);
   font-family: var(--body-font-family);
   overflow: hidden;
-   padding: 0;
+  padding: 0;
   &:hover {
     color: $white;
     transform: scale(1.05);
@@ -40,7 +39,7 @@ $transition-fast: all 0.5s ease-in-out;
 
   .primary-btn-wrap {
     background-color: var(--green);
-    transition:  all 0.9s ease-in-out;
+    transition: all 0.9s ease-in-out;
     border-radius: rem.convert(50px);
     padding: 0.875rem 2rem 1rem 2rem;
   }
@@ -91,7 +90,7 @@ $transition-fast: all 0.5s ease-in-out;
     }
   }
   &.primary-btn-no-icon {
-    .primary-btn-wrap{
+    .primary-btn-wrap {
       padding: rem.convert(12px) 2rem rem.convert(14px) 2rem;
     }
     &:hover {
@@ -117,7 +116,7 @@ $transition-fast: all 0.5s ease-in-out;
   gap: rem.convert(10px);
   font-family: var(--body-font-family);
   overflow: hidden;
-   padding: 0;
+  padding: 0;
   &:hover {
     color: var(--black);
     transform: scale(1.05);
@@ -135,7 +134,7 @@ $transition-fast: all 0.5s ease-in-out;
   }
   .secondary-btn-wrap {
     background-color: var(--white);
-    transition:  all 0.9s ease-in-out;
+    transition: all 0.9s ease-in-out;
     border-radius: rem.convert(50px);
     padding: 0.875rem 2rem 1rem 2rem;
   }
@@ -191,6 +190,7 @@ $transition-fast: all 0.5s ease-in-out;
     }
   }
 }
+
 // Liquid Animation Styles
 .liquid-animation {
   // filter: url('#goo-filter');
@@ -202,7 +202,7 @@ $transition-fast: all 0.5s ease-in-out;
   &-circle {
     transform: scale(0.6);
     opacity: 1 !important;
-    background: var(--green)!important;
+    background: var(--green) !important;
     width: rem.convert(52px);
     height: rem.convert(52px);
     transition: $transition-smooth;
@@ -215,11 +215,21 @@ $transition-fast: all 0.5s ease-in-out;
 
 // Arrow Bounce Animation (Optional - for smoother arrow movement)
 @keyframes arrow-bounce-right {
-  0%   { transform: translateX(0) scaleX(1); }
-  40%  { transform: translateX(14px) scaleX(1.2); }
-  60%  { transform: translateX(10px) scaleX(0.95); }
-  80%  { transform: translateX(16px) scaleX(1.05); }
-  100% { transform: translateX(0) scaleX(1); }
+  0% {
+    transform: translateX(0) scaleX(1);
+  }
+  40% {
+    transform: translateX(14px) scaleX(1.2);
+  }
+  60% {
+    transform: translateX(10px) scaleX(0.95);
+  }
+  80% {
+    transform: translateX(16px) scaleX(1.05);
+  }
+  100% {
+    transform: translateX(0) scaleX(1);
+  }
 }
 
 // Uncomment the line below if you want the arrow bounce animation
@@ -246,5 +256,44 @@ $transition-fast: all 0.5s ease-in-out;
     svg {
       display: block;
     }
+  }
+}
+
+// PDF Download Button
+.pdf-download-btn {
+  background: var(--green);
+  color: var(--white);
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 150%;
+  padding: rem.convert(12px);
+  transition: $transition-smooth;
+  display: flex;
+  align-items: center;
+  column-gap: rem.convert(16px);
+  &:hover {
+    color: $white;
+    transform: scale(1.01);
+    transition: $transition-fast;
+    background: var(--green);
+  }
+  &:active,
+  &:focus,
+  &:focus-visible {
+    transform: scale(1.01);
+    background-color: var(--green) !important;
+    outline: 1px solid var(--green);
+    outline-offset: 2px;
+    color: var(--white) !important;
+    border: none !important;
+    border-color: transparent !important;
+  }
+  .pdf-btn-wrap {
+    margin-right: auto;
+  }
+  svg {
+    width: rem.convert(24px);
+    height: rem.convert(24px);
   }
 }
