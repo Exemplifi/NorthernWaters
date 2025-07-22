@@ -30,9 +30,20 @@
         border-top-right-radius: 1rem;
         margin: 0; // Reset default <figure> margin
         position: relative;
+        display: block;
+        height: rem.convert(290px);
+        @include media-breakpoint-down(md) {
+          height: rem.convert(250px);
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: top;
+          }
+        }
       }
       .card-img-top {
-        height: rem.convert(320px);
+        height: 100%;
         object-fit: cover;
         object-position: center;
         border-top-left-radius: 1rem;
@@ -52,17 +63,33 @@
         border-bottom-left-radius: 1rem;
         border-bottom-right-radius: 1rem;
         @include media-breakpoint-down(lg) {
-          padding: 1.5rem;
+          padding: rem.convert(32px);
         }
         .card-title-wrapper {
-          margin-bottom: 1.5rem;
+          margin-bottom: rem.convert(24px);
+          @include media-breakpoint-down(md) {
+            margin-bottom: rem.convert(16px);
+          }
+          &:first-child {
+            border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+            padding-bottom: rem.convert(24px);
+            @include media-breakpoint-down(md) {
+              padding-bottom: rem.convert(16px);
+            }
+          }
+
           .card-title {
             margin-bottom: 0;
+            line-height: 1.4;
+            letter-spacing: -0.02em;
+            @include media-breakpoint-down(md) {
+              font-size: rem.convert(24px);
+            }
           }
         }
         .card-text-wrapper {
-          padding-top: 1.5rem;
-          border-top: 1px solid #ffffff99;
+          //padding-top: 1.5rem;
+          //border-top: 1px solid #ffffff99;
           margin-bottom: 1.5rem;
           .card-text {
             margin-bottom: 0;
@@ -123,6 +150,10 @@
     display: flex;
     flex-wrap: wrap;
     row-gap: 1.5rem;
+    margin-top: rem.convert(24px);
+    @include media-breakpoint-down(md) {
+      row-gap: 1rem;
+    }
     .col-lg-4 {
       display: flex;
     }
