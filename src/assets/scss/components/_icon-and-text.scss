@@ -544,7 +544,7 @@
     & + .icon-text-row{
      margin-top: rem.convert(48px);
      @include media-breakpoint-down(md){
-      margin-top: rem.convert(40px);
+      margin-top: rem.convert(16px);
      }
     }
   }
@@ -552,7 +552,7 @@
     --bs-gutter-x: 1.5rem;
     @include media-breakpoint-down(md){
       --bs-gutter-x: 0;
-      --bs-gutter-y: 1rem;
+      --bs-gutter-y: 1.5rem;
     }
     .icon-text-card{
       .icon-wrapper{

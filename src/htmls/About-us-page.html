@@ -854,15 +854,15 @@
                 publishing software like Aldus PageMaker including versions of
                 Lorem Ipsum.
               </p>
-              <!-- Primary Button starts here-->
+
+               <!-- Primary Button starts here-->
               <a
                 href="#"
                 class="btn primary-btn d-inline-flex align-items-center liquid-animation"
                 role="button"
-                aria-label="Learn more about Northern Water's history"
+                aria-label="Visit Northern Water's campus page to learn more about our facilities"
                 tabindex="0"
                 data-button-type="primary"
-                style="filter: url('#goo-filter-0')"
               >
                 <div
                   class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
@@ -888,14 +888,14 @@
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                        ></path>
+                        />
                         <path
                           d="M12 5L19 12L12 19"
                           stroke="#fff"
                           stroke-width="2"
                           stroke-linecap="round"
                           stroke-linejoin="round"
-                        ></path>
+                        />
                       </svg>
                     </span>
                     <svg
@@ -904,19 +904,19 @@
                       aria-hidden="true"
                     >
                       <defs>
-                        <filter id="goo-filter-0">
+                        <filter id="goo-filter-{{UNIQUE_ID}}">
                           <feGaussianBlur
                             in="SourceGraphic"
                             stdDeviation="10"
                             result="blur"
-                          ></feGaussianBlur>
+                          />
                           <feColorMatrix
                             in="blur"
                             mode="matrix"
                             values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
                             result="goo"
-                          ></feColorMatrix>
-                          <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                          />
+                          <feBlend in="SourceGraphic" in2="goo" />
                         </filter>
                       </defs>
                     </svg>
@@ -924,6 +924,7 @@
                 </div>
               </a>
               <!-- Primary Button ends here-->
+              
             </div>
             <div class="col-12 col-lg-6">
               <div class="img-wrap">

@@ -35,9 +35,9 @@
       max-height: rem.convert(350px);
     }
     @include media-breakpoint-down(md) {
-      height: rem.convert(200px);
-      min-height: rem.convert(200px);
-      max-height: rem.convert(200px);
+      height: rem.convert(350px);
+      min-height: rem.convert(350px);
+      max-height: rem.convert(350px);
     }
 
     picture {

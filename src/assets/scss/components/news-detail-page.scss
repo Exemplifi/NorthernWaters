@@ -9,9 +9,16 @@
       @include media-breakpoint-down(lg){
         margin-bottom: rem.convert(40px);
       }
+      picture{
+        height: rem.convert(500px);
+        display: block;
+        @include media-breakpoint-down(md){
+          height: rem.convert(300px);
+        }
+      }
       img.news-detail-hero-img {
         width: 100%;
-        height: auto;
+        height: 100%;
         display: block;
         border-radius: 1rem;
         object-fit: cover;
@@ -46,6 +53,11 @@
         .news-detail-sub-title{
           color: var(--black-2);
           margin-bottom: 1.5rem;
+        }
+        p{
+          a{
+            white-space: no-wrap;
+          }
         }
       }
       .news-detail-cta-wrapper{

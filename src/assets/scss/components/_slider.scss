@@ -67,7 +67,7 @@
       justify-content: center;
 
       &:hover {
-        background: var(--blue);
+        background: var(--light-green);
       }
 
       &:focus-visible {
@@ -250,11 +250,10 @@
 
         &:hover .card-cta-icon,
         &:focus .card-cta-icon {
-          background: var(--green);
-
-          svg path {
-            stroke: var(--white);
-          }
+          // background: var(--green);
+          // svg path {
+          //   stroke: var(--white);
+          // }
         }
       }
     }
@@ -290,18 +289,18 @@
   &:hover {
     @include media-breakpoint-up(md) {
       transform: scale(1.05);
-      .card {
-        .link-wrap {
-          .card-cta {
-            .card-cta-icon {
-              background: var(--green);
-              svg path {
-                stroke: var(--white);
-              }
-            }
-          }
-        }
-      }
+      // .card {
+      //   .link-wrap {
+      //     .card-cta {
+      //       .card-cta-icon {
+      //         background: var(--green);
+      //         svg path {
+      //           stroke: var(--white);
+      //         }
+      //       }
+      //     }
+      //   }
+      // }
     }
   }
 }

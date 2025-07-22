@@ -15,8 +15,9 @@
     margin: 0 auto;
     padding: rem.convert(40px 40px);
     display: grid;
-    grid-template-columns: 530px 1fr auto;
-    gap: rem.convert(98px);
+    grid-template-columns: 530px max-content auto;
+    //gap: rem.convert(98px);
+    justify-content: space-between;
     background-color: rgba(var(--white-rgb), 0.1);
     border-radius: rem.convert(16px);
     @include media-breakpoint-down(xl) {
@@ -42,8 +43,9 @@
     font-weight: 600;
     text-transform: uppercase;
     font-size: rem.convert(14px);
-    line-height: 1.21;
+    line-height: 1.5;
     color: var(--white);
+    letter-spacing: 0.06em;
     padding-bottom: rem.convert(16px);
     margin-bottom: rem.convert(32px);
     border-color: var(--white);
