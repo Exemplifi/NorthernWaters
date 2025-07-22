@@ -248,4 +248,29 @@ document.addEventListener("DOMContentLoaded", function () {
       });
     }
   }
+
+  //table right side blur script
+   const $tableWrappers = $('.table-wrap .table-responsive');
+      $tableWrappers.each(function () {
+        const $wrapper = $(this);
+        const $parent = $wrapper.parent();
+
+        function checkScroll() {
+          if ($wrapper[0].scrollWidth > $wrapper[0].clientWidth) {
+            $parent.addClass('has-scroll');
+
+            if ($wrapper.scrollLeft() + $wrapper.width() >= $wrapper[0].scrollWidth - 2) {
+              $parent.addClass('at-end');
+            } else {
+              $parent.removeClass('at-end');
+            }
+          } else {
+            $parent.removeClass('has-scroll at-end');
+          }
+        }
+        checkScroll();
+        $wrapper.on('scroll', checkScroll);
+        $(window).on('resize', checkScroll);
+  });
+   
 });
