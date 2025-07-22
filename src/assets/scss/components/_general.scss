@@ -1,44 +1,44 @@
-.container{
+.container {
   max-width: rem.convert(1280px);
   padding: 0;
   @include media-breakpoint-up(xxl) {
     max-width: rem.convert(1320px);
   }
-  @include media-breakpoint-down(xxl){
+  @include media-breakpoint-down(xxl) {
     max-width: rem.convert(1280px);
   }
 }
-.section-wrapper{
+.section-wrapper {
   padding: 5rem 1.5rem;
-  & + .section-wrapper  {
+  & + .section-wrapper {
+    padding-top: 0;
+    @include media-breakpoint-down(lg) {
+      padding-top: 0;
+    }
+  }
+  &.bg-black {
+    padding-top: 5rem;
+    @include media-breakpoint-down(lg) {
+      padding-top: 4rem;
+    }
+    & + .bg-black {
       padding-top: 0;
       @include media-breakpoint-down(lg) {
         padding-top: 0;
       }
-  }
-  &.bg-black {
-      padding-top: 5rem;
-      @include media-breakpoint-down(lg) {
-        padding-top: 4rem;
-      }
-      & + .bg-black {
-          padding-top: 0;
-          @include media-breakpoint-down(lg) {
-            padding-top: 0;
-          }
-      }
+    }
   }
   &.bg-off-white {
-      padding-top: 5rem;
+    padding-top: 5rem;
+    @include media-breakpoint-down(lg) {
+      padding-top: 4rem;
+    }
+    & + .bg-off-white {
+      padding-top: 0;
       @include media-breakpoint-down(lg) {
-        padding-top: 4rem;
+        padding-top: 0;
       }
-      & + .bg-off-white {
-          padding-top: 0;
-          @include media-breakpoint-down(lg) {
-            padding-top: 0;
-          }
-      }
+    }
   }
   @include media-breakpoint-down(lg) {
     padding: 4rem 1.5rem;
@@ -48,11 +48,11 @@
   background: var(--off-white);
   color: var(--black);
 }
-.bg-green{
+.bg-green {
   background: var(--green);
   color: var(--white);
 }
-.bg-blue{
+.bg-blue {
   background: var(--blue);
   color: var(--white);
 }
@@ -73,7 +73,7 @@
   text-overflow: ellipsis;
   white-space: normal;
 }
-a{
+a {
   color: var(--green);
   text-decoration: underline;
 }
@@ -89,9 +89,25 @@ a{
     .btn-text {
       color: var(--black) !important;
     }
-
   }
 }
-.bg-half-white{
+.bg-half-white {
   background: var(--off-white);
+}
+// content animation
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 60px, 0) scale3d(1, 0.9, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+  transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
+    transform 1s cubic-bezier(0.23, 1, 0.32, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translate3d(0px, 0px, 0px) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
 }

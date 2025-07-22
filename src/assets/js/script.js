@@ -111,7 +111,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   //Slider Script
   // Initialize card sliders only if they exist
-  if ($('.card-slider').length) {
+  if ($(".card-slider").length) {
     // Common slider configuration
     var sliderConfig = {
       dots: false,
@@ -121,7 +121,7 @@ document.addEventListener("DOMContentLoaded", function () {
       slidesToShow: 3.25,
       slidesToScroll: 1,
       accessibility: true,
-      cssEase: 'linear',
+      cssEase: "linear",
       responsive: [
         {
           breakpoint: 1024,
@@ -139,28 +139,28 @@ document.addEventListener("DOMContentLoaded", function () {
     };
 
     // Initialize all card sliders
-    $('.card-slider').each(function() {
+    $(".card-slider").each(function () {
       var $slider = $(this);
       $slider.slick(sliderConfig);
-      
+
       // Bind navigation buttons for this specific slider
-      var $section = $slider.closest('.slider-section');
+      var $section = $slider.closest(".slider-section");
       var $prevBtn = $section.find(".slider-btn-wrap .prev-btn");
       var $nextBtn = $section.find(".slider-btn-wrap .next-btn");
-      
+
       $prevBtn.on("click", function () {
         $slider.slick("slickPrev");
         checkIfFirstOrLastSlideActive($slider);
       });
-      
+
       $nextBtn.on("click", function () {
         $slider.slick("slickNext");
         checkIfFirstOrLastSlideActive($slider);
       });
-      
+
       // Initialize button states
       checkIfFirstOrLastSlideActive($slider);
-      
+
       // Update button states on slide change
       $slider.on("init reInit afterChange", function () {
         checkIfFirstOrLastSlideActive($slider);
@@ -171,106 +171,152 @@ document.addEventListener("DOMContentLoaded", function () {
       var $slides = $slider.find(".slick-slide");
       var $firstSlide = $slides.first();
       var $lastSlide = $slides.last();
-      var $section = $slider.closest('.slider-section');
+      var $section = $slider.closest(".slider-section");
       var $prevBtn = $section.find(".slider-btn-wrap .prev-btn");
       var $nextBtn = $section.find(".slider-btn-wrap .next-btn");
-      
+
       // Check if first slide is active
       if ($firstSlide.hasClass("slick-active")) {
-        $prevBtn.addClass("disabled")
-                .attr("disabled", true)
-                .attr("aria-disabled", true);
+        $prevBtn
+          .addClass("disabled")
+          .attr("disabled", true)
+          .attr("aria-disabled", true);
       } else {
-        $prevBtn.removeClass("disabled")
-                .removeAttr("disabled")
-                .attr("aria-disabled", false);
+        $prevBtn
+          .removeClass("disabled")
+          .removeAttr("disabled")
+          .attr("aria-disabled", false);
       }
-      
+
       // Check if last slide is active
       if ($lastSlide.hasClass("slick-active")) {
-        $nextBtn.addClass("disabled")
-                .attr("disabled", true)
-                .attr("aria-disabled", true);
+        $nextBtn
+          .addClass("disabled")
+          .attr("disabled", true)
+          .attr("aria-disabled", true);
       } else {
-        $nextBtn.removeClass("disabled")
-                .removeAttr("disabled")
-                .attr("aria-disabled", false);
+        $nextBtn
+          .removeClass("disabled")
+          .removeAttr("disabled")
+          .attr("aria-disabled", false);
       }
     }
   }
   // Counter animation with intersection observer
   let counterAnimationTriggered = false;
 
-  if($('.counter-count').length > 0){
-    const counterContainer = document.querySelector('.counter-count-container');
-    
+  if ($(".counter-count").length > 0) {
+    const counterContainer = document.querySelector(".counter-count-container");
+
     if (counterContainer) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          // Check if 30% of the element is visible and animation hasn't been triggered yet
-          if (entry.isIntersecting && entry.intersectionRatio >= 0.3 && !counterAnimationTriggered) {
-            counterAnimationTriggered = true;
-            
-            $('.counter-count').each(function () {
-              $(this).prop('Counter',0).animate({
-                  Counter: $(this).text()
-              }, {
-                  duration: 5000,
-                  easing: 'swing',
-                  step: function (now) {
-                      $(this).text(Math.ceil(now));
-                  }
+      const observer = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            // Check if 30% of the element is visible and animation hasn't been triggered yet
+            if (
+              entry.isIntersecting &&
+              entry.intersectionRatio >= 0.3 &&
+              !counterAnimationTriggered
+            ) {
+              counterAnimationTriggered = true;
+
+              $(".counter-count").each(function () {
+                $(this)
+                  .prop("Counter", 0)
+                  .animate(
+                    {
+                      Counter: $(this).text(),
+                    },
+                    {
+                      duration: 5000,
+                      easing: "swing",
+                      step: function (now) {
+                        $(this).text(Math.ceil(now));
+                      },
+                    }
+                  );
               });
-            });
-            
-            // Disconnect observer after animation is triggered
-            observer.disconnect();
-          }
-        });
-      }, {
-        threshold: 0.3, // Trigger when 30% is visible
-        rootMargin: '0px'
-      });
-      
+
+              // Disconnect observer after animation is triggered
+              observer.disconnect();
+            }
+          });
+        },
+        {
+          threshold: 0.3, // Trigger when 30% is visible
+          rootMargin: "0px",
+        }
+      );
+
       observer.observe(counterContainer);
     } else {
       // Fallback if container not found - trigger immediately
-      $('.counter-count').each(function () {
-        $(this).prop('Counter',0).animate({
-            Counter: $(this).text()
-        }, {
-            duration: 5000,
-            easing: 'swing',
-            step: function (now) {
+      $(".counter-count").each(function () {
+        $(this)
+          .prop("Counter", 0)
+          .animate(
+            {
+              Counter: $(this).text(),
+            },
+            {
+              duration: 5000,
+              easing: "swing",
+              step: function (now) {
                 $(this).text(Math.ceil(now));
+              },
             }
-        });
+          );
       });
     }
   }
 
   //table right side blur script
-   const $tableWrappers = $('.table-wrap .table-responsive');
-      $tableWrappers.each(function () {
-        const $wrapper = $(this);
-        const $parent = $wrapper.parent();
+  const $tableWrappers = $(".table-wrap .table-responsive");
+  $tableWrappers.each(function () {
+    const $wrapper = $(this);
+    const $parent = $wrapper.parent();
 
-        function checkScroll() {
-          if ($wrapper[0].scrollWidth > $wrapper[0].clientWidth) {
-            $parent.addClass('has-scroll');
+    function checkScroll() {
+      if ($wrapper[0].scrollWidth > $wrapper[0].clientWidth) {
+        $parent.addClass("has-scroll");
 
-            if ($wrapper.scrollLeft() + $wrapper.width() >= $wrapper[0].scrollWidth - 2) {
-              $parent.addClass('at-end');
-            } else {
-              $parent.removeClass('at-end');
-            }
-          } else {
-            $parent.removeClass('has-scroll at-end');
-          }
+        if (
+          $wrapper.scrollLeft() + $wrapper.width() >=
+          $wrapper[0].scrollWidth - 2
+        ) {
+          $parent.addClass("at-end");
+        } else {
+          $parent.removeClass("at-end");
         }
-        checkScroll();
-        $wrapper.on('scroll', checkScroll);
-        $(window).on('resize', checkScroll);
+      } else {
+        $parent.removeClass("has-scroll at-end");
+      }
+    }
+    checkScroll();
+    $wrapper.on("scroll", checkScroll);
+    $(window).on("resize", checkScroll);
   });
-   
+
+  // script for content animation
+  const reveals = document.querySelectorAll(".reveal");
+
+  function checkReveal() {
+    const windowHeight = window.innerHeight;
+    reveals.forEach((el) => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < windowHeight && rect.bottom > 0) {
+        // Element is in viewport
+        el.classList.add("revealed");
+      } else if (rect.top >= windowHeight) {
+        // Element is below the viewport
+        el.classList.remove("revealed");
+      }
+      // If element is above the viewport, do nothing (keep revealed)
+    });
+  }
+
+  window.addEventListener("scroll", checkReveal);
+  window.addEventListener("resize", checkReveal);
+  checkReveal();
+
 });
