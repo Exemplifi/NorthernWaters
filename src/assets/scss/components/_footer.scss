@@ -43,9 +43,9 @@
     font-weight: 600;
     text-transform: uppercase;
     font-size: rem.convert(14px);
-    line-height: 1.5;
+    @include convert-percent(line-height, 14px, 150);
+    @include convert-percent(letter-spacing, 14px, 6);
     color: var(--white);
-    letter-spacing: 0.06em;
     padding-bottom: rem.convert(16px);
     margin-bottom: rem.convert(32px);
     border-color: var(--white);
@@ -101,7 +101,7 @@
     &-info {
       display: flex;
       flex-direction: column;
-      gap: rem.convert(12px);
+      gap: rem.convert(24px);
       @include media-breakpoint-down(lg) {
         gap: rem.convert(24px);
       }
@@ -112,8 +112,8 @@
     }
 
     &-icon {
-      width: rem.convert(20px);
-      height: rem.convert(20px);
+      width: rem.convert(24px);
+      height: rem.convert(24px);
       color: var(--white);
     }
   }
