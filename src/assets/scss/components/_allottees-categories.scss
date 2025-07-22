@@ -1,0 +1,191 @@
+.allottees-categories-wrap {
+  .allottees-categories-text-row {
+    margin-bottom: rem.convert(48px);
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem.convert(40px);
+    }
+    h3 {
+      margin-bottom: rem.convert(48px);
+      padding-bottom: rem.convert(24px);
+      border-bottom: 1px solid rgba(var(--black-rgb), 0.6);
+      @include media-breakpoint-down(lg) {
+        margin-bottom: rem.convert(40px);
+        padding-bottom: rem.convert(16px);
+      }
+    }
+    p {
+      max-width: rem.convert(800px);
+      @include media-breakpoint-down(lg) {
+        max-width: 100%;
+      }
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+  .allottees-categories-list-row {
+    .tabbed-content {
+      max-width: 100%;
+      padding: 0;
+    }
+    .tabs {
+      ul {
+        margin: 0;
+        padding: rem.convert(20px) rem.convert(16px);
+        background: var(--blue);
+        border-radius: rem.convert(16px);
+        li {
+          a {
+            padding: rem.convert(8px) rem.convert(12px);
+            text-decoration: none;
+            border-radius: rem.convert(6px);
+            color: var(--white);
+            &:hover,
+            &.active {
+              background: var(--off-white);
+              color: var(--black);
+              font-weight: 600;
+            }
+          }
+        }
+      }
+    }
+    .item {
+      &::before {
+        cursor: pointer;
+        background: var(--gray);
+        color: var(--white);
+        padding: 0.5em;
+        display: block;
+      }
+      &.active {
+        &::before {
+          background: var(--blue);
+          color: var(--white);
+          font-weight: 600;
+        }
+        .item-content {
+          -webkit-transition: opacity 0.3s ease-in-out;
+          -moz-transition: opacity 0.3s ease-in-out;
+          -o-transition: opacity 0.3s ease-in-out;
+          -ms-transition: opacity 0.3s ease-in-out;
+          transition: opacity 0.3s ease-in-out;
+        }
+      }
+      p {
+        margin-top: rem.convert(16px);
+        @include media-breakpoint-down(lg) {
+          margin-top: rem.convert(16px);
+        }
+      }
+      .item-content {
+        h6 {
+          margin-bottom: rem.convert(32px);
+        }
+        .pdf-download-btn {
+          margin-top: rem.convert(32px);
+          @include media-breakpoint-down(lg) {
+            margin-top: rem.convert(16px);
+          }
+        }
+        @include media-breakpoint-down(lg) {
+          margin-bottom: rem.convert(20px);
+        }
+      }
+    }
+
+    /*
+    The project specific CSS starts here
+    This is the minimum CSS that you will need in order for this to work
+    */
+
+    // Accordion for small screens (mobile first principle)
+    .tabbed-content {
+      .tabs {
+        display: none;
+      }
+      .item {
+        min-height: 2em; // We need a minimum height for each item or else the accordion buttons would dissapear
+        &::before {
+          content: attr(
+            data-title
+          ); // Instead of polluting the HTML with a duplicate set of tabs, we get the accordion using the data-title attribute.
+        }
+        .item-content {
+          // We hide the inactive content with zero opacity instead of "display:none" because this allows us to apply transition effects if we want.
+          opacity: 0;
+          visibility: hidden;
+          height: 0;
+          display: none;
+        }
+        &.active {
+          .item-content {
+            opacity: 1;
+            visibility: visible;
+            height: auto;
+            display: block;
+          }
+        }
+      }
+    }
+
+    // Tabs for larger screens
+    @media all and (min-width: 992px) {
+      .tabbed-content {
+        .tabs {
+          display: block;
+          li {
+            display: inline-block;
+            a {
+              display: block;
+            }
+          }
+        }
+        .item {
+          min-height: 0;
+          &::before {
+            display: none;
+          }
+        }
+        // Tabs on the side (works only on big screens)
+        &.tabs-side {
+          display: flex;
+          column-gap: rem.convert(48px);
+          @include media-breakpoint-down(lg) {
+            column-gap: rem.convert(0);
+          }
+          .tabs {
+            flex-basis: rem.convert(441px);
+            li {
+              display: block;
+            }
+          }
+          .item {
+            flex: 1;
+            margin-left: 0; // Remove margin since we're using flex
+            display: none;
+            &.active {
+              display: block;
+            }
+          }
+        }
+      }
+      .item {
+        &.active {
+          .item-content {
+          }
+        }
+      }
+      .tabs-side {
+        .tabs {
+          li {
+            margin-bottom: 4px;
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

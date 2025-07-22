@@ -21,4 +21,5 @@ import './calender.js';
 import './script.js';
 import './image-text.js';
 import './faq.js';
+import './allottees-categories.js';
 
