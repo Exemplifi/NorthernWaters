@@ -99,7 +99,6 @@ a {
   opacity: 0;
   transform: translate3d(0, 60px, 0) scale3d(1, 0.9, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
-  transform-style: preserve-3d;
   transition: opacity 1s cubic-bezier(0.23, 1, 0.32, 1),
     transform 1s cubic-bezier(0.23, 1, 0.32, 1);
   will-change: opacity, transform;
