@@ -6,8 +6,14 @@
 
       @include media-breakpoint-down(lg) {
         margin-bottom: rem.convert(16px);
-        h2{
+        h2 {
           margin-bottom: rem.convert(16px);
+        }
+      }
+      #meetings-events-heading {
+        max-width: rem.convert(400px);
+        @include media-breakpoint-down(lg) {
+          max-width: 100%;
         }
       }
     }
@@ -48,9 +54,8 @@
     img {
       object-position: center;
       @include media-breakpoint-down(md) {
-      height: 100% !important;
-      
-    }
+        height: 100% !important;
+      }
     }
     img,
     iframe,
@@ -70,7 +75,7 @@
 
     iframe {
       height: rem.convert(418px);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(lg) {
         height: 100%;
       }
     }
@@ -87,8 +92,8 @@
   }
 
   &.img-left {
-    >.container {
-      >.row {
+    > .container {
+      > .row {
         flex-direction: row-reverse;
 
         @include media-breakpoint-down(lg) {
@@ -97,23 +102,23 @@
       }
     }
   }
-    .container {
-      .image-text-row {
-        --bs-gutter-x: 3rem;
-        > div {
-          &:first-child{
-            align-self: center;
-          }
-          &:last-child {
-            @include media-breakpoint-up(lg) {
+  .container {
+    .image-text-row {
+      --bs-gutter-x: 3rem;
+      > div {
+        &:first-child {
+          align-self: center;
+        }
+        &:last-child {
+          @include media-breakpoint-up(lg) {
             position: sticky;
             top: 0;
             height: fit-content;
           }
         }
       }
-      .heading-wrap{
-        @include media-breakpoint-down(md){
+      .heading-wrap {
+        @include media-breakpoint-down(md) {
           margin-bottom: rem.convert(24px);
         }
       }
@@ -123,7 +128,7 @@
     .container {
       .image-text-row {
         flex-direction: column-reverse;
-        >div {
+        > div {
           align-self: center;
           &:last-child {
             margin-bottom: rem.convert(40px);
@@ -132,15 +137,15 @@
       }
     }
   }
-  .text-only-row{
+  .text-only-row {
     --bs-gutter-x: 1.5rem;
     margin-top: rem.convert(32px);
-    >div:first-child{
-      @include media-breakpoint-down(md){
+    > div:first-child {
+      @include media-breakpoint-down(md) {
         margin-bottom: rem.convert(24px);
       }
     }
-    .event-card{
+    .event-card {
       background: var(--blue);
       color: var(--white);
       border-radius: rem.convert(16px);
@@ -149,45 +154,45 @@
       flex-direction: row;
       align-items: center;
       gap: rem.convert(24px);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(lg) {
         flex-direction: column;
         padding: rem.convert(24px);
         gap: 1rem;
         align-items: flex-start;
       }
-      .event-card-date{
+      .event-card-date {
         text-align: center;
-        .event-card-day{
+        .event-card-day {
           margin: 0;
         }
       }
-      .event-card-content{
+      .event-card-content {
         padding-left: rem.convert(24px);
-        border-left: 1px solid #FFFEF699;
-        @include media-breakpoint-down(lg){
+        border-left: 1px solid #fffef699;
+        @include media-breakpoint-down(lg) {
           padding-left: 0;
           border-left: none;
           padding-top: 1rem;
-          border-top: 1px solid #FFFEF699;
+          border-top: 1px solid #fffef699;
           width: 100%;
         }
-        .event-card-title{
+        .event-card-title {
           margin-bottom: 1rem;
         }
-        .event-card-meta{
+        .event-card-meta {
           display: flex;
           flex-direction: row;
           gap: rem.convert(24px);
-          @include media-breakpoint-down(lg){
+          @include media-breakpoint-down(lg) {
             flex-direction: column;
             gap: 0.5rem;
           }
-          .event-card-meta-item{
+          .event-card-meta-item {
             display: flex;
             flex-direction: row;
             gap: rem.convert(8px);
             align-items: center;
-            .event-card-meta-icon{
+            .event-card-meta-icon {
               padding: rem.convert(4px);
             }
           }
@@ -195,10 +200,10 @@
       }
     }
   }
-  .btn-only-row{
-    a.btn{
+  .btn-only-row {
+    a.btn {
       margin-top: rem.convert(48px);
-      @include media-breakpoint-down(lg){
+      @include media-breakpoint-down(lg) {
         margin-top: rem.convert(40px);
       }
     }
