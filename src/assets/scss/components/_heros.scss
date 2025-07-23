@@ -41,7 +41,13 @@
           text-transform: capitalize;
           max-width: none;
           text-shadow: none;
-          span {
+          @include convert-percent(letter-spacing, 80px, -2);
+          @include convert-percent(line-height, 80px, 110);
+          @include media-breakpoint-down(lg){
+            @include convert-percent(letter-spacing, 44px, -2);
+            @include convert-percent(line-height, 44px, 110);
+          }
+          span{
             display: block;
             @include media-breakpoint-down(md) {
               display: inline-block;
@@ -271,7 +277,6 @@
 
     .hero-subtext {
       font-family: var(--body-font-family);
-      font-weight: 500;
       font-size: var(--hero-subtext-size);
       line-height: 1.2;
       margin: 0 0 #{rem.convert(32px)} 0;
