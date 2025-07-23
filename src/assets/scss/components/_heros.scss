@@ -522,7 +522,10 @@
   padding-top: rem.convert(196px);
   padding-bottom: rem.convert(56px);
   @include media-breakpoint-down(md) {
+    padding-top: rem.convert(64px);
     padding-bottom: rem.convert(64px);
+    padding-right: rem.convert(64px);
+    min-height: unset;
   }
   h1 {
     color: var(--white);
