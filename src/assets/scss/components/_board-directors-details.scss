@@ -22,7 +22,7 @@
   .img-wrap {
     height: rem.convert(500px);
     @include media-breakpoint-down(md) {
-      height: rem.convert(350px);
+      height: rem.convert(375px);
     }
     img {
       border-radius: rem.convert(16px);
@@ -88,6 +88,9 @@
       li:not(:last-child) {
         margin-bottom: rem.convert(16px);
       }
+    }
+    .content-title {
+      line-height: 1.4;
     }
   }
 
@@ -155,7 +158,7 @@
         background: var(--green);
         opacity: 1;
         border: none;
-        border-radius: rem.convert(4px);
+        border-radius: rem.convert(8px);
         width: rem.convert(56px);
         height: rem.convert(52px);
         display: flex;
@@ -190,7 +193,7 @@
         left: 0;
       }
       @include media-breakpoint-down(md) {
-        padding: rem.convert(16px 24px);
+        padding: rem.convert(24px);
       }
       &:hover {
         background: var(--green);
@@ -206,18 +209,32 @@
           opacity: 0;
         }
       }
-
-      a {
-        font-family: var(--heading-font-family);
-        font-size: rem.convert(24px);
-        line-height: 1.4;
-        letter-spacing: -0.02em;
-        color: var(--black);
-        font-weight: 700;
-        text-decoration: none;
+      .result-title {
+        a {
+          font-family: var(--heading-font-family);
+          font-size: rem.convert(24px);
+          line-height: 1.4;
+          letter-spacing: -0.02em;
+          color: #0f0e0e;
+          font-weight: 700;
+          text-decoration: none;
+          @include media-breakpoint-down(md) {
+            font-size: rem.convert(20px);
+            line-height: 1.5;
+            letter-spacing: 0;
+          }
+        }
       }
+
       .result-desc {
-        margin-top: rem.convert(24px);
+        margin-top: rem.convert(32px);
+        color: var(--gray);
+        p {
+          color: var(--gray);
+        }
+        @include media-breakpoint-down(md) {
+          margin-top: rem.convert(16px);
+        }
       }
     }
   }
@@ -360,6 +377,13 @@
         .icon-wrap {
           transform: rotate(-180deg);
         }
+      }
+      &:focus {
+        outline: 1px solid var(--white);
+        outline-offset: 3px;
+      }
+      &:active {
+        border: none;
       }
     }
   }

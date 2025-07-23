@@ -16,50 +16,50 @@
   background: var(--hero-bg);
   padding: 0;
   overflow-x: hidden;
-  .container-fluid{
+  .container-fluid {
     padding: 0;
   }
-  &.homepage-hero{
-    .hero-section{
+  &.homepage-hero {
+    .hero-section {
       height: rem.convert(700px);
       padding-bottom: rem.convert(122px);
-      min-height:auto;
-      @include media-breakpoint-down(md){
+      min-height: auto;
+      @include media-breakpoint-down(md) {
         height: rem.convert(488px);
-        padding: 4rem 1.5rem ;
+        padding: 4rem 1.5rem;
       }
-      .hero-content{
+      .hero-content {
         justify-content: flex-end;
         max-width: rem.convert(840px);
         margin-right: auto;
         padding: 0;
         gap: 0;
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
           justify-content: center;
         }
-        .hero-title{
+        .hero-title {
           text-transform: capitalize;
           max-width: none;
           text-shadow: none;
-          span{
+          span {
             display: block;
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
               display: inline-block;
             }
           }
         }
-        .hero-subtext{
+        .hero-subtext {
           max-width: none;
           line-height: 1.5;
-          @include media-breakpoint-down(md){
+          @include media-breakpoint-down(md) {
             font-size: rem.convert(18px);
           }
         }
       }
     }
   }
-  &.carousel-hero{
-    .carousel-indicators{
+  &.carousel-hero {
+    .carousel-indicators {
       width: fit-content;
       margin: 0 auto;
       padding: 1rem 1.25rem;
@@ -67,60 +67,70 @@
       gap: 0.5rem;
       bottom: 2rem;
       border-radius: 80px;
-      @include media-breakpoint-down(md){
+      @include media-breakpoint-down(md) {
         bottom: 1.5rem;
       }
-      > button{
+      > button {
         width: 0.5rem;
         height: 0.5rem;
         border-radius: 50%;
-        background: #FFFFFF99;
+        background: #ffffff99;
         margin: 0;
         padding: 0;
         border: none;
         opacity: 1;
         transition: all 0.3s ease;
-        &.active{
-          background: #FFFFFF;
+        &.active {
+          background: #ffffff;
           width: rem.convert(20px);
           border-radius: rem.convert(99px);
         }
       }
     }
-    .carousel-item{
-      padding: rem.convert(32px) rem.convert(80px) rem.convert(120px) rem.convert(80px);
+    .carousel-item {
+      padding: rem.convert(32px) rem.convert(80px) rem.convert(120px)
+        rem.convert(80px);
       height: rem.convert(632px);
-      @include media-breakpoint-down(md){
-        padding: rem.convert(64px) rem.convert(24px) rem.convert(24px) rem.convert(24px);
+      @include media-breakpoint-down(md) {
+        padding: rem.convert(64px) rem.convert(24px) rem.convert(24px)
+          rem.convert(24px);
         height: rem.convert(516px);
       }
-      .hero-img-wrapper{
+      .hero-img-wrapper {
         height: 100%;
         width: 100%;
         position: absolute;
         top: 0;
         left: 0;
         z-index: 0;
-        &::before{
-          content: '';
+        &::before {
+          content: "";
           position: absolute;
           top: 0;
           left: 0;
           width: 100%;
           height: 100%;
-          background: linear-gradient(250.7deg, rgba(0, 74, 100, 0) 27.44%, #004A64 100%);
+          background: linear-gradient(
+            250.7deg,
+            rgba(0, 74, 100, 0) 27.44%,
+            #004a64 100%
+          );
           z-index: 1;
-          @include media-breakpoint-down(md){
-            background: linear-gradient(12.16deg, rgba(0, 74, 100, 0) 4.69%, #004A64 82.93%);
+          @include media-breakpoint-down(md) {
+            background: linear-gradient(
+              12.16deg,
+              rgba(0, 74, 100, 0) 4.69%,
+              #004a64 82.93%
+            );
           }
         }
-        img{
+        img {
           height: 100%;
           width: 100%;
           object-fit: cover;
         }
       }
-      .content-wrapper{
+      .content-wrapper {
         position: relative;
         display: flex;
         flex-direction: column;
@@ -129,35 +139,35 @@
         color: var(--white);
         max-width: rem.convert(670px);
         height: 100%;
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
           justify-content: flex-start;
         }
-        .hero-title{
+        .hero-title {
           margin-bottom: 0;
         }
-        .hero-subtext{
+        .hero-subtext {
           margin-top: rem.convert(24px);
           font-size: rem.convert(20px);
           line-height: 1.5;
           font-weight: $regular;
-          @include media-breakpoint-down(md){
+          @include media-breakpoint-down(md) {
             font-size: rem.convert(18px);
           }
         }
-        .btn{
+        .btn {
           margin-top: rem.convert(32px);
         }
       }
     }
-    &.homepage-hero{
-      .carousel-item{
+    &.homepage-hero {
+      .carousel-item {
         height: rem.convert(700px);
         padding-bottom: rem.convert(122px);
-        @include media-breakpoint-down(md){
+        @include media-breakpoint-down(md) {
           height: rem.convert(488px);
-          .content-wrapper{
+          .content-wrapper {
             justify-content: flex-end;
-            @include media-breakpoint-down(md){
+            @include media-breakpoint-down(md) {
               justify-content: flex-start;
             }
           }
@@ -232,7 +242,7 @@
         left: 0;
       }
     }
-    .hero-content-wrapper{
+    .hero-content-wrapper {
       width: 100%;
       height: 100%;
       max-width: rem.convert(1320px);
@@ -301,27 +311,31 @@
   padding: 0;
   overflow-x: hidden;
   overflow-y: visible;
-  .container-fluid{
+  .container-fluid {
     padding: 0;
   }
-  &.title-with-width{
-    .hero-section{
-      @include media-breakpoint-down(lg){
+  &.title-with-width {
+    .hero-section {
+      @include media-breakpoint-down(lg) {
         min-height: rem.convert(272px);
       }
-      .hero-img-overlay{
-        @include media-breakpoint-down(lg){
-          background-image: linear-gradient(326.35deg, rgba(0, 74, 100, 0) 10.69%, #004A64 92.59%);
+      .hero-img-overlay {
+        @include media-breakpoint-down(lg) {
+          background-image: linear-gradient(
+            326.35deg,
+            rgba(0, 74, 100, 0) 10.69%,
+            #004a64 92.59%
+          );
         }
       }
-      .hero-content{
+      .hero-content {
         max-width: rem.convert(600px);
         margin-right: auto;
       }
     }
-    &.longer-title{
-      .hero-section{
-        .hero-content{
+    &.longer-title {
+      .hero-section {
+        .hero-content {
           max-width: rem.convert(712px);
         }
       }
@@ -338,7 +352,8 @@
     flex-direction: column;
     align-items: flex-end;
     justify-content: flex-start;
-    padding: rem.convert(32px) rem.convert(80px) rem.convert(80px) rem.convert(80px);
+    padding: rem.convert(32px) rem.convert(80px) rem.convert(80px)
+      rem.convert(80px);
 
     @include media-breakpoint-down(lg) {
       padding: rem.convert(24px);
@@ -443,7 +458,7 @@
   overflow-x: hidden;
   overflow-y: visible;
   box-sizing: content-box;
-  .container-fluid{
+  .container-fluid {
     padding: 0;
   }
   @include media-breakpoint-down(lg) {
@@ -454,8 +469,8 @@
     background: var(--blue);
   }
   &.bg-off-white {
-   height: rem.convert(132px);
-   box-sizing: border-box;
+    height: rem.convert(132px);
+    box-sizing: border-box;
   }
 }
 // Responsive adjustments
@@ -499,9 +514,9 @@
 .inner-hero {
   background: var(--blue);
   min-height: rem.convert(336px);
-  padding-top: rem.convert(201px);
-  padding-bottom: rem.convert(64px);
-  @include media-breakpoint-down(md){
+  padding-top: rem.convert(196px);
+  padding-bottom: rem.convert(56px);
+  @include media-breakpoint-down(md) {
     padding-bottom: rem.convert(64px);
   }
   h1 {
@@ -509,5 +524,16 @@
   }
   > .container {
     padding: convert(0 24px);
+  }
+}
+.board-details-hero {
+  background: var(--blue);
+  min-height: rem.convert(336px);
+  padding-top: rem.convert(196px);
+  padding-bottom: rem.convert(56px);
+  @include media-breakpoint-down(md) {
+    min-height: auto;
+    padding-top: rem.convert(64px);
+    padding-bottom: rem.convert(64px);
   }
 }
