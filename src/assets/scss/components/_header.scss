@@ -336,3 +336,158 @@
     transform: translateY(-100%);
   }
 }
+
+
+// Mega Menu Styles - Enhanced Version
+.has-mega-menu {
+  position: static;
+}
+.mega-menu-wrapper {
+  display: none;
+  position: absolute;
+  top: calc(100% - 2rem);
+  left: 0;
+  background-color: transparent;
+  z-index: 4;
+  width: 100%;
+  max-width: rem.convert(1280px);
+  margin: 0 auto;
+  padding-top: 2.5rem;
+  &.show {
+    display: block;
+  }
+  .mega-menu-inner {
+    background-color: var(--white);
+    box-shadow: 0px 8px 24px 0px #1111111A;
+    border-radius: rem.convert(16px);
+    display: flex;
+    flex-direction: column;
+    min-height: 300px;
+    height: 100%;
+    flex: 1;
+    position: relative;
+    .label-wrapper {
+      padding: 1.5rem 2rem;
+      display: flex;
+      gap: 0.5rem;
+      border-bottom: 1px solid #11111199;
+      flex-shrink: 0;
+    }
+    .mega-menu {
+      position: relative;
+      flex: 1;
+      display: flex;
+      flex-direction: row;
+      width: 100%;
+      .level-2-menu {
+        width: 33.33%;
+        padding: 1.5rem 2rem;
+        border-right: 1px solid #11111199;
+        flex-shrink: 0;
+        display: flex;
+        flex-direction: column;
+        min-height: 100%;
+        box-sizing: border-box;
+        position: relative;
+        li {
+          list-style: none;
+          &.has-level-3-children {
+            cursor: pointer;
+            > a {
+              display: block;
+              padding: 0.5rem 0;
+            }
+            &:hover > a::after,
+            &.active > a::after {
+              opacity: 1;
+            }
+            > .level-3-menu {
+              position: absolute;
+              top: 0;
+              left: 100%;
+              width: 100%;
+              min-width: 200px;
+              background: var(--white);
+              border-left: 1px solid #11111199;
+              z-index: 5;
+              display: none;
+              flex-direction: column;
+              min-height: 250px;
+              height: 100%;
+              padding: 1.5rem 2rem;
+              li {
+                list-style: none;
+                &.has-level-4-children {
+                  cursor: pointer;
+                  > a {
+                    display: block;
+                    padding: 0.5rem 0;
+                  }
+                  &:hover > a::after,
+                  &.active > a::after {
+                    opacity: 1;
+                  }
+                  > .level-4-menu {
+                    position: absolute;
+                    top: 0;
+                    left: 100%;
+                    width: 100%;
+                    max-width: rem.convert(432px);
+                    background: var(--white);
+                    border-left: 1px solid #11111199;
+                    z-index: 6;
+                    display: none;
+                    flex-direction: column;
+                    min-height: 250px;
+                    height: 100%;
+                    padding: 1.5rem 2rem;
+
+                  }
+                  &:hover > .level-4-menu,
+                  &.active > .level-4-menu {
+                    display: flex;
+                  }
+                }
+              }
+            }
+            &:hover > .level-3-menu,
+            &.active > .level-3-menu {
+              display: flex;
+            }
+          }
+        }
+      }
+    }
+  }
+  // Image styling for menu items
+  img {
+    max-width: 100%;
+    height: auto;
+    border-radius: rem.convert(8px);
+    margin-top: 1rem;
+  }
+}
+// Arrow for items with children
+.has-level-3-children > a::after, .has-level-4-children > a::after {
+  content: '';
+  display: inline-block;
+  vertical-align: middle;
+  width: 16px;
+  height: 16px;
+  margin-left: 8px;
+  background: url('../images/arrow-right-black.svg') no-repeat center center/contain;
+  transition: transform 0.2s;
+}
+.has-level-3-children.active > a::after, .has-level-4-children.active > a::after {
+  transform: rotate(90deg);
+}
+.has-level-3-children.active > a, .has-level-4-children.active > a {
+  background: rgba(var(--green-rgb), 0.1);
+  color: var(--green);
+}
+// Hide images in menu items on mobile
+@media (max-width: 991.98px) {
+  .mega-menu-wrapper img {
+    display: none !important;
+  }
+}

@@ -53,16 +53,15 @@
               role="menubar"
               aria-label="Main Menu"
             >
-              <!-- Water Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
+              <!-- Water Dropdown with Mega Menu (flattened columns) -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
                 <a
                   class="nav-link dropdown-toggle header__menu-link"
                   href="#"
                   role="menuitem"
                   aria-haspopup="true"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  aria-controls="waterSubmenu"
+                  aria-controls="waterMegaMenu"
                 >
                   Water
                   <i
@@ -71,41 +70,126 @@
                     aria-hidden="true"
                   ></i>
                 </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="waterSubmenu"
-                  role="menu"
-                  aria-label="Water submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
+                <!-- Mega Menu Container (flattened) -->
+                <div class="mega-menu-wrapper">
+                  <div class="mega-menu-inner">
+                    <div class="label-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <label for="navigation stream">Navigation Stream</label>
+                    </div>
+                  <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
+                    <ul class="level-2-menu">
+                      <li class="has-level-3-children">
+                        <a href="#">Projects</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">C-BT History</a></li>
+                              <li><a href="#">C-BT Infrastructure</a></li>
+                              <li><a href="#">Hydropower</a></li>
+                              <li><a href="#">Pleasant Valley Pipeline</a></li>
+                              <li><a href="#">Pump Plants</a></li>
+                              <li><a href="#">Southern Water Supply Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Northern Integrated Supply Project</a>
+                          </li>
+                          <li class="has-level-4-children">
+                            <a href="#">Windy Gap Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">
+                            <img src="../assets/images/Green-Mountain-Reservoiur.jpg" alt="Green Mountain Reservoir">
+                          </a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Property Boundary Inclusions</a></li>
+                      <li class="has-level-3-children">
+                        <a href="#">Safeguarding Water Resources</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Ownership</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Delivery</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                </div>
               </li>
 
-              <!-- Environment Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
+              <!-- Environment Dropdown with Mega Menu -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
                 <a
                   class="nav-link dropdown-toggle header__menu-link"
                   href="#"
                   role="menuitem"
                   aria-haspopup="true"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  aria-controls="environmentSubmenu"
+                  aria-controls="environmentMegaMenu"
                 >
                   Environment
                   <i
@@ -114,41 +198,127 @@
                     aria-hidden="true"
                   ></i>
                 </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="environmentSubmenu"
-                  role="menu"
-                  aria-label="Environment submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
+                <!-- Mega Menu Container -->
+                <!-- Mega Menu Container (flattened) -->
+                <div class="mega-menu-wrapper">
+                  <div class="mega-menu-inner">
+                    <div class="label-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <path d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <label for="navigation stream">Navigation Stream</label>
+                    </div>
+                  <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
+                    <ul class="level-2-menu">
+                      <li class="has-level-3-children">
+                        <a href="#">Projects</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">C-BT History</a></li>
+                              <li><a href="#">C-BT Infrastructure</a></li>
+                              <li><a href="#">Hydropower</a></li>
+                              <li><a href="#">Pleasant Valley Pipeline</a></li>
+                              <li><a href="#">Pump Plants</a></li>
+                              <li><a href="#">Southern Water Supply Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Northern Integrated Supply Project</a>
+                          </li>
+                          <li class="has-level-4-children">
+                            <a href="#">Windy Gap Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                          <li><a href="#">
+                            <img src="../assets/images/Green-Mountain-Reservoiur.jpg" alt="Green Mountain Reservoir">
+                          </a></li>
+                        </ul>
+                      </li>
+                      <li><a href="#">Property Boundary Inclusions</a></li>
+                      <li class="has-level-3-children">
+                        <a href="#">Safeguarding Water Resources</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Ownership</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Delivery</a>
+                        <ul class="level-3-menu">
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
+                            <ul class="level-4-menu">
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                      </li>
+                    </ul>
+                  </div>
+                  </div>
+                </div>
               </li>
 
-              <!-- Data Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
+              <!-- Data Dropdown with Mega Menu -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
                 <a
                   class="nav-link dropdown-toggle header__menu-link"
                   href="#"
                   role="menuitem"
                   aria-haspopup="true"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  aria-controls="dataSubmenu"
+                  aria-controls="dataMegaMenu"
                 >
                   Data
                   <i
@@ -157,41 +327,48 @@
                     aria-hidden="true"
                   ></i>
                 </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="dataSubmenu"
-                  role="menu"
-                  aria-label="Data submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
+                <!-- Mega Menu Container -->
+                <div class="mega-menu-wrapper" id="dataMegaMenu" aria-label="Data mega menu" tabindex="-1">
+                  <div class="mega-menu__columns">
+                    <!-- Level 2 -->
+                    <div class="mega-menu__col mega-menu__col--level2">
+                      <ul>
+                        <li class="has-children">
+                          <a href="#">Level 2 Child 1</a>
+                          <!-- Level 3 -->
+                          <ul class="mega-menu__sub mega-menu__sub--level3">
+                            <li class="has-children">
+                              <a href="#">Level 3 Child 1</a>
+                              <!-- Level 4 -->
+                              <ul class="mega-menu__sub mega-menu__sub--level4">
+                                <li><a href="#">Level 4 Child 1</a></li>
+                                <li><a href="#">Level 4 Child 2</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="#">Level 3 Child 2</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Level 2 Child 2</a></li>
+                        <li><a href="#">Level 2 Child 3</a></li>
+                      </ul>
+                    </div>
+                    <!-- Level 3 (revealed on hover of Level 2) -->
+                    <div class="mega-menu__col mega-menu__col--level3"></div>
+                    <!-- Level 4 (revealed on hover of Level 3) -->
+                    <div class="mega-menu__col mega-menu__col--level4"></div>
+                  </div>
+                </div>
               </li>
 
-              <!-- About Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
+              <!-- About Dropdown with Mega Menu -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
                 <a
                   class="nav-link dropdown-toggle header__menu-link"
                   href="#"
                   role="menuitem"
                   aria-haspopup="true"
-                  data-bs-toggle="dropdown"
                   aria-expanded="false"
-                  aria-controls="aboutSubmenu"
+                  aria-controls="aboutMegaMenu"
                 >
                   About
                   <i
@@ -200,29 +377,37 @@
                     aria-hidden="true"
                   ></i>
                 </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="aboutSubmenu"
-                  role="menu"
-                  aria-label="About submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
+                <!-- Mega Menu Container -->
+                <div class="mega-menu-wrapper" aria-label="About mega menu" tabindex="-1">
+                  <div class="mega-menu__columns">
+                    <!-- Level 2 -->
+                    <div class="mega-menu__col mega-menu__col--level2">
+                      <ul>
+                        <li class="has-children">
+                          <a href="#">Level 2 Child 1</a>
+                          <!-- Level 3 -->
+                          <ul class="mega-menu__sub mega-menu__sub--level3">
+                            <li class="has-children">
+                              <a href="#">Level 3 Child 1</a>
+                              <!-- Level 4 -->
+                              <ul class="mega-menu__sub mega-menu__sub--level4">
+                                <li><a href="#">Level 4 Child 1</a></li>
+                                <li><a href="#">Level 4 Child 2</a></li>
+                              </ul>
+                            </li>
+                            <li><a href="#">Level 3 Child 2</a></li>
+                          </ul>
+                        </li>
+                        <li><a href="#">Level 2 Child 2</a></li>
+                        <li><a href="#">Level 2 Child 3</a></li>
+                      </ul>
+                    </div>
+                    <!-- Level 3 (revealed on hover of Level 2) -->
+                    <div class="mega-menu__col mega-menu__col--level3"></div>
+                    <!-- Level 4 (revealed on hover of Level 3) -->
+                    <div class="mega-menu__col mega-menu__col--level4"></div>
+                  </div>
+                </div>
               </li>
 
               <!-- News Link -->
