@@ -531,9 +531,15 @@
   min-height: rem.convert(336px);
   padding-top: rem.convert(196px);
   padding-bottom: rem.convert(56px);
+   h1 {
+    color: var(--white);
+  }
+  > .container {
+    padding: convert(0 24px);
+  }
   @include media-breakpoint-down(md) {
     min-height: auto;
     padding-top: rem.convert(64px);
-    padding-bottom: rem.convert(64px);
+    padding-bottom: rem.convert(48px);
   }
 }
