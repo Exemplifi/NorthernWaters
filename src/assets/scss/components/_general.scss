@@ -97,7 +97,7 @@ a {
 // content animation
 .reveal {
   opacity: 0;
-  transform: translate3d(0, 150px, 0) scale3d(1, 1, 1) rotateX(0deg)
+  transform: translate3d(0, 125px, 0) scale3d(1, 1, 1) rotateX(0deg)
     rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
   transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
     transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);

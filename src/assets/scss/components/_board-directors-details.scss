@@ -198,7 +198,7 @@
       &:hover {
         background: var(--green);
         * {
-          color: var(--white);
+          color: var(--white) !important;
         }
         &::after {
           opacity: 0;
