@@ -297,26 +297,38 @@ document.addEventListener("DOMContentLoaded", function () {
     $(window).on("resize", checkScroll);
   });
 
-  // script for content animation
   const reveals = document.querySelectorAll(".reveal");
 
   function checkReveal() {
     const windowHeight = window.innerHeight;
+
+    // Group elements by top position
+    const groupedByTop = {};
+
     reveals.forEach((el) => {
       const rect = el.getBoundingClientRect();
+      const top = Math.round(rect.top);
+
       if (rect.top < windowHeight && rect.bottom > 0) {
-        // Element is in viewport
-        el.classList.add("revealed");
+        if (!groupedByTop[top]) groupedByTop[top] = [];
+        groupedByTop[top].push(el);
       } else if (rect.top >= windowHeight) {
-        // Element is below the viewport
         el.classList.remove("revealed");
       }
-      // If element is above the viewport, do nothing (keep revealed)
     });
+
+    // Sort groups by vertical position and reveal each group with delay
+    Object.entries(groupedByTop)
+      .sort((a, b) => a[0] - b[0])
+      .forEach(([_, group], index) => {
+        setTimeout(() => {
+          group.forEach((el) => el.classList.add("revealed"));
+        }, index * 100); // delay between blocks
+      });
   }
 
+  // Add scroll/resize listeners
   window.addEventListener("scroll", checkReveal);
   window.addEventListener("resize", checkReveal);
   checkReveal();
-
 });
