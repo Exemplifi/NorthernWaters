@@ -366,6 +366,7 @@
     height: 100%;
     flex: 1;
     position: relative;
+    overflow: visible; // Ensure level 3 and 4 menus aren't clipped
     .label-wrapper {
       padding: 1.5rem 2rem;
       display: flex;
@@ -379,6 +380,7 @@
       display: flex;
       flex-direction: row;
       width: 100%;
+      overflow: visible; // Ensure level 3 and 4 menus aren't clipped
       .level-2-menu {
         width: 33.33%;
         padding: 1.5rem 2rem;
@@ -389,72 +391,97 @@
         min-height: 100%;
         box-sizing: border-box;
         position: relative;
-        li {
-          list-style: none;
-          &.has-level-3-children {
-            cursor: pointer;
-            > a {
+        overflow: visible; // Ensure child menus aren't clipped
+        .level-2-menu-container{
+          padding: 0;
+          li {
+            list-style: none;
+            overflow: visible; // Ensure level 4 menus aren't clipped
+            > a{
               display: block;
-              padding: 0.5rem 0;
+              padding: 1rem 1.5rem;
             }
-            &:hover > a::after,
-            &.active > a::after {
-              opacity: 1;
-            }
-            > .level-3-menu {
-              position: absolute;
-              top: 0;
-              left: 100%;
-              width: 100%;
-              min-width: 200px;
-              background: var(--white);
-              border-left: 1px solid #11111199;
-              z-index: 5;
-              display: none;
-              flex-direction: column;
-              min-height: 250px;
-              height: 100%;
-              padding: 1.5rem 2rem;
-              li {
-                list-style: none;
-                &.has-level-4-children {
-                  cursor: pointer;
-                  > a {
-                    display: block;
-                    padding: 0.5rem 0;
-                  }
-                  &:hover > a::after,
-                  &.active > a::after {
-                    opacity: 1;
-                  }
-                  > .level-4-menu {
-                    position: absolute;
-                    top: 0;
-                    left: 100%;
-                    width: 100%;
-                    max-width: rem.convert(432px);
-                    background: var(--white);
-                    border-left: 1px solid #11111199;
-                    z-index: 6;
-                    display: none;
-                    flex-direction: column;
-                    min-height: 250px;
-                    height: 100%;
-                    padding: 1.5rem 2rem;
-
-                  }
-                  &:hover > .level-4-menu,
-                  &.active > .level-4-menu {
-                    display: flex;
+            &.has-level-3-children {
+              cursor: pointer;
+              &:hover > a::after,
+              &.active > a::after {
+                opacity: 1;
+              }
+              > .level-3-menu {
+                position: absolute;
+                top: 0;
+                left: 100%;
+                width: 100%;
+                min-width: 200px;
+                background: var(--white);
+                border-left: 1px solid #11111199;
+                z-index: 5;
+                display: none;
+                flex-direction: column;
+                min-height: 250px;
+                height: 100%;
+                padding: 1.5rem 2rem;
+                overflow: visible; // Ensure level 4 menus aren't clipped
+                .level-3-menu-container{
+                  padding: 0;
+                  li {
+                    list-style: none;
+                    > a{
+                      display: block;
+                      padding: 1rem 1.5rem;
+                    }
+                    &.has-level-4-children {
+                      cursor: pointer;
+                      overflow: visible; // Ensure level 4 menus aren't clipped
+                      &:hover > a::after,
+                      &.active > a::after {
+                        opacity: 1;
+                      }
+                      > .level-4-menu {
+                        position: absolute;
+                        top: 0;
+                        left: 100%;
+                        width: 100%;
+                        max-width: rem.convert(432px);
+                        background: var(--white);
+                        border-left: 1px solid #11111199;
+                        z-index: 6;
+                        display: none;
+                        flex-direction: column;
+                        min-height: 250px;
+                        height: 100%;
+                        padding: 1.5rem 2rem;
+                        .level-4-menu-container{
+                          padding: 0;
+                          li{
+                            a{
+                              padding: 1rem 1.5rem;
+                            }
+                          }
+                        }
+                      }
+                      &:hover > .level-4-menu,
+                      &.active > .level-4-menu {
+                        display: flex;
+                      }
+                    }
                   }
                 }
               }
-            }
-            &:hover > .level-3-menu,
-            &.active > .level-3-menu {
-              display: flex;
+              &:hover > .level-3-menu,
+              &.active > .level-3-menu {
+                display: flex;
+              }
             }
           }
+        }
+      }
+      // Scroll class for tall menu columns
+      .mega-menu-scroll {
+        > ul{
+          overflow-y: auto;
+          overflow-x: hidden;
+          height: 100%;
         }
       }
     }
@@ -491,3 +518,5 @@
     display: none !important;
   }
 }
+
+

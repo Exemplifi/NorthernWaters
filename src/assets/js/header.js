@@ -167,97 +167,217 @@ const setupMegaMenu = () => {
   const menuItems = document.querySelectorAll('.header__menu-item.has-mega-menu');
   
   // Helper to close all mega menus
-  const closeAllMegaMenus = () => {
+  const closeAllMegaMenus = (exceptMenu) => {
     menuItems.forEach(item => {
       const megaMenu = item.querySelector('.mega-menu-wrapper');
-      if (megaMenu) {
+      if (megaMenu && megaMenu !== exceptMenu) {
         megaMenu.classList.remove('show');
-        megaMenu.style.removeProperty('--dynamic-height');
         megaMenu.classList.remove('mega-menu-dynamic-height');
+        item.classList.remove('active');
+        
+        // Remove inline height styles from all menu levels
+        const level2 = megaMenu.querySelector('.level-2-menu');
+        const level3s = megaMenu.querySelectorAll('.level-3-menu');
+        const level4s = megaMenu.querySelectorAll('.level-4-menu');
+        
+        // Clear heights and scroll classes
+        if (level2) {
+          level2.style.removeProperty('height');
+          level2.style.removeProperty('min-height');
+          level2.style.removeProperty('max-height');
+          level2.classList.remove('mega-menu-scroll');
+        }
+        level3s.forEach(l3 => {
+          l3.style.removeProperty('height');
+          l3.style.removeProperty('min-height');
+          l3.style.removeProperty('max-height');
+          l3.classList.remove('mega-menu-scroll');
+        });
+        level4s.forEach(l4 => {
+          l4.style.removeProperty('height');
+          l4.style.removeProperty('min-height');
+          l4.style.removeProperty('max-height');
+          l4.classList.remove('mega-menu-scroll');
+        });
+        
+        // Remove active from all level 2 and 3 items
+        const level2s = megaMenu?.querySelectorAll('.level-2-menu-container > li');
+        level2s?.forEach(l2 => l2.classList.remove('active'));
+        const level3sItems = megaMenu?.querySelectorAll('.level-3-menu-container > li');
+        level3sItems?.forEach(l3 => l3.classList.remove('active'));
       }
-      item.classList.remove('active');
-      // Remove active from all level 2 and 3 items
-      const level2s = megaMenu?.querySelectorAll('.level-2-menu > li');
-      level2s?.forEach(l2 => l2.classList.remove('active'));
-      const level3s = megaMenu?.querySelectorAll('.level-3-menu > li');
-      level3s?.forEach(l3 => l3.classList.remove('active'));
     });
   };
 
-  // Utility: Safely get scrollHeight even if element is hidden
-  function getNaturalScrollHeight(el) {
-    if (!el) return 0;
-    const prevDisplay = el.style.display;
-    const prevVisibility = el.style.visibility;
-    const prevPosition = el.style.position;
-    let needRestore = false;
-    if (window.getComputedStyle(el).display === 'none') {
-      el.style.display = 'block';
-      el.style.visibility = 'hidden';
-      el.style.position = 'absolute';
-      needRestore = true;
+  // Improved function to calculate and set heights for level-2, level-3, and level-4 menus
+  function setMegaMenuColumnHeights(megaMenu) {
+    // Enhanced height calculation that handles hidden elements
+    function getContentHeight(element) {
+      if (!element) return 0;
+      
+      // Store original styles more comprehensively
+      const originalStyles = {};
+      const stylesToCheck = ['height', 'minHeight', 'maxHeight', 'overflow', 'display', 'visibility', 'position', 'left', 'top'];
+      
+      stylesToCheck.forEach(prop => {
+        originalStyles[prop] = element.style[prop] || '';
+      });
+      
+      // Store computed display to check if hidden
+      const wasHidden = window.getComputedStyle(element).display === 'none';
+      
+      // Make element measurable (but keep it off-screen if it was hidden)
+      if (wasHidden) {
+        element.style.display = 'flex';
+        element.style.visibility = 'hidden';
+        element.style.position = 'absolute';
+        element.style.left = '-9999px';
+        element.style.top = '-9999px';
+      }
+      
+      // Reset height-related styles to get natural height
+      element.style.height = 'auto';
+      element.style.minHeight = 'auto';
+      element.style.maxHeight = 'none';
+      element.style.overflow = 'visible';
+      
+      // Force reflow
+      element.offsetHeight;
+      
+      // Get the actual scrollHeight
+      const naturalHeight = element.scrollHeight;
+      
+      // Restore ALL original styles completely
+      stylesToCheck.forEach(prop => {
+        if (originalStyles[prop]) {
+          element.style[prop] = originalStyles[prop];
+        } else {
+          // Remove the property completely if it wasn't set originally
+          element.style.removeProperty(prop.replace(/([A-Z])/g, '-$1').toLowerCase());
+        }
+      });
+      
+      return naturalHeight;
     }
-    const height = el.scrollHeight;
-    if (needRestore) {
-      el.style.display = prevDisplay;
-      el.style.visibility = prevVisibility;
-      el.style.position = prevPosition;
-    }
-    return height;
-  }
 
-  // Calculate dynamic height for columns (excluding label)
-  const calculateDynamicHeight = (megaMenu) => {
+    // Get all menu elements
     const level2 = megaMenu.querySelector('.level-2-menu');
-    const level3s = megaMenu.querySelectorAll('.level-3-menu');
-    const level4s = megaMenu.querySelectorAll('.level-4-menu');
-    const labelHeight = megaMenu.querySelector('.label-wrapper')?.scrollHeight || 0;
-    const h2 = getNaturalScrollHeight(level2);
-    // Always measure all, not just visible
-    let h3 = 0;
-    level3s.forEach(l3 => {
-      h3 = Math.max(h3, getNaturalScrollHeight(l3));
-    });
-    let h4 = 0;
-    level4s.forEach(l4 => {
-      h4 = Math.max(h4, getNaturalScrollHeight(l4));
-    });
-    let maxColHeight = Math.max(h2, h3, h4, 250);
-    // Set height only on visible columns
-    if (level2) {
-      level2.style.height = maxColHeight + 'px';
-      level2.style.maxHeight = maxColHeight + 'px';
+    const level3s = Array.from(megaMenu.querySelectorAll('.level-3-menu'));
+    const level4s = Array.from(megaMenu.querySelectorAll('.level-4-menu'));
+    
+    // Function to clean up any leftover inline styles
+    function cleanupInlineStyles(element) {
+      if (!element) return;
+      
+      // Remove temporary positioning and visibility styles that might be left over
+      const tempStyles = ['visibility', 'position', 'left', 'top'];
+      tempStyles.forEach(prop => {
+        const kebabProp = prop.replace(/([A-Z])/g, '-$1').toLowerCase();
+        if (element.style[prop] === 'hidden' || 
+            element.style[prop] === 'absolute' || 
+            element.style[prop] === '-9999px') {
+          element.style.removeProperty(kebabProp);
+        }
+      });
+      
+      // Only keep the height styles we intentionally set (remove min-height and max-height)
+      const allowedStyles = ['height'];
+      const currentStyles = Array.from(element.style);
+      currentStyles.forEach(styleName => {
+        const camelCase = styleName.replace(/-([a-z])/g, (g) => g[1].toUpperCase());
+        if (!allowedStyles.includes(styleName) && 
+            !allowedStyles.includes(camelCase) &&
+            (styleName.includes('height') || styleName.includes('position') || 
+             styleName.includes('visibility') || styleName.includes('left') || 
+             styleName.includes('top') || styleName.includes('display'))) {
+          element.style.removeProperty(styleName);
+        }
+      });
     }
-    level3s.forEach(l3 => {
-      if (l3.offsetParent !== null) {
-        l3.style.height = maxColHeight + 'px';
-        l3.style.maxHeight = maxColHeight + 'px';
-      } else {
-        l3.style.height = '';
-        l3.style.maxHeight = '';
+    
+    // Clear any existing heights first
+    [level2, ...level3s, ...level4s].forEach(element => {
+      if (element) {
+        element.style.removeProperty('height');
+        element.style.removeProperty('min-height');
+        element.style.removeProperty('max-height');
+        element.classList.remove('mega-menu-scroll');
+        cleanupInlineStyles(element);
       }
     });
-    level4s.forEach(l4 => {
-      if (l4.offsetParent !== null) {
-        l4.style.height = maxColHeight + 'px';
-        l4.style.maxHeight = maxColHeight + 'px';
-      } else {
-        l4.style.height = '';
-        l4.style.maxHeight = '';
+
+    // Small delay to ensure DOM is settled
+    setTimeout(() => {
+      // Measure heights
+      const heights = [];
+      
+      if (level2) {
+        heights.push(getContentHeight(level2));
       }
-    });
-    let wrapperHeight = maxColHeight + labelHeight;
-    const viewportLimit = window.innerHeight - 150;
-    if (wrapperHeight > viewportLimit) {
-      wrapperHeight = viewportLimit;
-      megaMenu.classList.add('scrollable');
-    } else {
-      megaMenu.classList.remove('scrollable');
-    }
-    megaMenu.style.setProperty('--dynamic-height', `${wrapperHeight}px`);
-    megaMenu.classList.add('mega-menu-dynamic-height');
-    return wrapperHeight;
-  };
+      
+      level3s.forEach(l3 => {
+        if (l3) {
+          heights.push(getContentHeight(l3));
+        }
+      });
+      
+      level4s.forEach(l4 => {
+        if (l4) {
+          heights.push(getContentHeight(l4));
+        }
+      });
+
+      // Filter out 0 heights and calculate the maximum height
+      const validHeights = heights.filter(h => h > 0);
+      const maxContentHeight = Math.max(...validHeights, 300);
+      
+      // Check if scrolling is needed
+      const navbar = document.querySelector('.header');
+      const navbarHeight = navbar ? navbar.offsetHeight : 0;
+      const labelWrapper = megaMenu.querySelector('.label-wrapper');
+      const labelWrapperHeight = labelWrapper ? labelWrapper.offsetHeight : 0;
+      const maxAllowed = window.innerHeight - navbarHeight - labelWrapperHeight - 100;
+      
+      // Determine final height and scroll behavior
+      const finalHeight = Math.min(maxContentHeight, maxAllowed);
+      const needsScroll = maxContentHeight > maxAllowed;
+      
+      console.log('Heights measured:', heights, 'Valid heights:', validHeights);
+      console.log('Max content height:', maxContentHeight, 'Max allowed:', maxAllowed);
+      console.log('Final height:', finalHeight, 'Needs scroll:', needsScroll);
+
+      // Apply heights to all elements (remove min-height)
+      if (level2) {
+        level2.style.setProperty('height', `${finalHeight}px`, 'important');
+      }
+
+      level3s.forEach(l3 => {
+        if (l3) {
+          l3.style.setProperty('height', `${finalHeight}px`, 'important');
+        }
+      });
+
+      level4s.forEach(l4 => {
+        if (l4) {
+          l4.style.setProperty('height', `${finalHeight}px`, 'important');
+        }
+      });
+
+      // Add scroll class if content is too tall for viewport
+      if (needsScroll) {
+        [level2, ...level3s, ...level4s].forEach(element => {
+          if (element) {
+            element.classList.add('mega-menu-scroll');
+          }
+        });
+      }
+      
+      // Final cleanup - remove any leftover temporary inline styles
+      [level2, ...level3s, ...level4s].forEach(element => {
+        cleanupInlineStyles(element);
+      });
+    }, 10);
+  }
 
   // Desktop hover/focus logic
   menuItems.forEach(item => {
@@ -271,10 +391,11 @@ const setupMegaMenu = () => {
     trigger.setAttribute('aria-controls', megaMenu.id || '');
 
     // Open mega menu on hover/focus (desktop only)
+    let heightSet = false;
     item.addEventListener('mouseenter', () => {
-      if (!isMobile()) {
-        closeAllMegaMenus();
-        calculateDynamicHeight(megaMenu); // Only here!
+      if (!isMobile() && !megaMenu.classList.contains('show')) {
+        closeAllMegaMenus(megaMenu); // Only close others
+        setMegaMenuColumnHeights(megaMenu);
         megaMenu.classList.add('show');
         item.classList.add('active');
         trigger.setAttribute('aria-expanded', 'true');
@@ -287,11 +408,36 @@ const setupMegaMenu = () => {
             megaMenu.classList.remove('show');
             item.classList.remove('active');
             trigger.setAttribute('aria-expanded', 'false');
+            
+            // Remove inline height styles when closing
+            const level2 = megaMenu.querySelector('.level-2-menu');
+            const level3s = megaMenu.querySelectorAll('.level-3-menu');
+            const level4s = megaMenu.querySelectorAll('.level-4-menu');
+            
+            if (level2) {
+              level2.style.removeProperty('height');
+              level2.style.removeProperty('min-height');
+              level2.style.removeProperty('max-height');
+              level2.classList.remove('mega-menu-scroll');
+            }
+            level3s.forEach(l3 => {
+              l3.style.removeProperty('height');
+              l3.style.removeProperty('min-height');
+              l3.style.removeProperty('max-height');
+              l3.classList.remove('mega-menu-scroll');
+            });
+            level4s.forEach(l4 => {
+              l4.style.removeProperty('height');
+              l4.style.removeProperty('min-height');
+              l4.style.removeProperty('max-height');
+              l4.classList.remove('mega-menu-scroll');
+            });
+            
             // Remove active from all level 2 and 3 items
-            const level2s = megaMenu.querySelectorAll('.level-2-menu > li');
+            const level2s = megaMenu.querySelectorAll('.level-2-menu-container > li');
             level2s.forEach(l2 => l2.classList.remove('active'));
-            const level3s = megaMenu.querySelectorAll('.level-3-menu > li');
-            level3s.forEach(l3 => l3.classList.remove('active'));
+            const level3sItems = megaMenu.querySelectorAll('.level-3-menu-container > li');
+            level3sItems.forEach(l3 => l3.classList.remove('active'));
           }
         }, 100);
       }
@@ -302,18 +448,17 @@ const setupMegaMenu = () => {
       if ((e.key === 'ArrowDown' || e.key === 'Enter' || e.key === ' ') && !isMobile()) {
         e.preventDefault();
         closeAllMegaMenus();
-          calculateDynamicHeight(megaMenu);
           megaMenu.classList.add('show');
           item.classList.add('active');
         trigger.setAttribute('aria-expanded', 'true');
         // Focus first level 2 item
-        const firstL2 = megaMenu.querySelector('.level-2-menu > li > a');
+        const firstL2 = megaMenu.querySelector('.level-2-menu-container > li > a');
         if (firstL2) firstL2.focus();
       }
     });
 
     // Level 2 logic
-    const level2Items = megaMenu.querySelectorAll('.level-2-menu > li');
+    const level2Items = megaMenu.querySelectorAll('.level-2-menu-container > li');
     level2Items.forEach(l2 => {
       const l2Link = l2.querySelector('a');
       const l3Menu = l2.querySelector('.level-3-menu');
@@ -326,11 +471,10 @@ const setupMegaMenu = () => {
         const activateL2 = () => {
           // Remove active from all level 2 and 3
           level2Items.forEach(i => i.classList.remove('active'));
-          const allL3 = megaMenu.querySelectorAll('.level-3-menu > li');
+          const allL3 = megaMenu.querySelectorAll('.level-3-menu-container > li');
           allL3.forEach(i => i.classList.remove('active'));
           l2.classList.add('active');
           l2Link.setAttribute('aria-expanded', 'true');
-          // Removed: calculateDynamicHeight(megaMenu);
         };
         l2.addEventListener('mouseenter', () => {
           if (!isMobile()) {
@@ -338,7 +482,7 @@ const setupMegaMenu = () => {
           }
         });
         l2Link.addEventListener('click', (e) => {
-          if (!isMobile()) {
+      if (!isMobile()) {
             activateL2();
           }
         });
@@ -348,7 +492,7 @@ const setupMegaMenu = () => {
             e.preventDefault();
             activateL2();
             // Focus first level 3 item
-            const firstL3 = l3Menu.querySelector('li > a');
+            const firstL3 = l3Menu.querySelector('.level-3-menu-container > li > a');
             if (firstL3) firstL3.focus();
           }
         });
@@ -356,7 +500,7 @@ const setupMegaMenu = () => {
     });
 
     // Level 3 logic
-    const level3Items = megaMenu.querySelectorAll('.level-3-menu > li');
+    const level3Items = megaMenu.querySelectorAll('.level-3-menu-container > li');
     level3Items.forEach(l3 => {
       const l3Link = l3.querySelector('a');
       const l4Menu = l3.querySelector('.level-4-menu');
@@ -371,7 +515,6 @@ const setupMegaMenu = () => {
           level3Items.forEach(i => i.classList.remove('active'));
           l3.classList.add('active');
           l3Link.setAttribute('aria-expanded', 'true');
-          // Removed: calculateDynamicHeight(megaMenu);
         };
         l3.addEventListener('mouseenter', () => {
           if (!isMobile()) {
@@ -379,7 +522,7 @@ const setupMegaMenu = () => {
           }
         });
         l3Link.addEventListener('click', (e) => {
-          if (!isMobile()) {
+      if (!isMobile()) {
             activateL3();
           }
         });
@@ -389,7 +532,7 @@ const setupMegaMenu = () => {
             e.preventDefault();
             activateL3();
             // Focus first level 4 item
-            const firstL4 = l4Menu.querySelector('li > a');
+            const firstL4 = l4Menu.querySelector('.level-4-menu-container > li > a');
             if (firstL4) firstL4.focus();
           }
         });
@@ -399,21 +542,33 @@ const setupMegaMenu = () => {
 
   // Handle level 3 and 4 hover states with height adjustment
   document.addEventListener('mouseenter', (e) => {
-    if (e.target.closest('.has-level-3-children') || e.target.closest('.has-level-4-children')) {
-      const megaMenuWrapper = e.target.closest('.mega-menu-wrapper');
+    const target = getClosestElement(e.target, '.has-level-3-children') || 
+                   getClosestElement(e.target, '.has-level-4-children');
+    if (target) {
+      const megaMenuWrapper = getClosestElement(e.target, '.mega-menu-wrapper');
       if (megaMenuWrapper) {
-        // Recalculate height when submenus are revealed
-        setTimeout(() => calculateDynamicHeight(megaMenuWrapper), 50);
+        setTimeout(() => {
+          // No dynamic height calculation, just ensure it's visible
+          megaMenuWrapper.classList.add('show');
+        }, 50);
       }
     }
   }, true);
 
   // Close mega menu on outside click or Escape
+  // Fix: ensure e.target.closest is only called on Elements
+  function getClosestElement(target, selector) {
+    let el = target;
+    while (el && el.nodeType !== 1) {
+      el = el.parentElement;
+    }
+    return el && el.closest ? el.closest(selector) : null;
+  }
   document.addEventListener('click', (e) => {
-    const target = e.target.nodeType === 1 ? e.target : e.target.parentElement;
+    const target = e.target;
     if (
-      !(target && target.closest && target.closest('.header__menu-item.has-mega-menu')) &&
-      !(target && target.closest && target.closest('.mega-menu-wrapper'))
+      !getClosestElement(target, '.header__menu-item.has-mega-menu') &&
+      !getClosestElement(target, '.mega-menu-wrapper')
     ) {
       closeAllMegaMenus();
     }
@@ -434,3 +589,192 @@ const setupMegaMenu = () => {
 
 // Initialize mega menu
 document.addEventListener("DOMContentLoaded", setupMegaMenu);
+
+// Test function to debug height calculation - you can run this in browser console
+window.debugMegaMenuHeights = function() {
+  const megaMenu = document.querySelector('.mega-menu-wrapper.show');
+  if (!megaMenu) {
+    console.log('No open mega menu found. Please open a mega menu first.');
+    return;
+  }
+  
+  const level2 = megaMenu.querySelector('.level-2-menu');
+  const level3s = Array.from(megaMenu.querySelectorAll('.level-3-menu'));
+  const level4s = Array.from(megaMenu.querySelectorAll('.level-4-menu'));
+  
+  console.log('=== MEGA MENU HEIGHT DEBUG ===');
+  console.log('Level 2 element:', level2);
+  
+  if (level2) {
+    console.log('Level 2 scrollHeight:', level2.scrollHeight);
+    console.log('Level 2 offsetHeight:', level2.offsetHeight);
+    console.log('Level 2 clientHeight:', level2.clientHeight);
+    console.log('Level 2 computed height:', window.getComputedStyle(level2).height);
+    console.log('Level 2 computed display:', window.getComputedStyle(level2).display);
+  }
+  
+  level3s.forEach((l3, i) => {
+    console.log(`Level 3-${i} scrollHeight:`, l3.scrollHeight);
+    console.log(`Level 3-${i} offsetHeight:`, l3.offsetHeight);
+    console.log(`Level 3-${i} clientHeight:`, l3.clientHeight);
+    console.log(`Level 3-${i} computed display:`, window.getComputedStyle(l3).display);
+  });
+  
+  level4s.forEach((l4, i) => {
+    console.log(`Level 4-${i} scrollHeight:`, l4.scrollHeight);
+    console.log(`Level 4-${i} offsetHeight:`, l4.offsetHeight);
+    console.log(`Level 4-${i} clientHeight:`, l4.clientHeight);
+    console.log(`Level 4-${i} computed display:`, window.getComputedStyle(l4).display);
+  });
+  
+  // Test natural height calculation with proper hidden element handling
+  function testGetContentHeight(element, name) {
+    if (!element) return 0;
+    
+    const originalStyles = {
+      height: element.style.height,
+      minHeight: element.style.minHeight,
+      maxHeight: element.style.maxHeight,
+      overflow: element.style.overflow,
+      display: element.style.display,
+      visibility: element.style.visibility,
+      position: element.style.position
+    };
+    
+    // Handle hidden elements
+    const wasHidden = window.getComputedStyle(element).display === 'none';
+    console.log(`${name} was hidden:`, wasHidden);
+    
+    if (wasHidden) {
+      element.style.display = 'flex';
+      element.style.visibility = 'hidden';
+      element.style.position = 'absolute';
+      element.style.left = '-9999px';
+    }
+    
+    element.style.height = 'auto';
+    element.style.minHeight = 'auto';
+    element.style.maxHeight = 'none';
+    element.style.overflow = 'visible';
+    
+    element.offsetHeight;
+    const naturalHeight = element.scrollHeight;
+    
+    Object.keys(originalStyles).forEach(prop => {
+      if (originalStyles[prop]) {
+        element.style[prop] = originalStyles[prop];
+      } else {
+        element.style.removeProperty(prop.replace(/([A-Z])/g, '-$1').toLowerCase());
+      }
+    });
+    
+    console.log(`${name} natural height:`, naturalHeight);
+    return naturalHeight;
+  }
+  
+  const heights = [];
+  if (level2) heights.push(testGetContentHeight(level2, 'Level 2'));
+  level3s.forEach((l3, i) => heights.push(testGetContentHeight(l3, `Level 3-${i}`)));
+  level4s.forEach((l4, i) => heights.push(testGetContentHeight(l4, `Level 4-${i}`)));
+  
+  console.log('All heights:', heights);
+  const validHeights = heights.filter(h => h > 0);
+  console.log('Valid heights (excluding 0):', validHeights);
+  
+  // Mirror the actual calculation logic
+  const maxContentHeight = Math.max(...validHeights, 300);
+  const navbar = document.querySelector('.header');
+  const navbarHeight = navbar ? navbar.offsetHeight : 0;
+  const labelWrapper = megaMenu.querySelector('.label-wrapper');
+  const labelWrapperHeight = labelWrapper ? labelWrapper.offsetHeight : 0;
+  const maxAllowed = window.innerHeight - navbarHeight - labelWrapperHeight - 60;
+  const finalHeight = Math.min(maxContentHeight, maxAllowed);
+  const needsScroll = maxContentHeight > maxAllowed;
+  
+  console.log('Max content height:', maxContentHeight);
+  console.log('Max allowed height:', maxAllowed);
+  console.log('Final height should be:', finalHeight);
+  console.log('Should have scroll:', needsScroll);
+  console.log('=== END DEBUG ===');
+};
+
+// Test function to debug level 3 menu hover - you can run this in browser console
+window.debugLevel3Hover = function() {
+  const megaMenu = document.querySelector('.mega-menu-wrapper.show');
+  if (!megaMenu) {
+    console.log('No open mega menu found. Please open a mega menu first.');
+    return;
+  }
+  
+  const level2Items = megaMenu.querySelectorAll('.level-2-menu-container > li.has-level-3-children');
+  console.log('=== LEVEL 3 HOVER DEBUG ===');
+  console.log('Found level 2 items with level 3 children:', level2Items.length);
+  
+  level2Items.forEach((l2, i) => {
+    const l3Menu = l2.querySelector('.level-3-menu');
+    console.log(`Level 2 item ${i}:`, l2);
+    console.log(`- Has level 3 menu:`, !!l3Menu);
+    if (l3Menu) {
+      console.log(`- Level 3 menu display:`, window.getComputedStyle(l3Menu).display);
+      console.log(`- Level 3 menu element:`, l3Menu);
+      
+      // Test manual hover
+      console.log('Testing manual hover...');
+      l2.classList.add('active');
+      setTimeout(() => {
+        console.log(`- Level 3 menu display after adding active:`, window.getComputedStyle(l3Menu).display);
+        l2.classList.remove('active');
+      }, 1000);
+    }
+  });
+  console.log('=== END DEBUG ===');
+};
+
+// Test function to debug level 4 menu hover - you can run this in browser console
+window.debugLevel4Hover = function() {
+  const megaMenu = document.querySelector('.mega-menu-wrapper.show');
+  if (!megaMenu) {
+    console.log('No open mega menu found. Please open a mega menu first.');
+    return;
+  }
+  
+  const level3Items = megaMenu.querySelectorAll('.level-3-menu-container > li.has-level-4-children');
+  console.log('=== LEVEL 4 HOVER DEBUG ===');
+  console.log('Found level 3 items with level 4 children:', level3Items.length);
+  
+  level3Items.forEach((l3, i) => {
+    const l4Menu = l3.querySelector('.level-4-menu');
+    console.log(`Level 3 item ${i}:`, l3);
+    console.log(`- Has level 4 menu:`, !!l4Menu);
+    if (l4Menu) {
+      console.log(`- Level 4 menu display:`, window.getComputedStyle(l4Menu).display);
+      console.log(`- Level 4 menu element:`, l4Menu);
+      
+      // Check positioning
+      const l3Rect = l3.getBoundingClientRect();
+      const l4Rect = l4Menu.getBoundingClientRect();
+      console.log(`- Level 3 position:`, {left: l3Rect.left, top: l3Rect.top, width: l3Rect.width});
+      console.log(`- Level 4 position:`, {left: l4Rect.left, top: l4Rect.top, width: l4Rect.width});
+      
+      // Test manual hover
+      console.log('Testing manual hover...');
+      l3.classList.add('active');
+      setTimeout(() => {
+        console.log(`- Level 4 menu display after adding active:`, window.getComputedStyle(l4Menu).display);
+        const l4RectAfter = l4Menu.getBoundingClientRect();
+        console.log(`- Level 4 position after active:`, {left: l4RectAfter.left, top: l4RectAfter.top, width: l4RectAfter.width});
+        l3.classList.remove('active');
+      }, 1000);
+    }
+  });
+  console.log('=== END DEBUG ===');
+};
+
+// Combined debug function for all levels
+window.debugAllMenuLevels = function() {
+  console.log('🔍 Running comprehensive menu debug...');
+  debugLevel3Hover();
+  setTimeout(() => {
+    debugLevel4Hover();
+  }, 1500);
+};
