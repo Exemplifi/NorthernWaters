@@ -1,8 +1,12 @@
 .container-404 {
-  padding-left: rem.convert(8px);
-  padding-right: rem.convert(8px);
+  padding-left: rem.convert(24px);
+  padding-right: rem.convert(24px);
   overflow-x: hidden;
   background-color: var(--off-white);
+  @include media-breakpoint-down(lg) {
+    padding-left: rem.convert(8px);
+    padding-right: rem.convert(8px);
+  }
   .content-404 {
     align-items: center;
     height: auto;
@@ -65,13 +69,17 @@
         height: clamp(19.3125rem, 11.346rem + 33.9906vw, 41.9375rem);
         max-height: rem.convert(671px);
         // aspect-ratio: 493 / 671; // Maintain original image aspect ratio
-        margin-top: rem.convert(8px);
-        margin-bottom: rem.convert(8px);
+        margin-top: rem.convert(0px);
+        margin-bottom: rem.convert(24px);
         border-radius: rem.convert(16px);
         overflow: hidden;
         margin-left: auto;
         @include media-breakpoint-down(lg) {
           margin-right: auto;
+          margin-top: rem.convert(8px);
+        }
+        @include media-breakpoint-down(sm) {
+          max-width: 100%
         }
         // This is the fix: use a padding-top to enforce aspect ratio
         .image-inner {

@@ -163,6 +163,9 @@
     .col-lg-4 {
       display: flex;
     }
+    &.reservoir-cards-row {
+      margin-top: rem.convert(0);
+    }
   }
   .buttons-row {
     margin-top: rem.convert(48px);
