@@ -337,3 +337,37 @@ $(document).ready(function() {
   checkReveal();
 
 });
+
+// Search input clear functionality
+(function() {
+  function initSearchClear() {
+    const searchInput = document.getElementById('search-input');
+    const resetButton = searchInput?.nextElementSibling;
+
+    if (!searchInput || !resetButton) return;
+
+    const resetIcon = resetButton.querySelector('img');
+    const searchIconPath = '../assets/images/search-icon.svg';
+    const closeIconPath = '../assets/images/close.svg';
+
+    function updateResetButton() {
+      if (searchInput.value) {
+        resetIcon.src = closeIconPath;
+      } else {
+        resetIcon.src = searchIconPath;
+      }
+    }
+
+    searchInput.addEventListener('input', updateResetButton);
+
+    resetButton.addEventListener('click', (e) => {
+      e.preventDefault();
+      searchInput.value = '';
+      updateResetButton();
+    });
+  }
+
+  // Initialize on DOMContentLoaded and window resize
+  document.addEventListener('DOMContentLoaded', initSearchClear);
+  window.addEventListener('resize', initSearchClear);
+})();
