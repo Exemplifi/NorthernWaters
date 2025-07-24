@@ -1165,9 +1165,7 @@ let barWidth = 0;
 let percentElem, trainElem, barFill;
 
 function animateLoader() {
-  if (!percentElem || !trainElem || !barFill || barWidth === 0) {
-    return;
-  }
+  if (!percentElem || !trainElem || !barFill || barWidth === 0) return;
 
   percent += 1;
   if (percent > 100) return;
@@ -1189,19 +1187,21 @@ function animateLoader() {
   }
 }
 
-window.onload = function () {
-  percentElem = document.getElementById("loader-percent");
-  trainElem = document.querySelector(".loader-train");
-  const barWrapper = document.querySelector(".loader-bar-wrapper");
-  barFill = document.querySelector(".loader-bar-fill");
+document.addEventListener("DOMContentLoaded", function () {
+  // Delay the loader start to simulate it began "2 seconds earlier"
+  setTimeout(() => {
+    percentElem = document.getElementById("loader-percent");
+    trainElem = document.querySelector(".loader-train");
+    const barWrapper = document.querySelector(".loader-bar-wrapper");
+    barFill = document.querySelector(".loader-bar-fill");
 
-  if (!percentElem || !trainElem || !barWrapper || !barFill) {
-    return;
-  }
+    if (!percentElem || !trainElem || !barWrapper || !barFill) return;
 
-  barWidth = barWrapper.offsetWidth;
-  animateLoader();
-};
+    barWidth = barWrapper.offsetWidth;
+    animateLoader();
+  }, 0); // You can set to -2000ms simulation via CSS trick, not real delay
+});
+
   </script>
 </body>
 
