@@ -115,12 +115,22 @@
   // Menu Item
   &__menu-item {
     position: relative;
+    &.active{
+      .header__menu-link{
+        color: rgba(var(--black-rgb), 0.8) !important;
+        background-color: rgba(var(--green-rgb), 0.2);
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
   }
 
   // Menu Link
   &__menu-link {
     display: flex !important;
     align-items: center;
+    border-radius: rem.convert(50px);
     @include rem.convert(column-gap, 8px);
     font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
     font-weight: $semibold;
@@ -141,7 +151,6 @@
     &:focus {
       color: rgba(var(--black-rgb), 0.8) !important;
       background-color: rgba(var(--green-rgb), 0.2);
-      border-radius: rem.convert(50px);
     }
 
     // Remove Bootstrap's default dropdown arrow
@@ -393,14 +402,13 @@
         position: relative;
         overflow: visible; // Ensure child menus aren't clipped
         .level-2-menu-container{
-          padding: 0;
+          display: flex;
+          flex-direction: column;
+          gap: 0.25rem;
+          padding-left: 0;
           li {
             list-style: none;
             overflow: visible; // Ensure level 4 menus aren't clipped
-            > a{
-              display: block;
-              padding: 1rem 1.5rem;
-            }
             &.has-level-3-children {
               cursor: pointer;
               &:hover > a::after,
@@ -423,13 +431,12 @@
                 padding: 1.5rem 2rem;
                 overflow: visible; // Ensure level 4 menus aren't clipped
                 .level-3-menu-container{
-                  padding: 0;
-                  li {
+                  padding-left: 0;
+                  display: flex;
+                  flex-direction: column;
+                  gap: 0.25rem;
+                  li{
                     list-style: none;
-                    > a{
-                      display: block;
-                      padding: 1rem 1.5rem;
-                    }
                     &.has-level-4-children {
                       cursor: pointer;
                       overflow: visible; // Ensure level 4 menus aren't clipped
@@ -452,12 +459,10 @@
                         height: 100%;
                         padding: 1.5rem 2rem;
                         .level-4-menu-container{
-                          padding: 0;
-                          li{
-                            a{
-                              padding: 1rem 1.5rem;
-                            }
-                          }
+                          padding-left: 0;
+                          display: flex;
+                          flex-direction: column;
+                          gap: 0.25rem;
                         }
                       }
                       &:hover > .level-4-menu,
@@ -476,42 +481,122 @@
           }
         }
       }
+      li{
+        &.has-level-3-children{
+         > a{
+            position: relative;
+            &::after {
+              content: '';
+              display: inline-block;
+              vertical-align: middle;
+              width: 32px;
+              height: 32px;
+              background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
+              transition: all 0.3s ease;
+              position: absolute;
+              top: 50%;
+              right: 24px;
+              transform: translateY(-50%);
+              border-radius: 50%;
+            }
+          }
+          &.active{
+            >a{
+              background: var(--green);
+              color: var(--white);
+              &::after{
+                background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+              }
+            }
+          }
+        }
+        &.has-level-4-children{
+          > a{
+            position: relative;
+            &::after {
+              content: '';
+              display: inline-block;
+              vertical-align: middle;
+              width: 32px;
+              height: 32px;
+              background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
+              transition: all 0.3s ease;
+              position: absolute;
+              top: 50%;
+              right: 24px;
+              transform: translateY(-50%);
+              border-radius: 50%;
+            }
+          }
+          &.active{
+           > a{
+              background: var(--green);
+              color: var(--white);
+              &::after{
+                background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+              }
+            }
+          }
+        }
+        > a{
+          color: var(--black);
+          padding: 1rem 1.5rem;
+          display: block;
+          border-radius: rem.convert(12px);
+          transition: all 0.3s ease;
+          background: transparent;
+          text-decoration: none;
+          font-weight: 600;
+          font-size: 1rem;
+          line-height: 1.5;
+          letter-spacing: 0;
+          &:hover{
+            background: var(--green);
+            color: var(--white);
+          }
+          &.has-image-link{
+            padding: 0;
+            margin-top: 1.5rem;
+            img{
+              width: 100%;
+              height: auto;
+              object-fit: cover;
+              border-radius: rem.convert(12px);
+            }
+          }
+        }
+      }
       // Scroll class for tall menu columns
       .mega-menu-scroll {
+        padding-right: 0 !important;
         > ul{
           overflow-y: auto;
           overflow-x: hidden;
           height: 100%;
+          margin-right: 0.5rem;
+          padding-right: 1rem;
         }
       }
     }
   }
-  // Image styling for menu items
-  img {
-    max-width: 100%;
-    height: auto;
-    border-radius: rem.convert(8px);
-    margin-top: 1rem;
-  }
+  .level-2-menu-container::-webkit-scrollbar-track, .level-3-menu-container::-webkit-scrollbar-track, .level-4-menu-container::-webkit-scrollbar-track
+{
+	border-radius: 100px;
+	background-color: #1111111A;
 }
-// Arrow for items with children
-.has-level-3-children > a::after, .has-level-4-children > a::after {
-  content: '';
-  display: inline-block;
-  vertical-align: middle;
-  width: 16px;
-  height: 16px;
-  margin-left: 8px;
-  background: url('../images/arrow-right-black.svg') no-repeat center center/contain;
-  transition: transform 0.2s;
+.level-2-menu-container::-webkit-scrollbar, .level-3-menu-container::-webkit-scrollbar, .level-4-menu-container::-webkit-scrollbar
+{
+	width: 8px;
+	background-color: #1111111A;
 }
-.has-level-3-children.active > a::after, .has-level-4-children.active > a::after {
-  transform: rotate(90deg);
+
+.level-2-menu-container::-webkit-scrollbar-thumb, .level-3-menu-container::-webkit-scrollbar-thumb, .level-4-menu-container::-webkit-scrollbar-thumb
+{
+	border-radius: 100px;
+	background-color: #585858;
 }
-.has-level-3-children.active > a, .has-level-4-children.active > a {
-  background: rgba(var(--green-rgb), 0.1);
-  color: var(--green);
 }
+
 // Hide images in menu items on mobile
 @media (max-width: 991.98px) {
   .mega-menu-wrapper img {
