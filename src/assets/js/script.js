@@ -1,6 +1,7 @@
-// Enhance Bootstrap carousel arrows and add custom logic if needed
+import $ from "jquery";
 
-document.addEventListener("DOMContentLoaded", function () {
+$(document).ready(function() {
+  // Enhance Bootstrap carousel arrows and add custom logic if needed
   // Example: Log when a carousel slide changes
   var carousels = document.querySelectorAll(".carousel");
   carousels.forEach(function (carousel) {
@@ -203,72 +204,75 @@ document.addEventListener("DOMContentLoaded", function () {
     }
   }
   // Counter animation with intersection observer
-  let counterAnimationTriggered = false;
+  // Added commas to the counter
+  (function () {
+    let counterAnimationTriggered = false;
 
-  if ($(".counter-count").length > 0) {
-    const counterContainer = document.querySelector(".counter-count-container");
+    if ($(".counter-count").length > 0) {
+      const counterContainer = document.querySelector(".counter-count-container");
 
-    if (counterContainer) {
-      const observer = new IntersectionObserver(
-        (entries) => {
-          entries.forEach((entry) => {
-            // Check if 30% of the element is visible and animation hasn't been triggered yet
-            if (
-              entry.isIntersecting &&
-              entry.intersectionRatio >= 0.3 &&
-              !counterAnimationTriggered
-            ) {
-              counterAnimationTriggered = true;
+      const formatNumber = (num) =>
+        new Intl.NumberFormat('en-US').format(Math.ceil(num));
 
-              $(".counter-count").each(function () {
-                $(this)
-                  .prop("Counter", 0)
-                  .animate(
-                    {
-                      Counter: $(this).text(),
-                    },
+      if (counterContainer) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (
+                entry.isIntersecting &&
+                entry.intersectionRatio >= 0.3 &&
+                !counterAnimationTriggered
+              ) {
+                counterAnimationTriggered = true;
+
+                $(".counter-count").each(function () {
+                  const $this = $(this);
+                  const target = parseInt($this.attr("data-count"), 10) || 0;
+
+                  $this.prop("Counter", 0).animate(
+                    { Counter: target },
                     {
                       duration: 5000,
                       easing: "swing",
                       step: function (now) {
-                        $(this).text(Math.ceil(now));
+                        $this.text(formatNumber(now));
                       },
                     }
                   );
-              });
+                });
 
-              // Disconnect observer after animation is triggered
-              observer.disconnect();
-            }
-          });
-        },
-        {
-          threshold: 0.3, // Trigger when 30% is visible
-          rootMargin: "0px",
-        }
-      );
+                observer.disconnect();
+              }
+            });
+          },
+          {
+            threshold: 0.3,
+            rootMargin: "0px",
+          }
+        );
 
-      observer.observe(counterContainer);
-    } else {
-      // Fallback if container not found - trigger immediately
-      $(".counter-count").each(function () {
-        $(this)
-          .prop("Counter", 0)
-          .animate(
-            {
-              Counter: $(this).text(),
-            },
+        observer.observe(counterContainer);
+      } else {
+        // Fallback if container not found
+        $(".counter-count").each(function () {
+          const $this = $(this);
+          const target = parseInt($this.attr("data-count"), 10) || 0;
+
+          $this.prop("Counter", 0).animate(
+            { Counter: target },
             {
               duration: 5000,
               easing: "swing",
               step: function (now) {
-                $(this).text(Math.ceil(now));
+                $this.text(formatNumber(now));
               },
             }
           );
-      });
+        });
+      }
     }
-  }
+  })();
+
 
   //table right side blur script
   const $tableWrappers = $(".table-wrap .table-responsive");
@@ -331,4 +335,5 @@ document.addEventListener("DOMContentLoaded", function () {
   window.addEventListener("scroll", checkReveal);
   window.addEventListener("resize", checkReveal);
   checkReveal();
+
 });
