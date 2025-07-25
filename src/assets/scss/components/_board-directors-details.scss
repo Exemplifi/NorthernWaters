@@ -318,6 +318,10 @@
       .content {
         h3 {
           margin-bottom: 0.25rem;
+          @include convert-percent(letter-spacing, 32px, -2);
+          @include media-breakpoint-down(md) {
+            @include convert-percent(letter-spacing, 24px, 0);
+          }
         }
 
         p {
@@ -332,7 +336,9 @@
         @include media-breakpoint-down(md) {
           margin-top: rem.convert(16px);
         }
-
+        a {
+          font-weight: 600;
+        }
         img {
           margin-right: rem.convert(16px);
         }
@@ -355,6 +361,9 @@
         margin-top: rem.convert(8px);
         margin-bottom: rem.convert(8px);
       }
+      .h6 {
+        @include convert-percent(line-height, 20px, 140);
+      }
     }
     .btn.read-more-btn {
       width: max-content;
@@ -363,6 +372,7 @@
       align-items: center;
       padding: 0;
       gap: rem.convert(16px);
+      font-weight: 600;
       .icon-wrap {
         width: rem.convert(32px);
         height: rem.convert(32px);

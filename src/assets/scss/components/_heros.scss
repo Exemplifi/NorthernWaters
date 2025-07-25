@@ -373,6 +373,14 @@
       z-index: 1;
       pointer-events: none;
     }
+    .hero-img-wrapper-management-organization {
+      .hero-secondary-image {
+        object-position: center 33%;
+        @include media-breakpoint-down(sm) {
+          height: 373px;
+        }
+      }
+    }
     .hero-img-overlay {
       position: absolute;
       inset: 0;
