@@ -348,253 +348,296 @@
 
 
 // Mega Menu Styles - Enhanced Version
-.has-mega-menu {
-  position: static;
-}
-.mega-menu-wrapper {
-  display: none;
-  position: absolute;
-  top: calc(100% - 2rem);
-  left: 0;
-  background-color: transparent;
-  z-index: 4;
-  width: 100%;
-  max-width: rem.convert(1280px);
-  margin: 0 auto;
-  padding-top: 2.5rem;
-  &.show {
-    display: block;
+@include media-breakpoint-up(lg){
+  .has-mega-menu {
+    position: static;
   }
-  .mega-menu-inner {
-    background-color: var(--white);
-    box-shadow: 0px 8px 24px 0px #1111111A;
-    border-radius: rem.convert(16px);
-    display: flex;
-    flex-direction: column;
-    min-height: 300px;
-    height: 100%;
-    flex: 1;
-    position: relative;
-    overflow: visible; // Ensure level 3 and 4 menus aren't clipped
-    .label-wrapper {
-      padding: 1.5rem 2rem;
-      display: flex;
-      gap: 0.5rem;
-      border-bottom: 1px solid #11111199;
-      flex-shrink: 0;
+  .mega-menu-wrapper {
+    display: none;
+    position: absolute;
+    top: calc(100% - 2rem);
+    left: 0;
+    background-color: transparent;
+    z-index: 4;
+    width: 100%;
+    max-width: rem.convert(1280px);
+    margin: 0 auto;
+    padding-top: 2.5rem;
+    &.show {
+      display: block;
+      .mega-menu-inner{
+        .label-wrapper {
+          animation: slideInFromTop 0.5s ease-out;
+        }
+        .mega-menu{
+          .level-2-menu{
+            .level-2-menu-container{
+              > li{
+                > a{
+                  animation: slideInFromTop 0.5s ease-out;
+                }
+              }
+            }
+          }
+        }
+      }
     }
-    .mega-menu {
-      position: relative;
-      flex: 1;
+    .mega-menu-inner {
+      background-color: var(--white);
+      box-shadow: 0px 8px 24px 0px #1111111A;
+      border-radius: rem.convert(16px);
       display: flex;
-      flex-direction: row;
-      width: 100%;
+      flex-direction: column;
+      min-height: 300px;
+      height: 100%;
+      flex: 1;
+      position: relative;
       overflow: visible; // Ensure level 3 and 4 menus aren't clipped
-      .level-2-menu {
-        width: 33.33%;
+      .label-wrapper {
         padding: 1.5rem 2rem;
-        border-right: 1px solid #11111199;
-        flex-shrink: 0;
         display: flex;
-        flex-direction: column;
-        min-height: 100%;
-        box-sizing: border-box;
+        gap: 0.5rem;
+        border-bottom: 1px solid #11111199;
+        flex-shrink: 0;
+      }
+      .mega-menu {
         position: relative;
-        overflow: visible; // Ensure child menus aren't clipped
-        .level-2-menu-container{
+        flex: 1;
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        overflow: visible; // Ensure level 3 and 4 menus aren't clipped
+        .level-2-menu {
+          width: 33.33%;
+          padding: 1.5rem 2rem;
+          border-right: 1px solid #11111199;
+          flex-shrink: 0;
           display: flex;
           flex-direction: column;
-          gap: 0.25rem;
-          padding-left: 0;
-          li {
-            list-style: none;
-            overflow: visible; // Ensure level 4 menus aren't clipped
-            &.has-level-3-children {
-              cursor: pointer;
-              &:hover > a::after,
-              &.active > a::after {
-                opacity: 1;
-              }
-              > .level-3-menu {
-                position: absolute;
-                top: 0;
-                left: 100%;
-                width: 100%;
-                min-width: 200px;
-                background: var(--white);
-                border-left: 1px solid #11111199;
-                z-index: 5;
-                display: none;
-                flex-direction: column;
-                min-height: 250px;
-                height: 100%;
-                padding: 1.5rem 2rem;
-                overflow: visible; // Ensure level 4 menus aren't clipped
-                .level-3-menu-container{
-                  padding-left: 0;
-                  display: flex;
-                  flex-direction: column;
-                  gap: 0.25rem;
-                  li{
-                    list-style: none;
-                    &.has-level-4-children {
-                      cursor: pointer;
-                      overflow: visible; // Ensure level 4 menus aren't clipped
-                      &:hover > a::after,
-                      &.active > a::after {
-                        opacity: 1;
-                      }
-                      > .level-4-menu {
-                        position: absolute;
-                        top: 0;
-                        left: 100%;
-                        width: 100%;
-                        max-width: rem.convert(432px);
-                        background: var(--white);
-                        border-left: 1px solid #11111199;
-                        z-index: 6;
-                        display: none;
-                        flex-direction: column;
-                        min-height: 250px;
-                        height: 100%;
-                        padding: 1.5rem 2rem;
-                        .level-4-menu-container{
-                          padding-left: 0;
-                          display: flex;
-                          flex-direction: column;
-                          gap: 0.25rem;
+          min-height: 100%;
+          box-sizing: border-box;
+          position: relative;
+          overflow: visible; // Ensure child menus aren't clipped
+          .level-2-menu-container{
+            display: flex;
+            flex-direction: column;
+            gap: 0.25rem;
+            padding-left: 0;
+            > li {
+              list-style: none;
+              overflow: visible; 
+              &.has-level-3-children {
+                cursor: pointer;
+                &.active{
+                  > .level-3-menu{
+                    .level-3-menu-container{
+                      > li{
+                        > a{
+                          transform: translateX(0);
+                          opacity: 1;
                         }
+                    }}
+                  }
+                }
+                > .level-3-menu {
+                  position: absolute;
+                  top: 0;
+                  left: 100%;
+                  width: 100%;
+                  min-width: 200px;
+                  background: var(--white);
+                  border-left: 1px solid #11111199;
+                  z-index: 5;
+                  display: none;
+                  flex-direction: column;
+                  min-height: 250px;
+                  height: 100%;
+                  padding: 1.5rem 2rem;
+                  overflow: visible; // Ensure level 4 menus aren't clipped
+                  .level-3-menu-container{
+                    padding-left: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.25rem;
+                   > li{
+                      list-style: none;
+                      > a{
+                        transform: translateX(-25%);
+                        overflow-x: hidden;
+                        transition: all 0.5s ease-in-out;
+                        opacity: 0;
                       }
-                      &:hover > .level-4-menu,
-                      &.active > .level-4-menu {
-                        display: flex;
+                      &.has-level-4-children {
+                        cursor: pointer;
+                        overflow: visible; 
+                        &.active{
+                          > .level-4-menu{
+                            .level-4-menu-container{
+                              > li{
+                                  transform: translateX(0);
+                                  opacity: 1;
+                              }
+                            }
+                          }
+                        }
+                        > .level-4-menu {
+                          position: absolute;
+                          top: 0;
+                          left: 100%;
+                          width: 100%;
+                          max-width: rem.convert(432px);
+                          background: var(--white);
+                          border-left: 1px solid #11111199;
+                          z-index: 6;
+                          display: none;
+                          flex-direction: column;
+                          min-height: 250px;
+                          height: 100%;
+                          padding: 1.5rem 2rem;
+                          .level-4-menu-container{
+                            padding-left: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 0.25rem;
+                            > li{
+                                transform: translateX(-25%);
+                                overflow-x: hidden;
+                                transition: all 0.5s ease-in-out;
+                                opacity: 0;
+                            }
+                          }
+                        }
+                        &:hover > .level-4-menu,
+                        &.active > .level-4-menu {
+                          display: flex;
+                        }
                       }
                     }
                   }
                 }
-              }
-              &:hover > .level-3-menu,
-              &.active > .level-3-menu {
-                display: flex;
-              }
-            }
-          }
-        }
-      }
-      li{
-        &.has-level-3-children{
-         > a{
-            position: relative;
-            &::after {
-              content: '';
-              display: inline-block;
-              vertical-align: middle;
-              width: 32px;
-              height: 32px;
-              background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
-              transition: all 0.3s ease;
-              position: absolute;
-              top: 50%;
-              right: 24px;
-              transform: translateY(-50%);
-              border-radius: 50%;
-            }
-          }
-          &.active{
-            >a{
-              background: var(--green);
-              color: var(--white);
-              &::after{
-                background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+                &:hover > .level-3-menu,
+                &.active > .level-3-menu {
+                  display: flex;
+                }
               }
             }
           }
         }
-        &.has-level-4-children{
-          > a{
-            position: relative;
-            &::after {
-              content: '';
-              display: inline-block;
-              vertical-align: middle;
-              width: 32px;
-              height: 32px;
-              background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
-              transition: all 0.3s ease;
-              position: absolute;
-              top: 50%;
-              right: 24px;
-              transform: translateY(-50%);
-              border-radius: 50%;
-            }
-          }
-          &.active{
+        li{
+          &.has-level-3-children{
            > a{
+              position: relative;
+              &::after {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 32px;
+                height: 32px;
+                background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
+                transition: all 0.3s ease;
+                position: absolute;
+                top: 50%;
+                right: 24px;
+                transform: translateY(-50%);
+                border-radius: 50%;
+              }
+            }
+            &.active{
+              >a{
+                background: var(--green);
+                color: var(--white);
+                &::after{
+                  background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+                }
+              }
+            }
+          }
+          &.has-level-4-children{
+            > a{
+              position: relative;
+              &::after {
+                content: '';
+                display: inline-block;
+                vertical-align: middle;
+                width: 32px;
+                height: 32px;
+                background: url('../images/arrow-right-black.svg') no-repeat center center/16px 16px;
+                transition: all 0.3s ease;
+                position: absolute;
+                top: 50%;
+                right: 24px;
+                transform: translateY(-50%);
+                border-radius: 50%;
+              }
+            }
+            &.active{
+             > a{
+                background: var(--green);
+                color: var(--white);
+                &::after{
+                  background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+                }
+              }
+            }
+          }
+          > a{
+            color: var(--black);
+            padding: 1rem 1.5rem;
+            display: block;
+            border-radius: rem.convert(12px);
+            transition: all 0.3s ease;
+            background: transparent;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            line-height: 1.5;
+            letter-spacing: 0;
+            &:hover{
               background: var(--green);
               color: var(--white);
-              &::after{
-                background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
+            }
+            &.has-image-link{
+              padding: 0;
+              margin-top: 1.5rem;
+              img{
+                width: 100%;
+                height: auto;
+                object-fit: cover;
+                border-radius: rem.convert(12px);
               }
             }
           }
         }
-        > a{
-          color: var(--black);
-          padding: 1rem 1.5rem;
-          display: block;
-          border-radius: rem.convert(12px);
-          transition: all 0.3s ease;
-          background: transparent;
-          text-decoration: none;
-          font-weight: 600;
-          font-size: 1rem;
-          line-height: 1.5;
-          letter-spacing: 0;
-          &:hover{
-            background: var(--green);
-            color: var(--white);
+        // Scroll class for tall menu columns
+        .mega-menu-scroll {
+          padding-right: 0 !important;
+          > ul{
+            overflow-y: auto;
+            overflow-x: hidden;
+            height: 100%;
+            margin-right: 0.5rem;
+            padding-right: 1rem;
           }
-          &.has-image-link{
-            padding: 0;
-            margin-top: 1.5rem;
-            img{
-              width: 100%;
-              height: auto;
-              object-fit: cover;
-              border-radius: rem.convert(12px);
-            }
-          }
-        }
-      }
-      // Scroll class for tall menu columns
-      .mega-menu-scroll {
-        padding-right: 0 !important;
-        > ul{
-          overflow-y: auto;
-          overflow-x: hidden;
-          height: 100%;
-          margin-right: 0.5rem;
-          padding-right: 1rem;
         }
       }
     }
+    .level-2-menu-container::-webkit-scrollbar-track, .level-3-menu-container::-webkit-scrollbar-track, .level-4-menu-container::-webkit-scrollbar-track
+  {
+    border-radius: 100px;
+    background-color: #1111111A;
   }
-  .level-2-menu-container::-webkit-scrollbar-track, .level-3-menu-container::-webkit-scrollbar-track, .level-4-menu-container::-webkit-scrollbar-track
-{
-	border-radius: 100px;
-	background-color: #1111111A;
-}
-.level-2-menu-container::-webkit-scrollbar, .level-3-menu-container::-webkit-scrollbar, .level-4-menu-container::-webkit-scrollbar
-{
-	width: 8px;
-	background-color: #1111111A;
-}
-
-.level-2-menu-container::-webkit-scrollbar-thumb, .level-3-menu-container::-webkit-scrollbar-thumb, .level-4-menu-container::-webkit-scrollbar-thumb
-{
-	border-radius: 100px;
-	background-color: #585858;
-}
+  .level-2-menu-container::-webkit-scrollbar, .level-3-menu-container::-webkit-scrollbar, .level-4-menu-container::-webkit-scrollbar
+  {
+    width: 8px;
+    background-color: #1111111A;
+  }
+  
+  .level-2-menu-container::-webkit-scrollbar-thumb, .level-3-menu-container::-webkit-scrollbar-thumb, .level-4-menu-container::-webkit-scrollbar-thumb
+  {
+    border-radius: 100px;
+    background-color: #585858;
+  }
+  }
 }
 
 // Hide images in menu items on mobile
@@ -605,3 +648,7 @@
 }
 
 
+@keyframes slideInFromTop {
+  from { transform: translateY(-25%); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
