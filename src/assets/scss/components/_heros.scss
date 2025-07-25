@@ -94,8 +94,8 @@
       }
     }
     .carousel-item {
-      padding: rem.convert(32px) rem.convert(80px) rem.convert(120px)
-        rem.convert(80px);
+      padding: rem.convert(32px) rem.convert(60px) rem.convert(120px)
+        rem.convert(60px);
       height: rem.convert(632px);
       @include media-breakpoint-down(md) {
         padding: rem.convert(64px) rem.convert(24px) rem.convert(24px)

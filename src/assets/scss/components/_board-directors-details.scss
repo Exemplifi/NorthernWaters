@@ -388,7 +388,7 @@
           transform: rotate(-180deg);
         }
       }
-      &:focus {
+      &:focus-visible {
         outline: 1px solid var(--white);
         outline-offset: 3px;
       }
