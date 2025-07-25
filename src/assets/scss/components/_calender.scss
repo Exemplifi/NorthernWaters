@@ -1,369 +1,451 @@
-.calender-section{
-    .filter-component{
-        border: 1px solid #11111133;
-        border-radius: 1rem;
-        padding: rem.convert(40px);
-        background: var(--white);
-        @include media-breakpoint-down(lg){
-            padding: rem.convert(24px);
-        }
-        .filter-details{
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: rem.convert(24px);
-            border-bottom: 1px solid #11111199;
-            margin-bottom: rem.convert(24px);
-            @include media-breakpoint-down(lg){
-                flex-direction: column;
-                align-items: flex-start;
-                gap: rem.convert(16px);
-            }
-            .filter-title{
-                color: #000000;
-                margin-bottom: 0;
-            }
-        }
-        .filter-types{
-            display: flex;
-            gap: 1rem;
-            @include media-breakpoint-down(lg){
-                flex-direction: column;
-                align-items: flex-start;
-                gap: rem.convert(16px);
-            }
-            .filter-items {
-                padding: rem.convert(8px) rem.convert(16px) rem.convert(8px) rem.convert(8px);
-                border-radius: rem.convert(8px);
-                color: var(--black);
-                display: flex;
-                align-items: center;
-                gap: rem.convert(8px);
-                position: relative;
-
-                // Event type backgrounds
-                &.board-meetings    { background: var(--blue-100a, #53C2FD1A); }
-                &.classes-trainings { background: var(--primary-100a, #004A641A); }
-                &.events-tours      { background: var(--yellow-100a, #FFAE001A); }
-                &.committee-meetings{ background: var(--green-100a, #00853F1A); }
-                &.holidays          { background: var(--blue-200a, #0040BF1A); }
-                .filter-type-label{
-                    display: flex;
-                    align-items: center;
-                    gap: rem.convert(8px);
-                    cursor: pointer;
-                }
-                // Hide the default checkbox
-                .filter-checkbox {
-                    position: absolute;
-                    opacity: 0;
-                    width: 0;
-                    height: 0;
-                    margin: 0;
-                    padding: 0;
-                    pointer-events: none;
-                }
-
-                .custom-checkbox {
-                    position: relative;
-                    display: inline-block;
-                    width: rem.convert(24px);
-                    height: rem.convert(24px);
-                    flex-shrink: 0;
-
-                    .checkbox-box {
-                        position: absolute;
-                        top: 0;
-                        left: 0;
-                        width: 100%;
-                        height: 100%;
-                        border: 1px solid var(--grey-300, #BDBDBD);
-                        border-radius: rem.convert(4px);
-                        background: var(--white, #fff);
-                        transition: all 0.2s;
-                        box-sizing: border-box;
-                    }
-
-                    .checkbox-tick {
-                        position: absolute;
-                        top: 50%;
-                        left: 50%;
-                        transform: translate(-50%, -50%);
-                        width: rem.convert(15px);
-                        height: rem.convert(15px);
-                        display: flex;
-                        align-items: center;
-                        opacity: 0;
-                        transition: all 0.2s;
-                        color: var(--black);
-                        svg {
-                            display: block;
-                            width: 100%;
-                            height: 100%;
-                        }
-                    }
-                }
-
-                .label-text {
-                    color: var(--black);
-                    font-size: rem.convert(16px);
-                    font-weight: 400;
-                    line-height: 1.5;
-                    text-transform: capitalize;
-                }
-
-                // Hover state
-                &:hover .filter-type-label .custom-checkbox .checkbox-box {
-                    border-color: var(--primary, #004A64);
-                    background: rgba(0, 74, 100, 0.08);
-                }
-
-                // Checked state (per event type)
-                &.board-meetings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-box {
-                    background: var(--blue-100, #53C2FD);
-                    border-color: var(--blue-100, #53C2FD);
-                }
-                &.classes-trainings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-box {
-                    background: var(--primary, #004A64);
-                    border-color: var(--primary, #004A64);
-                }
-                &.events-tours .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-box {
-                    background: var(--yellow, #FEBF00);
-                    border-color: var(--yellow, #FEBF00);
-                }
-                &.committee-meetings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-box {
-                    background: var(--green, #00853F);
-                    border-color: var(--green, #00853F);
-                }
-                &.holidays .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-box {
-                    background: var(--blue-200, #0040BF);
-                    border-color: var(--blue-200, #0040BF);
-                }
-
-                // Show the checkmark when checked
-                .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick {
-                    opacity: 1;
-                }
-
-                // Tick color per event type
-                &.board-meetings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick,
-                &.events-tours .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick {
-                    color: var(--grey-900, #111111);
-                }
-                &.classes-trainings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick,
-                &.committee-meetings .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick,
-                &.holidays .filter-checkbox:checked + .filter-type-label .custom-checkbox .checkbox-tick {
-                    color: var(--white, #FFFFFF);
-                }
-
-                // Focus state for accessibility
-                .filter-checkbox:focus + .filter-type-label .custom-checkbox .checkbox-box {
-                    outline: rem.convert(2px) solid var(--primary, #004A64);
-                    outline-offset: rem.convert(2px);
-                }
-
-                // Disabled state
-                .filter-checkbox:disabled + .filter-type-label {
-                    opacity: 0.6;
-                    cursor: not-allowed;
-
-                    .custom-checkbox .checkbox-box {
-                        background: var(--grey-100, #F5F5F5);
-                        border-color: var(--grey-300, #BDBDBD);
-                    }
-                }
-            }
-        }
+.calender-section {
+  .filter-component {
+    border: 1px solid #11111133;
+    border-radius: 1rem;
+    padding: rem.convert(40px);
+    background: var(--white);
+    @include media-breakpoint-down(lg) {
+      padding: rem.convert(24px);
     }
+    .filter-details {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: rem.convert(24px);
+      border-bottom: 1px solid #11111199;
+      margin-bottom: rem.convert(24px);
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem.convert(16px);
+      }
+      .filter-title {
+        color: #000000;
+        margin-bottom: 0;
+        @include convert-percent(letter-spacing, 32px, -2);
+        @include media-breakpoint-down(lg) {
+          @include convert-percent(letter-spacing, 24px, -2);
+        }
+      }
+    }
+    .filter-types {
+      display: flex;
+      gap: 1rem;
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem.convert(16px);
+      }
+      .filter-items {
+        padding: rem.convert(8px) rem.convert(16px) rem.convert(8px)
+          rem.convert(8px);
+        border-radius: rem.convert(8px);
+        color: var(--black);
+        display: flex;
+        align-items: center;
+        gap: rem.convert(8px);
+        position: relative;
+
+        // Event type backgrounds
+        &.board-meetings {
+          background: var(--blue-100a, #53c2fd1a);
+          .custom-checkbox .checkbox-box {
+            border-color: var(--blue-100, #53c2fd);
+            border-width: 2px;
+          }
+        }
+        &.classes-trainings {
+          background: var(--primary-100a, #004a641a);
+          .custom-checkbox .checkbox-box {
+            border-color: var(--primary, #004a64);
+            border-width: 2px;
+          }
+        }
+        &.events-tours {
+          background: var(--yellow-100a, #ffae001a);
+          .custom-checkbox .checkbox-box {
+            border-color: var(--yellow, #febf00);
+            border-width: 2px;
+          }
+        }
+        &.committee-meetings {
+          background: var(--green-100a, #00853f1a);
+          .custom-checkbox .checkbox-box {
+            border-color: var(--green, #00853f);
+            border-width: 2px;
+          }
+        }
+        &.holidays {
+          background: var(--blue-200a, #0040bf1a);
+          .custom-checkbox .checkbox-box {
+            border-color: var(--blue-200, #0040bf);
+            border-width: 2px;
+          }
+        }
+        .filter-type-label {
+          display: flex;
+          align-items: center;
+          gap: rem.convert(8px);
+          cursor: pointer;
+        }
+        // Hide the default checkbox
+        .filter-checkbox {
+          position: absolute;
+          opacity: 0;
+          width: 0;
+          height: 0;
+          margin: 0;
+          padding: 0;
+          pointer-events: none;
+        }
+
+        .custom-checkbox {
+          position: relative;
+          display: inline-block;
+          width: rem.convert(24px);
+          height: rem.convert(24px);
+          flex-shrink: 0;
+
+          .checkbox-box {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: 1px solid var(--grey-300, #bdbdbd);
+            border-radius: rem.convert(4px);
+            background: var(--white, #fff);
+            transition: all 0.2s;
+            box-sizing: border-box;
+          }
+
+          .checkbox-tick {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: rem.convert(15px);
+            height: rem.convert(15px);
+            display: flex;
+            align-items: center;
+            opacity: 0;
+            transition: all 0.2s;
+            color: var(--black);
+            svg {
+              display: block;
+              width: 100%;
+              height: 100%;
+            }
+          }
+        }
+
+        .label-text {
+          color: var(--black);
+          font-size: rem.convert(16px);
+          font-weight: 400;
+          line-height: 1.5;
+          text-transform: capitalize;
+        }
+
+        // Hover state
+        &:hover .filter-type-label .custom-checkbox .checkbox-box {
+          border-color: var(--primary, #004a64);
+          background: rgba(0, 74, 100, 0.08);
+        }
+
+        // Checked state (per event type)
+        &.board-meetings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          background: var(--blue-100, #53c2fd);
+          border-color: var(--blue-100, #53c2fd);
+        }
+        &.classes-trainings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          background: var(--primary, #004a64);
+          border-color: var(--primary, #004a64);
+        }
+        &.events-tours
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          background: var(--yellow, #febf00);
+          border-color: var(--yellow, #febf00);
+        }
+        &.committee-meetings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          background: var(--green, #00853f);
+          border-color: var(--green, #00853f);
+        }
+        &.holidays
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          background: var(--blue-200, #0040bf);
+          border-color: var(--blue-200, #0040bf);
+        }
+
+        // Show the checkmark when checked
+        .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick {
+          opacity: 1;
+        }
+
+        // Tick color per event type
+        &.board-meetings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick,
+        &.events-tours
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick {
+          color: var(--grey-900, #111111);
+        }
+        &.classes-trainings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick,
+        &.committee-meetings
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick,
+        &.holidays
+          .filter-checkbox:checked
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-tick {
+          color: var(--white, #ffffff);
+        }
+
+        // Focus state for accessibility
+        .filter-checkbox:focus
+          + .filter-type-label
+          .custom-checkbox
+          .checkbox-box {
+          outline: rem.convert(2px) solid var(--primary, #004a64);
+          outline-offset: rem.convert(2px);
+        }
+
+        // Disabled state
+        .filter-checkbox:disabled + .filter-type-label {
+          opacity: 0.6;
+          cursor: not-allowed;
+
+          .custom-checkbox .checkbox-box {
+            background: var(--grey-100, #f5f5f5);
+            border-color: var(--grey-300, #bdbdbd);
+          }
+        }
+      }
+    }
+  }
 }
 
-.event-card-section{
-    margin-top: rem.convert(48px);
-    @include media-breakpoint-down(lg){
-        margin-top: rem.convert(40px);
+.event-card-section {
+  margin-top: rem.convert(48px);
+  @include media-breakpoint-down(lg) {
+    margin-top: rem.convert(40px);
+  }
+  & + .event-card-section {
+    margin-top: rem.convert(24px);
+    @include media-breakpoint-down(lg) {
+      margin-top: 1rem;
     }
-    & + .event-card-section{
-        margin-top: rem.convert(24px);
-        @include media-breakpoint-down(lg){
-            margin-top: 1rem;
-        }
+  }
+  .event-card {
+    background: var(--blue);
+    padding: rem.convert(40px);
+    border-radius: 1rem;
+    @include media-breakpoint-down(lg) {
+      padding: rem.convert(24px);
     }
-    .event-card{
-        background: var(--blue);
-        padding: rem.convert(40px);
-        border-radius: 1rem;
-        @include media-breakpoint-down(lg){
-            padding: rem.convert(24px);
+    .event-card-header {
+      display: flex;
+      gap: 1rem;
+      align-items: center;
+      margin-bottom: 1rem;
+      .event-card-date {
+        color: var(--white);
+        margin: 0;
+        line-height: 1.4;
+      }
+    }
+    .event-card-body {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      background: var(--white);
+      border-radius: rem.convert(12px);
+      padding: 1rem;
+      & + .event-card-body {
+        margin-top: 1rem;
+      }
+      .event-details-wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+      }
+      .event-card-btn {
+        text-align: right;
+        padding: 0.5rem 0;
+        @include media-breakpoint-down(lg) {
+          text-align: left;
+          padding: 0;
+          margin-top: 1rem;
         }
-        .event-card-header{
-            display: flex;
-            gap: 1rem;
-            align-items: center;
-            margin-bottom: 1rem;
-            .event-card-date{
-                color: var(--white);
-                margin: 0;
-                line-height: 1.4;
-            }
+      }
+      .event-card-title-wrapper {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        @include media-breakpoint-down(lg) {
+          flex-direction: column;
+          align-items: flex-start;
         }
-        .event-card-body{
-            display: flex;
-            gap: 1rem;
-            flex-direction: column;
-            background: var(--white);
-            border-radius: rem.convert(12px);
-            padding: 1rem;
-            & + .event-card-body{
-                margin-top: 1rem;
-            }
-            .event-details-wrapper{
-                display: flex;
-                flex-direction: column;
-                gap: 1rem;
-            }
-            .event-card-btn{
-                text-align: right;
-                padding: 0.5rem 0;
-                @include media-breakpoint-down(lg){
-                    text-align: left;
-                    padding: 0;
-                    margin-top: 1rem;
-                }
-            }
-                .event-card-title-wrapper{
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    @include media-breakpoint-down(lg){
-                        flex-direction: column;
-                        align-items: flex-start;
-                    }
-                    .event-card-title{
-                        color: var(--black);
-                        margin: 0;
-                        padding: rem.convert(10px) 0;
-                        @include media-breakpoint-down(lg){
-                            padding: 0;
-                        }
-                    }
-                }
-            }
-            .event-card-details{
-                display: flex;
-                gap: rem.convert(14px);
-                align-items: center;
-                @include media-breakpoint-down(lg){
-                    flex-direction: column;
-                    align-items: flex-start;
-                    gap: rem.convert(12px);
-                }
-                .event-card-time{
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    padding: 0.25rem rem.convert(12px) 0.25rem 0;
-                    border-right: 1px solid #11111199;
-                    @include media-breakpoint-down(lg){
-                        padding: 0;
-                        padding-bottom: rem.convert(12px);
-                        border-right: none;
-                        border-bottom: 1px solid #11111199;
-                        width: 100%;
-                    }
-                }
-                .event-card-type{
-                    p{
-                        color: var(--black);
-                        padding-left: rem.convert(28px);
-                        display: inline-block;
-                        position: relative;
-                        &::before{
-                            content: '';
-                            width: 1rem;
-                            height: 1rem;
-                            border-radius: 50%;
-                            position: absolute;
-                            left: 0;
-                            top: 0;
-                            margin: 0.25rem;
-                        }
-                    }
-                    &.holiday{
-                        p{
-                            &::before{
-                                background: #0040BF;
-                            }
-                        }
-                    }
-                    &.board-meetings{
-                        p{
-                            &::before{
-                                background: #53C2FD;
-                            }
-                        }
-                    }
-                    &.committee-meetings{
-                        p{
-                            &::before{
-                                background: #00853F;
-                            }
-                        }
-                    }
-                    &.classes-trainings{
-                        p{
-                            &::before{
-                                background: #004A64;
-                            }
-                        }
-                    }
-                    &.events-tours{
-                        p{
-                            &::before{
-                                background: #FFAE00;
-                            }
-                        }
-                    }
-                }
-            }
-            .event-extra-details{
-                display: flex;
-                gap: 1rem;
-                flex-direction: column;
-                .event-card-note, .event-card-location, .event-map-link{
-                    display: flex;
-                    align-items: center;
-                    gap: 0.5rem;
-                    color: var(--black);
-                    @include media-breakpoint-down(lg){
-                        align-items: flex-start;
-                        svg{
-                            flex-shrink: 0;
-                        }
-                    }
-                    svg{
-                        width: 1.5rem;
-                        height: 1.5rem;
-                    }
-                    .event-map-link{
-                        text-decoration-color: var(--black);
-                    }
-                }
-
-
-            }
+        .event-card-title {
+          color: var(--black);
+          margin: 0;
+          padding: rem.convert(10px) 0;
+          @include convert-percent(line-height, 20px, 140);
+          @include media-breakpoint-down(lg) {
+            padding: 0;
+          }
         }
-        & + .event-card{
-            margin-top: rem.convert(24px);
-            @include media-breakpoint-down(lg){
-                margin-top: 1rem;
-            }
+      }
+    }
+    .event-card-details {
+      display: flex;
+      gap: rem.convert(14px);
+      align-items: center;
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: rem.convert(12px);
+      }
+      .event-card-time {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.25rem rem.convert(12px) 0.25rem 0;
+        border-right: 1px solid #11111199;
+        @include media-breakpoint-down(lg) {
+          padding: 0;
+          padding-bottom: rem.convert(12px);
+          border-right: none;
+          border-bottom: 1px solid #11111199;
+          width: 100%;
         }
+      }
+      .event-card-type {
+        p {
+          color: var(--black);
+          padding-left: rem.convert(28px);
+          display: inline-block;
+          position: relative;
+          &::before {
+            content: "";
+            width: 1rem;
+            height: 1rem;
+            border-radius: 50%;
+            position: absolute;
+            left: 0;
+            top: 0;
+            margin: 0.25rem;
+          }
+        }
+        &.holiday {
+          p {
+            &::before {
+              background: #0040bf;
+            }
+          }
+        }
+        &.board-meetings {
+          p {
+            &::before {
+              background: #53c2fd;
+            }
+          }
+        }
+        &.committee-meetings {
+          p {
+            &::before {
+              background: #00853f;
+            }
+          }
+        }
+        &.classes-trainings {
+          p {
+            &::before {
+              background: #004a64;
+            }
+          }
+        }
+        &.events-tours {
+          p {
+            &::before {
+              background: #ffae00;
+            }
+          }
+        }
+      }
+    }
+    .event-extra-details {
+      display: flex;
+      gap: 1rem;
+      flex-direction: column;
+      .event-card-note,
+      .event-card-location,
+      .event-map-link {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        color: var(--black);
+        @include media-breakpoint-down(lg) {
+          align-items: flex-start;
+          svg {
+            flex-shrink: 0;
+          }
+        }
+        svg {
+          width: 1.5rem;
+          height: 1.5rem;
+        }
+        .event-map-link {
+          text-decoration-color: var(--black);
+        }
+      }
+    }
+  }
+  & + .event-card {
+    margin-top: rem.convert(24px);
+    @include media-breakpoint-down(lg) {
+      margin-top: 1rem;
+    }
+  }
 }
 
-.filter-date-selector{
-    @include media-breakpoint-down(lg){
-        width: 100%;
-    }
+.filter-date-selector {
+  @include media-breakpoint-down(lg) {
+    width: 100%;
+  }
 }
 .custom-date-range-picker {
   display: flex;
@@ -371,15 +453,15 @@
   justify-content: center;
   border-radius: 0.5rem;
   background: var(--white);
-  @include media-breakpoint-down(lg){
+  @include media-breakpoint-down(lg) {
     flex-direction: column;
   }
-    .calender-range-btn-wrapper{
-        display: flex;
-        @include media-breakpoint-down(lg){
-            width: 100%;
-        }
+  .calender-range-btn-wrapper {
+    display: flex;
+    @include media-breakpoint-down(lg) {
+      width: 100%;
     }
+  }
   .calendar-nav {
     background: transparent;
     display: flex;
@@ -389,22 +471,23 @@
     cursor: pointer;
     transition: background 0.2s;
     border: 1px solid #11111133;
-    @include media-breakpoint-down(lg){
-        width: 50%;
+    @include media-breakpoint-down(lg) {
+      width: 50%;
     }
-    &.calendar-nav-right{
-        border-radius: 0 0.5rem 0.5rem 0;
-        @include media-breakpoint-down(lg){
-            border-radius: 0 0 0.5rem 0;
-        }
+    &.calendar-nav-right {
+      border-radius: 0 0.5rem 0.5rem 0;
+      @include media-breakpoint-down(lg) {
+        border-radius: 0 0 0.5rem 0;
+      }
     }
-    &.calendar-nav-left{
-        @include media-breakpoint-down(lg){
-            border-radius: 0 0 0 0.5rem;
-        }
+    &.calendar-nav-left {
+      @include media-breakpoint-down(lg) {
+        border-radius: 0 0 0 0.5rem;
+      }
     }
-    &:hover, &:focus {
-      background: var(--blue-100a, #53C2FD1A);
+    &:hover,
+    &:focus {
+      background: var(--blue-100a, #53c2fd1a);
       outline: none;
     }
     img {
@@ -412,8 +495,14 @@
       height: 1.5rem;
       width: 1.5rem;
       margin-right: 0.25rem;
-      filter: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(7500%) hue-rotate(300deg) brightness(90%) contrast(110%);
-      &:last-child { margin-right: 0; }
+      filter: brightness(0) saturate(100%) invert(0%) sepia(8%) saturate(7500%)
+        hue-rotate(300deg) brightness(90%) contrast(110%);
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+    &:first-child {
+      border-right: none;
     }
   }
 
@@ -425,10 +514,14 @@
     padding: 0.5rem 1rem;
     border: 1px solid #11111133;
     border-radius: 0.5rem 0 0 0.5rem;
-    @include media-breakpoint-down(lg){
-        width: 100%;
-        justify-content: center;
-        border-radius: 0.5rem 0.5rem 0 0;
+    @include media-breakpoint-down(lg) {
+      width: 100%;
+      justify-content: center;
+      border-radius: 0.5rem 0.5rem 0 0;
+      border-bottom: none;
+    }
+    @include media-breakpoint-up(lg) {
+      border-right: none;
     }
     .calendar-icon {
       width: 1.5rem;
@@ -446,4 +539,3 @@
     }
   }
 }
-
