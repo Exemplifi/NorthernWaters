@@ -255,7 +255,7 @@
                 @include media-breakpoint-down(lg){
                     flex-direction: column;
                     align-items: flex-start;
-                    gap: 1rem;
+                    gap: rem.convert(12px);
                 }
                 .event-card-time{
                     display: flex;
@@ -348,8 +348,8 @@
                         text-decoration-color: var(--black);
                     }
                 }
-    
-    
+
+
             }
         }
         & + .event-card{
