@@ -8,8 +8,7 @@ const setupHeader = () => {
   const navbarCollapse = header.querySelector(".navbar-collapse");
 
   const handleSearch = () => {
-    // TODO: Implement search functionality
-    console.log("Search clicked");
+    setupSearchOverlay();
   };
 
   const handleMobileMenu = () => {
@@ -336,7 +335,7 @@ const setupMegaMenu = () => {
       const navbarHeight = navbar ? navbar.offsetHeight : 0;
       const labelWrapper = megaMenu.querySelector('.label-wrapper');
       const labelWrapperHeight = labelWrapper ? labelWrapper.offsetHeight : 0;
-      const maxAllowed = window.innerHeight - navbarHeight - labelWrapperHeight - 100;
+      const maxAllowed = window.innerHeight - navbarHeight - labelWrapperHeight - 60;
       
       // Determine final height and scroll behavior
       const finalHeight = Math.min(maxContentHeight, maxAllowed);
@@ -778,3 +777,187 @@ window.debugAllMenuLevels = function() {
     debugLevel4Hover();
   }, 1500);
 };
+
+// Search Overlay Functionality
+const setupSearchOverlay = () => {
+  const searchOverlay = document.getElementById('searchPanel');
+  const searchInput = document.getElementById('searchInput');
+  const searchForm = document.querySelector('.search-form');
+  const closeBtn = document.getElementById('searchCloseBtn');
+  const suggestionItems = document.querySelectorAll('.search-suggestion-item');
+  
+  if (!searchOverlay) {
+    console.warn('Search overlay not found');
+    return;
+  }
+  
+  // Open search overlay
+  const openSearch = () => {
+    searchOverlay.classList.add('show');
+    searchOverlay.setAttribute('aria-hidden', 'false');
+    document.body.classList.add('search-open');
+    
+    // Focus on input after animation completes
+    setTimeout(() => {
+      searchInput?.focus();
+    }, 200);
+    
+    // Update search button ARIA state
+    const searchBtn = document.querySelector('.header__search-btn');
+    if (searchBtn) {
+      searchBtn.setAttribute('aria-expanded', 'true');
+    }
+  };
+  
+  // Close search overlay
+  const closeSearch = () => {
+    searchOverlay.classList.remove('show');
+    searchOverlay.setAttribute('aria-hidden', 'true');
+    document.body.classList.remove('search-open');
+    
+    // Clear search input
+    if (searchInput) {
+      searchInput.value = '';
+    }
+    
+    // Update search button ARIA state
+    const searchBtn = document.querySelector('.header__search-btn');
+    if (searchBtn) {
+      searchBtn.setAttribute('aria-expanded', 'false');
+      searchBtn.focus(); // Return focus to search button
+    }
+  };
+  
+  // Handle search form submission
+  const handleSearchSubmit = (e) => {
+    e.preventDefault();
+    const query = searchInput?.value.trim();
+    
+    if (query) {
+      console.log('Searching for:', query);
+      // TODO: Implement actual search functionality
+      // Example: window.location.href = `/search?q=${encodeURIComponent(query)}`;
+      
+      // For now, just show an alert
+      alert(`Searching for: "${query}"`);
+      closeSearch();
+    }
+  };
+  
+  // Handle suggestion clicks
+  const handleSuggestionClick = (suggestion) => {
+    const searchTerm = suggestion.getAttribute('data-search');
+    if (searchInput && searchTerm) {
+      searchInput.value = searchTerm;
+      handleSearchSubmit(new Event('submit'));
+    }
+  };
+  
+  // Keyboard navigation for suggestions
+  const handleSuggestionKeydown = (e, suggestion) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      handleSuggestionClick(suggestion);
+    }
+  };
+  
+  // Handle escape key to close overlay
+  const handleEscapeKey = (e) => {
+    if (e.key === 'Escape' && searchOverlay.classList.contains('show')) {
+      e.preventDefault();
+      closeSearch();
+    }
+  };
+  
+  // Handle click outside to close overlay
+  const handleOutsideClick = (e) => {
+    if (searchOverlay.classList.contains('show') && e.target === searchOverlay) {
+      closeSearch();
+    }
+  };
+  
+  // Event listeners
+  if (closeBtn) {
+    closeBtn.addEventListener('click', closeSearch);
+  }
+  
+  if (searchForm) {
+    searchForm.addEventListener('submit', handleSearchSubmit);
+  }
+  
+  if (suggestionItems) {
+    suggestionItems.forEach(suggestion => {
+      suggestion.addEventListener('click', () => handleSuggestionClick(suggestion));
+      suggestion.addEventListener('keydown', (e) => handleSuggestionKeydown(e, suggestion));
+    });
+  }
+  
+  // Global event listeners
+  document.addEventListener('keydown', handleEscapeKey);
+  searchOverlay.addEventListener('click', handleOutsideClick);
+  
+  // Open the search overlay
+  openSearch();
+};
+
+// Enhanced keyboard navigation for search suggestions
+const setupSearchKeyboardNavigation = () => {
+  const searchInput = document.getElementById('searchInput');
+  const suggestions = document.querySelectorAll('.search-suggestion-item');
+  
+  if (!searchInput || !suggestions.length) return;
+  
+  let currentIndex = -1;
+  
+  const updateFocus = (index) => {
+    // Remove focus from all suggestions
+    suggestions.forEach(s => s.classList.remove('keyboard-focused'));
+    
+    if (index >= 0 && index < suggestions.length) {
+      suggestions[index].classList.add('keyboard-focused');
+      suggestions[index].focus();
+    } else {
+      searchInput.focus();
+    }
+    currentIndex = index;
+  };
+  
+  searchInput.addEventListener('keydown', (e) => {
+    switch (e.key) {
+      case 'ArrowDown':
+        e.preventDefault();
+        updateFocus(currentIndex + 1 >= suggestions.length ? 0 : currentIndex + 1);
+        break;
+      case 'ArrowUp':
+        e.preventDefault();
+        updateFocus(currentIndex <= 0 ? suggestions.length - 1 : currentIndex - 1);
+        break;
+      case 'Tab':
+        if (currentIndex >= 0) {
+          e.preventDefault();
+          updateFocus(e.shiftKey ? currentIndex - 1 : currentIndex + 1);
+        }
+        break;
+    }
+  });
+  
+  suggestions.forEach((suggestion, index) => {
+    suggestion.addEventListener('keydown', (e) => {
+      switch (e.key) {
+        case 'ArrowDown':
+          e.preventDefault();
+          updateFocus(index + 1 >= suggestions.length ? 0 : index + 1);
+          break;
+        case 'ArrowUp':
+          e.preventDefault();
+          updateFocus(index <= 0 ? suggestions.length - 1 : index - 1);
+          break;
+      }
+    });
+  });
+};
+
+// Initialize search overlay when DOM is loaded
+document.addEventListener('DOMContentLoaded', () => {
+  setupSearchKeyboardNavigation();
+});
