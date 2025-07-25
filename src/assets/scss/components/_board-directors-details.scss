@@ -90,6 +90,8 @@
       }
     }
     .content-title {
+      font-size: rem.convert(24px);
+      @include convert-percent(line-height, 24px, 140);
       line-height: 1.4;
     }
   }
@@ -101,7 +103,7 @@
     li {
       position: relative;
       padding-left: rem.convert(32px);
-      margin-bottom: rem.convert(8px);
+      margin-bottom: rem.convert(12px);
       @include media-breakpoint-down(md) {
         margin-bottom: rem.convert(12px);
       }
@@ -116,6 +118,9 @@
         background: var(--black);
         border-radius: 50%;
         display: inline-block;
+      }
+      &:last-child {
+        margin-bottom: 0;
       }
     }
   }
