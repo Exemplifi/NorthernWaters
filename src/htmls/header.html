@@ -32,13 +32,34 @@
 
           <!-- Navigation -->
         <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+          
+          <!-- Search Input Bar -->
+          <div class="header__search-input-container">
+            <form class="header__search-input-wrapper" role="search" aria-label="Site search">
+              <input 
+                type="search" 
+                class="header__search-input" 
+                placeholder="Search"
+                aria-label="Search site content"
+                id="headerSearchInput"
+                autocomplete="off"
+              >
+              <button type="submit" class="header__search-submit-btn" aria-label="Submit search">
+                <i data-lucide="search" class="header__search-input-icon" aria-hidden="true"></i>
+              </button>
+            </form>
+          </div>
+          
           <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
+
               <!-- Water Dropdown with Mega Menu (flattened columns) -->
               <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="waterMegaMenu">
                   Water
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
+                    <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
+                  </svg>
                 </a>
                 <!-- Mega Menu Container (flattened) -->
                 <div class="mega-menu-wrapper">
@@ -161,6 +182,11 @@
                           </div>
 
                         </li>
+                        <li class="menu-cover-image">
+                          <a href="#">
+                            <img src="../assets/images/Green-Mountain-Reservoiur.jpg" alt="Green Mountain Reservoir">
+                          </a>
+                        </li>
                       </ul>
                     </div>
 
@@ -174,7 +200,9 @@
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="environmentMegaMenu">
                 Environment
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
+                </svg>
               </a>
               <!-- Mega Menu Container -->
               <!-- Mega Menu Container (flattened) -->
@@ -373,7 +401,9 @@
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="dataMegaMenu">
                 Data
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
+                </svg>
                 </a>
                 <!-- Mega Menu Container -->
               <div class="mega-menu-wrapper">
@@ -417,6 +447,11 @@
                         <li><a href="#">Snowpack</a></li>
                         <li><a href="#">GIS and Maps</a></li>
                         <li><a href="#">Weather</a></li>
+                        <li class="menu-cover-image">
+                          <a href="#">
+                            <img src="../assets/images/Green-Mountain-Reservoiur.jpg" alt="Green Mountain Reservoir">
+                          </a>
+                        </li>
                       </ul>
                     </div>
 
@@ -430,7 +465,9 @@
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="aboutMegaMenu">
                   About
-                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
+                    <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
+                  </svg>
               </a>
               <!-- Mega Menu Container (flattened) -->
               <div class="mega-menu-wrapper">
@@ -491,6 +528,11 @@
                         <li><a href="#">Purchasing</a></li>
                         <li><a href="#">Records Request</a></li>
                         <li><a href="#">Visiting Our Campus</a></li>
+                        <li class="menu-cover-image">
+                          <a href="#">
+                            <img src="../assets/images/Green-Mountain-Reservoiur.jpg" alt="Green Mountain Reservoir">
+                          </a>
+                        </li>
                       </ul>
                     </div>
 

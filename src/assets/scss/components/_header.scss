@@ -40,9 +40,6 @@
   }
   &.upwards {
     position: fixed;
-    @include media-breakpoint-down(lg){
-      position: relative;
-    }
   }
   &.downwards {
     position: absolute;
@@ -54,9 +51,6 @@
     transform: translateY(0);
     animation: headerSlideUp 0.5s ease-out;
     border-radius: rem.convert(16px);
-    @include media-breakpoint-down(lg){
-      position: relative;
-    }
   }
   // Navbar Base Styles
   .navbar {
@@ -126,6 +120,10 @@
         svg{
           transform: rotate(180deg);
         }
+        @include media-breakpoint-down(lg){
+          color: var(--black) !important;
+          background-color: transparent;
+        }
       }
     }
   }
@@ -166,6 +164,10 @@
     &:focus {
       color: rgba(var(--black-rgb), 0.8) !important;
       background-color: rgba(var(--green-rgb), 0.2);
+      @include media-breakpoint-down(lg){
+        color: var(--black) !important;
+        background-color: transparent;
+      }
     }
 
     // Remove Bootstrap's default dropdown arrow
@@ -180,6 +182,10 @@
     width: rem.convert(24px);
     height: rem.convert(18px);
     transition: transform 0.3s ease;
+    @include media-breakpoint-down(lg){
+      width: rem.convert(24px);
+      height: rem.convert(24px);
+    }
 
     &.rotated {
       transform: rotate(180deg);
@@ -250,6 +256,9 @@
     justify-content: center;
     cursor: pointer;
     transition: opacity 0.2s ease;
+    @include media-breakpoint-down(lg){
+      display: none;
+    }
 
     &:hover,
     &:focus {
@@ -350,6 +359,9 @@
   }
   // Mega Menu Styles - Enhanced Version
 @include media-breakpoint-up(lg){
+  .header__search-input-container{
+    display: none;
+  }
   .has-mega-menu {
     position: static;
   }
@@ -367,20 +379,7 @@
     &.show {
       display: block;
       .mega-menu-inner{
-        .label-wrapper {
-          animation: slideInFromTop 0.5s ease-out;
-        }
-        .mega-menu{
-          .level-2-menu{
-            .level-2-menu-container{
-              > li{
-                > a{
-                  animation: slideInFromTop 0.5s ease-out;
-                }
-              }
-            }
-          }
-        }
+        animation: slideInFromTop 0.3s ease-out;
       }
     }
     .mega-menu-inner {
@@ -427,9 +426,25 @@
             > li {
               list-style: none;
               overflow: visible; 
+              &.menu-cover-image{
+                position: absolute;
+                left: 100%;
+                top: 0;
+                width: 100%;
+                padding: 1.5rem 2rem;
+                > a{
+                  img{
+                    width: 100%;
+                    border-radius: rem.convert(12px);
+                  }
+                }
+              }
               &.has-level-3-children {
                 cursor: pointer;
                 &.active{
+                  & ~ .menu-cover-image{
+                    display: none;
+                  }
                   > .level-3-menu{
                     .level-3-menu-container{
                       > li{
@@ -463,9 +478,9 @@
                    > li{
                       list-style: none;
                       > a{
-                        transform: translateX(-25%);
+                        transform: translateX(-15%);
                         overflow-x: hidden;
-                        transition: all 0.5s ease-in-out;
+                        transition: all 0.3s ease-in-out;
                         opacity: 0;
                       }
                       &.has-level-4-children {
@@ -505,9 +520,9 @@
                             > li{
                               list-style: none;
                               > a{
-                                transform: translateX(-25%);
+                                transform: translateX(-15%);
                                 overflow-x: hidden;
-                                transition: all 0.5s ease-in-out;
+                                transition: all 0.3s ease-in-out;
                                 opacity: 0;
                               }
                             }
@@ -648,14 +663,83 @@
   }
 }
 @include media-breakpoint-down(lg){
-   // Mobile mega menu active states
+       .header__search-input-container{
+     .header__search-input-wrapper{
+       position: relative;
+       display: flex;
+       align-items: center;
+       border: 1px solid #11111199;
+       border-radius: 0.5rem;
+       overflow: hidden;
+       margin-bottom: 2rem;
+       &:focus-within{
+         border: 1px solid var(--green);
+         box-shadow: 0 0 0 3px rgba(var(--green-rgb), 0.1);
+       }
+       input{
+         flex: 1;
+         padding: rem.convert(12px) 1rem;
+         color: var(--black);
+         border: none;
+         outline: none;
+         background: transparent;
+         &:focus{
+           border: none;
+           outline: none;
+         }
+         &::placeholder{
+           color: rgba(var(--black-rgb), 0.4);
+         }
+       }
+       .header__search-submit-btn {
+         background: none;
+         border: none;
+         padding: rem.convert(8px) 1rem;
+         cursor: pointer;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         transition: background-color 0.2s ease;
+         
+         &:hover,
+         &:focus {
+           background-color: rgba(var(--green-rgb), 0.1);
+           outline: none;
+         }
+         
+         &:focus-visible {
+           outline: 2px solid var(--green);
+           outline-offset: 2px;
+         }
+         
+         .header__search-input-icon {
+           width: rem.convert(24px);
+           height: rem.convert(24px);
+           color: var(--black);
+           flex-shrink: 0;
+           stroke-width: 2;
+         }
+       }
+     }
+    
+   }
    .nav-item.dropdown.has-mega-menu.active .mega-menu-wrapper {
-    height: auto;
+    max-height: 2000px;
+    opacity: 1;
+    transform: scaleY(1);
+    
+    .level-2-menu-container > li {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
   .mega-menu-wrapper{
-    height: 0;
+    max-height: 0;
+    opacity: 0;
     overflow: hidden;
-    transition: all 0.3s ease-in-out;   
+    transform: scaleY(0);
+    transform-origin: top;
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;   
     a{
       font-family: var(--body-font-family);
       font-weight: 600;
@@ -674,14 +758,24 @@
         padding: 0;
         list-style: none;
         > li{
+          opacity: 0;
+          transform: translateY(-10px);
+          transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+          
+          // Stagger animation for each item
+          @for $i from 1 through 10 {
+            &:nth-child(#{$i}) {
+              transition-delay: #{$i * 0.05}s;
+            }
+          }
+          
           > a{
             padding: 1rem;
-            font-weight: 700;
           }
           &.has-level-3-children{
             >a{
               position: relative;
-              padding-right: 1.5rem;
+              padding-right: 2.5rem;
               &::after{
                 content: '';
                 width: rem.convert(24px);
@@ -689,37 +783,58 @@
                 background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M12.0041%2016.143C11.8725%2016.1438%2011.742%2016.1185%2011.6202%2016.0688C11.4983%2016.019%2011.3875%2015.9457%2011.2941%2015.853L5.29409%209.85301C5.10579%209.6647%205%209.40931%205%209.14301C5%208.87671%205.10579%208.62131%205.29409%208.43301C5.4824%208.2447%205.73779%208.13892%206.00409%208.13892C6.27039%208.13892%206.52579%208.2447%206.71409%208.43301L12.0041%2013.733L17.2941%208.44301C17.4854%208.27918%2017.7315%208.19358%2017.9831%208.2033C18.2348%208.21302%2018.4736%208.31735%2018.6517%208.49544C18.8297%208.67354%2018.9341%208.91228%2018.9438%209.16395C18.9535%209.41563%2018.8679%209.66171%2018.7041%209.85301L12.7041%2015.853C12.5178%2016.0378%2012.2664%2016.1419%2012.0041%2016.143Z%22%20fill%3D%22%23111111%22/%3E%0A%3C/svg%3E');
                 position: absolute;
                 top: 50%;
-                right: 0;
+                right: 1rem;
                 transform: translateY(-50%);
                 transition: transform 0.3s ease;
               }
             }
             &.active {
               > a{
-                border-bottom: 1px solid #11111199;
+                border-bottom: 2px solid #11111199;
                 &::after {
                   transform: translateY(-50%) rotate(180deg);
                 }
               }
               .level-3-menu {
-                height: auto;
+                max-height: 1000px;
+                opacity: 1;
+                transform: scaleY(1);
+                
+                .level-3-menu-container > li {
+                  opacity: 1;
+                  transform: translateY(0);
+                }
               }
             }
             .level-3-menu{
-              height: 0;
+              max-height: 0;
+              opacity: 0;
               overflow: hidden;
-              transition: height 0.3s ease-in-out;
-              .level-3-menu-container{
-                padding: 0;
-                list-style: none;
-                > li{
-                  >a{
-                    padding: 1rem 1.5rem;
-                  }
+              transform: scaleY(0);
+              transform-origin: top;
+              transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                              .level-3-menu-container{
+                  padding: 0;
+                  list-style: none;
+                  > li{
+                    opacity: 0;
+                    transform: translateY(-10px);
+                    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                    
+                    // Stagger animation for each item
+                    @for $i from 1 through 10 {
+                      &:nth-child(#{$i}) {
+                        transition-delay: #{$i * 0.05}s;
+                      }
+                    }
+                    
+                    >a{
+                      padding: 1rem 1.5rem;
+                    }
                   &.has-level-4-children{
                     >a{
                       position: relative;
-                      padding-right: 2.5rem;
+                      padding-right: 3rem;
                       &::after{
                         content: '';
                         width: rem.convert(24px);
@@ -727,34 +842,55 @@
                         background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M12.0041%2016.143C11.8725%2016.1438%2011.742%2016.1185%2011.6202%2016.0688C11.4983%2016.019%2011.3875%2015.9457%2011.2941%2015.853L5.29409%209.85301C5.10579%209.6647%205%209.40931%205%209.14301C5%208.87671%205.10579%208.62131%205.29409%208.43301C5.4824%208.2447%205.73779%208.13892%206.00409%208.13892C6.27039%208.13892%206.52579%208.2447%206.71409%208.43301L12.0041%2013.733L17.2941%208.44301C17.4854%208.27918%2017.7315%208.19358%2017.9831%208.2033C18.2348%208.21302%2018.4736%208.31735%2018.6517%208.49544C18.8297%208.67354%2018.9341%208.91228%2018.9438%209.16395C18.9535%209.41563%2018.8679%209.66171%2018.7041%209.85301L12.7041%2015.853C12.5178%2016.0378%2012.2664%2016.1419%2012.0041%2016.143Z%22%20fill%3D%22%23111111%22/%3E%0A%3C/svg%3E');
                         position: absolute;
                         top: 50%;
-                        right: 1rem;
+                        right: 1.5rem;
                         transform: translateY(-50%);
                         transition: transform 0.3s ease;
                       }
                     }
                     &.active {
                       > a{
-                        border-bottom: 1px solid #11111199;
+                        border-bottom: 2px solid #11111199;
                         &::after {
                           transform: translateY(-50%) rotate(180deg);
                         }
                       }
                       .level-4-menu {
-                        height: auto;
+                        max-height: 1000px;
+                        opacity: 1;
+                        transform: scaleY(1);
+                        
+                        .level-4-menu-container > li {
+                          opacity: 1;
+                          transform: translateY(0);
+                        }
                       }
                     }
                     .level-4-menu{
-                      height: 0;
+                      max-height: 0;
+                      opacity: 0;
                       overflow: hidden;
-                      transition: height 0.3s ease-in-out;
-                      .level-4-menu-container{
-                        padding: 0;
-                        list-style: none;
-                        > li{
-                          > a{
-                            padding: 1rem 1.5rem;
+                      transform: scaleY(0);
+                      transform-origin: top;
+                      transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                                              .level-4-menu-container{
+                          padding: 0;
+                          list-style: none;
+                          > li{
+                            opacity: 0;
+                            transform: translateY(-10px);
+                            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+                            
+                            // Stagger animation for each item
+                            @for $i from 1 through 10 {
+                              &:nth-child(#{$i}) {
+                                transition-delay: #{$i * 0.05}s;
+                              }
+                            }
+                            
+                            > a{
+                              padding: 1rem 1.5rem;
+                            }
                           }
-                        }
                       }
                     }
                   }
@@ -765,7 +901,7 @@
         }
       }
     }
-    li.has-image-link{
+    li.has-image-link, li.menu-cover-image{
       display: none;
     }
   }
@@ -1062,6 +1198,6 @@ body.search-open {
 }
 
 @keyframes slideInFromTop {
-  from { transform: translateY(-25%); opacity: 0; }
+  from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
 }
