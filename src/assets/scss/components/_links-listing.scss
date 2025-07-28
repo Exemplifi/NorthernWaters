@@ -7,13 +7,14 @@
 .links-listing-wrap {
   // ... existing code ...
   h3 {
+    color: var(--black-3);
     @include media-breakpoint-up(lg) {
       max-width: rem.convert(800px);
     }
   }
   .link-heading-row {
     .col-12 {
-      border-bottom: 1px solid var(--black);
+      border-bottom: 1px solid rgba(var(--black-rgb), 0.6);
     }
   }
   .links-row {
@@ -37,6 +38,9 @@
 
           h6 {
             // ... existing code ...
+            @include convert-percent(line-height, 20px, 140);
+            margin-bottom: rem.convert(12px);
+            color: var(--black-3);
           }
 
           a {
@@ -61,5 +65,13 @@
         }
       }
     }
+  }
+}
+
+// Add styling for the last element
+.links-listing-wrap-last {
+  h6 {
+    margin-bottom: rem.convert(4px) !important;
+    color: var(--black-3);
   }
 }

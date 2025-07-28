@@ -159,6 +159,7 @@
     margin-top: rem.convert(24px);
     @include media-breakpoint-down(md) {
       row-gap: 1rem;
+      margin-top: rem.convert(0px);
     }
     .col-lg-4 {
       display: flex;
