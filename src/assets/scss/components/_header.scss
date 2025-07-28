@@ -40,6 +40,9 @@
   }
   &.upwards {
     position: fixed;
+    @include media-breakpoint-down(lg){
+      position: relative;
+    }
   }
   &.downwards {
     position: absolute;
@@ -51,6 +54,9 @@
     transform: translateY(0);
     animation: headerSlideUp 0.5s ease-out;
     border-radius: rem.convert(16px);
+    @include media-breakpoint-down(lg){
+      position: relative;
+    }
   }
   // Navbar Base Styles
   .navbar {
@@ -58,14 +64,14 @@
     min-height: rem.convert(52px);
     @include media-breakpoint-down(lg) {
       min-height: rem.convert(64px);
+      padding: 1rem;
     }
     .navbar-collapse {
       @include media-breakpoint-down(lg) {
-        position: absolute;
-      }
+      
       &.show {
-        position: absolute;
-        height: fit-content;
+        left: 0;
+      }
       }
     }
   }
@@ -74,8 +80,6 @@
   &__logo {
     display: block;
     width: rem.convert(140px);
-    min-width: rem.convert(140px);
-    max-width: rem.convert(140px);
     height: rem.convert(45px);
     &:focus,
     &:focus-visible {
@@ -89,7 +93,7 @@
       object-fit: contain;
     }
     @include media-breakpoint-down(lg) {
-      max-width: rem.convert(100px);
+      width: rem.convert(100px);
       height: auto;
     }
   }
@@ -144,7 +148,18 @@
     }
     @include media-breakpoint-down(lg) {
       justify-content: space-between;
-      padding: 1rem;
+      padding: 1rem 0;
+      font-family: var(--heading-font-family);
+      font-weight: 700;
+      @include rem.convert(font-size, 18px);
+      line-height: 1.5;
+      letter-spacing: 0;
+      text-transform: capitalize;
+      border-bottom: 1px solid #11111199;
+      border-radius: 0;
+      &.dropdown{
+        overflow: hidden;
+      }
     }
 
     &:hover,
@@ -296,6 +311,10 @@
     .navbar-toggler-icon {
       background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3 12H21M3 6H21M3 18H21' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E");
       transition: background-image 0.3s ease;
+      @include media-breakpoint-down(lg){
+        width: rem.convert(24px);
+        height: rem.convert(24px);
+      }
     }
     .navbar-toggler-label {
       font-family: var(--body-font-family);
@@ -307,7 +326,7 @@
 
     &[aria-expanded="true"] {
       .navbar-toggler-icon {
-        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><!--!Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.--><path fill="%23000000" d="M342.6 150.6c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 210.7 86.6 105.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3L146.7 256 41.4 361.4c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L192 301.3 297.4 406.6c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3L237.3 256 342.6 150.6z"/></svg>');
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" fill="none"><path d="M18 6.07141L6 18.0714" stroke="%23111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><path d="M6 6.07141L18 18.0714" stroke="%23111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>');
       }
     }
   }
@@ -315,39 +334,21 @@
   // Responsive Styles
   @include media-breakpoint-down(lg) {
     .navbar-collapse {
-      position: fixed;
-      @include rem.convert(top, 56px);
-      left: 0;
+      position: absolute;
+      top: 100%;
+      left: 100%;
       right: 0;
       bottom: 0;
       background-color: var(--white);
-      @include rem.convert(padding, 24px 16px);
+      @include rem.convert(padding, 32px 16px);
       overflow-y: auto;
       overflow-x: hidden;
+      transition: all 0.3s ease-in-out;
+      height: fit-content;
+      width: 100vw;
     }
   }
-}
-
-@keyframes headerSlideDown {
-  0% {
-    transform: translateY(-100%);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-@keyframes headerSlideUp {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-100%);
-  }
-}
-
-
-// Mega Menu Styles - Enhanced Version
+  // Mega Menu Styles - Enhanced Version
 @include media-breakpoint-up(lg){
   .has-mega-menu {
     position: static;
@@ -502,6 +503,7 @@
                             flex-direction: column;
                             gap: 0.25rem;
                             > li{
+                              list-style: none;
                               > a{
                                 transform: translateX(-25%);
                                 overflow-x: hidden;
@@ -600,7 +602,9 @@
               background: var(--green);
               color: var(--white);
             }
-            &.has-image-link{
+          }
+          &.has-image-link{
+            > a{
               padding: 0;
               margin-top: 1.5rem;
               img{
@@ -643,13 +647,151 @@
   }
   }
 }
-
-// Hide images in menu items on mobile
-@media (max-width: 991.98px) {
-  .mega-menu-wrapper img {
-    display: none !important;
+@include media-breakpoint-down(lg){
+   // Mobile mega menu active states
+   .nav-item.dropdown.has-mega-menu.active .mega-menu-wrapper {
+    height: auto;
+  }
+  .mega-menu-wrapper{
+    height: 0;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;   
+    a{
+      font-family: var(--body-font-family);
+      font-weight: 600;
+      font-size: 1rem;
+      line-height: 1.5;
+      letter-spacing: 0;
+      color: var(--black);
+      text-decoration: none;
+      display: block;
+    }
+    .label-wrapper{
+      display: none;
+    }
+    .level-2-menu{
+      .level-2-menu-container{
+        padding: 0;
+        list-style: none;
+        > li{
+          > a{
+            padding: 1rem;
+            font-weight: 700;
+          }
+          &.has-level-3-children{
+            >a{
+              position: relative;
+              padding-right: 1.5rem;
+              &::after{
+                content: '';
+                width: rem.convert(24px);
+                height: rem.convert(24px);
+                background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M12.0041%2016.143C11.8725%2016.1438%2011.742%2016.1185%2011.6202%2016.0688C11.4983%2016.019%2011.3875%2015.9457%2011.2941%2015.853L5.29409%209.85301C5.10579%209.6647%205%209.40931%205%209.14301C5%208.87671%205.10579%208.62131%205.29409%208.43301C5.4824%208.2447%205.73779%208.13892%206.00409%208.13892C6.27039%208.13892%206.52579%208.2447%206.71409%208.43301L12.0041%2013.733L17.2941%208.44301C17.4854%208.27918%2017.7315%208.19358%2017.9831%208.2033C18.2348%208.21302%2018.4736%208.31735%2018.6517%208.49544C18.8297%208.67354%2018.9341%208.91228%2018.9438%209.16395C18.9535%209.41563%2018.8679%209.66171%2018.7041%209.85301L12.7041%2015.853C12.5178%2016.0378%2012.2664%2016.1419%2012.0041%2016.143Z%22%20fill%3D%22%23111111%22/%3E%0A%3C/svg%3E');
+                position: absolute;
+                top: 50%;
+                right: 0;
+                transform: translateY(-50%);
+                transition: transform 0.3s ease;
+              }
+            }
+            &.active {
+              > a{
+                border-bottom: 1px solid #11111199;
+                &::after {
+                  transform: translateY(-50%) rotate(180deg);
+                }
+              }
+              .level-3-menu {
+                height: auto;
+              }
+            }
+            .level-3-menu{
+              height: 0;
+              overflow: hidden;
+              transition: height 0.3s ease-in-out;
+              .level-3-menu-container{
+                padding: 0;
+                list-style: none;
+                > li{
+                  >a{
+                    padding: 1rem 1.5rem;
+                  }
+                  &.has-level-4-children{
+                    >a{
+                      position: relative;
+                      padding-right: 2.5rem;
+                      &::after{
+                        content: '';
+                        width: rem.convert(24px);
+                        height: rem.convert(24px);
+                        background: url('data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20width%3D%2224%22%20height%3D%2225%22%20viewBox%3D%220%200%2024%2025%22%20fill%3D%22none%22%3E%0A%3Cpath%20d%3D%22M12.0041%2016.143C11.8725%2016.1438%2011.742%2016.1185%2011.6202%2016.0688C11.4983%2016.019%2011.3875%2015.9457%2011.2941%2015.853L5.29409%209.85301C5.10579%209.6647%205%209.40931%205%209.14301C5%208.87671%205.10579%208.62131%205.29409%208.43301C5.4824%208.2447%205.73779%208.13892%206.00409%208.13892C6.27039%208.13892%206.52579%208.2447%206.71409%208.43301L12.0041%2013.733L17.2941%208.44301C17.4854%208.27918%2017.7315%208.19358%2017.9831%208.2033C18.2348%208.21302%2018.4736%208.31735%2018.6517%208.49544C18.8297%208.67354%2018.9341%208.91228%2018.9438%209.16395C18.9535%209.41563%2018.8679%209.66171%2018.7041%209.85301L12.7041%2015.853C12.5178%2016.0378%2012.2664%2016.1419%2012.0041%2016.143Z%22%20fill%3D%22%23111111%22/%3E%0A%3C/svg%3E');
+                        position: absolute;
+                        top: 50%;
+                        right: 1rem;
+                        transform: translateY(-50%);
+                        transition: transform 0.3s ease;
+                      }
+                    }
+                    &.active {
+                      > a{
+                        border-bottom: 1px solid #11111199;
+                        &::after {
+                          transform: translateY(-50%) rotate(180deg);
+                        }
+                      }
+                      .level-4-menu {
+                        height: auto;
+                      }
+                    }
+                    .level-4-menu{
+                      height: 0;
+                      overflow: hidden;
+                      transition: height 0.3s ease-in-out;
+                      .level-4-menu-container{
+                        padding: 0;
+                        list-style: none;
+                        > li{
+                          > a{
+                            padding: 1rem 1.5rem;
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+    li.has-image-link{
+      display: none;
+    }
   }
 }
+}
+
+@keyframes headerSlideDown {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+@keyframes headerSlideUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-100%);
+  }
+}
+
+
+
 
 // Search Overlay Styles
 .search-overlay {
@@ -729,7 +871,7 @@
   background: none;
   border: none;
   padding: rem.convert(8px);
-  cursor: pointer;
+    cursor: pointer;
   border-radius: rem.convert(8px);
   transition: background-color 0.2s ease;
   display: flex;
@@ -759,8 +901,8 @@
 }
 
 .search-input-group {
-  position: relative;
-  display: flex;
+    position: relative;
+    display: flex;
   align-items: center;
   background: var(--white);
   border: 2px solid #e1e5e9;

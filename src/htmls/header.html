@@ -1,50 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Header Component</title>
-  <link rel="stylesheet" href="../assets/dist/main.css" />
-</head>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Header Component</title>
+    <link rel="stylesheet" href="../assets/dist/main.css" />
+  </head>
 
-<body>
-  <!-- Skip to main content link -->
+  <body>
+    <!-- Skip to main content link -->
   <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
-  <!-- Add class "less-spacing-top" to the header element to reduce the spacing between the header and top of the page -->
-  <!-- Header Component starts here -->
-  <header class="header container-fluid" role="banner">
+    <!-- Add class "less-spacing-top" to the header element to reduce the spacing between the header and top of the page -->
+    <!-- Header Component starts here -->
+    <header class="header container-fluid" role="banner">
     <nav class="navbar navbar-expand-lg row mx-0 container" aria-label="Main navigation">
-      <div class="col-12 d-flex justify-content-between align-items-center">
-        <!-- Logo -->
-        <a href="/" class="header__logo" aria-label="Northern Water Home">
+        <div class="col-12 d-flex justify-content-between align-items-center">
+          <!-- Logo -->
+          <a href="/" class="header__logo" aria-label="Northern Water Home">
           <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
             height="56" />
-        </a>
+          </a>
 
-        <!-- Mobile Toggle Button -->
+          <!-- Mobile Toggle Button -->
         <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
           data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
           aria-label="Toggle navigation menu">
-          <span class="navbar-toggler-icon" aria-hidden="true"></span>
-          <span class="navbar-toggler-label">Menu</span>
-        </button>
+            <span class="navbar-toggler-icon" aria-hidden="true"></span>
+            <span class="navbar-toggler-label">Menu</span>
+          </button>
 
-        <!-- Navigation -->
+          <!-- Navigation -->
         <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
           <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
-            <!-- Water Dropdown with Mega Menu (flattened columns) -->
-            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <!-- Water Dropdown with Mega Menu (flattened columns) -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="waterMegaMenu">
-                Water
+                  Water
                 <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <!-- Mega Menu Container (flattened) -->
-              <div class="mega-menu-wrapper">
-                <div class="mega-menu-inner">
-                  <div class="label-wrapper">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                </a>
+                <!-- Mega Menu Container (flattened) -->
+                <div class="mega-menu-wrapper">
+                  <div class="mega-menu-inner">
+                    <div class="label-wrapper">
+                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
                       <path
                         d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6"
                         stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
@@ -54,9 +54,9 @@
                       <path
                         d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18"
                         stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                    <label for="navigation stream">Navigation Stream</label>
-                  </div>
+                        </svg>
+                        <label for="navigation stream">Navigation Stream</label>
+                    </div>
                   <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
                     <div class="level-2-menu">
                       <ul class="level-2-menu-container">
@@ -91,7 +91,7 @@
                                 </div>
 
                               </li>
-                              <li><a href="#" class="has-image-link">
+                              <li class="has-image-link"><a href="#">
                                   <img src="../assets/images/Green-Mountain-Reservoiur.jpg"
                                     alt="Green Mountain Reservoir">
                                 </a></li>
@@ -106,7 +106,7 @@
                               <li>
                                 <a href="#">Safeguarding FAQs</a>
                               </li>
-                              <li><a href="#" class="has-image-link">
+                              <li class="has-image-link"><a href="#">
                                   <img src="../assets/images/flatiron fall.jpg" alt="Flatiron Fall 2024">
                                 </a></li>
                             </ul>
@@ -197,21 +197,21 @@
                   <div class="mega-menu" id="environmentMegaMenu" aria-label="Environment mega menu" tabindex="-1">
                     <div class="level-2-menu">
                       <ul class="level-2-menu-container">
-                        <li class="has-level-3-children">
-                          <a href="#">Projects</a>
+                      <li class="has-level-3-children">
+                        <a href="#">Projects</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                              <li class="has-level-4-children">
-                                <a href="#">Colorado-Big Thompson Project</a>
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                                    <li><a href="#">C-BT History</a></li>
-                                    <li><a href="#">C-BT Infrastructure</a></li>
-                                    <li><a href="#">Hydropower</a></li>
-                                    <li><a href="#">Pleasant Valley Pipeline</a></li>
-                                    <li><a href="#">Pump Plants</a></li>
-                                    <li><a href="#">Southern Water Supply Project</a></li>
-                                  </ul>
+                              <li><a href="#">C-BT History</a></li>
+                              <li><a href="#">C-BT Infrastructure</a></li>
+                              <li><a href="#">Hydropower</a></li>
+                              <li><a href="#">Pleasant Valley Pipeline</a></li>
+                              <li><a href="#">Pump Plants</a></li>
+                              <li><a href="#">Southern Water Supply Project</a></li>
+                            </ul>
                                 </div>
 
                               </li>
@@ -220,12 +220,12 @@
                               </li>
                               <li>
                                 <a href="#">Northern Integrated Supply Project</a>
-                              </li>
-                              <li>
-                                <a href="#">Northern Integrated Supply Project</a>
-                              </li>
-                              <li class="has-level-4-children">
-                                <a href="#">Windy Gap Project</a>
+                          </li>
+                            <li>
+                              <a href="#">Northern Integrated Supply Project</a>
+                          </li>
+                          <li class="has-level-4-children">
+                            <a href="#">Windy Gap Project</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
                                     <li><a href="#">Colorado-Big Thompson Project</a></li>
@@ -236,23 +236,23 @@
                                     <li><a href="#">Colorado-Big Thompson Project</a></li>
                                     <li><a href="#">Colorado-Big Thompson Project</a></li>
                                     <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                  </ul>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
                                 </div>
 
-                              </li>
-                              <li><a href="#" class="has-image-link">
+                          </li>
+                              <li class="has-image-link"><a href="#">
                                   <img src="../assets/images/Green-Mountain-Reservoiur.jpg"
                                     alt="Green Mountain Reservoir">
-                                </a></li>
-                            </ul>
+                          </a></li>
+                        </ul>
                           </div>
 
-                        </li>
-                        <li><a href="#">Property Boundary Inclusions</a></li>
+                      </li>
+                      <li><a href="#">Property Boundary Inclusions</a></li>
                         <li><a href="#">Property Boundary Inclusions</a></li>
                         <li class="has-level-3-children">
                           <a href="#">Safeguarding Water Resources</a>
@@ -280,82 +280,82 @@
                           </div>
 
                         </li>
-                        <li class="has-level-3-children">
-                          <a href="#">Safeguarding Water Resources</a>
+                      <li class="has-level-3-children">
+                        <a href="#">Safeguarding Water Resources</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                              <li class="has-level-4-children">
-                                <a href="#">Colorado-Big Thompson Project</a>
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                  </ul>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
                                 </div>
 
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
                           </div>
 
-                        </li>
-                        <li class="has-level-3-children">
-                          <a href="#">Water Ownership</a>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Ownership</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                              <li class="has-level-4-children">
-                                <a href="#">Colorado-Big Thompson Project</a>
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                  </ul>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
                                 </div>
 
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                            </ul>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
                           </div>
 
-                        </li>
-                        <li class="has-level-3-children">
-                          <a href="#">Water Delivery</a>
+                      </li>
+                      <li class="has-level-3-children">
+                        <a href="#">Water Delivery</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                              <li class="has-level-4-children">
-                                <a href="#">Colorado-Big Thompson Project</a>
+                          <li class="has-level-4-children">
+                            <a href="#">Colorado-Big Thompson Project</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                  </ul>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                            </ul>
                                 </div>
 
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
-                              </li>
-                            </ul>
-                          </div>
+                          </li>
+                            <li>
+                              <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                          <li>
+                            <a href="#">Colorado-Big Thompson Project</a>
+                          </li>
+                        </ul>
+                </div>
 
                         </li>
                         <li><a href="#">Property Boundary Inclusions</a></li>
@@ -364,18 +364,18 @@
                     </div>
 
                   </div>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- Data Dropdown with Mega Menu -->
-            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <!-- Data Dropdown with Mega Menu -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="dataMegaMenu">
                 Data
                 <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
-              </a>
-              <!-- Mega Menu Container -->
+                </a>
+                <!-- Mega Menu Container -->
               <div class="mega-menu-wrapper">
                 <div class="mega-menu-inner">
                   <div class="label-wrapper">
@@ -410,8 +410,8 @@
                               </li>
                               <li>
                                 <a href="#">Water Quality</a>
-                              </li>
-                            </ul>
+                            </li>
+                          </ul>
                           </div>
                         </li>
                         <li><a href="#">Snowpack</a></li>
@@ -421,15 +421,15 @@
                     </div>
 
                   </div>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- About Dropdown with Mega Menu -->
-            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <!-- About Dropdown with Mega Menu -->
+              <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
                 aria-expanded="false" aria-controls="aboutMegaMenu">
-                About
+                  About
                 <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
               </a>
               <!-- Mega Menu Container (flattened) -->
@@ -466,11 +466,11 @@
                                 <a href="#">History</a>
                               </li>
                               <li><a href="#">Public Notices</a></li>
-                              <li><a href="#" class="has-image-link">
+                              <li class="has-image-link"><a href="#">
                                   <img src="../assets/images/Conservation Gardens tour (June 2023).png"
                                     alt="Conservation Gardens tour (June 2023)">
                                 </a></li>
-                            </ul>
+                              </ul>
                           </div>
                         </li>
                         <li class="has-level-3-children">
@@ -479,11 +479,11 @@
                             <ul class="level-3-menu-container">
                               <li>
                                 <a href="#">Departments</a>
-                              </li>
-                              <li><a href="#" class="has-image-link">
+                            </li>
+                              <li class="has-image-link"><a href="#">
                                   <img src="../assets/images/NISP-Industry-Day-2025.jpg" alt="NISP Industry Day 2025">
                                 </a></li>
-                            </ul>
+                          </ul>
                           </div>
 
                         </li>
@@ -495,39 +495,39 @@
                     </div>
 
                   </div>
+                  </div>
                 </div>
-              </div>
-            </li>
+              </li>
 
-            <!-- News Link -->
-            <li class="nav-item header__menu-item" role="none">
+              <!-- News Link -->
+              <li class="nav-item header__menu-item" role="none">
               <a class="nav-link header__menu-link" href="#" role="menuitem">News</a>
-            </li>
-          </ul>
+              </li>
+            </ul>
 
-          <!-- Right Side Actions -->
-          <div class="header__actions">
-            <!-- Search Button -->
+            <!-- Right Side Actions -->
+            <div class="header__actions">
+              <!-- Search Button -->
             <button type="button" class="header__search-btn" aria-label="Open search" aria-expanded="false"
               aria-controls="searchPanel">
-              <i data-lucide="search" aria-hidden="true"></i>
-            </button>
+                <i data-lucide="search" aria-hidden="true"></i>
+              </button>
 
-            <!-- Login Button -->
-            <!-- Primary Button without icon starts here-->
+              <!-- Login Button -->
+              <!-- Primary Button without icon starts here-->
             <a href="#" class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center" role="button"
               aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
-              <div class="primary-btn-wrap norm">
-                <span class="btn-text">Water Provider Login</span>
-              </div>
-            </a>
-            <!-- Primary Button without icon ends here-->
+                <div class="primary-btn-wrap norm">
+                  <span class="btn-text">Water Provider Login</span>
+                </div>
+              </a>
+              <!-- Primary Button without icon ends here-->
+            </div>
           </div>
         </div>
-      </div>
-    </nav>
-  </header>
-  <!-- Header Component ends here -->
+      </nav>
+    </header>
+    <!-- Header Component ends here -->
 
   <!-- Search Overlay Panel -->
   <div class="search-overlay" id="searchPanel" aria-hidden="true">
@@ -579,7 +579,7 @@
     </div>
   </div>
 
-  <script src="../assets/dist/main.min.js"></script>
-</body>
+    <script src="../assets/dist/main.min.js"></script>
+  </body>
 
 </html>

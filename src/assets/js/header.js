@@ -114,6 +114,252 @@ const setupHeader = () => {
     });
   };
 
+  // Mobile Mega Menu Functionality
+  const setupMobileMegaMenu = () => {
+    const isMobile = () => window.innerWidth < 992;
+
+    // Handle main dropdown navigation items
+    const dropdownNavItems = header.querySelectorAll('.nav-item.dropdown.has-mega-menu');
+    
+    dropdownNavItems.forEach(item => {
+      const trigger = item.querySelector('.dropdown-toggle');
+      const megaMenuWrapper = item.querySelector('.mega-menu-wrapper');
+      
+      if (trigger && megaMenuWrapper) {
+        // Set initial ARIA attributes
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-controls', megaMenuWrapper.id || `mega-menu-${Math.random().toString(36).substr(2, 9)}`);
+        megaMenuWrapper.setAttribute('aria-hidden', 'true');
+        
+        trigger.addEventListener('click', (e) => {
+          e.preventDefault();
+          
+          // Only apply mobile logic if we're on mobile
+          if (!isMobile()) return;
+          
+          const isCurrentlyActive = item.classList.contains('active');
+          
+          // Remove active class from all dropdown nav items
+          dropdownNavItems.forEach(navItem => {
+            navItem.classList.remove('active');
+            const navTrigger = navItem.querySelector('.dropdown-toggle');
+            const navMegaMenu = navItem.querySelector('.mega-menu-wrapper');
+            
+            if (navTrigger) {
+              navTrigger.setAttribute('aria-expanded', 'false');
+            }
+            if (navMegaMenu) {
+              navMegaMenu.setAttribute('aria-hidden', 'true');
+            }
+          });
+          
+          // Toggle current item if it wasn't active
+          if (!isCurrentlyActive) {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            megaMenuWrapper.setAttribute('aria-hidden', 'false');
+            
+            // Set focus to first focusable element in mega menu
+            const firstFocusable = megaMenuWrapper.querySelector('a, button');
+            if (firstFocusable) {
+              setTimeout(() => firstFocusable.focus(), 100);
+            }
+          }
+        });
+        
+        // Keyboard navigation for main dropdown triggers
+        trigger.addEventListener('keydown', (e) => {
+          if (!isMobile()) return;
+          
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
+          } else if (e.key === 'Escape') {
+            item.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            megaMenuWrapper.setAttribute('aria-hidden', 'true');
+            trigger.focus();
+          }
+        });
+      }
+    });
+
+    // Handle level-3 children
+    const level3Items = header.querySelectorAll('.has-level-3-children');
+    
+    level3Items.forEach(item => {
+      const trigger = item.querySelector('a');
+      const level3Menu = item.querySelector('.level-3-menu');
+      
+      if (trigger && level3Menu) {
+        // Set initial ARIA attributes
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-controls', level3Menu.id || `level3-menu-${Math.random().toString(36).substr(2, 9)}`);
+        level3Menu.setAttribute('aria-hidden', 'true');
+        
+        trigger.addEventListener('click', (e) => {
+          // Only apply mobile logic if we're on mobile
+          if (!isMobile()) return;
+          
+          e.preventDefault();
+          
+          const isCurrentlyActive = item.classList.contains('active');
+          
+          // Remove active class from all level-3 children in the same parent
+          const parentMegaMenu = item.closest('.mega-menu-wrapper');
+          if (parentMegaMenu) {
+            const siblingLevel3Items = parentMegaMenu.querySelectorAll('.has-level-3-children');
+            siblingLevel3Items.forEach(siblingItem => {
+              siblingItem.classList.remove('active');
+              const siblingTrigger = siblingItem.querySelector('a');
+              const siblingMenu = siblingItem.querySelector('.level-3-menu');
+              
+              if (siblingTrigger) {
+                siblingTrigger.setAttribute('aria-expanded', 'false');
+              }
+              if (siblingMenu) {
+                siblingMenu.setAttribute('aria-hidden', 'true');
+              }
+            });
+          }
+          
+          // Toggle current item if it wasn't active
+          if (!isCurrentlyActive) {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            level3Menu.setAttribute('aria-hidden', 'false');
+            
+            // Set focus to first focusable element in level 3 menu
+            const firstFocusable = level3Menu.querySelector('a, button');
+            if (firstFocusable) {
+              setTimeout(() => firstFocusable.focus(), 100);
+            }
+          }
+        });
+        
+        // Keyboard navigation for level 3 triggers
+        trigger.addEventListener('keydown', (e) => {
+          if (!isMobile()) return;
+          
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
+          } else if (e.key === 'Escape') {
+            item.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            level3Menu.setAttribute('aria-hidden', 'true');
+            trigger.focus();
+          }
+        });
+      }
+    });
+
+    // Handle level-4 children
+    const level4Items = header.querySelectorAll('.has-level-4-children');
+    
+    level4Items.forEach(item => {
+      const trigger = item.querySelector('a');
+      const level4Menu = item.querySelector('.level-4-menu');
+      
+      if (trigger && level4Menu) {
+        // Set initial ARIA attributes
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.setAttribute('aria-controls', level4Menu.id || `level4-menu-${Math.random().toString(36).substr(2, 9)}`);
+        level4Menu.setAttribute('aria-hidden', 'true');
+        
+        trigger.addEventListener('click', (e) => {
+          // Only apply mobile logic if we're on mobile
+          if (!isMobile()) return;
+          
+          e.preventDefault();
+          
+          const isCurrentlyActive = item.classList.contains('active');
+          
+          // Remove active class from all level-4 children in the same parent
+          const parentLevel3Menu = item.closest('.level-3-menu');
+          if (parentLevel3Menu) {
+            const siblingLevel4Items = parentLevel3Menu.querySelectorAll('.has-level-4-children');
+            siblingLevel4Items.forEach(siblingItem => {
+              siblingItem.classList.remove('active');
+              const siblingTrigger = siblingItem.querySelector('a');
+              const siblingMenu = siblingItem.querySelector('.level-4-menu');
+              
+              if (siblingTrigger) {
+                siblingTrigger.setAttribute('aria-expanded', 'false');
+              }
+              if (siblingMenu) {
+                siblingMenu.setAttribute('aria-hidden', 'true');
+              }
+            });
+          }
+          
+          // Toggle current item if it wasn't active
+          if (!isCurrentlyActive) {
+            item.classList.add('active');
+            trigger.setAttribute('aria-expanded', 'true');
+            level4Menu.setAttribute('aria-hidden', 'false');
+            
+            // Set focus to first focusable element in level 4 menu
+            const firstFocusable = level4Menu.querySelector('a, button');
+            if (firstFocusable) {
+              setTimeout(() => firstFocusable.focus(), 100);
+            }
+          }
+        });
+        
+        // Keyboard navigation for level 4 triggers
+        trigger.addEventListener('keydown', (e) => {
+          if (!isMobile()) return;
+          
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            trigger.click();
+          } else if (e.key === 'Escape') {
+            item.classList.remove('active');
+            trigger.setAttribute('aria-expanded', 'false');
+            level4Menu.setAttribute('aria-hidden', 'true');
+            trigger.focus();
+          }
+        });
+      }
+    });
+    
+    // Handle window resize to reset mobile states
+    const handleResize = () => {
+      if (!isMobile()) {
+        // Reset all active states when switching to desktop
+        dropdownNavItems.forEach(item => {
+          item.classList.remove('active');
+          const trigger = item.querySelector('.dropdown-toggle');
+          const megaMenu = item.querySelector('.mega-menu-wrapper');
+          
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          if (megaMenu) megaMenu.setAttribute('aria-hidden', 'true');
+        });
+        
+        level3Items.forEach(item => {
+          item.classList.remove('active');
+          const trigger = item.querySelector('a');
+          const menu = item.querySelector('.level-3-menu');
+          
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          if (menu) menu.setAttribute('aria-hidden', 'true');
+        });
+        
+        level4Items.forEach(item => {
+          item.classList.remove('active');
+          const trigger = item.querySelector('a');
+          const menu = item.querySelector('.level-4-menu');
+          
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          if (menu) menu.setAttribute('aria-hidden', 'true');
+        });
+      }
+    };
+    
+    window.addEventListener('resize', handleResize);
+  };
+
   // Bind events
   if (searchBtn) {
     searchBtn.addEventListener("click", handleSearch);
@@ -127,13 +373,17 @@ const setupHeader = () => {
 
   setupDropdownKeyboardNavigation();
   setupAccessibility();
+  setupMobileMegaMenu();
 
-  // Header On Scroll Script
+  // Header On Scroll Script (Desktop Only)
   let lastScrollTop = 0;
+  const isDesktop = () => window.innerWidth >= 992;
 
-  window.addEventListener("scroll", function () {
+  const handleHeaderScroll = () => {
+    // Only apply scroll effects on desktop
+    if (!isDesktop()) return;
+
     let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
     const headers = document.querySelectorAll(".header");
 
     if (scrollTop === 0) {
@@ -154,7 +404,24 @@ const setupHeader = () => {
     }
 
     lastScrollTop = scrollTop <= 0 ? 0 : scrollTop; // Prevent negative values
-  });
+  };
+
+  // Reset header scroll classes when switching to mobile
+  const resetHeaderScrollClasses = () => {
+    const headers = document.querySelectorAll(".header");
+    headers.forEach((el) => el.classList.remove("upwards", "downwards"));
+  };
+
+  // Handle window resize for scroll behavior
+  const handleScrollResize = () => {
+    if (!isDesktop()) {
+      // Reset scroll classes when switching to mobile
+      resetHeaderScrollClasses();
+    }
+  };
+
+  window.addEventListener("scroll", handleHeaderScroll);
+  window.addEventListener("resize", handleScrollResize);
 };
 
 // Initialize header
