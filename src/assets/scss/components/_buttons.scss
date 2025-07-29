@@ -302,7 +302,7 @@ $transition-fast: all 0.5s ease-in-out;
 }
 
 /* Toggler Button */
-#toggleButton {
+.toggleButton {
   position: relative;
   width: 36px; /* Width of the switch */
   height: 20px; /* Height of the switch */
@@ -312,12 +312,12 @@ $transition-fast: all 0.5s ease-in-out;
   border: 1px solid #00853F; /* Border to look more button-like */
 }
 
-#toggleButton[aria-pressed="true"] {
+.toggleButton[aria-pressed="true"] {
   background-color: #00853F; /* Background color when ON */
   border: 1px solid #00853F;
 }
 
-#toggleButton:before {
+.toggleButton:before {
   content: "";
   position: absolute;
   top: 1px;
@@ -331,6 +331,6 @@ $transition-fast: all 0.5s ease-in-out;
   transition: 0.4s; /* Smooth transition for sliding effect */
 }
 
-#toggleButton[aria-pressed="true"]:before {
+.toggleButton[aria-pressed="true"]:before {
   transform: translateX(15px); /* Move slider to the right when ON */
 }
