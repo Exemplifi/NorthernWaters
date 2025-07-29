@@ -13,6 +13,10 @@
             padding-bottom: rem.convert(24px);
             border-bottom: 1px solid var(--black);
             margin-bottom: rem.convert(48px);
+            color: var(--black-3);
+            @include media-breakpoint-down(lg) {
+              margin-bottom: rem.convert(40px);
+            }
           }
 
           .faq-accordion {
@@ -29,6 +33,7 @@
               color: var(--white);
               @include media-breakpoint-down(lg) {
                 padding: rem.convert(24px);
+                margin-bottom: rem.convert(16px);
               }
               &:last-child {
                 margin-bottom: 0;
@@ -51,6 +56,10 @@
                   color: var(--white);
                   text-align: left;
                   margin: 0;
+                  @include convert-percent(line-height, 20px, 140);
+                  @include media-breakpoint-down(lg) {
+                    @include convert-percent(line-height, 18px, 150);
+                  }
                 }
 
                 .accordion_icon {
