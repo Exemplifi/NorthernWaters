@@ -1,3 +1,90 @@
-.container-tabheading {
-
+.container-submenu-inner-page {
+  padding-bottom: rem.convert(48px);
+  nav {
+    background-color: var(--blue);
+    padding: rem.convert(20px) rem.convert(16px);
+    border-radius: rem.convert(16px);
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+      justify-content: space-between;
+      align-items: center;
+      height: rem.convert(40px);
+      @include media-breakpoint-down(lg) {
+        flex-direction: column;
+        height: auto;
+        align-items: flex-start;
+      }
+      li {
+        list-style: none;
+        margin: 0;
+        @include media-breakpoint-down(lg) {
+          width: 100%;
+        }
+        &::before {
+          display: none;
+        }
+        a {
+          padding: rem.convert(10px) rem.convert(16px);
+          background-color: transparent;
+          border-radius: rem.convert(8px);
+          color: var(--white);
+          text-decoration: none;
+          display: flex;
+          column-gap: rem.convert(8px);
+          align-items: center;
+          font-weight: 600;
+          transition: all 0.3s ease;
+          svg {
+            width: rem.convert(20px);
+            height: rem.convert(20px);
+          }
+          &:hover {
+            background-color: var(--white);
+            color: var(--black);
+          }
+          &:active,
+          &:focus-visible {
+            background-color: var(--white);
+            color: var(--black);
+          }
+        }
+      }
+    }
+  }
+}
+.order-status {
+  display: flex;
+  background: #febf00;
+  width: 100%;
+  padding: rem.convert(8px) rem.convert(16px);
+  border-radius: rem.convert(8px);
+  margin-bottom: rem.convert(48px);
+  @include media-breakpoint-down(lg) {
+    margin-bottom: rem.convert(40px);
+  }
+  a {
+    color: var(--black-2);
+    display: flex;
+    column-gap: rem.convert(10px);
+    text-decoration: none;
+    font-weight: 500;
+  }
+}
+.inclusion-button-row {
+  section {
+    display: flex;
+    width: 100%;
+    justify-content: flex-end;
+    margin-bottom: rem.convert(24px);
+    column-gap: rem.convert(16px);
+    align-items: center;
+    @include media-breakpoint-down(lg) {
+      justify-content: space-between;
+      margin-bottom: rem.convert(40px);
+    }
+  }
 }

@@ -280,44 +280,47 @@
       <!-- Login inner page content starts here -->
       <!-- Tab Heading starts here -->
       <section
-        class="container container-submenu-inner-page section-wrapper bg-half-white"
+        class="container-submenu-inner-page section-wrapper bg-half-white"
       >
-        <div class="row">
-          <div class="col-12">
-            <nav>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <nav>
                 <ul>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
-                    <li>
-                        <a href="#">
-                            <span><i data-lucide="circle-user-round"></i></span> Account Details
-                        </a>
-                    </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="circle-user-round"></i
+                      ><span>Account Details</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="shopping-cart"></i><span>Orders</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="arrow-up-down"></i><span>Transfers</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="truck"></i><span>Deliveries</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="file-text"></i><span>Documents</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="#">
+                      <i data-lucide="map"></i><span>Outage Map</span>
+                    </a>
+                  </li>
                 </ul>
-            </nav>
+              </nav>
+            </div>
           </div>
         </div>
       </section>
@@ -327,10 +330,95 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <div class="table-heading-wrap">
-                <h2 id="adaptive-management-heading">
-                  Adaptive Management Results
-                </h2>
+              <div class="table-heading-wrap table-heading-wrap-with-button">
+                <h2 id="adaptive-management-heading">Account Details</h2>
+                <!-- Primary Button starts here-->
+                <a
+                  href="#"
+                  class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                  role="button"
+                  aria-label="Water Provider Login"
+                  tabindex="0"
+                  data-button-type="primary"
+                  style="filter: url('#goo-filter-0')"
+                >
+                  <div
+                    class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                  >
+                    <span class="btn-text">Manage Authorized User</span>
+                    <span
+                      class="btn-icon liquid-animation-items liquid-animation-circle move"
+                      aria-hidden="true"
+                    >
+                      <span class="circle-animation">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                          aria-label="Right arrow"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#fff"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                          <path
+                            d="M12 5L19 12L12 19"
+                            stroke="#fff"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          ></path>
+                        </svg>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        aria-hidden="true"
+                      >
+                        <defs>
+                          <filter id="goo-filter-0">
+                            <feGaussianBlur
+                              in="SourceGraphic"
+                              stdDeviation="10"
+                              result="blur"
+                            ></feGaussianBlur>
+                            <feColorMatrix
+                              in="blur"
+                              mode="matrix"
+                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                              result="goo"
+                            ></feColorMatrix>
+                            <feBlend in="SourceGraphic" in2="goo"></feBlend>
+                          </filter>
+                        </defs>
+                      </svg>
+                    </span>
+                  </div>
+                </a>
+                <!-- Primary Button ends here-->
+              </div>
+              <div class="order-status">
+                <a href="#"
+                  ><i data-lucide="info"></i><span>Pending Orders</span></a
+                >
+              </div>
+              <div class="inclusion-button-row">
+                <section>
+                  <span>Include Undelivered Water</span>
+                  <!-- Toggler Button starts here-->
+                  <button
+                    id="toggleButton"
+                    aria-labelledby="toggleLabel"
+                    aria-pressed="false"
+                  ></button>
+                  <!-- Toggler Button ends here-->
+                </section>
               </div>
             </div>
             <div class="col-12">
@@ -345,7 +433,7 @@
                       Adaptive Management Results from 2020 to 2024
                     </caption>
                     <thead>
-                      <tr>
+                      <tr class="sticky">
                         <th scope="col">Clarity Metric</th>
                         <th scope="col">Goals/Triggers</th>
                         <th scope="col">2020</th>
@@ -356,6 +444,270 @@
                       </tr>
                     </thead>
                     <tbody>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Average July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>3.8</td>
+                        <td>3 m</td>
+                        <td>3.6 m</td>
+                        <td>3.2 m</td>
+                        <td>4.2 m</td>
+                        <td>4.5 m</td>
+                      </tr>
+                      <tr>
+                        <th scope="row">
+                          Grand Lake Clarity Running Minimum July 1 to Sept. 11
+                          (m)
+                        </th>
+                        <td>2.5</td>
+                        <td>2.4 m</td>
+                        <td>2.7 m</td>
+                        <td>2.6 m</td>
+                        <td>3 m</td>
+                        <td>3.7 m</td>
+                      </tr>
                       <tr>
                         <th scope="row">
                           Grand Lake Clarity Running Average July 1 to Sept. 11

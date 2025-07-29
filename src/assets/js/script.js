@@ -279,7 +279,10 @@ $(document).ready(function() {
   $tableWrappers.each(function () {
     const $wrapper = $(this);
     const $parent = $wrapper.parent();
+    const $table = $wrapper.find("table");
+    const $thead = $table.find("thead");
 
+    // Function to check horizontal scroll and add relevant classes
     function checkScroll() {
       if ($wrapper[0].scrollWidth > $wrapper[0].clientWidth) {
         $parent.addClass("has-scroll");
@@ -296,9 +299,16 @@ $(document).ready(function() {
         $parent.removeClass("has-scroll at-end");
       }
     }
+
     checkScroll();
-    $wrapper.on("scroll", checkScroll);
-    $(window).on("resize", checkScroll);
+
+    $wrapper.on("scroll", function () {
+      checkScroll();
+    });
+
+    $(window).on("scroll resize", function () {
+      checkScroll();
+    });
   });
 
   const reveals = document.querySelectorAll(".reveal");
