@@ -72,6 +72,17 @@
   @include media-breakpoint-down(md) {
     margin-bottom: rem.convert(40px);
   }
+  h2 {
+    color: var(--black-3);
+    font-size: rem.convert(48px);
+    @include convert-percent(line-height, 48px, 110);
+    @include convert-percent(letter-spacing, 48px, -2);
+    @include media-breakpoint-down(lg) {
+      font-size: rem.convert(32px);
+      @include convert-percent(line-height, 32px, 110);
+      @include convert-percent(letter-spacing, 32px, 0);
+    }
+  }
 }
 
 .table-heading-wrap-with-button {
@@ -113,7 +124,7 @@
       border-top: 1px solid rgba(17, 17, 17, 0.6);
       border-collapse: separate;
       border-spacing: 0px;
-      border-radius: rem.convert(16px);
+      border-radius: rem.convert(8px);
       margin-bottom: rem.convert(24px);
       width: 100%;
 
@@ -147,11 +158,11 @@
           top: 0;
         }
         th:first-child {
-          border-radius: rem.convert(16px 0 0 0);
+          border-radius: rem.convert(8px 0 0 0);
         }
 
         th:last-child {
-          border-radius: rem.convert(0 16px 0 0);
+          border-radius: rem.convert(0 8px 0 0);
         }
       }
 
