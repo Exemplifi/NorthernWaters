@@ -11,6 +11,9 @@
   <body>
     <!-- Skip to main content link -->
   <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+    
+    <!-- Live region for screen reader announcements -->
+    <div id="menu-announcements" class="sr-only" aria-live="polite" aria-atomic="true"></div>
     <!-- Add class "less-spacing-top" to the header element to reduce the spacing between the header and top of the page -->
     <!-- Header Component starts here -->
     <header class="header container-fluid" role="banner">
@@ -22,19 +25,20 @@
             height="56" />
           </a>
 
-          <!-- Mobile Toggle Button -->
+          <!-- Mobile Toggle Button - AAA Enhanced -->
         <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
           data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
-          aria-label="Toggle navigation menu">
+          aria-label="Open main navigation menu" aria-describedby="mobile-menu-description">
             <span class="navbar-toggler-icon" aria-hidden="true"></span>
             <span class="navbar-toggler-label">Menu</span>
+            <span id="mobile-menu-description" class="sr-only">Opens a menu with water, environment, data, and about sections</span>
           </button>
 
           <!-- Navigation -->
         <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
           
           <!-- Search Input Bar -->
-          <div class="header__search-input-container">
+          <div class="header__search-input-container" role="search" aria-label="Site search">
             <form class="header__search-input-wrapper" role="search" aria-label="Site search">
               <input 
                 type="search" 
@@ -50,12 +54,15 @@
             </form>
           </div>
           
+          <!-- Mobile Menu Section Heading -->
+          <h3 class="sr-only">Main Menu Sections</h3>
+          
           <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
 
               <!-- Water Dropdown with Mega Menu (flattened columns) -->
               <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
-                aria-expanded="false" aria-controls="waterMegaMenu">
+                aria-expanded="false" aria-controls="waterMegaMenu" id="water-menu-trigger">
                   Water
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
                     <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
@@ -78,11 +85,11 @@
                         </svg>
                         <label for="navigation stream">Navigation Stream</label>
                     </div>
-                  <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
-                    <div class="level-2-menu">
-                      <ul class="level-2-menu-container">
-                        <li class="has-level-3-children">
-                          <a href="#">Projects</a>
+                  <div class="mega-menu" id="waterMegaMenu" role="region" aria-labelledby="water-menu-trigger" tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Water main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none" class="has-level-3-children">
+                          <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Projects</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
                               <li class="has-level-4-children">
@@ -198,7 +205,7 @@
             <!-- Environment Dropdown with Mega Menu -->
             <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
-                aria-expanded="false" aria-controls="environmentMegaMenu">
+                aria-expanded="false" aria-controls="environmentMegaMenu" id="environment-menu-trigger">
                 Environment
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
                   <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
@@ -222,172 +229,176 @@
                     </svg>
                     <label for="navigation stream">Navigation Stream</label>
                   </div>
-                  <div class="mega-menu" id="environmentMegaMenu" aria-label="Environment mega menu" tabindex="-1">
-                    <div class="level-2-menu">
-                      <ul class="level-2-menu-container">
-                      <li class="has-level-3-children">
-                        <a href="#">Projects</a>
+                  <div class="mega-menu" id="environmentMegaMenu" role="region" aria-labelledby="environment-menu-trigger" tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Environment main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                      <li role="none" class="has-level-3-children">
+                        <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Efficient Water Use</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                          <li class="has-level-4-children">
-                            <a href="#">Colorado-Big Thompson Project</a>
-                                <div class="level-4-menu">
-                                  <ul class="level-4-menu-container">
-                              <li><a href="#">C-BT History</a></li>
-                              <li><a href="#">C-BT Infrastructure</a></li>
-                              <li><a href="#">Hydropower</a></li>
-                              <li><a href="#">Pleasant Valley Pipeline</a></li>
-                              <li><a href="#">Pump Plants</a></li>
-                              <li><a href="#">Southern Water Supply Project</a></li>
-                            </ul>
-                                </div>
-
+                              <li>
+                                <a href="#">Conservation Campus and Gardens</a>
                               </li>
                               <li>
-                                <a href="#">Northern Integrated Supply Project</a>
-                              </li>
-                              <li>
-                                <a href="#">Northern Integrated Supply Project</a>
+                                <a href="#">Consultations and Assessments</a>
                           </li>
                             <li>
-                              <a href="#">Northern Integrated Supply Project</a>
+                              <a href="#">Drought Resources</a>
                           </li>
-                          <li class="has-level-4-children">
-                            <a href="#">Windy Gap Project</a>
-                                <div class="level-4-menu">
-                                  <ul class="level-4-menu-container">
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                            </ul>
-                                </div>
+                          <li>
+                            <a href="#">Grants</a>
+                            </li>
+                            <li>
+                              <a href="#">Landscape Resources</a>
+                          </li>
+                          <li>
+                            <a href="#">Landscape Templates</a>
+                        </li>
+                        <li>
+                          <a href="#">Partners and Resources</a>
+                      </li>
+                      <li>
+                        <a href="#">Trainings</a>
+                    </li>
 
-                          </li>
-                              <li class="has-image-link"><a href="#">
-                                  <img src="../assets/images/Green-Mountain-Reservoiur.jpg"
-                                    alt="Green Mountain Reservoir">
-                          </a></li>
                         </ul>
                           </div>
 
                       </li>
-                      <li><a href="#">Property Boundary Inclusions</a></li>
-                        <li><a href="#">Property Boundary Inclusions</a></li>
                         <li class="has-level-3-children">
-                          <a href="#">Safeguarding Water Resources</a>
+                          <a href="#">Environmental Commitments</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                              <li class="has-level-4-children">
-                                <a href="#">Colorado-Big Thompson Project</a>
-                                <div class="level-4-menu">
-                                  <ul class="level-4-menu-container">
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                    <li><a href="#">Colorado-Big Thompson Project</a></li>
-                                  </ul>
-                                </div>
-
+                              <li>
+                                <a href="#">Conservation Campus and Gardens</a>
                               </li>
                               <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
+                                <a href="#">Consultations and Assessments</a>
                               </li>
-                              <li>
-                                <a href="#">Colorado-Big Thompson Project</a>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/Weather Stations.jpg" alt="Weather Stations">
+                                </a>
                               </li>
                             </ul>
                           </div>
 
                         </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Environmental Monitoring</a>
+                            <div class="level-3-menu">
+                              <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Compounds of Emerging Concern</a>
+                            </li>
+                            <li>
+                              <a href="#">Flow</a>
+                            </li>
+                            <li><a href="#">South Platte Salinity</a></li>
+                            <li class="has-level-4-children">
+                              <a href="#">Water Quality</a>
+                                  <div class="level-4-menu">
+                                    <ul class="level-4-menu-container">
+                                <li><a href="#">Aquatic Life</a></li>
+                                <li><a href="#">C-BT and WG Water Quality</a></li>
+                                <li><a href="#">Water Temperature</a></li>
+                                <li class="has-image-link">
+                                  <a href="#">
+                                    <img src="../assets/images/Water Quality Sampling West Slope (June 2024).jpg" alt="Water Quality Sampling West Slope (June 2024)">
+                                  </a>
+                                </li>
+                              </ul>
+                                  </div>
+  
+                            </li>
+                          </ul>
+                            </div>
+  
+                        </li>
+                      <li><a href="#">Reports</a></li>
+                      
                       <li class="has-level-3-children">
-                        <a href="#">Safeguarding Water Resources</a>
+                        <a href="#">Special Status Species Protection</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
-                          <li class="has-level-4-children">
-                            <a href="#">Colorado-Big Thompson Project</a>
-                                <div class="level-4-menu">
-                                  <ul class="level-4-menu-container">
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                            </ul>
-                                </div>
-
-                          </li>
                             <li>
-                              <a href="#">Colorado-Big Thompson Project</a>
+                              <a href="#">Platte River Recovery</a>
                           </li>
                           <li>
-                            <a href="#">Colorado-Big Thompson Project</a>
+                            <a href="#">Upper Colorado Recovery Program</a>
+                          </li>
+                          <li><a href="#">Upper Colorado Wild Scenic</a></li>
+                          <li class="has-image-link">
+                            <a href="#">
+                              <img src="../assets/images/CBT-interpretive-Area.png" alt="CBT Interpretive Area">
+                            </a>
                           </li>
                         </ul>
                           </div>
 
                       </li>
                       <li class="has-level-3-children">
-                        <a href="#">Water Ownership</a>
+                        <a href="#">Watershed Health</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
+                            <li>
+                              <a href="#">Forest Health</a>
+                          </li>
+                          <li>
+                            <a href="#">Kawuneeche Valley Colloborative</a>
+                          </li>
                           <li class="has-level-4-children">
-                            <a href="#">Colorado-Big Thompson Project</a>
+                            <a href="#">Source Water Protection</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Aquatic Nuisance Species</a></li>
+                              <li><a href="#">Herbicide and Pesticide Management</a></li>
+                              <li><a href="#">Poudre SWPP</a></li>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/Colorado River(Kremmling).png" alt="Colorado River(Kremmling)">
+                                </a>
+                              </li>
                             </ul>
                                 </div>
 
                           </li>
-                            <li>
-                              <a href="#">Colorado-Big Thompson Project</a>
-                          </li>
-                          <li>
-                            <a href="#">Colorado-Big Thompson Project</a>
-                          </li>
-                        </ul>
-                          </div>
-
-                      </li>
-                      <li class="has-level-3-children">
-                        <a href="#">Water Delivery</a>
-                          <div class="level-3-menu">
-                            <ul class="level-3-menu-container">
                           <li class="has-level-4-children">
-                            <a href="#">Colorado-Big Thompson Project</a>
+                            <a href="#">Watershed Recovery and Restoration</a>
                                 <div class="level-4-menu">
                                   <ul class="level-4-menu-container">
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
-                              <li><a href="#">Colorado-Big Thompson Project</a></li>
+                              <li><a href="#">Colorado River Connectivity Channel</a></li>
+                              <li><a href="#">Fire Recovery</a></li>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/Ag Ditches.png" alt="Ag Ditches">
+                                </a>
+                              </li>
                             </ul>
                                 </div>
 
                           </li>
-                            <li>
-                              <a href="#">Colorado-Big Thompson Project</a>
-                          </li>
-                          <li>
-                            <a href="#">Colorado-Big Thompson Project</a>
+                          <li class="has-level-4-children">
+                            <a href="#">West Slope Water Quality</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                              <li><a href="#">Grand Lake Clarity</a></li>
+                              <li><a href="#">Three Lakes</a></li>
+                              <li><a href="#">West Slope Cyanobacteria</a></li>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/Measuring-discharge.png" alt="Measuring Discharge">
+                                </a>
+                              </li>
+                            </ul>
+                                </div>
+
                           </li>
                         </ul>
                 </div>
 
                         </li>
-                        <li><a href="#">Property Boundary Inclusions</a></li>
-                        <li><a href="#">Property Boundary Inclusions</a></li>
+                        
                       </ul>
                     </div>
 
@@ -399,7 +410,7 @@
               <!-- Data Dropdown with Mega Menu -->
               <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
-                aria-expanded="false" aria-controls="dataMegaMenu">
+                aria-expanded="false" aria-controls="dataMegaMenu" id="data-menu-trigger">
                 Data
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
                   <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
@@ -422,11 +433,11 @@
                     </svg>
                     <label for="navigation stream">Navigation Stream</label>
                   </div>
-                  <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
-                    <div class="level-2-menu">
-                      <ul class="level-2-menu-container">
-                        <li class="has-level-3-children">
-                          <a href="#">Water</a>
+                  <div class="mega-menu" id="dataMegaMenu" role="region" aria-labelledby="data-menu-trigger" tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Data main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none" class="has-level-3-children">
+                          <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Water</a>
                           <div class="level-3-menu">
                             <ul class="level-3-menu-container">
                               <li>
@@ -463,7 +474,7 @@
               <!-- About Dropdown with Mega Menu -->
               <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
               <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
-                aria-expanded="false" aria-controls="aboutMegaMenu">
+                aria-expanded="false" aria-controls="aboutMegaMenu" id="about-menu-trigger">
                   About
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25" class="header__menu-icon" aria-hidden="true" fill="none">
                     <path d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z" fill="#111111"/>
@@ -486,10 +497,10 @@
                     </svg>
                     <label for="navigation stream">Navigation Stream</label>
                   </div>
-                  <div class="mega-menu" id="waterMegaMenu" aria-label="Water mega menu" tabindex="-1">
-                    <div class="level-2-menu">
-                      <ul class="level-2-menu-container">
-                        <li><a href="#">Agendas and Minutes</a></li>
+                  <div class="mega-menu" id="aboutMegaMenu" role="region" aria-labelledby="about-menu-trigger" tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="About main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none"><a href="#" role="menuitem">Agendas and Minutes</a></li>
                         <li><a href="#">Board of Directors</a></li>
                         <li><a href="#">Budget & Financial Reports</a></li>
                         <li><a href="#">Calendar</a></li>

@@ -170,6 +170,13 @@
       }
     }
 
+    // AAA Compliant Focus Indicators
+    &:focus-visible {
+      outline: 3px solid var(--green);
+      outline-offset: 2px;
+      box-shadow: 0 0 0 1px var(--white);
+    }
+
     // Remove Bootstrap's default dropdown arrow
     &.dropdown-toggle::after {
       display: none;
@@ -343,18 +350,43 @@
   // Responsive Styles
   @include media-breakpoint-down(lg) {
     .navbar-collapse {
-      position: absolute;
-      top: 100%;
-      left: 100%;
+      position: fixed;
+      top: 100%; // Start below viewport
+      left: 0; // Keep left position constant - no horizontal movement
       right: 0;
       bottom: 0;
       background-color: var(--white);
       @include rem.convert(padding, 32px 16px);
       overflow-y: auto;
       overflow-x: hidden;
-      transition: all 0.3s ease-in-out;
-      height: fit-content;
+      transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1); // Smooth easing
+      transform: translateX(100%); // Initial position (hidden below)
+      height: 100vh; // Fixed height prevents content jumps
       width: 100vw;
+      z-index: 9999;
+      
+      // Performance optimization for smooth animations
+      will-change: transform;
+      backface-visibility: hidden;
+      
+      // Smooth slide up animation
+      &.show {
+        transform: translateX(0); // Slide up to show
+      }
+      
+      // AAA: Scrollbar styling for mobile
+      &::-webkit-scrollbar {
+        width: rem.convert(6px);
+      }
+      
+      &::-webkit-scrollbar-track {
+        background: rgba(var(--black-rgb), 0.1);
+      }
+      
+      &::-webkit-scrollbar-thumb {
+        background: rgba(var(--black-rgb), 0.3);
+        border-radius: rem.convert(3px);
+      }
     }
   }
   // Mega Menu Styles - Enhanced Version
@@ -409,7 +441,7 @@
         overflow: visible; // Ensure level 3 and 4 menus aren't clipped
         .level-2-menu {
           width: 33.33%;
-          padding: 1.5rem 2rem;
+          padding: 1.25rem 1.75rem;
           border-right: 1px solid #11111199;
           flex-shrink: 0;
           display: flex;
@@ -422,7 +454,9 @@
             display: flex;
             flex-direction: column;
             gap: 0.25rem;
-            padding-left: 0;
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+            padding-left: 0.25rem;
             > li {
               list-style: none;
               overflow: visible; 
@@ -436,6 +470,9 @@
                   img{
                     width: 100%;
                     border-radius: rem.convert(12px);
+                  }
+                  &:hover{
+                    background: transparent;
                   }
                 }
               }
@@ -468,10 +505,12 @@
                   flex-direction: column;
                   min-height: 250px;
                   height: 100%;
-                  padding: 1.5rem 2rem;
+                  padding: 1.25rem 1.75rem;
                   overflow: visible; // Ensure level 4 menus aren't clipped
                   .level-3-menu-container{
-                    padding-left: 0;
+                    padding-top: 0.25rem ;
+                    padding-bottom: 0.25rem;
+                    padding-left: 0.25rem;
                     display: flex;
                     flex-direction: column;
                     gap: 0.25rem;
@@ -511,9 +550,11 @@
                           flex-direction: column;
                           min-height: 250px;
                           height: 100%;
-                          padding: 1.5rem 2rem;
+                          padding: 1.25rem 1.75rem;
                           .level-4-menu-container{
-                            padding-left: 0;
+                            padding-top: 0.25rem ;
+                            padding-bottom: 0.25rem;
+                            padding-left: 0.25rem;
                             display: flex;
                             flex-direction: column;
                             gap: 0.25rem;
@@ -548,6 +589,7 @@
           &.has-level-3-children{
            > a{
               position: relative;
+              padding-right: 3.5rem;
               &::after {
                 content: '';
                 display: inline-block;
@@ -567,7 +609,9 @@
               >a{
                 background: var(--green);
                 color: var(--white);
+                padding-right: 3rem;
                 &::after{
+                  right: 1rem;
                   background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
                 }
               }
@@ -576,6 +620,7 @@
           &.has-level-4-children{
             > a{
               position: relative;
+              padding-right: 3.5rem;
               &::after {
                 content: '';
                 display: inline-block;
@@ -595,7 +640,9 @@
              > a{
                 background: var(--green);
                 color: var(--white);
+                padding-right: 3rem;
                 &::after{
+                  right: 1rem;
                   background: white url("../images/arrow-right-black.svg") no-repeat center center/16px 16px;
                 }
               }
@@ -613,9 +660,20 @@
             font-size: 1rem;
             line-height: 1.5;
             letter-spacing: 0;
+            
             &:hover{
               background: var(--green);
               color: var(--white);
+            }
+            
+            // AAA Compliant Focus Indicators for Mega Menu Items
+            &:focus,
+            &:focus-visible {
+              outline: 3px solid var(--green);
+              outline-offset: 2px;
+              box-shadow: 0 0 0 1px var(--white);
+              background: rgba(var(--green-rgb), 0.1);
+              color: var(--green);
             }
           }
           &.has-image-link{
@@ -638,7 +696,7 @@
             overflow-y: auto;
             overflow-x: hidden;
             height: 100%;
-            margin-right: 0.5rem;
+            margin-right: 0.75rem;
             padding-right: 1rem;
           }
         }
@@ -703,13 +761,19 @@
          
          &:hover,
          &:focus {
-           background-color: rgba(var(--green-rgb), 0.1);
+           background-color: rgba(var(--green-rgb), 0.15);
            outline: none;
          }
          
          &:focus-visible {
-           outline: 2px solid var(--green);
+           outline: 3px solid var(--green);
            outline-offset: 2px;
+         }
+         
+         // AAA: Touch feedback
+         &:active {
+           transform: scale(0.95);
+           background-color: rgba(var(--green-rgb), 0.25);
          }
          
          .header__search-input-icon {
@@ -903,6 +967,55 @@
     }
     li.has-image-link, li.menu-cover-image{
       display: none;
+    }
+  }
+  
+  // AAA: Mobile-specific accessibility enhancements
+  
+  
+  // Focus trap indicator
+  .focus-trap-start,
+  .focus-trap-end {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+  }
+  
+  // AAA: High contrast mode support for mobile
+  @media (prefers-contrast: high) {
+    .header__toggle:focus-visible,
+    .header__mobile-close:focus-visible,
+    .header__menu-link:focus-visible,
+    .header__search-submit-btn:focus-visible {
+      outline: 4px solid;
+      outline-color: Highlight;
+      background-color: ButtonFace;
+    }
+    
+    .mega-menu-wrapper a:focus-visible {
+      outline: 4px solid;
+      outline-color: Highlight;
+      background-color: ButtonFace;
+    }
+  }
+  
+  // AAA: Reduced motion support for mobile
+  @media (prefers-reduced-motion: reduce) {
+    .navbar-collapse,
+    .mega-menu-wrapper,
+    .level-3-menu,
+    .level-4-menu,
+    .header__toggle,
+    .header__mobile-close {
+      transition: none;
+      animation: none;
+    }
+    
+    .header__toggle:active,
+    .header__mobile-close:active {
+      transform: none;
     }
   }
 }
@@ -1200,4 +1313,42 @@ body.search-open {
 @keyframes slideInFromTop {
   from { transform: translateY(-20px); opacity: 0; }
   to { transform: translateY(0); opacity: 1; }
+}
+
+// AAA Accessibility: Reduced Motion Support
+@media (prefers-reduced-motion: reduce) {
+  .mega-menu-wrapper,
+  .level-3-menu,
+  .level-4-menu,
+  .header__menu-icon {
+    transition: none;
+    animation: none;
+  }
+  
+  .mega-menu-wrapper.show .mega-menu-inner {
+    animation: none;
+  }
+}
+
+// AAA Accessibility: High Contrast Mode Support
+@media (prefers-contrast: high) {
+  .header__menu-link:focus-visible,
+  .mega-menu a:focus-visible {
+    outline: 4px solid;
+    outline-color: Highlight;
+    box-shadow: none;
+  }
+}
+
+// Screen Reader Only Class for Announcements
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
