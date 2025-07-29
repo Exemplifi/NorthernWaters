@@ -23,4 +23,5 @@ import './image-text.js';
 import './faq.js';
 import './allottees-categories.js';
 import './links-listing.js';
+import './buttons.js';
 
