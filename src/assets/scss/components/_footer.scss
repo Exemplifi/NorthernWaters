@@ -308,11 +308,16 @@
 
       &:hover {
         background-color: darken($black, 5%);
+        img {
+          filter: drop-shadow(4px 4px 0px var(--black));
+          transform: translate(-2px, -2px) scale(1.1);
+        }
       }
 
       img {
         width: rem.convert(24px);
         height: rem.convert(24px);
+        transition: all 0.3s ease;
       }
     }
   }
