@@ -8,6 +8,12 @@
       overflow: visible;
       margin-top: rem.convert(20px);
     }
+    @include media-breakpoint-up(xxl) {
+      padding-left: rem.convert(0);
+      padding-right: rem.convert(0);
+      margin: 0 auto;
+      max-width: 82.5rem;
+    }
   }
 
   .card-slider {
