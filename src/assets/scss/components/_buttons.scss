@@ -247,6 +247,30 @@ $transition-fast: all 0.5s ease-in-out;
   gap: rem.convert(16px);
   font-weight: 600;
   color: var(--black);
+  transition: all 0.5s ease-in-out;
+  position: relative;
+
+  // Smooth scale on text
+  span, // optional: in case text is wrapped
+  &:not(.card-cta-icon) {
+    transition: transform 0.5s ease-in-out;
+  }
+
+  &:hover {
+    transform: scale(1.05);
+
+    .card-cta-icon {
+      transform: translateX(rem.convert(4px));
+    }
+  }
+
+  &:focus,
+  &:active,
+  &:focus-visible {
+    outline: 2px solid var(--black); // Or any accessible color
+    outline-offset: rem.convert(4px);
+  }
+
   .card-cta-icon {
     width: rem.convert(32px);
     height: rem.convert(32px);
@@ -255,13 +279,12 @@ $transition-fast: all 0.5s ease-in-out;
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    transition: background 0.2s;
+    transition: transform 0.3s ease-in-out, background 0.2s ease-in-out;
     svg {
       display: block;
     }
   }
 }
-
 // PDF Download Button
 .pdf-download-btn {
   background: var(--green);
