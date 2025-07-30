@@ -787,6 +787,14 @@
      }
     
    }
+     // Mobile Menu Focus Styles - Green outline with 0 offset
+  .mega-menu-wrapper {
+    a:focus-visible {
+      outline: 2px solid var(--green);
+      outline-offset: -2px;
+      border-radius: rem.convert(4px);
+    }
+  }
    .nav-item.dropdown.has-mega-menu.active .mega-menu-wrapper {
     max-height: 2000px;
     opacity: 1;
