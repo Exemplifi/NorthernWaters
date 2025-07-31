@@ -1,102 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hero Section</title>
+    <link rel="stylesheet" href="../../assets/dist/main.css" />
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hero Section</title>
-  <link rel="stylesheet" href="../../assets/dist/main.css" />
-</head>
-
-<body>
-  <!-- Hero Primary starts here -->
-  <section class="hero">
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-section">
-            <div class="hero-video-wrapper">
-              <video class="hero-video" autoplay loop muted playsinline preload="auto"
-                poster="../../assets/images/primary-hero-bg-01.jpg" aria-hidden="true">
-                <source src="../../assets/videos/banner-video.webm" type="video/webm" />
-                <source src="../../assets/videos/banner-video.mp4" type="video/mp4" />
-                <img src="../../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
-                  class="hero-fallback-image" />
-              </video>
-              <noscript>
-                <img src="../../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
-                  class="hero-fallback-image" />
-              </noscript>
-            </div>
-            <div class="hero-video-overlay"></div>
-            <!--Hero content starts-->
-            <div class="hero-content">
-              <h1 class="hero-title">your water. our commitment.</h1>
-              <div class="hero-subtext">
-                <p>
-                  Where engineering meets ecology - protecting every drop from
-                  source to tap with care, innovation, and 85+ years of
-                  expertise.
-                </p>
-              </div>
-              <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-      <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-        <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-          <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-            <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-              </filter>
-            </defs>
-          </svg>
-        </span>
-      </div>
-    </a>
-            </div>
-            <!--Hero content ends-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero Primary ends here -->
+  <body>
     <!-- Hero Primary starts here -->
-  <section class="hero homepage-hero">
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-section">
-            <div class="hero-video-wrapper">
-              <video class="hero-video" autoplay loop muted playsinline preload="auto"
-                poster="../../assets/images/primary-hero-bg-01.jpg" aria-hidden="true">
-                <source src="../../assets/videos/banner-video.webm" type="video/webm" />
-                <source src="../../assets/videos/banner-video.mp4" type="video/mp4" />
-                <img src="../../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
-                  class="hero-fallback-image" />
-              </video>
-              <noscript>
-                <img src="../../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
-                  class="hero-fallback-image" />
-              </noscript>
-            </div>
-            <div class="hero-video-overlay"></div>
-            <!--Hero content starts-->
-            <div class="hero-content-wrapper">
+    <section class="hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-video-wrapper">
+                <video
+                  class="hero-video"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="auto"
+                  poster="../../assets/images/primary-hero-bg-01.jpg"
+                  aria-hidden="true"
+                >
+                  <source
+                    src="../../assets/videos/banner-video.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="../../assets/videos/banner-video.mp4"
+                    type="video/mp4"
+                  />
+                  <img
+                    src="../../assets/images/primary-hero-bg-01.jpg"
+                    alt="Hero background"
+                    class="hero-fallback-image"
+                  />
+                </video>
+                <noscript>
+                  <img
+                    src="../../assets/images/primary-hero-bg-01.jpg"
+                    alt="Hero background"
+                    class="hero-fallback-image"
+                  />
+                </noscript>
+              </div>
+              <div class="hero-video-overlay"></div>
+              <!--Hero content starts-->
               <div class="hero-content">
-                <h1 class="hero-title"><span>your water.</span><span>our commitment.</span></h1>
+                <h1 class="hero-title">your water. our commitment.</h1>
                 <div class="hero-subtext">
                   <p>
                     Where engineering meets ecology - protecting every drop from
@@ -104,210 +58,195 @@
                     expertise.
                   </p>
                 </div>
-                <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-                aria-label="Learn More" tabindex="0" data-button-type="secondary">
-                <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-                  <span class="btn-text">Learn More</span>
-                  <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-                    <span class="circle-animation">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-                        aria-label="Right arrow">
-                        <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                        <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                          stroke-linejoin="round" />
+                <a
+                  href="#"
+                  class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                  role="button"
+                  aria-label="Water Provider Login"
+                  tabindex="0"
+                  data-button-type="secondary"
+                >
+                  <div
+                    class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                  >
+                    <span class="btn-text">Water Provider Login</span>
+                    <span
+                      class="btn-icon liquid-animation-items liquid-animation-circle move"
+                      aria-hidden="true"
+                    >
+                      <span class="circle-animation">
+                        <svg
+                          width="24"
+                          height="24"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          xmlns="http://www.w3.org/2000/svg"
+                          role="img"
+                          aria-label="Right arrow"
+                        >
+                          <path
+                            d="M5 12H19"
+                            stroke="#111111"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                          <path
+                            d="M12 5L19 12L12 19"
+                            stroke="#111111"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                          />
+                        </svg>
+                      </span>
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        version="1.1"
+                        aria-hidden="true"
+                      >
+                        <defs>
+                          <filter id="goo-filter-{{UNIQUE_ID}}">
+                            <feGaussianBlur
+                              in="SourceGraphic"
+                              stdDeviation="10"
+                              result="blur"
+                            />
+                            <feColorMatrix
+                              in="blur"
+                              mode="matrix"
+                              values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                              result="goo"
+                            />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                          </filter>
+                        </defs>
                       </svg>
                     </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-                      <defs>
-                        <filter id="goo-filter-{{UNIQUE_ID}}">
-                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                            result="goo" />
-                          <feBlend in="SourceGraphic" in2="goo" />
-                        </filter>
-                      </defs>
-                    </svg>
-                  </span>
-                </div>
-              </a>
+                  </div>
+                </a>
               </div>
-            </div>
-            <!--Hero content ends-->
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- Hero Primary ends here -->
-   <!-- Hero Carousel starts here -->
-  <section class="hero carousel-hero">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-      <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-        <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-          <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-            <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-              </filter>
-            </defs>
-          </svg>
-        </span>
-      </div>
-    </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam 2</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-      <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-        <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-          <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-            <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-              </filter>
-            </defs>
-          </svg>
-        </span>
-      </div>
-    </a>
-                </div>
-              </div>
-              <div class="carousel-item">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam 3</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-      <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-        <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-          <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-              <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
-            </svg>
-          </span>
-          <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-            <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-              </filter>
-            </defs>
-          </svg>
-        </span>
-      </div>
-    </a>
-                </div>
-              </div>
+              <!--Hero content ends-->
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Carousel ends here -->
-  <!-- Homepage Hero Carousel starts here -->
-  <section class="hero carousel-hero homepage-hero">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div id="homepage-hero-carousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="5000">
-            <!-- Indicators -->
-            <div class="carousel-indicators">
-              <button type="button" data-bs-target="#homepage-hero-carousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-              <button type="button" data-bs-target="#homepage-hero-carousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-              <button type="button" data-bs-target="#homepage-hero-carousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-            </div>
-            <div class="carousel-inner">
-              <div class="carousel-item active">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-                    <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-                      <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+    </section>
+    <!-- Hero Primary ends here -->
+    <!-- Hero Primary starts here -->
+    <section class="hero homepage-hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-video-wrapper">
+                <video
+                  class="hero-video"
+                  autoplay
+                  loop
+                  muted
+                  playsinline
+                  preload="auto"
+                  poster="../../assets/images/primary-hero-bg-01.jpg"
+                  aria-hidden="true"
+                >
+                  <source
+                    src="../../assets/videos/banner-video.webm"
+                    type="video/webm"
+                  />
+                  <source
+                    src="../../assets/videos/banner-video.mp4"
+                    type="video/mp4"
+                  />
+                  <img
+                    src="../../assets/images/primary-hero-bg-01.jpg"
+                    alt="Hero background"
+                    class="hero-fallback-image"
+                  />
+                </video>
+                <noscript>
+                  <img
+                    src="../../assets/images/primary-hero-bg-01.jpg"
+                    alt="Hero background"
+                    class="hero-fallback-image"
+                  />
+                </noscript>
+              </div>
+              <div class="hero-video-overlay"></div>
+              <!--Hero content starts-->
+              <div class="hero-content-wrapper">
+                <div class="hero-content">
+                  <h1 class="hero-title">
+                    <span>your water.</span><span>our commitment.</span>
+                  </h1>
+                  <div class="hero-subtext">
+                    <p>
+                      Where engineering meets ecology - protecting every drop
+                      from source to tap with care, innovation, and 85+ years of
+                      expertise.
+                    </p>
+                  </div>
+                  <a
+                    href="#"
+                    class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                    role="button"
+                    aria-label="Learn More"
+                    tabindex="0"
+                    data-button-type="secondary"
+                  >
+                    <div
+                      class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                    >
+                      <span class="btn-text">Learn More</span>
+                      <span
+                        class="btn-icon liquid-animation-items liquid-animation-circle move"
+                        aria-hidden="true"
+                      >
                         <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Right arrow"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12 5L19 12L12 19"
+                              stroke="#111111"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
                           </svg>
                         </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                          aria-hidden="true"
+                        >
                           <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
+                            <filter id="goo-filter-{{UNIQUE_ID}}">
+                              <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="10"
+                                result="blur"
+                              />
+                              <feColorMatrix
+                                in="blur"
+                                mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                result="goo"
+                              />
+                              <feBlend in="SourceGraphic" in2="goo" />
                             </filter>
                           </defs>
                         </svg>
@@ -316,175 +255,692 @@
                   </a>
                 </div>
               </div>
-              <div class="carousel-item">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam 2</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-                    <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-                      <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-                        <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+              <!--Hero content ends-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Primary ends here -->
+    <!-- Hero Carousel starts here -->
+    <section class="hero carousel-hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div
+              id="hero-carousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <!-- Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#hero-carousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#hero-carousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#hero-carousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
                           </svg>
                         </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-                          <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
+                      </div>
+                    </a>
+                  </div>
                 </div>
-              </div>
-              <div class="carousel-item">
-                <div class="hero-img-wrapper">
-                  <img src="../../assets/images/hero-carousel.jpg" alt="Hero carousel 01">
-                </div>
-                <div class="content-wrapper">
-                  <h1 class="hero-title">Building the Main Dam 3</h1>
-                  <p class="hero-subtext">The main dam is a hydraulic asphalt core with a rockfill embankment, only the
-                    second of its kind in the United States and by far the tallest.</p>
-                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
-      aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
-                    <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
-        <span class="btn-text">Water Provider Login</span>
-                      <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
-                        <span class="circle-animation">
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
-              aria-label="Right arrow">
-              <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
-                            <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
-                stroke-linejoin="round" />
+                <div class="carousel-item">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam 2</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
                           </svg>
                         </span>
-                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
-                          <defs>
-              <filter id="goo-filter-{{UNIQUE_ID}}">
-                <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
-                <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                  result="goo" />
-                <feBlend in="SourceGraphic" in2="goo" />
-                            </filter>
-                          </defs>
-                        </svg>
-                      </span>
-                    </div>
-                  </a>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam 3</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Homepage Hero Carousel ends here -->
-  <!-- Hero Secondary starts here -->
-  <section class="hero-secondary">
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-section">
-            <div class="hero-img-wrapper">
-              <img src="../../assets/images/secondary-hero-bg-01.jpg" alt="Hero background"
-                class="hero-secondary-image" />
+    </section>
+    <!-- Hero Carousel ends here -->
+    <!-- Homepage Hero Carousel starts here -->
+    <section class="hero carousel-hero homepage-hero">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div
+              id="homepage-hero-carousel"
+              class="carousel slide"
+              data-bs-ride="carousel"
+              data-bs-interval="5000"
+            >
+              <!-- Indicators -->
+              <div class="carousel-indicators">
+                <button
+                  type="button"
+                  data-bs-target="#homepage-hero-carousel"
+                  data-bs-slide-to="0"
+                  class="active"
+                  aria-current="true"
+                  aria-label="Slide 1"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#homepage-hero-carousel"
+                  data-bs-slide-to="1"
+                  aria-label="Slide 2"
+                ></button>
+                <button
+                  type="button"
+                  data-bs-target="#homepage-hero-carousel"
+                  data-bs-slide-to="2"
+                  aria-label="Slide 3"
+                ></button>
+              </div>
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam 2</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+                <div class="carousel-item">
+                  <div class="hero-img-wrapper">
+                    <img
+                      src="../../assets/images/hero-carousel.jpg"
+                      alt="Hero carousel 01"
+                    />
+                  </div>
+                  <div class="content-wrapper">
+                    <h1 class="hero-title">Building the Main Dam 3</h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Water Provider Login"
+                      tabindex="0"
+                      data-button-type="secondary"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Water Provider Login</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              />
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-{{UNIQUE_ID}}">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                />
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                />
+                                <feBlend in="SourceGraphic" in2="goo" />
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="hero-img-overlay"></div>
-            <!--Hero content starts-->
-            <div class="hero-content">
-              <h1 class="hero-title">about us</h1>
-            </div>
-            <!--Hero content ends-->
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Secondary ends here -->
-  <section class="hero-secondary title-with-width">
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-section">
-            <div class="hero-img-wrapper">
-              <img src="../../assets/images/secondary-hero-bg-01.jpg" alt="Hero background"
-                class="hero-secondary-image" />
+    </section>
+    <!-- Homepage Hero Carousel ends here -->
+    <!-- Hero Secondary starts here -->
+    <section class="hero-secondary">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-img-wrapper">
+                <img
+                  src="../../assets/images/hero-carousel.jpg"
+                  alt="Hero background"
+                  class="hero-secondary-image"
+                />
+              </div>
+              <div class="hero-img-overlay"></div>
+              <!--Hero content starts-->
+              <div class="hero-content">
+                <h1 class="hero-title">about us</h1>
+              </div>
+              <!--Hero content ends-->
             </div>
-            <div class="hero-img-overlay"></div>
-            <!--Hero content starts-->
-            <div class="hero-content">
-              <h1 class="hero-title">about us</h1>
-            </div>
-            <!--Hero content ends-->
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Tertiary starts here -->
-   <!-- Hero Secondary ends here -->
-  <section class="hero-secondary title-with-width longer-title">
-    <div class="container-fluid ">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-section">
-            <div class="hero-img-wrapper">
-              <img src="../../assets/images/secondary-hero-bg-01.jpg" alt="Hero background"
-                class="hero-secondary-image" />
+    </section>
+    <!-- Hero Secondary with title width starts here -->
+    <section class="hero-secondary title-with-width">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-img-wrapper">
+                <img
+                  src="../../assets/images/secondary-hero-bg-01.jpg"
+                  alt="Hero background"
+                  class="hero-secondary-image"
+                />
+              </div>
+              <div class="hero-img-overlay"></div>
+              <!--Hero content starts-->
+              <div class="hero-content">
+                <h1 class="hero-title">about us</h1>
+              </div>
+              <!--Hero content ends-->
             </div>
-            <div class="hero-img-overlay"></div>
-            <!--Hero content starts-->
-            <div class="hero-content">
-              <h1 class="hero-title">about us</h1>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Secondary with title width ends here -->
+    <!-- Hero Secondary with longer title starts here -->
+    <section class="hero-secondary title-with-width longer-title">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-img-wrapper">
+                <img
+                  src="../../assets/images/secondary-hero-bg-01.jpg"
+                  alt="Hero background"
+                  class="hero-secondary-image"
+                />
+              </div>
+              <div class="hero-img-overlay"></div>
+              <!--Hero content starts-->
+              <div class="hero-content">
+                <h1 class="hero-title">about us</h1>
+              </div>
+              <!--Hero content ends-->
             </div>
-            <!--Hero content ends-->
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Tertiary starts here -->
-  <section class="hero-tertiary">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-tertiary-content">
+    </section>
+    <!-- Hero Secondary with longer title ends here -->
+    <!-- Hero Tertiary starts here -->
+    <section class="hero-tertiary">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-tertiary-content"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Tertiary ends here -->
-  <!-- Hero Tertiary with blue background starts here -->
-  <section class="hero-tertiary blue-bg">
-    <div class="container-fluid">
-      <div class="row">
-        <div class="col-12">
-          <div class="hero-tertiary-content">
+    </section>
+    <!-- Hero Tertiary ends here -->
+    <!-- Hero Tertiary with blue background starts here -->
+    <section class="hero-tertiary blue-bg">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-tertiary-content"></div>
           </div>
         </div>
       </div>
-    </div>
-  </section>
-  <!-- Hero Tertiary with blue background ends here -->
+    </section>
+    <!-- Hero Tertiary with blue background ends here -->
 
-  <script src="../../assets/dist/main.min.js"></script>
-</body>
-
+    <script src="../../assets/dist/main.min.js"></script>
+  </body>
 </html>
