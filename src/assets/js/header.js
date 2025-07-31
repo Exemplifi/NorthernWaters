@@ -114,7 +114,13 @@ const setupHeader = () => {
     
     announceMenuChange("Main navigation menu closed");
   };
-
+  
+  const isMobile = () => window.innerWidth < 992;
+  window.addEventListener("resize",()=>{
+    if(isMobile()){
+      closeMobileMenu();
+    }
+  });
   const setupMobileNavigationOrder = () => {
     if (!navbarCollapse) return;
     
@@ -1456,8 +1462,8 @@ const setupMegaMenu = () => {
   });
 
   window.addEventListener('resize', () => {
-    if (isMobile()) {
-    closeAllMegaMenus();
+    if (!isMobile()) {
+      closeAllMegaMenus();
     }
   });
 };

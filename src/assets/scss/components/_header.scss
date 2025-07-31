@@ -449,7 +449,8 @@
           min-height: 100%;
           box-sizing: border-box;
           position: relative;
-          overflow: visible; // Ensure child menus aren't clipped
+          overflow: visible;
+          min-height: 250px;
           .level-2-menu-container{
             display: flex;
             flex-direction: column;
@@ -460,7 +461,7 @@
             > li {
               list-style: none;
               overflow: visible; 
-              &.menu-cover-image{
+/*               &.menu-cover-image{
                 position: absolute;
                 left: 100%;
                 top: 0;
@@ -475,13 +476,13 @@
                     background: transparent;
                   }
                 }
-              }
+              } */
               &.has-level-3-children {
                 cursor: pointer;
                 &.active{
-                  & ~ .menu-cover-image{
+/*                   & ~ .menu-cover-image{
                     display: none;
-                  }
+                  } */
                   > .level-3-menu{
                     .level-3-menu-container{
                       > li{
@@ -506,7 +507,7 @@
                   min-height: 250px;
                   height: 100%;
                   padding: 1.25rem 1.75rem;
-                  overflow: visible; // Ensure level 4 menus aren't clipped
+                  overflow: visible;
                   .level-3-menu-container{
                     padding-top: 0.25rem ;
                     padding-bottom: 0.25rem;
@@ -527,6 +528,7 @@
                         overflow: visible; 
                         &.active{
                           > .level-4-menu{
+                            min-height: 250px;
                             .level-4-menu-container{
                               > li{
                                 > a{
