@@ -273,22 +273,24 @@
       <!-- Hero section -->
       <section class="hero-secondary">
         <div class="container-fluid p-0">
-          <div class="row">
-            <div class="col-12">
-              <div class="hero-section">
-                <div class="hero-img-wrapper">
-                  <img
-                    src="../assets/images/about-page-hero-bg-cropped.webp"
-                    alt="Aerial view of Northern Water's infrastructure and water management facilities"
-                    class="hero-secondary-image"
-                  />
+          <div class="hero-section">
+            <div class="hero-img-wrapper">
+              <img
+                src="../assets/images/about-page-hero-bg-cropped.webp"
+                alt="Aerial view of Northern Water's infrastructure and water management facilities"
+                class="hero-secondary-image"
+              />
+            </div>
+            <div class="hero-img-overlay"></div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <!--Hero content starts-->
+                  <div class="hero-content reveal">
+                    <h1 class="hero-title">About Us</h1>
+                  </div>
+                  <!--Hero content ends-->
                 </div>
-                <div class="hero-img-overlay"></div>
-                <!--Hero content starts-->
-                <div class="hero-content reveal">
-                  <h1 class="hero-title">About Us</h1>
-                </div>
-                <!--Hero content ends-->
               </div>
             </div>
           </div>
@@ -305,7 +307,7 @@
             Delivering Water to Northeastern Colorado
           </h2>
           <ol class="custom-list" role="list">
-            <li class="custom-list-item" >
+            <li class="custom-list-item">
               <div class="custom-list-content">
                 <h4 class="custom-list-heading">C-BT Project Creation</h4>
                 <p class="custom-list-desc">
@@ -320,7 +322,7 @@
                 </p>
               </div>
             </li>
-            <li class="custom-list-item" >
+            <li class="custom-list-item">
               <div class="custom-list-content">
                 <h4 class="custom-list-heading">Collaborative Expansion</h4>
                 <p class="custom-list-desc">
@@ -334,7 +336,7 @@
                 </p>
               </div>
             </li>
-            <li class="custom-list-item" >
+            <li class="custom-list-item">
               <div class="custom-list-content">
                 <h4 class="custom-list-heading">Windy Gap Development</h4>
                 <p class="custom-list-desc">
@@ -346,7 +348,7 @@
                 </p>
               </div>
             </li>
-            <li class="custom-list-item" >
+            <li class="custom-list-item">
               <div class="custom-list-content">
                 <h4 class="custom-list-heading">Ongoing Leadership</h4>
                 <p class="custom-list-desc">
@@ -394,10 +396,10 @@
                 The C-BT Project began its first year of water deliveries to the
                 full district in 1957 and since then has collected and delivered
                 more than 200,000 acre-feet of supplemental water each year on
-                average. Through its design, the project collects and
-                stores water from the melting snowpack near the headwaters of
-                the Colorado River and brings it underneath the Continental
-                Divide to Northeastern Colorado.
+                average. Through its design, the project collects and stores
+                water from the melting snowpack near the headwaters of the
+                Colorado River and brings it underneath the Continental Divide
+                to Northeastern Colorado.
               </p>
               <p>
                 When we began in 1937 our main purpose was to provide
@@ -855,22 +857,68 @@
                 Lorem Ipsum.
               </p>
 
-               <!-- Primary Button starts here-->
-               <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" role="button" aria-label="Water Provider Login" tabindex="0" data-button-type="primary" style="filter: url(&quot;#goo-filter-0&quot;);">
-                <div class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+              <!-- Primary Button starts here-->
+              <a
+                href="#"
+                class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                role="button"
+                aria-label="Water Provider Login"
+                tabindex="0"
+                data-button-type="primary"
+                style="filter: url('#goo-filter-0')"
+              >
+                <div
+                  class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                >
                   <span class="btn-text">Learn More</span>
-                  <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                  <span
+                    class="btn-icon liquid-animation-items liquid-animation-circle move"
+                    aria-hidden="true"
+                  >
                     <span class="circle-animation">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right arrow">
-                        <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Right arrow"
+                      >
+                        <path
+                          d="M5 12H19"
+                          stroke="#fff"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M12 5L19 12L12 19"
+                          stroke="#fff"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
                       </svg>
                     </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      aria-hidden="true"
+                    >
                       <defs>
                         <filter id="goo-filter-0">
-                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"
+                          ></feColorMatrix>
                           <feBlend in="SourceGraphic" in2="goo"></feBlend>
                         </filter>
                       </defs>
@@ -879,7 +927,6 @@
                 </div>
               </a>
               <!-- Primary Button ends here-->
-
             </div>
             <div class="col-12 col-lg-6">
               <div class="img-wrap">
@@ -930,21 +977,67 @@
                 region's water supplies.
               </p>
               <!-- Primary Button starts here-->
-              <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" role="button" aria-label="Water Provider Login" tabindex="0" data-button-type="primary" style="filter: url(&quot;#goo-filter-0&quot;);">
-                <div class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+              <a
+                href="#"
+                class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+                role="button"
+                aria-label="Water Provider Login"
+                tabindex="0"
+                data-button-type="primary"
+                style="filter: url('#goo-filter-0')"
+              >
+                <div
+                  class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                >
                   <span class="btn-text">Visit Our Campus Page</span>
-                  <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                  <span
+                    class="btn-icon liquid-animation-items liquid-animation-circle move"
+                    aria-hidden="true"
+                  >
                     <span class="circle-animation">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Right arrow">
-                        <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
-                        <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                      <svg
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        xmlns="http://www.w3.org/2000/svg"
+                        role="img"
+                        aria-label="Right arrow"
+                      >
+                        <path
+                          d="M5 12H19"
+                          stroke="#fff"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
+                        <path
+                          d="M12 5L19 12L12 19"
+                          stroke="#fff"
+                          stroke-width="2"
+                          stroke-linecap="round"
+                          stroke-linejoin="round"
+                        ></path>
                       </svg>
                     </span>
-                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      version="1.1"
+                      aria-hidden="true"
+                    >
                       <defs>
                         <filter id="goo-filter-0">
-                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur"></feGaussianBlur>
-                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo"></feColorMatrix>
+                          <feGaussianBlur
+                            in="SourceGraphic"
+                            stdDeviation="10"
+                            result="blur"
+                          ></feGaussianBlur>
+                          <feColorMatrix
+                            in="blur"
+                            mode="matrix"
+                            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo"
+                          ></feColorMatrix>
                           <feBlend in="SourceGraphic" in2="goo"></feBlend>
                         </filter>
                       </defs>
@@ -1064,9 +1157,7 @@
                   class="footer__contact-icon"
                   aria-hidden="true"
                 ></i>
-                <a href="#" class="footer__phone"
-                  >Contact Us</a
-                >
+                <a href="#" class="footer__phone">Contact Us</a>
               </div>
             </div>
           </div>
