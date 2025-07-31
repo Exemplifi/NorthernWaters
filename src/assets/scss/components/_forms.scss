@@ -285,11 +285,19 @@
     padding-bottom: rem.convert(24px);
     border-bottom: 1px solid var(--black);
     margin-bottom: rem.convert(48px);
+    color: var(--black-3);
+    @include convert-percent(letter-spacing, 32px, -2);
+    @include media-breakpoint-down(lg) {
+      margin-bottom: rem.convert(40px);
+    }
   }
 
   form > .row {
     --bs-gutter-x: 16px;
     --bs-gutter-y: 32px;
+    [class^="col"] {
+      margin-top: rem.convert(42px);
+    }
   }
 
   .error-text {
@@ -330,7 +338,12 @@
     border-radius: 8px;
     &:focus {
       box-shadow: none;
+      border-color: var(--success);
+      border-width: 2px;
     }
+  }
+  select {
+    color: rgba(var(--gray-rgb), 0.4);
   }
 
   input::placeholder {
@@ -386,9 +399,24 @@
       display: flex;
       gap: rem.convert(12px);
       font-weight: $regular;
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem.convert(32px);
+      }
     }
     .banner {
       border-radius: rem.convert(16px);
+      @include media-breakpoint-down(md) {
+        max-height: rem.convert(350px);
+        height: rem.convert(350px);
+        object-fit: cover;
+        object-position: center;
+        width: 100%;
+      }
+    }
+    .title {
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem.convert(32px);
+      }
     }
   }
 }

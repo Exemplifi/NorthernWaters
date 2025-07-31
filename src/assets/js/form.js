@@ -35,7 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const wrapper = document.querySelector('.upload-wrapper');
+  if (!wrapper) return;
+
   const fileInput = wrapper.querySelector('input[type="file"]');
+  if (!fileInput) return;
 
   // Make wrapper clickable
   wrapper.addEventListener('click', function () {
@@ -55,6 +58,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
 document.addEventListener("DOMContentLoaded", function () {
   const form = document.querySelector(".signage-request-form form");
+  if (!form) return;
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -103,6 +107,6 @@ document.addEventListener("DOMContentLoaded", function () {
       }
     });
 
-   
+
   });
 });

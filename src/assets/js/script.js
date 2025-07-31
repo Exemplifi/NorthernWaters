@@ -381,3 +381,71 @@ $(document).ready(function() {
   document.addEventListener('DOMContentLoaded', initSearchClear);
   window.addEventListener('resize', initSearchClear);
 })();
+
+// Card height equalization for medium screens (576px to 991.98px)
+(function() {
+  function equalizeCardHeights() {
+    const cardsRow = document.querySelector('.cards-row');
+    if (!cardsRow) return;
+
+    const cards = cardsRow.querySelectorAll('.card');
+    const cardlinks = cardsRow.querySelectorAll('.card a');
+    if (cards.length === 0) return;
+
+    const windowWidth = window.innerWidth;
+    const isMediumScreen = windowWidth >= 576 && windowWidth <= 991.98;
+
+    if (!isMediumScreen) {
+      // Reset heights for other screen sizes
+      cards.forEach(card => {
+        card.style.height = '';
+      });
+      return;
+    }
+
+    // Measure heights of all cards
+    const cardHeights = [];
+    cards.forEach(card => {
+      // Temporarily remove any existing height to get natural height
+      const originalHeight = card.style.height;
+      card.style.height = '';
+
+      // Get the computed height
+      const computedHeight = card.offsetHeight;
+      cardHeights.push(computedHeight);
+
+      // Restore original height if it existed
+      if (originalHeight) {
+        card.style.height = originalHeight;
+      }
+    });
+
+    // Find the maximum height
+    const maxHeight = Math.max(...cardHeights);
+
+    // Apply the maximum height to all cards
+    cards.forEach(card => {
+      card.style.height = maxHeight + 'px';
+      const cardLink = card.querySelector('a');
+      const cardImg = card.querySelector('.card-img-wrapper');
+      console.log(cardImg.offsetHeight);
+      console.log(cardImg.clientHeight);
+      const cardBody = card.querySelector('.card-body');
+      if (cardLink) {
+        cardLink.style.height = maxHeight + 'px';
+        cardBody.style.height = (maxHeight - cardImg.offsetHeight) + 'px';
+      }
+    });
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', equalizeCardHeights);
+
+  // Re-equalize on window resize
+  window.addEventListener('resize', equalizeCardHeights);
+
+  // Re-equalize when images load (in case cards contain images that affect height)
+  window.addEventListener('load', equalizeCardHeights);
+})();
+
+
