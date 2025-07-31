@@ -342,6 +342,11 @@ const setupHeader = () => {
         });
       }
       
+      // Return focus to parent trigger when closing main mobile menu section
+      setTimeout(() => {
+        triggerElement.focus();
+      }, 50);
+      
       announceMenuChange(`${triggerElement.textContent.trim()} section collapsed`);
       
     } else {
@@ -483,11 +488,22 @@ const setupHeader = () => {
       });
       
       trigger.setAttribute('aria-expanded', 'false');
+      
+      // Return focus to parent trigger when closing level-3 menu
+      setTimeout(() => {
+        trigger.focus();
+      }, 50);
+      
       announceMenuChange(`${trigger.textContent.trim()} collapsed`);
       
     } else {
       level2Li.classList.add('active');
       trigger.setAttribute('aria-expanded', 'true');
+      
+      // Set aria-hidden to false for level-3 menu
+      if (level3Menu) {
+        level3Menu.setAttribute('aria-hidden', 'false');
+      }
       
       if (isMobile()) {
         // Set all direct child links of this expanded menu to tabindex=0
@@ -669,11 +685,22 @@ const setupHeader = () => {
       }
       
       trigger.setAttribute('aria-expanded', 'false');
+      
+      // Return focus to parent trigger when closing level-4 menu
+      setTimeout(() => {
+        trigger.focus();
+      }, 50);
+      
       announceMenuChange(`${trigger.textContent.trim()} collapsed`);
       
     } else {
       level3Li.classList.add('active');
       trigger.setAttribute('aria-expanded', 'true');
+      
+      // Set aria-hidden to false for level-4 menu
+      if (level4Menu) {
+        level4Menu.setAttribute('aria-hidden', 'false');
+      }
       
       const level4Items = level4Menu.querySelectorAll('li > a');
       
@@ -955,6 +982,97 @@ const setupHeader = () => {
 
   window.addEventListener("scroll", handleHeaderScroll);
   window.addEventListener("resize", handleScrollResize);
+  
+  // Desktop hover functionality for menu siblings
+  const setupDesktopHoverSiblingLogic = () => {
+    const isDesktop = () => window.innerWidth >= 992;
+    if (!isDesktop()) return;
+    
+    // Handle level-2-menu-container siblings
+    const level2Container = document.querySelector('.level-2-menu-container');
+    if (level2Container) {
+      const level2Items = document.querySelectorAll('.level-2-menu-container > li:not([class])');
+      
+      level2Items.forEach(item => {
+        item.addEventListener('mouseenter', () => {
+          const siblings = Array.from(level2Container.children);
+          const activeSibling = siblings.find(sibling => 
+            sibling.classList.contains('has-level-3-children') && 
+            sibling.classList.contains('active')
+          );
+          
+          if (activeSibling) {
+            // Remove active class and close the level-3 menu
+            activeSibling.classList.remove('active');
+            const level3Menu = activeSibling.querySelector('.level-3-menu');
+            if (level3Menu) {
+              level3Menu.setAttribute('aria-hidden', 'true');
+            }
+            const trigger = activeSibling.querySelector('a');
+            if (trigger) {
+              trigger.setAttribute('aria-expanded', 'false');
+            }
+            
+            // Close any level-4 menus within this level-3 menu
+            const level4Containers = level3Menu?.querySelectorAll('.has-level-4-children') || [];
+            level4Containers.forEach(container => {
+              container.classList.remove('active');
+              const level4Trigger = container.querySelector('a');
+              if (level4Trigger) {
+                level4Trigger.setAttribute('aria-expanded', 'false');
+              }
+              const level4Menu = container.querySelector('.level-4-menu');
+              if (level4Menu) {
+                level4Menu.setAttribute('aria-hidden', 'true');
+              }
+            });
+          }
+        });
+      });
+    }
+    
+    // Handle level-3-menu-container siblings
+    const level3Menus = document.querySelectorAll('.level-3-menu');
+    level3Menus.forEach(level3Menu => {
+      const level3Container = level3Menu.querySelector('.level-3-menu-container');
+      if (level3Container) {
+        const level3Items = document.querySelectorAll('.level-3-menu-container > li:not([class])');
+        
+        level3Items.forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            const siblings = Array.from(level3Container.children);
+            const activeSibling = siblings.find(sibling => 
+              sibling.classList.contains('has-level-4-children') && 
+              sibling.classList.contains('active')
+            );
+            
+            if (activeSibling) {
+              // Remove active class and close the level-4 menu
+              activeSibling.classList.remove('active');
+              const level4Menu = activeSibling.querySelector('.level-4-menu');
+              if (level4Menu) {
+                level4Menu.setAttribute('aria-hidden', 'true');
+              }
+              const trigger = activeSibling.querySelector('a');
+              if (trigger) {
+                trigger.setAttribute('aria-expanded', 'false');
+              }
+            }
+          });
+        });
+      }
+    });
+  };
+  
+  // Initialize desktop hover sibling logic
+  setupDesktopHoverSiblingLogic();
+  
+  // Re-initialize on window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) {
+      setupDesktopHoverSiblingLogic();
+    }
+  });
 };
 
 // Initialize header
@@ -1490,6 +1608,100 @@ const setupMegaMenu = () => {
       }
     }
   }, true);
+  
+  // Desktop hover functionality for mega menu siblings
+  const setupMegaMenuHoverSiblingLogic = () => {
+    const isDesktop = () => window.innerWidth >= 992;
+    if (!isDesktop()) return;
+    
+    // Handle level-2-menu-container siblings in mega menu
+    const megaMenuWrappers = document.querySelectorAll('.mega-menu-wrapper');
+    megaMenuWrappers.forEach(megaMenuWrapper => {
+      const level2Container = megaMenuWrapper.querySelector('.level-2-menu-container');
+      if (level2Container) {
+        const level2Items = megaMenuWrapper.querySelectorAll('.level-2-menu-container > li:not([class])');
+        
+        level2Items.forEach(item => {
+          item.addEventListener('mouseenter', () => {
+            const siblings = Array.from(level2Container.children);
+            const activeSibling = siblings.find(sibling => 
+              sibling.classList.contains('has-level-3-children') && 
+              sibling.classList.contains('active')
+            );
+            
+            if (activeSibling) {
+              // Remove active class and close the level-3 menu
+              activeSibling.classList.remove('active');
+              const level3Menu = activeSibling.querySelector('.level-3-menu');
+              if (level3Menu) {
+                level3Menu.setAttribute('aria-hidden', 'true');
+              }
+              const trigger = activeSibling.querySelector('a');
+              if (trigger) {
+                trigger.setAttribute('aria-expanded', 'false');
+              }
+              
+              // Close any level-4 menus within this level-3 menu
+              const level4Containers = level3Menu?.querySelectorAll('.has-level-4-children') || [];
+              level4Containers.forEach(container => {
+                container.classList.remove('active');
+                const level4Trigger = container.querySelector('a');
+                if (level4Trigger) {
+                  level4Trigger.setAttribute('aria-expanded', 'false');
+                }
+                const level4Menu = container.querySelector('.level-4-menu');
+                if (level4Menu) {
+                  level4Menu.setAttribute('aria-hidden', 'true');
+                }
+              });
+            }
+          });
+        });
+      }
+      
+      // Handle level-3-menu-container siblings in mega menu
+      const level3Menus = megaMenuWrapper.querySelectorAll('.level-3-menu');
+      level3Menus.forEach(level3Menu => {
+        const level3Container = level3Menu.querySelector('.level-3-menu-container');
+        if (level3Container) {
+          const level3Items = megaMenuWrapper.querySelectorAll('.level-3-menu-container > li:not([class])');
+          
+          level3Items.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+              const siblings = Array.from(level3Container.children);
+              const activeSibling = siblings.find(sibling => 
+                sibling.classList.contains('has-level-4-children') && 
+                sibling.classList.contains('active')
+              );
+              
+              if (activeSibling) {
+                // Remove active class and close the level-4 menu
+                activeSibling.classList.remove('active');
+                const level4Menu = activeSibling.querySelector('.level-4-menu');
+                if (level4Menu) {
+                  level4Menu.setAttribute('aria-hidden', 'true');
+                }
+                const trigger = activeSibling.querySelector('a');
+                if (trigger) {
+                  trigger.setAttribute('aria-expanded', 'false');
+                }
+              }
+            });
+          });
+        }
+      });
+    });
+  };
+  
+  // Initialize mega menu hover sibling logic
+  setupMegaMenuHoverSiblingLogic();
+  
+  // Re-initialize on window resize
+  window.addEventListener('resize', () => {
+    if (window.innerWidth >= 992) {
+      setupMegaMenuHoverSiblingLogic();
+    }
+  });
 
   function getClosestElement(target, selector) {
     let el = target;
