@@ -7,7 +7,7 @@
   background-color: var(--black);
   border-radius: rem.convert(0);
   padding-top: rem.convert(80px);
-  @include media-breakpoint-down(xl) {
+  @include media-breakpoint-down(xxl) {
     padding: rem.convert(64px 24px 24px 24px);
   }
   &__container {

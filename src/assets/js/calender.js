@@ -16,17 +16,21 @@ document.addEventListener('DOMContentLoaded', function () {
   function slideDown(element) {
     element.style.display = 'flex';
     element.style.overflow = 'hidden';
-    element.style.transition = 'max-height 0.3s ease';
+    element.style.transition = 'max-height 0.3s ease-in';
     // Force reflow to enable transition
     element.offsetHeight;
     element.style.maxHeight = element.scrollHeight + 'px';
   }
 
   function slideUp(element) {
+    // Remove transition for immediate close
+    element.style.transition = 'none';
     element.style.maxHeight = '0';
     setTimeout(function () {
       element.style.display = 'none';
-    }, 280);
+      // Restore transition for next open
+      element.style.transition = 'max-height 0.3s ease';
+    }, 0);
   }
 
   document.querySelectorAll('.event-card-btn .tertiary-btn').forEach(function (btn) {
