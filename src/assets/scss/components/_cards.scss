@@ -175,6 +175,12 @@
     text-align: center;
   }
   &.directors-card {
+    h2 {
+      margin-bottom: rem.convert(24px);
+      @include media-breakpoint-down(md) {
+        margin-bottom: rem.convert(40px);
+      }
+    }
     .card {
       .card-body {
         .directors-card-county-wrapper {
