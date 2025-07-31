@@ -109,6 +109,12 @@ const setupHeader = () => {
       const allMegaMenuItems = header.querySelectorAll('.mega-menu-wrapper a');
       allMegaMenuItems.forEach(item => item.setAttribute('tabindex', '-1'));
       
+      // Ensure all nested menus are properly closed
+      const allNestedMenus = header.querySelectorAll('.level-3-menu, .level-4-menu');
+      allNestedMenus.forEach(menu => {
+        menu.setAttribute('aria-hidden', 'true');
+      });
+      
       enforceLevel4TabOrder();
     }, 300);
     
@@ -186,6 +192,27 @@ const setupHeader = () => {
           
           const level4Items = level4Menu.querySelectorAll('li > a');
           level4Items.forEach(item => {
+            item.setAttribute('tabindex', '-1');
+          });
+        }
+      }
+    });
+    
+    // Also enforce level-3 menu tab order
+    const level3Containers = document.querySelectorAll('.has-level-3-children');
+    
+    level3Containers.forEach(container => {
+      const isActive = container.classList.contains('active');
+      const level3Menu = container.querySelector('.level-3-menu');
+      const trigger = container.querySelector('a');
+      
+      if (level3Menu) {
+        if (!isActive) {
+          level3Menu.setAttribute('aria-hidden', 'true');
+          if (trigger) trigger.setAttribute('aria-expanded', 'false');
+          
+          const level3Items = level3Menu.querySelectorAll('.level-3-menu-container > li > a');
+          level3Items.forEach(item => {
             item.setAttribute('tabindex', '-1');
           });
         }
@@ -293,7 +320,26 @@ const setupHeader = () => {
       if (isMobile()) {
         // Set all direct child links of this collapsed menu to tabindex=-1
         const level2Items = megaMenuWrapper.querySelectorAll('.level-2-menu-container > li > a');
-        level2Items.forEach(item => item.setAttribute('tabindex', '-1'));
+        const level3Items = megaMenuWrapper.querySelectorAll('.level-3-menu-container > li > a');
+        const level4Items = megaMenuWrapper.querySelectorAll('.level-4-menu-container > li > a');
+        
+        [...level2Items, ...level3Items, ...level4Items].forEach(item => item.setAttribute('tabindex', '-1'));
+        
+        // Close all level-3 and level-4 menus within this mega menu
+        const level3Containers = megaMenuWrapper.querySelectorAll('.has-level-3-children');
+        const level4Containers = megaMenuWrapper.querySelectorAll('.has-level-4-children');
+        
+        [...level3Containers, ...level4Containers].forEach(container => {
+          container.classList.remove('active');
+          const trigger = container.querySelector('a');
+          if (trigger) {
+            trigger.setAttribute('aria-expanded', 'false');
+          }
+          const menu = container.querySelector('.level-3-menu, .level-4-menu');
+          if (menu) {
+            menu.setAttribute('aria-hidden', 'true');
+          }
+        });
       }
       
       announceMenuChange(`${triggerElement.textContent.trim()} section collapsed`);
@@ -403,8 +449,9 @@ const setupHeader = () => {
         item.classList.remove('active');
         const otherLevel3 = item.querySelector('.level-3-menu');
         const otherLevel3Items = otherLevel3?.querySelectorAll('.level-3-menu-container > li > a') || [];
+        const otherLevel4Items = otherLevel3?.querySelectorAll('.level-4-menu li > a') || [];
         if (isMobile()) {
-          otherLevel3Items.forEach(link => link.setAttribute('tabindex', '-1'));
+          [...otherLevel3Items, ...otherLevel4Items].forEach(link => link.setAttribute('tabindex', '-1'));
         }
       }
     });
@@ -414,11 +461,26 @@ const setupHeader = () => {
     if (isExpanded) {
       level2Li.classList.remove('active');
       const level3Items = level3Menu.querySelectorAll('.level-3-menu-container > li > a');
+      const level4Items = level3Menu.querySelectorAll('.level-4-menu li > a');
       
       if (isMobile()) {
         // Set all direct child links of this collapsed menu to tabindex=-1
-        level3Items.forEach(item => item.setAttribute('tabindex', '-1'));
+        [...level3Items, ...level4Items].forEach(item => item.setAttribute('tabindex', '-1'));
       }
+      
+      // Close all level-4 menus within this level-3 menu
+      const level4Containers = level3Menu.querySelectorAll('.has-level-4-children');
+      level4Containers.forEach(container => {
+        container.classList.remove('active');
+        const level4Trigger = container.querySelector('a');
+        if (level4Trigger) {
+          level4Trigger.setAttribute('aria-expanded', 'false');
+        }
+        const level4Menu = container.querySelector('.level-4-menu');
+        if (level4Menu) {
+          level4Menu.setAttribute('aria-hidden', 'true');
+        }
+      });
       
       trigger.setAttribute('aria-expanded', 'false');
       announceMenuChange(`${trigger.textContent.trim()} collapsed`);
@@ -639,10 +701,16 @@ const setupHeader = () => {
       item.classList.remove('active');
       const trigger = item.querySelector('a');
       if (trigger) trigger.setAttribute('aria-expanded', 'false');
+      
+      // Close any nested menus
+      const nestedMenu = item.querySelector('.level-3-menu, .level-4-menu');
+      if (nestedMenu) {
+        nestedMenu.setAttribute('aria-hidden', 'true');
+      }
     });
     
     if (isMobile()) {
-      const allSubItems = megaMenuWrapper.querySelectorAll('.level-3-menu-container > li > a, .level-4-menu-container > li > a');
+      const allSubItems = megaMenuWrapper.querySelectorAll('.level-3-menu-container > li > a, .level-4-menu-container > li > a, .level-4-menu li > a');
       allSubItems.forEach(item => item.setAttribute('tabindex', '-1'));
       
       const level2Items = megaMenuWrapper.querySelectorAll('.level-2-menu-container > li > a');
