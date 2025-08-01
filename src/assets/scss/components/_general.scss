@@ -44,6 +44,12 @@
     padding: 4rem 1.5rem;
   }
 }
+.section-wrapper.full-width {
+  padding: 5rem 0;
+  @include media-breakpoint-down(lg) {
+    padding: 4rem 0;
+  }
+}
 .bg-off-white {
   background: var(--off-white);
   color: var(--black);

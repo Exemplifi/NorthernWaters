@@ -146,7 +146,7 @@
   }
 }
 
-@include media-breakpoint-down(lg) {
+@include media-custom-down(1325px){
   .stats-section {
     .stats-image-container {
       & + .stats-container {
@@ -196,3 +196,10 @@
     }
   }
 }
+
+// @include media-breakpoint-down(xl) {
+//   .stats-section.flex-cards-section .stats-container .stats-cards-row {
+//     flex-wrap: wrap;
+//     flex-direction: column;
+//   }
+// }
