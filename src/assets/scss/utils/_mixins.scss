@@ -23,6 +23,17 @@
   #{$property}: #{$result}rem;
 }
 
+@mixin media-custom-up($min-width) {
+  @media (min-width: $min-width) {
+    @content;
+  }
+}
+@mixin media-custom-down($max-width) {
+  @media (max-width: $max-width) {
+    @content;
+  }
+}
+
 // for clearfix
 @mixin clearfix {
   &::before,

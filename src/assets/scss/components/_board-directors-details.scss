@@ -90,9 +90,14 @@
       }
     }
     .content-title {
-      font-size: rem.convert(24px);
-      @include convert-percent(line-height, 24px, 140);
-      line-height: 1.4;
+      font-size: rem.convert(56px);
+      @include convert-percent(line-height, 56px, 110);
+      @include convert-percent(letter-spacing, 56px, -2);
+      @include media-breakpoint-down(md) {
+        font-size: rem.convert(40px);
+        @include convert-percent(line-height, 40px, 110);
+        @include convert-percent(letter-spacing, 40px, -2);
+      }
     }
   }
 

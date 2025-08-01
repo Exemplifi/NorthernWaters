@@ -263,49 +263,168 @@
     </section>
     <!-- Hero Primary ends here -->
     <!-- Hero Carousel starts here -->
-    <section class="hero carousel-hero">
-      <div class="container-fluid">
-        <div class="row">
-          <div class="col-12">
-            <div
-              id="hero-carousel"
-              class="carousel slide"
-              data-bs-ride="carousel"
-              data-bs-interval="5000"
-            >
-              <!-- Indicators -->
-              <div class="carousel-indicators">
-                <button
-                  type="button"
-                  data-bs-target="#hero-carousel"
-                  data-bs-slide-to="0"
-                  class="active"
-                  aria-current="true"
-                  aria-label="Slide 1"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#hero-carousel"
-                  data-bs-slide-to="1"
-                  aria-label="Slide 2"
-                ></button>
-                <button
-                  type="button"
-                  data-bs-target="#hero-carousel"
-                  data-bs-slide-to="2"
-                  aria-label="Slide 3"
-                ></button>
+    <section class="hero carousel-hero" aria-labelledby="hero-heading">
+      <div
+        id="hero-carousel"
+        class="carousel slide"
+        data-bs-ride="carousel"
+        data-bs-interval="5000"
+      >
+        <!-- Indicators -->
+        <div
+          class="carousel-indicators"
+          role="tablist"
+          aria-label="Carousel navigation"
+        >
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="0"
+            class="active"
+            aria-current="true"
+            aria-label="Go to slide 1 of 3"
+            role="tab"
+            aria-selected="true"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="1"
+            aria-label="Go to slide 2 of 3"
+            role="tab"
+            aria-selected="false"
+          ></button>
+          <button
+            type="button"
+            data-bs-target="#hero-carousel"
+            data-bs-slide-to="2"
+            aria-label="Go to slide 3 of 3"
+            role="tab"
+            aria-selected="false"
+          ></button>
+        </div>
+
+        <!-- Carousel Status for Screen Readers -->
+        <div
+          class="carousel-status visually-hidden"
+          aria-live="polite"
+          aria-atomic="true"
+        ></div>
+
+        <div class="carousel-inner" role="listbox">
+          <div
+            class="carousel-item active"
+            role="option"
+            aria-selected="true"
+          >
+            <div class="hero-img-wrapper">
+              <img
+                src="../assets/images/hero-carousel.jpg"
+                alt="Construction site showing the main dam structure with heavy machinery and workers"
+                class="hero-img"
+              />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
+                  <div class="content-wrapper">
+                    <h1 id="hero-heading" class="hero-title">
+                      Building the Main Dam
+                    </h1>
+                    <p class="hero-subtext">
+                      The main dam is a hydraulic asphalt core with a rockfill
+                      embankment, only the second of its kind in the United
+                      States and by far the tallest.
+                    </p>
+                    <a
+                      href="#"
+                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                      role="button"
+                      aria-label="Learn More"
+                      tabindex="0"
+                      data-button-type="secondary"
+                      style="filter: url('#goo-filter-2')"
+                    >
+                      <div
+                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                      >
+                        <span class="btn-text">Learn More</span>
+                        <span
+                          class="btn-icon liquid-animation-items liquid-animation-circle move"
+                          aria-hidden="true"
+                        >
+                          <span class="circle-animation">
+                            <svg
+                              width="24"
+                              height="24"
+                              viewBox="0 0 24 24"
+                              fill="none"
+                              xmlns="http://www.w3.org/2000/svg"
+                              role="img"
+                              aria-label="Right arrow"
+                            >
+                              <path
+                                d="M5 12H19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                              <path
+                                d="M12 5L19 12L12 19"
+                                stroke="#111111"
+                                stroke-width="2"
+                                stroke-linecap="round"
+                                stroke-linejoin="round"
+                              ></path>
+                            </svg>
+                          </span>
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            version="1.1"
+                            aria-hidden="true"
+                          >
+                            <defs>
+                              <filter id="goo-filter-2">
+                                <feGaussianBlur
+                                  in="SourceGraphic"
+                                  stdDeviation="10"
+                                  result="blur"
+                                ></feGaussianBlur>
+                                <feColorMatrix
+                                  in="blur"
+                                  mode="matrix"
+                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                  result="goo"
+                                ></feColorMatrix>
+                                <feBlend
+                                  in="SourceGraphic"
+                                  in2="goo"
+                                ></feBlend>
+                              </filter>
+                            </defs>
+                          </svg>
+                        </span>
+                      </div>
+                    </a>
+                  </div>
+                </div>
               </div>
-              <div class="carousel-inner">
-                <div class="carousel-item active">
-                  <div class="hero-img-wrapper">
-                    <img
-                      src="../../assets/images/hero-carousel.jpg"
-                      alt="Hero carousel 01"
-                    />
-                  </div>
+            </div>
+          </div>
+          <div class="carousel-item" role="option" aria-selected="false">
+            <div class="hero-img-wrapper">
+              <img
+                src="../assets/images/secondary-banner-img-02.webp"
+                alt="Aerial view of the dam construction site showing progress and surrounding landscape"
+                class="hero-img"
+              />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
                   <div class="content-wrapper">
-                    <h1 class="hero-title">Building the Main Dam</h1>
+                    <h1 class="hero-title">Construction on Chimney Hollow</h1>
                     <p class="hero-subtext">
                       The main dam is a hydraulic asphalt core with a rockfill
                       embankment, only the second of its kind in the United
@@ -315,14 +434,14 @@
                       href="#"
                       class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
                       role="button"
-                      aria-label="Water Provider Login"
+                      aria-label="Learn more about the main dam project"
                       tabindex="0"
                       data-button-type="secondary"
                     >
                       <div
                         class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
                       >
-                        <span class="btn-text">Water Provider Login</span>
+                        <span class="btn-text">Learn More</span>
                         <span
                           class="btn-icon liquid-animation-items liquid-animation-circle move"
                           aria-hidden="true"
@@ -380,115 +499,39 @@
                     </a>
                   </div>
                 </div>
-                <div class="carousel-item">
-                  <div class="hero-img-wrapper">
-                    <img
-                      src="../../assets/images/hero-carousel.jpg"
-                      alt="Hero carousel 01"
-                    />
-                  </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item" role="option" aria-selected="false">
+            <div class="hero-img-wrapper">
+              <img
+                src="../assets/images/secondary-banner-img-03.webp"
+                alt="Close-up view of dam construction materials and engineering details"
+                class="hero-img"
+              />
+            </div>
+            <div class="container">
+              <div class="row">
+                <div class="col-12">
                   <div class="content-wrapper">
-                    <h1 class="hero-title">Building the Main Dam 2</h1>
+                    <h1 class="hero-title">Building a New Reservoir</h1>
                     <p class="hero-subtext">
-                      The main dam is a hydraulic asphalt core with a rockfill
-                      embankment, only the second of its kind in the United
-                      States and by far the tallest.
+                      Chimney Hollow Reservoir will be located just west of
+                      Carter Lake in southern Larimer County, and will store
+                      90,000 acre-feet of water when built.
                     </p>
                     <a
                       href="#"
                       class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
                       role="button"
-                      aria-label="Water Provider Login"
+                      aria-label="Learn more about the main dam project"
                       tabindex="0"
                       data-button-type="secondary"
                     >
                       <div
                         class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
                       >
-                        <span class="btn-text">Water Provider Login</span>
-                        <span
-                          class="btn-icon liquid-animation-items liquid-animation-circle move"
-                          aria-hidden="true"
-                        >
-                          <span class="circle-animation">
-                            <svg
-                              width="24"
-                              height="24"
-                              viewBox="0 0 24 24"
-                              fill="none"
-                              xmlns="http://www.w3.org/2000/svg"
-                              role="img"
-                              aria-label="Right arrow"
-                            >
-                              <path
-                                d="M5 12H19"
-                                stroke="#111111"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                              <path
-                                d="M12 5L19 12L12 19"
-                                stroke="#111111"
-                                stroke-width="2"
-                                stroke-linecap="round"
-                                stroke-linejoin="round"
-                              />
-                            </svg>
-                          </span>
-                          <svg
-                            xmlns="http://www.w3.org/2000/svg"
-                            version="1.1"
-                            aria-hidden="true"
-                          >
-                            <defs>
-                              <filter id="goo-filter-{{UNIQUE_ID}}">
-                                <feGaussianBlur
-                                  in="SourceGraphic"
-                                  stdDeviation="10"
-                                  result="blur"
-                                />
-                                <feColorMatrix
-                                  in="blur"
-                                  mode="matrix"
-                                  values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
-                                  result="goo"
-                                />
-                                <feBlend in="SourceGraphic" in2="goo" />
-                              </filter>
-                            </defs>
-                          </svg>
-                        </span>
-                      </div>
-                    </a>
-                  </div>
-                </div>
-                <div class="carousel-item">
-                  <div class="hero-img-wrapper">
-                    <img
-                      src="../../assets/images/hero-carousel.jpg"
-                      alt="Hero carousel 01"
-                    />
-                  </div>
-                  <div class="content-wrapper">
-                    <h1 class="hero-title">Building the Main Dam 3</h1>
-                    <p class="hero-subtext">
-                      The main dam is a hydraulic asphalt core with a rockfill
-                      embankment, only the second of its kind in the United
-                      States and by far the tallest.
-                    </p>
-                    <a
-                      href="#"
-                      class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
-                      role="button"
-                      aria-label="Water Provider Login"
-                      tabindex="0"
-                      data-button-type="secondary"
-                    >
-                      <div
-                        class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg"
-                      >
-                        <span class="btn-text">Water Provider Login</span>
+                        <span class="btn-text">Learn More</span>
                         <span
                           class="btn-icon liquid-animation-items liquid-animation-circle move"
                           aria-hidden="true"

@@ -89,7 +89,7 @@
             line-height: 1.4;
             letter-spacing: -0.02em;
             @include media-breakpoint-down(md) {
-              font-size: rem.convert(24px);
+              font-size: rem.convert(20px);
             }
           }
         }
