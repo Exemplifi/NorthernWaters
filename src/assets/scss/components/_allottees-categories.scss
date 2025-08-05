@@ -5,6 +5,7 @@
       margin-bottom: rem.convert(40px);
     }
     h3 {
+      color: var(--black-3);
       margin-bottom: rem.convert(48px);
       padding-bottom: rem.convert(24px);
       border-bottom: 1px solid rgba(var(--black-rgb), 0.6);
@@ -27,11 +28,16 @@
     .tabbed-content {
       max-width: 100%;
       padding: 0;
+      @include media-breakpoint-down(lg) {
+        padding: rem.convert(20px) rem.convert(16px);
+        background: var(--blue);
+        border-radius: rem.convert(16px);
+      }
     }
     .tabs {
       ul {
         margin: 0;
-        padding: rem.convert(20px) rem.convert(16px);
+        padding: rem.convert(16px) rem.convert(16px);
         background: var(--blue);
         border-radius: rem.convert(16px);
         li {
@@ -53,16 +59,18 @@
     .item {
       &::before {
         cursor: pointer;
-        background: var(--gray);
+        background: var(--blue);
         color: var(--white);
-        padding: 0.5em;
+        padding: rem.convert(8px) rem.convert(16px);
         display: block;
       }
       &.active {
         &::before {
-          background: var(--blue);
-          color: var(--white);
+          background: var(--white);
+          color: var(--black);
           font-weight: 600;
+          padding: rem.convert(8px) rem.convert(16px);
+          border-radius: rem.convert(6px);
         }
         .item-content {
           -webkit-transition: opacity 0.3s ease-in-out;
@@ -81,6 +89,13 @@
       .item-content {
         h6 {
           margin-bottom: rem.convert(32px);
+          font-size: rem.convert(20px);
+          @include convert-percent(line-height, 20px, 140);
+          @include media-breakpoint-down(lg) {
+            margin-bottom: rem.convert(24px);
+            font-size: rem.convert(18px);
+            @include convert-percent(line-height, 18px, 150);
+          }
         }
         .pdf-download-btn {
           margin-top: rem.convert(32px);
@@ -124,6 +139,12 @@
             visibility: visible;
             height: auto;
             display: block;
+            @include media-breakpoint-down(lg) {
+              padding: rem.convert(10px);
+              background-color: var(--off-white);
+              margin-top: rem.convert(10px);
+              padding-top: rem.convert(40px);
+            }
           }
         }
       }
