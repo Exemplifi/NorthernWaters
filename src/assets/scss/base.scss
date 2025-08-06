@@ -22,9 +22,9 @@
 @use "utils/vars-colors" as *;
 @use "utils/vars-bootstrap" as *;
 
-$underline-height: 2px;
-$transition-speed: 0.4s;
-$delay-between: 0.5s; // Delay before blue
+// $underline-height: 2px;
+// $transition-speed: 0.4s;
+// $delay-between: 0.5s; // Delay before blue
 
 $container-max-widths: (
   sm: 540px,
@@ -76,46 +76,46 @@ p {
 body {
   a {
     color: var(--green);
-    position: relative;
-    text-decoration: none;
-    transition: color $transition-speed ease;
-    &::after, &::before {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 100%;
-      height: $underline-height;
-      transform-origin: left;
-      transition: transform $transition-speed ease;
-    }
-    &::before {
-      background-color: var(--green);
-      z-index: 1;
-      transform: scaleX(1);
-      transition-delay: 0.1s;
-    }
-    &::after {
-      background-color: var(--green);
-      z-index: 2;
-      transform: scaleX(0);
-      transition-delay: $delay-between;
-    }
-    &:hover {
-      color: var(--green);
+    // position: relative;
+    // text-decoration: none;
+    // transition: color $transition-speed ease;
+    // &::after, &::before {
+    //   content: '';
+    //   position: absolute;
+    //   bottom: 0;
+    //   left: 0;
+    //   width: 100%;
+    //   height: $underline-height;
+    //   transform-origin: left;
+    //   transition: transform $transition-speed ease;
+    // }
+    // &::before {
+    //   background-color: var(--green);
+    //   z-index: 1;
+    //   transform: scaleX(1);
+    //   transition-delay: 0.1s;
+    // }
+    // &::after {
+    //   background-color: var(--green);
+    //   z-index: 2;
+    //   transform: scaleX(0);
+    //   transition-delay: $delay-between;
+    // }
+    // &:hover {
+    //   color: var(--green);
 
-      &::before {
-        transform: scaleX(0);
-        transform-origin: right;
-        transition-delay: 0.1s;
-      }
+    //   &::before {
+    //     transform: scaleX(0);
+    //     transform-origin: right;
+    //     transition-delay: 0.1s;
+    //   }
 
-      &::after {
-        transform: scaleX(1);
-        transform-origin: left;
-        transition-delay: $delay-between;
-      }
-    }
+    //   &::after {
+    //     transform: scaleX(1);
+    //     transform-origin: left;
+    //     transition-delay: $delay-between;
+    //   }
+    // }
   }
 }
 
