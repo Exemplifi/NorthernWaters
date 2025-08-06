@@ -76,6 +76,29 @@ $(document).ready(function() {
     var $btn = $(this);
     var showMoreText = "Show More";
     var showLessText = "Show Less";
+
+    // Function to update content height for smooth animation
+    const updateContentHeight = ($details, isExpanding) => {
+      if (isExpanding) {
+        // Get the actual height of the content
+        const contentHeight = $details[0].scrollHeight;
+        $details.css('max-height', contentHeight + 'px');
+      } else {
+        // Collapse to show only first few lines
+        $details.css('max-height', '72px');
+      }
+    };
+
+    // Initialize: Set initial collapsed state
+    var $descWrap = $btn.closest(".mgt-desc-wrap");
+    var $details = $descWrap.find(".mgt-details");
+    $details.removeClass("expand");
+    $btn.attr("aria-expanded", "false");
+    $btn.removeClass("rotate");
+
+    // Ensure initial collapsed state is properly set
+    $details.css('max-height', '72px');
+
     $btn.on("click", function () {
       // Find the nearest .mgt-desc-wrap, then its .mgt-details child
       var $descWrap = $btn.closest(".mgt-desc-wrap");
@@ -83,9 +106,14 @@ $(document).ready(function() {
       var isExpanded = $details.hasClass("expand");
 
       if (!isExpanded) {
+        // Expand the content
         $details.addClass("expand");
         $btn.attr("aria-expanded", "true");
         $btn.addClass("rotate");
+
+        // Update content height for smooth animation
+        updateContentHeight($details, true);
+
         // Update button text to "Show Less"
         $btn
           .contents()
@@ -95,9 +123,14 @@ $(document).ready(function() {
           .first()
           .replaceWith(showLessText + " ");
       } else {
+        // Collapse the content
         $details.removeClass("expand");
         $btn.attr("aria-expanded", "false");
         $btn.removeClass("rotate");
+
+        // Update content height for smooth animation
+        updateContentHeight($details, false);
+
         // Update button text to "Show More"
         $btn
           .contents()
