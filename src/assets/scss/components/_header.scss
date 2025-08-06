@@ -38,6 +38,10 @@
     max-width: 100%;
     margin: 0;
   }
+  @include media-custom-between(rem.convert(992px), rem.convert(1350px)) {
+    width: auto;
+    margin: 0 rem.convert(24px);
+  }
   &.upwards {
     position: fixed;
   }
@@ -62,7 +66,7 @@
     }
     .navbar-collapse {
       @include media-breakpoint-down(lg) {
-      
+
       &.show {
         left: 0;
       }
@@ -364,25 +368,25 @@
       height: 100vh; // Fixed height prevents content jumps
       width: 100vw;
       z-index: 9999;
-      
+
       // Performance optimization for smooth animations
       will-change: transform;
       backface-visibility: hidden;
-      
+
       // Smooth slide up animation
       &.show {
         transform: translateX(0); // Slide up to show
       }
-      
+
       // AAA: Scrollbar styling for mobile
       &::-webkit-scrollbar {
         width: rem.convert(6px);
       }
-      
+
       &::-webkit-scrollbar-track {
         background: rgba(var(--black-rgb), 0.1);
       }
-      
+
       &::-webkit-scrollbar-thumb {
         background: rgba(var(--black-rgb), 0.3);
         border-radius: rem.convert(3px);
@@ -460,7 +464,7 @@
             padding-left: 0.25rem;
             > li {
               list-style: none;
-              overflow: visible; 
+              overflow: visible;
 /*               &.menu-cover-image{
                 position: absolute;
                 left: 100%;
@@ -525,7 +529,7 @@
                       }
                       &.has-level-4-children {
                         cursor: pointer;
-                        overflow: visible; 
+                        overflow: visible;
                         &.active{
                           > .level-4-menu{
                             min-height: 250px;
@@ -662,12 +666,12 @@
             font-size: 1rem;
             line-height: 1.5;
             letter-spacing: 0;
-            
+
             &:hover{
               background: var(--green);
               color: var(--white);
             }
-            
+
             // AAA Compliant Focus Indicators for Mega Menu Items
             &:focus,
             &:focus-visible {
@@ -714,7 +718,7 @@
     width: 8px;
     background-color: #1111111A;
   }
-  
+
   .level-2-menu-container::-webkit-scrollbar-thumb, .level-3-menu-container::-webkit-scrollbar-thumb, .level-4-menu-container::-webkit-scrollbar-thumb
   {
     border-radius: 100px;
@@ -760,24 +764,24 @@
          align-items: center;
          justify-content: center;
          transition: background-color 0.2s ease;
-         
+
          &:hover,
          &:focus {
            background-color: rgba(var(--green-rgb), 0.15);
            outline: none;
          }
-         
+
          &:focus-visible {
            outline: 3px solid var(--green);
            outline-offset: 2px;
          }
-         
+
          // AAA: Touch feedback
          &:active {
            transform: scale(0.95);
            background-color: rgba(var(--green-rgb), 0.25);
          }
-         
+
          .header__search-input-icon {
            width: rem.convert(24px);
            height: rem.convert(24px);
@@ -787,7 +791,7 @@
          }
        }
      }
-    
+
    }
      // Mobile Menu Focus Styles - Green outline with 0 offset
   .mega-menu-wrapper {
@@ -801,7 +805,7 @@
     max-height: 2000px;
     opacity: 1;
     transform: scaleY(1);
-    
+
     .level-2-menu-container > li {
       opacity: 1;
       transform: translateY(0);
@@ -813,7 +817,7 @@
     overflow: hidden;
     transform: scaleY(0);
     transform-origin: top;
-    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;   
+    transition: max-height 0.4s ease-in-out, opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
     a{
       font-family: var(--body-font-family);
       font-weight: 600;
@@ -835,14 +839,14 @@
           opacity: 0;
           transform: translateY(-10px);
           transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-          
+
           // Stagger animation for each item
           @for $i from 1 through 10 {
             &:nth-child(#{$i}) {
               transition-delay: #{$i * 0.05}s;
             }
           }
-          
+
           > a{
             padding: 1rem;
           }
@@ -873,7 +877,7 @@
                 max-height: 1000px;
                 opacity: 1;
                 transform: scaleY(1);
-                
+
                 .level-3-menu-container > li {
                   opacity: 1;
                   transform: translateY(0);
@@ -894,14 +898,14 @@
                     opacity: 0;
                     transform: translateY(-10px);
                     transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-                    
+
                     // Stagger animation for each item
                     @for $i from 1 through 10 {
                       &:nth-child(#{$i}) {
                         transition-delay: #{$i * 0.05}s;
                       }
                     }
-                    
+
                     >a{
                       padding: 1rem 1.5rem;
                     }
@@ -932,7 +936,7 @@
                         max-height: 1000px;
                         opacity: 1;
                         transform: scaleY(1);
-                        
+
                         .level-4-menu-container > li {
                           opacity: 1;
                           transform: translateY(0);
@@ -953,14 +957,14 @@
                             opacity: 0;
                             transform: translateY(-10px);
                             transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
-                            
+
                             // Stagger animation for each item
                             @for $i from 1 through 10 {
                               &:nth-child(#{$i}) {
                                 transition-delay: #{$i * 0.05}s;
                               }
                             }
-                            
+
                             > a{
                               padding: 1rem 1.5rem;
                             }
@@ -979,10 +983,10 @@
       display: none;
     }
   }
-  
+
   // AAA: Mobile-specific accessibility enhancements
-  
-  
+
+
   // Focus trap indicator
   .focus-trap-start,
   .focus-trap-end {
@@ -992,7 +996,7 @@
     height: 1px;
     opacity: 0;
   }
-  
+
   // AAA: High contrast mode support for mobile
   @media (prefers-contrast: high) {
     .header__toggle:focus-visible,
@@ -1003,14 +1007,14 @@
       outline-color: Highlight;
       background-color: ButtonFace;
     }
-    
+
     .mega-menu-wrapper a:focus-visible {
       outline: 4px solid;
       outline-color: Highlight;
       background-color: ButtonFace;
     }
   }
-  
+
   // AAA: Reduced motion support for mobile
   @media (prefers-reduced-motion: reduce) {
     .navbar-collapse,
@@ -1022,7 +1026,7 @@
       transition: none;
       animation: none;
     }
-    
+
     .header__toggle:active,
     .header__mobile-close:active {
       transform: none;
@@ -1066,22 +1070,22 @@
   align-items: flex-start;
   justify-content: center;
   padding: rem.convert(100px) rem.convert(24px) rem.convert(24px);
-  
+
   // Animation states
   opacity: 0;
   visibility: hidden;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  
+
   &.show {
     opacity: 1;
     visibility: visible;
-    
+
     .search-overlay-content {
       transform: translateY(0) scale(1);
       opacity: 1;
     }
   }
-  
+
   @include media-breakpoint-down(lg) {
     padding: rem.convert(80px) rem.convert(16px) rem.convert(16px);
   }
@@ -1094,12 +1098,12 @@
   width: 100%;
   max-width: rem.convert(600px);
   padding: rem.convert(32px);
-  
+
   // Animation initial state
   transform: translateY(-30px) scale(0.95);
   opacity: 0;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  
+
   @include media-breakpoint-down(lg) {
     padding: rem.convert(24px);
     max-width: 100%;
@@ -1120,7 +1124,7 @@
   line-height: 1.2;
   color: var(--black);
   margin: 0;
-  
+
   @include media-breakpoint-down(lg) {
     @include rem.convert(font-size, 20px);
   }
@@ -1136,18 +1140,18 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  
+
   &:hover,
   &:focus {
     background-color: rgba(var(--black-rgb), 0.1);
     outline: none;
   }
-  
+
   &:focus-visible {
     outline: 2px solid var(--green);
     outline-offset: 2px;
   }
-  
+
   svg {
     width: rem.convert(24px);
     height: rem.convert(24px);
@@ -1168,7 +1172,7 @@
   border-radius: rem.convert(50px);
   overflow: hidden;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
-  
+
   &:focus-within {
     border-color: var(--green);
     box-shadow: 0 0 0 4px rgba(var(--green-rgb), 0.1);
@@ -1186,16 +1190,16 @@
   @include rem.convert(font-size, 16px);
   line-height: 1.5;
   color: var(--black);
-  
+
   &::placeholder {
     color: rgba(var(--black-rgb), 0.5);
   }
-  
+
   &::-webkit-search-cancel-button {
     -webkit-appearance: none;
     appearance: none;
   }
-  
+
   @include media-breakpoint-down(lg) {
     padding: rem.convert(14px) rem.convert(20px);
     @include rem.convert(font-size, 14px);
@@ -1211,27 +1215,27 @@
   align-items: center;
   justify-content: center;
   transition: background-color 0.2s ease;
-  
+
   &:hover,
   &:focus {
     background: darken(#4CAF50, 10%);
     outline: none;
   }
-  
+
   &:focus-visible {
     outline: 2px solid var(--black);
     outline-offset: 2px;
   }
-  
+
   svg {
     width: rem.convert(20px);
     height: rem.convert(20px);
     color: var(--white);
   }
-  
+
   @include media-breakpoint-down(lg) {
     padding: rem.convert(14px) rem.convert(20px);
-    
+
     svg {
       width: rem.convert(18px);
       height: rem.convert(18px);
@@ -1272,7 +1276,7 @@
   color: var(--black);
   cursor: pointer;
   transition: all 0.2s ease;
-  
+
   &:hover,
   &:focus {
     background: var(--green);
@@ -1281,12 +1285,12 @@
     outline: none;
     transform: translateY(-1px);
   }
-  
+
   &:focus-visible {
     outline: 2px solid var(--black);
     outline-offset: 2px;
   }
-  
+
   @include media-breakpoint-down(lg) {
     @include rem.convert(font-size, 12px);
     padding: rem.convert(6px) rem.convert(12px);
@@ -1296,7 +1300,7 @@
 // Animation for search suggestions
 .search-overlay.show .search-suggestion-item {
   animation: slideInUp 0.3s ease-out both;
-  
+
   @for $i from 1 through 6 {
     &:nth-child(#{$i}) {
       animation-delay: #{$i * 0.05}s;
@@ -1334,7 +1338,7 @@ body.search-open {
     transition: none;
     animation: none;
   }
-  
+
   .mega-menu-wrapper.show .mega-menu-inner {
     animation: none;
   }

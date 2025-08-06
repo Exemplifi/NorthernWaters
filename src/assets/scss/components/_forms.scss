@@ -288,7 +288,7 @@
     color: var(--black-3);
     @include convert-percent(letter-spacing, 32px, -2);
     @include media-breakpoint-down(lg) {
-      margin-bottom: rem.convert(40px);
+      margin-bottom: rem.convert(25px);
     }
   }
 
