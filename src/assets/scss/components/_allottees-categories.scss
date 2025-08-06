@@ -91,6 +91,7 @@
           margin-bottom: rem.convert(32px);
           font-size: rem.convert(20px);
           @include convert-percent(line-height, 20px, 140);
+          color: var(--black-3);
           @include media-breakpoint-down(lg) {
             margin-bottom: rem.convert(24px);
             font-size: rem.convert(18px);
