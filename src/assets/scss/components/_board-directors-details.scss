@@ -357,15 +357,13 @@
     }
     .mgt-details {
       margin-bottom: rem.convert(24px);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
       overflow: hidden;
-      text-overflow: ellipsis;
-      transition: max-height 0.3s ease-in-out;
+      max-height: rem.convert(72px); // Show approximately 3 lines initially
+      opacity: 1;
+      transition: max-height 0.3s ease-out, opacity 0.2s ease-out;
       &.expand {
-        -webkit-line-clamp: unset;
-        max-height: 100%;
+        opacity: 1;
+        max-height: max-content; // This will be updated dynamically via JS
       }
       h4,
       .h6 {
