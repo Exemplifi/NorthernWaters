@@ -379,14 +379,14 @@
     }
   }
 
-  [type="submit"]:not(:disabled) {
-    background: #00853f;
+  a[type="submit"]:not(:disabled) {
+    // background: #00853f;
     width: 100%;
     border-radius: 47px;
-    color: #fff;
-    padding: 14px 32px 16px 32px;
-    font-size: 16px;
-    font-weight: 600;
+    // color: #fff;
+    // padding: 14px 32px 16px 32px;
+    // font-size: 16px;
+    // font-weight: 600;
   }
   .inner-wrap {
     @include media-breakpoint-down(lg) {
