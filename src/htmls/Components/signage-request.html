@@ -78,21 +78,24 @@
                 <div class="col-md-6">
                   <label for="logoUpload">LOGO*</label>
                   <div class="upload-wrapper" id="logoUpload">
-                    <span class="upload-placeholder">Choose file</span>
-                    <span class="upload-icon">
+                    <span class="upload-placeholder" id="filePlaceholder">Choose file</span>
+                    <span class="upload-icon" aria-hidden="true">
                       <img
                         src="../../assets/images/upload file.svg"
-                        alt="Upload Icon"
+                        alt=""
                       />
                     </span>
                     <input
                       type="file"
                       accept=".png, .eps"
                       class="form-control-file"
+                      id="logoFileInput"
+                      aria-describedby="filePlaceholder fileHelp"
                       onchange="updateFileName(this)"
+                      tabindex="0"
                     />
                   </div>
-                  <small class="form-text"
+                  <small class="form-text" id="fileHelp"
                     >Please upload a PNG or EPS file of your logo.</small
                   >
                 </div>
@@ -107,7 +110,7 @@
 
                 <div class="col-12">
                   <!--<button type="submit" class="btn btn-submit">Submit</button>-->
-                  <a
+                  <button
                     type="submit"
                     href="#"
                     class="btn primary-btn d-inline-flex align-items-center liquid-animation btn-submit"
@@ -175,7 +178,7 @@
                         </svg>
                       </span>
                     </div>
-                  </a>
+                  </button>
                 </div>
               </div>
             </form>
@@ -202,6 +205,47 @@
     <script src="../../assets/dist/main.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
-    <script></script>
+    <script>
+      function updateFileName(input) {
+        const file = input.files[0];
+        const placeholder = document.getElementById('filePlaceholder');
+
+        if (file) {
+          placeholder.textContent = file.name;
+          placeholder.setAttribute('aria-label', `Selected file: ${file.name}`);
+        } else {
+          placeholder.textContent = 'Choose file';
+          placeholder.setAttribute('aria-label', 'Choose file');
+        }
+      }
+
+      // Add keyboard support for the file input
+      document.addEventListener('DOMContentLoaded', function() {
+        const fileInput = document.getElementById('logoFileInput');
+        const uploadWrapper = document.getElementById('logoUpload');
+
+        if (fileInput && uploadWrapper) {
+          // Make the wrapper clickable for better UX
+          uploadWrapper.addEventListener('click', function(e) {
+            if (e.target !== fileInput) {
+              fileInput.click();
+            }
+          });
+
+          // Add keyboard support
+          uploadWrapper.addEventListener('keydown', function(e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              fileInput.click();
+            }
+          });
+
+          // Make wrapper focusable
+          uploadWrapper.setAttribute('tabindex', '0');
+          uploadWrapper.setAttribute('role', 'button');
+          uploadWrapper.setAttribute('aria-label', 'Click or press Enter to choose a logo file');
+        }
+      });
+    </script>
   </body>
 </html>

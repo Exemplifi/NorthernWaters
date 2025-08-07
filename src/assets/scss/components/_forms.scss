@@ -276,7 +276,9 @@
   align-items: center;
   justify-content: center;
 }
-
+button.btn.btn-submit {
+  width: 100%;
+}
 
 
 
@@ -317,6 +319,10 @@
   }
   .isinvalid {
     border: 1px solid var(--error) !important;
+    &:focus, &:focus-visible {
+      border: 2px solid var(--error) !important;
+      outline: none !important;
+    }
   }
   .form-text {
     font-size: 16px;
