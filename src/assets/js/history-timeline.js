@@ -1,0 +1,559 @@
+import $ from "jquery";
+
+// Timeline Navigation System - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to initialize timeline navigation
+  function initializeTimelineNavigation() {
+    // Check if Slick is available
+    if (typeof $.fn.slick === 'undefined') {
+      console.error('Slick carousel library is not loaded');
+      return;
+    }
+
+    console.log('Initializing timeline navigation...');
+    console.log('Timeline nav element:', $(".timeline-nav").length);
+    console.log('Timeline slider element:', $(".timeline-slider").length);
+
+    // Destroy existing slick instances if they exist
+    if ($(".timeline-nav").hasClass("slick-initialized")) {
+      console.log('Destroying existing timeline-nav slick instance');
+      $(".timeline-nav").slick("unslick");
+    }
+    if ($(".timeline-slider").hasClass("slick-initialized")) {
+      console.log('Destroying existing timeline-slider slick instance');
+      $(".timeline-slider").slick("unslick");
+    }
+
+    // Initialize the timeline navigation carousel (small dots/indicators)
+    console.log('Initializing timeline-nav slick slider...');
+    $(".timeline-nav").slick({
+      // autoplay: true,           // Uncomment to enable auto-play
+      // autoplaySpeed: 1000,      // Speed of auto-play in milliseconds
+
+      slidesToShow: 5, // Number of navigation items visible at once on desktop
+      slidesToScroll: 1, // Number of items to scroll when navigating
+      asNavFor: ".timeline-slider", // Links this carousel to the main timeline slider
+      centerMode: false, // Don't center the active navigation item
+      focusOnSelect: true, // Focus on the selected navigation item
+      mobileFirst: true, // Apply mobile-first responsive design
+      arrows: false, // Hide navigation arrows
+      infinite: false, // Don't loop infinitely (finite timeline)
+
+      // Responsive breakpoints for different screen sizes
+      responsive: [
+        {
+          breakpoint: 768, // Tablet and smaller screens
+          settings: {
+            slidesToShow: 8, // Show 8 navigation items on tablets
+          },
+        },
+        {
+          breakpoint: 0, // Mobile phones (smallest screens)
+          settings: {
+            slidesToShow: 4, // Show 4 navigation items on mobile
+            slidesToScroll: 2, // Scroll 2 items at a time on mobile
+          },
+        },
+      ],
+    });
+
+    // Initialize the main timeline content carousel
+    console.log('Initializing timeline-slider slick slider...');
+    $(".timeline-slider").slick({
+      // autoplay: true,           // Uncomment to enable auto-play
+      // autoplaySpeed: 1000,      // Speed of auto-play in milliseconds
+
+      slidesToShow: 1, // Show only one timeline item at a time
+      slidesToScroll: 1, // Scroll one item at a time
+      arrows: true, // Hide navigation arrows
+      autoplay: false,
+      infinite: false,
+      asNavFor: ".timeline-nav", // Links this carousel to the navigation carousel
+      centerMode: true, // Center the active timeline item
+      cssEase: "ease", // CSS easing function for smooth transitions
+      edgeFriction: 0.5, // Resistance when reaching the end of the timeline
+      mobileFirst: true, // Apply mobile-first responsive design
+      speed: 500, // Transition speed in milliseconds
+
+      // Responsive breakpoints for different screen sizes
+      responsive: [
+        {
+          breakpoint: 0, // Mobile phones (smallest screens)
+          settings: {
+            centerMode: false, // Disable center mode on mobile for better UX
+          },
+        },
+        {
+          breakpoint: 768, // Tablet and larger screens
+          settings: {
+            centerMode: true, // Enable center mode on tablets and desktop
+          },
+        },
+      ],
+    });
+
+    console.log('Timeline navigation initialization complete');
+
+    // Navigation button functionality
+    $(".timeline-prev-btn")
+      .off("click")
+      .on("click", function () {
+        $(".timeline-slider").slick("slickPrev");
+      });
+
+    $(".timeline-next-btn")
+      .off("click")
+      .on("click", function () {
+        $(".timeline-slider").slick("slickNext");
+      });
+
+    // Initially disable the previous button since we start at the first slide
+    $(".timeline-prev-btn").addClass("slick-disabled");
+    // $(".timeline-slider .slick-prev").addClass("visually-hidden-focusable");
+    // $(".timeline-slider .slick-next").addClass("visually-hidden-focusable");
+
+    // Hide slick navigation arrows immediately and ensure they stay hidden
+    function hideSlickArrows() {
+      $(".timeline-slider .slick-prev").css({
+        display: "none",
+      });
+      $(".timeline-slider .slick-next").css({
+        display: "none",
+      });
+    }
+
+    // Hide arrows immediately
+    hideSlickArrows();
+
+    // Also hide arrows after any slick events that might show them
+    $(".timeline-slider").on("init reInit afterChange", function () {
+      setTimeout(hideSlickArrows, 0);
+    });
+
+    // Handle button states after slide changes
+    $(".timeline-slider")
+      .off("afterChange")
+      .on("afterChange", function () {
+        // Check if previous button should be disabled
+        if ($(".timeline-slider .slick-prev").hasClass("slick-disabled")) {
+          $(".timeline-prev-btn").addClass("slick-disabled");
+        } else {
+          $(".timeline-prev-btn").removeClass("slick-disabled");
+        }
+
+        // Check if next button should be disabled
+        if ($(".timeline-slider .slick-next").hasClass("slick-disabled")) {
+          $(".timeline-next-btn").addClass("slick-disabled");
+        } else {
+          $(".timeline-next-btn").removeClass("slick-disabled");
+        }
+      });
+
+    // Make timeline navigation items accessible
+    var makeTimelineNavAccessible = (function () {
+      function initAccessibility() {
+        $(".timeline-nav__item").each(function (index) {
+          var $item = $(this);
+          var year = $item.text();
+
+          // Add accessibility attributes
+          $item.attr({
+            tabindex: "0",
+            role: "button",
+            "aria-label": "Navigate to " + year + " timeline",
+            "aria-pressed": "false",
+          });
+
+          // Add keyboard event handlers
+          $item.off("keydown").on("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              e.stopPropagation();
+
+              // Get the index of this item in the timeline nav
+              var itemIndex = $item.index();
+
+              // Go to the specific slide in the timeline slider
+              $(".timeline-slider").slick("slickGoTo", itemIndex);
+
+              // Also trigger click for any additional click handlers
+              $item.click();
+            }
+          });
+
+          // Update aria-pressed when item becomes active and navigate to slide
+          $item.off("click").on("click", function () {
+            // Get the index of this item in the timeline nav
+            var itemIndex = $item.index();
+
+            // Go to the specific slide in the timeline slider
+            $(".timeline-slider").slick("slickGoTo", itemIndex);
+
+            // Update aria-pressed state
+            $(".timeline-nav__item").attr("aria-pressed", "false");
+            $item.attr("aria-pressed", "true");
+          });
+        });
+      }
+
+      // Run immediately
+      initAccessibility();
+
+      // Return the function so it can be called again
+      return initAccessibility;
+    })();
+
+    // Initialize accessibility after Slick is initialized
+    $(".timeline-nav")
+      .off("init")
+      .on("init", function () {
+        console.log('Timeline nav slick initialized');
+        makeTimelineNavAccessible();
+      });
+
+    // Re-initialize accessibility after responsive changes
+    $(".timeline-nav")
+      .off("breakpoint")
+      .on("breakpoint", function () {
+        setTimeout(function () {
+          makeTimelineNavAccessible();
+        }, 100);
+      });
+
+    // Also call it after a delay to ensure it works
+    setTimeout(function () {
+      makeTimelineNavAccessible();
+      $(".timeline-nav__item").first().attr("aria-pressed", "true");
+
+      // Test click functionality
+      console.log('Testing timeline-nav click functionality...');
+      $(".timeline-nav__item").each(function(index) {
+        var $item = $(this);
+        console.log('Timeline nav item ' + index + ':', $item.text(), 'clickable:', $item.is(':visible'));
+
+        // Add a test click handler
+        $item.on('click.test', function() {
+          console.log('Timeline nav item clicked:', $item.text(), 'index:', index);
+        });
+      });
+    }, 1000);
+
+    // Set initial aria-pressed state
+    setTimeout(function () {
+      $(".timeline-nav__item").first().attr("aria-pressed", "true");
+    }, 500);
+  }
+
+  // Function to wait for Slick to be available and then initialize
+  function waitForSlickAndInitialize() {
+    if (typeof $.fn.slick !== 'undefined') {
+      initializeTimelineNavigation();
+    } else {
+      // Wait a bit and try again
+      setTimeout(waitForSlickAndInitialize, 100);
+    }
+  }
+
+  // Wait for DOM to be fully loaded before initializing carousels
+  $(function () {
+    // Wait for Slick to be available before initializing
+    waitForSlickAndInitialize();
+  });
+
+  // Initialize on window resize with debouncing
+  var resizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(function () {
+      if (typeof $.fn.slick !== 'undefined') {
+        initializeTimelineNavigation();
+        // Ensure arrows are hidden immediately after resize reinitialization
+        setTimeout(function () {
+          $(".timeline-slider .slick-prev").css({ display: "none" });
+          $(".timeline-slider .slick-next").css({ display: "none" });
+        }, 0);
+      }
+    }, 250); // Debounce resize events to avoid excessive reinitialization
+  });
+})();
+
+// Dynamic Height Calculation - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to calculate and set dynamic height for timeline-wrapper
+  function setDynamicTimelineHeight() {
+    // Find all timeline-wrapper elements
+    $(".timeline-wrapper").each(function () {
+      var $wrapper = $(this);
+      var maxHeight = 0;
+
+      // Find all timeline-slide__content elements within this wrapper
+      var $contentElements = $wrapper.find(".timeline-slide__content");
+
+      // Calculate the maximum height among all content elements
+      $contentElements.each(function () {
+        var contentHeight = $(this).outerHeight(true); // Include padding and border
+        if (contentHeight > maxHeight) {
+          maxHeight = contentHeight;
+        }
+      });
+
+      // Add some padding to ensure content doesn't touch the edges
+      var finalHeight = maxHeight;
+
+      // Set the wrapper height to the maximum content height
+      if (maxHeight > 0) {
+        $wrapper.css("height", finalHeight + "px");
+      }
+    });
+  }
+
+  // Function to set height of timeline-slide elements based on their content
+  function setTimelineSlideHeight() {
+    // Find all timeline-slide elements
+    $(".timeline-slide").each(function () {
+      var $slide = $(this);
+      var $content = $slide.find(".timeline-slide__content");
+
+      if ($content.length > 0) {
+        var contentHeight = $content.outerHeight(true); // Include padding and border
+
+        if (contentHeight > 0) {
+          $slide.css("height", contentHeight + "px");
+        }
+      }
+    });
+  }
+
+  // Function to set height of slick-slide elements inside timerline-slide__carousel
+  function setSlickSlideHeight() {
+    // Find all timerline-slide__carousel elements
+    $(".timerline-slide__carousel").each(function () {
+      var $carousel = $(this);
+      var $nearestContent = $carousel.closest(".timeline-slide__content");
+
+      if ($nearestContent.length > 0) {
+        var contentHeight = $nearestContent.outerHeight(true); // Include padding and border
+
+        if (contentHeight > 0) {
+          // Set height for all slick-slide elements inside this carousel
+          $carousel.find(".slick-slide").css("height", contentHeight + "px");
+        }
+      }
+    });
+  }
+
+  // Wait for DOM to be fully loaded
+  $(function () {
+    // Initial calculation after a short delay to ensure all content is rendered
+    setTimeout(function () {
+      setDynamicTimelineHeight();
+      setTimelineSlideHeight();
+      setSlickSlideHeight();
+    }, 100);
+
+    // Also calculate after Slick carousel is initialized
+    $(".timeline-slider").on("init", function () {
+      setTimeout(function () {
+        setDynamicTimelineHeight();
+        setTimelineSlideHeight();
+        setSlickSlideHeight();
+      }, 200);
+    });
+
+    // Recalculate after slide changes
+    $(".timeline-slider").on("afterChange", function () {
+      setTimeout(function () {
+        setDynamicTimelineHeight();
+        setTimelineSlideHeight();
+        setSlickSlideHeight();
+      }, 100);
+    });
+  });
+
+  // Recalculate on window resize with debouncing
+  var heightResizeTimer;
+  $(document).ready(function () {
+    $(window).on("resize", function () {
+      clearTimeout(heightResizeTimer);
+      heightResizeTimer = setTimeout(function () {
+        setDynamicTimelineHeight();
+        setTimelineSlideHeight();
+        setSlickSlideHeight();
+      }, 250); // Debounce resize events
+    });
+  });
+})();
+
+// Center Slider - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to initialize center sliders independently
+  function initializeCenterSliders() {
+    // Destroy existing slick instances if they exist
+    $(".center-slider").each(function () {
+      if ($(this).hasClass("slick-initialized")) {
+        $(this).slick("unslick");
+      }
+    });
+
+    // Initialize each center-slider independently
+    $(".center-slider").each(function (index) {
+      var $slider = $(this);
+      var sliderId = "center-slider-" + index;
+
+      // Add unique identifier to the slider
+      $slider.attr("data-slider-id", sliderId);
+
+      // Initialize each slider independently
+      $slider.slick({
+        slidesToShow: 3,
+        slidesToScroll: 1,
+        centerMode: false,
+        arrows: true,
+        dots: false,
+        speed: 2000,
+        infinite: true,
+        autoplaySpeed: 2000,
+        autoplay: false,
+        // Add unique settings to prevent state sharing
+        asNavFor: null, // Ensure no navigation linking between sliders
+        responsive: [
+          {
+            breakpoint: 768,
+            settings: {
+              slidesToShow: 2,
+              centerMode: true,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              centerMode: true,
+            },
+          },
+        ],
+      });
+
+      // Add debugging to verify independent sliders
+      // console.log("Initialized independent slider:", sliderId);
+    });
+  }
+
+  // Function to initialize custom navigation for center sliders
+  function initializeCenterSliderNavigation() {
+    // console.log("Initializing center slider navigation...");
+
+    // Find all center-slider instances
+    $(".center-slider").each(function (index) {
+      var $slider = $(this);
+      var sliderId = $slider.attr("data-slider-id");
+
+      // Find the nearest timerline-slide__menu-list within the same timeline-slide__content
+      var $menuList = $slider
+        .closest(".timeline-slide__content")
+        .find(".timerline-slide__menu-list");
+
+      if ($menuList.length > 0) {
+        // console.log("Found menu list for slider:", sliderId);
+
+        // Get all anchor tags in the menu list
+        var $menuLinks = $menuList.find("a");
+
+        // Remove any existing click handlers
+        $menuLinks.off("click");
+
+        // Add click handlers to each anchor tag
+        $menuLinks.each(function (linkIndex) {
+          var $link = $(this);
+
+          // Add click handler
+          $link.on("click", function (e) {
+            e.preventDefault();
+            // console.log(
+            //   "Menu link clicked for slider:",
+            //   sliderId,
+            //   "going to slide:",
+            //   linkIndex
+            // );
+
+            // Go to the specific slide in the corresponding center-slider
+            $slider.slick("slickGoTo", linkIndex);
+
+            // Update active state for all links in this menu
+            $menuLinks.removeClass("active");
+            $link.addClass("active");
+          });
+
+          // Add keyboard navigation
+          $link.attr({
+            tabindex: "0",
+            role: "button",
+            "aria-label": "Navigate to slide " + (linkIndex + 1),
+          });
+
+          $link.on("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
+              e.preventDefault();
+              $link.click();
+            }
+          });
+        });
+
+        // Handle slick events to update active state
+        $slider
+          .off("afterChange")
+          .on("afterChange", function (event, slick, currentSlide) {
+            // Update active state based on current slide
+            $menuLinks.removeClass("active");
+            $menuLinks.eq(currentSlide).addClass("active");
+          });
+
+        // Set initial active state
+        $menuLinks.first().addClass("active");
+      }
+    });
+  }
+
+  // Initialize when DOM is ready
+  $(document).ready(function () {
+    initializeCenterSliders();
+
+    // Initialize navigation after sliders are set up
+    setTimeout(function () {
+      initializeCenterSliderNavigation();
+    }, 500);
+  });
+
+  // Re-initialize on window resize
+  var centerSliderResizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(centerSliderResizeTimer);
+    centerSliderResizeTimer = setTimeout(function () {
+      initializeCenterSliders();
+      // Re-initialize navigation after resize
+      setTimeout(function () {
+        initializeCenterSliderNavigation();
+      }, 100);
+    }, 250);
+  });
+
+  // Re-initialize when timeline slides change
+  $(".timeline-slider").on("afterChange", function () {
+    setTimeout(function () {
+      initializeCenterSliders();
+      // Re-initialize navigation after timeline change
+      setTimeout(function () {
+        initializeCenterSliderNavigation();
+      }, 100);
+    }, 100);
+  });
+
+  // Expose functions globally for testing
+  window.initializeCenterSliderNavigation = initializeCenterSliderNavigation;
+})();

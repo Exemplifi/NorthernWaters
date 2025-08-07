@@ -25,4 +25,5 @@ import './allottees-categories.js';
 import './links-listing.js';
 import './buttons.js';
 import './timeline-animation.js';
+import './history-timeline.js';
 

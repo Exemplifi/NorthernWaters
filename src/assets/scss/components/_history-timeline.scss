@@ -1,0 +1,417 @@
+$white: #fff;
+$black: #000;
+$primary: #003471;
+$gray: #616161;
+$orange: #ff9900;
+
+.visually-hidden-focusable {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+.visually-hidden-focusable:focus,
+.visually-hidden-focusable:active {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  overflow: visible;
+  clip: auto;
+  white-space: normal;
+}
+.timeline-container {
+  .timeline-title {
+    margin-bottom: rem.convert(24px);
+  }
+  .timeline-info {
+    margin-bottom: rem.convert(48px);
+    max-width: rem.convert(664px);
+    text-align: center;
+  }
+  height: auto;
+  background-color: var(--off-white);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+.timeline {
+  width: 100%;
+  position: relative;
+
+  &-nav {
+    position: relative;
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      background-color: #fafafa;
+      bottom: 6px;
+      z-index: 1;
+    }
+    .slick-current .timeline-nav__item {
+      color: $orange;
+      opacity: 1;
+      &::before {
+        background-color: $orange;
+      }
+    }
+    &__item {
+      width: auto;
+      height: auto;
+      text-align: center;
+      opacity: 0.5;
+      background: transparent;
+      color: #afc9f6;
+      margin: 15px 25px !important;
+      position: relative;
+      font-size: 14px;
+      line-height: 28px;
+      font-weight: 400;
+      cursor: pointer;
+
+      // Accessibility improvements
+      &:focus {
+        outline: 2px solid $orange;
+        outline-offset: 2px;
+        border-radius: 4px;
+        opacity: 0.8;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #005FCC;
+        outline-offset: 2px;
+        border-radius: 4px;
+        opacity: 0.8;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 30px;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 10px;
+        height: 10px;
+        border-radius: 100%;
+        background-color: #afc9f6;
+        transition: 0.2s;
+      }
+    }
+  }
+
+  &-wrapper {
+    position: relative;
+    width: 100%;
+    height: 580px;
+    min-height: 602px; // Ensure minimum height
+
+    @media (max-width: 500px) {
+      height: 1000px;
+      max-height: 900px;
+    }
+  }
+  &-slider {
+    height: 100%;
+  }
+  .slick-list {
+    height: 100%;
+    @media (min-width: 1080px) {
+      padding: 0 !important;
+    }
+  }
+  .slick-track {
+    height: 100%;
+  }
+  .slick-slide {
+    height: 100%; // Ensure slick slides have full height
+  }
+  &-slide {
+    position: relative;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    // background-size: auto 602px, cover;
+    background-position: top;
+    // margin: 0 24px;
+    // width: 80%;
+    z-index: 1;
+    height: 100%; // Ensure slide has full height
+
+    &:after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: var(--off-white);
+      z-index: 2;
+    }
+
+    &__content {
+      z-index: 5;
+      position: absolute;
+      top: 0px;
+      background: #ffffff;
+      width: 100%;
+      left: 0;
+      right: 0;
+      opacity: 0;
+      transition: opacity 1s;
+      display: flex;
+      height: 100%; // Ensure content has full height
+      min-height: 602px; // Set minimum height
+
+      @media (max-width: 500px) {
+        width: 100%;
+        // transform: translate(-50%, 0px);
+      }
+
+      .timerline-slide__menu {
+        height: 100%;
+        background-color: var(--off-white);
+        border-right: 1px solid rgba(17, 17, 17, 0.6);
+        padding: rem.convert(24px);
+        flex: 0 0 rem.convert(284px);
+        border-radius: rem.convert(16px);
+        border: 1px solid rgba(17, 17, 17, 0.6);
+        margin-right: rem.convert(24px);
+        .timerline-slide__menu-list {
+          li {
+            display: flex;
+            a {
+              flex: 1 1 auto;
+            }
+          }
+        }
+      }
+      .timerline-slide__carousel {
+        width: 100%;
+        height: 100%;
+        background-color: var(--off-white);
+        border-radius: rem.convert(16px);
+        overflow: hidden;
+        // flex: 0 0 calc(100% - 284px);
+      }
+    }
+  }
+  .slick-current {
+    &:after {
+      background-color: rgba($primary, 0);
+    }
+    .timeline-slide__content {
+      opacity: 1;
+    }
+  }
+}
+
+// For Active Item
+.slick-center .slick-slide,
+.timeline-slide {
+  // transform: scale(0.7);
+  // width: 100% !important;
+}
+.slick-center .slick-active,
+.timeline-slide .sl {
+  -webkit-transform: scale(1);
+  transform: scale(1);
+  -webkit-transform-origin: center center;
+  transform-origin: center center;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
+}
+
+// Timeline Navigation Buttons
+.timeline-buttons-wrap {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+
+  @media (max-width: 768px) {
+    gap: 15px;
+    margin-top: 20px;
+  }
+}
+
+// Navigation Button Styles
+.timeline-prev-btn,
+.timeline-next-btn {
+  background: $orange;
+  color: $white;
+  border: none;
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 500;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: darken($orange, 10%);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba($orange, 0.3);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba($orange, 0.3);
+  }
+
+  // Disabled state
+  &.slick-disabled {
+    background: $gray;
+    color: rgba($white, 0.6);
+    cursor: not-allowed;
+    transform: none;
+    box-shadow: none;
+
+    &:hover {
+      background: $gray;
+      transform: none;
+      box-shadow: none;
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+}
+
+// Custom Navigation Styles for Center Sliders
+.timerline-slide__menu-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-height: calc(100% - 60px);
+  overflow-y: auto;
+  overflow-x: hidden;
+  li {
+    margin-bottom: 8px;
+
+    a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 12px 16px;
+      color: $gray;
+      text-decoration: none;
+      // border-radius: 8px;
+      transition: all 0.3s ease;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      background: transparent;
+      border-bottom: 1px solid rgba(17, 17, 17, 0.2);
+
+      // Icon styling
+      i {
+        font-size: 16px;
+        opacity: 0.7;
+        transition: opacity 0.3s ease;
+      }
+
+      // Hover state
+      &:hover {
+        background: rgba($primary, 0.05);
+        color: $primary;
+        border-color: rgba($primary, 0.2);
+        transform: translateX(4px);
+
+        i {
+          opacity: 1;
+        }
+      }
+
+      // Focus state for accessibility
+      &:focus {
+        outline: 2px solid $orange;
+        outline-offset: 2px;
+        background: rgba($primary, 0.05);
+        color: $primary;
+      }
+
+      &:focus:not(:focus-visible) {
+        outline: none;
+      }
+
+      &:focus-visible {
+        outline: 2px solid #005FCC;
+        outline-offset: 2px;
+        background: rgba($primary, 0.05);
+        color: $primary;
+      }
+
+      // Active state
+      &.active {
+        background: var(--green);
+        color: $white;
+        border-radius: rem.convert(8px);
+
+        i {
+          opacity: 1;
+          color: $white;
+        }
+
+        &:hover {
+          background: var(--green);
+        }
+      }
+    }
+  }
+
+  // Responsive adjustments
+  @media (max-width: 768px) {
+    li {
+      margin-bottom: 6px;
+
+      a {
+        padding: 10px 12px;
+        font-size: 13px;
+
+        i {
+          font-size: 14px;
+        }
+      }
+    }
+  }
+}
+.timerline-slide__carousel {
+  .slick-track {
+    .slick-slide {
+      height: 602px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      background: #004a64;
+      filter: grayscale(100%);
+      &.slick-current.slick-active {
+        background: #004a64;
+        filter: none;
+      }
+      &.slick-active:not(.slick-current) {
+        background: #004a64;
+        filter: grayscale(100%);
+      }
+      // following SCSS selector not working
+      &.slick-active:first-child {
+        background: #004a64;
+        filter: none;
+      }
+    }
+  }
+}
