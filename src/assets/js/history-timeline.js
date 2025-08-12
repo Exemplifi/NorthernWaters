@@ -44,16 +44,24 @@ import $ from "jquery";
       // Responsive breakpoints for different screen sizes
       responsive: [
         {
-          breakpoint: 768, // Tablet and smaller screens
+          breakpoint: 1200, // Tablet and smaller screens
           settings: {
-            slidesToShow: 8, // Show 8 navigation items on tablets
+            slidesToShow: 5, // Show 8 navigation items on tablets
+            slidesToScroll: 1,
+          },
+        },
+        {
+          breakpoint: 768, // Mobile phones (smallest screens)
+          settings: {
+            slidesToShow: 3, // Show 4 navigation items on mobile
+            slidesToScroll: 1, // Scroll 2 items at a time on mobile
           },
         },
         {
           breakpoint: 0, // Mobile phones (smallest screens)
           settings: {
-            slidesToShow: 4, // Show 4 navigation items on mobile
-            slidesToScroll: 2, // Scroll 2 items at a time on mobile
+            slidesToShow: 2, // Show 4 navigation items on mobile
+            slidesToScroll: 1, // Scroll 2 items at a time on mobile
           },
         },
       ],
@@ -75,7 +83,8 @@ import $ from "jquery";
       cssEase: "ease", // CSS easing function for smooth transitions
       edgeFriction: 0.5, // Resistance when reaching the end of the timeline
       mobileFirst: true, // Apply mobile-first responsive design
-      speed: 500, // Transition speed in milliseconds
+      speed: 1000, // Transition speed in milliseconds
+      autoplaySpeed: 1000,
 
       // Responsive breakpoints for different screen sizes
       responsive: [
@@ -416,30 +425,56 @@ import $ from "jquery";
         centerMode: false,
         arrows: true,
         dots: false,
-        speed: 2000,
+        speed: 1000,
+        mobileFirst: true,
         infinite: true,
-        autoplaySpeed: 2000,
+        autoplaySpeed: 5000,
         autoplay: false,
         // Add unique settings to prevent state sharing
         asNavFor: null, // Ensure no navigation linking between sliders
         responsive: [
           {
-            breakpoint: 768,
+            breakpoint: 1200,
             settings: {
-              slidesToShow: 2,
+              slidesToShow: 3,
+              slidesToScroll: 1,
               centerMode: true,
             },
           },
           {
-            breakpoint: 480,
+            breakpoint: 992,
+            settings: {
+              slidesToShow: 2,
+              slidesToScroll: 1,
+              centerMode: true,
+            },
+          },
+          {
+            breakpoint: 768,
             settings: {
               slidesToShow: 1,
+              slidesToScroll: 1,
+              centerMode: true,
+            },
+          },
+          {
+            breakpoint: 0,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
               centerMode: true,
             },
           },
         ],
       });
 
+      $slider.off('afterChange.centerFix').on('afterChange.centerFix', function () {
+        addClassesToCenterSlider();
+      });
+      // ✅ Hook afterChange for every center-slider
+      $slider.off('afterChange.centerUpdate').on('afterChange.centerUpdate', function () {
+        addClassesToCenterSlider();
+      });
       // Add debugging to verify independent sliders
       // console.log("Initialized independent slider:", sliderId);
     });
@@ -527,6 +562,8 @@ import $ from "jquery";
     // Initialize navigation after sliders are set up
     setTimeout(function () {
       initializeCenterSliderNavigation();
+      // Trigger custom event for center slider state management
+      $(document).trigger('centerSlidersInitialized');
     }, 500);
   });
 
@@ -539,6 +576,8 @@ import $ from "jquery";
       // Re-initialize navigation after resize
       setTimeout(function () {
         initializeCenterSliderNavigation();
+        // Trigger custom event for center slider state management
+        $(document).trigger('centerSlidersInitialized');
       }, 100);
     }, 250);
   });
@@ -550,6 +589,8 @@ import $ from "jquery";
       // Re-initialize navigation after timeline change
       setTimeout(function () {
         initializeCenterSliderNavigation();
+        // Trigger custom event for center slider state management
+        $(document).trigger('centerSlidersInitialized');
       }, 100);
     }, 100);
   });
@@ -557,3 +598,380 @@ import $ from "jquery";
   // Expose functions globally for testing
   window.initializeCenterSliderNavigation = initializeCenterSliderNavigation;
 })();
+
+// Custom Tab Navigation - IIFE Pattern
+(function () {
+  "use strict";
+
+  document.addEventListener("focusin", () => {
+    console.log("Currently focused element:", document.activeElement);
+  });
+
+  function initializeCustomTabNavigation() {
+    console.log("Initializing custom tab navigation...");
+
+    // Function to make all elements in hidden slides non-focusable
+    function makeHiddenSlidesNonFocusable() {
+      // Find all slick-slide elements with tabindex="-1" (hidden slides)
+      $('.slick-slide[tabindex="-1"]').each(function() {
+        var $hiddenSlide = $(this);
+
+        // Make all focusable elements inside hidden slides non-focusable
+        $hiddenSlide.find('a, button, input, select, textarea, [tabindex]').each(function() {
+          $(this).attr('tabindex', '-1');
+        });
+      });
+
+      // Ensure visible slides have proper tabindex
+      $('.timeline-slide.slick-current.slick-center.slick-active:not(.slick-cloned)').each(function() {
+        var $visibleSlide = $(this);
+        if ($visibleSlide.attr('tabindex') !== '-1') {
+          $visibleSlide.find('.timerline-slide__menu-list a').attr('tabindex', '0');
+        }
+      });
+    }
+
+    function getCurrentTimelineSlide() {
+      // Visible center slide only, no slick clones, and not tabindex="-1"
+      return $(
+        '.timeline-slide.slick-current.slick-center.slick-active:not(.slick-cloned)'
+      ).filter(function () {
+        return $(this).attr("tabindex") !== "-1";
+      });
+    }
+
+    function getFirstMenuListItem() {
+      var $currentSlide = getCurrentTimelineSlide();
+      if ($currentSlide.length > 0) {
+        return $currentSlide.find(
+          ".timerline-slide__menu-list li:first-child a"
+        );
+      }
+      return $();
+    }
+
+    function getLastMenuListItem() {
+      // Find the currently visible center slide (not hidden, not cloned, and not tabindex="-1")
+      var $currentSlide = $(
+        '.timeline-slide.slick-current.slick-center.slick-active:not(.slick-cloned)'
+      ).filter(function () {
+        return $(this).attr("tabindex") !== "-1";
+      });
+
+      if ($currentSlide.length > 0) {
+        return $currentSlide.find(
+          ".timerline-slide__menu-list li:last-child a"
+        );
+      }
+      return $();
+    }
+
+    function getTimelineNavItems() {
+      return $(".timeline-nav .timeline-nav__item");
+    }
+
+    function logFocusedElement($element) {
+      if ($element.length > 0) {
+        var elementType = $element.is(".timerline-slide__menu-list a")
+          ? "Menu List Item"
+          : "Timeline Nav Item";
+        var elementText = $element.text().trim();
+        console.log(`Tab Focus: ${elementType} - "${elementText}"`);
+      }
+    }
+
+    // Forward tab: last menu item → first timeline nav item
+    $(document).on("keydown", ".timerline-slide__menu-list a", function (e) {
+      if (e.key === "Tab" && !e.shiftKey) {
+        var $currentItem = $(this);
+        var $allMenuItems = $currentItem
+          .closest(".timerline-slide__menu-list")
+          .find("a");
+        var currentIndex = $allMenuItems.index($currentItem);
+
+        if (currentIndex === $allMenuItems.length - 1) {
+          e.preventDefault();
+          e.stopPropagation();
+
+          var $firstTimelineNavItem = getTimelineNavItems().first();
+          if ($firstTimelineNavItem.length > 0) {
+            $firstTimelineNavItem.focus();
+            logFocusedElement($firstTimelineNavItem);
+          }
+        }
+      }
+    });
+
+    // Backward tab: first timeline nav item → last menu item in visible center slide (no tabindex=-1)
+    $(document).on("keydown", ".timeline-nav__item", function (e) {
+      if (e.key === "Tab" && e.shiftKey) {
+        var $currentItem = $(this);
+        var $allTimelineNavItems = getTimelineNavItems();
+        var currentIndex = $allTimelineNavItems.index($currentItem);
+
+        if (currentIndex === 0) {
+          // First, ensure hidden slides are non-focusable
+          makeHiddenSlidesNonFocusable();
+
+          var $lastMenuListItem = getLastMenuListItem();
+
+          // Debug: Log the found menu item
+          if ($lastMenuListItem.length > 0) {
+            console.log('Found last menu item:', $lastMenuListItem.text().trim(), 'in slide:', $lastMenuListItem.closest('.timeline-slide').attr('class'));
+          } else {
+            console.log('No last menu item found in current visible slide');
+          }
+
+          if ($lastMenuListItem.length > 0) {
+            var prevElement = document.activeElement;
+            if (prevElement !== $lastMenuListItem[0]) {
+              e.preventDefault();
+              e.stopPropagation();
+              $lastMenuListItem.focus();
+              logFocusedElement($lastMenuListItem);
+            }
+          }
+        }
+      }
+    });
+
+    $(document).on(
+      "focus",
+      ".timerline-slide__menu-list a, .timeline-nav__item",
+      function () {
+        logFocusedElement($(this));
+      }
+    );
+
+    $(".timeline-slider").on("afterChange", function () {
+      setTimeout(function () {
+        // Make hidden slides non-focusable
+        makeHiddenSlidesNonFocusable();
+
+        var $currentSlide = getCurrentTimelineSlide();
+        if ($currentSlide.length > 0) {
+          $currentSlide.find(".timerline-slide__menu-list a").attr({
+            tabindex: "0",
+            role: "button",
+          });
+          getTimelineNavItems().attr({
+            tabindex: "0",
+            role: "button",
+          });
+        }
+      }, 100);
+    });
+
+    setTimeout(function () {
+      // Make hidden slides non-focusable
+      makeHiddenSlidesNonFocusable();
+
+      $(".timerline-slide__menu-list a").attr({
+        tabindex: "0",
+        role: "button",
+      });
+      getTimelineNavItems().attr({
+        tabindex: "0",
+        role: "button",
+      });
+      console.log("Custom tab navigation initialized");
+    }, 1000);
+  }
+
+  $(function () {
+    setTimeout(function () {
+      initializeCustomTabNavigation();
+    }, 1500);
+
+    // Global handler to prevent focus on hidden slide elements
+    $(document).on('keydown', function(e) {
+      if (e.key === 'Tab') {
+        // Check if the next element would be in a hidden slide
+        setTimeout(function() {
+          var $focusedElement = $(document.activeElement);
+          if ($focusedElement.closest('.slick-slide[tabindex="-1"]').length > 0) {
+            // If focus landed on a hidden slide, redirect to visible slide
+            var $lastMenuListItem = getLastMenuListItem();
+            if ($lastMenuListItem.length > 0) {
+              $lastMenuListItem.focus();
+            }
+          }
+        }, 0);
+      }
+    });
+  });
+
+  var customTabResizeTimer;
+  $(window).on("resize", function () {
+    clearTimeout(customTabResizeTimer);
+    customTabResizeTimer = setTimeout(function () {
+      initializeCustomTabNavigation();
+    }, 300);
+  });
+
+  $(".timeline-slider").on("afterChange", function () {
+    setTimeout(function () {
+      initializeCustomTabNavigation();
+    }, 200);
+  });
+
+  window.initializeCustomTabNavigation = initializeCustomTabNavigation;
+})();
+
+// Center Slider Class Management - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to add classes to center slider slides
+  function addClassesToCenterSlider() {
+
+    console.log('Adding classes to center slider slides...');
+
+    // Target the slide item with slick-slide slick-current slick-center classes
+    var $currentSlide = $('.slick-slide.slick-current.slick-center');
+
+    if ($currentSlide.length === 0) {
+      console.log('No current slide found with slick-slide slick-current slick-center classes');
+      return;
+    }
+
+    console.log('Found current slide:', $currentSlide.attr('class'));
+
+    // Go inside and find element with center-slider slick-initialized slick-slider classes
+    var $centerSlider = $currentSlide.find('.center-slider.slick-initialized.slick-slider');
+
+    if ($centerSlider.length === 0) {
+      console.log('No center slider found with center-slider slick-initialized slick-slider classes');
+      return;
+    }
+
+    console.log('Found center slider, managing slide classes...');
+
+    // First, remove all slick-current and slick-active classes from all slides
+    $centerSlider.find('.slick-slide:not(.slick-cloned)').removeClass('slick-current slick-active');
+
+    // Get the current slide index from the center slider
+    var currentSlideIndex = $centerSlider.slick('slickCurrentSlide');
+    console.log('Current slide index in center slider:', currentSlideIndex);
+
+    // Add slick-current and slick-active to the actual current slide
+    var $currentCenterSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex);
+    if ($currentCenterSlide.length > 0) {
+      $currentCenterSlide.addClass('slick-current slick-active');
+      console.log('Added slick-current and slick-active to slide at index:', currentSlideIndex);
+    }
+
+    // Add slick-active to the next two slides (if they exist)
+    var $nextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 1);
+    if ($nextSlide.length > 0) {
+      $nextSlide.addClass('slick-active');
+      console.log('Added slick-active to next slide at index:', currentSlideIndex + 1);
+    }
+
+    var $nextNextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 2);
+    if ($nextNextSlide.length > 0) {
+      $nextNextSlide.addClass('slick-active');
+      console.log('Added slick-active to slide at index:', currentSlideIndex + 2);
+    }
+
+    console.log('Center slider class management complete');
+
+
+
+  }
+
+  // Function to initialize center slider class management
+  function initializeCenterSliderClassManagement() {
+    console.log('Initializing center slider class management...');
+
+    // Handle timeline navigation button clicks
+    $('.timeline-prev-btn, .timeline-next-btn').off('click.centerSliderClasses').on('click.centerSliderClasses', function() {
+      console.log('Timeline navigation button clicked, managing center slider classes...');
+
+      // Wait for the timeline slider to finish changing
+      setTimeout(function() {
+        addClassesToCenterSlider();
+      }, 100);
+    });
+
+    // Handle timeline nav item clicks
+    $('.timeline-nav__item').off('click.centerSliderClasses').on('click.centerSliderClasses', function() {
+      console.log('Timeline nav item clicked, managing center slider classes...');
+
+      // Wait for the timeline slider to finish changing
+      setTimeout(function() {
+        addClassesToCenterSlider();
+      }, 100);
+    });
+
+    // Handle timeline slider afterChange event
+    $('.timeline-slider').off('afterChange.centerSliderClasses').on('afterChange.centerSliderClasses', function() {
+      console.log('Timeline slider changed, managing center slider classes...');
+
+      setTimeout(function() {
+        addClassesToCenterSlider();
+      }, 100);
+    });
+
+    // Initial class management
+    setTimeout(function() {
+      addClassesToCenterSlider();
+    }, 1000);
+  }
+
+  // Initialize when DOM is ready
+  $(function() {
+    // Wait for timeline navigation to be initialized
+    setTimeout(function() {
+      initializeCenterSliderClassManagement();
+    }, 1500);
+  });
+
+  // Re-initialize on window resize
+  var centerSliderClassResizeTimer;
+  $(window).on('resize', function() {
+    clearTimeout(centerSliderClassResizeTimer);
+    centerSliderClassResizeTimer = setTimeout(function() {
+      initializeCenterSliderClassManagement();
+    }, 300);
+  });
+
+  // Also trigger when center sliders are reinitialized
+  $(document).on('centerSlidersInitialized', function() {
+    setTimeout(function() {
+      addClassesToCenterSlider();
+    }, 100);
+  });
+
+  // Expose functions globally for testing
+  window.addClassesToCenterSlider = addClassesToCenterSlider;
+  window.initializeCenterSliderClassManagement = initializeCenterSliderClassManagement;
+})();
+
+// Disable all slick-slide divs inside .timeline-nav
+(function () {
+  "use strict";
+
+  function disableTimelineNavSlides() {
+    $(".timeline-nav .slick-slide").each(function () {
+      // Make visually unchanged but non-interactive
+      $(this)
+        .attr("aria-disabled", "true")
+        .css({
+          "pointer-events": "none",
+          "user-select": "none"
+        });
+    });
+  }
+
+  // Run after DOM ready
+  $(function () {
+    disableTimelineNavSlides();
+
+    // Also re-apply after Slick events that might re-render slides
+    $(".timeline-nav").on("init reInit afterChange setPosition", function () {
+      disableTimelineNavSlides();
+    });
+  });
+})();
+
