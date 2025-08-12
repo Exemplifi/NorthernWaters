@@ -56,13 +56,14 @@ $orange: #ff9900;
     &::after {
       content: "";
       position: absolute;
-      width: 100%;
+      width: 100vw;
       height: 1px;
       background-color: var(--black);
       bottom: 20px;
-      z-index: -1;
+      z-index: 0;
       top: 50%;
-      transform: translateY(-50%);
+      left: 50%;
+      transform: translate(-50%, -50%);
     }
     .slick-current .timeline-nav__item {
       color: var(--black);
@@ -154,9 +155,9 @@ $orange: #ff9900;
       }
     }
     .slick-track {
-      @include media-breakpoint-up(xl) {
-        width: 100% !important;
-      }
+      // @include media-breakpoint-up(xl) {
+      //   width: 100% !important;
+      // }
       display: flex;
       justify-content: center;
       align-items: center;
@@ -172,12 +173,11 @@ $orange: #ff9900;
   &-wrapper {
     position: relative;
     width: 100%;
-    height: 580px;
-    min-height: 602px; // Ensure minimum height
+    height: auto;
+    // min-height: 602px; // Ensure minimum height
 
     @media (max-width: 500px) {
       height: 1000px;
-      max-height: 900px;
     }
   }
   &-slider {
@@ -185,6 +185,9 @@ $orange: #ff9900;
     margin-bottom: rem.convert(48px);
     @include media-breakpoint-down(md) {
       margin-bottom: rem.convert(40px);
+      .slick-slide.slick-current.slick-active > div {
+        height: 100%;
+      }
     }
   }
   .slick-list {
@@ -195,7 +198,6 @@ $orange: #ff9900;
     height: 100%;
     margin: 0 !important;
     display: flex;
-
   }
   .slick-slide {
     height: 100%; // Ensure slick slides have full height
@@ -268,7 +270,7 @@ $orange: #ff9900;
           height: 374px;
           flex: 0 0 100%;
           margin: 0;
-          overflow-y: auto;
+          overflow-y: hidden;
           padding: rem.convert(24px);
           margin-bottom: rem.convert(24px);
         }
@@ -279,6 +281,7 @@ $orange: #ff9900;
         background-color: var(--off-white);
         border-radius: rem.convert(16px);
         overflow: hidden;
+        // padding: 30px 30px;
         // flex: 0 0 calc(100% - 284px);
         @include media-breakpoint-down(md) {
           max-height: 4544px;
@@ -372,7 +375,7 @@ $orange: #ff9900;
   padding: 0;
   margin: 0;
   max-height: calc(100% - 60px);
-  overflow-y: auto;
+  overflow-y: auto !important;
   overflow-x: hidden;
   padding: 4px 8px 0 4px;
   li {
@@ -444,6 +447,9 @@ $orange: #ff9900;
       }
     }
   }
+  @include media-breakpoint-down(md) {
+    height: 274px;
+  }
 }
 .timerline-slide__carousel {
   .slick-track {
@@ -461,11 +467,18 @@ $orange: #ff9900;
         background: #004a64;
         filter: none;
         opacity: 1;
+        transition: all 0.3s ease;
+        transform: scale(0.99);
+        outline: 2px solid #005fcc;
+        transform-origin: center center;
       }
       &.slick-active:not(.slick-current) {
+        // background: #004a64;
+        // filter: grayscale(100%);
+        // opacity: 0.6;
         background: #004a64;
-        filter: grayscale(100%);
-        opacity: 0.6;
+        filter: none;
+        opacity: 1;
       }
       // following SCSS selector not working
       &.slick-active:first-child {
@@ -478,6 +491,7 @@ $orange: #ff9900;
 }
 
 .timerline-slide__carousel-item {
+  height: 100%;
   figure {
     margin: 0;
     img {
@@ -502,10 +516,12 @@ $orange: #ff9900;
   /* the slides */
   .slick-slide {
     margin: 0 12px;
+    // margin: 28px 12px;
   }
 
   /* the parent */
   .slick-list {
     margin: 0 -12px;
+    // margin: -12px -12px;
   }
 }

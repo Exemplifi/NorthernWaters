@@ -12,22 +12,22 @@ import $ from "jquery";
       return;
     }
 
-    console.log('Initializing timeline navigation...');
-    console.log('Timeline nav element:', $(".timeline-nav").length);
-    console.log('Timeline slider element:', $(".timeline-slider").length);
+    // console.log('Initializing timeline navigation...');
+    // console.log('Timeline nav element:', $(".timeline-nav").length);
+    // console.log('Timeline slider element:', $(".timeline-slider").length);
 
     // Destroy existing slick instances if they exist
     if ($(".timeline-nav").hasClass("slick-initialized")) {
-      console.log('Destroying existing timeline-nav slick instance');
+      // console.log('Destroying existing timeline-nav slick instance');
       $(".timeline-nav").slick("unslick");
     }
     if ($(".timeline-slider").hasClass("slick-initialized")) {
-      console.log('Destroying existing timeline-slider slick instance');
+      // console.log('Destroying existing timeline-slider slick instance');
       $(".timeline-slider").slick("unslick");
     }
 
     // Initialize the timeline navigation carousel (small dots/indicators)
-    console.log('Initializing timeline-nav slick slider...');
+    // console.log('Initializing timeline-nav slick slider...');
     $(".timeline-nav").slick({
       // autoplay: true,           // Uncomment to enable auto-play
       // autoplaySpeed: 1000,      // Speed of auto-play in milliseconds
@@ -68,7 +68,7 @@ import $ from "jquery";
     });
 
     // Initialize the main timeline content carousel
-    console.log('Initializing timeline-slider slick slider...');
+    // console.log('Initializing timeline-slider slick slider...');
     $(".timeline-slider").slick({
       // autoplay: true,           // Uncomment to enable auto-play
       // autoplaySpeed: 1000,      // Speed of auto-play in milliseconds
@@ -103,7 +103,7 @@ import $ from "jquery";
       ],
     });
 
-    console.log('Timeline navigation initialization complete');
+    // console.log('Timeline navigation initialization complete');
 
     // Navigation button functionality
     $(".timeline-prev-btn")
@@ -218,7 +218,7 @@ import $ from "jquery";
     $(".timeline-nav")
       .off("init")
       .on("init", function () {
-        console.log('Timeline nav slick initialized');
+        // console.log('Timeline nav slick initialized');
         makeTimelineNavAccessible();
       });
 
@@ -237,14 +237,14 @@ import $ from "jquery";
       $(".timeline-nav__item").first().attr("aria-pressed", "true");
 
       // Test click functionality
-      console.log('Testing timeline-nav click functionality...');
+      // console.log('Testing timeline-nav click functionality...');
       $(".timeline-nav__item").each(function(index) {
         var $item = $(this);
-        console.log('Timeline nav item ' + index + ':', $item.text(), 'clickable:', $item.is(':visible'));
+        // console.log('Timeline nav item ' + index + ':', $item.text(), 'clickable:', $item.is(':visible'));
 
         // Add a test click handler
         $item.on('click.test', function() {
-          console.log('Timeline nav item clicked:', $item.text(), 'index:', index);
+          // console.log('Timeline nav item clicked:', $item.text(), 'index:', index);
         });
       });
     }, 1000);
@@ -292,36 +292,51 @@ import $ from "jquery";
 (function () {
   "use strict";
 
+  // Function to check if screen size is 768px or larger
+  function isScreenSize768Plus() {
+    return window.innerWidth >= 768;
+  }
+
   // Function to calculate and set dynamic height for timeline-wrapper
   function setDynamicTimelineHeight() {
+    // Only run for screen sizes 768px and larger
+    if (!isScreenSize768Plus()) {
+      return;
+    }
+
     // Find all timeline-wrapper elements
-    $(".timeline-wrapper").each(function () {
-      var $wrapper = $(this);
-      var maxHeight = 0;
+    // $(".timeline-wrapper").each(function () {
+    //   var $wrapper = $(this);
+    //   var maxHeight = 0;
 
-      // Find all timeline-slide__content elements within this wrapper
-      var $contentElements = $wrapper.find(".timeline-slide__content");
+    //   // Find all timeline-slide__content elements within this wrapper
+    //   var $contentElements = $wrapper.find(".timeline-slide__content");
 
-      // Calculate the maximum height among all content elements
-      $contentElements.each(function () {
-        var contentHeight = $(this).outerHeight(true); // Include padding and border
-        if (contentHeight > maxHeight) {
-          maxHeight = contentHeight;
-        }
-      });
+    //   // Calculate the maximum height among all content elements
+    //   $contentElements.each(function () {
+    //     var contentHeight = $(this).outerHeight(true); // Include padding and border
+    //     if (contentHeight > maxHeight) {
+    //       maxHeight = contentHeight;
+    //     }
+    //   });
 
-      // Add some padding to ensure content doesn't touch the edges
-      var finalHeight = maxHeight;
+    //   // Add some padding to ensure content doesn't touch the edges
+    //   var finalHeight = maxHeight;
 
-      // Set the wrapper height to the maximum content height
-      if (maxHeight > 0) {
-        $wrapper.css("height", finalHeight + "px");
-      }
-    });
+    //   // Set the wrapper height to the maximum content height
+    //   if (maxHeight > 0) {
+    //     $wrapper.css("height", finalHeight + "px");
+    //   }
+    // });
   }
 
   // Function to set height of timeline-slide elements based on their content
   function setTimelineSlideHeight() {
+    // Only run for screen sizes 768px and larger
+    if (!isScreenSize768Plus()) {
+      return;
+    }
+
     // Find all timeline-slide elements
     $(".timeline-slide").each(function () {
       var $slide = $(this);
@@ -339,6 +354,11 @@ import $ from "jquery";
 
   // Function to set height of slick-slide elements inside timerline-slide__carousel
   function setSlickSlideHeight() {
+    // Only run for screen sizes 768px and larger
+    if (!isScreenSize768Plus()) {
+      return;
+    }
+
     // Find all timerline-slide__carousel elements
     $(".timerline-slide__carousel").each(function () {
       var $carousel = $(this);
@@ -438,7 +458,7 @@ import $ from "jquery";
             settings: {
               slidesToShow: 3,
               slidesToScroll: 1,
-              centerMode: true,
+              centerMode: false,
             },
           },
           {
@@ -446,7 +466,7 @@ import $ from "jquery";
             settings: {
               slidesToShow: 2,
               slidesToScroll: 1,
-              centerMode: true,
+              centerMode: false,
             },
           },
           {
@@ -454,7 +474,7 @@ import $ from "jquery";
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              centerMode: true,
+              centerMode: false,
             },
           },
           {
@@ -462,7 +482,7 @@ import $ from "jquery";
             settings: {
               slidesToShow: 1,
               slidesToScroll: 1,
-              centerMode: true,
+              centerMode: false,
             },
           },
         ],
@@ -604,11 +624,11 @@ import $ from "jquery";
   "use strict";
 
   document.addEventListener("focusin", () => {
-    console.log("Currently focused element:", document.activeElement);
+    // console.log("Currently focused element:", document.activeElement);
   });
 
   function initializeCustomTabNavigation() {
-    console.log("Initializing custom tab navigation...");
+    // console.log("Initializing custom tab navigation...");
 
     // Function to make all elements in hidden slides non-focusable
     function makeHiddenSlidesNonFocusable() {
@@ -676,7 +696,7 @@ import $ from "jquery";
           ? "Menu List Item"
           : "Timeline Nav Item";
         var elementText = $element.text().trim();
-        console.log(`Tab Focus: ${elementType} - "${elementText}"`);
+        // console.log(`Tab Focus: ${elementType} - "${elementText}"`);
       }
     }
 
@@ -717,9 +737,9 @@ import $ from "jquery";
 
           // Debug: Log the found menu item
           if ($lastMenuListItem.length > 0) {
-            console.log('Found last menu item:', $lastMenuListItem.text().trim(), 'in slide:', $lastMenuListItem.closest('.timeline-slide').attr('class'));
+            // console.log('Found last menu item:', $lastMenuListItem.text().trim(), 'in slide:', $lastMenuListItem.closest('.timeline-slide').attr('class'));
           } else {
-            console.log('No last menu item found in current visible slide');
+            // console.log('No last menu item found in current visible slide');
           }
 
           if ($lastMenuListItem.length > 0) {
@@ -774,7 +794,7 @@ import $ from "jquery";
         tabindex: "0",
         role: "button",
       });
-      console.log("Custom tab navigation initialized");
+      // console.log("Custom tab navigation initialized");
     }, 1000);
   }
 
@@ -825,56 +845,56 @@ import $ from "jquery";
   // Function to add classes to center slider slides
   function addClassesToCenterSlider() {
 
-    console.log('Adding classes to center slider slides...');
+    // console.log('Adding classes to center slider slides...');
 
     // Target the slide item with slick-slide slick-current slick-center classes
     var $currentSlide = $('.slick-slide.slick-current.slick-center');
 
     if ($currentSlide.length === 0) {
-      console.log('No current slide found with slick-slide slick-current slick-center classes');
+      // console.log('No current slide found with slick-slide slick-current slick-center classes');
       return;
     }
 
-    console.log('Found current slide:', $currentSlide.attr('class'));
+    // console.log('Found current slide:', $currentSlide.attr('class'));
 
     // Go inside and find element with center-slider slick-initialized slick-slider classes
     var $centerSlider = $currentSlide.find('.center-slider.slick-initialized.slick-slider');
 
     if ($centerSlider.length === 0) {
-      console.log('No center slider found with center-slider slick-initialized slick-slider classes');
+      // console.log('No center slider found with center-slider slick-initialized slick-slider classes');
       return;
     }
 
-    console.log('Found center slider, managing slide classes...');
+    // console.log('Found center slider, managing slide classes...');
 
     // First, remove all slick-current and slick-active classes from all slides
     $centerSlider.find('.slick-slide:not(.slick-cloned)').removeClass('slick-current slick-active');
 
     // Get the current slide index from the center slider
     var currentSlideIndex = $centerSlider.slick('slickCurrentSlide');
-    console.log('Current slide index in center slider:', currentSlideIndex);
+    // console.log('Current slide index in center slider:', currentSlideIndex);
 
     // Add slick-current and slick-active to the actual current slide
     var $currentCenterSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex);
     if ($currentCenterSlide.length > 0) {
       $currentCenterSlide.addClass('slick-current slick-active');
-      console.log('Added slick-current and slick-active to slide at index:', currentSlideIndex);
+      // console.log('Added slick-current and slick-active to slide at index:', currentSlideIndex);
     }
 
     // Add slick-active to the next two slides (if they exist)
     var $nextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 1);
     if ($nextSlide.length > 0) {
       $nextSlide.addClass('slick-active');
-      console.log('Added slick-active to next slide at index:', currentSlideIndex + 1);
+      // console.log('Added slick-active to next slide at index:', currentSlideIndex + 1);
     }
 
     var $nextNextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 2);
     if ($nextNextSlide.length > 0) {
       $nextNextSlide.addClass('slick-active');
-      console.log('Added slick-active to slide at index:', currentSlideIndex + 2);
+      // console.log('Added slick-active to slide at index:', currentSlideIndex + 2);
     }
 
-    console.log('Center slider class management complete');
+    // console.log('Center slider class management complete');
 
 
 
@@ -882,11 +902,11 @@ import $ from "jquery";
 
   // Function to initialize center slider class management
   function initializeCenterSliderClassManagement() {
-    console.log('Initializing center slider class management...');
+    // console.log('Initializing center slider class management...');
 
     // Handle timeline navigation button clicks
     $('.timeline-prev-btn, .timeline-next-btn').off('click.centerSliderClasses').on('click.centerSliderClasses', function() {
-      console.log('Timeline navigation button clicked, managing center slider classes...');
+      // console.log('Timeline navigation button clicked, managing center slider classes...');
 
       // Wait for the timeline slider to finish changing
       setTimeout(function() {
@@ -896,7 +916,7 @@ import $ from "jquery";
 
     // Handle timeline nav item clicks
     $('.timeline-nav__item').off('click.centerSliderClasses').on('click.centerSliderClasses', function() {
-      console.log('Timeline nav item clicked, managing center slider classes...');
+      // console.log('Timeline nav item clicked, managing center slider classes...');
 
       // Wait for the timeline slider to finish changing
       setTimeout(function() {
@@ -906,7 +926,7 @@ import $ from "jquery";
 
     // Handle timeline slider afterChange event
     $('.timeline-slider').off('afterChange.centerSliderClasses').on('afterChange.centerSliderClasses', function() {
-      console.log('Timeline slider changed, managing center slider classes...');
+      // console.log('Timeline slider changed, managing center slider classes...');
 
       setTimeout(function() {
         addClassesToCenterSlider();
@@ -971,6 +991,153 @@ import $ from "jquery";
     // Also re-apply after Slick events that might re-render slides
     $(".timeline-nav").on("init reInit afterChange setPosition", function () {
       disableTimelineNavSlides();
+    });
+  });
+})();
+
+// Center Slider Slick Slide Height Management for Mobile - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to check if screen size is less than 768px
+  function isScreenSizeLessThan768() {
+    return window.innerWidth < 768;
+  }
+
+  // Function to calculate and set dynamic height for center-slider slick-slide elements
+  function setCenterSliderSlickSlideHeight() {
+    // Only run for screen sizes less than 768px
+    if (!isScreenSizeLessThan768()) {
+      return;
+    }
+
+    // Find all center-slider elements
+    $(".center-slider").each(function () {
+      var $centerSlider = $(this);
+      var maxHeight = 0;
+
+      // Find all slick-slide elements within this center-slider
+      var $slickSlides = $centerSlider.find(".slick-slide");
+
+      // Calculate the maximum height among all slick-slide elements
+      $slickSlides.each(function () {
+        var slideHeight = $(this).outerHeight(true); // Include padding and border
+        if (slideHeight > maxHeight) {
+          maxHeight = slideHeight;
+        }
+      });
+
+      // Set the height for all slick-slide elements inside this center-slider
+      if (maxHeight > 0) {
+        $slickSlides.css("height", maxHeight + "px");
+      }
+    });
+  }
+
+  // Function to calculate and set dynamic height for timeline-slider elements
+  function setTimelineSliderHeight() {
+    // Find all timeline-slider elements
+    $(".timeline-slider").each(function () {
+      var $timelineSlider = $(this);
+      var maxHeight = 0;
+
+      // Find all timeline-slide__content elements within this timeline-slider
+      var $timelineSlideContents = $timelineSlider.find(".timeline-slide__content");
+
+      // Calculate the maximum height among all timeline-slide__content elements
+      $timelineSlideContents.each(function () {
+        var contentHeight = $(this).outerHeight(true); // Include padding and border
+        if (contentHeight > maxHeight) {
+          maxHeight = contentHeight;
+        }
+      });
+
+      // Set the height for the timeline-slider element
+      if (maxHeight > 0) {
+        $timelineSlider.css("height", maxHeight + "px");
+      }
+    });
+  }
+
+  // Function to calculate and set dynamic height for timeline-wrapper divs
+  function setTimelineWrapperHeight() {
+    // Find all timeline-wrapper elements
+    $(".timeline-wrapper").each(function () {
+      var $timelineWrapper = $(this);
+      var totalHeight = 0;
+
+      // Get the direct children: timeline-slider, timeline-nav, timeline-buttons-wrap
+      var $timelineSlider = $timelineWrapper.find("> .timeline-slider");
+      var $timelineNav = $timelineWrapper.find("> .timeline-nav");
+      var $timelineButtonsWrap = $timelineWrapper.find("> .timeline-buttons-wrap");
+
+      // Calculate combined height of all direct children
+      if ($timelineSlider.length) {
+        totalHeight += $timelineSlider.outerHeight(true); // Include padding and border
+      }
+      if ($timelineNav.length) {
+        totalHeight += $timelineNav.outerHeight(true); // Include padding and border
+      }
+      if ($timelineButtonsWrap.length) {
+        totalHeight += $timelineButtonsWrap.outerHeight(true); // Include padding and border
+      }
+
+      // Set the height for the timeline-wrapper
+      if (totalHeight > 0) {
+        $timelineWrapper.css("height", totalHeight + "px");
+      }
+    });
+  }
+
+  // Wait for DOM to be fully loaded
+  $(function () {
+    // Initial calculation after a short delay to ensure all content is rendered
+    setTimeout(function () {
+      setCenterSliderSlickSlideHeight();
+      setTimelineSliderHeight();
+      setTimelineWrapperHeight();
+    }, 100);
+
+    // Also calculate after Slick carousel is initialized
+    $(".center-slider").on("init", function () {
+      setTimeout(function () {
+        setCenterSliderSlickSlideHeight();
+        setTimelineSliderHeight();
+        setTimelineWrapperHeight();
+      }, 200);
+    });
+
+    // Recalculate after slide changes
+    $(".center-slider").on("afterChange", function () {
+      setTimeout(function () {
+        setCenterSliderSlickSlideHeight();
+        setTimelineSliderHeight();
+        setTimelineWrapperHeight();
+      }, 100);
+    });
+  });
+
+  // Recalculate on window resize with debouncing
+  var centerSliderHeightResizeTimer;
+  var timelineSliderHeightResizeTimer;
+  var timelineWrapperHeightResizeTimer;
+  $(document).ready(function () {
+    $(window).on("resize", function () {
+      clearTimeout(centerSliderHeightResizeTimer);
+      clearTimeout(timelineSliderHeightResizeTimer);
+      clearTimeout(timelineWrapperHeightResizeTimer);
+
+      centerSliderHeightResizeTimer = setTimeout(function () {
+        setCenterSliderSlickSlideHeight();
+      }, 250); // Debounce resize events
+
+      timelineSliderHeightResizeTimer = setTimeout(function () {
+        setTimelineSliderHeight();
+      }, 250); // Debounce resize events
+
+      timelineWrapperHeightResizeTimer = setTimeout(function () {
+        setTimelineWrapperHeight();
+      }, 250); // Debounce resize events
     });
   });
 })();
