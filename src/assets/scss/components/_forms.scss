@@ -5,12 +5,12 @@
 .form-section {
   background: $light-blue;
   border-radius: rem.convert(24px);
-  box-shadow: 0 rem.convert(4px) rem.convert(32px) rgba(49,68,89,0.06);
+  box-shadow: 0 rem.convert(4px) rem.convert(32px) rgba(49, 68, 89, 0.06);
   padding: rem.convert(48px) 0;
   margin: rem.convert(40px) 0;
 }
 .form-section__title {
-  font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+  font-family: "Sculpin", "Segoe UI", Arial, sans-serif;
   font-weight: 700;
   font-size: 2.5rem;
   color: $blue;
@@ -19,7 +19,7 @@
 .form {
   background: var(--white);
   border-radius: rem.convert(16px);
-  box-shadow: 0 rem.convert(2px) rem.convert(16px) rgba(49,68,89,0.04);
+  box-shadow: 0 rem.convert(2px) rem.convert(16px) rgba(49, 68, 89, 0.04);
   padding: rem.convert(32px) rem.convert(24px);
   display: flex;
   flex-direction: column;
@@ -59,13 +59,14 @@
   font-size: 1.125rem;
   border-radius: rem.convert(12px);
   padding: rem.convert(14px) 0;
-  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49,68,89,0.08);
+  box-shadow: 0 rem.convert(2px) rem.convert(8px) rgba(49, 68, 89, 0.08);
   transition: background 0.2s, box-shadow 0.2s;
 }
-.form__btn:hover, .form__btn:focus {
+.form__btn:hover,
+.form__btn:focus {
   background: $light-blue;
   color: $white;
-  box-shadow: 0 rem.convert(4px) rem.convert(16px) rgba(49,68,89,0.12);
+  box-shadow: 0 rem.convert(4px) rem.convert(16px) rgba(49, 68, 89, 0.12);
 }
 // Error state
 .form__input:invalid:focus {
@@ -152,7 +153,8 @@
   background: var(--white);
   transition: background 0.2s;
 }
-.form-section__social-link:hover, .form-section__social-link:focus {
+.form-section__social-link:hover,
+.form-section__social-link:focus {
   background: $gray;
 }
 // Form panel
@@ -171,7 +173,8 @@
     flex-direction: column;
     border-radius: rem.convert(16px);
   }
-  .form-section__info, .form-section__card .bg-white {
+  .form-section__info,
+  .form-section__card .bg-white {
     border-radius: 0 !important;
   }
 }
@@ -233,7 +236,7 @@
   padding: 0;
   margin: rem.convert(-1px);
   overflow: hidden;
-  clip: rect(0,0,0,0);
+  clip: rect(0, 0, 0, 0);
   border: 0;
 }
 .form__file-helper {
@@ -280,8 +283,6 @@ button.btn.btn-submit {
   width: 100%;
 }
 
-
-
 .signage-request-form {
   .title {
     padding-bottom: rem.convert(24px);
@@ -319,7 +320,8 @@ button.btn.btn-submit {
   }
   .isinvalid {
     border: 1px solid var(--error) !important;
-    &:focus, &:focus-visible {
+    &:focus,
+    &:focus-visible {
       border: 2px solid var(--error) !important;
       outline: none !important;
     }
@@ -335,9 +337,7 @@ button.btn.btn-submit {
     margin-bottom: rem.convert(16px);
     text-transform: uppercase;
   }
-  input,
-  select {
-    color: var(--black);
+  input {
     padding: rem.convert(12px 16px);
     font-size: rem.convert(16px);
     font-weight: $regular;
@@ -348,8 +348,49 @@ button.btn.btn-submit {
       border-width: 2px;
     }
   }
-  select {
-    color: rgba(var(--gray-rgb), 0.4);
+  input {
+    color: var(--black);
+    background-color: var(--white);
+  }
+  /* Chrome, Edge, Safari */
+  input:-webkit-autofill,
+  textarea:-webkit-autofill,
+  select:-webkit-autofill {
+    -webkit-box-shadow: 0 0 0 1000px var(--white) inset !important;
+    -webkit-text-fill-color: var(--black) !important;
+    caret-color: var(--black);
+    transition: background-color 9999s ease-in-out 0s;
+  }
+
+  /* Firefox */
+  input:-moz-autofill,
+  textarea:-moz-autofill,
+  select:-moz-autofill {
+    box-shadow: 0 0 0 1000px var(--white) inset !important;
+    -moz-text-fill-color: var(--black) !important;
+    caret-color: var(--black);
+  }
+  select,
+  select.form-select {
+    padding: rem.convert(12px 16px);
+    font-size: rem.convert(16px);
+    font-weight: $regular;
+    border-radius: 8px;
+    color: var(--black);
+    &:has(option:disabled:checked) {
+      color: rgba(var(--gray-rgb), 0.4);
+    }
+    &:focus {
+      box-shadow: none;
+      border-color: var(--success);
+      border-width: 2px;
+    }
+    option[disabled] {
+      color: rgba(var(--gray-rgb), 0.4);
+    }
+    option:not([disabled]) {
+      color: var(--black);
+    }
   }
 
   input::placeholder {
