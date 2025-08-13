@@ -125,7 +125,8 @@
       border-collapse: separate;
       border-spacing: 0px;
       border-radius: rem.convert(8px);
-      margin-bottom: rem.convert(24px);
+      // margin-bottom: rem.convert(24px);
+      margin-bottom: 0;
       width: 100%;
 
       thead {
@@ -208,7 +209,7 @@
 
           &:last-child {
             th {
-              border-radius: rem.convert(0 0 0 16px);
+              border-radius: rem.convert(0 0 0 8px);
             }
           }
         }
@@ -216,16 +217,16 @@
 
       tr:only-child {
         td:first-child {
-          border-radius: rem.convert(16px 0 0 16px) !important;
+          border-radius: rem.convert(8px 0 0 8px) !important;
         }
 
         td:last-child {
-          border-radius: rem.convert(0 16px 16px 0) !important;
+          border-radius: rem.convert(0 8px 8px 0) !important;
         }
 
         th:only-child,
         td:only-child {
-          border-radius: rem.convert(16px) !important;
+          border-radius: rem.convert(8px) !important;
         }
       }
 
@@ -241,14 +242,29 @@
 
       tr:last-child {
         td:first-child {
-          border-radius: rem.convert(0 0 0 16px);
+          border-radius: rem.convert(0 0 0 8px);
         }
 
         td:last-child {
-          border-radius: rem.convert(0 0 16px 0);
+          border-radius: rem.convert(0 0 8px 0);
         }
       }
     }
+  }
+  &.has-vertical-scroll::after {
+    width: 100%;
+    height: 10%;
+    background: linear-gradient(0deg, #FFFEF6 0%, rgba(255, 254, 246, 0) 100%);
+    z-index: 0;
+    position: absolute;
+    content: '';
+    bottom: 0;
+    user-select: none;
+    pointer-events: none;
+  }
+  &.has-vertical-scroll.vertical-scroll-end::after {
+    content: none;
+    opacity: 0;
   }
 }
 

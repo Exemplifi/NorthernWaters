@@ -411,6 +411,10 @@
       display: flex;
       gap: 1rem;
       flex-direction: column;
+      opacity: 0;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, opacity 0.3s ease-in 0.3s;
       .event-card-note,
       .event-card-location,
       .event-map-link {
@@ -431,6 +435,11 @@
         .event-map-link {
           text-decoration-color: var(--black);
         }
+      }
+
+      &.event-extra-details--open {
+        opacity: 1;
+        max-height: 500px; // large enough to fit content
       }
     }
   }

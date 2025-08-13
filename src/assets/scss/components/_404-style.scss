@@ -44,7 +44,7 @@
         margin: 0 auto 0 0;
 
         @include media-custom-between(1900px, 2000px) {
-          margin: 0 0 0 rem.convert(24px);
+          margin: 0 0 0 rem.convert(224px);
         }
 
         @include media-breakpoint-between(sm, lg) {
@@ -68,6 +68,10 @@
       // add by kp
       h3 {
         color: var(--black-4);
+
+        @include media-custom-between(1900px, 2000px) {
+          margin-left: rem.convert(224px);
+        }
       }
 
       // end by kp
@@ -76,6 +80,12 @@
       h5 {
         display: flex;
         flex-direction: column;
+
+        @include media-custom-between(1900px, 2000px) {
+
+
+          margin-left: rem.convert(224px);
+        }
 
         // add by kp
         span {
@@ -86,6 +96,8 @@
         @include convert-percent(line-height, 24px, 140);
         @include convert-percent(letter-spacing, 24px, -2);
 
+
+
         @include media-breakpoint-down(sm) {
           @include convert-percent(line-height, 24px, 125);
         }
@@ -94,6 +106,12 @@
 
       .button-404-wrapper {
         padding-top: rem.convert(24px);
+
+        @include media-custom-between(1900px, 2000px) {
+
+
+          margin-left: rem.convert(224px);
+        }
 
         // add by kp
         .primary-btn:hover .btn-text {

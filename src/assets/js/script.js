@@ -344,6 +344,41 @@ $(document).ready(function() {
     });
   });
 
+  //table vertical scroll script
+  const $tableWrappersVertical = $(".table-wrap .table-responsive");
+  $tableWrappersVertical.each(function () {
+    const $wrapper = $(this);
+    const $parent = $wrapper.parent();
+
+    // Function to check vertical scroll and add relevant classes
+    function checkVerticalScroll() {
+      if ($wrapper[0].scrollHeight > $wrapper[0].clientHeight) {
+        $parent.addClass("has-vertical-scroll");
+
+        if (
+          $wrapper.scrollTop() + $wrapper.height() >=
+          $wrapper[0].scrollHeight - 2
+        ) {
+          $parent.addClass("vertical-scroll-end");
+        } else {
+          $parent.removeClass("vertical-scroll-end");
+        }
+      } else {
+        $parent.removeClass("has-vertical-scroll vertical-scroll-end");
+      }
+    }
+
+    checkVerticalScroll();
+
+    $wrapper.on("scroll", function () {
+      checkVerticalScroll();
+    });
+
+    $(window).on("scroll resize", function () {
+      checkVerticalScroll();
+    });
+  });
+
   const reveals = document.querySelectorAll(".reveal");
 
   function checkReveal() {
@@ -479,6 +514,39 @@ $(document).ready(function() {
 
   // Re-equalize when images load (in case cards contain images that affect height)
   window.addEventListener('load', equalizeCardHeights);
+})();
+
+// Container submenu inner page navigation active state
+(function() {
+  function initSubmenuNavigation() {
+    // Target only <a> tags inside ul li of container-submenu-inner-page div
+    const submenuContainer = document.querySelector('.container-submenu-inner-page');
+    if (!submenuContainer) return;
+
+    const submenuLinks = submenuContainer.querySelectorAll('ul li a');
+    if (submenuLinks.length === 0) return;
+
+    // Remove active class from all links and add to clicked link
+    function handleLinkClick(e) {
+      e.preventDefault();
+
+      // Remove active class from all submenu links
+      submenuLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add active class to clicked link
+      e.currentTarget.classList.add('active');
+    }
+
+    // Add click event listeners to all submenu links
+    submenuLinks.forEach(link => {
+      link.addEventListener('click', handleLinkClick);
+    });
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', initSubmenuNavigation);
 })();
 
 

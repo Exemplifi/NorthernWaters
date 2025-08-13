@@ -12,14 +12,15 @@
     span {
       position: relative;
       &::after {
-        content: "";
-        position: absolute;
-        bottom: rem.convert(5px);
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: rem.convert(5px);
-        background-color: var(--light-blue);
+        // content: "";
+        // position: absolute;
+        // bottom: rem.convert(5px);
+        // left: 0;
+        // right: 0;
+        // width: 100%;
+        // height: rem.convert(5px);
+        // background-color: var(--light-blue);
+        content: none;
       }
     }
   }
