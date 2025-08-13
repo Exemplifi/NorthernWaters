@@ -5,7 +5,7 @@
   }
   nav {
     background-color: var(--blue);
-    padding: rem.convert(20px) rem.convert(16px);
+    padding: rem.convert(16px) rem.convert(16px);
     border-radius: rem.convert(16px);
     @include media-breakpoint-down(lg) {
       padding: rem.convert(16px) rem.convert(16px);
@@ -62,6 +62,9 @@
             color: var(--black);
           }
         }
+      }
+      @include media-breakpoint-down(lg) {
+        gap: 0.5rem;
       }
     }
   }
