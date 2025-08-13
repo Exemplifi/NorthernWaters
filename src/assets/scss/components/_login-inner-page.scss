@@ -1,9 +1,15 @@
 .container-submenu-inner-page {
   padding-bottom: rem.convert(48px);
+  @include media-breakpoint-down(lg) {
+    padding-bottom: rem.convert(40px);
+  }
   nav {
     background-color: var(--blue);
     padding: rem.convert(20px) rem.convert(16px);
     border-radius: rem.convert(16px);
+    @include media-breakpoint-down(lg) {
+      padding: rem.convert(16px) rem.convert(16px);
+    }
     ul {
       margin: 0;
       padding: 0;
@@ -51,6 +57,10 @@
             background-color: var(--white);
             color: var(--black);
           }
+          &.active {
+            background-color: var(--white);
+            color: var(--black);
+          }
         }
       }
     }
@@ -67,11 +77,11 @@
     margin-bottom: rem.convert(40px);
   }
   a {
-    color: var(--black-2);
+    color: var(--black);
     display: flex;
     column-gap: rem.convert(10px);
     text-decoration: none;
-    font-weight: 500;
+    font-weight: 400;
   }
 }
 .inclusion-button-row {
@@ -85,6 +95,19 @@
     @include media-breakpoint-down(lg) {
       justify-content: space-between;
       margin-bottom: rem.convert(40px);
+    }
+  }
+}
+.container-table-inner-page {
+  .table-heading-wrap h2, .table-heading-wrap .h2 {
+    font-size: rem.convert(56px);
+    @include convert-percent(line-height , 56px, 110);
+    @include convert-percent(letter-spacing , 56px, -2);
+    @include media-breakpoint-down(lg) {
+      font-size: rem.convert(40px);
+      @include convert-percent(line-height , 40px, 110);
+      @include convert-percent(letter-spacing , 40px, -2);
+      margin-bottom: rem.convert(24px);
     }
   }
 }

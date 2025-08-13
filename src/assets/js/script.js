@@ -516,4 +516,37 @@ $(document).ready(function() {
   window.addEventListener('load', equalizeCardHeights);
 })();
 
+// Container submenu inner page navigation active state
+(function() {
+  function initSubmenuNavigation() {
+    // Target only <a> tags inside ul li of container-submenu-inner-page div
+    const submenuContainer = document.querySelector('.container-submenu-inner-page');
+    if (!submenuContainer) return;
+
+    const submenuLinks = submenuContainer.querySelectorAll('ul li a');
+    if (submenuLinks.length === 0) return;
+
+    // Remove active class from all links and add to clicked link
+    function handleLinkClick(e) {
+      e.preventDefault();
+
+      // Remove active class from all submenu links
+      submenuLinks.forEach(link => {
+        link.classList.remove('active');
+      });
+
+      // Add active class to clicked link
+      e.currentTarget.classList.add('active');
+    }
+
+    // Add click event listeners to all submenu links
+    submenuLinks.forEach(link => {
+      link.addEventListener('click', handleLinkClick);
+    });
+  }
+
+  // Initialize on DOMContentLoaded
+  document.addEventListener('DOMContentLoaded', initSubmenuNavigation);
+})();
+
 

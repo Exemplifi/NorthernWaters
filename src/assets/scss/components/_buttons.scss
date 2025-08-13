@@ -329,15 +329,15 @@ $transition-fast: all 0.5s ease-in-out;
   position: relative;
   width: 36px; /* Width of the switch */
   height: 20px; /* Height of the switch */
-  background-color: #00853F; /* Background color when OFF */
+  background-color: var(--gray); /* Background color when OFF */
   border-radius: 15px; /* Rounded corners */
   cursor: pointer;
-  border: 1px solid #00853F; /* Border to look more button-like */
+  border: 1px solid var(--gray); /* Border to look more button-like */
 }
 
 .toggleButton[aria-pressed="true"] {
-  background-color: #00853F; /* Background color when ON */
-  border: 1px solid #00853F;
+  background-color: var(--green); /* Background color when ON */
+  border: 1px solid var(--green);
 }
 
 .toggleButton:before {
