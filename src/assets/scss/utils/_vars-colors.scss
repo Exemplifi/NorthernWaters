@@ -8,6 +8,7 @@ $site-colors: (
   "black-2-rgb": "29, 29, 29",
   "black-3": #0F0E0E,
   "black-3-rgb": "15, 14, 14",
+   "black-4": #000,
   "white": #ffffff,
   "white-rgb": "255, 255, 255",
   "gray": #585858,
@@ -37,6 +38,7 @@ $black-2: map.get($site-colors, "black-2");
 $black-2-rgb: map.get($site-colors, "black-2-rgb");
 $black-3: map.get($site-colors, "black-3");
 $black-3-rgb: map.get($site-colors, "black-3-rgb");
+$black-4: map.get($site-colors, "black-4");
 $white: map.get($site-colors, "white");
 $white-rgb: map.get($site-colors, "white-rgb");
 $gray: map.get($site-colors, "gray");
