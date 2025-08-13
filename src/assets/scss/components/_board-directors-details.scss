@@ -149,6 +149,7 @@
       align-items: center;
       gap: rem.convert(8px);
       position: relative;
+      margin-bottom: rem.convert(24px);
       input[type="search"] {
         flex: 1;
         border-radius: rem.convert(8px);
@@ -156,10 +157,10 @@
         height: rem.convert(52px);
         padding: rem.convert(0 32px 0 24px);
         font-size: rem.convert(16px);
-        color: var(--black);
+        color: var(--black-2);
         &::placeholder {
           font-size: rem.convert(16px);
-          color: var(--black);
+          color: var(--black-2);
         }
       }
       .reset-btn {
@@ -232,6 +233,11 @@
             font-size: rem.convert(20px);
             line-height: 1.5;
             letter-spacing: 0;
+          }
+          h5 {
+            font-size: rem.convert(24px);
+            @include convert-percent(line-height, 24px, 140);
+            @include convert-percent(letter-spacing, 24px, -2);
           }
         }
       }
