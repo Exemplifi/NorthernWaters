@@ -1,6 +1,10 @@
 .section-wrapper {
   &.two-columns-component {
     .container {
+      @include media-breakpoint-down(lg) {
+        padding-left: rem.convert(12px);
+        padding-right: rem.convert(12px);
+      }
       .row {
         [class^="col"]:first-child {
           padding-right: rem.convert(48px);
@@ -26,6 +30,10 @@
             font-size: rem.convert(18px);
             @include convert-percent(line-height, 18px, 150);
             margin-bottom: rem.convert(16px);
+            margin-top: rem.convert(32px);
+            @include media-breakpoint-down(lg) {
+              margin-top: rem.convert(32px);
+            }
           }
           p {
             &:last-child {
