@@ -128,3 +128,29 @@ document.addEventListener('DOMContentLoaded', () => {
     yearElement.textContent = year;
   }
 });
+
+// Enhanced focus/blur logic for footer input
+(function() {
+  document.addEventListener('DOMContentLoaded', () => {
+    const footerInput = document.querySelector('.footer__input');
+
+    if (footerInput) {
+      // Add focus event listener
+      footerInput.addEventListener('focus', () => {
+        footerInput.parentElement?.classList.add('footer__form-group--focused');
+      });
+
+      // Add blur event listener with content check
+      footerInput.addEventListener('blur', () => {
+        const hasContent = footerInput.value.trim().length > 0;
+
+        if (!hasContent) {
+          footerInput.parentElement?.classList.remove('footer__form-group--focused');
+        } else {
+          footerInput.parentElement?.classList.add('footer__form-group--focused');
+        }
+        // If there is content, keep the focused class
+      });
+    }
+  });
+})();
