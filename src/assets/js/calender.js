@@ -4,7 +4,8 @@ document.addEventListener('DOMContentLoaded', function () {
     el.style.display = 'none';
     el.style.overflow = 'hidden';
     el.style.maxHeight = '0';
-    el.style.transition = 'max-height 0.3s ease';
+    el.style.opacity = '0';
+    el.style.transition = 'max-height 0.3s ease, opacity 0.3s ease-in 0.3s';
   });
 
   // Set all .event-card-btn svg to 90deg initially, with transition
@@ -16,21 +17,24 @@ document.addEventListener('DOMContentLoaded', function () {
   function slideDown(element) {
     element.style.display = 'flex';
     element.style.overflow = 'hidden';
-    element.style.transition = 'max-height 0.3s ease-in';
+    // element.style.transition = 'all 0.3s ease-in';
     // Force reflow to enable transition
     element.offsetHeight;
     element.style.maxHeight = element.scrollHeight + 'px';
+    element.classList.add('event-extra-details--open');
+    element.style.opacity = '1';
   }
 
   function slideUp(element) {
     // Remove transition for immediate close
-    element.style.transition = 'none';
     element.style.maxHeight = '0';
     setTimeout(function () {
       element.style.display = 'none';
       // Restore transition for next open
-      element.style.transition = 'max-height 0.3s ease';
+      // element.style.transition = 'all 0.3s ease';
     }, 0);
+    element.classList.remove('event-extra-details--open');
+    element.style.opacity = '0';
   }
 
   document.querySelectorAll('.event-card-btn .tertiary-btn').forEach(function (btn) {

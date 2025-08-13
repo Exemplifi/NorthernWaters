@@ -234,7 +234,17 @@
       }
     }
   }
-
+  .footer__form-group--focused {
+    input {
+      outline: rem.convert(2px) solid var(--white);
+      outline-offset: rem.convert(2px);
+      box-shadow: none;
+      border-color: var(--white);
+      background-color: var(--black);
+      color: var(--white);
+      padding-bottom: rem.convert(10px) !important;
+    }
+  }
   &__input {
     min-width: 100%;
     padding-left: rem.convert(0px) !important;
@@ -243,7 +253,7 @@
     font-family: var(--heading-font-family);
     font-size: rem.convert(20px);
     line-height: 1.43;
-    color: $black;
+    color: var(--white);
     border: none;
     border-bottom: rem.convert(1px) solid var(--white);
     background: transparent;
