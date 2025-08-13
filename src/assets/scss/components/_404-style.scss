@@ -3,65 +3,110 @@
   padding-right: rem.convert(24px);
   overflow-x: hidden;
   background-color: var(--off-white);
+
   @include media-breakpoint-down(lg) {
     padding-left: rem.convert(8px);
     padding-right: rem.convert(8px);
   }
+
   .content-404 {
     align-items: center;
     height: auto;
     width: 100%;
     margin: 0 auto;
     background-color: var(--off-white);
+
     @include media-breakpoint-down(lg) {
       flex-direction: column-reverse;
     }
+
     .text-404 {
       padding: rem.convert(80px) rem.convert(48px) rem.convert(80px) rem.convert(80px);
+
       @include media-breakpoint-down(xl) {
         padding-left: rem.convert(48px);
         padding-right: rem.convert(48px);
       }
+
       @include media-breakpoint-down(lg) {
         padding: rem.convert(64px) rem.convert(16px);
         text-align: center;
       }
+
       @include media-breakpoint-down(sm) {
         text-align: left;
         padding: rem.convert(64px) rem.convert(16px);
       }
+
       .icon-404 {
         padding-bottom: rem.convert(24px);
         width: fit-content;
         margin: 0 auto 0 0;
+
+        @include media-custom-between(1900px, 2000px) {
+          margin: 0 0 0 rem.convert(24px);
+        }
+
         @include media-breakpoint-between(sm, lg) {
           margin: 0 auto;
         }
+
         @include media-breakpoint-down(sm) {
           margin-right: auto;
           margin-left: 0;
           max-width: rem.convert(327px);
           padding-bottom: rem.convert(16px);
         }
+
         img {
           @include media-breakpoint-down(sm) {
             max-width: rem.convert(235px);
           }
         }
       }
+
+      // add by kp
+      h3 {
+        color: var(--black-4);
+      }
+
+      // end by kp
+
+
       h5 {
         display: flex;
         flex-direction: column;
+
+        // add by kp
+        span {
+          color: var(--black-4);
+        }
+
+        // end  by kp
         @include convert-percent(line-height, 24px, 140);
         @include convert-percent(letter-spacing, 24px, -2);
+
+        @include media-breakpoint-down(sm) {
+          @include convert-percent(line-height, 24px, 125);
+        }
+
       }
+
       .button-404-wrapper {
         padding-top: rem.convert(24px);
+
+        // add by kp
+        .primary-btn:hover .btn-text {
+          color: var(--white);
+        }
+
+        // end by kp
         @include media-breakpoint-down(sm) {
           padding-top: rem.convert(24px);
         }
       }
     }
+
     .animation-404 {
       .image-wrapper {
         max-width: rem.convert(493px);
@@ -74,13 +119,22 @@
         border-radius: rem.convert(16px);
         overflow: hidden;
         margin-left: auto;
+
+        @include media-custom-between(1900px, 2000px) {
+          margin-left: rem.convert(152px);
+        }
+
+
         @include media-breakpoint-down(lg) {
           margin-right: auto;
           margin-top: rem.convert(8px);
         }
+
         @include media-breakpoint-down(sm) {
-          max-width: 100%
+          max-width: 100%;
+          margin-bottom: rem.convert(0px);
         }
+
         // This is the fix: use a padding-top to enforce aspect ratio
         .image-inner {
           position: relative;
@@ -88,6 +142,7 @@
           aspect-ratio: 493 / 671; // Ensures height scales with width
           padding-top: percentage(671 / 493);
         }
+
         img {
           border-radius: rem.convert(16px);
           position: absolute;
@@ -98,10 +153,12 @@
           object-fit: cover;
           transition: opacity 3s ease;
           object-position: 11% center;
+
           @include media-breakpoint-down(sm) {
             top: -20%;
           }
         }
+
         .image1 {
           animation: fadeOut 3s ease-in-out 1 forwards;
           animation-delay: 1s;
