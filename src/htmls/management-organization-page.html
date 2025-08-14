@@ -14,261 +14,606 @@
       >Skip to main content</a
     >
 
-    <!-- Header Component starts here -->
-    <header class="header container-fluid" role="banner">
-      <nav
-        class="navbar navbar-expand-lg row mx-0 container"
-        aria-label="Main navigation"
-      >
-        <div class="col-12 d-flex justify-content-between align-items-center">
-          <!-- Logo -->
-          <a href="/" class="header__logo" aria-label="Northern Water Home">
-            <img
-              src="../assets/images/northern-water-colorful-logo.svg"
-              alt="Northern Water Logo"
-              width="149"
-              height="56"
-            />
-          </a>
+  <!-- Header Component starts here -->
+  <header class="header container-fluid" role="banner">
+    <nav class="navbar navbar-expand-lg row container" aria-label="Main navigation">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="/" class="header__logo" aria-label="Northern Water Home">
+          <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
+            height="56" />
+        </a>
 
-          <!-- Mobile Toggle Button -->
-          <button
-            class="navbar-toggler header__toggle"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#headerNavigation"
-            aria-controls="headerNavigation"
-            aria-expanded="false"
-            aria-label="Toggle navigation menu"
-          >
-            <span class="navbar-toggler-icon" aria-hidden="true"></span>
-            <span class="navbar-toggler-label">Menu</span>
-          </button>
+        <!-- Mobile Toggle Button - AAA Enhanced -->
+        <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+          data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
+          aria-label="Open main navigation menu" aria-describedby="mobile-menu-description">
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          <span class="navbar-toggler-label">Menu</span>
+          <span id="mobile-menu-description" class="sr-only">Opens a menu with water, environment, data, and about
+            sections</span>
+        </button>
 
-          <!-- Navigation -->
-          <div
-            class="collapse navbar-collapse header__navigation"
-            id="headerNavigation"
-          >
-            <ul
-              class="navbar-nav header__menu"
-              role="menubar"
-              aria-label="Main Menu"
-            >
-              <!-- Water Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
-                <a
-                  class="nav-link dropdown-toggle header__menu-link"
-                  href="#"
-                  role="menuitem"
-                  aria-haspopup="true"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  aria-controls="waterSubmenu"
-                >
-                  Water
-                  <i
-                    data-lucide="chevron-down"
-                    class="header__menu-icon"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="waterSubmenu"
-                  role="menu"
-                  aria-label="Water submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
-              </li>
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
 
-              <!-- Environment Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
-                <a
-                  class="nav-link dropdown-toggle header__menu-link"
-                  href="#"
-                  role="menuitem"
-                  aria-haspopup="true"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  aria-controls="environmentSubmenu"
-                >
-                  Environment
-                  <i
-                    data-lucide="chevron-down"
-                    class="header__menu-icon"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="environmentSubmenu"
-                  role="menu"
-                  aria-label="Environment submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- Data Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
-                <a
-                  class="nav-link dropdown-toggle header__menu-link"
-                  href="#"
-                  role="menuitem"
-                  aria-haspopup="true"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  aria-controls="dataSubmenu"
-                >
-                  Data
-                  <i
-                    data-lucide="chevron-down"
-                    class="header__menu-icon"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="dataSubmenu"
-                  role="menu"
-                  aria-label="Data submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- About Dropdown -->
-              <li class="nav-item dropdown header__menu-item" role="none">
-                <a
-                  class="nav-link dropdown-toggle header__menu-link"
-                  href="#"
-                  role="menuitem"
-                  aria-haspopup="true"
-                  data-bs-toggle="dropdown"
-                  aria-expanded="false"
-                  aria-controls="aboutSubmenu"
-                >
-                  About
-                  <i
-                    data-lucide="chevron-down"
-                    class="header__menu-icon"
-                    aria-hidden="true"
-                  ></i>
-                </a>
-                <ul
-                  class="dropdown-menu header__submenu"
-                  id="aboutSubmenu"
-                  role="menu"
-                  aria-label="About submenu"
-                >
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 1</a
-                    >
-                  </li>
-                  <li role="none">
-                    <a
-                      class="dropdown-item header__submenu-link"
-                      href="#"
-                      role="menuitem"
-                      >Submenu Item 2</a
-                    >
-                  </li>
-                </ul>
-              </li>
-
-              <!-- News Link -->
-              <li class="nav-item header__menu-item" role="none">
-                <a class="nav-link header__menu-link" href="#" role="menuitem"
-                  >News</a
-                >
-              </li>
-            </ul>
-
-            <!-- Right Side Actions -->
-            <div class="header__actions">
-              <!-- Search Button -->
-              <button
-                type="button"
-                class="header__search-btn"
-                aria-label="Open search"
-                aria-expanded="false"
-                aria-controls="searchPanel"
-              >
-                <i data-lucide="search" aria-hidden="true"></i>
+          <!-- Search Input Bar -->
+          <div class="header__search-input-container" role="search" aria-label="Site search">
+            <form class="header__search-input-wrapper" role="search" aria-label="Site search">
+              <input type="search" class="header__search-input" placeholder="Search" aria-label="Search site content"
+                id="headerSearchInput" autocomplete="off">
+              <button type="submit" class="header__search-submit-btn" aria-label="Submit search">
+                <i data-lucide="search" class="header__search-input-icon" aria-hidden="true"></i>
               </button>
+            </form>
+          </div>
 
-              <!-- Login Button -->
-              <!-- Primary Button without icon starts here-->
-              <a
-                href="#"
-                class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center"
-                role="button"
-                aria-label="Water Provider Login"
-                tabindex="0"
-                data-button-type="primary"
-              >
-                <div class="primary-btn-wrap norm">
-                  <span class="btn-text">Water Provider Login</span>
-                </div>
+          <!-- Mobile Menu Section Heading -->
+          <h3 class="sr-only">Main Menu Sections</h3>
+
+          <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
+
+            <!-- Water Dropdown with Mega Menu (flattened columns) -->
+            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                aria-expanded="false" aria-controls="waterMegaMenu" id="water-menu-trigger">
+                Water
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                  class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path
+                    d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z"
+                    fill="#111111" />
+                </svg>
               </a>
-              <!-- Primary Button without icon ends here-->
-            </div>
+              <!-- Mega Menu Container (flattened) -->
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner">
+                  <div class="label-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <label for="navigation stream">Navigation Stream</label>
+                  </div>
+                  <div class="mega-menu" id="waterMegaMenu" role="region" aria-labelledby="water-menu-trigger"
+                    tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Water main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none" class="has-level-3-children">
+                          <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Projects</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li class="has-level-4-children">
+                                <a href="#">Colorado-Big Thompson Project</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">C-BT History</a></li>
+                                    <li><a href="#">C-BT Infrastructure</a></li>
+                                    <li><a href="#">Hydropower</a></li>
+                                    <li><a href="#">Pleasant Valley Pipeline</a></li>
+                                    <li><a href="#">Pump Plants</a></li>
+                                    <li><a href="#">Southern Water Supply Project</a></li>
+                                  </ul>
+                                </div>
+                              </li>
+                              <li>
+                                <a href="#">Northern Integrated Supply Project</a>
+                              </li>
+                              <li class="has-level-4-children">
+                                <a href="#">Windy Gap Project</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">Windy Gap History</a></li>
+                                    <li><a href="#">Chimney Hollow Reservoir</a></li>
+                                    <li><a href="#">Colorado River Connectivity Channel</a></li>
+                                  </ul>
+                                </div>
+
+                              </li>
+                              <li class="has-image-link"><a href="#">
+                                  <img src="../assets/images/Green-Mountain-Reservoiur.jpg"
+                                    alt="Green Mountain Reservoir">
+                                </a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li><a href="#">Property Boundary Inclusions</a></li>
+                        <li class="has-level-3-children">
+                          <a href="#">Safeguarding Water Resources</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Safeguarding FAQs</a>
+                              </li>
+                              <li class="has-image-link"><a href="#">
+                                  <img src="../assets/images/flatiron fall.jpg" alt="Flatiron Fall 2024">
+                                </a></li>
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Water Ownership</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Allottees</a>
+                              </li>
+                              <li>
+                                <a href="#">Allotment Contracts</a>
+                              </li>
+                              <li>
+                                <a href="#">Assessments and Water Rate Study</a>
+                              </li>
+                              <li>
+                                <a href="#">Base Water Supply</a>
+                              </li>
+                              <li>
+                                <a href="#">C-BT Buyers and Sellers</a>
+                              </li>
+                              <li>
+                                <a href="#">Storage and Parking Agreements</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Water Delivery</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">C-BT Quota</a>
+                              </li>
+                              <li>
+                                <a href="#">C-BT Tracking Rule</a>
+                              </li>
+                              <li>
+                                <a href="#">Regional Pool</a>
+                              </li>
+                              <li>
+                                <a href="#">Rental</a>
+                              </li>
+                              <li>
+                                <a href="#">Water Provider Login</a>
+                              </li>
+                            </ul>
+                          </div>
+
+                        </li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Environment Dropdown with Mega Menu -->
+            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                aria-expanded="false" aria-controls="environmentMegaMenu" id="environment-menu-trigger">
+                Environment
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                  class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path
+                    d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z"
+                    fill="#111111" />
+                </svg>
+              </a>
+              <!-- Mega Menu Container -->
+              <!-- Mega Menu Container (flattened) -->
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner">
+                  <div class="label-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <label for="navigation stream">Navigation Stream</label>
+                  </div>
+                  <div class="mega-menu" id="environmentMegaMenu" role="region"
+                    aria-labelledby="environment-menu-trigger" tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Environment main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none" class="has-level-3-children">
+                          <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Efficient Water Use</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Conservation Campus and Gardens</a>
+                              </li>
+                              <li>
+                                <a href="#">Consultations and Assessments</a>
+                              </li>
+                              <li>
+                                <a href="#">Drought Resources</a>
+                              </li>
+                              <li>
+                                <a href="#">Grants</a>
+                              </li>
+                              <li>
+                                <a href="#">Landscape Resources</a>
+                              </li>
+                              <li>
+                                <a href="#">Landscape Templates</a>
+                              </li>
+                              <li>
+                                <a href="#">Partners and Resources</a>
+                              </li>
+                              <li>
+                                <a href="#">Trainings</a>
+                              </li>
+
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Environmental Commitments</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Conservation Campus and Gardens</a>
+                              </li>
+                              <li>
+                                <a href="#">Consultations and Assessments</a>
+                              </li>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/Weather Stations.jpg" alt="Weather Stations">
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Environmental Monitoring</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Compounds of Emerging Concern</a>
+                              </li>
+                              <li>
+                                <a href="#">Flow</a>
+                              </li>
+                              <li><a href="#">South Platte Salinity</a></li>
+                              <li class="has-level-4-children">
+                                <a href="#">Water Quality</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">Aquatic Life</a></li>
+                                    <li><a href="#">C-BT and WG Water Quality</a></li>
+                                    <li><a href="#">Water Temperature</a></li>
+                                    <li class="has-image-link">
+                                      <a href="#">
+                                        <img src="../assets/images/Water Quality Sampling West Slope (June 2024).jpg"
+                                          alt="Water Quality Sampling West Slope (June 2024)">
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                              </li>
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li><a href="#">Reports</a></li>
+
+                        <li class="has-level-3-children">
+                          <a href="#">Special Status Species Protection</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Platte River Recovery</a>
+                              </li>
+                              <li>
+                                <a href="#">Upper Colorado Recovery Program</a>
+                              </li>
+                              <li><a href="#">Upper Colorado Wild Scenic</a></li>
+                              <li class="has-image-link">
+                                <a href="#">
+                                  <img src="../assets/images/CBT-interpretive-Area.png" alt="CBT Interpretive Area">
+                                </a>
+                              </li>
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Watershed Health</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Forest Health</a>
+                              </li>
+                              <li>
+                                <a href="#">Kawuneeche Valley Colloborative</a>
+                              </li>
+                              <li class="has-level-4-children">
+                                <a href="#">Source Water Protection</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">Aquatic Nuisance Species</a></li>
+                                    <li><a href="#">Herbicide and Pesticide Management</a></li>
+                                    <li><a href="#">Poudre SWPP</a></li>
+                                    <li class="has-image-link">
+                                      <a href="#">
+                                        <img src="../assets/images/Colorado River(Kremmling).png"
+                                          alt="Colorado River(Kremmling)">
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                              </li>
+                              <li class="has-level-4-children">
+                                <a href="#">Watershed Recovery and Restoration</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">Colorado River Connectivity Channel</a></li>
+                                    <li><a href="#">Fire Recovery</a></li>
+                                    <li class="has-image-link">
+                                      <a href="#">
+                                        <img src="../assets/images/Ag Ditches.png" alt="Ag Ditches">
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                              </li>
+                              <li class="has-level-4-children">
+                                <a href="#">West Slope Water Quality</a>
+                                <div class="level-4-menu">
+                                  <ul class="level-4-menu-container">
+                                    <li><a href="#">Grand Lake Clarity</a></li>
+                                    <li><a href="#">Three Lakes</a></li>
+                                    <li><a href="#">West Slope Cyanobacteria</a></li>
+                                    <li class="has-image-link">
+                                      <a href="#">
+                                        <img src="../assets/images/Measuring-discharge.png" alt="Measuring Discharge">
+                                      </a>
+                                    </li>
+                                  </ul>
+                                </div>
+
+                              </li>
+                            </ul>
+                          </div>
+
+                        </li>
+
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- Data Dropdown with Mega Menu -->
+            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                aria-expanded="false" aria-controls="dataMegaMenu" id="data-menu-trigger">
+                Data
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                  class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path
+                    d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z"
+                    fill="#111111" />
+                </svg>
+              </a>
+              <!-- Mega Menu Container -->
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner">
+                  <div class="label-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <label for="navigation stream">Navigation Stream</label>
+                  </div>
+                  <div class="mega-menu" id="dataMegaMenu" role="region" aria-labelledby="data-menu-trigger"
+                    tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="Data main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none" class="has-level-3-children">
+                          <a href="#" role="menuitem" aria-expanded="false" aria-haspopup="true">Water</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Flow</a>
+                              </li>
+                              <li>
+                                <a href="#">Temperature</a>
+                              </li>
+                              <li>
+                                <a href="#">Streamflow Forecasts</a>
+                              </li>
+                              <li>
+                                <a href="#">Water Quality</a>
+                              </li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li><a href="#">Snowpack</a></li>
+                        <li><a href="#">GIS and Maps</a></li>
+                        <li><a href="#">Weather</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- About Dropdown with Mega Menu -->
+            <li class="nav-item dropdown header__menu-item has-mega-menu" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                aria-expanded="false" aria-controls="aboutMegaMenu" id="about-menu-trigger">
+                About
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="25" viewBox="0 0 24 25"
+                  class="header__menu-icon" aria-hidden="true" fill="none">
+                  <path
+                    d="M12.0041 16.645C11.8725 16.6457 11.742 16.6205 11.6202 16.5707C11.4983 16.521 11.3875 16.4476 11.2941 16.355L5.29409 10.355C5.10579 10.1667 5 9.91126 5 9.64496C5 9.37866 5.10579 9.12326 5.29409 8.93496C5.4824 8.74666 5.73779 8.64087 6.00409 8.64087C6.27039 8.64087 6.52579 8.74666 6.71409 8.93496L12.0041 14.235L17.2941 8.94496C17.4854 8.78113 17.7315 8.69553 17.9831 8.70525C18.2348 8.71497 18.4736 8.8193 18.6517 8.9974C18.8297 9.17549 18.9341 9.41423 18.9438 9.66591C18.9535 9.91758 18.8679 10.1637 18.7041 10.355L12.7041 16.355C12.5178 16.5397 12.2664 16.6439 12.0041 16.645Z"
+                    fill="#111111" />
+                </svg>
+              </a>
+              <!-- Mega Menu Container (flattened) -->
+              <div class="mega-menu-wrapper">
+                <div class="mega-menu-inner">
+                  <div class="label-wrapper">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                      <path
+                        d="M2 6C2.6 6.5 3.2 7 4.5 7C7 7 7 5 9.5 5C12.1 5 11.9 7 14.5 7C17 7 17 5 19.5 5C20.8 5 21.4 5.5 22 6"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 12C2.6 12.5 3.2 13 4.5 13C7 13 7 11 9.5 11C12.1 11 11.9 13 14.5 13C17 13 17 11 19.5 11C20.8 11 21.4 11.5 22 12"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                      <path
+                        d="M2 18C2.6 18.5 3.2 19 4.5 19C7 19 7 17 9.5 17C12.1 17 11.9 19 14.5 19C17 19 17 17 19.5 17C20.8 17 21.4 17.5 22 18"
+                        stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                    <label for="navigation stream">Navigation Stream</label>
+                  </div>
+                  <div class="mega-menu" id="aboutMegaMenu" role="region" aria-labelledby="about-menu-trigger"
+                    tabindex="-1">
+                    <div class="level-2-menu" role="group" aria-label="About main categories">
+                      <ul class="level-2-menu-container" role="menu">
+                        <li role="none"><a href="#" role="menuitem">Agendas and Minutes</a></li>
+                        <li><a href="#">Board of Directors</a></li>
+                        <li><a href="#">Budget & Financial Reports</a></li>
+                        <li><a href="#">Calendar</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">History</a></li>
+                        <li class="has-level-3-children">
+                          <a href="#">Education and Outreach</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">History</a>
+                              </li>
+                              <li><a href="#">Public Notices</a></li>
+                              <li class="has-image-link"><a href="#">
+                                  <img src="../assets/images/Conservation Gardens tour (June 2023).png"
+                                    alt="Conservation Gardens tour (June 2023)">
+                                </a></li>
+                            </ul>
+                          </div>
+                        </li>
+                        <li class="has-level-3-children">
+                          <a href="#">Management and Organization</a>
+                          <div class="level-3-menu">
+                            <ul class="level-3-menu-container">
+                              <li>
+                                <a href="#">Departments</a>
+                              </li>
+                              <li class="has-image-link"><a href="#">
+                                  <img src="../assets/images/NISP-Industry-Day-2025.jpg" alt="NISP Industry Day 2025">
+                                </a></li>
+                            </ul>
+                          </div>
+
+                        </li>
+                        <li><a href="#">Public Notices</a></li>
+                        <li><a href="#">Purchasing</a></li>
+                        <li><a href="#">Records Request</a></li>
+                        <li><a href="#">Visiting Our Campus</a></li>
+                      </ul>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+            </li>
+
+            <!-- News Link -->
+            <li class="nav-item header__menu-item" role="none">
+              <a class="nav-link header__menu-link" href="#" role="menuitem">News</a>
+            </li>
+          </ul>
+
+          <!-- Right Side Actions -->
+          <div class="header__actions">
+            <!-- Search Button -->
+            <button type="button" class="header__search-btn" aria-label="Open search" aria-expanded="false"
+              aria-controls="searchPanel">
+              <i data-lucide="search" aria-hidden="true"></i>
+            </button>
+
+            <!-- Login Button -->
+            <!-- Primary Button without icon starts here-->
+            <a href="#" class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center" role="button"
+              aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
+              <div class="primary-btn-wrap norm">
+                <span class="btn-text">Water Provider Login</span>
+              </div>
+            </a>
+            <!-- Primary Button without icon ends here-->
           </div>
         </div>
-      </nav>
-    </header>
-    <!-- Header Component ends here -->
+      </div>
+    </nav>
+  </header>
+  <!-- Header Component ends here -->
+
+  <!-- Search Overlay Panel starts here -->
+  <div class="search-overlay" id="searchPanel" aria-hidden="true">
+    <div class="search-overlay-content">
+      <div class="search-overlay-header">
+        <h2 class="search-overlay-title">Search</h2>
+        <button type="button" class="search-overlay-close" aria-label="Close search" id="searchCloseBtn">
+          <i data-lucide="x" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <form class="search-form" role="search" aria-label="Site search">
+        <div class="search-input-group">
+          <input type="search" id="searchInput" class="search-input"
+            placeholder="Search for water data, projects, news..." aria-label="Search query" autocomplete="off">
+          <button type="submit" class="search-submit-btn" aria-label="Submit search">
+            <i data-lucide="search" aria-hidden="true"></i>
+          </button>
+        </div>
+      </form>
+
+      <!-- Optional: Quick search suggestions -->
+      <div class="search-suggestions" aria-label="Quick search suggestions">
+        <h3 class="search-suggestions-title">Popular Searches</h3>
+        <div class="search-suggestions-list">
+          <button type="button" class="search-suggestion-item" data-search="water data">Water Data</button>
+          <button type="button" class="search-suggestion-item" data-search="reservoirs">Reservoirs</button>
+          <button type="button" class="search-suggestion-item" data-search="c-bt project">C-BT Project</button>
+          <button type="button" class="search-suggestion-item" data-search="board meetings">Board Meetings</button>
+          <button type="button" class="search-suggestion-item" data-search="water rates">Water Rates</button>
+          <button type="button" class="search-suggestion-item" data-search="news">News</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Search Overlay Panel ends here -->
     <main id="main-content" tabindex="-1">
     <!-- Hero Secondary starts here -->
     <section class="hero-secondary title-with-width longer-title">
