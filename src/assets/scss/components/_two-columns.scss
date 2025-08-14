@@ -93,6 +93,10 @@
             }
           }
         }
+        @include media-custom-between(992px, 1350px) {
+          padding-left: rem.convert(12px);
+          padding-right: rem.convert(12px);
+        }
       }
     }
   }
