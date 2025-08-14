@@ -16,6 +16,7 @@
             color: var(--black-3);
             @include media-breakpoint-down(lg) {
               margin-bottom: rem.convert(40px);
+              padding-bottom: rem.convert(16px);
             }
           }
 
