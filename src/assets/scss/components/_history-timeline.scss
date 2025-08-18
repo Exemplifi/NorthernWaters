@@ -26,15 +26,18 @@ $orange: #ff9900;
   clip: auto;
   white-space: normal;
 }
+
 .timeline-container {
   .timeline-title {
     margin-bottom: rem.convert(24px);
   }
+
   .timeline-info {
     margin-bottom: rem.convert(48px);
     max-width: rem.convert(664px);
     text-align: center;
   }
+
   height: auto;
   background-color: var(--off-white);
   display: flex;
@@ -42,6 +45,7 @@ $orange: #ff9900;
   align-items: center;
   flex-direction: column;
 }
+
 .timeline {
   width: 100%;
   position: relative;
@@ -53,6 +57,7 @@ $orange: #ff9900;
     -webkit-user-select: none;
     -moz-user-select: none;
     -ms-user-select: none;
+
     &::after {
       content: "";
       position: absolute;
@@ -64,7 +69,9 @@ $orange: #ff9900;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
+      opacity: 0.3;
     }
+
     .slick-current .timeline-nav__item {
       color: var(--black);
       font-weight: 600;
@@ -72,6 +79,7 @@ $orange: #ff9900;
       @include convert-percent(line-height, 16px, 150);
       letter-spacing: 0;
       opacity: 1;
+
       &::before {
         content: "";
         background-color: var(--light-green);
@@ -82,6 +90,7 @@ $orange: #ff9900;
         transform: translate(-50%, -50%);
         border: 5px solid rgb(214, 240, 248);
       }
+
       &::after {
         content: "";
         position: absolute;
@@ -95,6 +104,7 @@ $orange: #ff9900;
         border-radius: 100%;
       }
     }
+
     &__item {
       width: auto;
       height: auto;
@@ -122,6 +132,7 @@ $orange: #ff9900;
       align-items: center;
       flex-direction: column;
       row-gap: 48px;
+
       // Accessibility improvements
       &:focus {
         outline: 2px solid $orange;
@@ -154,6 +165,7 @@ $orange: #ff9900;
         transition: 0.2s;
       }
     }
+
     .slick-track {
       // @include media-breakpoint-up(xl) {
       //   width: 100% !important;
@@ -161,10 +173,12 @@ $orange: #ff9900;
       display: flex;
       justify-content: center;
       align-items: center;
+
       .slick-slide {
         flex: 1 1 auto;
       }
     }
+
     @include media-breakpoint-down(md) {
       margin-bottom: rem.convert(40px);
     }
@@ -180,28 +194,35 @@ $orange: #ff9900;
       height: 1000px;
     }
   }
+
   &-slider {
     height: 100%;
     margin-bottom: rem.convert(48px);
+
     @include media-breakpoint-down(md) {
       margin-bottom: rem.convert(40px);
-      .slick-slide.slick-current.slick-active > div {
+
+      .slick-slide.slick-current.slick-active>div {
         height: 100%;
       }
     }
   }
+
   .slick-list {
     height: 100%;
     padding: 0 !important;
   }
+
   .slick-track {
     height: 100%;
     margin: 0 !important;
     display: flex;
   }
+
   .slick-slide {
     height: 100%; // Ensure slick slides have full height
   }
+
   &-slide {
     position: relative;
     overflow: hidden;
@@ -242,6 +263,7 @@ $orange: #ff9900;
         width: 100%;
         // transform: translate(-50%, 0px);
       }
+
       @include media-breakpoint-down(md) {
         flex-direction: column;
         height: fit-content !important;
@@ -251,20 +273,25 @@ $orange: #ff9900;
         height: 100%;
         background-color: var(--off-white);
         border-right: 1px solid rgba(17, 17, 17, 0.6);
-        padding: rem.convert(24px) rem.convert(8px) rem.convert(24px)
-          rem.convert(24px);
+        padding: rem.convert(24px) rem.convert(8px) rem.convert(24px) rem.convert(24px);
         flex: 0 0 rem.convert(284px);
         border-radius: rem.convert(16px);
         border: 1px solid rgba(17, 17, 17, 0.6);
         margin-right: rem.convert(24px);
+        .timerline-slide__menu-title{
+         @include convert-percent(line-height, 24px, 140);
+        }
+
         .timerline-slide__menu-list {
           li {
             display: flex;
+
             a {
               flex: 1 1 auto;
             }
           }
         }
+
         @include media-breakpoint-down(md) {
           max-height: 374px;
           height: 374px;
@@ -275,12 +302,14 @@ $orange: #ff9900;
           margin-bottom: rem.convert(24px);
         }
       }
+
       .timerline-slide__carousel {
         width: 100%;
         height: 100%;
         background-color: var(--off-white);
         border-radius: rem.convert(16px);
         overflow: hidden;
+
         // padding: 30px 30px;
         // flex: 0 0 calc(100% - 284px);
         @include media-breakpoint-down(md) {
@@ -292,10 +321,12 @@ $orange: #ff9900;
       }
     }
   }
+
   .slick-current {
     &:after {
       background-color: rgba($primary, 0);
     }
+
     .timeline-slide__content {
       opacity: 1;
     }
@@ -308,6 +339,7 @@ $orange: #ff9900;
   // transform: scale(0.7);
   // width: 100% !important;
 }
+
 .slick-center .slick-active,
 .timeline-slide .sl {
   -webkit-transform: scale(1);
@@ -339,10 +371,12 @@ $orange: #ff9900;
   border-radius: 100%;
   cursor: pointer;
   transition: all 0.3s ease;
+
   svg {
     width: 22px;
     height: 22px;
   }
+
   &:hover {
     background: light-green;
     transform: translateY(-2px);
@@ -378,6 +412,7 @@ $orange: #ff9900;
   overflow-y: auto !important;
   overflow-x: hidden;
   padding: 4px 8px 0 4px;
+
   li {
     margin-bottom: 8px;
 
@@ -386,7 +421,9 @@ $orange: #ff9900;
       align-items: center;
       column-gap: 16px;
       padding: 12px 16px;
-      color: $gray;
+      color: $black;
+      opacity: 0.5;
+      // color: $light-gray;
       text-decoration: none;
       // border-radius: 8px;
       transition: all 0.3s ease;
@@ -401,11 +438,22 @@ $orange: #ff9900;
         font-size: 16px;
         opacity: 0.7;
         transition: opacity 0.3s ease;
+        width: 16px;
+        height: 16px;
+      }
+
+      svg {
+
+        width: 16px;
+        height: 16px;
       }
 
       // Hover state
       &:hover {
         color: var(--black);
+         opacity: 100%;
+
+
         i {
           opacity: 1;
         }
@@ -435,6 +483,7 @@ $orange: #ff9900;
         background: var(--green);
         color: $white;
         border-radius: rem.convert(8px);
+            opacity: 100%;
 
         i {
           opacity: 1;
@@ -447,10 +496,12 @@ $orange: #ff9900;
       }
     }
   }
+
   @include media-breakpoint-down(md) {
     height: 274px;
   }
 }
+
 .timerline-slide__carousel {
   .slick-track {
     .slick-slide {
@@ -463,6 +514,7 @@ $orange: #ff9900;
       border-radius: rem.convert(16px);
       overflow: hidden;
       opacity: 0.6;
+
       &.slick-current.slick-active {
         background: #004a64;
         filter: none;
@@ -472,6 +524,7 @@ $orange: #ff9900;
         outline: 2px solid #005fcc;
         transform-origin: center center;
       }
+
       &.slick-active:not(.slick-current) {
         // background: #004a64;
         // filter: grayscale(100%);
@@ -480,6 +533,7 @@ $orange: #ff9900;
         filter: none;
         opacity: 1;
       }
+
       // following SCSS selector not working
       &.slick-active:first-child {
         background: #004a64;
@@ -492,8 +546,10 @@ $orange: #ff9900;
 
 .timerline-slide__carousel-item {
   height: 100%;
+
   figure {
     margin: 0;
+
     img {
       width: 100%;
       max-width: 100%;
@@ -503,16 +559,20 @@ $orange: #ff9900;
       object-position: center;
     }
   }
+
   .timerline-slide__carousel-item-content {
     padding: rem.convert(32px);
+
     h5 {
       padding-bottom: rem.convert(24px);
       border-bottom: 1px solid rgba(var(--white-rgb), 0.6);
+      @include convert-percent(line-height, 24px, 140);
     }
   }
 }
 
 .center-slider {
+
   /* the slides */
   .slick-slide {
     margin: 0 12px;
