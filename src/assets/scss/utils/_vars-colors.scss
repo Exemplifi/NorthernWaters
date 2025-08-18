@@ -21,6 +21,7 @@ $site-colors: (
   "light-blue-rgb": "83, 194, 253",
   "light-green": #54B948,
   "light-green-rgb": "84, 185, 72",
+  "light-gray": #6161619e,
   "blue": #004A64,
   "blue-rgb": "0, 74, 100",
   "success": #16A34A,
@@ -59,6 +60,7 @@ $error: map.get($site-colors, "error");
 $error-rgb: map.get($site-colors, "error-rgb");
 $alert: map.get($site-colors, "alert");
 $alert-rgb: map.get($site-colors, "alert-rgb");
+$light-gray: map.get($site-colors, "light-gray");
 
 // Color utility classes
 .text-black {
