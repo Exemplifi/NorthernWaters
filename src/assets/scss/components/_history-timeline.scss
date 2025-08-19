@@ -36,6 +36,10 @@ $orange: #ff9900;
     margin-bottom: rem.convert(48px);
     max-width: rem.convert(664px);
     text-align: center;
+     @include media-breakpoint-down(sm) {
+      line-height: rem.convert(27px);
+      font-size: rem.convert(18px);
+    }
   }
 
   height: auto;
@@ -281,6 +285,10 @@ $orange: #ff9900;
         .timerline-slide__menu-title{
          @include convert-percent(line-height, 24px, 140);
         }
+         @include media-breakpoint-down(sm) {
+     border: 1px solid #111111;
+       border-right: 1px solid #111111;
+    }
 
         .timerline-slide__menu-list {
           li {
@@ -442,6 +450,8 @@ $orange: #ff9900;
         height: 16px;
       }
 
+
+
       svg {
 
         width: 16px;
@@ -515,6 +525,12 @@ $orange: #ff9900;
       overflow: hidden;
       opacity: 0.6;
 
+ @include media-breakpoint-down(sm) {
+   height:546.594px;
+  //  min-height: calc(100% - 546.594px);;
+  }
+      
+
       &.slick-current.slick-active {
         background: #004a64;
         filter: none;
@@ -561,13 +577,19 @@ $orange: #ff9900;
   }
 
   .timerline-slide__carousel-item-content {
-    padding: rem.convert(32px);
+    padding: rem.convert(24px);
 
     h5 {
       padding-bottom: rem.convert(24px);
       border-bottom: 1px solid rgba(var(--white-rgb), 0.6);
       @include convert-percent(line-height, 24px, 140);
+    
+      @include media-breakpoint-down(sm) {
+    padding-bottom: rem.convert(16px);
+     margin-bottom: rem.convert(24px);
+  }
     }
+    
   }
 }
 
@@ -584,4 +606,8 @@ $orange: #ff9900;
     margin: 0 -12px;
     // margin: -12px -12px;
   }
+}
+
+body .timeline-buttons-wrap{
+  gap: 24px;
 }
