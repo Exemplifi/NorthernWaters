@@ -241,8 +241,32 @@
       box-shadow: none;
       border-color: var(--white);
       background-color: var(--black);
+      -webkit-text-fill-color: var(--white) !important;
       color: var(--white);
       padding-bottom: rem.convert(10px) !important;
+      &:-internal-autofill-selected {
+        background: transparent !important;
+      }
+    }
+    /* Chrome / Edge / Safari */
+    input:autofill,
+    input:autofill:hover,
+    input:autofill:focus,
+    input:-webkit-autofill,
+    input:-webkit-autofill:hover,
+    input:-webkit-autofill:focus,
+    input:-webkit-autofill:active {
+      background-color: var(--black) !important;
+      -webkit-text-fill-color: var(--white) !important;
+      color: var(--white) !important;
+      -webkit-box-shadow: 0 0 0px 1000px transparent inset !important; // removes yellow bg
+      box-shadow: 0 0 0px 1000px transparent inset !important;
+      transition: background-color 5000s ease-in-out 0s; // prevents flicker
+      &:-internal-autofill-selected {
+        background: transparent !important;
+        color: var(--white) !important;
+        -webkit-text-fill-color: var(--white) !important;
+      }
     }
   }
   &__input {
