@@ -529,7 +529,7 @@ $orange: #ff9900;
    height:546.594px;
   //  min-height: calc(100% - 546.594px);;
   }
-      
+
 
       &.slick-current.slick-active {
         background: #004a64;
@@ -548,6 +548,9 @@ $orange: #ff9900;
         background: #004a64;
         filter: none;
         opacity: 1;
+        & > div {
+          width: 100%;
+        }
       }
 
       // following SCSS selector not working
@@ -583,13 +586,13 @@ $orange: #ff9900;
       padding-bottom: rem.convert(24px);
       border-bottom: 1px solid rgba(var(--white-rgb), 0.6);
       @include convert-percent(line-height, 24px, 140);
-    
+
       @include media-breakpoint-down(sm) {
     padding-bottom: rem.convert(16px);
      margin-bottom: rem.convert(24px);
   }
     }
-    
+
   }
 }
 

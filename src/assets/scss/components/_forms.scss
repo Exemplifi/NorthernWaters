@@ -380,10 +380,11 @@ button.btn.btn-submit {
     &:has(option:disabled:checked) {
       color: rgba(var(--gray-rgb), 0.4);
     }
-    &:focus {
+    &:focus, &:focus-visible {
       box-shadow: none;
       border-color: var(--success);
       border-width: 2px;
+      outline: none;
     }
     option[disabled] {
       color: rgba(var(--gray-rgb), 0.4);
@@ -423,6 +424,12 @@ button.btn.btn-submit {
         width: rem.convert(24px);
         height: rem.convert(24px);
       }
+    }
+    &:focus, &:focus-visible {
+      box-shadow: none;
+      border-color: var(--success);
+      border-width: 2px;
+      outline: none;
     }
   }
 
