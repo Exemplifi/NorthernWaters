@@ -525,9 +525,10 @@ $orange: #ff9900;
       overflow: hidden;
       opacity: 0.6;
 
-//  @include media-breakpoint-down(sm) {
-//    height: calc(100% - 546.594px)  !important;
-//   }
+ @include media-breakpoint-down(sm) {
+   height:546.594px;
+  //  min-height: calc(100% - 546.594px);;
+  }
       
 
       &.slick-current.slick-active {
@@ -576,13 +577,19 @@ $orange: #ff9900;
   }
 
   .timerline-slide__carousel-item-content {
-    padding: rem.convert(32px);
+    padding: rem.convert(24px);
 
     h5 {
       padding-bottom: rem.convert(24px);
       border-bottom: 1px solid rgba(var(--white-rgb), 0.6);
       @include convert-percent(line-height, 24px, 140);
+    
+      @include media-breakpoint-down(sm) {
+    padding-bottom: rem.convert(16px);
+     margin-bottom: rem.convert(24px);
+  }
     }
+    
   }
 }
 
