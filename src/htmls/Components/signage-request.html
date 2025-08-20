@@ -76,10 +76,10 @@
                 </div>
 
                 <div class="col-md-6">
-                  <label for="logoUpload">LOGO*</label>
-                                     <div class="upload-wrapper" id="logoUpload">
-                     <span class="upload-placeholder" id="filePlaceholder" role="button" tabindex="0" aria-label="Choose file">Choose file</span>
-                     <span class="upload-icon" aria-hidden="true">
+                  <label for="logoFileInput">LOGO*</label>
+                  <div class="upload-wrapper">
+                    <span class="upload-placeholder" id="filePlaceholder" aria-label="Choose file">Choose file</span>
+                    <span class="upload-icon" aria-hidden="true">
                       <img
                         src="../../assets/images/upload file.svg"
                         alt=""
@@ -92,7 +92,6 @@
                       id="logoFileInput"
                       aria-describedby="filePlaceholder fileHelp"
                       onchange="updateFileName(this)"
-                      tabindex="0"
                     />
                   </div>
                   <small class="form-text" id="fileHelp"
@@ -101,9 +100,10 @@
                 </div>
 
                 <div class="col-12">
-                  <label>reCAPTCHA</label>
+                  <label for="recaptcha">reCAPTCHA</label>
                   <div
                     class="g-recaptcha"
+                    id="recaptcha"
                     data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRU iMYl_00o5mXJrR"
                   ></div>
                 </div>
@@ -219,10 +219,10 @@
         }
       }
 
-      // Add keyboard support for the file input
+      // Add click support for the file input
       document.addEventListener('DOMContentLoaded', function() {
         const fileInput = document.getElementById('logoFileInput');
-        const uploadWrapper = document.getElementById('logoUpload');
+        const uploadWrapper = fileInput ? fileInput.parentElement : null;
 
         if (fileInput && uploadWrapper) {
           // Make the wrapper clickable for better UX
