@@ -176,7 +176,7 @@ $orange: #ff9900;
       }
 
       &:focus-visible {
-        outline: 2px solid #005fcc;
+        outline: 2px solid var(--outline-default);
         outline-offset: 2px;
         border-radius: 4px;
         opacity: 0.8;
@@ -506,7 +506,7 @@ $orange: #ff9900;
       }
 
       &:focus-visible {
-        outline: 2px solid #005fcc;
+        outline: 2px solid var(--outline-default);
         outline-offset: 2px;
         background: rgba($primary, 0.05);
         color: $primary;
@@ -560,7 +560,7 @@ $orange: #ff9900;
         opacity: 1;
         transition: all 0.3s ease;
         transform: scale(0.99);
-        outline: 2px solid #005fcc;
+        outline: 2px solid var(--outline-default);
         transform-origin: center center;
       }
 

@@ -20,7 +20,7 @@
 
     > a {
       text-decoration: none;
-
+      border-radius: 1rem;
       // Make card interactive for screen readers
       &::before {
         content: "";
@@ -148,8 +148,8 @@
         outline: none;
       }
       &:focus-visible {
-        outline: 1px solid var(--black);
-        outline-offset: 2px;
+        outline: 2px solid var(--outline-default);
+        outline-offset: 0px;
       }
     }
   }
