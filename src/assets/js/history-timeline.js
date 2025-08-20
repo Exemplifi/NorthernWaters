@@ -1142,3 +1142,162 @@ import $ from "jquery";
   });
 })();
 
+// Dynamic Timeline Line - IIFE Pattern
+(function () {
+  "use strict";
+
+  // Function to create dynamic timeline line element
+  function createDynamicTimelineLine() {
+    var $timelineNav = $(".timeline-nav");
+
+    // Remove existing dynamic line if it exists
+    $timelineNav.find(".timeline-dynamic-line").remove();
+
+    // Create new dynamic line element
+    var $dynamicLine = $('<div class="timeline-dynamic-line"></div>');
+    $timelineNav.append($dynamicLine);
+
+    return $dynamicLine;
+  }
+
+  // Function to calculate and set dynamic line position and width
+  function updateDynamicTimelineLine() {
+    var $timelineNav = $(".timeline-nav");
+
+    if ($timelineNav.length === 0) {
+      return;
+    }
+
+    // Get or create dynamic line element
+    var $dynamicLine = $timelineNav.find(".timeline-dynamic-line");
+    if ($dynamicLine.length === 0) {
+      $dynamicLine = createDynamicTimelineLine();
+    }
+
+    // Get all visible timeline nav items (not cloned)
+    var $navItems = $timelineNav.find(".timeline-nav__item:not(.slick-cloned)");
+
+    if ($navItems.length < 2) {
+      // Hide dynamic line if there are less than 2 items
+      $dynamicLine.hide();
+      $timelineNav.removeClass("timeline-dynamic-line-active");
+      return;
+    }
+
+    // Get first and last nav items
+    var $firstItem = $navItems.first();
+    var $lastItem = $navItems.last();
+
+    // Get positions relative to timeline-nav
+    var timelineNavOffset = $timelineNav.offset();
+    var firstItemOffset = $firstItem.offset();
+    var lastItemOffset = $lastItem.offset();
+
+    if (!timelineNavOffset || !firstItemOffset || !lastItemOffset) {
+      return;
+    }
+
+    // Calculate positions relative to timeline-nav
+    var firstItemLeft = firstItemOffset.left - timelineNavOffset.left;
+    var lastItemLeft = lastItemOffset.left - timelineNavOffset.left;
+
+    // Get the center position of the first and last items
+    var firstItemCenter = firstItemLeft + ($firstItem.outerWidth() / 2);
+    var lastItemCenter = lastItemLeft + ($lastItem.outerWidth() / 2);
+
+    // Calculate line properties
+    var lineLeft = firstItemCenter;
+    var lineWidth = lastItemCenter - firstItemCenter;
+
+    // Ensure minimum width
+    if (lineWidth < 10) {
+      lineWidth = 10;
+    }
+
+    // Set line position and width
+    $dynamicLine.css({
+      left: lineLeft + "px",
+      width: lineWidth + "px",
+      display: "block"
+    });
+
+    // Add active class to timeline-nav to hide static line
+    $timelineNav.addClass("timeline-dynamic-line-active");
+  }
+
+  // Function to initialize dynamic timeline line
+  function initializeDynamicTimelineLine() {
+    // Create initial dynamic line
+    createDynamicTimelineLine();
+
+    // Initial update
+    setTimeout(function() {
+      updateDynamicTimelineLine();
+    }, 10);
+
+    // Fallback: ensure static line is visible if dynamic line fails
+    setTimeout(function() {
+      var $dynamicLine = $(".timeline-dynamic-line");
+      if ($dynamicLine.length === 0 || $dynamicLine.css("display") === "none") {
+        $(".timeline-nav").removeClass("timeline-dynamic-line-active");
+      }
+    }, 100);
+
+    // Update after timeline navigation is initialized
+    $(".timeline-nav").on("init", function() {
+      setTimeout(function() {
+        updateDynamicTimelineLine();
+      }, 50);
+    });
+
+    // Update after slide changes
+    $(".timeline-nav").on("afterChange", function() {
+      setTimeout(function() {
+        updateDynamicTimelineLine();
+      }, 0);
+    });
+
+    // Update after responsive breakpoint changes
+    $(".timeline-nav").on("breakpoint", function() {
+      setTimeout(function() {
+        updateDynamicTimelineLine();
+      }, 100);
+    });
+
+    // Update after reinitialization
+    $(".timeline-nav").on("reInit", function() {
+      setTimeout(function() {
+        updateDynamicTimelineLine();
+      }, 200);
+    });
+  }
+
+  // Initialize when DOM is ready
+  $(function() {
+    // Wait for timeline navigation to be initialized
+    setTimeout(function() {
+      initializeDynamicTimelineLine();
+    }, 1500);
+  });
+
+  // Re-initialize on window resize with debouncing
+  var dynamicLineResizeTimer;
+  $(window).on("resize", function() {
+    clearTimeout(dynamicLineResizeTimer);
+    dynamicLineResizeTimer = setTimeout(function() {
+      updateDynamicTimelineLine();
+    }, 250);
+  });
+
+  // Re-initialize when timeline slides change
+  $(".timeline-slider").on("afterChange", function() {
+    setTimeout(function() {
+      updateDynamicTimelineLine();
+    }, 100);
+  });
+
+  // Expose functions globally for testing
+  window.updateDynamicTimelineLine = updateDynamicTimelineLine;
+  window.initializeDynamicTimelineLine = initializeDynamicTimelineLine;
+})();
+
