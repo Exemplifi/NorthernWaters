@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Login Inner Page</title>
+    <meta name="description" content="Manage your Northern Water account details, view orders, transfers, deliveries, and access important documents." />
+    <title>Account Management - Northern Water</title>
     <link rel="stylesheet" href="../assets/dist/main.css" />
   </head>
   <body>
@@ -617,7 +618,9 @@
         <div class="container-fluid">
           <div class="row">
             <div class="col-12">
-              <div class="hero-tertiary-content"></div>
+              <div class="hero-tertiary-content">
+                <h1 class="hero-tertiary-title"></h1>
+              </div>
             </div>
           </div>
         </div>
@@ -631,37 +634,37 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <nav>
-                <ul>
-                  <li>
-                    <a href="#" class="active">
-                      <i data-lucide="circle-user-round"></i
+              <nav aria-label="Account navigation">
+                <ul role="tablist">
+                  <li role="presentation">
+                    <a href="#" class="active" role="tab" aria-selected="true" aria-controls="account-details-panel" id="account-details-tab">
+                      <i data-lucide="circle-user-round" aria-hidden="true"></i
                       ><span>Account Details</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i data-lucide="shopping-cart"></i><span>Orders</span>
+                  <li role="presentation">
+                    <a href="#" role="tab" aria-selected="false" aria-controls="orders-panel" id="orders-tab">
+                      <i data-lucide="shopping-cart" aria-hidden="true"></i><span>Orders</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i data-lucide="arrow-up-down"></i><span>Transfers</span>
+                  <li role="presentation">
+                    <a href="#" role="tab" aria-selected="false" aria-controls="transfers-panel" id="transfers-tab">
+                      <i data-lucide="arrow-up-down" aria-hidden="true"></i><span>Transfers</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i data-lucide="truck"></i><span>Deliveries</span>
+                  <li role="presentation">
+                    <a href="#" role="tab" aria-selected="false" aria-controls="deliveries-panel" id="deliveries-tab">
+                      <i data-lucide="truck" aria-hidden="true"></i><span>Deliveries</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i data-lucide="file-text"></i><span>Documents</span>
+                  <li role="presentation">
+                    <a href="#" role="tab" aria-selected="false" aria-controls="documents-panel" id="documents-tab">
+                      <i data-lucide="file-text" aria-hidden="true"></i><span>Documents</span>
                     </a>
                   </li>
-                  <li>
-                    <a href="#">
-                      <i data-lucide="map"></i><span>Outage Map</span>
+                  <li role="presentation">
+                    <a href="#" role="tab" aria-selected="false" aria-controls="outage-map-panel" id="outage-map-tab">
+                      <i data-lucide="map" aria-hidden="true"></i><span>Outage Map</span>
                     </a>
                   </li>
                 </ul>
@@ -672,7 +675,7 @@
       </section>
       <!-- Tab Heading ends here -->
       <!-- Table Section -->
-      <section class="section-wrapper bg-half-white container-table-inner-page">
+      <section class="section-wrapper bg-half-white container-table-inner-page" id="account-details-panel" role="tabpanel" aria-labelledby="account-details-tab">
         <div class="container">
           <div class="row">
             <div class="col-12">
@@ -756,20 +759,23 @@
               </div>
               <div class="inclusion-button-row">
                 <section>
-                  <span>Include Undelivered Water</span>
+                  <span id="toggleLabel">Include Undelivered Water</span>
                   <!-- Toggler Button starts here-->
                   <button
                     class="toggleButton"
                     aria-labelledby="toggleLabel"
                     aria-pressed="false"
+                    type="button"
+                    aria-describedby="toggleDescription"
                   ></button>
                   <!-- Toggler Button ends here-->
+                  <span id="toggleDescription" class="sr-only">Toggle to include or exclude undelivered water in the account details table</span>
                 </section>
               </div>
             </div>
             <div class="col-12">
               <div class="table-wrap">
-                <div class="table-responsive">
+                <div class="table-responsive" role="region" aria-label="Account details table">
                   <table
                     class="table rounded-table"
                     role="table"
@@ -780,39 +786,39 @@
                     </caption>
                     <thead>
                       <tr class="sticky">
-                        <th scope="col">Water Source</th>
-                        <th scope="col">Goals/Triggers</th>
-                        <th scope="col">2020</th>
-                        <th scope="col">2021</th>
-                        <th scope="col">2022</th>
-                        <th scope="col">2023</th>
-                        <th scope="col">2024</th>
+                        <th scope="col" id="water-source-col">Water Source</th>
+                        <th scope="col" id="goals-triggers-col">Goals/Triggers</th>
+                        <th scope="col" id="year-2020-col">2020</th>
+                        <th scope="col" id="year-2021-col">2021</th>
+                        <th scope="col" id="year-2022-col">2022</th>
+                        <th scope="col" id="year-2023-col">2023</th>
+                        <th scope="col" id="year-2024-col">2024</th>
                       </tr>
                     </thead>
                     <tbody>
                       <tr>
-                        <th scope="row">
+                        <th scope="row" headers="water-source-col">
                           Grand Lake Clarity Running Average July 1 to Sept. 11
                           (m)
                         </th>
-                        <td>3.8</td>
-                        <td>3 m</td>
-                        <td>3.6 m</td>
-                        <td>3.2 m</td>
-                        <td>4.2 m</td>
-                        <td>4.5 m</td>
+                        <td headers="goals-triggers-col">3.8</td>
+                        <td headers="year-2020-col">3 m</td>
+                        <td headers="year-2021-col">3.6 m</td>
+                        <td headers="year-2022-col">3.2 m</td>
+                        <td headers="year-2023-col">4.2 m</td>
+                        <td headers="year-2024-col">4.5 m</td>
                       </tr>
                       <tr>
-                        <th scope="row">
+                        <th scope="row" headers="water-source-col">
                           Grand Lake Clarity Running Minimum July 1 to Sept. 11
                           (m)
                         </th>
-                        <td>2.5</td>
-                        <td>2.4 m</td>
-                        <td>2.7 m</td>
-                        <td>2.6 m</td>
-                        <td>3 m</td>
-                        <td>3.7 m</td>
+                        <td headers="goals-triggers-col">2.5</td>
+                        <td headers="year-2020-col">2.4 m</td>
+                        <td headers="year-2021-col">2.7 m</td>
+                        <td headers="year-2022-col">2.6 m</td>
+                        <td headers="year-2023-col">3 m</td>
+                        <td headers="year-2024-col">3.7 m</td>
                       </tr>
                       <tr>
                         <th scope="row">
