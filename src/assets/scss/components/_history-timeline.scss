@@ -81,6 +81,25 @@ $orange: #ff9900;
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: 0.3;
+      display: none;
+      // Hide static line when dynamic line is active
+      .timeline-dynamic-line-active & {
+        display: none;
+      }
+    }
+
+    // Dynamic timeline line controlled by JavaScript
+    .timeline-dynamic-line {
+      content: "";
+      position: absolute;
+      height: 1px;
+      background-color: var(--black);
+      bottom: 20px;
+      z-index: 0;
+      top: 50%;
+      opacity: 0.3;
+      transition: none;
+      display: none; // Hidden by default, shown via JavaScript
     }
 
     .slick-current .timeline-nav__item {
@@ -222,6 +241,7 @@ $orange: #ff9900;
   .slick-list {
     height: 100%;
     padding: 0 !important;
+    z-index: 1;
   }
 
   .slick-track {
