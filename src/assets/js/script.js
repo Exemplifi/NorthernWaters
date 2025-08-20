@@ -549,4 +549,14 @@ $(document).ready(function() {
   document.addEventListener('DOMContentLoaded', initSubmenuNavigation);
 })();
 
+// IIFE to output the currently focused element
+// (function () {
+//   "use strict";
+
+//   document.addEventListener("focusin", () => {
+//     console.log("Currently focused element:", document.activeElement);
+//   });
+
+// })();
+
 
