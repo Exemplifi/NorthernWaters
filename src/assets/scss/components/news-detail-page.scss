@@ -40,9 +40,15 @@
         margin-bottom: 3rem;
         padding-bottom: 3rem;
         border-bottom: 1px solid #11111199;
+        font-size: rem.convert(56px);
+        @include convert-percent(letter-spacing, 56px, -2);
+        @include convert-percent(line-height, 56px, 110);
         @include media-breakpoint-down(lg) {
           margin-bottom: rem.convert(40px);
           padding-bottom: rem.convert(40px);
+          font-size: rem.convert(40px);
+          @include convert-percent(letter-spacing, 40px, -2);
+          @include convert-percent(line-height, 40px, 110);
         }
       }
       .news-detail-body{

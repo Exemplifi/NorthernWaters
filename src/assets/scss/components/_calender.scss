@@ -497,7 +497,7 @@
     &:hover,
     &:focus {
       background: var(--blue-100a, #53c2fd1a);
-      outline: 1px solid #005FCC;;
+      outline: 1px solid var(--outline-default);
     }
     img {
       display: block;
