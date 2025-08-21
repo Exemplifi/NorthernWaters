@@ -389,6 +389,10 @@
     padding: rem.convert(40px);
     border-radius: rem.convert(16px);
     column-gap: rem.convert(96px);
+    
+    h3 {
+      @extend .h4;
+    }
     @include media-breakpoint-down(lg) {
       flex-direction: column;
       row-gap: rem.convert(80px);
