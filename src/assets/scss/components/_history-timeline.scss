@@ -599,7 +599,16 @@ $orange: #ff9900;
       max-height: rem.convert(240px);
       object-fit: cover;
       object-position: center;
+      -webkit-transition: 0.4s ease;
+      transition: 0.4s ease;
+
+    
     }
+  }
+
+  &:hover  img{
+    -webkit-transform: scale(1.08);
+transform: scale(1.08);
   }
 
   .timerline-slide__carousel-item-content {
