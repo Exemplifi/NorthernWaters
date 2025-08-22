@@ -147,11 +147,22 @@
       &:focus {
         outline: none;
       }
-      &:focus-visible {
-        outline: 2px solid var(--black);
-          outline-offset: 1px;
-      }
+     
     }
+    &:active,
+  &:focus,
+  &:focus-visible {
+
+    outline: 2px solid var(--black) !important;
+    outline-offset: 0px !important;
+  
+   
+    border: none !important;
+    border-color: transparent !important;
+  }
+
+    /* Remove the generic focus reset */
+    
   }
   .cards-row {
     display: flex;
