@@ -236,6 +236,10 @@ $orange: #ff9900;
         height: 100%;
       }
     }
+
+      @include media-breakpoint-down(sm) {
+      margin-bottom: rem.convert(24px);
+    }
   }
 
   .slick-list {
@@ -550,7 +554,7 @@ $orange: #ff9900;
       opacity: 0.6;
 
       @include media-breakpoint-down(sm) {
-        height: 436.594px !important;
+        height: 436px !important;
         //  min-height: calc(100% - 546.594px);;
      
       }
