@@ -553,11 +553,6 @@ $orange: #ff9900;
       overflow: hidden;
       opacity: 0.6;
 
-      @include media-breakpoint-down(sm) {
-        height: 436px !important;
-        //  min-height: calc(100% - 546.594px);;
-     
-      }
 
       &.slick-current.slick-active {
         background: #004a64;
