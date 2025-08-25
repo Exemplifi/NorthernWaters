@@ -194,6 +194,10 @@
       transition: all 0.3s ease-in-out;
       border-radius: rem.convert(16px);
       position: relative;
+
+      h3 {
+        @extend .h5;
+      }
       &::after {
         content: "";
         height: 1px;

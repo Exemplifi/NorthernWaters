@@ -210,7 +210,7 @@ $orange: #ff9900;
     }
 
     @include media-breakpoint-down(md) {
-      margin-bottom: rem.convert(40px);
+      margin-bottom: rem.convert(24px);
     }
   }
 
@@ -235,6 +235,10 @@ $orange: #ff9900;
       .slick-slide.slick-current.slick-active > div {
         height: 100%;
       }
+    }
+
+      @include media-breakpoint-down(sm) {
+      margin-bottom: rem.convert(24px);
     }
   }
 
@@ -549,10 +553,6 @@ $orange: #ff9900;
       overflow: hidden;
       opacity: 0.6;
 
-      @include media-breakpoint-down(sm) {
-        height: 546.594px;
-        //  min-height: calc(100% - 546.594px);;
-      }
 
       &.slick-current.slick-active {
         background: #004a64;
@@ -644,3 +644,5 @@ transform: scale(1.08);
 body .timeline-buttons-wrap {
   gap: 24px;
 }
+
+     
