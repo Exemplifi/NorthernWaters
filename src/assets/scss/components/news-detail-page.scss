@@ -60,6 +60,10 @@
         @include media-breakpoint-down(lg) {
           margin-bottom: rem.convert(40px);
         }
+
+        h2 {
+          @extend .h5;
+          }
         .news-detail-sub-title{
           color: var(--black-2);
           margin-bottom: 1.5rem;
