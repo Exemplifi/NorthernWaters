@@ -221,7 +221,7 @@ $orange: #ff9900;
     // min-height: 602px; // Ensure minimum height
 
     @media (max-width: 500px) {
-      height: 1000px;
+      height: auto; // Remove fixed height to allow natural height
     }
   }
 
@@ -229,11 +229,15 @@ $orange: #ff9900;
     height: 100%;
     margin-bottom: rem.convert(48px);
 
+    // Mobile-specific overrides to allow natural heights
     @include media-breakpoint-down(md) {
+      height: auto !important; // Force natural height on mobile
+      min-height: auto !important;
+      max-height: none !important;
       margin-bottom: rem.convert(40px);
 
       .slick-slide.slick-current.slick-active > div {
-        height: 100%;
+        height: auto !important; // Force natural height on mobile
       }
     }
 
@@ -246,16 +250,58 @@ $orange: #ff9900;
     height: 100%;
     padding: 0 !important;
     z-index: 1;
+
+    // Mobile-specific overrides to allow natural heights
+    @include media-breakpoint-down(md) {
+      height: auto !important; // Force natural height on mobile
+      min-height: auto !important;
+      max-height: none !important;
+    }
+
+    // Additional mobile overrides for screens less than 768px
+    @media (max-width: 767px) {
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+    }
   }
 
   .slick-track {
     height: 100%;
     margin: 0 !important;
     display: flex;
+
+    // Mobile-specific overrides to allow natural heights
+    @include media-breakpoint-down(md) {
+      height: fit-content !important;
+      min-height: fit-content !important;
+      max-height: fit-content !important;
+    }
+
+    // Additional mobile overrides for screens less than 768px
+    @media (max-width: 767px) {
+      height: fit-content !important;
+      min-height: fit-content !important;
+      max-height: fit-content !important;
+    }
   }
 
   .slick-slide {
     height: 100%; // Ensure slick slides have full height
+
+    // Mobile-specific overrides to allow natural heights
+    @include media-breakpoint-down(md) {
+      height: fit-content !important; // Force natural height on mobile
+      min-height: fit-content !important;
+      max-height: fit-content !important;
+    }
+
+    // Additional mobile overrides for screens less than 768px
+    @media (max-width: 767px) {
+      height: fit-content !important;
+      min-height: fit-content !important;
+      max-height: fit-content !important;
+    }
   }
 
   &-slide {
@@ -268,6 +314,20 @@ $orange: #ff9900;
     // width: 80%;
     z-index: 1;
     height: 100%; // Ensure slide has full height
+
+    // Mobile-specific overrides to allow natural heights
+    @include media-breakpoint-down(md) {
+      height: auto !important; // Force natural height on mobile
+      min-height: auto !important;
+      max-height: none !important;
+    }
+
+    // Additional mobile overrides for screens less than 768px
+    @media (max-width: 767px) {
+      height: auto !important;
+      min-height: auto !important;
+      max-height: none !important;
+    }
 
     &:after {
       content: "";
@@ -293,6 +353,22 @@ $orange: #ff9900;
       display: flex;
       height: 100%; // Ensure content has full height
       min-height: 602px; // Set minimum height
+
+      // Mobile-specific overrides to allow natural heights
+      @include media-breakpoint-down(md) {
+        height: auto !important; // Force natural height on mobile
+        min-height: auto !important;
+        max-height: none !important;
+        position: relative; // Change to relative positioning on mobile
+      }
+
+      // Additional mobile overrides for screens less than 768px
+      @media (max-width: 767px) {
+        height: auto !important;
+        min-height: auto !important;
+        max-height: none !important;
+        position: relative !important;
+      }
 
       @media (max-width: 500px) {
         width: 100%;
@@ -353,8 +429,8 @@ $orange: #ff9900;
         // padding: 30px 30px;
         // flex: 0 0 calc(100% - 284px);
         @include media-breakpoint-down(md) {
-          max-height: 4544px;
-          height: 454px;
+          max-height: none; // Remove max-height constraint
+          height: auto; // Remove fixed height to allow natural height
           flex: 0 0 100%;
           margin: 0;
         }
@@ -553,6 +629,20 @@ $orange: #ff9900;
       overflow: hidden;
       opacity: 0.6;
 
+      // Mobile-specific overrides to allow natural heights
+      @include media-breakpoint-down(md) {
+        height: fit-content !important; // Force natural height on mobile
+        min-height: fit-content !important;
+        max-height: fit-content !important;
+      }
+
+      // Additional mobile overrides for screens less than 768px
+      @media (max-width: 767px) {
+        height: fit-content !important;
+        min-height: fit-content !important;
+        max-height: fit-content !important;
+      }
+
 
       &.slick-current.slick-active {
         background: #004a64;
@@ -589,6 +679,20 @@ $orange: #ff9900;
 .timerline-slide__carousel-item {
   height: 100%;
 
+  // Mobile-specific overrides to allow natural heights
+  @include media-breakpoint-down(md) {
+    height: auto !important; // Force natural height on mobile
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
+  // Additional mobile overrides for screens less than 768px
+  @media (max-width: 767px) {
+    height: auto !important;
+    min-height: auto !important;
+    max-height: none !important;
+  }
+
   figure {
     margin: 0;
 
@@ -602,7 +706,7 @@ $orange: #ff9900;
       -webkit-transition: 0.4s ease;
       transition: 0.4s ease;
 
-    
+
     }
   }
 
@@ -645,4 +749,38 @@ body .timeline-buttons-wrap {
   gap: 24px;
 }
 
-     
+// Comprehensive mobile height overrides for screens less than 768px
+@media (max-width: 767px) {
+  // Remove all height constraints for mobile devices
+  .timeline-wrapper,
+  .timeline-slider,
+  .timeline-slide,
+  .timeline-slide__content,
+  .slick-list,
+  .slick-track,
+  .slick-slide,
+  .center-slider,
+  .center-slider .slick-list,
+  .center-slider .slick-track,
+  .center-slider .slick-slide,
+  .timerline-slide__carousel,
+  .timerline-slide__carousel-item {
+    height: fit-content !important;
+    min-height: fit-content !important;
+    max-height: fit-content !important;
+  }
+
+  // Ensure content flows naturally
+  .timeline-slide__content {
+    position: relative !important;
+    display: flex !important;
+    flex-direction: column !important;
+  }
+
+  // Remove any fixed heights from carousel items
+  .timerline-slide__carousel-item figure img {
+    height: auto !important;
+    max-height: none !important;
+  }
+}
+
