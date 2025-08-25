@@ -34,7 +34,11 @@
           align-items: flex-start;
           gap: 0.5rem;
         }
+       
       }
+      h1 {
+        @extend .h2;
+        }
       .news-detail-title{
         color: var(--black-2);
         margin-bottom: 3rem;
