@@ -10,12 +10,12 @@
     width: 100%;
     position: relative;
     border-radius: 1rem;
-    transition-duration: .15s;
+    transition-duration: 0.15s;
     transition-property: transform;
     transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
     height: 100%;
     &:hover {
-        transform: scale(1.05);
+      transform: scale(1.05);
     }
 
     > a {
@@ -147,22 +147,18 @@
       &:focus {
         outline: none;
       }
-     
     }
-    &:active,
-  &:focus,
-  &:focus-visible {
+    & a:active,
+    & a:focus,
+    & a:focus-visible {
+      outline: 2px solid var(--black) !important;
+      outline-offset: 0px !important;
 
-    outline: 2px solid var(--black) !important;
-    outline-offset: 0px !important;
-  
-   
-    border: none !important;
-    border-color: transparent !important;
-  }
+      border: none !important;
+      border-color: transparent !important;
+    }
 
     /* Remove the generic focus reset */
-    
   }
   .cards-row {
     display: flex;

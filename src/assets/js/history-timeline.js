@@ -283,6 +283,11 @@ import $ from "jquery";
           $(".timeline-slider .slick-prev").css({ display: "none" });
           $(".timeline-slider .slick-next").css({ display: "none" });
         }, 0);
+        // Remove mobile height constraints after timeline navigation reinitialization
+        setTimeout(function () {
+          removeMobileHeightConstraints();
+          fixMobileTimelineGap();
+        }, 100);
       }
     }, 250); // Debounce resize events to avoid excessive reinitialization
   });
@@ -390,6 +395,7 @@ import $ from "jquery";
         setDynamicTimelineHeight();
         setTimelineSlideHeight();
         setSlickSlideHeight();
+        removeMobileHeightConstraints();
       }, 200);
     });
 
@@ -399,6 +405,7 @@ import $ from "jquery";
         setDynamicTimelineHeight();
         setTimelineSlideHeight();
         setSlickSlideHeight();
+        removeMobileHeightConstraints();
       }, 100);
     });
   });
@@ -494,6 +501,13 @@ import $ from "jquery";
       // ✅ Hook afterChange for every center-slider
       $slider.off('afterChange.centerUpdate').on('afterChange.centerUpdate', function () {
         addClassesToCenterSlider();
+      });
+
+      // Remove mobile height constraints after center slider initialization
+      $slider.on('init', function() {
+        setTimeout(function() {
+          removeMobileHeightConstraints();
+        }, 100);
       });
       // Add debugging to verify independent sliders
       // console.log("Initialized independent slider:", sliderId);
@@ -598,6 +612,8 @@ import $ from "jquery";
         initializeCenterSliderNavigation();
         // Trigger custom event for center slider state management
         $(document).trigger('centerSlidersInitialized');
+        // Remove mobile height constraints after center slider reinitialization
+        removeMobileHeightConstraints();
       }, 100);
     }, 250);
   });
@@ -611,6 +627,8 @@ import $ from "jquery";
         initializeCenterSliderNavigation();
         // Trigger custom event for center slider state management
         $(document).trigger('centerSlidersInitialized');
+        // Remove mobile height constraints after timeline slide change
+        removeMobileHeightConstraints();
       }, 100);
     }, 100);
   });
@@ -794,6 +812,8 @@ import $ from "jquery";
         tabindex: "0",
         role: "button",
       });
+      // Remove mobile height constraints after custom tab navigation initialization
+      removeMobileHeightConstraints();
       // console.log("Custom tab navigation initialized");
     }, 1000);
   }
@@ -826,12 +846,20 @@ import $ from "jquery";
     clearTimeout(customTabResizeTimer);
     customTabResizeTimer = setTimeout(function () {
       initializeCustomTabNavigation();
+      // Remove mobile height constraints after custom tab navigation reinitialization
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     }, 300);
   });
 
   $(".timeline-slider").on("afterChange", function () {
     setTimeout(function () {
       initializeCustomTabNavigation();
+      // Remove mobile height constraints after custom tab navigation reinitialization
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     }, 200);
   });
 
@@ -911,6 +939,8 @@ import $ from "jquery";
       // Wait for the timeline slider to finish changing
       setTimeout(function() {
         addClassesToCenterSlider();
+        // Remove mobile height constraints after timeline navigation button click
+        removeMobileHeightConstraints();
       }, 100);
     });
 
@@ -921,6 +951,8 @@ import $ from "jquery";
       // Wait for the timeline slider to finish changing
       setTimeout(function() {
         addClassesToCenterSlider();
+        // Remove mobile height constraints after timeline nav item click
+        removeMobileHeightConstraints();
       }, 100);
     });
 
@@ -930,12 +962,16 @@ import $ from "jquery";
 
       setTimeout(function() {
         addClassesToCenterSlider();
+        // Remove mobile height constraints after timeline slider change
+        removeMobileHeightConstraints();
       }, 100);
     });
 
     // Initial class management
     setTimeout(function() {
       addClassesToCenterSlider();
+      // Remove mobile height constraints after center slider class management initialization
+      removeMobileHeightConstraints();
     }, 1000);
   }
 
@@ -953,6 +989,10 @@ import $ from "jquery";
     clearTimeout(centerSliderClassResizeTimer);
     centerSliderClassResizeTimer = setTimeout(function() {
       initializeCenterSliderClassManagement();
+      // Remove mobile height constraints after center slider class management reinitialization
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     }, 300);
   });
 
@@ -960,6 +1000,7 @@ import $ from "jquery";
   $(document).on('centerSlidersInitialized', function() {
     setTimeout(function() {
       addClassesToCenterSlider();
+      removeMobileHeightConstraints();
     }, 100);
   });
 
@@ -991,7 +1032,291 @@ import $ from "jquery";
     // Also re-apply after Slick events that might re-render slides
     $(".timeline-nav").on("init reInit afterChange setPosition", function () {
       disableTimelineNavSlides();
+      // Remove mobile height constraints after timeline nav slide disable
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     });
+  });
+})();
+
+// Global utility functions
+(function () {
+  "use strict";
+
+  // Function to check if screen size is less than 768px
+  function isScreenSizeLessThan768() {
+    return window.innerWidth < 768;
+  }
+
+  // Function to remove height constraints and ensure natural heights for mobile
+  window.removeMobileHeightConstraints = function() {
+    // Only run for screen sizes less than 768px
+    if (!isScreenSizeLessThan768()) {
+      return;
+    }
+
+    // Fix positioning and height for timeline-slide__content
+    $(".timeline-slide__content").each(function () {
+      var $content = $(this);
+      $content.css({
+        "position": "relative",
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none",
+        "top": "auto",
+        "left": "auto",
+        "right": "auto",
+        "opacity": "1",
+        "display": "flex",
+        "flex-direction": "column"
+      });
+    });
+
+    // Fix timeline-slide positioning and height
+    $(".timeline-slide").each(function () {
+      var $slide = $(this);
+      $slide.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none",
+        "position": "relative"
+      });
+    });
+
+    // Fix timeline-slider height and positioning
+    $(".timeline-slider").each(function () {
+      var $slider = $(this);
+      $slider.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix timeline-wrapper height
+    $(".timeline-wrapper").each(function () {
+      var $wrapper = $(this);
+      $wrapper.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix slick-list and slick-track
+    $(".slick-list, .slick-track").each(function () {
+      var $element = $(this);
+      $element.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix all slick-slide elements
+    $(".slick-slide").each(function () {
+      var $slide = $(this);
+      $slide.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix center-slider elements
+    $(".center-slider .slick-slide").each(function () {
+      var $slide = $(this);
+      $slide.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix timerline-slide__carousel elements
+    $(".timerline-slide__carousel .slick-slide").each(function () {
+      var $slide = $(this);
+      $slide.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix carousel items
+    $(".timerline-slide__carousel-item").each(function () {
+      var $item = $(this);
+      $item.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Fix timerline-slide__menu height on mobile
+    $(".timerline-slide__menu").each(function () {
+      var $menu = $(this);
+      $menu.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "374px",
+        "overflow-y": "auto"
+      });
+    });
+
+    // Ensure proper spacing between elements
+    $(".timeline-slider").css("margin-bottom", "24px");
+    $(".timeline-nav").css("margin-bottom", "24px");
+
+    // Force a reflow to ensure changes take effect
+    $(".timeline-wrapper")[0] && $(".timeline-wrapper")[0].offsetHeight;
+  };
+
+  // Function to initialize mobile layout immediately
+  window.initializeMobileLayout = function() {
+    if (isScreenSizeLessThan768()) {
+      // Apply mobile layout immediately
+      removeMobileHeightConstraints();
+      fixMobileTimelineGap();
+
+      // Also ensure timeline content is visible
+      $(".timeline-slide__content").css("opacity", "1");
+
+      // Force layout recalculation
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
+      }, 10);
+    }
+  };
+
+  // Function to specifically fix the gap issue on mobile
+  window.fixMobileTimelineGap = function() {
+    if (!isScreenSizeLessThan768()) {
+      return;
+    }
+
+    // Add CSS override to eliminate gaps
+    if (!$("#mobile-timeline-gap-fix").length) {
+      $("head").append(`
+        <style id="mobile-timeline-gap-fix">
+          @media (max-width: 767px) {
+            .timeline-slide__content {
+              position: relative !important;
+              height: auto !important;
+              min-height: auto !important;
+              max-height: none !important;
+              top: 0 !important;
+              left: 0 !important;
+              right: auto !important;
+              opacity: 1 !important;
+              display: flex !important;
+              flex-direction: column !important;
+              margin-bottom: 0 !important;
+            }
+
+            .timeline-slide {
+              height: auto !important;
+              min-height: auto !important;
+              max-height: none !important;
+              position: relative !important;
+              margin-bottom: 0 !important;
+            }
+
+            .timeline-slider {
+              height: auto !important;
+              min-height: auto !important;
+              max-height: none !important;
+              margin-bottom: 24px !important;
+            }
+
+            .slick-list, .slick-track {
+              height: auto !important;
+              min-height: auto !important;
+              max-height: none !important;
+            }
+
+            .timeline-slide:after {
+              display: none !important;
+            }
+
+            .timeline-wrapper {
+              height: auto !important;
+              min-height: auto !important;
+              max-height: none !important;
+            }
+          }
+        </style>
+      `);
+    }
+
+    // Ensure timeline content flows naturally without gaps
+    $(".timeline-slide__content").each(function() {
+      var $content = $(this);
+      $content.css({
+        "position": "relative",
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none",
+        "top": "0",
+        "left": "0",
+        "right": "auto",
+        "opacity": "1",
+        "display": "flex",
+        "flex-direction": "column",
+        "margin-bottom": "0"
+      });
+    });
+
+    // Ensure timeline slide has no extra height
+    $(".timeline-slide").each(function() {
+      var $slide = $(this);
+      $slide.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none",
+        "position": "relative",
+        "margin-bottom": "0"
+      });
+    });
+
+    // Ensure timeline slider has no extra height
+    $(".timeline-slider").each(function() {
+      var $slider = $(this);
+      $slider.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none",
+        "margin-bottom": "24px"
+      });
+    });
+
+    // Ensure slick elements don't create gaps
+    $(".slick-list, .slick-track").each(function() {
+      var $element = $(this);
+      $element.css({
+        "height": "auto",
+        "min-height": "auto",
+        "max-height": "none"
+      });
+    });
+
+    // Remove any after pseudo-elements that might create gaps
+    $(".timeline-slide").each(function() {
+      var $slide = $(this);
+      $slide.find("&:after").css("display", "none");
+    });
+  };
+
+  // Call mobile layout initialization immediately
+  $(document).ready(function() {
+    initializeMobileLayout();
+  });
+
+  // Also call on window load to ensure all content is loaded
+  $(window).on('load', function() {
+    initializeMobileLayout();
   });
 })();
 
@@ -1004,38 +1329,13 @@ import $ from "jquery";
     return window.innerWidth < 768;
   }
 
-  // Function to calculate and set dynamic height for center-slider slick-slide elements
-  function setCenterSliderSlickSlideHeight() {
-    // Only run for screen sizes less than 768px
-    if (!isScreenSizeLessThan768()) {
+  // Function to calculate and set dynamic height for timeline-slider elements (only for desktop)
+  function setTimelineSliderHeight() {
+    // Only run for screen sizes 768px and larger
+    if (isScreenSizeLessThan768()) {
       return;
     }
 
-    // Find all center-slider elements
-    $(".center-slider").each(function () {
-      var $centerSlider = $(this);
-      var maxHeight = 0;
-
-      // Find all slick-slide elements within this center-slider
-      var $slickSlides = $centerSlider.find(".slick-slide");
-
-      // Calculate the maximum height among all slick-slide elements
-      $slickSlides.each(function () {
-        var slideHeight = $(this).outerHeight(true); // Include padding and border
-        if (slideHeight > maxHeight) {
-          maxHeight = slideHeight;
-        }
-      });
-
-      // Set the height for all slick-slide elements inside this center-slider
-      if (maxHeight > 0) {
-        $slickSlides.css("height", maxHeight + "px");
-      }
-    });
-  }
-
-  // Function to calculate and set dynamic height for timeline-slider elements
-  function setTimelineSliderHeight() {
     // Find all timeline-slider elements
     $(".timeline-slider").each(function () {
       var $timelineSlider = $(this);
@@ -1059,8 +1359,13 @@ import $ from "jquery";
     });
   }
 
-  // Function to calculate and set dynamic height for timeline-wrapper divs
+  // Function to calculate and set dynamic height for timeline-wrapper divs (only for desktop)
   function setTimelineWrapperHeight() {
+    // Only run for screen sizes 768px and larger
+    if (isScreenSizeLessThan768()) {
+      return;
+    }
+
     // Find all timeline-wrapper elements
     $(".timeline-wrapper").each(function () {
       var $timelineWrapper = $(this);
@@ -1093,15 +1398,21 @@ import $ from "jquery";
   $(function () {
     // Initial calculation after a short delay to ensure all content is rendered
     setTimeout(function () {
-      setCenterSliderSlickSlideHeight();
+      removeMobileHeightConstraints();
+      fixMobileTimelineGap();
       setTimelineSliderHeight();
       setTimelineWrapperHeight();
     }, 100);
 
+    // Also remove mobile height constraints immediately on load
+    removeMobileHeightConstraints();
+    fixMobileTimelineGap();
+
     // Also calculate after Slick carousel is initialized
     $(".center-slider").on("init", function () {
       setTimeout(function () {
-        setCenterSliderSlickSlideHeight();
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
         setTimelineSliderHeight();
         setTimelineWrapperHeight();
       }, 200);
@@ -1110,26 +1421,60 @@ import $ from "jquery";
     // Recalculate after slide changes
     $(".center-slider").on("afterChange", function () {
       setTimeout(function () {
-        setCenterSliderSlickSlideHeight();
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
         setTimelineSliderHeight();
         setTimelineWrapperHeight();
       }, 100);
     });
+
+    // Also remove mobile height constraints after center slider slide changes
+    $(".center-slider").on("afterChange", function () {
+      setTimeout(function () {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
+      }, 50);
+    });
+
+    // Also handle timeline-slider events
+    $(".timeline-slider").on("init afterChange", function () {
+      setTimeout(function () {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
+        setTimelineSliderHeight();
+        setTimelineWrapperHeight();
+      }, 100);
+    });
+
+    // Also remove mobile height constraints after timeline slider slide changes
+    $(".timeline-slider").on("afterChange", function () {
+      setTimeout(function () {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
+      }, 50);
+    });
   });
 
   // Recalculate on window resize with debouncing
-  var centerSliderHeightResizeTimer;
+  var mobileHeightResizeTimer;
   var timelineSliderHeightResizeTimer;
   var timelineWrapperHeightResizeTimer;
   $(document).ready(function () {
     $(window).on("resize", function () {
-      clearTimeout(centerSliderHeightResizeTimer);
+      clearTimeout(mobileHeightResizeTimer);
       clearTimeout(timelineSliderHeightResizeTimer);
       clearTimeout(timelineWrapperHeightResizeTimer);
 
-      centerSliderHeightResizeTimer = setTimeout(function () {
-        setCenterSliderSlickSlideHeight();
+      mobileHeightResizeTimer = setTimeout(function () {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
       }, 250); // Debounce resize events
+
+      // Also remove mobile height constraints immediately on resize for mobile devices
+      if (isScreenSizeLessThan768()) {
+        removeMobileHeightConstraints();
+        fixMobileTimelineGap();
+      }
 
       timelineSliderHeightResizeTimer = setTimeout(function () {
         setTimelineSliderHeight();
@@ -1247,6 +1592,10 @@ import $ from "jquery";
     $(".timeline-nav").on("init", function() {
       setTimeout(function() {
         updateDynamicTimelineLine();
+        // Remove mobile height constraints after timeline navigation initialization
+        setTimeout(function() {
+          removeMobileHeightConstraints();
+        }, 100);
       }, 50);
     });
 
@@ -1254,6 +1603,10 @@ import $ from "jquery";
     $(".timeline-nav").on("afterChange", function() {
       setTimeout(function() {
         updateDynamicTimelineLine();
+        // Remove mobile height constraints after timeline nav slide change
+        setTimeout(function() {
+          removeMobileHeightConstraints();
+        }, 100);
       }, 0);
     });
 
@@ -1261,6 +1614,10 @@ import $ from "jquery";
     $(".timeline-nav").on("breakpoint", function() {
       setTimeout(function() {
         updateDynamicTimelineLine();
+        // Remove mobile height constraints after responsive breakpoint change
+        setTimeout(function() {
+          removeMobileHeightConstraints();
+        }, 100);
       }, 100);
     });
 
@@ -1268,6 +1625,10 @@ import $ from "jquery";
     $(".timeline-nav").on("reInit", function() {
       setTimeout(function() {
         updateDynamicTimelineLine();
+        // Remove mobile height constraints after timeline nav reinitialization
+        setTimeout(function() {
+          removeMobileHeightConstraints();
+        }, 100);
       }, 200);
     });
   }
@@ -1277,6 +1638,10 @@ import $ from "jquery";
     // Wait for timeline navigation to be initialized
     setTimeout(function() {
       initializeDynamicTimelineLine();
+      // Remove mobile height constraints after dynamic timeline line initialization
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     }, 1500);
   });
 
@@ -1286,6 +1651,10 @@ import $ from "jquery";
     clearTimeout(dynamicLineResizeTimer);
     dynamicLineResizeTimer = setTimeout(function() {
       updateDynamicTimelineLine();
+      // Remove mobile height constraints after dynamic timeline line resize update
+      setTimeout(function() {
+        removeMobileHeightConstraints();
+      }, 100);
     }, 250);
   });
 
@@ -1293,6 +1662,8 @@ import $ from "jquery";
   $(".timeline-slider").on("afterChange", function() {
     setTimeout(function() {
       updateDynamicTimelineLine();
+      // Remove mobile height constraints after dynamic timeline line update
+      removeMobileHeightConstraints();
     }, 100);
   });
 
