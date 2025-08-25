@@ -410,6 +410,7 @@ button.btn.btn-submit {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    overflow: hidden;
 
     input[type="file"] {
       display: none;
@@ -417,6 +418,16 @@ button.btn.btn-submit {
 
     .upload-placeholder {
       opacity: 0.4;
+      transition: opacity 0.2s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      max-width: calc(100% - 40px); // Leave space for the icon
+
+      &.has-file {
+        opacity: 1;
+        color: var(--black);
+      }
     }
 
     .upload-icon {

@@ -211,11 +211,22 @@
         const placeholder = document.getElementById('filePlaceholder');
 
         if (file) {
-          placeholder.textContent = file.name;
-          placeholder.setAttribute('aria-label', `Selected file: ${file.name}`);
+          const fullName = file.name;
+          let displayName = fullName;
+          // Trim after 20 characters
+          if (fullName.length > 20) {
+            displayName = fullName.substring(0, 20) + '...';
+          }
+          // Show trimmed name visually
+          placeholder.textContent = displayName;
+          placeholder.setAttribute('aria-label', `Selected file: ${fullName}`);
+          placeholder.classList.add('has-file');
+          // Force a reflow to ensure the text is properly displayed
+          placeholder.offsetHeight;
         } else {
           placeholder.textContent = 'Choose file';
           placeholder.setAttribute('aria-label', 'Choose file');
+          placeholder.classList.remove('has-file');
         }
       }
 
