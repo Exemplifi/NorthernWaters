@@ -43,7 +43,7 @@
             <form class="header__search-input-wrapper" role="search" aria-label="Site search">
               <input type="search" class="header__search-input" placeholder="Search" aria-label="Search site content"
                 id="headerSearchInput" autocomplete="off">
-              <button type="submit" class="header__search-submit-btn" aria-label="Submit search">
+              <button type="submit" class="header__search-submit-btn" aria-label="Submit search" aria-haspopup="dialog" >
                 <i data-lucide="search" class="header__search-input-icon" aria-hidden="true"></i>
               </button>
             </form>
@@ -559,8 +559,10 @@
           <!-- Right Side Actions -->
           <div class="header__actions">
             <!-- Search Button -->
-            <button type="button" class="header__search-btn" aria-label="Open search" aria-expanded="false"
-              aria-controls="searchPanel">
+            <button type="button" class="header__search-btn"  aria-expanded="false"  aria-label="Open search" 
+            aria-haspopup="dialog" 
+            aria-controls="searchPanel"
+              >
               <i data-lucide="search" aria-hidden="true"></i>
             </button>
 
