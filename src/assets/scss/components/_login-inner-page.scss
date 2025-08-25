@@ -102,6 +102,9 @@
   }
 }
 .container-table-inner-page {
+  h1 {
+    @extend .h2;
+    }
   .table-heading-wrap h2, .table-heading-wrap .h2 {
     font-size: rem.convert(56px);
     @include convert-percent(line-height , 56px, 110);
