@@ -215,9 +215,7 @@
           let displayName = fullName;
           // Trim after 20 characters
           if (fullName.length > 20) {
-            console.log('Full name length:', fullName.length);
             displayName = fullName.substring(0, 20) + '...';
-            console.log('Display name:', displayName);
           }
           // Show trimmed name visually
           placeholder.textContent = displayName;
@@ -225,8 +223,6 @@
           placeholder.classList.add('has-file');
           // Force a reflow to ensure the text is properly displayed
           placeholder.offsetHeight;
-          console.log('Placeholder text content after setting:', placeholder.textContent);
-          console.log('Placeholder innerHTML:', placeholder.innerHTML);
         } else {
           placeholder.textContent = 'Choose file';
           placeholder.setAttribute('aria-label', 'Choose file');
