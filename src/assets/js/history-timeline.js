@@ -495,6 +495,14 @@ import $ from "jquery";
         ],
       });
 
+      // Apply classes immediately after initialization
+      $slider.on('init', function() {
+        setTimeout(function() {
+          applyClassesToCenterSlider($slider);
+          removeMobileHeightConstraints();
+        }, 50);
+      });
+
       $slider.off('afterChange.centerFix').on('afterChange.centerFix', function () {
         addClassesToCenterSlider();
       });
@@ -512,6 +520,40 @@ import $ from "jquery";
       // Add debugging to verify independent sliders
       // console.log("Initialized independent slider:", sliderId);
     });
+  }
+
+  // Function to apply classes to a specific center slider
+  function applyClassesToCenterSlider($slider) {
+    if (!$slider.hasClass("slick-initialized")) {
+      return;
+    }
+
+    // Remove existing slick-current and slick-active classes from all slides
+    $slider.find(".slick-slide").removeClass("slick-current slick-active");
+
+    // Get the current slide index
+    try {
+      const currentIndex = $slider.slick('slickCurrentSlide');
+
+      // Add slick-current and slick-active to the current slide
+      const $currentSlide = $slider.find(".slick-slide:not(.slick-cloned)").eq(currentIndex);
+      if ($currentSlide.length > 0) {
+        $currentSlide.addClass("slick-current slick-active");
+      }
+
+      // Add slick-active to the next two slides if they exist
+      const $nextSlide = $slider.find(".slick-slide:not(.slick-cloned)").eq(currentIndex + 1);
+      const $nextNextSlide = $slider.find(".slick-slide:not(.slick-cloned)").eq(currentIndex + 2);
+
+      if ($nextSlide.length > 0) {
+        $nextSlide.addClass("slick-active");
+      }
+      if ($nextNextSlide.length > 0) {
+        $nextNextSlide.addClass("slick-active");
+      }
+    } catch (error) {
+      // Silently handle errors
+    }
   }
 
   // Function to initialize custom navigation for center sliders
@@ -635,6 +677,7 @@ import $ from "jquery";
 
   // Expose functions globally for testing
   window.initializeCenterSliderNavigation = initializeCenterSliderNavigation;
+  window.applyClassesToCenterSlider = applyClassesToCenterSlider;
 })();
 
 // Custom Tab Navigation - IIFE Pattern
@@ -872,60 +915,30 @@ import $ from "jquery";
 
   // Function to add classes to center slider slides
   function addClassesToCenterSlider() {
+    // Find the currently active slide in the timeline-slider
+    const $timelineCurrentSlide = $(".timeline-slider .slick-current");
 
-    // console.log('Adding classes to center slider slides...');
-
-    // Target the slide item with slick-slide slick-current slick-center classes
-    var $currentSlide = $('.slick-slide.slick-current.slick-center');
-
-    if ($currentSlide.length === 0) {
-      // console.log('No current slide found with slick-slide slick-current slick-center classes');
+    if ($timelineCurrentSlide.length === 0) {
       return;
     }
 
-    // console.log('Found current slide:', $currentSlide.attr('class'));
-
-    // Go inside and find element with center-slider slick-initialized slick-slider classes
-    var $centerSlider = $currentSlide.find('.center-slider.slick-initialized.slick-slider');
+    // Inside the active timeline-slide, find the center-slider
+    const $centerSlider = $timelineCurrentSlide.find(".center-slider");
 
     if ($centerSlider.length === 0) {
-      // console.log('No center slider found with center-slider slick-initialized slick-slider classes');
       return;
     }
 
-    // console.log('Found center slider, managing slide classes...');
-
-    // First, remove all slick-current and slick-active classes from all slides
-    $centerSlider.find('.slick-slide:not(.slick-cloned)').removeClass('slick-current slick-active');
-
-    // Get the current slide index from the center slider
-    var currentSlideIndex = $centerSlider.slick('slickCurrentSlide');
-    // console.log('Current slide index in center slider:', currentSlideIndex);
-
-    // Add slick-current and slick-active to the actual current slide
-    var $currentCenterSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex);
-    if ($currentCenterSlide.length > 0) {
-      $currentCenterSlide.addClass('slick-current slick-active');
-      // console.log('Added slick-current and slick-active to slide at index:', currentSlideIndex);
+    if (!$centerSlider.hasClass("slick-initialized")) {
+      return;
     }
 
-    // Add slick-active to the next two slides (if they exist)
-    var $nextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 1);
-    if ($nextSlide.length > 0) {
-      $nextSlide.addClass('slick-active');
-      // console.log('Added slick-active to next slide at index:', currentSlideIndex + 1);
+    // Apply classes to the center slider using the globally available function
+    if (typeof window.applyClassesToCenterSlider === 'function') {
+      window.applyClassesToCenterSlider($centerSlider);
+    } else {
+      // console.log('applyClassesToCenterSlider function not available');
     }
-
-    var $nextNextSlide = $centerSlider.find('.slick-slide:not(.slick-cloned)').eq(currentSlideIndex + 2);
-    if ($nextNextSlide.length > 0) {
-      $nextNextSlide.addClass('slick-active');
-      // console.log('Added slick-active to slide at index:', currentSlideIndex + 2);
-    }
-
-    // console.log('Center slider class management complete');
-
-
-
   }
 
   // Function to initialize center slider class management
@@ -1671,4 +1684,60 @@ import $ from "jquery";
   window.updateDynamicTimelineLine = updateDynamicTimelineLine;
   window.initializeDynamicTimelineLine = initializeDynamicTimelineLine;
 })();
+
+// Addition of classes to center slider in mobile.
+(function () {
+  "use strict";
+
+  /**
+   * Initializes the timeline slider and ensures the correct slide classes are applied
+   * when the page is loaded and when the user interacts with the slider buttons.
+   */
+  function initializeTimelineSlider() {
+    // Wait for the DOM to be fully loaded
+    $(document).ready(function() {
+      // Apply the classes when the page is initially loaded
+      // Wait for center sliders to be initialized first
+      setTimeout(function() {
+        if (typeof window.addClassesToCenterSlider === 'function') {
+          window.addClassesToCenterSlider();
+        }
+      }, 1000);
+
+      // Reapply classes after the next or previous buttons are clicked
+      $(".timeline-prev-btn, .timeline-next-btn").off("click.slideClasses").on("click.slideClasses", function() {
+        // Wait for the slide transition and center slider reinitialization to complete
+        setTimeout(function() {
+          if (typeof window.addClassesToCenterSlider === 'function') {
+            window.addClassesToCenterSlider();
+          }
+        }, 400);
+      });
+
+      // Update slide classes after a slide change in the timeline-slider
+      $(".timeline-slider").off("afterChange.slideClasses").on("afterChange.slideClasses", function() {
+        // Wait for center slider reinitialization to complete
+        setTimeout(function() {
+          if (typeof window.addClassesToCenterSlider === 'function') {
+            window.addClassesToCenterSlider();
+          }
+        }, 200);
+      });
+
+      // Also listen for the custom event when center sliders are reinitialized
+      $(document).off("centerSlidersInitialized.slideClasses").on("centerSlidersInitialized.slideClasses", function() {
+        setTimeout(function() {
+          if (typeof window.addClassesToCenterSlider === 'function') {
+            window.addClassesToCenterSlider();
+          }
+        }, 100);
+      });
+    });
+  }
+
+  // Initialize the timeline slider and apply the necessary classes on page load and user interaction
+  initializeTimelineSlider();
+})();
+
+
 
