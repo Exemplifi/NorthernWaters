@@ -205,11 +205,16 @@
     <script src="../../assets/dist/main.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
+    <div id="uploadWrapper" class="upload-wrapper">
+      <input type="file" id="logoFileInput" style="display:none" />
+      <span id="filePlaceholder">Choose file</span>
+    </div>
+    
     <script>
       function updateFileName(input) {
         const file = input.files[0];
         const placeholder = document.getElementById('filePlaceholder');
-
+    
         if (file) {
           const fullName = file.name;
           let displayName = fullName;
@@ -229,34 +234,40 @@
           placeholder.classList.remove('has-file');
         }
       }
-
-      // Add click support for the file input
-      document.addEventListener('DOMContentLoaded', function() {
+    
+      document.addEventListener('DOMContentLoaded', function () {
         const fileInput = document.getElementById('logoFileInput');
-        const uploadWrapper = fileInput ? fileInput.parentElement : null;
-
+        const uploadWrapper = document.getElementById('uploadWrapper');
+    
         if (fileInput && uploadWrapper) {
-          // Make the wrapper clickable for better UX
-          uploadWrapper.addEventListener('click', function(e) {
-            if (e.target !== fileInput) {
-              fileInput.click();
-            }
+          // Make wrapper clickable
+          uploadWrapper.addEventListener('click', function () {
+            // Reset the input value to allow selecting the same file again
+            fileInput.value = '';
+            fileInput.click();
           });
-
-          // Add keyboard support
-          uploadWrapper.addEventListener('keydown', function(e) {
+    
+          // Keyboard support
+          uploadWrapper.addEventListener('keydown', function (e) {
             if (e.key === 'Enter' || e.key === ' ') {
               e.preventDefault();
+              fileInput.value = '';
               fileInput.click();
             }
           });
-
-          // Make wrapper focusable
+    
+          // Focusable & ARIA
           uploadWrapper.setAttribute('tabindex', '0');
           uploadWrapper.setAttribute('role', 'button');
           uploadWrapper.setAttribute('aria-label', 'Click or press Enter to choose a logo file');
+    
+          // Call function whenever file changes
+          fileInput.addEventListener('change', function () {
+            updateFileName(fileInput);
+          });
         }
       });
     </script>
+    
   </body>
 </html>
