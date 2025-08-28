@@ -729,7 +729,7 @@ $orange: #ff9900;
 
       figure {
         margin: 0;
-
+        overflow: hidden;
         img {
           width: 100%;
           max-width: 100%;
@@ -748,7 +748,7 @@ $orange: #ff9900;
 
       &:hover img {
      opacity: 0.8;
-    //  transform: scale(1.1) !important;
+     transform: scale(1.1) !important;
       }
       &:hover .play-icon {
         //     -webkit-transform: scale(1.08);
