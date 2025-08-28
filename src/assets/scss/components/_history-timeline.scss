@@ -591,7 +591,7 @@ $orange: #ff9900;
       }
 
       &:focus-visible {
-        outline: 2px solid var(--outline-default);
+        outline: 2px solid var(--black);
         outline-offset: 2px;
         background: rgba($primary, 0.05);
         color: $primary;
@@ -655,7 +655,7 @@ $orange: #ff9900;
         opacity: 1;
         transition: all 0.3s ease;
         transform: scale(0.99);
-        outline: 2px solid var(--outline-default);
+        outline: 2px solid var(--black);
         transform-origin: center center;
       }
 
@@ -698,7 +698,24 @@ $orange: #ff9900;
     min-height: auto !important;
     max-height: none !important;
   }
-
+  figure {
+    margin: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: rem.convert(240px);
+      max-height: rem.convert(240px);
+      object-fit: cover;
+      object-position: center;
+  
+      transition: 0.4s ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
+    }
+  }
   .video-wrapper {
     position: relative;
     width: 320px;
@@ -857,3 +874,4 @@ body .timeline-buttons-wrap {
     max-height: none !important;
   }
 }
+
