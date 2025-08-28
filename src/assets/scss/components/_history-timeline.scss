@@ -698,7 +698,24 @@ $orange: #ff9900;
     min-height: auto !important;
     max-height: none !important;
   }
-
+  figure {
+    margin: 0;
+    overflow: hidden;
+    img {
+      width: 100%;
+      max-width: 100%;
+      height: rem.convert(240px);
+      max-height: rem.convert(240px);
+      object-fit: cover;
+      object-position: center;
+  
+      transition: 0.4s ease;
+      transition-duration: .15s;
+      transition-property: transform;
+      transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  
+    }
+  }
   .video-wrapper {
     position: relative;
     width: 320px;
@@ -857,3 +874,4 @@ body .timeline-buttons-wrap {
     max-height: none !important;
   }
 }
+
