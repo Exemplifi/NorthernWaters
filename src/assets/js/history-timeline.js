@@ -1741,3 +1741,61 @@ import $ from "jquery";
 
 
 
+"use strict";
+
+
+
+(function () {
+
+  // Wait until DOM is fully loaded
+  document.addEventListener('DOMContentLoaded', function () {
+    var videoCards = document.querySelectorAll('.video-wrapper');
+
+    for (var i = 0; i < videoCards.length; i++) {
+      (function (card) {
+        var video = card.querySelector('.video');
+        var poster = card.querySelector('.video-poster');
+
+        poster.addEventListener('click', function () {
+          // Pause all other videos
+          for (var j = 0; j < videoCards.length; j++) {
+            var otherCard = videoCards[j];
+            var otherVideo = otherCard.querySelector('.video');
+            var otherPoster = otherCard.querySelector('.video-poster');
+
+            if (otherVideo !== video) {
+              otherVideo.pause();
+              otherPoster.style.opacity = '1';
+              otherPoster.style.pointerEvents = 'auto';
+            }
+          }
+
+          // Play this video
+          poster.style.opacity = '0';
+          poster.style.pointerEvents = 'none';
+          video.play();
+        });
+
+        // When video is paused (but not ended), show poster
+        video.addEventListener('pause', function () {
+          if (!video.ended) {
+            poster.style.opacity = '1';
+            poster.style.pointerEvents = 'auto';
+          }
+        });
+
+        // When video ends, show poster
+        video.addEventListener('ended', function () {
+          poster.style.opacity = '1';
+          poster.style.pointerEvents = 'auto';
+        });
+      })(videoCards[i]);
+    }
+  });
+
+})();
+
+
+
+
+
