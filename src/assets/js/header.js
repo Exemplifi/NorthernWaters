@@ -2028,3 +2028,56 @@ const setupSearchKeyboardNavigation = () => {
 document.addEventListener('DOMContentLoaded', () => {
   setupSearchKeyboardNavigation();
 });
+
+
+// IIFE for focus trap issue fix.
+(function () {
+  const searchOverlay = document.querySelector('.search-overlay');
+  const searchOverlayContent = document.querySelector('.search-overlay-content');
+  const searchBtn = document.querySelector('.header__search-btn');
+
+  const trapFocusInsideOverlay = (e) => {
+    const focusableElements = searchOverlayContent.querySelectorAll('a, button, input, select, textarea');
+    const firstFocusable = focusableElements[0];
+    const lastFocusable = focusableElements[focusableElements.length - 1];
+
+    // When Tab key is pressed
+    if (e.key === 'Tab') {
+      if (e.shiftKey) { // Shift + Tab
+        if (document.activeElement === firstFocusable) {
+          e.preventDefault();
+          lastFocusable.focus();
+        }
+      } else { // Tab
+        if (document.activeElement === lastFocusable) {
+          e.preventDefault();
+          firstFocusable.focus();
+        }
+      }
+    }
+  };
+
+  const openSearchOverlay = () => {
+    searchOverlay.classList.add('show');
+    searchOverlay.focus();  // Set focus on the overlay to trap focus inside
+    document.addEventListener('keydown', trapFocusInsideOverlay);
+  };
+
+  const closeSearchOverlay = () => {
+    searchOverlay.classList.remove('show');
+    searchBtn.focus(); // Return focus to the button that opened the overlay
+    document.removeEventListener('keydown', trapFocusInsideOverlay);
+  };
+
+  // Open overlay on button click
+  searchBtn.addEventListener('click', openSearchOverlay);
+
+  // Close overlay when clicking outside the content
+  searchOverlay.addEventListener('click', (e) => {
+    if (e.target === searchOverlay) {
+      closeSearchOverlay();
+    }
+  });
+})();
+
+

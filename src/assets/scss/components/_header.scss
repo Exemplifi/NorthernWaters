@@ -140,14 +140,15 @@
     // Add a class for clicked/focused state that persists
     &.menu-clicked {
       .header__menu-link {
-        outline: 3px solid var(--green) !important;
+        // outline: 3px solid var(--green) !important;
+        outline: none;
         outline-offset: 2px !important;
         box-shadow: 0 0 0 1px var(--white) !important;
         color: rgba(var(--black-rgb), 0.8) !important;
         background-color: rgba(var(--green-rgb), 0.2);
         // Ensure the focus outline persists even during hover
         &:hover {
-          outline: 3px solid var(--green) !important;
+          outline: none;
           outline-offset: 2px !important;
           box-shadow: 0 0 0 1px var(--white) !important;
         }
@@ -189,7 +190,13 @@
       }
     }
 
-    &:hover,
+    &:hover {
+      outline: 3px solid var(--green) !important;
+      outline-offset: 2px;
+      box-shadow: 0 0 0 1px var(--white);
+      color: rgba(var(--black-rgb), 0.8) !important;
+      background-color: rgba(var(--green-rgb), 0.2);
+    }
     &:focus {
       @include media-breakpoint-down(lg){
         color: var(--black) !important;
@@ -209,19 +216,6 @@
     // Remove Bootstrap's default dropdown arrow
     &.dropdown-toggle::after {
       display: none;
-    }
-
-    // Add styles for when menu-clicked class is applied directly to the link
-    &.menu-clicked {
-      outline: 3px solid var(--green) !important;
-      outline-offset: 2px !important;
-      box-shadow: 0 0 0 1px var(--white) !important;
-      // Ensure the focus outline persists even during hover
-      &:hover {
-        outline: 3px solid var(--green) !important;
-        outline-offset: 2px !important;
-        box-shadow: 0 0 0 1px var(--white) !important;
-      }
     }
   }
 
