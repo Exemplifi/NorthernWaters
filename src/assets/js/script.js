@@ -427,7 +427,6 @@ $(document).ready(function() {
 
     // Listen to 'input' event for real-time feedback
     searchInput.addEventListener('input', function(e) {
-      console.log(e.currentTarget.value); // Logs the value as you type
 
       // Toggle 'show' class based on whether there's input
       if (searchInput.value) {
@@ -497,8 +496,8 @@ $(document).ready(function() {
       card.style.height = maxHeight + 'px';
       const cardLink = card.querySelector('a');
       const cardImg = card.querySelector('.card-img-wrapper');
-      console.log(cardImg.offsetHeight);
-      console.log(cardImg.clientHeight);
+      // console.log(cardImg.offsetHeight);
+      // console.log(cardImg.clientHeight);
       const cardBody = card.querySelector('.card-body');
       if (cardLink) {
         cardLink.style.height = maxHeight + 'px';
