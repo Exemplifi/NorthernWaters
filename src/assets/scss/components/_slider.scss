@@ -293,22 +293,40 @@
         }
       }
     }
+    &:focus-visible {
+      outline: 2px solid var(--black) !important;
+      outline-offset: 0px !important;
+      border: none !important;
+      border-color: transparent !important;
+    }
   }
   &:hover {
     @include media-breakpoint-up(md) {
       transform: scale(1.05);
-      // .card {
-      //   .link-wrap {
-      //     .card-cta {
-      //       .card-cta-icon {
-      //         background: var(--green);
-      //         svg path {
-      //           stroke: var(--white);
-      //         }
-      //       }
-      //     }
-      //   }
-      // }
+      .card {
+        outline: 2px solid var(--black) !important;
+        outline-offset: 0px !important;
+        border: none !important;
+        border-color: transparent !important;
+        // .link-wrap {
+        //   .card-cta {
+        //     .card-cta-icon {
+        //       background: var(--green);
+        //       svg path {
+        //         stroke: var(--white);
+        //       }
+        //     }
+        //   }
+        // }
+      }
+    }
+  }
+  &:focus-visible {
+    .card {
+      outline: 2px solid var(--black) !important;
+      outline-offset: 0px !important;
+      border: none !important;
+      border-color: transparent !important;
     }
   }
 }
