@@ -2070,14 +2070,19 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   // Open overlay on button click
-  searchBtn.addEventListener('click', openSearchOverlay);
+  if (searchBtn) {
+    searchBtn.addEventListener('click', openSearchOverlay);
+  }
+
 
   // Close overlay when clicking outside the content
-  searchOverlay.addEventListener('click', (e) => {
-    if (e.target === searchOverlay) {
-      closeSearchOverlay();
-    }
-  });
+  if(searchOverlay) {
+    searchOverlay.addEventListener('click', (e) => {
+      if (e.target === searchOverlay) {
+        closeSearchOverlay();
+      }
+    });
+  }
 })();
 
 
