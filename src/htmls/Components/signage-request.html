@@ -77,13 +77,21 @@
 
                 <div class="col-md-6">
                   <label for="logoFileInput">LOGO*</label>
-                  <div class="upload-wrapper">
-                    <span class="upload-placeholder" id="filePlaceholder" aria-label="Choose file">Choose file</span>
+                  <div
+                    id="uploadWrapper"
+                    class="upload-wrapper"
+                    role="button"
+                    tabindex="0"
+                    aria-label="Click or press Enter to choose a logo file"
+                  >
+                    <span
+                      class="upload-placeholder"
+                      id="filePlaceholder"
+                      aria-label="Choose file"
+                      >Choose file</span
+                    >
                     <span class="upload-icon" aria-hidden="true">
-                      <img
-                        src="../../assets/images/upload file.svg"
-                        alt=""
-                      />
+                      <img src="../../assets/images/upload file.svg" alt="" />
                     </span>
                     <input
                       type="file"
@@ -205,69 +213,72 @@
     <script src="../../assets/dist/main.min.js"></script>
     <script src="https://www.google.com/recaptcha/api.js"></script>
 
-    <div id="uploadWrapper" class="upload-wrapper">
+    <!-- <div id="uploadWrapper" class="upload-wrapper">
       <input type="file" id="logoFileInput" style="display:none" />
       <span id="filePlaceholder">Choose file</span>
-    </div>
-    
+    </div> -->
+
     <script>
       function updateFileName(input) {
         const file = input.files[0];
-        const placeholder = document.getElementById('filePlaceholder');
-    
+        const placeholder = document.getElementById("filePlaceholder");
+
         if (file) {
           const fullName = file.name;
           let displayName = fullName;
           // Trim after 20 characters
           if (fullName.length > 20) {
-            displayName = fullName.substring(0, 20) + '...';
+            displayName = fullName.substring(0, 20) + "...";
           }
           // Show trimmed name visually
           placeholder.textContent = displayName;
-          placeholder.setAttribute('aria-label', `Selected file: ${fullName}`);
-          placeholder.classList.add('has-file');
+          placeholder.setAttribute("aria-label", `Selected file: ${fullName}`);
+          placeholder.classList.add("has-file");
           // Force a reflow to ensure the text is properly displayed
           placeholder.offsetHeight;
         } else {
-          placeholder.textContent = 'Choose file';
-          placeholder.setAttribute('aria-label', 'Choose file');
-          placeholder.classList.remove('has-file');
+          placeholder.textContent = "Choose file";
+          placeholder.setAttribute("aria-label", "Choose file");
+          placeholder.classList.remove("has-file");
         }
       }
-    
-      document.addEventListener('DOMContentLoaded', function () {
-        const fileInput = document.getElementById('logoFileInput');
-        const uploadWrapper = document.getElementById('uploadWrapper');
-    
+
+      document.addEventListener("DOMContentLoaded", function () {
+        const fileInput = document.getElementById("logoFileInput");
+        const uploadWrapper = document.getElementById("uploadWrapper");
+
+        // file uploader all functionality
         if (fileInput && uploadWrapper) {
           // Make wrapper clickable
-          uploadWrapper.addEventListener('click', function () {
+          uploadWrapper.addEventListener("click", function () {
             // Reset the input value to allow selecting the same file again
-            fileInput.value = '';
+            fileInput.value = "";
             fileInput.click();
           });
-    
+
           // Keyboard support
-          uploadWrapper.addEventListener('keydown', function (e) {
-            if (e.key === 'Enter' || e.key === ' ') {
+          uploadWrapper.addEventListener("keydown", function (e) {
+            if (e.key === "Enter" || e.key === " ") {
               e.preventDefault();
-              fileInput.value = '';
+              fileInput.value = "";
               fileInput.click();
             }
           });
-    
+
           // Focusable & ARIA
-          uploadWrapper.setAttribute('tabindex', '0');
-          uploadWrapper.setAttribute('role', 'button');
-          uploadWrapper.setAttribute('aria-label', 'Click or press Enter to choose a logo file');
-    
+          uploadWrapper.setAttribute("tabindex", "0");
+          uploadWrapper.setAttribute("role", "button");
+          uploadWrapper.setAttribute(
+            "aria-label",
+            "Click or press Enter to choose a logo file"
+          );
+
           // Call function whenever file changes
-          fileInput.addEventListener('change', function () {
+          fileInput.addEventListener("change", function () {
             updateFileName(fileInput);
           });
         }
       });
     </script>
-    
   </body>
 </html>
