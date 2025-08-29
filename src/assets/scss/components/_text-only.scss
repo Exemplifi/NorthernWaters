@@ -1,0 +1,95 @@
+// Text Only - v1
+
+.text-only-container-v1-full {
+  .text-only-container {
+    padding: rem.convert(48px);
+    border-radius: rem.convert(16px);
+    @include media-breakpoint-down(md) {
+      padding: rem.convert(24px);
+    }
+    .text-only-content-v1-wrapper {
+      align-items: stretch;
+      .text-only-content-v1-left {
+        position: relative;
+        padding-right: rem.convert(48px);
+        @include media-breakpoint-down(lg) {
+          padding-right: rem.convert(12px) !important;
+          padding-left: rem.convert(12px) !important;
+        }
+        .text-only-content-v1-title {
+          margin-bottom: rem.convert(0px);
+          @include media-breakpoint-down(lg) {
+            margin-bottom: rem.convert(24px);
+            padding-bottom: rem.convert(16px);
+            border-bottom: 1px solid #ffffff99;
+          }
+        }
+        &::after {
+          content: "";
+          display: block;
+          width: rem.convert(1px);
+          height: 100%;
+          background-color: var(--white);
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          @include media-breakpoint-down(lg) {
+            content: none;
+          }
+        }
+      }
+      .text-only-content-v1-right {
+        align-self: center;
+        padding-left: rem.convert(48px);
+        @include media-breakpoint-down(lg) {
+          padding-right: rem.convert(12px) !important;
+          padding-left: rem.convert(12px) !important;
+        }
+        .text-only-content-v1-text {
+          p {
+          }
+        }
+        .text-only-content-v1-button-wrapper {
+          margin-top: rem.convert(24px);
+        }
+      }
+      &.bg-black {
+        background-color: var(--black);
+        color: var(--white);
+      }
+      &.bg-blue {
+        background-color: var(--blue);
+        color: var(--white);
+      }
+    }
+  }
+}
+
+.two-col-text {
+  padding-top: rem.convert(80px);
+  @include media-breakpoint-down(md) {
+    padding-top: rem.convert(56px);
+  }
+  .border-right {
+    @include media-breakpoint-up(md) {
+      border-right: 1px solid rgba(255, 255, 255, 0.6);
+    }
+    h2 {
+      @include media-breakpoint-down(md) {
+        border-right: none;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.6);
+        padding-bottom: rem.convert(16px);
+        margin-bottom: rem.convert(24px);
+      }
+    }
+  }
+  .content-wrap {
+    @include media-breakpoint-up(md) {
+      padding-left: rem.convert(48px);
+    }
+    .btn {
+      margin-top: rem.convert(24px);
+    }
+  }
+}

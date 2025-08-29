@@ -1,0 +1,163 @@
+// Type: SCSS Component
+body {
+  margin: 0;
+  font-family: var(--body-font-family);
+  font-optical-sizing: auto;
+  font-size: 1rem;
+  color: var(--black);
+  line-height: 1.5;
+  letter-spacing: 0;
+  font-weight: $regular;
+  overflow-x: hidden;
+}
+
+h1,
+.h1,
+h2,
+.h2,
+h3,
+.h3,
+h4,
+.h4,
+h5,
+.h5,
+h6,
+.h6 {
+  font-family: var(--heading-font-family);
+  font-weight: $bold;
+  margin-bottom: 1.5rem;
+  margin-top: 1.5rem;
+  @include media-breakpoint-down(md) {
+    margin-bottom: 1rem;
+    margin-top: 1rem;
+  }
+  &:first-child {
+    margin-top: 0;
+  }
+  &:not(:first-child):not(:last-child) {
+    margin-top: 1.5rem;
+  }
+}
+h1,
+.h1 {
+  font-size: 5rem;
+  line-height: 1.1em;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 2.75rem;
+  }
+}
+h2,
+.h2 {
+  font-size: 3.5rem;
+  line-height: 1.1em;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 2.5rem;
+  }
+}
+h3,
+.h3 {
+  font-size: 3rem;
+  line-height: 1.1em;
+  letter-spacing: -0.02em;
+  @include media-breakpoint-down(lg) {
+    font-size: 2rem;
+    letter-spacing: 0;
+  }
+}
+h4,
+.h4 {
+  font-size: 2rem;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.5rem;
+    line-height: 1.2em;
+  }
+}
+h5,
+.h5 {
+  font-size: 1.5rem;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.25rem;
+  }
+}
+h6,
+.h6 {
+  font-size: 1.25rem;
+  line-height: 1.5em;
+  letter-spacing: 0;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.125rem;
+  }
+}
+
+.body-lg,
+.body-regular,
+.body-regular-italic {
+  line-height: 1.5em;
+  font-weight: $regular;
+  letter-spacing: 0;
+}
+.body-lg {
+  font-size: 1.25rem;
+  @include media-breakpoint-down(lg) {
+    font-size: 1.125rem;
+  }
+}
+.body-regular,
+.body-regular-italic {
+  font-size: 1rem;
+}
+.body-regular-italic {
+  font-style: italic;
+}
+
+label,
+.label {
+  font-size: 0.875rem;
+  line-height: 1.5em;
+  font-weight: $semibold;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+button,
+.button {
+  font-size: 1rem;
+  line-height: 1.5em;
+  font-weight: $medium;
+  letter-spacing: 0;
+}
+
+p {
+  margin-bottom: 1rem;
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+main{
+  ul{
+    margin: 1rem 0;
+    list-style: none;
+    li{
+      margin-bottom: 1rem;
+      position: relative;
+      &::before{
+        content: '';
+      width: 0.5rem;
+      height: 0.5rem;
+      background: var(--black);
+      position: absolute;
+      left: -1.5rem;
+      top: 0.5rem;
+      border-radius: 50%;
+      }
+      &:last-child{
+        margin-bottom: 0;
+      }
+    }
+  }
+}

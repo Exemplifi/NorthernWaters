@@ -1,0 +1,224 @@
+.two-col-text-image-section {
+  padding-left: 0;
+  padding-right: 0;
+  .container-fluid {
+    > .row {
+      > div {
+        padding-left: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  .two-col-text-image-section_title {
+    max-width: rem.convert(900px);
+    text-align: center;
+    margin: 0 auto 0 auto;
+    @include media-breakpoint-down(lg) {
+      padding: 0 rem.convert(24px);
+    }
+  }
+  .two-col-text-image-image-wrap {
+    position: relative;
+    height: rem.convert(697px);
+    &::before {
+      content: "";
+      position: absolute;
+      top: -1px;
+      left: 0;
+      width: 100%;
+      height: calc(100% + 1px);
+      // background: linear-gradient(to bottom, #FFFEF6 0%, transparent 25%, transparent 75%, #FFFEF6 100%);
+      z-index: 1;
+      background: linear-gradient(
+          360deg,
+          rgba(255, 254, 246, 0) 70.23%,
+          #fffef6 97.27%
+        ),
+        linear-gradient(180deg, rgba(255, 254, 246, 0) 79.05%, #fffef6 100%);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  .two-col-text-image-container {
+    margin-top: -20%;
+    position: relative;
+    z-index: 2;
+    padding: 0 rem.convert(24px);
+    @include media-breakpoint-down(lg) {
+      padding: 0 rem.convert(24px);
+      margin-top: -50%;
+    }
+    .two-col-text-image-row {
+      --bs-gutter-x: 0;
+      --bs-gutter-y: 0;
+      border-radius: 1rem;
+      overflow: hidden;
+      background: var(--green);
+      color: var(--white);
+      > div:first-child {
+        background-color: var(--black);
+        color: var(--white);
+        border-radius: 1rem;
+        display: flex;
+        align-items: center;
+      }
+      .two-col-text-image-card {
+        padding: rem.convert(40px);
+        border-radius: 1rem;
+        @include media-breakpoint-down(lg) {
+          padding: rem.convert(24px);
+        }
+        @include media-breakpoint-down(sm) {
+        }
+        .two-col-text-image-card-title {
+          padding-bottom: rem.convert(16px);
+          margin-bottom: rem.convert(24px);
+          border-bottom: 1px solid #ffffff99;
+          span {
+            color: var(--light-green);
+          }
+        }
+        .two-col-text-image-card-counties-list {
+          margin-top: rem.convert(24px);
+          margin-bottom: 0;
+          padding-left: 0;
+          list-style: none;
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          @include media-breakpoint-down(lg) {
+            grid-template-columns: repeat(1, 1fr);
+          }
+          li {
+            display: flex;
+            align-items: center;
+            gap: rem.convert(8px);
+            margin-bottom: rem.convert(12px);
+            @include media-breakpoint-down(lg) {
+              margin-bottom: rem.convert(8px);
+            }
+            svg {
+              flex-shrink: 0;
+              width: rem.convert(24px);
+              height: rem.convert(24px);
+              padding: rem.convert(4px);
+            }
+            &::before {
+              content: none;
+            }
+            @include media-breakpoint-up(lg) {
+              &:nth-last-child(-n + 2) {
+                margin-bottom: 0;
+              }
+            }
+            &:last-child {
+              margin-bottom: 0;
+            }
+          }
+        }
+        .two-col-text-image__companies {
+          margin-top: rem.convert(40px);
+          display: flex;
+          align-items: center;
+          gap: rem.convert(24px);
+          @include media-breakpoint-down(lg) {
+            margin-top: rem.convert(24px);
+            flex-direction: column;
+          }
+          .two-col-text-image-company-details {
+            text-align: center;
+            .two-col-text-image-company-details-label {
+              margin-bottom: rem.convert(24px);
+              @include media-breakpoint-down(lg) {
+                margin-bottom: rem.convert(8px);
+              }
+            }
+            .two-col-text-image-company-details-value {
+              margin-bottom: rem.convert(8px);
+              margin-top: 0;
+            }
+            .two-col-text-image-company-details-desc {
+              margin-bottom: 0;
+              margin-top: 0;
+            }
+          }
+          .two-col-text-image-company-details-info {
+            padding: 0.5rem 0 0.5rem 1.5rem;
+            border-left: 1px solid #fffef699;
+            @include media-breakpoint-down(lg) {
+              padding: 1.5rem 0 0 0;
+              border-left: none;
+              border-top: 1px solid #fffef699;
+            }
+          }
+        }
+      }
+    }
+  }
+  &.home-page-component {
+    .two-col-text-image-section_title {
+      max-width: none;
+      margin-bottom: 0.5rem;
+      @include media-breakpoint-down(lg) {
+        margin-bottom: 0;
+      }
+    }
+    .two-col-text-image-image-wrap {
+      img {
+        object-position: bottom;
+        @include media-breakpoint-down(lg) {
+          object-position: center;
+        }
+      }
+    }
+    .two-col-text-image-container {
+      margin-top: -150px;
+      @include media-breakpoint-down(lg) {
+        margin-top: 0;
+      }
+      .two-col-text-image-row {
+        .two-col-text-image-card {
+          .two-col-text-image-card-title {
+            span {
+              display: block;
+            }
+            @include media-breakpoint-down(lg) {
+              margin-bottom: rem.convert(16px);
+            }
+          }
+          .two-col-text-image-card-title-green {
+            margin-bottom: rem.convert(24px);
+            @include media-breakpoint-down(lg) {
+              margin-bottom: rem.convert(16px);
+            }
+          }
+          .white-icon-lst {
+            li {
+              margin-bottom: rem.convert(12px);
+              &::before {
+                background: var(--white);
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+            }
+            &:last-of-type {
+              margin-bottom: 0;
+            }
+          }
+          a.btn {
+            margin-top: rem.convert(40px);
+            @include media-breakpoint-down(sm) {
+              width: 100%;
+            }
+            @include media-breakpoint-down(lg) {
+              margin-top: rem.convert(24px);
+            }
+          }
+        }
+      }
+    }
+  }
+}

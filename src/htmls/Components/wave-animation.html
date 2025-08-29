@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wave Animation</title>
+    <link rel="stylesheet" href="../../assets/dist/main.css">
+</head>
+<body>
+  <section class="wave-animation-section section-wrapper" aria-labelledby="wave-animation-heading">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <h2 class="wave-animation-title" id="wave-animation-heading">Securing Colorado's Water Future.</h2>
+          <div class="wave-animation-wrapper">
+            <div class="wave-animation-container">
+              <div class="wave wave-gradient" aria-hidden="true"></div>
+              <div class="wave wave-svg" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="content-wrapper">
+      <div class="container">
+        <div class="row">
+          <div class="col-12 col-lg-8">
+            <div class="stats-content">
+              <div class="stat-item">
+                <h4 class="stat-text">Serving <span class="stat-number">1 Million</span> Residents.</h4>
+              </div>
+              <div class="stat-item">
+                <h4 class="stat-text">Sustaining <span class="stat-number">600,000</span> Acres of Farmland.</h4>
+              </div>
+              <div class="stat-item">
+                <h4 class="stat-text">Delivering Reliability Through Innovation <span class="stat-number">Since 1937</span>.</h4>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-4">
+            <div class="work-content">
+              <div class="work-header">
+                <h4 class="work-title">Our Work</h4>
+              </div>
+              <div class="work-list">
+                <p class="work-item">Managing critical water infrastructure</p>
+                <p class="work-item">Balancing growth with sustainability</p>
+                <p class="work-item">Protecting watersheds for future generations</p>
+              </div>
+              <div class="cta-wrapper">
+                <button class="btn secondary-btn d-inline-flex align-items-center liquid-animation" 
+                  aria-label="Visit Our Campus - Opens in new window"
+                  data-button-type="secondary">
+                  <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                    <span class="btn-text">Visit Our Campus</span>
+                    <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                      <span class="circle-animation">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" role="img"
+                          aria-label="Right arrow">
+                          <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                          <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                            stroke-linejoin="round" />
+                        </svg>
+                      </span>
+                      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                        <defs>
+                          <filter id="goo-filter-wave-animation">
+                            <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                            <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                              result="goo" />
+                            <feBlend in="SourceGraphic" in2="goo" />
+                          </filter>
+                        </defs>
+                      </svg>
+                    </span>
+                  </div>
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  <script src="../../assets/dist/main.min.js"></script>
+</body>
+</html>

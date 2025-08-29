@@ -1,0 +1,1208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Home</title>
+  <link rel="stylesheet" href="../assets/dist/main.css">
+  <style>
+    #site-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  height: 100vh;
+  background: #b32b32;
+  z-index: 9999;
+}
+
+.loader-bg-icon {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 456px;
+  height: 100%;
+  z-index: 1;
+  /* @media (min-width: 1920px) {
+    scale: 1.2;
+  } */
+}
+
+.loader-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+}
+
+.loader-text {
+  color: #fff;
+  font-size: 3.5rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  margin-bottom: 38px;
+  text-align: center;
+  margin-top: 248px;
+  @media (max-width: 768px) {
+    margin-top: 116px;
+  }
+}
+
+.loader-bar-wrapper {
+  width: 100vw;
+  max-width: 100%;
+  height: 8px;
+  background: #E31B23;
+  margin-bottom: 30px;
+  position: relative;
+  overflow: visible;
+}
+
+.loader-bar {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.loader-bar-fill {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 90px;
+  background: #fff;
+  z-index: 1;
+  transition: width 0.2s linear;
+}
+
+.loader-train {
+  position: absolute;
+  top: -37px;
+  left: 0;
+  transition: left 0.2s linear;
+  z-index: 3;
+}
+
+.loader-percent {
+  font-size: 14rem;
+  font-weight: 900;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: rgba(0, 0, 0, 0);
+  text-transform: uppercase;
+  letter-spacing: -0.03em;
+  line-height: .9;
+  position: relative;
+  -webkit-text-stroke: 3px #E31B23;
+  text-stroke: 3px #E31B23;
+  position: relative;
+
+  &::after {
+    content: "";
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 0;
+    background: linear-gradient(to bottom, rgba(227, 27, 35, 0) 0%, #b32b32 100%);
+  }
+
+  @media (max-width: 767px) {
+    font-size: 7rem;
+  }
+}
+#site-loader.hide {
+  opacity: 0;
+  pointer-events: none;
+}
+  </style>
+
+</head>
+
+<body>
+  <div class="loader-container" id="site-loader">
+    <div class="loader-bg-icon">
+      <svg width="463" height="218" viewBox="0 0 463 218" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <mask id="path-1-outside-1_7433_16397" maskUnits="userSpaceOnUse" x="0" y="-245" width="463" height="463" fill="black">
+        <rect fill="white" y="-245" width="463" height="463"/>
+        <path d="M359.032 -236.981C357.767 -239.73 354.231 -242 351.176 -242H181.955C178.899 -242 176.455 -239.512 176.455 -236.457V-152.61C176.455 -149.555 174.709 -148.856 172.527 -150.995L159.171 -164.351C157.032 -166.49 153.496 -166.49 151.358 -164.351L126.435 -139.385C124.296 -137.246 124.296 -133.711 126.435 -131.572L218.095 -39.9122C220.233 -37.7735 221.979 -38.4719 221.979 -41.5272V-190.976C221.979 -194.031 224.467 -196.519 227.479 -196.519H234.724C237.78 -196.519 240.224 -194.031 240.224 -190.976V-28.6512C240.224 -25.5958 242.712 -23.1516 245.724 -23.1516H279.769C282.824 -23.1516 285.268 -25.6395 285.268 -28.6512V-191.107C285.268 -194.162 287.756 -196.65 290.768 -196.65H298.101C301.156 -196.65 303.6 -194.162 303.6 -191.107V-28.6948C303.6 -25.6395 306.088 -23.1952 309.1 -23.1952H343.232C346.287 -23.1952 348.732 -25.6832 348.732 -28.6948V-58.6806C348.732 -61.736 351.22 -64.1802 354.231 -64.1802H385.134C388.189 -64.1802 391.681 -61.9106 392.903 -59.1608L406.739 -28.3893C408.005 -25.6395 411.497 -23.3698 414.508 -23.3698H452.263C455.319 -23.3698 456.759 -25.6395 455.45 -28.3893L358.814 -236.981H359.032ZM353.795 -102.11C350.739 -102.11 348.295 -104.598 348.295 -107.653V-153.046C348.295 -156.102 349.343 -156.32 350.608 -153.57L371.865 -107.173C373.131 -104.423 371.69 -102.154 368.635 -102.154H353.795V-102.11ZM203.473 -4.77603C206.528 -4.77603 207.227 -3.03011 205.088 -0.891373L113.428 90.7683C111.289 92.907 107.754 92.907 105.615 90.7683L80.6925 65.8456C78.5538 63.7068 78.5538 60.1714 80.6925 58.0327L94.0486 44.6765C96.1873 42.5378 95.489 40.7483 92.4337 40.7483H8.58688C5.53156 40.7483 3.04365 38.2604 3.04365 35.2487V0.767212C3.04365 -2.2881 5.53156 -4.73238 8.58688 -4.73238H203.516L203.473 -4.77603ZM8.54323 -23.0643C5.48791 -23.0643 3 -25.5522 3 -28.5639V-63.0454C3 -66.1007 5.48791 -68.545 8.54323 -68.545H92.39C95.4454 -68.545 96.1437 -70.2908 94.005 -72.4732L80.6488 -85.873C78.5101 -88.0117 78.5101 -91.5472 80.6488 -93.6859L105.572 -118.609C107.71 -120.747 111.246 -120.747 113.384 -118.609L205.044 -26.9489C207.183 -24.8102 206.485 -23.0643 203.429 -23.0643H8.54323ZM240.268 13.7305C240.268 10.6752 242.014 9.97682 244.152 12.1156L335.812 103.775C337.951 105.914 337.951 109.449 335.812 111.588L310.889 136.554C308.751 138.693 305.215 138.693 303.076 136.554L289.677 123.198C287.538 121.06 285.792 121.802 285.792 124.813V208.66C285.792 211.715 283.304 214.16 280.249 214.16H245.767C242.712 214.16 240.224 211.672 240.224 208.66V13.7305H240.268ZM221.979 208.66C221.979 211.715 219.491 214.16 216.436 214.16H181.955C178.899 214.16 176.455 211.672 176.455 208.66V124.813C176.455 121.758 174.709 121.06 172.527 123.198L159.171 136.554C157.032 138.693 153.496 138.693 151.358 136.554L126.391 111.588C124.253 109.449 124.253 105.914 126.391 103.775L218.051 12.1156C220.19 9.97682 221.936 10.6752 221.936 13.7305V208.66H221.979ZM453.66 -4.73238C456.715 -4.73238 459.203 -2.24446 459.203 0.767212V35.2487C459.203 38.304 456.715 40.7483 453.66 40.7483H369.813C366.758 40.7483 366.06 42.4942 368.198 44.6765L381.555 58.0763C383.693 60.2151 383.693 63.7505 381.555 65.8892L356.632 90.8119C354.493 92.9507 350.958 92.9507 348.819 90.8119L257.159 -0.847748C255.021 -2.98648 255.719 -4.73238 258.774 -4.73238H453.704H453.66Z"/>
+        </mask>
+        <path d="M359.032 -236.981C357.767 -239.73 354.231 -242 351.176 -242H181.955C178.899 -242 176.455 -239.512 176.455 -236.457V-152.61C176.455 -149.555 174.709 -148.856 172.527 -150.995L159.171 -164.351C157.032 -166.49 153.496 -166.49 151.358 -164.351L126.435 -139.385C124.296 -137.246 124.296 -133.711 126.435 -131.572L218.095 -39.9122C220.233 -37.7735 221.979 -38.4719 221.979 -41.5272V-190.976C221.979 -194.031 224.467 -196.519 227.479 -196.519H234.724C237.78 -196.519 240.224 -194.031 240.224 -190.976V-28.6512C240.224 -25.5958 242.712 -23.1516 245.724 -23.1516H279.769C282.824 -23.1516 285.268 -25.6395 285.268 -28.6512V-191.107C285.268 -194.162 287.756 -196.65 290.768 -196.65H298.101C301.156 -196.65 303.6 -194.162 303.6 -191.107V-28.6948C303.6 -25.6395 306.088 -23.1952 309.1 -23.1952H343.232C346.287 -23.1952 348.732 -25.6832 348.732 -28.6948V-58.6806C348.732 -61.736 351.22 -64.1802 354.231 -64.1802H385.134C388.189 -64.1802 391.681 -61.9106 392.903 -59.1608L406.739 -28.3893C408.005 -25.6395 411.497 -23.3698 414.508 -23.3698H452.263C455.319 -23.3698 456.759 -25.6395 455.45 -28.3893L358.814 -236.981H359.032ZM353.795 -102.11C350.739 -102.11 348.295 -104.598 348.295 -107.653V-153.046C348.295 -156.102 349.343 -156.32 350.608 -153.57L371.865 -107.173C373.131 -104.423 371.69 -102.154 368.635 -102.154H353.795V-102.11ZM203.473 -4.77603C206.528 -4.77603 207.227 -3.03011 205.088 -0.891373L113.428 90.7683C111.289 92.907 107.754 92.907 105.615 90.7683L80.6925 65.8456C78.5538 63.7068 78.5538 60.1714 80.6925 58.0327L94.0486 44.6765C96.1873 42.5378 95.489 40.7483 92.4337 40.7483H8.58688C5.53156 40.7483 3.04365 38.2604 3.04365 35.2487V0.767212C3.04365 -2.2881 5.53156 -4.73238 8.58688 -4.73238H203.516L203.473 -4.77603ZM8.54323 -23.0643C5.48791 -23.0643 3 -25.5522 3 -28.5639V-63.0454C3 -66.1007 5.48791 -68.545 8.54323 -68.545H92.39C95.4454 -68.545 96.1437 -70.2908 94.005 -72.4732L80.6488 -85.873C78.5101 -88.0117 78.5101 -91.5472 80.6488 -93.6859L105.572 -118.609C107.71 -120.747 111.246 -120.747 113.384 -118.609L205.044 -26.9489C207.183 -24.8102 206.485 -23.0643 203.429 -23.0643H8.54323ZM240.268 13.7305C240.268 10.6752 242.014 9.97682 244.152 12.1156L335.812 103.775C337.951 105.914 337.951 109.449 335.812 111.588L310.889 136.554C308.751 138.693 305.215 138.693 303.076 136.554L289.677 123.198C287.538 121.06 285.792 121.802 285.792 124.813V208.66C285.792 211.715 283.304 214.16 280.249 214.16H245.767C242.712 214.16 240.224 211.672 240.224 208.66V13.7305H240.268ZM221.979 208.66C221.979 211.715 219.491 214.16 216.436 214.16H181.955C178.899 214.16 176.455 211.672 176.455 208.66V124.813C176.455 121.758 174.709 121.06 172.527 123.198L159.171 136.554C157.032 138.693 153.496 138.693 151.358 136.554L126.391 111.588C124.253 109.449 124.253 105.914 126.391 103.775L218.051 12.1156C220.19 9.97682 221.936 10.6752 221.936 13.7305V208.66H221.979ZM453.66 -4.73238C456.715 -4.73238 459.203 -2.24446 459.203 0.767212V35.2487C459.203 38.304 456.715 40.7483 453.66 40.7483H369.813C366.758 40.7483 366.06 42.4942 368.198 44.6765L381.555 58.0763C383.693 60.2151 383.693 63.7505 381.555 65.8892L356.632 90.8119C354.493 92.9507 350.958 92.9507 348.819 90.8119L257.159 -0.847748C255.021 -2.98648 255.719 -4.73238 258.774 -4.73238H453.704H453.66Z" stroke="url(#paint0_linear_7433_16397)" stroke-width="6" mask="url(#path-1-outside-1_7433_16397)"/>
+        <defs>
+        <linearGradient id="paint0_linear_7433_16397" x1="231.102" y1="-56.5" x2="231.102" y2="214.16" gradientUnits="userSpaceOnUse">
+        <stop stop-color="#E31B23" stop-opacity="0"/>
+        <stop offset="1" stop-color="#E31B23"/>
+        </linearGradient>
+        </defs>
+        </svg>
+
+    </div>
+    <div class="loader-content">
+      <div class="loader-text">LOADING</div>
+      <div class="loader-bar-wrapper">
+        <div class="loader-bar">
+          <div class="loader-bar-fill"></div>
+          <div class="loader-train">
+            <!-- Inline SVG for train icon -->
+            <svg width="91" height="42" viewBox="0 0 91 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M87.3501 16.05L84.9401 13.29L80.5401 8.29C78.2656 5.68616 75.4603 3.59921 72.3125 2.16934C69.1647 0.739466 65.7474 -0.000207931 62.2901 4.38452e-08H12.9001C9.49682 0.00251264 6.23223 1.34872 3.81643 3.7458C1.40063 6.14287 0.0290532 9.39688 5.67249e-05 12.8V20.8C-0.00938312 23.9873 1.15967 27.0656 3.28249 29.4432C5.4053 31.8207 8.33203 33.3297 11.5001 33.68C11.6967 34.55 12.11 35.3561 12.7017 36.0235C13.2935 36.6909 14.0443 37.1978 14.8845 37.4971C15.7247 37.7965 16.6269 37.8785 17.5073 37.7357C18.3877 37.5928 19.2177 37.2297 19.9201 36.68C20.8499 37.4058 21.9955 37.8 23.1751 37.8C24.3546 37.8 25.5003 37.4058 26.4301 36.68C27.3592 37.4034 28.5025 37.7974 29.6801 37.8C30.8586 37.8035 32.0039 37.4089 32.9301 36.68C33.8562 37.4089 35.0015 37.8035 36.1801 37.8C37.3576 37.7974 38.5009 37.4034 39.4301 36.68C40.3593 37.4103 41.5082 37.805 42.6901 37.8C43.8688 37.7945 45.0122 37.397 45.9401 36.67C46.8679 37.397 48.0113 37.7945 49.1901 37.8C50.3686 37.8035 51.5139 37.4089 52.4401 36.68C53.3662 37.4089 54.5115 37.8035 55.6901 37.8C56.8676 37.7974 58.0109 37.4034 58.9401 36.68C59.8693 37.4103 61.0182 37.805 62.2001 37.8C63.3788 37.7945 64.5222 37.397 65.4501 36.67C66.3779 37.397 67.5213 37.7945 68.7001 37.8C69.8932 37.8198 71.0574 37.4317 72.0001 36.7C72.7025 37.2497 73.5324 37.6128 74.4128 37.7557C75.2932 37.8985 76.1954 37.8165 77.0356 37.5171C77.8758 37.2178 78.6267 36.7108 79.2184 36.0435C79.8101 35.3761 80.2235 34.57 80.4201 33.7C82.3719 33.5097 84.2335 32.7852 85.8005 31.6061C87.3675 30.4269 88.5792 28.8387 89.3026 27.0159C90.0259 25.1931 90.2329 23.2062 89.9008 21.2734C89.5687 19.3407 88.7104 17.5368 87.4201 16.06L87.3501 16.05ZM83.5701 15.58H66.7201V10.22H78.8901L83.5701 15.58ZM18.9001 34.14C18.6451 34.493 18.3101 34.7804 17.9224 34.9786C17.5347 35.1768 17.1055 35.2801 16.6701 35.28C16.1642 35.2805 15.6677 35.1429 15.2342 34.8821C14.8007 34.6213 14.4466 34.2472 14.2101 33.8H19.3201C19.1575 33.8822 19.0143 33.9981 18.9001 34.14ZM25.4001 34.14C25.1463 34.4931 24.8122 34.7807 24.4253 34.9791C24.0384 35.1775 23.6098 35.2809 23.1751 35.2809C22.7403 35.2809 22.3117 35.1775 21.9248 34.9791C21.5379 34.7807 21.2038 34.4931 20.9501 34.14C20.8409 33.9919 20.701 33.8691 20.5401 33.78H25.8201C25.6555 33.868 25.5121 33.9908 25.4001 34.14ZM31.9001 34.14C31.6452 34.4931 31.3102 34.7807 30.9225 34.979C30.5348 35.1774 30.1055 35.2808 29.6701 35.2808C29.2346 35.2808 28.8053 35.1774 28.4176 34.979C28.0299 34.7807 27.6949 34.4931 27.4401 34.14C27.3201 33.9958 27.1699 33.8797 27.0001 33.8H32.2801C32.1351 33.8873 32.0093 34.003 31.9101 34.14H31.9001ZM38.4001 34.14C38.1463 34.4931 37.8122 34.7807 37.4253 34.9791C37.0384 35.1775 36.6099 35.2809 36.1751 35.2809C35.7403 35.2809 35.3117 35.1775 34.9248 34.9791C34.5379 34.7807 34.2038 34.4931 33.9501 34.14C33.8409 33.9919 33.701 33.8691 33.5401 33.78H38.8201C38.6591 33.8691 38.5193 33.9919 38.4101 34.14H38.4001ZM44.9001 34.14C44.6463 34.4931 44.3122 34.7807 43.9253 34.9791C43.5384 35.1775 43.1099 35.2809 42.6751 35.2809C42.2403 35.2809 41.8117 35.1775 41.4248 34.9791C41.0379 34.7807 40.7038 34.4931 40.4501 34.14C40.3272 33.9946 40.1735 33.8785 40.0001 33.8H45.2801C45.1355 33.8878 45.0097 34.0033 44.9101 34.14H44.9001ZM51.4001 34.14C51.1463 34.4931 50.8122 34.7807 50.4253 34.9791C50.0384 35.1775 49.6099 35.2809 49.1751 35.2809C48.7403 35.2809 48.3117 35.1775 47.9248 34.9791C47.5379 34.7807 47.2038 34.4931 46.9501 34.14C46.8409 33.9919 46.701 33.8691 46.5401 33.78H51.8201C51.6627 33.8703 51.5264 33.993 51.4201 34.14H51.4001ZM57.9001 34.14C57.6452 34.4931 57.3102 34.7807 56.9225 34.979C56.5348 35.1774 56.1055 35.2808 55.6701 35.2808C55.2346 35.2808 54.8053 35.1774 54.4176 34.979C54.0299 34.7807 53.6949 34.4931 53.4401 34.14C53.3313 33.9915 53.1914 33.8686 53.0301 33.78H58.3101C58.1563 33.8714 58.0235 33.9941 57.9201 34.14H57.9001ZM64.4001 34.14C64.1463 34.4931 63.8122 34.7807 63.4253 34.9791C63.0384 35.1775 62.6099 35.2809 62.1751 35.2809C61.7403 35.2809 61.3117 35.1775 60.9248 34.9791C60.5379 34.7807 60.2038 34.4931 59.9501 34.14C59.8409 33.9919 59.701 33.8691 59.5401 33.78H64.8201C64.6627 33.8703 64.5264 33.993 64.4201 34.14H64.4001ZM70.9001 34.14C70.6463 34.4931 70.3122 34.7807 69.9253 34.9791C69.5384 35.1775 69.1098 35.2809 68.6751 35.2809C68.2403 35.2809 67.8117 35.1775 67.4248 34.9791C67.0379 34.7807 66.7038 34.4931 66.4501 34.14C66.3408 33.9919 66.201 33.8691 66.0401 33.78H71.3201C71.1663 33.8714 71.0335 33.9941 70.9301 34.14H70.9001ZM75.1801 35.28C74.7531 35.2723 74.3339 35.1652 73.9555 34.9674C73.5771 34.7695 73.25 34.4862 73.0001 34.14C72.8908 33.9919 72.751 33.8691 72.59 33.78H77.7001C77.4631 34.237 77.1039 34.6192 76.6625 34.884C76.2211 35.1489 75.7148 35.2859 75.2001 35.28H75.1801ZM86.6901 26.44C86.0541 27.8624 85.0195 29.0699 83.7115 29.9165C82.4035 30.763 80.8781 31.2123 79.3201 31.21C79.2635 31.206 79.2066 31.206 79.1501 31.21H78.8701H12.8701C10.175 31.209 7.58731 30.1538 5.66006 28.27H73.3201C73.4868 28.27 73.652 28.2371 73.8061 28.1733C73.9601 28.1095 74.1002 28.016 74.2181 27.898C74.336 27.7801 74.4296 27.6401 74.4934 27.486C74.5572 27.3319 74.59 27.1668 74.59 27C74.59 26.8332 74.5572 26.6681 74.4934 26.514C74.4296 26.3599 74.336 26.2199 74.2181 26.102C74.1002 25.984 73.9601 25.8905 73.8061 25.8267C73.652 25.7628 73.4868 25.73 73.3201 25.73H3.77006C2.96246 24.2302 2.53982 22.5534 2.54006 20.85V12.8C2.55327 10.0601 3.65027 7.43679 5.59144 5.50313C7.5326 3.56946 10.1601 2.48261 12.9001 2.48H62.2701C67.4327 2.48245 72.4251 4.32625 76.3501 7.68H65.4501C65.2833 7.68 65.1181 7.71285 64.964 7.77667C64.81 7.8405 64.67 7.93404 64.552 8.05198C64.4341 8.16991 64.3405 8.30991 64.2767 8.46399C64.2129 8.61808 64.1801 8.78322 64.1801 8.95V16.85C64.1801 17.1868 64.3139 17.5099 64.552 17.748C64.7902 17.9862 65.1132 18.12 65.4501 18.12H85.7301C86.6484 19.2817 87.2262 20.6756 87.3992 22.1463C87.5723 23.617 87.3337 25.1069 86.7101 26.45L86.6901 26.44Z" fill="white"/>
+              <path d="M18.2701 7.67993H10.3701C10.2033 7.67993 10.0382 7.71278 9.88409 7.7766C9.73001 7.84043 9.59 7.93398 9.47207 8.05191C9.35414 8.16984 9.26059 8.30984 9.19677 8.46392C9.13295 8.61801 9.1001 8.78315 9.1001 8.94993V16.8499C9.1001 17.1868 9.2339 17.5098 9.47207 17.748C9.71024 17.9861 10.0333 18.1199 10.3701 18.1199H18.2701C18.6069 18.1199 18.93 17.9861 19.1681 17.748C19.4063 17.5098 19.5401 17.1868 19.5401 16.8499V8.94993C19.5401 8.78315 19.5072 8.61801 19.4434 8.46392C19.3796 8.30984 19.2861 8.16984 19.1681 8.05191C19.0502 7.93398 18.9102 7.84043 18.7561 7.7766C18.602 7.71278 18.4369 7.67993 18.2701 7.67993ZM17.0001 15.5799H11.6401V10.2199H17.0001V15.5799Z" fill="white"/>
+              <path d="M32.0001 7.67993H24.1001C23.9333 7.67993 23.7682 7.71278 23.6141 7.7766C23.46 7.84043 23.32 7.93398 23.2021 8.05191C23.0841 8.16984 22.9906 8.30984 22.9268 8.46392C22.8629 8.61801 22.8301 8.78315 22.8301 8.94993V16.8499C22.8301 17.1868 22.9639 17.5098 23.2021 17.748C23.4402 17.9861 23.7633 18.1199 24.1001 18.1199H32.0001C32.3369 18.1199 32.6599 17.9861 32.8981 17.748C33.1363 17.5098 33.2701 17.1868 33.2701 16.8499V8.94993C33.2701 8.78315 33.2372 8.61801 33.1734 8.46392C33.1096 8.30984 33.016 8.16984 32.8981 8.05191C32.7802 7.93398 32.6402 7.84043 32.4861 7.7766C32.332 7.71278 32.1669 7.67993 32.0001 7.67993ZM30.7301 15.5799H25.4101V10.2199H30.7701L30.7301 15.5799Z" fill="white"/>
+              <path d="M45.8101 7.67993H37.9101C37.7434 7.67993 37.5782 7.71278 37.4241 7.7766C37.27 7.84043 37.13 7.93398 37.0121 8.05191C36.8942 8.16984 36.8006 8.30984 36.7368 8.46392C36.673 8.61801 36.6401 8.78315 36.6401 8.94993V16.8499C36.6401 17.1868 36.7739 17.5098 37.0121 17.748C37.2503 17.9861 37.5733 18.1199 37.9101 18.1199H45.8101C46.147 18.1199 46.47 17.9861 46.7082 17.748C46.9463 17.5098 47.0801 17.1868 47.0801 16.8499V8.94993C47.0801 8.78315 47.0473 8.61801 46.9835 8.46392C46.9196 8.30984 46.8261 8.16984 46.7082 8.05191C46.5902 7.93398 46.4502 7.84043 46.2961 7.7766C46.1421 7.71278 45.9769 7.67993 45.8101 7.67993ZM44.5401 15.5799H39.1801V10.2199H44.5401V15.5799Z" fill="white"/>
+              <path d="M59.58 7.67993H51.68C51.5133 7.67993 51.3481 7.71278 51.194 7.7766C51.0399 7.84043 50.8999 7.93398 50.782 8.05191C50.6641 8.16984 50.5705 8.30984 50.5067 8.46392C50.4429 8.61801 50.41 8.78315 50.41 8.94993V16.8499C50.41 17.1868 50.5438 17.5098 50.782 17.748C51.0202 17.9861 51.3432 18.1199 51.68 18.1199H59.58C59.9169 18.1199 60.2399 17.9861 60.4781 17.748C60.7162 17.5098 60.85 17.1868 60.85 16.8499V8.94993C60.85 8.78315 60.8172 8.61801 60.7534 8.46392C60.6895 8.30984 60.596 8.16984 60.4781 8.05191C60.3601 7.93398 60.2201 7.84043 60.066 7.7766C59.912 7.71278 59.7468 7.67993 59.58 7.67993ZM58.31 15.5799H52.95V10.2199H58.31V15.5799Z" fill="white"/>
+              </svg>
+
+          </div>
+        </div>
+      </div>
+      <div class="loader-percent" id="loader-percent">0%</div>
+    </div>
+  </div>
+  <!-- Skip to main content link -->
+  <a href="#main-content" class="skip-link visually-hidden-focusable">Skip to main content</a>
+
+  <!-- Header Component starts here -->
+  <header class="header container-fluid" role="banner">
+    <nav class="navbar navbar-expand-lg row mx-0 container" aria-label="Main navigation">
+      <div class="col-12 d-flex justify-content-between align-items-center">
+        <!-- Logo -->
+        <a href="/" class="header__logo" aria-label="Northern Water Home">
+          <img src="../assets/images/northern-water-colorful-logo.svg" alt="Northern Water Logo" width="149"
+            height="56" />
+        </a>
+
+        <!-- Mobile Toggle Button -->
+        <button class="navbar-toggler header__toggle" type="button" data-bs-toggle="collapse"
+          data-bs-target="#headerNavigation" aria-controls="headerNavigation" aria-expanded="false"
+          aria-label="Toggle navigation menu">
+          <span class="navbar-toggler-icon" aria-hidden="true"></span>
+          <span class="navbar-toggler-label">Menu</span>
+        </button>
+
+        <!-- Navigation -->
+        <div class="collapse navbar-collapse header__navigation" id="headerNavigation">
+          <ul class="navbar-nav header__menu" role="menubar" aria-label="Main Menu">
+            <!-- Water Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="waterSubmenu">
+                Water
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="waterSubmenu" role="menu" aria-label="Water submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Environment Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="environmentSubmenu">
+                Environment
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="environmentSubmenu" role="menu"
+                aria-label="Environment submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- Data Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="dataSubmenu">
+                Data
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="dataSubmenu" role="menu" aria-label="Data submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- About Dropdown -->
+            <li class="nav-item dropdown header__menu-item" role="none">
+              <a class="nav-link dropdown-toggle header__menu-link" href="#" role="menuitem" aria-haspopup="true"
+                data-bs-toggle="dropdown" aria-expanded="false" aria-controls="aboutSubmenu">
+                About
+                <i data-lucide="chevron-down" class="header__menu-icon" aria-hidden="true"></i>
+              </a>
+              <ul class="dropdown-menu header__submenu" id="aboutSubmenu" role="menu" aria-label="About submenu">
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 1</a>
+                </li>
+                <li role="none">
+                  <a class="dropdown-item header__submenu-link" href="#" role="menuitem">Submenu Item 2</a>
+                </li>
+              </ul>
+            </li>
+
+            <!-- News Link -->
+            <li class="nav-item header__menu-item" role="none">
+              <a class="nav-link header__menu-link" href="#" role="menuitem">News</a>
+            </li>
+          </ul>
+
+          <!-- Right Side Actions -->
+          <div class="header__actions">
+            <!-- Search Button -->
+            <button type="button" class="header__search-btn" aria-label="Open search" aria-expanded="false"
+              aria-controls="searchPanel">
+              <i data-lucide="search" aria-hidden="true"></i>
+            </button>
+
+            <!-- Login Button -->
+            <!-- Primary Button without icon starts here-->
+            <a href="#" class="btn primary-btn primary-btn-no-icon d-inline-flex align-items-center" role="button"
+              aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
+              <div class="primary-btn-wrap norm">
+                <span class="btn-text">Water Provider Login</span>
+              </div>
+            </a>
+            <!-- Primary Button without icon ends here-->
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+  <!-- Header Component ends here -->
+
+  <main id="main-content" tabindex="-1">
+    <!-- Hero Primary starts here -->
+    <section class="hero homepage-hero" aria-labelledby="hero-heading">
+      <div class="container-fluid ">
+        <div class="row">
+          <div class="col-12">
+            <div class="hero-section">
+              <div class="hero-video-wrapper">
+                <video class="hero-video" autoplay loop muted playsinline preload="auto"
+                  poster="../assets/images/primary-hero-bg-01.jpg" aria-hidden="true">
+                  <source src="../assets/videos/banner-video.webm" type="video/webm" />
+                  <source src="../assets/videos/banner-videoo.mp4" type="video/mp4" />
+                  <img src="../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
+                    class="hero-fallback-image" />
+                </video>
+                <noscript>
+                  <img src="../assets/images/primary-hero-bg-01.jpg" alt="Hero background"
+                    class="hero-fallback-image" />
+                </noscript>
+              </div>
+              <div class="hero-video-overlay"></div>
+              <!--Hero content starts-->
+              <div class="hero-content-wrapper">
+                <div class="hero-content">
+                  <h1 class="hero-title reveal" id="hero-heading"><span>your water.</span><span>our commitment.</span>
+                  </h1>
+                  <div class="hero-subtext reveal">
+                    <p>
+                      Where engineering meets ecology - protecting every drop from
+                      source to tap with care, innovation, and 85+ years of
+                      expertise.
+                    </p>
+                  </div>
+                  <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation reveal"
+                    role="button" aria-label="Learn More" tabindex="0" data-button-type="secondary">
+                    <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                      <span class="btn-text">Water for Tomorrow</span>
+                      <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                        <span class="circle-animation">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            role="img" aria-label="Right arrow">
+                            <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                          <defs>
+                            <filter id="goo-filter-{{UNIQUE_ID}}">
+                              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                              <feColorMatrix in="blur" mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                              <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                  </a>
+                </div>
+              </div>
+              <!--Hero content ends-->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Hero Primary ends here -->
+    <!-- Wave Animation Section starts here -->
+    <section class="wave-animation-section section-wrapper bg-off-white" aria-labelledby="wave-animation-heading">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="wave-animation-title reveal" id="wave-animation-heading">Securing Colorado's Water Future.</h2>
+            <div class="wave-animation-wrapper">
+              <div class="wave-animation-container">
+                <div class="wave wave-gradient" aria-hidden="true"></div>
+                <div class="wave wave-svg" aria-hidden="true"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="content-wrapper">
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8">
+              <div class="stats-content reveal" role="list" aria-labelledby="wave-stats-heading">
+                <div class="stat-item" role="listitem">
+                  <h4 class="stat-text">Serving <span class="stat-number">1 Million</span> Residents.</h4>
+                </div>
+                <div class="stat-item" role="listitem">
+                  <h4 class="stat-text">Sustaining <span class="stat-number">600,000</span> Acres of Farmland.</h4>
+                </div>
+                <div class="stat-item" role="listitem">
+                  <h4 class="stat-text">Delivering Reliability Through Innovation <span class="stat-number">Since
+                      1937</span>.</h4>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-lg-4">
+              <div class="work-content">
+                <div class="work-header reveal">
+                  <h4 class="work-title" id="work-heading">Our Work</h4>
+                </div>
+                <div class="work-list reveal" role="list" aria-labelledby="work-heading">
+                  <p class="work-item" role="listitem">Managing critical water infrastructure</p>
+                  <p class="work-item" role="listitem">Balancing growth with sustainability</p>
+                  <p class="work-item" role="listitem">Protecting watersheds for future generations</p>
+                </div>
+                <div class="cta-wrapper reveal">
+                  <button class="btn secondary-btn d-inline-flex align-items-center liquid-animation"
+                    aria-label="Visit Our Campus - Opens in new window" data-button-type="secondary">
+                    <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                      <span class="btn-text">Visit Our Campus</span>
+                      <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                        <span class="circle-animation">
+                          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                            role="img" aria-label="Right arrow">
+                            <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                            <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                              stroke-linejoin="round" />
+                          </svg>
+                        </span>
+                        <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                          <defs>
+                            <filter id="goo-filter-wave-animation">
+                              <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                              <feColorMatrix in="blur" mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="goo" />
+                              <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Wave Animation Section ends here -->
+    <!-- Stats Section starts here -->
+    <section class="section-wrapper stats-section home-page-component bg-off-white" aria-labelledby="stats-title">
+      <div class="container-fluid stats-image-container">
+        <div class="row">
+          <div class="col-12">
+            <div class="stats-image-wrapper">
+              <img src="../assets/images/stats-hero-image.jpg" alt="Stats Hero Image" class="img-fluid">
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container stats-container counter-count-container">
+        <div class="stats-header reveal">
+          <h2 class="stats-title" id="stat-title">Water. Environment. Development.</h2>
+          <p class="stats-desc body-lg">Collecting and delivering water, safeguarding supplies, environmental
+            stewardship and planning for a water future across Northeastern Colorado.</p>
+        </div>
+        <div class="stats-cards-row reveal" role="list">
+          <div class="stats-card">
+            <h3 class="stats-card-value"><span class="counter-count" data-count="220000">220000</span> <span
+                class="stats-card-unit">Acre-Feet</span></h3>
+            <div class="stats-card-desc label">Average water delivery each year via the Colorado-Big
+              Thompson Project</div>
+          </div>
+          <div class="stats-card">
+            <h3 class="stats-card-value"><span class="counter-count" data-count="8">8</span> <span
+                class="stats-card-unit">Miles</span></h3>
+            <div class="stats-card-desc label">of Poudre River Habitat restored</div>
+          </div>
+          <div class="stats-card">
+            <h3 class="stats-card-value"><span class="counter-count" data-count="90000">90000</span> <span
+                class="stats-card-unit">Acre-Feet</span></h3>
+            <div class="stats-card-desc label">Of new storage from Chimney Hollow Reservoir Project</div>
+          </div>
+          <div class="stats-card">
+            <h3 class="stats-card-value"><span class="counter-count" data-count="225">225</span>m<span
+                class="stats-card-unit"> kwh</span></h3>
+            <div class="stats-card-desc label">Hydropower generated yearly</div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Stats Section ends here -->
+
+    <!-- News slider -->
+    <section class="slider-section bg-off-white section-wrapper" aria-labelledby="news-heading">
+      <div class="container">
+        <div class="row">
+          <!-- Heading  -->
+          <div class="col-12 heading-wrap right-link reveal">
+            <div class="heading">
+              <h2 id="news-heading">News</h2>
+            </div>
+            <a href="#" class="tertiary-btn">
+              Read More
+              <span class="card-cta-icon">
+                <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                  aria-hidden="true" focusable="false">
+                  <path d="M3.333 8h9.334" stroke="#fff" stroke-width="1.33" stroke-linecap="round"></path>
+                  <path d="M8 3.333L12.667 8 8 12.667" stroke="#fff" stroke-width="1.33" stroke-linecap="round"
+                    stroke-linejoin="round"></path>
+                </svg>
+              </span>
+            </a>
+          </div>
+          <!-- Heading  Ends-->
+        </div>
+      </div>
+      <!-- Slider  -->
+      <div class="slider-container">
+        <div class="card-slider" role="region" aria-label="News slider with 4 slides" aria-live="polite">
+          <!-- slide 1 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more about Smart Watering: Maximizing Irrigation">
+              <div class="img-wrap">
+                <img src="../assets/images/news-slider-1.jpg" alt="Smart Watering irrigation system demonstration" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Smart Watering: Maximizing Irrigation Smart Watering: Maximizing Irrigation</h5>
+                </div>
+                <p>As spring ushers in warmer temperatures, it's time to bring irrigation systems back online. However,
+                  turning water on isn't enough as it's crucial to ensure your syste...</p>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- slide 2 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more about Northern Water C-BT Quota increase">
+              <div class="img-wrap">
+                <img src="../assets/images/news-slider-2.jpg" alt="Northern Water C-BT Quota announcement" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Northern Water Increases C-BT Quota to 70 Percent</h5>
+                </div>
+                <p>The Northern Water Board of Directors voted Thursday to increase its 2025 quota allocation for
+                  Colorado-Big Thompson Project water to 70 percent.</p>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- slide 3 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more about Conservation Gardens in Berthoud">
+              <div class="img-wrap">
+                <img src="../assets/images/news-slider-3.jpg" alt="Conservation Gardens in Berthoud" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Conservation Gardens in Berthoud Add Features</h5>
+                </div>
+                <p>The Water Efficiency team has added five new demonstrations to the Conservation Gardens to inspire
+                  both commercial and residential garden installations.</p>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+
+          <!-- slide 4 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more about water conservation features">
+              <div class="img-wrap">
+                <img src="../assets/images/news-slider-4.jpg" alt="Water conservation demonstration" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Conservation Gardens in Berthoud Add Features</h5>
+                </div>
+                <p>The Water Efficiency team has added five new demonstrations to the Conservation Gardens to inspire
+                  both commercial and residential garden installations.</p>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-btn-wrap">
+        <button class="prev-btn"><img src="../assets/images/arrow-left.svg" alt="" aria-hidden="true" /><span
+            class="sr-only">Previous Slide</span></button>
+        <button class="next-btn"><img src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" /><span
+            class="sr-only">Next Slide</span></button>
+      </div>
+      <!-- Slider Ends -->
+    </section>
+    <!-- News slider Ends -->
+
+    <!-- Two Column Text and Image -->
+    <section class="section-wrapper two-col-text-image-section home-page-component bg-off-white"
+      aria-labelledby="protecting-water-heading">
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-12">
+            <h2 class="two-col-text-image-section_title reveal" id="protecting-water-heading">Protecting Water,
+              Preserving Nature.</h2>
+            <div class="two-col-text-image-image-wrap">
+              <img src="../assets/images/Protecting Water.jpg" alt="Protecting Water, Preserving Nature"
+                class="two-col-text-image__img img-fluid" />
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container two-col-text-image-container">
+        <div class="row two-col-text-image-row">
+          <div class="col-12 col-lg-6">
+            <div class="two-col-text-image-card">
+              <h4 class="two-col-text-image-card-title">Environmental Stewards <span>Since 1937.</span></h4>
+              <div class="two-col-text-image-card-desc">
+                <p>Join us for upcoming public tours and events to explore how Northern Water is shaping the future of
+                  water in Northern Colorado. Visit our campus, meet the team, and see our impact firsthand.</p>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="two-col-text-image-card">
+              <h4 class="two-col-text-image-card-title-green">Our Proven Commitment</h4>
+              <ul class="white-icon-lst">
+                <li>8 miles of fish habitat restored</li>
+                <li>225M kWh clean hydropower annually</li>
+                <li>100% EPA water quality compliance</li>
+                <li>1,200 acres of riparian ecosystems enhanced</li>
+              </ul>
+              <a href="#" class="btn secondary-btn d-inline-flex align-items-center liquid-animation" role="button"
+                aria-label="See Our Stewardship in Action" tabindex="0" data-button-type="secondary">
+                <div class="secondary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                  <span class="btn-text">See Our Stewardship in Action</span>
+                  <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                    <span class="circle-animation">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Right arrow">
+                        <path d="M5 12H19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                        <path d="M12 5L19 12L12 19" stroke="#111111" stroke-width="2" stroke-linecap="round"
+                          stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                      <defs>
+                        <filter id="goo-filter-{{UNIQUE_ID}}">
+                          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                          <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                            result="goo" />
+                          <feBlend in="SourceGraphic" in2="goo" />
+                        </filter>
+                      </defs>
+                    </svg>
+                  </span>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Image Text - Right Image -->
+    <section class="section-wrapper image-text meeting-event-wrap bg-off-white"
+      aria-labelledby="meetings-events-heading">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6">
+            <div class="heading-wrap reveal">
+              <h2 id="meetings-events-heading">Upcoming Meetings and Events.</h2>
+            </div>
+            <div class="reveal">
+              <p>
+                Join us for upcoming meetings and events to explore how Northern Water is shaping the future
+                of water in
+                Northern Colorado. Visit our campus, meet the team, and see our impact firsthand.
+              </p>
+            </div>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img class="img-fluid" src="../assets/images/Upcoming events.jpg" alt="Upcoming Meetings and Events" />
+            </div>
+          </div>
+        </div>
+        <div class="row text-only-row">
+          <div class="col-12 col-md-6">
+            <div class="event-card ">
+              <div class="event-card-date">
+                <div class="event-card-month label">JULY</div>
+                <h2 class="event-card-day">09</h2>
+              </div>
+              <div class="event-card-content">
+                <h5 class="event-card-title">Conservation Garden Tour</h5>
+                <div class="event-card-meta">
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg width="24" height="24" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Time">
+                        <path
+                          d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
+                  </div>
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Event Type">
+                        <path
+                          d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">Events & Tours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-12 col-md-6">
+            <div class="event-card">
+              <div class="event-card-date">
+                <div class="event-card-month label">JULY</div>
+                <h2 class="event-card-day">13</h2>
+              </div>
+              <div class="event-card-content">
+                <h5 class="event-card-title">Board Meeting</h5>
+                <div class="event-card-meta">
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg width="24" height="24" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Time">
+                        <path
+                          d="M11 4.86047V11L15.093 13.0465M21.2326 11C21.2326 16.6513 16.6513 21.2326 11 21.2326C5.34871 21.2326 0.767442 16.6513 0.767442 11C0.767442 5.34871 5.34871 0.767442 11 0.767442C16.6513 0.767442 21.2326 5.34871 21.2326 11Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">10:00 AM - 11:00 AM</p>
+                  </div>
+                  <div class="event-card-meta-item">
+                    <span class="event-card-meta-icon">
+                      <svg width="24" height="24" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg"
+                        role="img" aria-label="Event Type">
+                        <path
+                          d="M6.09254 8.16718C5.96272 8.17427 5.83348 8.14532 5.71909 8.08352C5.6047 8.02173 5.50963 7.92951 5.44439 7.81706C5.37915 7.7046 5.34627 7.5763 5.34941 7.44632C5.35254 7.31635 5.39155 7.18978 5.46214 7.0806L9.21434 1.11796C9.2733 1.01179 9.35869 0.922652 9.46223 0.859187C9.56578 0.795722 9.68396 0.760084 9.80533 0.755727C9.92669 0.751371 10.0471 0.778444 10.155 0.834323C10.2628 0.890201 10.3543 0.972989 10.4208 1.07466L14.1488 7.05945C14.2223 7.16498 14.2655 7.2886 14.2738 7.41692C14.282 7.54525 14.255 7.67339 14.1957 7.78748C14.1364 7.90157 14.047 7.99726 13.9372 8.06419C13.8274 8.13112 13.7014 8.16673 13.5728 8.16718H6.09254Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M6.79746 12.1953H1.76231C1.20614 12.1953 0.755274 12.6462 0.755274 13.2023V18.2375C0.755274 18.7937 1.20614 19.2445 1.76231 19.2445H6.79746C7.35363 19.2445 7.80449 18.7937 7.80449 18.2375V13.2023C7.80449 12.6462 7.35363 12.1953 6.79746 12.1953Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                        <path
+                          d="M15.3572 19.2445C17.3038 19.2445 18.8818 17.6665 18.8818 15.7199C18.8818 13.7733 17.3038 12.1953 15.3572 12.1953C13.4106 12.1953 11.8326 13.7733 11.8326 15.7199C11.8326 17.6665 13.4106 19.2445 15.3572 19.2445Z"
+                          stroke="white" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                      </svg>
+                    </span>
+                    <p class="event-card-meta-text">Events & Tours</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row btn-only-row">
+          <div class="col-12 text-center">
+            <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation" role="button"
+              aria-label="Water Provider Login" tabindex="0" data-button-type="primary">
+              <div class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg">
+                <span class="btn-text">Load More</span>
+                <span class="btn-icon liquid-animation-items liquid-animation-circle move" aria-hidden="true">
+                  <span class="circle-animation">
+                    <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      role="img" aria-label="Plus icon">
+                      <path d="M5.5 12H19.5" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M12.5 5V19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1" aria-hidden="true">
+                    <defs>
+                      <filter id="goo-filter-{{UNIQUE_ID}}">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                          result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image Text - Right Image Ends-->
+
+    <!-- Key Projects slider -->
+    <section class="slider-section bg-off-white section-wrapper" aria-labelledby="key-projects-heading">
+      <div class="container">
+        <div class="row">
+          <!-- Heading  -->
+          <div class="col-12 heading-wrap heading-center">
+            <div class="heading reveal">
+              <h2 id="key-projects-heading">Key Projects Making a Difference.</h2>
+            </div>
+            <div class="sub-heading reveal">
+              <p> Northern Water is leading the way with cutting-edge projects that ensure a sustainable, reliable water
+                supply for Colorado's future.</p>
+            </div>
+          </div>
+          <!-- Heading  Ends-->
+
+        </div>
+      </div>
+      <!-- Slider  -->
+      <div class="slider-container">
+        <div class="card-slider" role="region" aria-label="Key Projects Image Slider">
+          <!-- slide 1 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more Colorado-Big Thompson Project">
+              <div class="img-wrap">
+                <img src="../assets/images/project-slider-1.jpg" alt="Colorado-Big Thompson Project infrastructure" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Colorado-Big Thompson Project</h5>
+                </div>
+                <p>One of the largest water delivery systems in Colorado, supporting agriculture, municipalities, and
+                  wildlife.</p>
+                <ul class="card-list">
+                  <li>200,000 acre-feet of water delivered annually</li>
+                  <li>Serves 1 million people</li>
+                  <li>Waters 615,000 acres of farmland</li>
+                </ul>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- slide 2 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more Windy Gap Project">
+              <div class="img-wrap">
+                <img src="../assets/images/project-slider-2.jpg" alt="Windy Gap Project facilities" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Windy Gap Project</h5>
+                </div>
+                <p>Transferring water from the Colorado River to support Front Range communities.</p>
+                <ul class="card-list">
+                  <li>Diverts 1.7 million acre-feet of water annually</li>
+                  <li>Provides water to over 200,000 residents</li>
+                  <li>Facilitates water delivery to several major cities</li>
+                </ul>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- slide 3 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more Northern Integrated Supply Project">
+              <div class="img-wrap">
+                <img src="../assets/images/project-slider-3.jpg" alt="Northern Integrated Supply Project" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Northern Integrated Supply Project</h5>
+                </div>
+                <p>Enhancing water availability with two new reservoirs for growing communities.</p>
+                <ul class="card-list">
+                  <li>40,000 acre-feet of water annually</li>
+                  <li>Serves 15 communities</li>
+                  <li>New 170,000-acre-foot reservoir</li>
+                </ul>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+          <!-- slide 4 -->
+          <div class="card-wrap">
+            <a href="#" class="card bg-blue" aria-label="Read more Northern Integrated Supply Project">
+              <div class="img-wrap">
+                <img src="../assets/images/project-slider-4.jpg" alt="Water infrastructure development" />
+              </div>
+              <div class="content-wrap">
+                <div class="heading">
+                  <h5>Northern Integrated Supply Project</h5>
+                </div>
+                <p>Enhancing water availability with two new reservoirs for growing communities.</p>
+                <ul class="card-list">
+                  <li>40,000 acre-feet of water annually</li>
+                  <li>Serves 15 communities</li>
+                  <li>New 170,000-acre-foot reservoir</li>
+                </ul>
+              </div>
+              <div class="link-wrap">
+                <span class="card-cta">
+                  <span class="card-cta-icon">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"
+                      aria-hidden="true" focusable="false">
+                      <path d="M3.333 8h9.334" stroke="#111" stroke-width="1.33" stroke-linecap="round"></path>
+                      <path d="M8 3.333L12.667 8 8 12.667" stroke="#111" stroke-width="1.33" stroke-linecap="round"
+                        stroke-linejoin="round"></path>
+                    </svg>
+                  </span>
+                </span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="slider-btn-wrap">
+        <button class="prev-btn"><img src="../assets/images/arrow-left.svg" alt="" aria-hidden="true" /><span
+            class="sr-only">Previous Slide</span></button>
+        <button class="next-btn"><img src="../assets/images/arrow-right.svg" alt="" aria-hidden="true" /><span
+            class="sr-only">Next Slide</span></button>
+      </div>
+      <!-- Slider Ends -->
+      </div>
+    </section>
+    <!-- Key Projects slider Ends -->
+
+
+    <!-- Image Text - left Image -->
+    <section class="section-wrapper image-text img-left bg-off-white" aria-labelledby="join-team-heading">
+      <div class="container">
+        <div class="row image-text-row">
+          <div class="col-12 col-lg-6 align-self-center reveal">
+            <div class="heading-wrap">
+              <h2 id="join-team-heading">Join Our Team.</h2>
+            </div>
+            <p>
+              At Northern Water, we're looking for passionate individuals to help us manage and protect
+              the vital water resources of Northern Colorado.
+            </p>
+            <a href="#" class="btn primary-btn d-inline-flex align-items-center liquid-animation"
+              aria-label="Browse the Openings">
+              <div class="primary-btn-wrap  norm liquid-animation-items liquid-animation-bg">
+                <span class="btn-text">Browse the Openings</span>
+
+                <span class="btn-icon liquid-animation-items liquid-animation-circle move">
+                  <span class="circle-animation">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M5 12H19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                      <path d="M12 5L19 12L12 19" stroke="#fff" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round" />
+                    </svg>
+                  </span>
+                  <svg xmlns="http://www.w3.org/2000/svg" version="1.1">
+                    <defs>
+                      <filter id="goo-filter-{{UNIQUE_ID}}">
+                        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+                        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                          result="goo" />
+                        <feBlend in="SourceGraphic" in2="goo" />
+                      </filter>
+                    </defs>
+                  </svg>
+                </span>
+              </div>
+            </a>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="img-wrap">
+              <img class="img-fluid" src="../assets/images/Join our team.jpg" alt="Join Our Team" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Image Text - Left Image Ends-->
+  </main>
+
+  <!-- Footer starts here -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <!-- Newsletter Section -->
+      <div class="row footer__newsletter">
+        <div class="footer__newsletter-left reveal">
+          <h2 class="footer__newsletter-title">Stay Informed.</h2>
+          <p class="footer__newsletter-text">
+            Sign up for our newsletter to receive the latest updates on
+            projects, events, and water conservation efforts.
+          </p>
+        </div>
+        <div class="footer__newsletter-right reveal">
+          <form class="footer__form" aria-label="Newsletter Subscription">
+            <div class="footer__form-group d-flex align-items-end">
+              <div class="form-floating">
+                <input type="email" id="email" class="footer__input form-control" placeholder=""
+                  required aria-required="true" />
+                <label for="email" class="footer__input-label">Enter your email ID</label>
+              </div>
+              <!-- Secondary Button without icon starts here-->
+              <a href="#" class="btn secondary-btn secondary-btn-no-icon d-inline-flex align-items-center btn-with-white-outline" role="button"
+                aria-label="Water Provider Login" tabindex="0" data-button-type="secondary">
+                <div class="secondary-btn-wrap norm">
+                  <span class="btn-text">Subscribe</span>
+                </div>
+              </a>
+              <!-- Secondary Button without icon ends here-->
+            </div>
+          </form>
+        </div>
+      </div>
+      <div class="row footer__container reveal">
+        <!-- Quick Links Section -->
+        <div class="footer__quick-links">
+          <h3 class="footer__section-title pb-3">Quick Link</h3>
+          <div class="footer__links-grid row p-0">
+            <div class="footer__links-column p-0">
+              <a href="#" class="footer__link">
+                Privacy Policy
+              </a>
+              <a href="#" class="footer__link">
+                Data Policy
+              </a>
+              <a href="#" class="footer__link">
+                Accessibility
+              </a>
+              <a href="#" class="footer__link">
+                Social Media Policy
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Contact Section -->
+        <div class="footer__contact">
+          <h3 class="footer__section-title pb-3">Contact Us</h3>
+          <div class="footer__contact-info">
+            <div class="footer__contact-item d-flex align-items-center">
+              <i data-lucide="map-pin" class="footer__contact-icon" aria-hidden="true"></i>
+              <address class="footer__address mb-0">
+                220 Water Ave., Berthoud, CO 80513
+              </address>
+            </div>
+            <div class="footer__contact-item d-flex align-items-center">
+              <i data-lucide="phone" class="footer__contact-icon" aria-hidden="true"></i>
+              <a href="tel:800-369-7246" class="footer__phone">800-369-7246</a>
+            </div>
+          </div>
+        </div>
+        <!-- Social Media Section -->
+        <div class="footer__social">
+          <h3 class="footer__section-title pb-3">Follow us</h3>
+          <div class="footer__social-links d-flex">
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Facebook page">
+              <img src="../assets/images/facebook-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Twitter page">
+              <img src="../assets/images/twitter-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our Instagram page">
+              <img src="../assets/images/instagram-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our LinkedIn page">
+              <img src="../assets/images/linkedin-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+            <a href="#" class="footer__social-link d-flex align-items-center justify-content-center"
+              aria-label="Visit our YouTube channel">
+              <img src="../assets/images/youtube-footer-icon.svg" alt="" aria-hidden="true" />
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Copyright Section -->
+    <div class="footer__bottom">
+      <div class="container footer__bottom-container d-flex justify-content-center align-items-center ">
+        <p class="footer__copyright mb-0">
+          Copyright © <span class="footer__year"></span> Northern Water
+        </p>
+      </div>
+    </div>
+  </footer>
+  <!-- Footer ends here -->
+  <script src="../assets/dist/main.min.js"></script>
+  <script>
+let percent = 0;
+const duration = 3000;
+let barWidth = 0;
+let percentElem, trainElem, barFill;
+
+function animateLoader() {
+  if (!percentElem || !trainElem || !barFill || barWidth === 0) return;
+
+  percent += 1;
+  if (percent > 100) return;
+
+  percentElem.textContent = percent + "%";
+  trainElem.style.left = (percent / 100) * barWidth + "px";
+  barFill.style.width = `calc(90px + ${percent}%)`;
+
+  if (percent < 100) {
+    setTimeout(animateLoader, duration / 100);
+  } else {
+    const loader = document.getElementById("site-loader");
+    if (loader) {
+      loader.classList.add("hide");
+      setTimeout(() => {
+        loader.style.display = "none";
+      }, 400);
+    }
+  }
+}
+
+document.addEventListener("DOMContentLoaded", function () {
+  // Delay the loader start to simulate it began "2 seconds earlier"
+  setTimeout(() => {
+    percentElem = document.getElementById("loader-percent");
+    trainElem = document.querySelector(".loader-train");
+    const barWrapper = document.querySelector(".loader-bar-wrapper");
+    barFill = document.querySelector(".loader-bar-fill");
+
+    if (!percentElem || !trainElem || !barWrapper || !barFill) return;
+
+    barWidth = barWrapper.offsetWidth;
+    animateLoader();
+  }, 0); // You can set to -2000ms simulation via CSS trick, not real delay
+});
+
+  </script>
+</body>
+
+</html>

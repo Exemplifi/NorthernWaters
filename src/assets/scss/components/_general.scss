@@ -1,0 +1,118 @@
+.container {
+  max-width: rem.convert(1280px);
+  padding: 0;
+  @include media-breakpoint-up(xxl) {
+    max-width: rem.convert(1320px);
+  }
+  @include media-breakpoint-down(xxl) {
+    max-width: rem.convert(1280px);
+  }
+}
+.section-wrapper {
+  padding: 5rem 1.5rem;
+  & + .section-wrapper {
+    padding-top: 0;
+    @include media-breakpoint-down(lg) {
+      padding-top: 0;
+    }
+  }
+  &.bg-black {
+    padding-top: 5rem;
+    @include media-breakpoint-down(lg) {
+      padding-top: 4rem;
+    }
+    & + .bg-black {
+      padding-top: 0;
+      @include media-breakpoint-down(lg) {
+        padding-top: 0;
+      }
+    }
+  }
+  &.bg-off-white {
+    padding-top: 5rem;
+    @include media-breakpoint-down(lg) {
+      padding-top: 4rem;
+    }
+    & + .bg-off-white {
+      padding-top: 0;
+      @include media-breakpoint-down(lg) {
+        padding-top: 0;
+      }
+    }
+  }
+  @include media-breakpoint-down(lg) {
+    padding: 4rem 1.5rem;
+  }
+}
+.section-wrapper.full-width {
+  padding: 5rem 0;
+  @include media-breakpoint-down(lg) {
+    padding: 4rem 0;
+  }
+}
+.bg-off-white {
+  background: var(--off-white);
+  color: var(--black);
+}
+.bg-green {
+  background: var(--green);
+  color: var(--white);
+}
+.bg-blue {
+  background: var(--blue);
+  color: var(--white);
+}
+.text-truncate-2-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+
+.text-truncate-3-lines {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+}
+a {
+  color: var(--green);
+  text-decoration: underline;
+}
+
+.bg-black {
+  background: var(--black);
+
+  * {
+    color: var(--white);
+  }
+
+  .secondary-btn {
+    .btn-text {
+      color: var(--black) !important;
+    }
+  }
+}
+.bg-half-white {
+  background: var(--off-white);
+}
+// content animation
+.reveal {
+  opacity: 0;
+  transform: translate3d(0, 125px, 0) scale3d(1, 1, 1) rotateX(0deg)
+    rotateY(0deg) rotateZ(0deg) skew(0deg, 0deg);
+  transition: opacity 1.5s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 1.5s cubic-bezier(0.22, 1, 0.36, 1);
+  will-change: opacity, transform;
+}
+
+.reveal.revealed {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale3d(1, 1, 1) rotateX(0deg) rotateY(0deg)
+    rotateZ(0deg) skew(0deg, 0deg);
+  transform-style: preserve-3d;
+}

@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signage Form</title>
+    <link rel="stylesheet" href="../../assets/dist/main.css" />
+  </head>
+  <body>
+    <!---signup form start-->
+    <section class="section-wrapper signage-request-form bg-off-white">
+      <div class="container">
+        <div class="row gx-5">
+          <div class="col-12 col-lg-6">
+            <h2 class="h4 title">Signage Request</h2>
+            <form>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="name">Name*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="name"
+                    placeholder="Name"
+                  />
+                  <div class="error-text d-none">
+                    <i data-lucide="triangle-alert"></i> Please fill this in
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="organization">Organization*</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="organization"
+                    placeholder="Enter the organization name"
+                  />
+                  <div class="error-text d-none">
+                    <i data-lucide="triangle-alert"></i> Please fill this in
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="email">Email*</label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="email"
+                    placeholder="Enter the email ID"
+                  />
+                  <div class="error-text d-none">
+                    <i data-lucide="triangle-alert"></i> Please fill this in
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <label for="phone">Phone Number*</label>
+                  <input
+                    type="tel"
+                    class="form-control"
+                    id="phone"
+                    placeholder="Enter the phone number"
+                  />
+                  <div class="error-text d-none">
+                    <i data-lucide="triangle-alert"></i> Please fill this in
+                  </div>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="signType">Sign Type*</label>
+                  <select class="form-select" id="signType" placeholder="jjjj">
+                    <option selected disabled>Select the sign type</option>
+                    <option value="digital">Digital</option>
+                    <option value="print">Print</option>
+                  </select>
+                </div>
+
+                <div class="col-md-6">
+                  <label for="logoFileInput">LOGO*</label>
+                  <div class="upload-wrapper">
+                    <span class="upload-placeholder" id="filePlaceholder" aria-label="Choose file">Choose file</span>
+                    <span class="upload-icon" aria-hidden="true">
+                      <img
+                        src="../../assets/images/upload file.svg"
+                        alt=""
+                      />
+                    </span>
+                    <input
+                      type="file"
+                      accept=".png, .eps"
+                      class="form-control-file"
+                      id="logoFileInput"
+                      aria-describedby="filePlaceholder fileHelp"
+                      onchange="updateFileName(this)"
+                    />
+                  </div>
+                  <small class="form-text" id="fileHelp"
+                    >Please upload a PNG or EPS file of your logo.</small
+                  >
+                </div>
+
+                <div class="col-12">
+                  <label for="recaptcha">reCAPTCHA</label>
+                  <div
+                    class="g-recaptcha"
+                    id="recaptcha"
+                    data-sitekey="6Lel4Z4UAAAAAOa8LO1Q9mqKRU iMYl_00o5mXJrR"
+                  ></div>
+                </div>
+
+                <div class="col-12">
+                  <!--<button type="submit" class="btn btn-submit">Submit</button>-->
+                  <button
+                    type="submit"
+                    href="#"
+                    class="btn primary-btn d-inline-flex align-items-center liquid-animation btn-submit"
+                    role="button"
+                    aria-label="Submit Button"
+                    tabindex="0"
+                    data-button-type="primary"
+                    role="button"
+                  >
+                    <div
+                      class="primary-btn-wrap norm liquid-animation-items liquid-animation-bg"
+                    >
+                      <span class="btn-text">Submit</span>
+                      <span
+                        class="btn-icon liquid-animation-items liquid-animation-circle move"
+                        aria-hidden="true"
+                      >
+                        <span class="circle-animation">
+                          <svg
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                            role="img"
+                            aria-label="Right arrow"
+                          >
+                            <path
+                              d="M5 12H19"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                            <path
+                              d="M12 5L19 12L12 19"
+                              stroke="#fff"
+                              stroke-width="2"
+                              stroke-linecap="round"
+                              stroke-linejoin="round"
+                            />
+                          </svg>
+                        </span>
+                        <svg
+                          xmlns="http://www.w3.org/2000/svg"
+                          version="1.1"
+                          aria-hidden="true"
+                        >
+                          <defs>
+                            <filter id="goo-filter-{{UNIQUE_ID}}">
+                              <feGaussianBlur
+                                in="SourceGraphic"
+                                stdDeviation="10"
+                                result="blur"
+                              />
+                              <feColorMatrix
+                                in="blur"
+                                mode="matrix"
+                                values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+                                result="goo"
+                              />
+                              <feBlend in="SourceGraphic" in2="goo" />
+                            </filter>
+                          </defs>
+                        </svg>
+                      </span>
+                    </div>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="col-12 col-lg-6">
+            <div class="inner-wrap">
+              <h2 class="h4 title">Sign Examples</h2>
+              <a href="" class="link"
+                ><img src="../../assets/images/file.svg" alt="icon" />Native
+                Grasses Area Sample Sign</a
+              >
+              <img
+                src="../../assets/images/contact-setion-img.svg"
+                class="img-fluid mx-auto d-block banner"
+                alt="banner"
+              />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!---signup form end-->
+
+    <script src="../../assets/dist/main.min.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+
+    <div id="uploadWrapper" class="upload-wrapper">
+      <input type="file" id="logoFileInput" style="display:none" />
+      <span id="filePlaceholder">Choose file</span>
+    </div>
+    
+    <script>
+      function updateFileName(input) {
+        const file = input.files[0];
+        const placeholder = document.getElementById('filePlaceholder');
+    
+        if (file) {
+          const fullName = file.name;
+          let displayName = fullName;
+          // Trim after 20 characters
+          if (fullName.length > 20) {
+            displayName = fullName.substring(0, 20) + '...';
+          }
+          // Show trimmed name visually
+          placeholder.textContent = displayName;
+          placeholder.setAttribute('aria-label', `Selected file: ${fullName}`);
+          placeholder.classList.add('has-file');
+          // Force a reflow to ensure the text is properly displayed
+          placeholder.offsetHeight;
+        } else {
+          placeholder.textContent = 'Choose file';
+          placeholder.setAttribute('aria-label', 'Choose file');
+          placeholder.classList.remove('has-file');
+        }
+      }
+    
+      document.addEventListener('DOMContentLoaded', function () {
+        const fileInput = document.getElementById('logoFileInput');
+        const uploadWrapper = document.getElementById('uploadWrapper');
+    
+        if (fileInput && uploadWrapper) {
+          // Make wrapper clickable
+          uploadWrapper.addEventListener('click', function () {
+            // Reset the input value to allow selecting the same file again
+            fileInput.value = '';
+            fileInput.click();
+          });
+    
+          // Keyboard support
+          uploadWrapper.addEventListener('keydown', function (e) {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              fileInput.value = '';
+              fileInput.click();
+            }
+          });
+    
+          // Focusable & ARIA
+          uploadWrapper.setAttribute('tabindex', '0');
+          uploadWrapper.setAttribute('role', 'button');
+          uploadWrapper.setAttribute('aria-label', 'Click or press Enter to choose a logo file');
+    
+          // Call function whenever file changes
+          fileInput.addEventListener('change', function () {
+            updateFileName(fileInput);
+          });
+        }
+      });
+    </script>
+    
+  </body>
+</html>

@@ -1,0 +1,134 @@
+.section-wrapper {
+  &.faq-accordion-wrapper {
+    .container {
+      // Empty for new selector
+
+      .row {
+        // Empty for new selector
+
+        .col-12 {
+          // Empty for new selector
+
+          h3 {
+            padding-bottom: rem.convert(24px);
+            border-bottom: 1px solid var(--black);
+            margin-bottom: rem.convert(48px);
+            color: var(--black-3);
+            @include media-breakpoint-down(lg) {
+              margin-bottom: rem.convert(40px);
+              padding-bottom: rem.convert(16px);
+            }
+          }
+
+          .faq-accordion {
+            // Empty for new selector
+
+            .faq {
+              background: var(--blue);
+              border-radius: rem.convert(8px);
+              padding: rem.convert(32px);
+              box-shadow: 0 rem.convert(2px) rem.convert(8px)
+                rgba(49, 68, 89, 0.04);
+              transition: box-shadow 0.2s;
+              margin-bottom: rem.convert(24px);
+              color: var(--white);
+              @include media-breakpoint-down(lg) {
+                padding: rem.convert(24px);
+                margin-bottom: rem.convert(16px);
+              }
+              &:last-child {
+                margin-bottom: 0;
+              }
+
+              .accordian_header {
+                width: 100%;
+                background: none;
+                border: none;
+                padding: 0;
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                cursor: pointer;
+                min-height: rem.convert(40px);
+                @include media-breakpoint-down(lg) {
+                  column-gap: rem.convert(16px);
+                }
+                h6 {
+                  color: var(--white);
+                  text-align: left;
+                  margin: 0;
+                  @include convert-percent(line-height, 20px, 140);
+                  @include media-breakpoint-down(lg) {
+                    @include convert-percent(line-height, 18px, 150);
+                  }
+                }
+
+                .accordion_icon {
+                  display: flex;
+                  align-items: center;
+                  justify-content: center;
+                  width: rem.convert(52px);
+                  height: rem.convert(48px);
+                  background: var(--white);
+                  border-radius: rem.convert(8px);
+                  transition: transform 0.3s ease;
+                  align-self: flex-start;
+                  @include media-breakpoint-down(lg) {
+                    min-width: rem.convert(52px);
+                    min-height: rem.convert(48px);
+                  }
+                  svg {
+                    transition: transform 0.3s ease;
+                  }
+                }
+
+                &[aria-expanded="true"] {
+                  .accordion_icon svg {
+                    transform: rotate(45deg);
+                  }
+                }
+              }
+
+              .accordian_content {
+                overflow: hidden;
+                max-height: 0;
+                opacity: 0;
+                transition: max-height 0.3s ease-out, opacity 0.2s ease-out, margin-top 0.2s ease-out;
+                margin-top: 0;
+                @include media-breakpoint-down(lg) {
+                  margin-top: 0;
+                }
+
+                &[role="region"] {
+                  // Empty for new selector
+                }
+
+                &[aria-hidden="true"] {
+                  // Empty for new selector
+                }
+
+                &[aria-expanded="false"] {
+                  // Empty for new selector
+                }
+
+                &.show {
+                  max-height: max-content; // This will be updated dynamically via JS
+                  opacity: 1;
+                  margin-top: rem.convert(24px);
+                  @include media-breakpoint-down(lg) {
+                    margin-top: rem.convert(16px);
+                  }
+                }
+
+                p {
+                  margin: 0;
+                  color: var(--white);
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}

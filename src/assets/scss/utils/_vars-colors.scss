@@ -1,0 +1,224 @@
+@use "sass:math";
+@use "sass:map";
+
+$site-colors: (
+  "black": #111111,
+  "black-rgb": "17, 17, 17",
+  "black-2": #1D1D1D,
+  "black-2-rgb": "29, 29, 29",
+  "black-3": #0F0E0E,
+  "black-3-rgb": "15, 14, 14",
+   "black-4": #000,
+  "white": #ffffff,
+  "white-rgb": "255, 255, 255",
+  "gray": #585858,
+  "gray-rgb": "88, 88, 88",
+  "off-white": #FFFEF6,
+  "off-white-rgb": "255, 254, 246",
+  "green": #00853F,
+  "green-rgb": "0, 133, 63",
+  "light-blue": #53C2FD,
+  "light-blue-rgb": "83, 194, 253",
+  "light-green": #54B948,
+  "light-green-rgb": "84, 185, 72",
+  "light-gray": #6161619e,
+  "blue": #004A64,
+  "blue-rgb": "0, 74, 100",
+  "success": #16A34A,
+  "success-rgb": "22, 163, 74",
+  "error": #CC0000,
+  "error-rgb": "204, 0, 0",
+  "alert": #FEBF00,
+  "alert-rgb": "254, 191, 0",
+  "outline-default": #005FCC,
+  "outline-default-rgb": "0, 95, 204"
+);
+
+// Rebranding
+$black: map.get($site-colors, "black");
+$black-rgb: map.get($site-colors, "black-rgb");
+$black-2: map.get($site-colors, "black-2");
+$black-2-rgb: map.get($site-colors, "black-2-rgb");
+$black-3: map.get($site-colors, "black-3");
+$black-3-rgb: map.get($site-colors, "black-3-rgb");
+$black-4: map.get($site-colors, "black-4");
+$white: map.get($site-colors, "white");
+$white-rgb: map.get($site-colors, "white-rgb");
+$gray: map.get($site-colors, "gray");
+$gray-rgb: map.get($site-colors, "gray-rgb");
+$off-white: map.get($site-colors, "off-white");
+$off-white-rgb: map.get($site-colors, "off-white-rgb");
+$green: map.get($site-colors, "green");
+$green-rgb: map.get($site-colors, "green-rgb");
+$light-blue: map.get($site-colors, "light-blue");
+$light-blue-rgb: map.get($site-colors, "light-blue-rgb");
+$light-green: map.get($site-colors, "light-green");
+$light-green-rgb: map.get($site-colors, "light-green-rgb");
+$blue: map.get($site-colors, "blue");
+$blue-rgb: map.get($site-colors, "blue-rgb");
+$success: map.get($site-colors, "success");
+$success-rgb: map.get($site-colors, "success-rgb");
+$error: map.get($site-colors, "error");
+$error-rgb: map.get($site-colors, "error-rgb");
+$alert: map.get($site-colors, "alert");
+$alert-rgb: map.get($site-colors, "alert-rgb");
+$light-gray: map.get($site-colors, "light-gray");
+
+// Color utility classes
+.text-black {
+  color: $black !important;
+}
+
+.text-black-2 {
+  color: $black-2 !important;
+}
+
+.text-black-3 {
+  color: $black-3 !important;
+}
+
+.text-white {
+  color: $white !important;
+}
+
+.text-gray {
+  color: $gray !important;
+}
+
+.text-off-white {
+  color: $off-white !important;
+}
+
+.text-green {
+  color: $green !important;
+}
+
+.text-light-blue {
+  color: $light-blue !important;
+}
+
+.text-light-green {
+  color: $light-green !important;
+}
+
+.text-blue {
+  color: $blue !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-error {
+  color: $error !important;
+}
+
+.text-alert {
+  color: $alert !important;
+}
+
+// Background color utility classes
+.bg-black {
+  background-color: $black !important;
+}
+
+.bg-black-2 {
+  background-color: $black-2 !important;
+}
+
+.bg-black-3 {
+  background-color: $black-3 !important;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+.bg-gray {
+  background-color: $gray !important;
+}
+
+.bg-off-white {
+  background-color: $off-white !important;
+}
+
+.bg-green {
+  background-color: $green !important;
+}
+
+.bg-light-blue {
+  background-color: $light-blue !important;
+}
+
+.bg-light-green {
+  background-color: $light-green !important;
+}
+
+.bg-blue {
+  background-color: $blue !important;
+}
+
+.bg-success {
+  background-color: $success !important;
+}
+
+.bg-error {
+  background-color: $error !important;
+}
+
+.bg-alert {
+  background-color: $alert !important;
+}
+
+// Border color utility classes
+.border-black {
+  border-color: $black !important;
+}
+
+.border-black-2 {
+  border-color: $black-2 !important;
+}
+
+.border-black-3 {
+  border-color: $black-3 !important;
+}
+
+.border-white {
+  border-color: $white !important;
+}
+
+.border-gray {
+  border-color: $gray !important;
+}
+
+.border-off-white {
+  border-color: $off-white !important;
+}
+
+.border-green {
+  border-color: $green !important;
+}
+
+.border-light-blue {
+  border-color: $light-blue !important;
+}
+
+.border-light-green {
+  border-color: $light-green !important;
+}
+
+.border-blue {
+  border-color: $blue !important;
+}
+
+.border-success {
+  border-color: $success !important;
+}
+
+.border-error {
+  border-color: $error !important;
+}
+
+.border-alert {
+  border-color: $alert !important;
+}

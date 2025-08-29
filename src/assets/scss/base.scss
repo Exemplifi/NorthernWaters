@@ -1,0 +1,93 @@
+/**
+ * Package Name: _cssvars.scss
+ * Subpackage: cascadia
+ * Author: Raven Developers
+ * Author URI:
+ * Description: SCSS
+ * Author: Sridhar
+ * Created: 05/05/23
+ * Version: 1.0
+ * License: Creative Commons 3.0 Attribution
+ * License URI:
+ * Tags: app
+**/
+
+@use "sass:math";
+@use "sass:map";
+
+@use "utils/fonts" as *;
+@use "utils/rem-convert" as rem;
+@use "utils/mixins" as *;
+@use "utils/vars-global" as *;
+@use "utils/vars-colors" as *;
+@use "utils/vars-bootstrap" as *;
+
+// $underline-height: 2px;
+// $transition-speed: 0.4s;
+// $delay-between: 0.5s; // Delay before blue
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1200px
+);
+:root {
+  --body-font-family: 'Segoe UI', Arial, sans-serif;
+  --heading-font-family: 'Sculpin', 'Segoe UI', Arial, sans-serif;
+  --body-text-color: #{$black};
+  --link-color: #{$black};
+
+  // Custom theme colors (less verbose)
+  @each $color, $value in $site-colors {
+    --#{$color}: #{$value};
+  }
+
+  // Margin spacings
+  @each $space, $value in $spacers {
+    --size-#{$space}: #{$value};
+  }
+
+  // Font sizes
+  @each $size, $value in $font-sizes {
+    --fz-#{$size}: #{$value};
+  }
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-font-smoothing: antialiased; // for macOS & Safari
+  -moz-osx-font-smoothing: grayscale;  // for Firefox on macOS
+  font-smooth: always;                 // for older versions of IE (non-standard)
+  text-rendering: optimizeLegibility;  // improves kerning and ligatures
+}
+
+p {
+  &:has(.asset) {
+    margin-bottom: 0 !important;
+  }
+  &:last-of-type {
+    margin-bottom: 0;
+  }
+}
+
+body {
+  a {
+    color: var(--green);
+  }
+}
+
+// Utility class for screen reader only content
+.sr-only {
+  position: absolute;
+  width: rem.convert(1px);
+  height: rem.convert(1px);
+  padding: 0;
+  margin: rem.convert(-1px);
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
