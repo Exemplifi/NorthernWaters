@@ -165,6 +165,34 @@
       }
       .reset-btn {
         position: absolute;
+        right: rem.convert(60px);
+        background: var(--green);
+        opacity: 1;
+        border: none;
+        border-radius: 0.5rem;
+        width: rem.convert(25px);
+        height: rem.convert(25px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: background 0.2s;
+        border-radius: 50%;
+
+        display: none;  /* Removes it from the DOM visually */
+        pointer-events: none;  /* Makes sure it can't be interacted with */
+        opacity: 0;  /* Ensures it is not visible */
+        &.show {
+          display: flex;  /* Makes the reset button visible */
+          pointer-events: auto;  /* Allow interactions with the button */
+          opacity: 1;  /* Ensures it is fully visible */
+          &:focus-visible {
+            outline: 2px solid var(--black);
+            outline-offset: 0px;
+          }
+        }
+      }
+      .search-submit-btn {
+        position: absolute;
         right: 0;
         background: var(--green);
         opacity: 1;

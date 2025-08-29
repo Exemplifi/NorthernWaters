@@ -421,27 +421,28 @@ $(document).ready(function() {
   function initSearchClear() {
     const searchInput = document.getElementById('search-input');
     const resetButton = searchInput?.nextElementSibling;
+    const searchButton = resetButton?.nextElementSibling;
 
-    if (!searchInput || !resetButton) return;
+    if (!searchInput || !resetButton || !searchButton) return;
 
-    const resetIcon = resetButton.querySelector('img');
-    const searchIconPath = '../assets/images/search-icon.svg';
-    const closeIconPath = '../assets/images/close.svg';
+    // Listen to 'input' event for real-time feedback
+    searchInput.addEventListener('input', function(e) {
+      console.log(e.currentTarget.value); // Logs the value as you type
 
-    function updateResetButton() {
+      // Toggle 'show' class based on whether there's input
       if (searchInput.value) {
-        resetIcon.src = closeIconPath;
+        resetButton.classList.add('show'); // Show reset button
       } else {
-        resetIcon.src = searchIconPath;
+        resetButton.classList.remove('show'); // Hide reset button
       }
-    }
+    });
 
-    searchInput.addEventListener('input', updateResetButton);
-
-    resetButton.addEventListener('click', (e) => {
+    // Reset the input field when the reset button is clicked
+    resetButton.addEventListener('click', function(e) {
       e.preventDefault();
-      searchInput.value = '';
-      updateResetButton();
+      searchInput.value = ''; // Clear the input field
+      searchInput.focus(); // Focus back on the input field
+      this.classList.remove('show'); // Hide the reset button
     });
   }
 
