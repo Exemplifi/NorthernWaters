@@ -1755,6 +1755,7 @@ import $ from "jquery";
       (function (card) {
         var video = card.querySelector('.video');
         var poster = card.querySelector('.video-poster');
+        var playicon = card.querySelector('.play-icon');
 
         poster.addEventListener('click', function () {
           // Pause all other videos
@@ -1779,7 +1780,8 @@ import $ from "jquery";
         // When video is paused (but not ended), show poster
         video.addEventListener('pause', function () {
           if (!video.ended) {
-            poster.style.opacity = '1';
+            poster.style.opacity = '0';
+            // playicon.style.display="block";            
             poster.style.pointerEvents = 'auto';
           }
         });
