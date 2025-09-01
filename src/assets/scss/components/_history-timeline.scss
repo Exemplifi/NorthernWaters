@@ -708,12 +708,12 @@ $orange: #ff9900;
       max-height: rem.convert(240px);
       object-fit: cover;
       object-position: center;
-  
+
       transition: 0.4s ease;
       transition-duration: .15s;
       transition-property: transform;
       transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  
+
     }
   }
   .video-wrapper {
@@ -736,7 +736,7 @@ $orange: #ff9900;
     }
 
 
-    
+
     .video-poster {
       background: #000;
       position: absolute;
@@ -771,7 +771,7 @@ $orange: #ff9900;
      transform: scale(1.1) !important;
       }
       &:hover .play-icon {
-      
+
 
         display: block !important;
       }
@@ -874,5 +874,24 @@ body .timeline-buttons-wrap {
     height: auto !important;
     max-height: none !important;
   }
+}
+
+/* iPad Pro 12.9 (2020) */
+@media only screen
+  and (min-width: 1024px)
+  and (max-width: 1024px)
+  and (min-height: 1292px)
+  and (max-height: 1292px)
+  and (aspect-ratio: 4/3) {
+
+.timeline-buttons-wrap {
+  .timeline-prev-btn {
+    margin-right: rem.convert(12px);
+  }
+  .timeline-next-btn {
+    margin-left: rem.convert(12px);
+  }
+}
+
 }
 
