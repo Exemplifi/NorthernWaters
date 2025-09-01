@@ -746,6 +746,7 @@ $orange: #ff9900;
       figure {
         margin: 0;
         overflow: hidden;
+        height: 100%;
         img {
           width: 100%;
           max-width: 100%;
@@ -859,7 +860,7 @@ body .timeline-buttons-wrap {
 
   // Remove any fixed heights from carousel items
   .timerline-slide__carousel-item figure img {
-    height: auto !important;
+    height: 100% !important;
     max-height: none !important;
   }
 }
