@@ -734,6 +734,9 @@ $orange: #ff9900;
       height: rem.convert(240px);
       max-height: rem.convert(240px);
     }
+
+
+    
     .video-poster {
       background: #000;
       position: absolute;
@@ -768,9 +771,7 @@ $orange: #ff9900;
      transform: scale(1.1) !important;
       }
       &:hover .play-icon {
-        //     -webkit-transform: scale(1.08);
-        // transform: scale(1.08);
-        // opacity: 0.8;
+      
 
         display: block !important;
       }
